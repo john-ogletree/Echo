@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
     <p class="banner-status">status: available for hire</p>
     <button class="banner-close-btn" aria-label="Close banner">✕</button>
   </div>
-  <div class="readme-container">
+  <div class="readme-container" id="readme-container">
     <header class="readme-header">
       <div class="header-left">
         <div class="repo-title">
@@ -246,7 +246,8 @@ import Layout from '../layouts/Layout.astro';
         <a href="#" class="back-to-top">Back to top ↑</a>
       </div>
     </footer>
-  </main>
+    </main>
+  </div>
 </Layout>
 
 <script is:inline>
@@ -267,15 +268,18 @@ import Layout from '../layouts/Layout.astro';
   });
 </script>
 <script is:inline>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('availability-banner');
+    const readmeContainer = document.getElementById('readme-container');
+    const closeBtn = banner.querySelector('.banner-close-btn');
 
-  const banner = document.getElementById('availability-banner');
-  const closeBtn = banner.querySelector('.banner-close-btn');
-  if (banner && closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      banner.classList.add('is-hidden');
-    });
-  }
+    if (banner && closeBtn && readmeContainer) {
+      closeBtn.addEventListener('click', () => {
+        banner.classList.add('is-hidden');
+        readmeContainer.style.marginTop = '0';
+      });
+    }
+  });
 </script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
@@ -306,7 +310,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: 16px;
     line-height: 1.7;
     margin: 0;
-    padding: var(--banner-height) 0 0 0;
+    padding: 0;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-mono);
@@ -336,6 +340,8 @@ import Layout from '../layouts/Layout.astro';
   /* --- Main Layout --- */
   .readme-container {
     background-color: var(--color-surface);
+    margin-top: var(--banner-height);
+    transition: margin-top 0.3s ease;
   }
   .readme-header {
     display: flex;
@@ -345,7 +351,7 @@ import Layout from '../layouts/Layout.astro';
     padding: 1rem var(--padding-x);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
-    top: var(--banner-height);
+    top: 0;
     z-index: 10;
     background-color: var(--color-surface);
   }
@@ -365,11 +371,6 @@ import Layout from '../layouts/Layout.astro';
   }
   .readme-body {
     padding: 2rem var(--padding-x);
-  }
-  .readme-content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
   }
 
   /* --- Availability Banner --- */
