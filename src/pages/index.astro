@@ -112,37 +112,6 @@ import Layout from '../layouts/Layout.astro';
         <div class="view-all-container">
           <a href="#" class="cta-button view-all-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-            <span>View All Projects</span>
-          </a>
-        </div>
-        <h2 id="blog">Latest Thoughts</h2>
-        <div class="card-grid">
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Reducing Cognitive Load in UI Design</h4>
-                <span class="tag">Article</span>
-              </div>
-              <p class="post-date">July 30, 2025</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Working with the team at Nova Fintech</h4>
-                <span class="tag">Review</span>
-              </div>
-              <p class="post-date">June 22, 2025</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-        </div>
-        <div class="view-all-container">
-          <a href="#" class="cta-button view-all-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
             <span>View All Posts</span>
           </a>
         </div>
@@ -275,7 +244,7 @@ import Layout from '../layouts/Layout.astro';
     if (banner && closeBtn && readmeContainer) {
       closeBtn.addEventListener('click', () => {
         banner.classList.add('is-hidden');
-        readmeContainer.style.marginTop = '0';
+        document.body.classList.add('banner-closed');
       });
     }
   });
@@ -335,12 +304,20 @@ import Layout from '../layouts/Layout.astro';
     border-left: 3px solid var(--color-border);
     color: var(--color-text-light);
   }
+  /* Rule to remove the body padding when the banner is closed */
+  body.banner-closed {
+    padding-top: 0;
+  }
 
   /* --- Main Layout --- */
   .readme-container {
     background-color: var(--color-surface);
     margin-top: var(--banner-height);
     transition: margin-top 0.3s ease;
+  }
+  /* Rule to remove the top margin from the main container when the banner is closed */
+  body.banner-closed .readme-container {
+    margin-top: 0;
   }
   .readme-header {
     display: flex;
@@ -574,6 +551,7 @@ import Layout from '../layouts/Layout.astro';
     background-color: transparent;
     border: 1px solid var(--color-border);
     color: var(--color-accent);
+    text-decoration: none;
   }
   .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); text-decoration: none; }
 
@@ -599,8 +577,7 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center; align-items: center; text-align: center;
   }
   .resume-card.cta-card:hover { background-color: rgba(88, 166, 255, 0.2); }
-  .cta-card .cta-button { margin-top: 1rem; }
-
+  
   /* --- Forms --- */
   .form-group { margin-bottom: 1.5rem; }
   .form-input {
