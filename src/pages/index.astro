@@ -3,6 +3,10 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+  <div class="availability-banner" id="availability-banner">
+    <p class="banner-status">status: available for hire</p>
+    <button class="banner-close-btn" aria-label="Close banner">✕</button>
+  </div>
   <div class="readme-container">
     <header class="readme-header">
       <div class="header-left">
@@ -209,7 +213,6 @@ import Layout from '../layouts/Layout.astro';
         <div class="footer-column">
           <h4>John Ogletree</h4>
           <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
-          <span class="badge status">status: available for hire</span>
         </div>
         <div class="footer-column">
           <h4>Explore</h4>
@@ -288,12 +291,13 @@ import Layout from '../layouts/Layout.astro';
     --color-tag-bg: rgba(88, 166, 255, 0.15);
     --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --padding-x: 2rem;
+    --banner-height: 40px;
   }
 
   /* --- Base & Typography --- */
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: calc(80px + var(--banner-height));
   }
   body {
     background-color: var(--color-bg);
@@ -302,7 +306,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: 16px;
     line-height: 1.7;
     margin: 0;
-    padding: 0;
+    padding: var(--banner-height) 0 0 0;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-mono);
@@ -341,7 +345,7 @@ import Layout from '../layouts/Layout.astro';
     padding: 1rem var(--padding-x);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
-    top: 0;
+    top: var(--banner-height);
     z-index: 10;
     background-color: var(--color-surface);
   }
@@ -361,6 +365,46 @@ import Layout from '../layouts/Layout.astro';
   }
   .readme-body {
     padding: 2rem var(--padding-x);
+  }
+  .readme-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* --- Availability Banner --- */
+  .availability-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--banner-height);
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 11;
+    transition: transform 0.3s ease;
+  }
+  .availability-banner.is-hidden {
+    transform: translateY(-100%);
+  }
+  .banner-status {
+    margin: 0;
+  }
+  .banner-close-btn {
+    background: none;
+    border: none;
+    color: var(--color-bg);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 0.25rem;
+    font-family: sans-serif;
   }
 
   /* --- Hero Section --- */
@@ -633,8 +677,7 @@ import Layout from '../layouts/Layout.astro';
       right: 1.5rem;
       width: 250px;
       background-color: var(--color-surface);
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: flex-start;
       padding: 0.5rem;
       border: 1px solid var(--color-border);
@@ -642,7 +685,7 @@ import Layout from '../layouts/Layout.astro';
       box-shadow: 0 8px 24px rgba(1,4,9,0.8);
       z-index: 10;
     }
-    .nav-links li { width: auto; box-sizing: content-box; }
+    .nav-links li { width: 100%; box-sizing: border-box; }
     .nav-links .mobile-search .search-input { width: 100%; padding: 0.5rem 0.75rem; }
     .nav-links .mobile-search { padding: 0.5rem; }
     .main-nav.is-open .nav-links { display: flex; }
