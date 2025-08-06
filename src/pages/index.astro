@@ -5,9 +5,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
   <div class="main-container">
     <aside class="sidebar">
-      <div class="repo-title">
-        <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
-        <a href="/" class="font-bold">ECHO</a>
+      <div class="sidebar-header">
+        <div class="repo-title">
+          <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
+          <a href="/" class="font-bold">ECHO</a>
+        </div>
       </div>
       <nav class="main-nav">
         <ul class="nav-links">
@@ -19,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
           <li><a href="/directory">Directory</a></li>
         </ul>
       </nav>
-      <div class="footer-socials-wrapper">
+      <div class="sidebar-footer">
         <ul class="footer-socials">
           <li><a href="#" aria-label="GitHub Profile">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -33,180 +35,182 @@ import Layout from '../layouts/Layout.astro';
         </ul>
       </div>
     </aside>
-    <main class="readme-body">
-      <section class="hero-section">
-        <h1>John Ogletree</h1>
-        <p class="hero-tagline">Digital Artist & Designer</p>
-        <p class="hero-subtitle">Transforming ideas into exceptional digital experiences with a focus on UI/UX, branding, and motion graphics.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="cta-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-            <span>Get in touch</span>
-          </a>
-          <a href="#projects" class="secondary-button">View projects</a>
-        </div>
-      </section>
-      <article id="content">
-        <h2 id="about">About</h2>
-        <div class="about-container">
-          <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
-          <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
-        </div>
-        <h2 id="services">Services</h2>
-        <div class="card-grid">
-          <a href="#" class="card service-card">
-            <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="service-icon">
-            <div>
-              <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
-            </div>
-            <span class="card-arrow">→</span>
-          </a>
-          <a href="#" class="card service-card">
-            <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
-            <div>
-              <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
-            </div>
-            <span class="card-arrow">→</span>
+    <main class="content-wrapper">
+      <div class="readme-body">
+        <section class="hero-section">
+          <h1>John Ogletree</h1>
+          <p class="hero-tagline">Digital Artist & Designer</p>
+          <p class="hero-subtitle">Transforming ideas into exceptional digital experiences with a focus on UI/UX, branding, and motion graphics.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="cta-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+              <span>Get in touch</span>
             </a>
-        </div>
-        <div class="view-all-container">
-          <a href="#" class="cta-button view-all-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-            <span>View All Services</span>
-          </a>
-        </div>
-        <h2 id="projects">Projects</h2>
-        <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
-        <div class="card-grid">
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Chrono Corp</h4>
-                <span class="tag">UI/UX Design</span>
-              </div>
-              <p>A time-tracking application for creative freelancers.</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Aether Systems</h4>
-                <span class="tag">Brand Identity</span>
-              </div>
-              <p>A complete branding package for a cloud computing company.</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-        </div>
-        <div class="view-all-container">
-          <a href="#" class="cta-button view-all-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-            <span>View All Projects</span>
-          </a>
-        </div>
-        <h2 id="blog">Latest Thoughts</h2>
-        <div class="card-grid">
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Reducing Cognitive Load in UI Design</h4>
-                <span class="tag">Article</span>
-              </div>
-              <p class="post-date">July 30, 2025</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Working with the team at Nova Fintech</h4>
-                <span class="tag">Review</span>
-              </div>
-              <p class="post-date">June 22, 2025</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-        </div>
-        <div class="view-all-container">
-          <a href="#" class="cta-button view-all-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-            <span>View All Posts</span>
-          </a>
-        </div>
-        <h2 id="newsletter">Subscribe</h2>
-        <p>Receive occasional updates about new projects and articles. No spam.</p>
-        <form class="newsletter-form" action="#">
-          <input class="form-input" type="email" placeholder="your-email@domain.com" required>
-          <button type="submit" class="cta-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-            <span>Subscribe</span>
-          </button>
-        </form>
-        <h2 id="resume">Résumé</h2>
-        <div class="card-grid">
-          <div class="card resume-card">
-            <h4>Design</h4>
-            <ul>
-              <li>UI/UX & Prototyping</li>
-              <li>Branding & Art Direction</li>
-              <li>Iconography & Illustration</li>
-            </ul>
+            <a href="#projects" class="secondary-button">View projects</a>
           </div>
-          <div class="card resume-card">
-            <h4>Tools & Tech</h4>
-            <ul>
-              <li>Figma & Adobe Creative Suite</li>
-              <li>HTML, CSS & JavaScript</li>
-              <li>Astro, Node.js & Blender</li>
-            </ul>
+        </section>
+        <article id="content">
+          <h2 id="about">About</h2>
+          <div class="about-container">
+            <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
+            <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
           </div>
-          <div class="card resume-card">
-            <h4>Experience</h4>
-            <p><strong>Freelance Digital Designer</strong></p>
-            <p class="text-light-small">(2015 - Present)</p>
-            <p>Partnered with over 50 clients, from startups to established companies, to deliver high-quality work.</p>
-          </div>
-          <div class="card resume-card cta-card">
-            <h4>Download Full Résumé</h4>
-            <p>Get the complete details on my skills and experience.</p>
-            <a href="/resume.pdf" target="_blank" class="cta-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-              <span>Download PDF</span>
+          <h2 id="services">Services</h2>
+          <div class="card-grid">
+            <a href="#" class="card service-card">
+              <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="service-icon">
+              <div>
+                <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
+              </div>
+              <span class="card-arrow">→</span>
+            </a>
+            <a href="#" class="card service-card">
+              <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
+              <div>
+                <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
+              </div>
+              <span class="card-arrow">→</span>
             </a>
           </div>
-        </div>
-        <h2 id="contact">Contact</h2>
-        <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
-        <form class="contact-form" action="#">
-          <div class="form-group">
-            <label for="name">Your Name:</label>
-            <input class="form-input" type="text" id="name" name="name" required>
+          <div class="view-all-container">
+            <a href="#" class="cta-button view-all-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+              <span>View All Services</span>
+            </a>
           </div>
-          <div class="form-group">
-            <label for="email">Your Email:</label>
-            <input class="form-input" type="email" id="email" name="email" required>
+          <h2 id="projects">Projects</h2>
+          <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+          <div class="card-grid">
+            <a href="#" class="card">
+              <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="card-image">
+              <div class="card-info">
+                <div class="card-header">
+                  <h4>Chrono Corp</h4>
+                  <span class="tag">UI/UX Design</span>
+                </div>
+                <p>A time-tracking application for creative freelancers.</p>
+                <span class="card-arrow">→</span>
+              </div>
+            </a>
+            <a href="#" class="card">
+              <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="card-image">
+              <div class="card-info">
+                <div class="card-header">
+                  <h4>Aether Systems</h4>
+                  <span class="tag">Brand Identity</span>
+                </div>
+                <p>A complete branding package for a cloud computing company.</p>
+                <span class="card-arrow">→</span>
+              </div>
+            </a>
           </div>
-          <div class="form-group">
-            <label for="message">Your Message:</label>
-            <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
+          <div class="view-all-container">
+            <a href="#" class="cta-button view-all-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+              <span>View All Projects</span>
+            </a>
           </div>
-          <button type="submit" class="cta-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-            <span>Send Message</span>
-          </button>
-        </form>
-      </article>
-      <footer class="readme-footer">
-        <div class="footer-bottom-bar">
-          <p>© <span id="year"></span> John Ogletree</p>
-          <a href="#" class="back-to-top">Back to top ↑</a>
-        </div>
-      </footer>
+          <h2 id="blog">Latest Thoughts</h2>
+          <div class="card-grid">
+            <a href="#" class="card">
+              <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
+              <div class="card-info">
+                <div class="card-header">
+                  <h4>Reducing Cognitive Load in UI Design</h4>
+                  <span class="tag">Article</span>
+                </div>
+                <p class="post-date">July 30, 2025</p>
+                <span class="card-arrow">→</span>
+              </div>
+            </a>
+            <a href="#" class="card">
+              <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="card-image">
+              <div class="card-info">
+                <div class="card-header">
+                  <h4>Working with the team at Nova Fintech</h4>
+                  <span class="tag">Review</span>
+                </div>
+                <p class="post-date">June 22, 2025</p>
+                <span class="card-arrow">→</span>
+              </div>
+            </a>
+          </div>
+          <div class="view-all-container">
+            <a href="#" class="cta-button view-all-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+              <span>View All Posts</span>
+            </a>
+          </div>
+          <h2 id="newsletter">Subscribe</h2>
+          <p>Receive occasional updates about new projects and articles. No spam.</p>
+          <form class="newsletter-form" action="#">
+            <input class="form-input" type="email" placeholder="your-email@domain.com" required>
+            <button type="submit" class="cta-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+              <span>Subscribe</span>
+            </button>
+          </form>
+          <h2 id="resume">Résumé</h2>
+          <div class="card-grid">
+            <div class="card resume-card">
+              <h4>Design</h4>
+              <ul>
+                <li>UI/UX & Prototyping</li>
+                <li>Branding & Art Direction</li>
+                <li>Iconography & Illustration</li>
+              </ul>
+            </div>
+            <div class="card resume-card">
+              <h4>Tools & Tech</h4>
+              <ul>
+                <li>Figma & Adobe Creative Suite</li>
+                <li>HTML, CSS & JavaScript</li>
+                <li>Astro, Node.js & Blender</li>
+              </ul>
+            </div>
+            <div class="card resume-card">
+              <h4>Experience</h4>
+              <p><strong>Freelance Digital Designer</strong></p>
+              <p class="text-light-small">(2015 - Present)</p>
+              <p>Partnered with over 50 clients, from startups to established companies, to deliver high-quality work.</p>
+            </div>
+            <div class="card resume-card cta-card">
+              <h4>Download Full Résumé</h4>
+              <p>Get the complete details on my skills and experience.</p>
+              <a href="/resume.pdf" target="_blank" class="cta-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                <span>Download PDF</span>
+              </a>
+            </div>
+          </div>
+          <h2 id="contact">Contact</h2>
+          <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
+          <form class="contact-form" action="#">
+            <div class="form-group">
+              <label for="name">Your Name:</label>
+              <input class="form-input" type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email:</label>
+              <input class="form-input" type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message:</label>
+              <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </article>
+        <footer class="readme-footer">
+          <div class="footer-bottom-bar">
+            <p>© <span id="year"></span> John Ogletree</p>
+            <a href="#" class="back-to-top">Back to top ↑</a>
+          </div>
+        </footer>
+      </div>
     </main>
   </div>
 </Layout>
@@ -233,7 +237,6 @@ import Layout from '../layouts/Layout.astro';
     --color-border: #30363D;
     --color-tag-bg: rgba(88, 166, 255, 0.15);
     --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --padding-x: 2rem;
   }
 
   /* --- Base & Typography --- */
@@ -294,7 +297,12 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+  }
+  
+  .sidebar-header {
+    width: 100%;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .repo-title {
@@ -309,7 +317,7 @@ import Layout from '../layouts/Layout.astro';
 
   .main-nav {
     flex-grow: 1;
-    margin-top: 2rem;
+    padding-top: 2rem;
   }
 
   .nav-links {
@@ -333,19 +341,22 @@ import Layout from '../layouts/Layout.astro';
     text-decoration: none;
   }
 
-  .footer-socials-wrapper {
+  .sidebar-footer {
     width: 100%;
-    border-top: 1px solid var(--color-border);
     padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-light);
   }
 
   /* --- Main Content Area --- */
-  .readme-body {
+  .content-wrapper {
     flex-grow: 1;
-    margin-left: 280px; /* Same width as sidebar */
-    padding: 2rem var(--padding-x);
+    margin-left: 280px;
+    padding: 2rem;
+  }
+  .readme-body {
     max-width: 900px;
-    width: 100%;
+    margin: 0 auto;
   }
 
   /* --- Hero Section --- */
@@ -392,6 +403,7 @@ import Layout from '../layouts/Layout.astro';
     background-color: var(--color-border);
     border-color: var(--color-text);
   }
+
   /* --- About Section Layout --- */
   .about-container { display: flex; align-items: flex-start; gap: 2rem; margin-top: 1rem; }
   .profile-picture {
@@ -402,6 +414,7 @@ import Layout from '../layouts/Layout.astro';
     flex-shrink: 0;
     object-fit: cover;
   }
+
   /* --- Unified Card Grid System --- */
   .card-grid {
     display: grid;
@@ -462,10 +475,12 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-accent);
   }
   .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); }
+  
   /* --- Card Type: Service --- */
   .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; overflow: hidden; }
   .service-icon { width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; }
   .service-card .card-arrow { bottom: auto; right: 1.25rem; }
+  
   /* --- Card Type: R&eacute;sum&eacute; --- */
   .resume-card { padding: 1.5rem; overflow: visible; }
   .resume-card h4 {
@@ -484,6 +499,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .resume-card.cta-card:hover { background-color: rgba(88, 166, 255, 0.2); }
   .cta-card .cta-button { margin-top: 1rem; }
+  
   /* --- Forms --- */
   .form-group { margin-bottom: 1.5rem; }
   .form-input {
@@ -508,6 +524,7 @@ import Layout from '../layouts/Layout.astro';
   .cta-button svg { fill: currentColor; }
   .cta-button:hover { background-color: #2EA043; }
   .newsletter-form { display: flex; gap: 0.5rem; }
+  
   /* --- Footer --- */
   .readme-footer {
     padding: 2.5rem 0 1.5rem 0;
@@ -517,7 +534,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .footer-socials {
     list-style: none; padding: 0; margin: 0;
-    display: flex; gap: 1.5rem; justify-content: center;
+    display: flex; gap: 1.5rem;
   }
   .footer-socials a { color: var(--color-text-light); transition: color 0.2s ease; }
   .footer-socials a:hover { color: var(--color-accent); }
