@@ -41,6 +41,18 @@ import Layout from '../layouts/Layout.astro';
 
 <main class="readme-body">
 
+<section class="hero-section">
+<h1>John Ogletree</h1>
+<p class="hero-tagline">Digital Artist & Designer</p>
+<p class="hero-subtitle">Transforming ideas into exceptional digital experiences with a focus on UI/UX, branding, and motion graphics.</p>
+<div class="hero-actions">
+<a href="#contact" class="cta-button">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+<span>Get in touch</span>
+</a>
+<a href="#projects" class="secondary-button">View projects</a>
+</div>
+</section>
 
 <article id="content">
 <h2 id="about">About</h2>
@@ -129,8 +141,8 @@ import Layout from '../layouts/Layout.astro';
 <p class="post-date">June 22, 2025</p>
 <span class="card-arrow">â†’</span>
 </div>
-</a>
 </div>
+</a>
 <div class="view-all-container">
 <a href="#" class="cta-button view-all-button">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
@@ -364,67 +376,50 @@ fill: var(--color-text-light);
 padding: 2rem var(--padding-x);
 }
 
-/* --- Dashboard Layout --- */
-.dashboard-grid {
-display: grid;
-gap: 1.5rem;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-areas:
-"about about resume"
-"services projects projects"
-"blog newsletter contact";
-}
-.dashboard-tile {
-background-color: var(--color-bg);
-border: 1px solid var(--color-border);
-border-radius: 8px;
-padding: 1.5rem;
-color: inherit;
-text-decoration: none;
+/* --- Hero Section --- */
+.hero-section {
 display: flex;
 flex-direction: column;
-justify-content: space-between;
-transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-position: relative;
+align-items: flex-start;
+gap: 1rem;
+padding: 4rem 0;
 }
-.dashboard-tile:hover {
-transform: translateY(-5px);
-box-shadow: 0 8px 24px rgba(1, 4, 9, 0.4);
-border-color: var(--color-accent);
-text-decoration: none;
+.hero-section h1 {
+font-size: 3rem;
+font-weight: 700;
+line-height: 1.1;
+margin-bottom: 0.5rem;
 }
-.dashboard-tile h3 { font-size: 1.25rem; }
-.dashboard-tile h4 { font-size: 1.25rem; color: var(--color-accent); }
-.dashboard-tile p { font-size: 0.9rem; color: var(--color-text-light); margin: 0.5rem 0 0 0; line-height: 1.5; }
-.dashboard-tile ul { list-style: none; padding: 0; margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--color-text-light); }
-.tile-arrow {
-position: absolute;
-bottom: 1.25rem;
-right: 1.5rem;
-font-size: 1.75rem;
-color: var(--color-text-light);
-transition: transform 0.2s ease, color 0.2s ease;
-}
-.dashboard-tile:hover .tile-arrow {
-transform: translateX(5px);
+.hero-tagline {
+font-size: 1.25rem;
+font-weight: 500;
 color: var(--color-accent);
 }
-.tile-about { grid-area: about; }
-.tile-resume { grid-area: resume; }
-.tile-services { grid-area: services; }
-.tile-projects { 
-grid-area: projects; 
-background-image: linear-gradient(rgba(13,17,23,0.8), rgba(13,17,23,0.8)), url(https://placehold.co/400x225/161B22/E6EDF3?text=Project);
-background-size: cover;
-background-position: center;
+.hero-subtitle {
+font-size: 1.1rem;
+color: var(--color-text-light);
+max-width: 65ch;
 }
-.tile-blog { grid-area: blog; }
-.tile-newsletter { grid-area: newsletter; }
-.tile-contact { grid-area: contact; background-color: var(--color-tag-bg); }
-.tile-header { display: flex; align-items: center; gap: 1rem; }
-.tile-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.5rem; }
-.tile-footer .badge { font-size: 0.75rem; padding: 0.2rem 0.6rem; }
-.tile-footer .tile-arrow { position: static; transform: none; }
+.hero-actions {
+display: flex;
+gap: 1rem;
+margin-top: 1rem;
+}
+.secondary-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.75rem 1.25rem;
+border-radius: 6px;
+border: 1px solid var(--color-border);
+color: var(--color-text);
+background-color: var(--color-bg);
+transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.secondary-button:hover {
+background-color: var(--color-border);
+border-color: var(--color-text);
+}
 
 /* --- Branded HR --- */
 .branded-hr {
@@ -678,5 +673,5 @@ padding: 1rem var(--padding-x);
 }
 .readme-body { 
 padding: 1.5rem var(--padding-x); 
-} .dashboard-grid { grid-template-columns: 1fr; grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";} h2 { font-size: 1.25rem; } .about-container .profile-picture { display: none; } .about-container { margin-top: 0; } .newsletter-form { flex-direction: column; } .card-grid { grid-template-columns: 1fr; } .footer-grid { text-align: center; } .footer-tagline { margin: 0 auto 1rem auto; } .footer-column .badge, .footer-socials { justify-content: center; } .footer-links { grid-template-columns: repeat(2, 1fr); } .footer-bottom-bar { flex-direction: column; gap: 0.5rem; }}
+} .hero-section h1 { font-size: 2.25rem; } .hero-tagline { font-size: 1rem; } .hero-subtitle { font-size: 0.9rem; } .hero-actions { flex-direction: column; width: 100%; } .hero-actions .cta-button, .hero-actions .secondary-button { width: 100%; } .about-container .profile-picture { display: none; } .about-container { margin-top: 0; } .newsletter-form { flex-direction: column; } .card-grid { grid-template-columns: 1fr; } .footer-grid { text-align: center; } .footer-tagline { margin: 0 auto 1rem auto; } .footer-column .badge, .footer-socials { justify-content: center; } .footer-links { grid-template-columns: repeat(2, 1fr); } .footer-bottom-bar { flex-direction: column; gap: 0.5rem; }}
 </style>
