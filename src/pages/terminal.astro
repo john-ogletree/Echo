@@ -7,13 +7,10 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-  import io from 'socket.io-client';
   import { Terminal } from 'xterm';
   import { FitAddon } from 'xterm-addon-fit';
   import 'xterm/css/xterm.css';
 
-  // Cast the socket object to 'any' to resolve the TypeScript errors
-  const socket = io('http://localhost:3000') as any;
   const terminalContainer = document.getElementById('terminal-container');
 
   if (terminalContainer) {
@@ -24,21 +21,23 @@ import Layout from '../layouts/Layout.astro';
     terminal.open(terminalContainer);
     fitAddon.fit();
 
-    socket.on('connect', () => {
-      console.log('Connected to Gritty server.');
-      socket.emit('create');
-    });
+    const ws = new WebSocket('ws://localhost:3000');
 
-    socket.on('disconnect', () => {
-      console.log('Disconnected from Gritty server.');
-    });
+    ws.onopen = () => {
+      console.log('WebSocket connection opened.');
+    };
 
-    socket.on('output', (data: string) => {
-      terminal.write(data);
-    });
+    ws.onmessage = (event) => {
+      terminal.write(event.data);
+    };
+
+    ws.onclose = () => {
+      console.log('WebSocket connection closed.');
+      terminal.write('\r\nDisconnected from the server.');
+    };
 
     terminal.onData((data: string) => {
-      socket.emit('input', data);
+      ws.send(data);
     });
 
     window.addEventListener('resize', () => {

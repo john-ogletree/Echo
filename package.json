@@ -11,11 +11,10 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.8",
-    "express": "^5.1.0",
-    "gritty": "^8.1.2",
-    "socket.io": "^4.8.1",
+    "node-pty": "^1.0.0",
     "socket.io-client": "^4.8.1",
     "tailwindcss": "^4.1.11",
+    "ws": "^8.18.3",
     "xterm": "^5.3.0",
     "xterm-addon-fit": "^0.8.0"
   }
