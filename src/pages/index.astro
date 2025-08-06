@@ -272,7 +272,6 @@ import Layout from '../layouts/Layout.astro';
     const banner = document.getElementById('availability-banner');
     const readmeContainer = document.getElementById('readme-container');
     const closeBtn = banner.querySelector('.banner-close-btn');
-
     if (banner && closeBtn && readmeContainer) {
       closeBtn.addEventListener('click', () => {
         banner.classList.add('is-hidden');
@@ -351,7 +350,7 @@ import Layout from '../layouts/Layout.astro';
     padding: 1rem var(--padding-x);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
-    top: 0;
+    top: var(--banner-height);
     z-index: 10;
     background-color: var(--color-surface);
   }
@@ -372,7 +371,7 @@ import Layout from '../layouts/Layout.astro';
   .readme-body {
     padding: 2rem var(--padding-x);
   }
-
+  
   /* --- Availability Banner --- */
   .availability-banner {
     position: fixed;
@@ -447,10 +446,12 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text);
     background-color: var(--color-bg);
     transition: background-color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none; /* Removed underline on button hover */
   }
   .secondary-button:hover {
     background-color: var(--color-border);
     border-color: var(--color-text);
+    text-decoration: none; /* Removed underline on button hover */
   }
 
   /* --- Branded HR --- */
@@ -574,8 +575,9 @@ import Layout from '../layouts/Layout.astro';
     background-color: transparent;
     border: 1px solid var(--color-border);
     color: var(--color-accent);
+    text-decoration: none; /* Removed underline on button hover */
   }
-  .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); }
+  .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); text-decoration: none; }
 
   /* --- Card Type: Service --- */
   .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; overflow: hidden; }
@@ -600,6 +602,9 @@ import Layout from '../layouts/Layout.astro';
   }
   .resume-card.cta-card:hover { background-color: rgba(88, 166, 255, 0.2); }
   .cta-card .cta-button { margin-top: 1rem; }
+  .cta-button:hover {
+    text-decoration: none; /* Added to remove underline on hover for cta button */
+  }
 
   /* --- Forms --- */
   .form-group { margin-bottom: 1.5rem; }
@@ -621,9 +626,10 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1rem; font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none; /* Removed underline on button hover */
   }
   .cta-button svg { fill: currentColor; }
-  .cta-button:hover { background-color: #2EA043; }
+  .cta-button:hover { background-color: #2EA043; text-decoration: none; }
   .newsletter-form { display: flex; gap: 0.5rem; }
 
   /* --- Footer --- */
