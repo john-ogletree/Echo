@@ -264,6 +264,17 @@ import Layout from '../layouts/Layout.astro';
     }
   });
 </script>
+<script is:inline>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const banner = document.getElementById('availability-banner');
+  const closeBtn = banner.querySelector('.banner-close-btn');
+  if (banner && closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      banner.classList.add('is-hidden');
+    });
+  }
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
 
@@ -311,7 +322,7 @@ import Layout from '../layouts/Layout.astro';
   a { color: var(--color-accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   hr { display: none; }
-  ul { list-style: '- '; padding-left: 1.5rem; margin-bottom: 1rem; }
+  ul { list-style: '- '; padding-left: 1.5rem; margin-bottom: 1rem;}
   blockquote {
     margin-left: 0;
     padding-left: 1rem;
@@ -620,7 +631,8 @@ import Layout from '../layouts/Layout.astro';
       right: 1.5rem;
       width: 250px;
       background-color: var(--color-surface);
-      flex-direction: column;
+      flex-direction: row; /* Change to row to make it horizontal */
+      flex-wrap: wrap;
       align-items: flex-start;
       padding: 0.5rem;
       border: 1px solid var(--color-border);
@@ -628,7 +640,7 @@ import Layout from '../layouts/Layout.astro';
       box-shadow: 0 8px 24px rgba(1,4,9,0.8);
       z-index: 10;
     }
-    .nav-links li { width: 100%; box-sizing: border-box; }
+    .nav-links li { width: auto; box-sizing: content-box; } /* Adjust list item width */
     .nav-links .mobile-search .search-input { width: 100%; padding: 0.5rem 0.75rem; }
     .nav-links .mobile-search { padding: 0.5rem; }
     .main-nav.is-open .nav-links { display: flex; }
