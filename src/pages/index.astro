@@ -321,7 +321,7 @@ import Layout from '../layouts/Layout.astro';
   .readme-body {
     padding: 2rem var(--padding-x);
   }
-
+  
   /* --- Hero Section --- */
   .hero-section {
     display: flex;
@@ -348,7 +348,6 @@ import Layout from '../layouts/Layout.astro';
   }
   .hero-actions {
     display: flex;
-    justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
   }
@@ -356,12 +355,13 @@ import Layout from '../layouts/Layout.astro';
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem;
     border-radius: 6px;
     border: 1px solid var(--color-border);
     color: var(--color-text);
     background-color: var(--color-bg);
     transition: background-color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
   }
   .secondary-button:hover {
     background-color: var(--color-border);
@@ -485,13 +485,18 @@ import Layout from '../layouts/Layout.astro';
   }
   .view-all-container { text-align: center; margin-top: 2rem; }
   .view-all-button {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
     width: 100%;
     background-color: transparent;
     border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
     color: var(--color-accent);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
     text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
   }
   .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); text-decoration: none; }
 
@@ -522,12 +527,19 @@ import Layout from '../layouts/Layout.astro';
   /* --- Forms --- */
   .form-group { margin-bottom: 1.5rem; }
   .form-input {
-    background-color: var(--color-bg); border: 1px solid var(--color-border);
-    border-radius: 6px; padding: 0.75rem 1rem; font-family: var(--font-mono);
-    font-size: 1rem; color: var(--color-text); width: 100%; box-sizing: border-box;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-text);
+    width: 100%;
+    box-sizing: border-box;
   }
   .form-input:focus {
-    outline: none; border-color: var(--color-accent);
+    outline: none;
+    border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
   }
   .cta-button {
@@ -539,15 +551,19 @@ import Layout from '../layouts/Layout.astro';
     color: white;
     border: 1px solid rgba(240, 246, 252, 0.1);
     border-radius: 6px;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem;
     font-family: var(--font-mono);
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease;
   }
+  .cta-button svg { fill: currentColor; }
   .cta-button:hover { background-color: #2EA043; text-decoration: none; }
-  .newsletter-form { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+  }
 
   /* --- Footer --- */
   .readme-footer {
@@ -566,20 +582,26 @@ import Layout from '../layouts/Layout.astro';
   .footer-column .badge { margin-top: 0.5rem; }
   .footer-links {
     list-style: none; padding: 0; margin: 0;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem 1rem;
   }
   .footer-links li { margin: 0; }
   .footer-links a { color: var(--color-text-light); text-decoration: none; font-size: 0.9rem; }
   .footer-links a:hover { color: var(--color-accent); text-decoration: underline; }
-  .footer-socials { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 1.5rem; }
+  .footer-socials { display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
   .footer-socials a { color: var(--color-text-light); transition: color 0.2s ease; }
   .footer-socials a:hover { color: var(--color-accent); }
   .footer-socials svg { width: 24px; height: 24px; }
   .footer-bottom-bar {
     display: flex;
-    justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border); font-size: 0.9rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9rem;
     color: var(--color-text-light);
   }
   .footer-bottom-bar p { margin: 0; }
