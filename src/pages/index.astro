@@ -3,7 +3,11 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="readme-container">
+  <div class="availability-banner" id="availability-banner">
+    <p class="banner-status">status: available for hire</p>
+    <button class="banner-close-btn" aria-label="Close banner">✕</button>
+  </div>
+  <div class="readme-container" id="readme-container">
     <header class="readme-header">
       <div class="header-left">
         <div class="repo-title">
@@ -101,37 +105,6 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">Brand Identity</span>
               </div>
               <p>A complete branding package for a cloud computing company.</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-        </div>
-        <div class="view-all-container">
-          <a href="#" class="cta-button view-all-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-            <span>View All Projects</span>
-          </a>
-        </div>
-        <h2 id="blog">Latest Thoughts</h2>
-        <div class="card-grid">
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Reducing Cognitive Load in UI Design</h4>
-                <span class="tag">Article</span>
-              </div>
-              <p class="post-date">July 30, 2025</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Working with the team at Nova Fintech</h4>
-                <span class="tag">Review</span>
-              </div>
-              <p class="post-date">June 22, 2025</p>
               <span class="card-arrow">→</span>
             </div>
           </a>
@@ -249,7 +222,6 @@ import Layout from '../layouts/Layout.astro';
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function() {
-    // Mobile navigation toggle
     const navToggle = document.getElementById('nav-toggle');
     const mainNav = document.getElementById('main-nav');
     if (navToggle && mainNav) {
@@ -259,10 +231,22 @@ import Layout from '../layouts/Layout.astro';
       });
     }
 
-    // Set copyright year
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('availability-banner');
+    const readmeContainer = document.getElementById('readme-container');
+    const closeBtn = banner.querySelector('.banner-close-btn');
+    if (banner && closeBtn && readmeContainer) {
+      closeBtn.addEventListener('click', () => {
+        banner.classList.add('is-hidden');
+        readmeContainer.style.marginTop = '0';
+      });
     }
   });
 </script>
@@ -280,12 +264,13 @@ import Layout from '../layouts/Layout.astro';
     --color-tag-bg: rgba(88, 166, 255, 0.15);
     --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --padding-x: 2rem;
+    --banner-height: 40px;
   }
 
   /* --- Base & Typography --- */
-  html { 
+  html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: calc(80px + var(--banner-height));
   }
   body {
     background-color: var(--color-bg);
@@ -324,6 +309,8 @@ import Layout from '../layouts/Layout.astro';
   /* --- Main Layout --- */
   .readme-container {
     background-color: var(--color-surface);
+    margin-top: var(--banner-height);
+    transition: margin-top 0.3s ease;
   }
   .readme-header {
     display: flex;
@@ -333,7 +320,7 @@ import Layout from '../layouts/Layout.astro';
     padding: 1rem var(--padding-x);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
-    top: 0;
+    top: var(--banner-height);
     z-index: 10;
     background-color: var(--color-surface);
   }
@@ -353,6 +340,41 @@ import Layout from '../layouts/Layout.astro';
   }
   .readme-body {
     padding: 2rem var(--padding-x);
+  }
+
+  /* --- Availability Banner --- */
+  .availability-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--banner-height);
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 11;
+    transition: transform 0.3s ease;
+  }
+  .availability-banner.is-hidden {
+    transform: translateY(-100%);
+  }
+  .banner-status {
+    margin: 0;
+  }
+  .banner-close-btn {
+    background: none;
+    border: none;
+    color: var(--color-bg);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 0.25rem;
+    font-family: sans-serif;
   }
 
   /* --- Hero Section --- */
@@ -398,6 +420,7 @@ import Layout from '../layouts/Layout.astro';
   .secondary-button:hover {
     background-color: var(--color-border);
     border-color: var(--color-text);
+    text-decoration: none;
   }
 
   /* --- Branded HR --- */
@@ -522,7 +545,7 @@ import Layout from '../layouts/Layout.astro';
     border: 1px solid var(--color-border);
     color: var(--color-accent);
   }
-  .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); }
+  .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); text-decoration: none; }
 
   /* --- Card Type: Service --- */
   .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; overflow: hidden; }
@@ -570,7 +593,7 @@ import Layout from '../layouts/Layout.astro';
     transition: background-color 0.2s ease, border-color 0.2s ease;
   }
   .cta-button svg { fill: currentColor; }
-  .cta-button:hover { background-color: #2EA043; }
+  .cta-button:hover { background-color: #2EA043; text-decoration: none; }
   .newsletter-form { display: flex; gap: 0.5rem; }
 
   /* --- Footer --- */
@@ -625,8 +648,7 @@ import Layout from '../layouts/Layout.astro';
       right: 1.5rem;
       width: 250px;
       background-color: var(--color-surface);
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: flex-start;
       padding: 0.5rem;
       border: 1px solid var(--color-border);
@@ -634,7 +656,7 @@ import Layout from '../layouts/Layout.astro';
       box-shadow: 0 8px 24px rgba(1,4,9,0.8);
       z-index: 10;
     }
-    .nav-links li { width: auto; box-sizing: content-box; }
+    .nav-links li { width: 100%; box-sizing: border-box; }
     .nav-links .mobile-search .search-input { width: 100%; padding: 0.5rem 0.75rem; }
     .nav-links .mobile-search { padding: 0.5rem; }
     .main-nav.is-open .nav-links { display: flex; }
