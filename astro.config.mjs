@@ -1,12 +1,7 @@
 import { defineConfig } from 'astro/config';
-// The astro/node adapter is needed to enable SSR
-import node from '@astrojs/node';
+// import tailwind from '@astrojs/tailwind'; // This line is no longer needed
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
-  integrations: [],
+  integrations: [], // The array is now empty
 });
