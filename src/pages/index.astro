@@ -211,6 +211,17 @@ import Layout from '../layouts/Layout.astro';
     }
   });
 </script>
+<script is:inline>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const banner = document.getElementById('availability-banner');
+  const closeBtn = banner.querySelector('.banner-close-btn');
+  if (banner && closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      banner.classList.add('is-hidden');
+    });
+  }
+</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
 
@@ -230,6 +241,7 @@ import Layout from '../layouts/Layout.astro';
   /* --- Base & Typography --- */
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
   }
   body {
     background-color: var(--color-bg);
@@ -239,7 +251,6 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    padding-top: 80px; /* Add padding to prevent content from being hidden */
   }
   h1, h2, h3, h4 {
     font-family: var(--font-mono);
@@ -277,10 +288,8 @@ import Layout from '../layouts/Layout.astro';
     gap: 1rem;
     padding: 1rem var(--padding-x);
     border-bottom: 1px solid var(--color-border);
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 10;
     background-color: var(--color-surface);
   }
@@ -567,12 +576,12 @@ import Layout from '../layouts/Layout.astro';
     .main-nav { position: static; }
     .nav-links {
       display: none;
-      position: fixed;
-      top: 80px;
+      position: absolute;
+      top: calc(100% + 1rem);
       right: 1.5rem;
       width: 250px;
       background-color: var(--color-surface);
-      flex-direction: row; /* Change to row to make it horizontal */
+      flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
       padding: 0.5rem;
@@ -581,7 +590,7 @@ import Layout from '../layouts/Layout.astro';
       box-shadow: 0 8px 24px rgba(1,4,9,0.8);
       z-index: 10;
     }
-    .nav-links li { width: auto; box-sizing: content-box; } /* Adjust list item width */
+    .nav-links li { width: auto; box-sizing: content-box; }
     .nav-links .mobile-search .search-input { width: 100%; padding: 0.5rem 0.75rem; }
     .nav-links .mobile-search { padding: 0.5rem; }
     .main-nav.is-open .nav-links { display: flex; }
