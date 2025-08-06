@@ -3,39 +3,41 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="main-container">
-    <aside class="sidebar">
-      <div class="sidebar-header">
+  <div class="readme-container">
+    <header class="readme-header">
+      <div class="header-left">
         <div class="repo-title">
           <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
           <a href="/" class="font-bold">ECHO</a>
         </div>
       </div>
-      <nav class="main-nav">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Résumé</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="/directory">Directory</a></li>
-        </ul>
-      </nav>
-      <div class="sidebar-footer">
-        <ul class="footer-socials">
-          <li><a href="#" aria-label="GitHub Profile">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-          </a></li>
-          <li><a href="#" aria-label="LinkedIn Profile">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-          </a></li>
-          <li><a href="#" aria-label="Dribbble Profile">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
-          </a></li>
-        </ul>
+      <div class="header-right">
+        <form class="search-form desktop-search" action="/directory" method="get">
+          <input type="search" name="q" class="search-input" placeholder="Search...">
+          <button type="submit" class="search-button" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+          </button>
+        </form>
+        <nav class="main-nav" id="main-nav">
+          <ul class="nav-links">
+            <li>
+              <form class="search-form mobile-search" action="/directory" method="get">
+                <input type="search" name="q" class="search-input" placeholder="Search...">
+              </form>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Résumé</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/directory">Directory</a></li>
+          </ul>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">[menu]</button>
       </div>
-    </aside>
-    <main class="content-wrapper">
+    </header>
+
+    <main class="readme-body">
       <section class="hero-section">
         <h1>John Ogletree</h1>
         <p class="hero-tagline">Digital Artist & Designer</p>
@@ -178,32 +180,64 @@ import Layout from '../layouts/Layout.astro';
             <p>Get the complete details on my skills and experience.</p>
             <a href="/resume.pdf" target="_blank" class="cta-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-              <span>Download PDF</span>
-            </a>
+            <span>Download PDF</span>
+          </a>
+        </div>
+      </div>
+      <h2 id="contact">Contact</h2>
+      <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
+      <form class="contact-form" action="#">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input class="form-input" type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input class="form-input" type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="cta-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+          <span>Send Message</span>
+        </button>
+      </form>
+      <footer class="readme-footer">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>John Ogletree</h4>
+            <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
+            <span class="badge status">status: available for hire</span>
+          </div>
+          <div class="footer-column">
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li><a href="/directory">Directory</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#resume">Résumé</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <ul class="footer-socials">
+              <li><a href="#" aria-label="GitHub Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a></li>
+              <li><a href="#" aria-label="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a></li>
+              <li><a href="#" aria-label="Dribbble Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+              </a></li>
+            </ul>
           </div>
         </div>
-        <h2 id="contact">Contact</h2>
-        <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
-        <form class="contact-form" action="#">
-          <div class="form-group">
-            <label for="name">Your Name:</label>
-            <input class="form-input" type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email:</label>
-            <input class="form-input" type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Your Message:</label>
-            <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
-          </div>
-          <button type="submit" class="cta-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-            <span>Send Message</span>
-          </button>
-        </form>
-      </article>
-      <footer class="readme-footer">
         <div class="footer-bottom-bar">
           <p>© <span id="year"></span> John Ogletree</p>
           <a href="#" class="back-to-top">Back to top ↑</a>
@@ -215,13 +249,21 @@ import Layout from '../layouts/Layout.astro';
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('is-open');
+        navToggle.classList.toggle('is-open');
+      });
+    }
+
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear();
     }
   });
 </script>
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
 
@@ -235,12 +277,13 @@ import Layout from '../layouts/Layout.astro';
     --color-border: #30363D;
     --color-tag-bg: rgba(88, 166, 255, 0.15);
     --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --padding-x: 2rem;
   }
 
   /* --- Base & Typography --- */
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    scroll-padding-top: 80px;
   }
   body {
     background-color: var(--color-bg);
@@ -277,32 +320,23 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* --- Main Layout --- */
-  .main-container {
-    display: flex;
-    min-height: 100vh;
-  }
-
-  /* --- Sidebar --- */
-  .sidebar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 100vh;
-    padding: 2rem 1.5rem;
+  .readme-container {
     background-color: var(--color-surface);
-    border-right: 1px solid var(--color-border);
+  }
+  .readme-header {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-  }
-
-  .sidebar-header {
-    width: 100%;
-    padding-bottom: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem var(--padding-x);
     border-bottom: 1px solid var(--color-border);
+    position: relative;
   }
-
+  .header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
   .repo-title {
     display: flex;
     align-items: center;
@@ -312,57 +346,251 @@ import Layout from '../layouts/Layout.astro';
   .icon-repo {
     fill: var(--color-text-light);
   }
-
-  .main-nav {
-    flex-grow: 1;
-    padding-top: 2rem;
+  .readme-body {
+    padding: 2rem var(--padding-x);
   }
 
-  .nav-links {
+  /* --- Hero Section --- */
+  .hero-section {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    list-style: none;
-    margin: 0;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 4rem 0;
+  }
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .hero-tagline {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 65ch;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .secondary-button:hover {
+    background-color: var(--color-border);
+    border-color: var(--color-text);
+  }
+
+  /* --- Branded HR --- */
+  .branded-hr {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 4rem 0;
+  }
+  .branded-hr .line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--color-border);
+  }
+  .branded-hr .icon-repo {
+    flex-shrink: 0;
+  }
+
+  /* --- Header Search --- */
+  .search-form { position: relative; }
+  .search-input {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.4rem 2rem 0.4rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    width: 180px;
+  }
+  .search-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+  }
+  .search-button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
     padding: 0;
   }
-  .nav-links a {
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    display: block;
-    color: var(--color-text-light);
-    transition: color 0.2s ease;
+  .mobile-search { display: none; }
+
+  /* --- Header / Nav --- */
+  .main-nav { position: static; }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;}
+  .nav-links a { font-size: 1rem; }
+  .nav-toggle { display: none; }
+
+  /* --- About Section Layout --- */
+  .about-container { display: flex; align-items: flex-start; gap: 2rem; margin-top: 1rem; }
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    flex-shrink: 0;
+    object-fit: cover;
   }
-  .nav-links a:hover {
-    color: var(--color-accent);
+
+  /* --- Unified Card Grid System --- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .card {
+    position: relative;
+    display: block;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(1, 4, 9, 0.4);
+    border-color: var(--color-accent);
     text-decoration: none;
   }
-
-  .sidebar-footer {
+  .card-image {
     width: 100%;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    background-color: var(--color-bg);
+  }
+  .card-info { padding: 1rem 1.25rem 2.5rem 1.25rem; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+  .card-header h4 { font-size: 1.1em; font-weight: 700; color: var(--color-heading); }
+  .card-info p { font-size: 0.9em; color: var(--color-text-light); line-height: 1.6; margin: 0; }
+  .post-date { font-size: 0.8em; color: var(--color-text-light); margin-top: 0.75rem; }
+  .card-arrow {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 1rem;
+    font-size: 1.75rem;
     color: var(--color-text-light);
+    transition: transform 0.2s ease, color 0.2s ease;
   }
+  .card:hover .card-arrow { transform: translateX(5px); color: var(--color-accent); }
+  .tag {
+    background-color: var(--color-tag-bg); padding: 0.2em 0.5em;
+    border-radius: 6px; font-size: 0.85em; color: var(--color-accent);
+    flex-shrink: 0; margin-left: 0.5rem;
+  }
+  .view-all-container { text-align: center; margin-top: 2rem; }
+  .view-all-button {
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-accent);
+  }
+  .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); }
 
-  /* --- Main Content Area --- */
-  .content-wrapper {
-    flex-grow: 1;
-    margin-left: 280px;
-    padding: 2rem;
+  /* --- Card Type: Service --- */
+  .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; overflow: hidden; }
+  .service-icon { width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; }
+  .service-card .card-arrow { bottom: auto; right: 1.25rem; }
+
+  /* --- Card Type: R&eacute;sum&eacute; --- */
+  .resume-card { padding: 1.5rem; overflow: visible; }
+  .resume-card h4 {
+    color: var(--color-accent); margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; font-size: 1.2em;
   }
-  
+  .resume-card ul { list-style: '✓  '; color: var(--color-text-light); padding-left: 1.25rem; margin: 0; }
+  .resume-card li { margin-bottom: 0.75rem; padding-left: 0.5rem; }
+  .resume-card p { color: var(--color-text-light); line-height: 1.6; margin: 0 0 0.5rem 0; }
+  .resume-card p:last-child { margin-bottom: 0; }
+  .resume-card p strong { color: var(--color-text); font-weight: 500; }
+  .text-light-small { font-size: 0.9em; color: var(--color-text-light); }
+  .resume-card.cta-card {
+    background-color: var(--color-tag-bg); display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+  }
+  .resume-card.cta-card:hover { background-color: rgba(88, 166, 255, 0.2); }
+  .cta-card .cta-button { margin-top: 1rem; }
+
+  /* --- Forms --- */
+  .form-group { margin-bottom: 1.5rem; }
+  .form-input {
+    background-color: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 6px; padding: 0.75rem 1rem; font-family: var(--font-mono);
+    font-size: 1rem; color: var(--color-text); width: 100%; box-sizing: border-box;
+  }
+  .form-input:focus {
+    outline: none; border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+  }
+  .cta-button {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 0.5rem; background-color: #238636;
+    color: white;
+    border: 1px solid rgba(240, 246, 252, 0.1); border-radius: 6px;
+    padding: 0.75rem 1.25rem; font-family: var(--font-mono);
+    font-size: 1rem; font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .cta-button svg { fill: currentColor; }
+  .cta-button:hover { background-color: #2EA043; }
+  .newsletter-form { display: flex; gap: 0.5rem; }
+
+  /* --- Footer --- */
   .readme-footer {
-    padding: 2.5rem 0 1.5rem 0;
+    padding: 2.5rem var(--padding-x) 1.5rem var(--padding-x);
     margin: 2rem auto 0 auto;
     border-top: 1px solid var(--color-border);
-    text-align: center;
   }
-  .footer-socials {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .footer-column h4 { color: var(--color-accent); margin-bottom: 1rem; font-size: 1.1rem; }
+  .footer-tagline { color: var(--color-text-light); font-size: 0.9rem; max-width: 35ch; }
+  .footer-column .badge { margin-top: 0.5rem; }
+  .footer-links {
     list-style: none; padding: 0; margin: 0;
-    display: flex; gap: 1.5rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem 1rem;
   }
+  .footer-links li { margin: 0; }
+  .footer-links a { color: var(--color-text-light); text-decoration: none; font-size: 0.9rem; }
+  .footer-links a:hover { color: var(--color-accent); text-decoration: underline; }
+  .footer-socials { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.5rem; }
   .footer-socials a { color: var(--color-text-light); transition: color 0.2s ease; }
   .footer-socials a:hover { color: var(--color-accent); }
   .footer-socials svg { width: 24px; height: 24px; }
@@ -376,4 +604,69 @@ import Layout from '../layouts/Layout.astro';
   .footer-bottom-bar p { margin: 0; }
   .back-to-top { color: var(--color-text-light); text-decoration: none; transition: color 0.2s ease; }
   .back-to-top:hover { color: var(--color-accent); text-decoration: none; }
+
+  /* --- Responsive --- */
+  @media (max-width: 920px) {
+    :root {
+      --padding-x: 1.5rem;
+    }
+    .desktop-search { display: none; }
+    .mobile-search { display: block; }
+    .main-nav { position: static; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: calc(100% + 1rem);
+      right: 1.5rem;
+      width: 250px;
+      background-color: var(--color-surface);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(1,4,9,0.8);
+      z-index: 10;
+    }
+    .nav-links li { width: 100%; box-sizing: border-box; }
+    .nav-links .mobile-search .search-input { width: 100%; padding: 0.5rem 0.75rem; }
+    .nav-links .mobile-search { padding: 0.5rem; }
+    .main-nav.is-open .nav-links { display: flex; }
+    .nav-links a { display: block; padding: 0.5rem; width: 100%; border-radius: 4px; }
+    .nav-links a:hover { background-color: rgba(110,118,129,0.1); text-decoration: none; }
+    .nav-toggle {
+      display: block;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      color: var(--color-text);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      padding: 0.25rem 0.75rem;
+      cursor: pointer;
+    }
+    .nav-toggle.is-open { background-color: var(--color-accent); color: var(--color-bg); border-color: var(--color-accent); }
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --padding-x: 1rem;
+    }
+    .readme-header { padding: 1rem var(--padding-x); }
+    .readme-body { padding: 1.5rem var(--padding-x); }
+    .hero-section h1 { font-size: 2.25rem; }
+    .hero-tagline { font-size: 1rem; }
+    .hero-subtitle { font-size: 0.9rem; }
+    .hero-actions { flex-direction: column; width: 100%; }
+    .hero-actions .cta-button, .hero-actions .secondary-button { width: 100%; }
+    .about-container .profile-picture { display: none; }
+    .about-container { margin-top: 0; }
+    .newsletter-form { flex-direction: column; }
+    .card-grid { grid-template-columns: 1fr; }
+    .footer-grid { text-align: center; }
+    .footer-tagline { margin: 0 auto 1rem auto; }
+    .footer-column .badge, .footer-socials { justify-content: center; }
+    .footer-links { grid-template-columns: repeat(2, 1fr); }
+    .footer-bottom-bar { flex-direction: column; gap: 0.5rem; }
+  }
 </style>
