@@ -11,7 +11,7 @@ const port = 1337;
 app.use(gritty());
 app.use(express.static(__dirname));
 gritty.listen(socket, {
-  command: 'mc', // Replace with your desired command
+  command: 'bash', // You can change this to your desired shell
   autoRestart: true,
 });
 
