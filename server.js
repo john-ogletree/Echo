@@ -1,20 +1,11 @@
-const http = require('node:http');
 const gritty = require('gritty');
-const express = require('express');
-const io = require('socket.io');
 
-const app = express();
-const server = http.createServer(app);
-const socket = io.listen(server);
-const port = 1337;
-
-app.use(gritty());
-app.use(express.static(__dirname));
-gritty.listen(socket, {
-  command: 'bash', // You can change this to your desired shell
+// Configure Gritty to start a web server and handle all terminal functionality.
+// By default, it will handle terminal connections and serve static files.
+gritty({
+  port: 3000,
+  command: 'bash', // You can set this to any command you want to run.
   autoRestart: true,
 });
 
-server.listen(port, () => {
-  console.log(`Gritty server listening on port ${port}`);
-});
+console.log('Gritty server running on port 3000.');
