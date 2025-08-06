@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
           <li><a href="/directory">Directory</a></li>
         </ul>
       </nav>
-      <div class="sidebar-footer">
+      <div class="footer-socials-wrapper">
         <ul class="footer-socials">
           <li><a href="#" aria-label="GitHub Profile">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -31,7 +31,6 @@ import Layout from '../layouts/Layout.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
           </a></li>
         </ul>
-        <p>© <span id="year"></span> John Ogletree</p>
       </div>
     </aside>
     <main class="readme-body">
@@ -68,7 +67,7 @@ import Layout from '../layouts/Layout.astro';
               <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
             </div>
             <span class="card-arrow">→</span>
-          </a>
+            </a>
         </div>
         <div class="view-all-container">
           <a href="#" class="cta-button view-all-button">
@@ -213,12 +212,12 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded', function() {
-const yearSpan = document.getElementById('year');
-if (yearSpan) {
-yearSpan.textContent = new Date().getFullYear();
-}
-});
+  document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
 </script>
 
 <style>
@@ -334,14 +333,11 @@ yearSpan.textContent = new Date().getFullYear();
     text-decoration: none;
   }
 
-  .sidebar-footer {
+  .footer-socials-wrapper {
     width: 100%;
     border-top: 1px solid var(--color-border);
     padding-top: 1.5rem;
-    color: var(--color-text-light);
-    font-size: 0.9rem;
   }
-  .sidebar-footer p { margin: 0 0 1rem 0; }
 
   /* --- Main Content Area --- */
   .readme-body {
@@ -396,20 +392,15 @@ yearSpan.textContent = new Date().getFullYear();
     background-color: var(--color-border);
     border-color: var(--color-text);
   }
-  /* --- Branded HR --- */
-  .branded-hr {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 4rem 0;
-  }
-  .branded-hr .line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: var(--color-border);
-  }
-  .branded-hr .icon-repo {
+  /* --- About Section Layout --- */
+  .about-container { display: flex; align-items: flex-start; gap: 2rem; margin-top: 1rem; }
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
     flex-shrink: 0;
+    object-fit: cover;
   }
   /* --- Unified Card Grid System --- */
   .card-grid {
@@ -524,6 +515,13 @@ yearSpan.textContent = new Date().getFullYear();
     border-top: 1px solid var(--color-border);
     text-align: center;
   }
+  .footer-socials {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; gap: 1.5rem; justify-content: center;
+  }
+  .footer-socials a { color: var(--color-text-light); transition: color 0.2s ease; }
+  .footer-socials a:hover { color: var(--color-accent); }
+  .footer-socials svg { width: 24px; height: 24px; }
   .footer-bottom-bar {
     display: flex;
     justify-content: space-between; align-items: center;
@@ -532,58 +530,6 @@ yearSpan.textContent = new Date().getFullYear();
     color: var(--color-text-light);
   }
   .footer-bottom-bar p { margin: 0; }
-  .footer-socials {
-    list-style: none; padding: 0; margin: 0;
-    display: flex; gap: 1.5rem; justify-content: center;
-  }
-  .footer-socials a { color: var(--color-text-light); transition: color 0.2s ease; }
-  .footer-socials a:hover { color: var(--color-accent); }
-  .footer-socials svg { width: 24px; height: 24px; }
   .back-to-top { color: var(--color-text-light); text-decoration: none; transition: color 0.2s ease; }
   .back-to-top:hover { color: var(--color-accent); text-decoration: none; }
-  /* --- Responsive --- */
-  @media (max-width: 920px) {
-    .main-container {
-      flex-direction: column;
-    }
-    .sidebar {
-      position: static;
-      width: 100%;
-      height: auto;
-      padding: 1.5rem 1rem;
-      border-right: none;
-      border-bottom: 1px solid var(--color-border);
-    }
-    .readme-body {
-      margin-left: 0;
-      padding: 1.5rem 1rem;
-    }
-    .nav-links {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .main-nav {
-      margin-top: 1rem;
-    }
-    .sidebar-footer {
-      display: none; /* Hide footer on small screens to reduce clutter */
-    }
-  }
-  @media (max-width: 768px) {
-    .hero-section h1 { font-size: 2.25rem; }
-    .hero-tagline { font-size: 1rem; }
-    .hero-subtitle { font-size: 0.9rem; }
-    .hero-actions { flex-direction: column; width: 100%; }
-    .hero-actions .cta-button, .hero-actions .secondary-button { width: 100%; }
-    .about-container .profile-picture { display: none; }
-    .about-container { margin-top: 0; }
-    .newsletter-form { flex-direction: column; }
-    .card-grid { grid-template-columns: 1fr; }
-    .footer-grid { text-align: center; }
-    .footer-tagline { margin: 0 auto 1rem auto; }
-    .footer-column .badge, .footer-socials { justify-content: center; }
-    .footer-links { grid-template-columns: repeat(2, 1fr); }
-    .footer-bottom-bar { flex-direction: column; gap: 0.5rem; }
-  }
 </style>
