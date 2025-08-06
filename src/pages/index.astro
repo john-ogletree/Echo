@@ -3,11 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="availability-banner" id="availability-banner">
-    <p class="banner-status">status: available for hire</p>
-    <button class="banner-close-btn" aria-label="Close banner">✕</button>
-  </div>
-  <div class="readme-container" id="readme-container">
+  <div class="readme-container">
     <header class="readme-header">
       <div class="header-left">
         <div class="repo-title">
@@ -237,19 +233,6 @@ import Layout from '../layouts/Layout.astro';
     }
   });
 </script>
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', function() {
-    const banner = document.getElementById('availability-banner');
-    const readmeContainer = document.getElementById('readme-container');
-    const closeBtn = banner.querySelector('.banner-close-btn');
-    if (banner && closeBtn && readmeContainer) {
-      closeBtn.addEventListener('click', () => {
-        banner.classList.add('is-hidden');
-        readmeContainer.style.marginTop = '0';
-      });
-    }
-  });
-</script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
 
@@ -264,13 +247,12 @@ import Layout from '../layouts/Layout.astro';
     --color-tag-bg: rgba(88, 166, 255, 0.15);
     --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --padding-x: 2rem;
-    --banner-height: 40px;
   }
 
   /* --- Base & Typography --- */
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: calc(80px + var(--banner-height));
+    scroll-padding-top: 80px;
   }
   body {
     background-color: var(--color-bg);
@@ -309,8 +291,6 @@ import Layout from '../layouts/Layout.astro';
   /* --- Main Layout --- */
   .readme-container {
     background-color: var(--color-surface);
-    margin-top: var(--banner-height);
-    transition: margin-top 0.3s ease;
   }
   .readme-header {
     display: flex;
@@ -320,7 +300,7 @@ import Layout from '../layouts/Layout.astro';
     padding: 1rem var(--padding-x);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
-    top: var(--banner-height);
+    top: 0;
     z-index: 10;
     background-color: var(--color-surface);
   }
@@ -340,41 +320,6 @@ import Layout from '../layouts/Layout.astro';
   }
   .readme-body {
     padding: 2rem var(--padding-x);
-  }
-
-  /* --- Availability Banner --- */
-  .availability-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--banner-height);
-    background-color: var(--color-accent);
-    color: var(--color-bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    z-index: 11;
-    transition: transform 0.3s ease;
-  }
-  .availability-banner.is-hidden {
-    transform: translateY(-100%);
-  }
-  .banner-status {
-    margin: 0;
-  }
-  .banner-close-btn {
-    background: none;
-    border: none;
-    color: var(--color-bg);
-    cursor: pointer;
-    font-size: 1.2rem;
-    line-height: 1;
-    padding: 0.25rem;
-    font-family: sans-serif;
   }
 
   /* --- Hero Section --- */
@@ -403,6 +348,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .hero-actions {
     display: flex;
+    justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
   }
@@ -539,11 +485,13 @@ import Layout from '../layouts/Layout.astro';
   }
   .view-all-container { text-align: center; margin-top: 2rem; }
   .view-all-button {
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     width: 100%;
     background-color: transparent;
     border: 1px solid var(--color-border);
     color: var(--color-accent);
+    text-decoration: none;
   }
   .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); text-decoration: none; }
 
@@ -583,18 +531,23 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
   }
   .cta-button {
-    display: inline-flex; align-items: center; justify-content: center;
-    gap: 0.5rem; background-color: #238636;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #238636;
     color: white;
-    border: 1px solid rgba(240, 246, 252, 0.1); border-radius: 6px;
-    padding: 0.75rem 1.25rem; font-family: var(--font-mono);
-    font-size: 1rem; font-weight: 500;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    border-radius: 6px;
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease;
   }
-  .cta-button svg { fill: currentColor; }
   .cta-button:hover { background-color: #2EA043; text-decoration: none; }
-  .newsletter-form { display: flex; gap: 0.5rem; }
+  .newsletter-form { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
 
   /* --- Footer --- */
   .readme-footer {
@@ -618,7 +571,7 @@ import Layout from '../layouts/Layout.astro';
   .footer-links li { margin: 0; }
   .footer-links a { color: var(--color-text-light); text-decoration: none; font-size: 0.9rem; }
   .footer-links a:hover { color: var(--color-accent); text-decoration: underline; }
-  .footer-socials { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.5rem; }
+  .footer-socials { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 1.5rem; }
   .footer-socials a { color: var(--color-text-light); transition: color 0.2s ease; }
   .footer-socials a:hover { color: var(--color-accent); }
   .footer-socials svg { width: 24px; height: 24px; }
