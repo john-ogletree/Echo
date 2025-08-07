@@ -54,6 +54,71 @@ import Layout from '../layouts/Layout.astro';
     </header>
 
     <main class="readme-body">
+      <div id="banner-container">
+        <div id="banner-message"></div>
+        <div id="banner-countdown"></div>
+      </div>
+      <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+          const bannerContainer = document.getElementById('banner-container');
+          const bannerMessage = document.getElementById('banner-message');
+          const bannerCountdown = document.getElementById('banner-countdown');
+
+          const bannerData = [
+            {
+              message: "Happy Halloween! We're celebrating with a spooky sale.",
+              date: "2025-10-31",
+              active: false,
+            },
+            {
+              message: "Merry Christmas! Enjoy our festive deals this holiday season.",
+              date: "2025-12-25",
+              active: true,
+            },
+            {
+              message: "Happy New Year! Start fresh with our new services.",
+              date: "2026-01-01",
+              active: false,
+            },
+            // Add more banner objects here
+          ];
+
+          const activeBanner = bannerData.find(b => b.active);
+
+          if (activeBanner) {
+            bannerMessage.textContent = activeBanner.message;
+            bannerContainer.style.display = 'flex';
+            
+            const countdownDate = new Date(activeBanner.date).getTime();
+            
+            const updateCountdown = () => {
+              const now = new Date().getTime();
+              const distance = countdownDate - now;
+
+              if (distance < 0) {
+                bannerCountdown.textContent = "It's here!";
+                clearInterval(countdownInterval);
+                return;
+              }
+
+              const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+              bannerCountdown.innerHTML = `
+                ${days}d ${hours}h ${minutes}m ${seconds}s
+              `;
+            };
+
+            updateCountdown();
+            const countdownInterval = setInterval(updateCountdown, 1000);
+
+          } else {
+            bannerContainer.style.display = 'none';
+          }
+        });
+      </script>
       <section id="hero">
         <div class="hero-header">
           <div class="hero-profile-picture">
@@ -216,50 +281,6 @@ import Layout from '../layouts/Layout.astro';
         <h2 id="newsletter">Subscribe</h2>
         <p>Receive occasional updates about new projects and articles. No spam.</p>
         <form class="newsletter-form" action="#">
-          <input class="form-input" type="email" placeholder="your-email@domain.com" required>
-          <button type="submit" class="cta-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-            <span>Subscribe</span>
-          </button>
-        </form>
-
-        <h2 id="resume">R&eacute;sum&eacute;</h2>
-        <div class="card-grid">
-          <div class="card resume-card">
-            <h4>Design</h4>
-            <ul>
-              <li>UI/UX & Prototyping</li>
-              <li>Branding & Art Direction</li>
-              <li>Iconography & Illustration</li>
-            </ul>
-          </div>
-          <div class="card resume-card">
-            <h4>Tools & Tech</h4>
-            <ul>
-              <li>Figma & Adobe Creative Suite</li>
-              <li>HTML, CSS & JavaScript</li>
-              <li>Astro, Node.js & Blender</li>
-            </ul>
-          </div>
-          <div class="card resume-card">
-            <h4>Experience</h4>
-            <p><strong>Freelance Digital Designer</strong></p>
-            <p class="text-light-small">(2015 - Present)</p>
-            <p>Partnered with over 50 clients, from startups to established companies, to deliver high-quality work.</p>
-          </div>
-          <div class="card resume-card cta-card">
-            <h4>Download Full R&eacute;sum&eacute;</h4>
-            <p>Get the complete details on my skills and experience.</p>
-            <a href="/resume.pdf" target="_blank" class="cta-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-              <span>Download PDF</span>
-            </a>
-          </div>
-        </div>
-
-        <h2 id="contact">Contact</h2>
-        <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
-        <form class="contact-form" action="#">
           <div class="form-group">
             <label for="name">Your Name:</label>
             <input class="form-input" type="text" id="name" name="name" required>
