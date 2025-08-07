@@ -595,7 +595,7 @@ import Layout from '../layouts/Layout.astro';
     .mobile-search { display: block; }
     
     .nav-toggle {
-      display: block;
+      display: block; /* Hamburger icon is visible by default */
       background: none;
       border: none;
       color: var(--color-text);
@@ -603,14 +603,24 @@ import Layout from '../layouts/Layout.astro';
       cursor: pointer;
       z-index: 100;
     }
+    
     .nav-close {
-      display: block;
+      display: none; /* 'X' icon is hidden by default */
       background: none;
       border: none;
       color: var(--color-text);
       cursor: pointer;
       padding: 0.5rem;
     }
+    
+    /* When the menu is open, swap icons */
+    .nav-drawer-container.is-open ~ .nav-toggle {
+        display: none;
+    }
+    .nav-drawer-container.is-open .nav-close {
+        display: block;
+    }
+
     .nav-drawer-container {
       position: fixed;
       top: 0;
@@ -623,7 +633,6 @@ import Layout from '../layouts/Layout.astro';
       transition: transform 0.3s ease-in-out;
       z-index: 99;
       box-shadow: -4px 0 16px rgba(0, 0, 0, 0.5);
-      overflow-y: auto;
     }
     .nav-drawer-container.is-open {
       transform: translateX(0);
@@ -642,7 +651,7 @@ import Layout from '../layouts/Layout.astro';
       gap: 1rem;
       padding: 1.5rem 1.5rem 1rem 1.5rem;
       border-bottom: 1px solid var(--color-border);
-      flex-shrink: 0; /* Prevents the header from shrinking */
+      flex-shrink: 0;
     }
 
     .nav-header-mobile .mobile-search {
@@ -657,7 +666,7 @@ import Layout from '../layouts/Layout.astro';
       margin: 0;
       padding: 2rem 1.5rem;
       flex-grow: 1;
-      overflow-y: auto; /* Enables scrolling for the links section */
+      overflow-y: auto;
     }
     .nav-links a {
       font-size: 1.1rem;
