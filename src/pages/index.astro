@@ -164,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
           </a>
           <a href="#resume" class="dashboard-tile tile-resume">
             <div>
-              <h3>R&eacute;sum&eacute;</h3>
+              <h3>Résumé</h3>
               <p>My skills, education, and professional experience in detail.</p>
             </div>
             <span class="tile-arrow">→</span>
@@ -317,7 +317,7 @@ import Layout from '../layouts/Layout.astro';
                   <li><a href="#services">Services</a></li>
                   <li><a href="#projects">Projects</a></li>
                   <li><a href="#blog">Blog</a></li>
-                  <li><a href="#resume">R&eacute;sum&eacute;</a></li>
+                  <li><a href="#resume">Résumé</a></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>
               </div>
@@ -350,7 +350,7 @@ import Layout from '../layouts/Layout.astro';
             </ul>
           </div>
           <div class="footer-bottom-bar">
-            <p>&#169; <span id="year"></span> John Ogletree</p>
+            <p>© <span id="year"></span> John Ogletree</p>
             <a href="#" class="back-to-top">Back to top ↑</a>
           </div>
         </footer>
@@ -423,7 +423,6 @@ import Layout from '../layouts/Layout.astro';
     --color-border: #30363D;
     --color-tag-bg: rgba(88, 166, 255, 0.15);
     --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --padding-x: 2rem;
   }
 
   /* --- Base & Typography --- */
@@ -437,8 +436,7 @@ import Layout from '../layouts/Layout.astro';
     font-family: var(--font-mono);
     font-size: 16px;
     line-height: 1.7;
-    margin: 0;
-    padding: 0;
+    
     transition: transform 0.3s ease-in-out;
   }
   body.no-scroll {
@@ -459,7 +457,6 @@ import Layout from '../layouts/Layout.astro';
     content: '##';
     color: var(--color-text-light);
     font-weight: 400;
-    margin-right: 0.5rem;
   }
   p { margin: 0 0 1rem 0; max-width: 80ch; }
   a { color: var(--color-accent); text-decoration: none; }
@@ -504,11 +501,10 @@ import Layout from '../layouts/Layout.astro';
     fill: var(--color-text-light);
   }
   .readme-body {
-    padding: 2rem var(--padding-x);
     transition: filter 0.3s ease-in-out;
   }
   
-  /* --- Banner Section --- */
+  /* --- Banner Section (Responsive) --- */
   #dynamic-banner {
     position: relative;
     width: 100%;
@@ -519,6 +515,8 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     justify-content: center;
     padding: 4rem 1rem;
+    text-align: center;
+    overflow: hidden;
   }
   .banner-countdown-title {
     font-size: 2.5rem;
@@ -887,7 +885,7 @@ import Layout from '../layouts/Layout.astro';
   .service-icon { width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; }
   .service-card .card-arrow { bottom: auto; right: 1.25rem; }
 
-  /* --- Card Type: R&eacute;sum&eacute; --- */
+  /* --- Card Type: Résumé --- */
   .resume-card { padding: 1.5rem; overflow: visible; }
   .resume-card h4 {
     color: var(--color-accent); margin-bottom: 1rem;
@@ -1122,6 +1120,32 @@ import Layout from '../layouts/Layout.astro';
     .readme-body {
       padding: 1.5rem var(--padding-x);
     }
+    /* Banner responsive styles */
+    #dynamic-banner {
+      padding: 3rem 1rem;
+    }
+    .banner-countdown-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .banner-countdown-modules {
+      gap: 1rem;
+    }
+    .countdown-module {
+      width: 80px;
+      height: 80px;
+    }
+    .countdown-number {
+      font-size: 2rem;
+    }
+    .countdown-label {
+      font-size: 0.7rem;
+    }
+    .banner-footer-text {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+
     .dashboard-grid {
       grid-template-columns: 1fr;
       grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
@@ -1151,5 +1175,34 @@ import Layout from '../layouts/Layout.astro';
     .footer-column .badge, .footer-socials { justify-content: center; }
     .footer-links { grid-template-columns: repeat(2, 1fr); }
     .footer-bottom-bar { flex-direction: column; gap: 0.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    /* Banner responsive styles for small phones */
+    #dynamic-banner {
+      padding: 2rem 1rem;
+    }
+    .banner-countdown-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .banner-countdown-modules {
+      gap: 0.75rem;
+    }
+    .countdown-module {
+      width: 60px;
+      height: 60px;
+      padding: 0.5rem;
+    }
+    .countdown-number {
+      font-size: 1.5rem;
+    }
+    .countdown-label {
+      font-size: 0.6rem;
+    }
+    .banner-footer-text {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
   }
 </style>
