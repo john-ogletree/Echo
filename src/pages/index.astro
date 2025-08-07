@@ -12,12 +12,6 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       <div class="header-right">
-        <form class="search-form desktop-search" action="/directory" method="get">
-          <input type="search" name="q" class="search-input" placeholder="Search...">
-          <button type="submit" class="search-button" aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
-          </button>
-        </form>
         <div class="nav-drawer-container" id="nav-drawer-container">
           <nav class="main-nav" id="main-nav">
             <div class="nav-header-mobile">
@@ -307,8 +301,7 @@ import Layout from '../layouts/Layout.astro';
                 <li><a href="#" aria-label="Dribbble Profile">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
                 </a></li>
-              </ul>
-            </div>
+            </ul>
           </div>
           <div class="footer-bottom-bar">
             <p>&#169; <span id="year"></span> John Ogletree</p>
@@ -476,15 +469,122 @@ import Layout from '../layouts/Layout.astro';
     cursor: pointer;
     padding: 0;
   }
-  .mobile-search { display: none; }
+  /* The mobile search form is now the only one, so it needs to be visible by default */
+  .mobile-search { display: block; }
+  .desktop-search { display: none; }
+
 
   /* --- Header / Nav --- */
-  .main-nav { position: static; }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;}
-  .nav-links a { font-size: 1rem; }
-  .nav-toggle { display: none; }
-  .nav-close { display: none; }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 2rem 1.5rem;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  .nav-links a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    display: block;
+    color: var(--color-text);
+  }
+  .nav-links a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
 
+  /* The toggle button is now always visible */
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  /* The close button inside the nav is now always visible */
+  .nav-close {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  /* When nav is open, swap the icons */
+  .nav-drawer-container.is-open ~ .nav-toggle {
+      display: none;
+  }
+
+  /* When nav is closed, hide the close button */
+  .nav-drawer-container .nav-close {
+      display: none;
+  }
+  /* But show it when nav is open */
+  .nav-drawer-container.is-open .nav-close {
+      display: block;
+  }
+
+
+  .nav-drawer-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 99;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-drawer-container.is-open {
+    transform: translateX(0);
+  }
+  
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+  }
+
+  .nav-header-mobile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+  }
+
+  .nav-header-mobile .mobile-search {
+    flex-grow: 1;
+  }
+
+  .nav-socials {
+    list-style: none;
+    padding: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-shrink: 0;
+  }
+  .nav-socials a { color: var(--color-text-light); }
+  .nav-socials a:hover { color: var(--color-accent); }
+  .nav-socials svg { width: 24px; height: 24px; }
+    
   /* --- New Hero/Dashboard Section --- */
   .hero-header {
     display: flex;
@@ -722,6 +822,21 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 920px) {
     :root {
       --padding-x: 1.5rem;
+    }
+    .hero-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-info h1 {
+      font-size: 1.75rem;
+    }
+    .hero-profile-picture {
+      display: none;
+    }
+    .branded-hr {
+      margin: 3rem 0;
     }
     .readme-container {
       position: relative;
