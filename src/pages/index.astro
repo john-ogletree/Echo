@@ -5,12 +5,6 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
   <div class="readme-container">
     <header class="readme-header">
-      <div class="header-left">
-        <div class="repo-title">
-          <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
-          <a href="/" class="font-bold">ECHO</a>
-        </div>
-      </div>
       <div class="header-right">
         <div class="nav-drawer-container" id="nav-drawer-container">
           <nav class="main-nav" id="main-nav">
@@ -48,6 +42,12 @@ import Layout from '../layouts/Layout.astro';
             <path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
+      </div>
+      <div class="header-left">
+        <div class="repo-title">
+          <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
+          <a href="/" class="font-bold">ECHO</a>
+        </div>
       </div>
     </header>
 
@@ -422,6 +422,8 @@ import Layout from '../layouts/Layout.astro';
     top: 0;
     z-index: 10;
     background-color: var(--color-surface);
+    /* Reverse the order of elements for left-side nav on desktop and mobile */
+    flex-direction: row-reverse;
   }
   .header-left, .header-right {
     display: flex;
@@ -469,7 +471,6 @@ import Layout from '../layouts/Layout.astro';
     cursor: pointer;
     padding: 0;
   }
-  /* The mobile search form is now the only one, so it needs to be visible by default */
   .mobile-search { display: block; }
   .desktop-search { display: none; }
 
@@ -497,8 +498,6 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-accent);
     text-decoration: none;
   }
-
-  /* The toggle button is now always visible */
   .nav-toggle {
     display: block;
     background: none;
@@ -508,46 +507,40 @@ import Layout from '../layouts/Layout.astro';
     cursor: pointer;
     z-index: 100;
   }
-
-  /* The close button inside the nav is now always visible */
   .nav-close {
-    display: block;
+    display: none;
     background: none;
     border: none;
     color: var(--color-text);
     cursor: pointer;
     padding: 0.5rem;
   }
-
+  
   /* When nav is open, swap the icons */
   .nav-drawer-container.is-open ~ .nav-toggle {
       display: none;
   }
-
-  /* When nav is closed, hide the close button */
   .nav-drawer-container .nav-close {
       display: none;
   }
-  /* But show it when nav is open */
   .nav-drawer-container.is-open .nav-close {
       display: block;
   }
 
-
+  /* The drawer now slides from the left */
   .nav-drawer-container {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     width: 300px;
     height: 100vh;
     background-color: var(--color-surface);
-    border-left: 1px solid var(--color-border);
-    transform: translateX(100%);
+    border-right: 1px solid var(--color-border);
+    transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 99;
-    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
   }
-
   .nav-drawer-container.is-open {
     transform: translateX(0);
   }
@@ -845,7 +838,7 @@ import Layout from '../layouts/Layout.astro';
     .mobile-search { display: block; }
     
     .nav-toggle {
-      display: block; /* Hamburger icon is visible by default */
+      display: block;
       background: none;
       border: none;
       color: var(--color-text);
@@ -855,7 +848,7 @@ import Layout from '../layouts/Layout.astro';
     }
     
     .nav-close {
-      display: none; /* 'X' icon is hidden by default */
+      display: none;
       background: none;
       border: none;
       color: var(--color-text);
@@ -863,26 +856,29 @@ import Layout from '../layouts/Layout.astro';
       padding: 0.5rem;
     }
     
-    /* When the menu is open, swap icons */
+    /* When nav is open, swap the icons */
     .nav-drawer-container.is-open ~ .nav-toggle {
         display: none;
     }
-    .nav-header-mobile .nav-close {
+    .nav-drawer-container .nav-close {
+        display: none;
+    }
+    .nav-drawer-container.is-open .nav-close {
         display: block;
     }
 
     .nav-drawer-container {
       position: fixed;
       top: 0;
-      right: 0;
+      left: 0;
       width: 300px;
       height: 100vh;
       background-color: var(--color-surface);
-      border-left: 1px solid var(--color-border);
-      transform: translateX(100%);
+      border-right: 1px solid var(--color-border);
+      transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
       z-index: 99;
-      box-shadow: -4px 0 16px rgba(0, 0, 0, 0.5);
+      box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
     }
     .nav-drawer-container.is-open {
       transform: translateX(0);
@@ -906,29 +902,6 @@ import Layout from '../layouts/Layout.astro';
 
     .nav-header-mobile .mobile-search {
       flex-grow: 1;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      list-style: none;
-      margin: 0;
-      padding: 2rem 1.5rem;
-      flex-grow: 1;
-      overflow-y: auto;
-    }
-    .nav-links a {
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--color-border);
-      display: block;
-      color: var(--color-text);
-    }
-    .nav-links a:hover {
-      color: var(--color-accent);
-      text-decoration: none;
     }
 
     .nav-socials {
