@@ -600,11 +600,14 @@ import Layout from '../layouts/Layout.astro';
   }
   .hero-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
   }
   .hero-info h1 {
     font-size: 2.25rem;
-    margin-bottom: 0.5rem;
+    margin: 0;
   }
   .hero-tagline {
     color: var(--color-text-light);
@@ -866,7 +869,7 @@ import Layout from '../layouts/Layout.astro';
     .mobile-search { display: block; }
     
     .nav-toggle {
-      display: block; /* Hamburger icon is visible by default */
+      display: block;
       background: none;
       border: none;
       color: var(--color-text);
@@ -876,7 +879,7 @@ import Layout from '../layouts/Layout.astro';
     }
     
     .nav-close {
-      display: none; /* 'X' icon is hidden by default */
+      display: none;
       background: none;
       border: none;
       color: var(--color-text);
