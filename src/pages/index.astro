@@ -20,18 +20,32 @@ import Layout from '../layouts/Layout.astro';
         </form>
         <div class="nav-drawer-container" id="nav-drawer-container">
           <nav class="main-nav" id="main-nav">
+            <div class="nav-header-mobile">
+              <form class="search-form mobile-search" action="/directory" method="get">
+                <input type="search" name="q" class="search-input" placeholder="Search...">
+              </form>
+              <button class="nav-close" aria-label="Close navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
             <ul class="nav-links">
-              <li>
-                <form class="search-form mobile-search" action="/directory" method="get">
-                  <input type="search" name="q" class="search-input" placeholder="Search...">
-                </form>
-              </li>
               <li><a href="#about">About</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#projects">Projects</a></li>
               <li><a href="#resume">R&eacute;sum&eacute;</a></li>
               <li><a href="#contact">Contact</a></li>
               <li><a href="/directory">Directory</a></li>
+            </ul>
+            <ul class="nav-socials">
+                <li><a href="#" aria-label="GitHub Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a></li>
+                <li><a href="#" aria-label="LinkedIn Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a></li>
+                <li><a href="#" aria-label="Dribbble Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+                </a></li>
             </ul>
           </nav>
         </div>
@@ -109,6 +123,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <h2 id="blog">Latest Thoughts</h2>
+        <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
         <div class="card-grid">
           <a href="#" class="card">
             <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
@@ -253,9 +268,9 @@ import Layout from '../layouts/Layout.astro';
   document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
     const navDrawer = document.getElementById('nav-drawer-container');
+    const navClose = document.querySelector('.nav-close');
     const body = document.body;
 
-    // Function to toggle the mobile navigation
     function toggleMobileNav() {
       const isOpen = navDrawer.classList.contains('is-open');
       navDrawer.classList.toggle('is-open', !isOpen);
@@ -265,9 +280,9 @@ import Layout from '../layouts/Layout.astro';
 
     if (navToggle && navDrawer) {
       navToggle.addEventListener('click', toggleMobileNav);
+      navClose.addEventListener('click', toggleMobileNav);
     }
 
-    // Close the menu when a link is clicked
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -412,6 +427,7 @@ import Layout from '../layouts/Layout.astro';
   .nav-links { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;}
   .nav-links a { font-size: 1rem; }
   .nav-toggle { display: none; }
+  .nav-close { display: none; }
 
   /* --- About Section Layout --- */
   .about-container { display: flex; align-items: flex-start; gap: 2rem; margin-top: 1rem; }
@@ -587,6 +603,14 @@ import Layout from '../layouts/Layout.astro';
       cursor: pointer;
       z-index: 100;
     }
+    .nav-close {
+      display: block;
+      background: none;
+      border: none;
+      color: var(--color-text);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
     .nav-drawer-container {
       position: fixed;
       top: 0;
@@ -603,22 +627,36 @@ import Layout from '../layouts/Layout.astro';
     .nav-drawer-container.is-open {
       transform: translateX(0);
     }
+    
     .main-nav {
       display: flex;
       flex-direction: column;
       height: 100%;
-      padding: 2rem 1.5rem;
+      padding: 0;
     }
+
+    .nav-header-mobile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem 1.5rem 1rem 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+      flex-shrink: 0; /* Prevents the header from shrinking */
+    }
+
+    .nav-header-mobile .mobile-search {
+      flex-grow: 1;
+    }
+
     .nav-links {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
       list-style: none;
       margin: 0;
-      padding: 0;
-    }
-    .nav-links .mobile-search {
-      margin-bottom: 1rem;
+      padding: 2rem 1.5rem;
+      flex-grow: 1;
+      overflow-y: auto; /* Enables scrolling for the links section */
     }
     .nav-links a {
       font-size: 1.1rem;
@@ -632,6 +670,19 @@ import Layout from '../layouts/Layout.astro';
       color: var(--color-accent);
       text-decoration: none;
     }
+
+    .nav-socials {
+      list-style: none;
+      padding: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-shrink: 0;
+    }
+    .nav-socials a { color: var(--color-text-light); }
+    .nav-socials a:hover { color: var(--color-accent); }
+    .nav-socials svg { width: 24px; height: 24px; }
     
     .dashboard-grid {
       grid-template-columns: 1fr 1fr;
