@@ -55,76 +55,71 @@ import Layout from '../layouts/Layout.astro';
 
     <main class="readme-body">
       <div id="dynamic-banner">
-        <div class="dynamic-banner-content">
-          <p id="banner-agency-name">AGENCY</p>
-          <h2 id="banner-title"></h2>
-          <p id="banner-subtitle"></p>
-          <a id="banner-cta" href="#" class="cta-button"></a>
+        <h2 id="banner-title" class="banner-countdown-title"></h2>
+        <div id="banner-countdown-display" class="banner-countdown-modules">
+          <div class="countdown-module">
+            <span class="countdown-number" id="countdown-days"></span>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-module">
+            <span class="countdown-number" id="countdown-hours"></span>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-module">
+            <span class="countdown-number" id="countdown-minutes"></span>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-module">
+            <span class="countdown-number" id="countdown-seconds"></span>
+            <div class="countdown-label">Seconds</div>
+          </div>
         </div>
+        <p id="banner-footer-text" class="banner-footer-text"></p>
       </div>
 
       <script is:inline>
         document.addEventListener('DOMContentLoaded', () => {
-          const dynamicBanner = document.getElementById('dynamic-banner');
+          const bannerContainer = document.getElementById('dynamic-banner');
           const bannerTitle = document.getElementById('banner-title');
-          const bannerSubtitle = document.getElementById('banner-subtitle');
-          const bannerAgencyName = document.getElementById('banner-agency-name');
-          const bannerCta = document.getElementById('banner-cta');
+          const footerText = document.getElementById('banner-footer-text');
+          const daysEl = document.getElementById('countdown-days');
+          const hoursEl = document.getElementById('countdown-hours');
+          const minutesEl = document.getElementById('countdown-minutes');
+          const secondsEl = document.getElementById('countdown-seconds');
 
-          const bannerData = [
-            {
-              id: 'christmas-sale',
-              active: false,
-              agencyName: 'Studio',
-              title: 'Seasonal Sale!',
-              subtitle: 'Get 50% off all design packages this holiday season.',
-              cta: { text: 'Shop Now', link: '/services/index' },
-              styles: {
-                '--banner-bg': '#331e1e',
-                '--banner-accent-color': '#e59a59',
-                '--banner-text-color': '#fff',
-                '--banner-image': 'url(https://placehold.co/1200x600/331e1e/e59a59)',
-                '--banner-cta-bg': '#e59a59',
-                '--banner-cta-text': '#331e1e'
-              }
-            },
-            {
-              id: 'launch-event',
-              active: true,
-              agencyName: 'ECHO',
-              title: 'New Service Launch!',
-              subtitle: 'Introducing a revolutionary way to build your brand from the ground up.',
-              cta: { text: 'Learn More', link: '/services/index' },
-              styles: {
-                '--banner-bg': '#0D1117',
-                '--banner-accent-color': '#ffc400',
-                '--banner-text-color': '#E6EDF3',
-                '--banner-image': 'url(https://placehold.co/1200x600/161B22/E6EDF3?text=Launch+Event)',
-                '--banner-cta-bg': '#ffc400',
-                '--banner-cta-text': '#000'
-              }
-            }
-            // You can add more banners here
-          ];
+          const targetDate = new Date('2025-12-25T00:00:00').getTime();
+          const countdownTitle = 'Holiday Countdown!';
+          const countdownFooterText = 'The perfect time to find new projects.';
+          
+          let countdownInterval;
 
-          const activeBanner = bannerData.find(b => b.active);
+          const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
 
-          if (activeBanner) {
-            bannerTitle.textContent = activeBanner.title;
-            bannerSubtitle.textContent = activeBanner.subtitle;
-            bannerAgencyName.textContent = activeBanner.agencyName;
-            bannerCta.textContent = activeBanner.cta.text;
-            bannerCta.href = activeBanner.cta.link;
-
-            for (const [key, value] of Object.entries(activeBanner.styles)) {
-              dynamicBanner.style.setProperty(key, value);
+            if (distance < 0) {
+              clearInterval(countdownInterval);
+              bannerTitle.textContent = 'Happy Holidays!';
+              footerText.textContent = 'Season’s greetings from john-ogletree/Echo.';
+              document.getElementById('banner-countdown-display').style.display = 'none';
+              return;
             }
 
-            dynamicBanner.style.display = 'flex';
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-          } else {
-            dynamicBanner.style.display = 'none';
-          }
+            daysEl.textContent = days.toString().padStart(2, '0');
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minutesEl.textContent = minutes.toString().padStart(2, '0');
+            secondsEl.textContent = seconds.toString().padStart(2, '0');
+          };
+
+          bannerTitle.textContent = countdownTitle;
+          footerText.textContent = countdownFooterText;
+          countdownInterval = setInterval(updateCountdown, 1000);
+          updateCountdown(); // Initial call to display immediately
         });
       </script>
       <section id="hero">
@@ -517,89 +512,57 @@ import Layout from '../layouts/Layout.astro';
   #dynamic-banner {
     position: relative;
     width: 100%;
-    height: 300px;
-    background-color: var(--banner-bg);
-    color: var(--banner-text-color);
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-  #dynamic-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 65%;
-    height: 100%;
-    background-image: var(--banner-image);
-    background-size: cover;
-    background-position: center;
-    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  #dynamic-banner::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: 100%;
-    background-color: var(--banner-accent-color);
-    transform: skewX(-20deg);
-    transform-origin: top right;
-    z-index: 1;
-  }
-  .dynamic-banner-content {
-    position: relative;
-    z-index: 2;
-    padding: 2rem;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    max-width: 50%;
-  }
-  #banner-agency-name {
-    font-weight: 500;
-    font-size: 1.2em;
-    color: var(--banner-accent-color);
-    margin: 0;
-  }
-  #banner-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1.2;
-    color: var(--banner-text-color);
-  }
-  #banner-subtitle {
-    font-size: 1rem;
-    color: var(--banner-text-color);
-    margin: 0;
-    line-height: 1.5;
-  }
-  #banner-cta {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    background-color: var(--banner-cta-bg);
-    color: var(--banner-cta-text);
-    border: 1px solid transparent;
-    border-radius: 6px;
-    padding: 0.75rem 1.25rem;
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-    text-decoration: none;
-    align-self: flex-start;
-    margin-top: 1rem;
+    padding: 4rem 1rem;
   }
-  #banner-cta:hover {
-    background-color: var(--color-accent);
+  .banner-countdown-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .banner-countdown-modules {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .countdown-module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background-color: #1a1e23;
+    border-radius: 8px;
+  }
+  .countdown-number {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
     color: #fff;
   }
+  .countdown-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+  .banner-footer-text {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: var(--color-text-light);
+    text-align: center;
+  }
+
 
   /* --- Header Search --- */
   .search-form { position: relative; }
@@ -1030,28 +993,6 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 920px) {
     :root {
       --padding-x: 1.5rem;
-    }
-    #dynamic-banner {
-      flex-direction: column;
-      height: auto;
-    }
-    #dynamic-banner::before,
-    #dynamic-banner::after {
-      content: none;
-    }
-    .dynamic-banner-content {
-      max-width: 100%;
-      text-align: center;
-      padding: 1.5rem;
-      gap: 0.5rem;
-    }
-    .dynamic-banner-content #banner-agency-name,
-    .dynamic-banner-content #banner-title,
-    .dynamic-banner-content #banner-subtitle {
-      text-align: center;
-    }
-    .dynamic-banner-content #banner-cta {
-      align-self: center;
     }
     .hero-header {
       flex-direction: column;
