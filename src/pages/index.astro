@@ -109,6 +109,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <h2 id="blog">Latest Thoughts</h2>
+        <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
         <div class="card-grid">
           <a href="#" class="card">
             <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
@@ -255,7 +256,6 @@ import Layout from '../layouts/Layout.astro';
     const navDrawer = document.getElementById('nav-drawer-container');
     const body = document.body;
 
-    // Function to toggle the mobile navigation
     function toggleMobileNav() {
       const isOpen = navDrawer.classList.contains('is-open');
       navDrawer.classList.toggle('is-open', !isOpen);
@@ -267,7 +267,6 @@ import Layout from '../layouts/Layout.astro';
       navToggle.addEventListener('click', toggleMobileNav);
     }
 
-    // Close the menu when a link is clicked
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -599,6 +598,7 @@ import Layout from '../layouts/Layout.astro';
       transition: transform 0.3s ease-in-out;
       z-index: 99;
       box-shadow: -4px 0 16px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
     }
     .nav-drawer-container.is-open {
       transform: translateX(0);
