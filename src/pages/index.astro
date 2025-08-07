@@ -406,6 +406,10 @@ import Layout from '../layouts/Layout.astro';
   body.no-scroll {
     overflow: hidden;
   }
+  body.no-scroll .readme-body {
+    filter: blur(5px);
+    pointer-events: none;
+  }
   h1, h2, h3, h4 {
     font-family: var(--font-mono);
     font-weight: 500;
@@ -463,6 +467,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .readme-body {
     padding: 2rem var(--padding-x);
+    transition: filter 0.3s ease-in-out;
   }
 
   /* --- Header Search --- */
