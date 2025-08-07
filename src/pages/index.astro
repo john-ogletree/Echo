@@ -54,144 +54,194 @@ import Layout from '../layouts/Layout.astro';
     </header>
 
     <main class="readme-body">
-      <div id="banner-container">
-        <div id="banner-content">
-            <div class="banner-logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                <p class="banner-agency-name">Agency</p>
-            </div>
-            <div class="banner-heading-group">
-                <h2 class="banner-title">John Ogletree</h2>
-                <h3 class="banner-subtitle">Digital Artist & Designer</h3>
-            </div>
-            <div class="banner-contact-info">
-                <div class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494v.004a.79.79 0 0 1-.085.246l-.375 1.839a.79.79 0 0 1-.358.46l-1.393.754-.42.227a.25.25 0 0 0-.112.338l.152.457a.25.25 0 0 0 .34.112l1.393-.755.42-.226a.79.79 0 0 1 .358-.46l.48-2.34a1.745 1.745 0 0 1 .374-.602L4.3 1.258a1.745 1.745 0 0 1 .163-2.61 1.745 1.745 0 0 1 2.61-.163L9.71 2.98a.79.79 0 0 1 .315 1.494v.004c.13.52.014 1.071-.315 1.494L6.29 2.98.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L8.707 1.5Z"/></svg>
-                    <p>000 123 456 789</p>
-                </div>
-                <div class="contact-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
-                    <p>www.website.com</p>
-                </div>
-            </div>
+      <div id="dynamic-banner">
+        <div class="dynamic-banner-content">
+          <p id="banner-agency-name">AGENCY</p>
+          <h2 id="banner-title"></h2>
+          <p id="banner-subtitle"></p>
+          <a id="banner-cta" href="#" class="cta-button"></a>
         </div>
       </div>
-      <main class="readme-body">
-        <section id="hero">
-          <div class="hero-header">
-            <div class="hero-profile-picture">
-              <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
-            </div>
-            <div class="hero-info">
-              <h1>Hello, I'm John Ogletree.</h1>
-              <p class="hero-tagline">A multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality.</p>
-            </div>
-          </div>
 
-          <div class="dashboard-grid">
-            <a href="#about" class="dashboard-tile tile-about">
-              <div>
-                <h3>About</h3>
-                <p>A little about my background, philosophy, and experience.</p>
-              </div>
-              <span class="tile-arrow">→</span>
-            </a>
-            <a href="#projects" class="dashboard-tile tile-projects">
-              <div>
-                <h3>Projects</h3>
-                <p>A selection of my best work across various disciplines.</p>
-              </div>
-              <span class="tile-arrow">→</span>
-            </a>
-            <a href="#services" class="dashboard-tile tile-services">
-              <div>
-                <h3>Services</h3>
-                <p>The different ways I can help you bring your ideas to life.</p>
-              </div>
-              <span class="tile-arrow">→</span>
-            </a>
-            <a href="#blog" class="dashboard-tile tile-blog">
-              <div>
-                <h3>Blog</h3>
-                <p>My latest thoughts on design, art, and technology.</p>
-              </div>
-              <span class="tile-arrow">→</span>
-            </a>
-            <a href="#resume" class="dashboard-tile tile-resume">
-              <div>
-                <h3>R&eacute;sum&eacute;</h3>
-                <p>My skills, education, and professional experience in detail.</p>
-              </div>
-              <span class="tile-arrow">→</span>
-            </a>
-            <a href="#contact" class="dashboard-tile tile-contact">
-              <div>
-                <h3>Contact</h3>
-                <p>Get in touch to discuss new projects or collaborations.</p>
-              </div>
-              <span class="tile-arrow">→</span>
-            </a>
-          </div>
-        </section>
+      <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+          const dynamicBanner = document.getElementById('dynamic-banner');
+          const bannerTitle = document.getElementById('banner-title');
+          const bannerSubtitle = document.getElementById('banner-subtitle');
+          const bannerAgencyName = document.getElementById('banner-agency-name');
+          const bannerCta = document.getElementById('banner-cta');
 
-        <div class="branded-hr">
-          <div class="line"></div>
-          <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
-          <div class="line"></div>
-        </div>
-        <article id="content">
-          <h2 id="about">About</h2>
-          <div class="about-container">
+          const bannerData = [
+            {
+              id: 'christmas-sale',
+              active: false,
+              agencyName: 'Studio',
+              title: 'Seasonal Sale!',
+              subtitle: 'Get 50% off all design packages this holiday season.',
+              cta: { text: 'Shop Now', link: '/services/index' },
+              styles: {
+                '--banner-bg': '#331e1e',
+                '--banner-accent-color': '#e59a59',
+                '--banner-text-color': '#fff',
+                '--banner-image': 'url(https://placehold.co/1200x600/331e1e/e59a59)',
+                '--banner-cta-bg': '#e59a59',
+                '--banner-cta-text': '#331e1e'
+              }
+            },
+            {
+              id: 'launch-event',
+              active: true,
+              agencyName: 'ECHO',
+              title: 'New Service Launch!',
+              subtitle: 'Introducing a revolutionary way to build your brand from the ground up.',
+              cta: { text: 'Learn More', link: '/services/index' },
+              styles: {
+                '--banner-bg': '#0D1117',
+                '--banner-accent-color': '#ffc400',
+                '--banner-text-color': '#E6EDF3',
+                '--banner-image': 'url(https://placehold.co/1200x600/161B22/E6EDF3?text=Launch+Event)',
+                '--banner-cta-bg': '#ffc400',
+                '--banner-cta-text': '#000'
+              }
+            }
+            // You can add more banners here
+          ];
+
+          const activeBanner = bannerData.find(b => b.active);
+
+          if (activeBanner) {
+            bannerTitle.textContent = activeBanner.title;
+            bannerSubtitle.textContent = activeBanner.subtitle;
+            bannerAgencyName.textContent = activeBanner.agencyName;
+            bannerCta.textContent = activeBanner.cta.text;
+            bannerCta.href = activeBanner.cta.link;
+
+            for (const [key, value] of Object.entries(activeBanner.styles)) {
+              dynamicBanner.style.setProperty(key, value);
+            }
+
+            dynamicBanner.style.display = 'flex';
+
+          } else {
+            dynamicBanner.style.display = 'none';
+          }
+        });
+      </script>
+      <section id="hero">
+        <div class="hero-header">
+          <div class="hero-profile-picture">
             <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
-            <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
           </div>
+          <div class="hero-info">
+            <h1>Hello, I'm John Ogletree.</h1>
+            <p class="hero-tagline">A multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality.</p>
+          </div>
+        </div>
 
-          <h2 id="services">Services</h2>
-          <div class="card-grid">
-            <a href="#" class="card service-card">
-              <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="service-icon">
-              <div>
-                <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
-              </div>
-              <span class="card-arrow">→</span>
-            </a>
-            <a href="#" class="card service-card">
-              <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
-              <div>
-                <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
-              </div>
-              <span class="card-arrow">→</span>
-            </a>
-          </div>
-          <div class="view-all-container">
-            <a href="#" class="cta-button view-all-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-              <span>View All Services</span>
-            </a>
-          </div>
+        <div class="dashboard-grid">
+          <a href="#about" class="dashboard-tile tile-about">
+            <div>
+              <h3>About</h3>
+              <p>A little about my background, philosophy, and experience.</p>
+            </div>
+            <span class="tile-arrow">→</span>
+          </a>
+          <a href="#projects" class="dashboard-tile tile-projects">
+            <div>
+              <h3>Projects</h3>
+              <p>A selection of my best work across various disciplines.</p>
+            </div>
+            <span class="tile-arrow">→</span>
+          </a>
+          <a href="#services" class="dashboard-tile tile-services">
+            <div>
+              <h3>Services</h3>
+              <p>The different ways I can help you bring your ideas to life.</p>
+            </div>
+            <span class="tile-arrow">→</span>
+          </a>
+          <a href="#blog" class="dashboard-tile tile-blog">
+            <div>
+              <h3>Blog</h3>
+              <p>My latest thoughts on design, art, and technology.</p>
+            </div>
+            <span class="tile-arrow">→</span>
+          </a>
+          <a href="#resume" class="dashboard-tile tile-resume">
+            <div>
+              <h3>R&eacute;sum&eacute;</h3>
+              <p>My skills, education, and professional experience in detail.</p>
+            </div>
+            <span class="tile-arrow">→</span>
+          </a>
+          <a href="#contact" class="dashboard-tile tile-contact">
+            <div>
+              <h3>Contact</h3>
+              <p>Get in touch to discuss new projects or collaborations.</p>
+            </div>
+            <span class="tile-arrow">→</span>
+          </a>
+        </div>
+      </section>
 
-          <h2 id="projects">Projects</h2>
-          <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
-          <div class="card-grid">
-            <a href="#" class="card">
-              <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="card-image">
-              <div class="card-info">
-                <div class="card-header">
-                  <h4>Chrono Corp</h4>
-                  <span class="tag">UI/UX Design</span>
-                </div>
-                <p>A time-tracking application for creative freelancers.</p>
-                <span class="card-arrow">→</span>
+      <div class="branded-hr">
+        <div class="line"></div>
+        <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
+        <div class="line"></div>
+      </div>
+      <article id="content">
+        <h2 id="about">About</h2>
+        <div class="about-container">
+          <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
+          <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
+        </div>
+
+        <h2 id="services">Services</h2>
+        <div class="card-grid">
+          <a href="#" class="card service-card">
+            <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="service-icon">
+            <div>
+              <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
+            </div>
+            <span class="card-arrow">→</span>
+          </a>
+          <a href="#" class="card service-card">
+            <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
+            <div>
+              <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
+            </div>
+            <span class="card-arrow">→</span>
+          </a>
+        </div>
+        <div class="view-all-container">
+          <a href="#" class="cta-button view-all-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+            <span>View All Services</span>
+          </a>
+        </div>
+
+        <h2 id="projects">Projects</h2>
+        <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+        <div class="card-grid">
+          <a href="#" class="card">
+            <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="card-image">
+            <div class="card-info">
+              <div class="card-header">
+                <h4>Chrono Corp</h4>
+                <span class="tag">UI/UX Design</span>
               </div>
-            </a>
-            <a href="#" class="card">
-              <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="card-image">
-              <div class="card-info">
-                <div class="card-header">
-                  <h4>Aether Systems</h4>
-                  <span class="tag">Brand Identity</span>
-                </div>
-                <p>A complete branding package for a cloud computing company.</p>
+              <p>A time-tracking application for creative freelancers.</p>
+              <span class="card-arrow">→</span>
+            </div>
+          </a>
+          <a href="#" class="card">
+            <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="card-image">
+            <div class="card-info">
+              <div class="card-header">
+                <h4>Aether Systems</h4>
+                <span class="tag">Brand Identity</span>
+              </div>
+              <p>A complete branding package for a cloud computing company.</p>
                 <span class="card-arrow">→</span>
               </div>
             </a>
@@ -464,100 +514,93 @@ import Layout from '../layouts/Layout.astro';
   }
   
   /* --- Banner Section --- */
-  #banner-container {
+  #dynamic-banner {
     position: relative;
     width: 100%;
     height: 300px;
-    background-color: #000;
+    background-color: var(--banner-bg);
+    color: var(--banner-text-color);
     display: flex;
     align-items: center;
     overflow: hidden;
   }
-  #banner-container::before {
+  #dynamic-banner::before {
     content: '';
     position: absolute;
     top: 0;
     right: 0;
     width: 65%;
     height: 100%;
-    background-image: url('https://placehold.co/1200x600/161B22/E6EDF3');
+    background-image: var(--banner-image);
     background-size: cover;
     background-position: center;
     clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
   }
-  #banner-container::after {
+  #dynamic-banner::after {
     content: '';
     position: absolute;
     top: 0;
     right: 0;
     width: 200px;
     height: 100%;
-    background-color: #ffc400;
+    background-color: var(--banner-accent-color);
     transform: skewX(-20deg);
     transform-origin: top right;
     z-index: 1;
   }
-  #banner-content {
+  .dynamic-banner-content {
     position: relative;
     z-index: 2;
     padding: 2rem;
-    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     max-width: 50%;
   }
-  .banner-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #ffc400;
-  }
-  .banner-logo svg {
-    width: 24px;
-    height: 24px;
-  }
-  .banner-agency-name {
-    margin: 0;
+  #banner-agency-name {
     font-weight: 500;
     font-size: 1.2em;
+    color: var(--banner-accent-color);
+    margin: 0;
   }
-  .banner-heading-group {
-    display: flex;
-    flex-direction: column;
-  }
-  .banner-title {
+  #banner-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin: 0;
     line-height: 1.2;
+    color: var(--banner-text-color);
+  }
+  #banner-subtitle {
+    font-size: 1rem;
+    color: var(--banner-text-color);
+    margin: 0;
+    line-height: 1.5;
+  }
+  #banner-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--banner-cta-bg);
+    color: var(--banner-cta-text);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: 1rem;
+  }
+  #banner-cta:hover {
+    background-color: var(--color-accent);
     color: #fff;
   }
-  .banner-subtitle {
-    font-size: 1.5rem;
-    color: #ffc400;
-    margin: 0;
-    line-height: 1.2;
-  }
-  .banner-contact-info {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .contact-item svg {
-    color: #ffc400;
-  }
-  .contact-item p {
-    margin: 0;
-    font-size: 0.9em;
-  }
-  
+
   /* --- Header Search --- */
   .search-form { position: relative; }
   .search-input {
@@ -987,6 +1030,28 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 920px) {
     :root {
       --padding-x: 1.5rem;
+    }
+    #dynamic-banner {
+      flex-direction: column;
+      height: auto;
+    }
+    #dynamic-banner::before,
+    #dynamic-banner::after {
+      content: none;
+    }
+    .dynamic-banner-content {
+      max-width: 100%;
+      text-align: center;
+      padding: 1.5rem;
+      gap: 0.5rem;
+    }
+    .dynamic-banner-content #banner-agency-name,
+    .dynamic-banner-content #banner-title,
+    .dynamic-banner-content #banner-subtitle {
+      text-align: center;
+    }
+    .dynamic-banner-content #banner-cta {
+      align-self: center;
     }
     .hero-header {
       flex-direction: column;
