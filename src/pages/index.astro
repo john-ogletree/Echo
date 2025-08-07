@@ -355,6 +355,22 @@ import Layout from '../layouts/Layout.astro';
     }
   });
 </script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const currentPath = window.location.pathname;
+
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      // Special case for homepage
+      if (currentPath === '/' && linkPath === '/') {
+        link.classList.add('current-page');
+      } else if (currentPath.startsWith(linkPath) && linkPath !== '/') {
+        link.classList.add('current-page');
+      }
+    });
+  });
+</script>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
@@ -493,6 +509,7 @@ import Layout from '../layouts/Layout.astro';
     overflow-y: auto;
   }
   .nav-links a {
+    position: relative; /* Needed for positioning the ::before element */
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -501,11 +518,38 @@ import Layout from '../layouts/Layout.astro';
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--color-border);
     color: var(--color-text);
+    transition: color 0.2s ease, transform 0.2s ease;
   }
+  
+  /* Hover, Active, and Current Link States */
   .nav-links a:hover {
     color: var(--color-accent);
     text-decoration: none;
+    transform: translateX(5px);
   }
+  .nav-links a.current-page {
+    color: var(--color-accent);
+  }
+  .nav-links a.current-page::before,
+  .nav-links a:hover::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    height: 100%;
+    width: 4px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+  }
+  .nav-links a:active {
+    transform: scale(0.98);
+  }
+  .nav-links a span {
+    flex-grow: 1;
+  }
+  .nav-links a svg {
+    flex-shrink: 0;
+  }
+
   .nav-toggle {
     display: block;
     background: none;
