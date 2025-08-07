@@ -422,8 +422,7 @@ import Layout from '../layouts/Layout.astro';
     top: 0;
     z-index: 10;
     background-color: var(--color-surface);
-    /* Reverse the order of elements for left-side nav on desktop and mobile */
-    flex-direction: row-reverse;
+    /* No need for flex-direction: row-reverse now that HTML is reordered */
   }
   .header-left, .header-right {
     display: flex;
@@ -838,7 +837,7 @@ import Layout from '../layouts/Layout.astro';
     .mobile-search { display: block; }
     
     .nav-toggle {
-      display: block;
+      display: block; /* Hamburger icon is visible by default */
       background: none;
       border: none;
       color: var(--color-text);
@@ -848,7 +847,7 @@ import Layout from '../layouts/Layout.astro';
     }
     
     .nav-close {
-      display: none;
+      display: none; /* 'X' icon is hidden by default */
       background: none;
       border: none;
       color: var(--color-text);
@@ -867,6 +866,7 @@ import Layout from '../layouts/Layout.astro';
         display: block;
     }
 
+    /* The drawer now slides from the left */
     .nav-drawer-container {
       position: fixed;
       top: 0;
