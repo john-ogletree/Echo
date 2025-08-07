@@ -115,6 +115,12 @@ import Layout from '../layouts/Layout.astro';
         <div class="line"></div>
       </div>
       <article id="content">
+        <h2 id="about">About</h2>
+        <div class="about-container">
+          <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
+          <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
+        </div>
+
         <h2 id="services">Services</h2>
         <div class="card-grid">
           <a href="#" class="card service-card">
@@ -860,7 +866,7 @@ import Layout from '../layouts/Layout.astro';
     .mobile-search { display: block; }
     
     .nav-toggle {
-      display: block;
+      display: block; /* Hamburger icon is visible by default */
       background: none;
       border: none;
       color: var(--color-text);
@@ -870,7 +876,7 @@ import Layout from '../layouts/Layout.astro';
     }
     
     .nav-close {
-      display: none;
+      display: none; /* 'X' icon is hidden by default */
       background: none;
       border: none;
       color: var(--color-text);
