@@ -56,6 +56,30 @@ import Layout from '../layouts/Layout.astro';
     <main class="readme-body">
       
       <article id="content">
+        <div class="dashboard-grid">
+          <div class="dashboard-card">
+            <div class="card-icon">📁</div>
+            <div class="card-content">
+              <div class="card-value">2</div>
+              <div class="card-label">Projects Completed</div>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-icon">📝</div>
+            <div class="card-content">
+              <div class="card-value">2</div>
+              <div class="card-label">Latest Articles</div>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-icon">💼</div>
+            <div class="card-content">
+              <div class="card-value">9+</div>
+              <div class="card-label">Years of Experience</div>
+            </div>
+          </div>
+        </div>
+        
         <h2 id="about">About</h2>
         <div class="about-container">
           <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
@@ -69,14 +93,14 @@ import Layout from '../layouts/Layout.astro';
             <div>
               <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
             </div>
-            <span class="card-arrow">→</span>
+            <span class="card-arrow">â†’</span>
           </a>
           <a href="#" class="card service-card">
             <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
             <div>
               <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
             </div>
-            <span class="card-arrow">→</span>
+            <span class="card-arrow">â†’</span>
           </a>
         </div>
         <div class="view-all-container">
@@ -97,7 +121,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">UI/UX Design</span>
               </div>
               <p>A time-tracking application for creative freelancers.</p>
-              <span class="card-arrow">→</span>
+              <span class="card-arrow">â†’</span>
             </div>
           </a>
           <a href="#" class="card">
@@ -108,7 +132,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">Brand Identity</span>
               </div>
               <p>A complete branding package for a cloud computing company.</p>
-              <span class="card-arrow">→</span>
+              <span class="card-arrow">â†’</span>
             </div>
           </a>
         </div>
@@ -130,7 +154,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">Article</span>
               </div>
               <p class="post-date">July 30, 2025</p>
-              <span class="card-arrow">→</span>
+              <span class="card-arrow">â†’</span>
             </div>
           </a>
           <a href="#" class="card">
@@ -141,7 +165,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">Review</span>
               </div>
               <p class="post-date">June 22, 2025</p>
-              <span class="card-arrow">→</span>
+              <span class="card-arrow">â†’</span>
             </div>
           </a>
         </div>
@@ -162,7 +186,7 @@ import Layout from '../layouts/Layout.astro';
           </button>
         </form>
 
-        <h2 id="resume">Résumé</h2>
+        <h2 id="resume">RÃ©sumÃ©</h2>
         <div class="card-grid">
           <div class="card resume-card">
             <h4>Design</h4>
@@ -187,7 +211,7 @@ import Layout from '../layouts/Layout.astro';
             <p>Partnered with over 50 clients, from startups to established companies, to deliver high-quality work.</p>
           </div>
           <div class="card resume-card cta-card">
-            <h4>Download Full Résumé</h4>
+            <h4>Download Full RÃ©sumÃ©</h4>
             <p>Get the complete details on my skills and experience.</p>
             <a href="/resume.pdf" target="_blank" class="cta-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
@@ -232,7 +256,7 @@ import Layout from '../layouts/Layout.astro';
                 <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#resume">Résumé</a></li>
+                <li><a href="#resume">RÃ©sumÃ©</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
@@ -251,8 +275,8 @@ import Layout from '../layouts/Layout.astro';
             </ul>
           </div>
           <div class="footer-bottom-bar">
-            <p>© <span id="year"></span> John Ogletree</p>
-            <a href="#" class="back-to-top">Back to top ↑</a>
+            <p>Â© <span id="year"></span> John Ogletree</p>
+            <a href="#" class="back-to-top">Back to top â†‘</a>
           </div>
         </footer>
       </article>
@@ -594,6 +618,44 @@ import Layout from '../layouts/Layout.astro';
     flex-shrink: 0;
   }
 
+  /* --- Dashboard Section --- */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .dashboard-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .card-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-right: 1.5rem;
+  }
+  .card-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-accent);
+  }
+  .card-label {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
   /* --- Unified Card Grid System --- */
   .card-grid {
     display: grid;
@@ -736,13 +798,13 @@ import Layout from '../layouts/Layout.astro';
   .service-card .card-arrow { bottom: auto; right: 1.25rem; }
   .service-card strong { color: var(--color-heading); }
 
-  /* --- Card Type: Résumé --- */
+  /* --- Card Type: RÃ©sumÃ© --- */
   .resume-card { padding: 1.5rem; overflow: visible; }
   .resume-card h4 {
     color: var(--color-accent); margin-bottom: 1rem;
     border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; font-size: 1.2em;
   }
-  .resume-card ul { list-style: '✓  '; color: var(--color-text-light); padding-left: 1.25rem; margin: 0; }
+  .resume-card ul { list-style: 'âœ“  '; color: var(--color-text-light); padding-left: 1.25rem; margin: 0; }
   .resume-card li { margin-bottom: 0.75rem; padding-left: 0.5rem; }
   .resume-card p { color: var(--color-text-light); line-height: 1.6; margin: 0 0 0.5rem 0; }
   .resume-card p:last-child { margin-bottom: 0; }
@@ -961,7 +1023,6 @@ import Layout from '../layouts/Layout.astro';
     }
     .dashboard-grid {
       grid-template-columns: 1fr;
-      grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
     }
     h2 { font-size: 1.25rem; }
     .hero-header {
