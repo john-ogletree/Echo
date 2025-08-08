@@ -54,68 +54,7 @@ import Layout from '../layouts/Layout.astro';
     </header>
 
     <main class="readme-body">
-      <section id="hero">
-        <div class="hero-header">
-          <div class="hero-profile-picture">
-            <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
-          </div>
-          <div class="hero-info">
-            <h1>Hello, I'm John Ogletree.</h1>
-            <p class="hero-tagline">A multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality.</p>
-          </div>
-        </div>
-
-        <div class="dashboard-grid">
-          <a href="#about" class="dashboard-tile tile-about">
-            <div>
-              <h3>About</h3>
-              <p>A little about my background, philosophy, and experience.</p>
-            </div>
-            <span class="tile-arrow">→</span>
-          </a>
-          <a href="#projects" class="dashboard-tile tile-projects">
-            <div>
-              <h3>Projects</h3>
-              <p>A selection of my best work across various disciplines.</p>
-            </div>
-            <span class="tile-arrow">→</span>
-          </a>
-          <a href="#services" class="dashboard-tile tile-services">
-            <div>
-              <h3>Services</h3>
-              <p>The different ways I can help you bring your ideas to life.</p>
-            </div>
-            <span class="tile-arrow">→</span>
-          </a>
-          <a href="#blog" class="dashboard-tile tile-blog">
-            <div>
-              <h3>Blog</h3>
-              <p>My latest thoughts on design, art, and technology.</p>
-            </div>
-            <span class="tile-arrow">→</span>
-          </a>
-          <a href="#resume" class="dashboard-tile tile-resume">
-            <div>
-              <h3>Résumé</h3>
-              <p>My skills, education, and professional experience in detail.</p>
-            </div>
-            <span class="tile-arrow">→</span>
-          </a>
-          <a href="#contact" class="dashboard-tile tile-contact">
-            <div>
-              <h3>Contact</h3>
-              <p>Get in touch to discuss new projects or collaborations.</p>
-            </div>
-            <span class="tile-arrow">→</span>
-          </a>
-        </div>
-      </section>
-
-      <div class="branded-hr">
-        <div class="line"></div>
-        <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
-        <div class="line"></div>
-      </div>
+      
       <article id="content">
         <h2 id="about">About</h2>
         <div class="about-container">
@@ -635,85 +574,6 @@ import Layout from '../layouts/Layout.astro';
   .nav-socials a:hover { color: var(--color-accent); }
   .nav-socials svg { width: 24px; height: 24px; }
     
-  /* --- New Hero/Dashboard Section --- */
-  .hero-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-  .hero-profile-picture {
-    flex-shrink: 0;
-  }
-  .hero-profile-picture img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2px solid var(--color-border);
-  }
-  .hero-info {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem;
-  }
-  .hero-info h1 {
-    font-size: 2.25rem;
-    margin: 0;
-    color: var(--color-text);
-  }
-  .hero-tagline {
-    color: var(--color-text-light);
-    max-width: 60ch;
-    margin: 0;
-  }
-  .dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  .dashboard-tile {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 1.5rem;
-    color: inherit;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    position: relative;
-  }
-  .dashboard-tile:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    border-color: var(--color-accent);
-    text-decoration: none;
-  }
-  .dashboard-tile h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-  }
-  .dashboard-tile p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    margin: 0;
-  }
-  .tile-arrow {
-    position: absolute;
-    bottom: 1rem;
-    right: 1.25rem;
-    font-size: 1.75rem;
-    color: var(--color-text-light);
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-  .dashboard-tile:hover .tile-arrow {
-    transform: translateX(5px);
-    color: var(--color-accent);
-  }
   /* --- Branded HR Separator --- */
   .branded-hr {
     display: flex;
@@ -885,9 +745,15 @@ import Layout from '../layouts/Layout.astro';
   /* --- Forms --- */
   .form-group { margin-bottom: 1.5rem; }
   .form-input {
-    background-color: var(--color-bg); border: 1px solid var(--color-border);
-    border-radius: 6px; padding: 0.75rem 1rem; font-family: var(--font-mono);
-    font-size: 1rem; color: var(--color-text); width: 100%; box-sizing: border-box;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-text);
+    width: 100%;
+    box-sizing: border-box;
   }
   .form-input:focus {
     outline: none;
