@@ -423,7 +423,6 @@ import Layout from '../layouts/Layout.astro';
     --color-border: #30363D;
     --color-tag-bg: rgba(88, 166, 255, 0.15);
     --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --padding-x: 1.5rem; /* Default padding for desktop */
   }
 
   /* --- Base & Typography --- */
@@ -438,6 +437,8 @@ import Layout from '../layouts/Layout.astro';
     font-size: 16px;
     line-height: 1.7;
     transition: transform 0.3s ease-in-out;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   body.no-scroll {
     overflow: hidden;
@@ -473,8 +474,6 @@ import Layout from '../layouts/Layout.astro';
   /* --- Main Layout --- */
   .readme-container {
     background-color: var(--color-surface);
-    margin-left: 10px;
-    margin-right: 10px;
   }
   .readme-header {
     display: flex;
