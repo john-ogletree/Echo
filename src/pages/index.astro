@@ -470,19 +470,16 @@ import Layout from '../layouts/Layout.astro';
 
   /* --- Header / Nav --- */
   .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    flex-grow: 1;
     justify-content: center;
   }
   .nav-links a {
     position: relative; 
     display: flex;
     align-items: center;
+    justify-content: center; /* Center content horizontally within the flex item */
     gap: 0.75rem;
     font-size: 1rem;
     font-weight: 500;
@@ -490,6 +487,8 @@ import Layout from '../layouts/Layout.astro';
     border-bottom: 1px solid transparent; 
     color: var(--color-text);
     transition: color 0.2s ease, border-color 0.2s ease;
+    width: 100%; /* Ensure the link takes up the full width of its list item */
+    white-space: nowrap; /* Prevents text from wrapping */
   }
   
   /* Hover, Active, and Current Link States */
@@ -511,7 +510,7 @@ import Layout from '../layouts/Layout.astro';
     transform: scale(0.98);
   }
   .nav-links a span {
-    flex-grow: 1;
+    flex-grow: 0; /* Prevents text from growing and pushing icons apart */
   }
   .nav-links a svg {
     flex-shrink: 0;
@@ -873,6 +872,23 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* --- Responsive Styles --- */
+  @media (min-width: 921px) {
+    /* Apply Flexbox styles for desktop and larger screens */
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      flex-grow: 1;
+    }
+    .nav-links li {
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
+      min-width: 0;
+    }
+  }
+
   @media (max-width: 920px) {
     :root {
       --padding-x: 1.5rem;
