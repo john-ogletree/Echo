@@ -473,7 +473,18 @@ import Layout from '../layouts/Layout.astro';
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-grow: 1;
     justify-content: center;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to a new line when space is limited */
+    gap: 1.5rem;
+  }
+  .nav-links li {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    min-width: 0; /* Ensures the li can shrink below its content size */
   }
   .nav-links a {
     position: relative; 
@@ -488,6 +499,7 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text);
     transition: color 0.2s ease, border-color 0.2s ease;
     width: 100%; /* Ensure the link takes up the full width of its list item */
+    white-space: normal; /* Allow text to wrap if it needs to */
   }
   
   /* Hover, Active, and Current Link States */
@@ -871,28 +883,8 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* --- Responsive Styles --- */
-  @media (min-width: 921px) {
-    /* Apply Flexbox styles for desktop and larger screens */
-    .nav-links {
-      display: flex;
-      flex-direction: row;
-      gap: 1.5rem;
-      flex-grow: 1;
-    }
-    .nav-links li {
-      display: flex;
-      flex-grow: 1;
-      flex-shrink: 1;
-      flex-basis: 0;
-      min-width: 0; /* Ensures the li can shrink below its content size */
-    }
-    .nav-links a {
-      display: block; /* Make the link a block-level element to fill the li */
-      white-space: normal; /* Allow text to wrap if it needs to */
-    }
-  }
-
   @media (max-width: 920px) {
+    /* Mobile-specific styles for the hamburger menu */
     :root {
       --padding-x: 1.5rem;
     }
