@@ -351,7 +351,9 @@ width: 120px;
 height: 120px;
 border-radius: 50%;
 border: 2px solid var(--color-border);
-flex-shrink: 0;
+float: left; /* Float the image to the left /
+margin-right: 1.5rem; / Add some space to the right of the image */
+margin-bottom: 1rem;
 }
 blockquote {
 font-size: 1.1rem;
@@ -370,12 +372,11 @@ margin-bottom: 1rem;
 }
 }
 @media (max-width: 768px) {
-.about-container .profile-picture { display: none; }
-.about-container { margin-top: 0; }
+.about-container { display: block; }
+.about-container .profile-picture { display: block; float: none; margin: 0 auto 1rem auto; }
 }
 </style>
 </div>
-
 <h2 id="services">Services</h2>
 <div class="card-grid">
 <a href="#" class="card service-card">
