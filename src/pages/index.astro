@@ -488,7 +488,6 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text);
     transition: color 0.2s ease, border-color 0.2s ease;
     width: 100%; /* Ensure the link takes up the full width of its list item */
-    white-space: nowrap; /* Prevents text from wrapping */
   }
   
   /* Hover, Active, and Current Link States */
@@ -885,7 +884,11 @@ import Layout from '../layouts/Layout.astro';
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: 0;
-      min-width: 0;
+      min-width: 0; /* Ensures the li can shrink below its content size */
+    }
+    .nav-links a {
+      display: block; /* Make the link a block-level element to fill the li */
+      white-space: normal; /* Allow text to wrap if it needs to */
     }
   }
 
