@@ -93,14 +93,14 @@ import Layout from '../layouts/Layout.astro';
             <div>
               <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
             </div>
-            <span class="card-arrow">â†’</span>
+            <span class="card-arrow">→</span>
           </a>
           <a href="#" class="card service-card">
             <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
             <div>
               <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
             </div>
-            <span class="card-arrow">â†’</span>
+            <span class="card-arrow">→</span>
           </a>
         </div>
         <div class="view-all-container">
@@ -121,7 +121,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">UI/UX Design</span>
               </div>
               <p>A time-tracking application for creative freelancers.</p>
-              <span class="card-arrow">â†’</span>
+              <span class="card-arrow">→</span>
             </div>
           </a>
           <a href="#" class="card">
@@ -132,7 +132,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">Brand Identity</span>
               </div>
               <p>A complete branding package for a cloud computing company.</p>
-              <span class="card-arrow">â†’</span>
+              <span class="card-arrow">→</span>
             </div>
           </a>
         </div>
@@ -154,7 +154,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">Article</span>
               </div>
               <p class="post-date">July 30, 2025</p>
-              <span class="card-arrow">â†’</span>
+              <span class="card-arrow">→</span>
             </div>
           </a>
           <a href="#" class="card">
@@ -165,7 +165,7 @@ import Layout from '../layouts/Layout.astro';
                 <span class="tag">Review</span>
               </div>
               <p class="post-date">June 22, 2025</p>
-              <span class="card-arrow">â†’</span>
+              <span class="card-arrow">→</span>
             </div>
           </a>
         </div>
@@ -276,7 +276,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="footer-bottom-bar">
             <p>Â© <span id="year"></span> John Ogletree</p>
-            <a href="#" class="back-to-top">Back to top â†‘</a>
+            <a href="#" class="back-to-top">Back to top</a>
           </div>
         </footer>
       </article>
@@ -700,8 +700,12 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.75rem;
     color: var(--color-text-light);
     transition: transform 0.2s ease, color 0.2s ease;
+    line-height: 1;
   }
-  .card:hover .card-arrow { transform: translateX(5px); color: var(--color-accent); }
+  .card:hover .card-arrow {
+    transform: translateX(5px);
+    color: var(--color-accent);
+  }
   .tag {
     background-color: var(--color-tag-bg); padding: 0.2em 0.5em;
     border-radius: 6px; font-size: 0.85em; color: var(--color-accent);
@@ -885,8 +889,28 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text-light);
   }
   .footer-bottom-bar p { margin: 0; }
-  .back-to-top { color: var(--color-text-light); text-decoration: none; transition: color 0.2s ease; }
-  .back-to-top:hover { color: var(--color-accent); text-decoration: none; }
+  .back-to-top {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .back-to-top:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .back-to-top::after {
+    content: "↑";
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  .back-to-top:hover::after {
+    transform: translateY(-3px);
+    color: var(--color-accent);
+  }
 
   /* --- Responsive --- */
   @media (max-width: 920px) {
