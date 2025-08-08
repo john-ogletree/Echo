@@ -376,14 +376,14 @@ import Layout from '../layouts/Layout.astro';
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
 
   :root {
-    --color-bg: #0D1117;
-    --color-surface: #161B22;
-    --color-text: #E6EDF3;
-    --color-text-light: #8B949E;
-    --color-heading: #FFFFFF;
-    --color-accent: #58A6FF;
-    --color-border: #30363D;
-    --color-tag-bg: rgba(88, 166, 255, 0.15);
+    --color-bg: #F0EAD6; /* Light cream */
+    --color-surface: #D4C9A8; /* Muted beige */
+    --color-text: #3B2F2A; /* Deep brown-black */
+    --color-text-light: #5B4F48; /* Dark brown-grey */
+    --color-heading: #E07A5F; /* Warm terracotta orange */
+    --color-accent: #3D87A6; /* Retro teal */
+    --color-border: #A69E8C; /* Faded grey-brown */
+    --color-tag-bg: rgba(61, 135, 166, 0.15); /* Faded teal transparency */
     --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --padding-x: 2rem;
   }
@@ -485,7 +485,7 @@ import Layout from '../layouts/Layout.astro';
   .search-input:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(61, 135, 166, 0.3);
   }
   .search-button {
     position: absolute;
@@ -533,7 +533,7 @@ import Layout from '../layouts/Layout.astro';
     transform: translateX(5px);
   }
   .nav-links a.current-page {
-    color: var(--color-accent);
+    color: var(--color-heading);
   }
   .nav-links a.current-page::before,
   .nav-links a:hover::before {
@@ -661,6 +661,7 @@ import Layout from '../layouts/Layout.astro';
   .hero-info h1 {
     font-size: 2.25rem;
     margin: 0;
+    color: var(--color-text);
   }
   .hero-tagline {
     color: var(--color-text-light);
@@ -687,13 +688,14 @@ import Layout from '../layouts/Layout.astro';
   }
   .dashboard-tile:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(1, 4, 9, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     border-color: var(--color-accent);
     text-decoration: none;
   }
   .dashboard-tile h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+    color: var(--color-text);
   }
   .dashboard-tile p {
     font-size: 0.9rem;
@@ -725,6 +727,7 @@ import Layout from '../layouts/Layout.astro';
     background-color: var(--color-border);
   }
   .branded-hr .icon-repo {
+    fill: var(--color-text-light);
     flex-shrink: 0;
   }
 
@@ -748,7 +751,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(1, 4, 9, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     border-color: var(--color-accent);
     text-decoration: none;
   }
@@ -788,67 +791,77 @@ import Layout from '../layouts/Layout.astro';
   }
   .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); }
   .services-button {
-    background: linear-gradient(to right, var(--color-accent), #88F 50%, var(--color-accent) 50%);
+    background: linear-gradient(to right, #65B5B8, #4D8B8E 50%, #65B5B8 50%); /* Retro Teal */
     background-size: 200% 100%;
     background-position: left bottom;
-    color: var(--color-bg);
-    border: 1px solid var(--color-accent);
+    color: white;
+    border: 1px solid #65B5B8;
     transition: background-position 0.4s ease, color 0.4s ease;
   }
   .services-button:hover {
     background-position: right bottom;
-    color: white;
+    color: #3B2F2A; /* Dark text on hover */
   }
   .services-button svg {
-    color: var(--color-bg);
+    color: white;
     transition: color 0.4s ease;
   }
   .services-button:hover svg {
-    color: white;
+    color: #3B2F2A;
   }
   .projects-button {
-    background: linear-gradient(to right, #9B59B6, #C06BEE 50%, #9B59B6 50%);
+    background: linear-gradient(to right, #F4A261, #E8A155 50%, #F4A261 50%); /* Faded Orange */
     background-size: 200% 100%;
     background-position: left bottom;
-    color: var(--color-bg);
-    border: 1px solid #9B59B6;
+    color: white;
+    border: 1px solid #F4A261;
     transition: background-position 0.4s ease, color 0.4s ease;
   }
   .projects-button:hover {
     background-position: right bottom;
-    color: white;
+    color: #3B2F2A;
   }
   .projects-button svg {
-    color: var(--color-bg);
+    color: white;
     transition: color 0.4s ease;
   }
   .projects-button:hover svg {
-    color: white;
+    color: #3B2F2A;
   }
   .blog-button {
-    background: linear-gradient(to right, #FF7B52, #FF8E53 50%, #FF7B52 50%);
+    background: linear-gradient(to right, #B58866, #A07F5B 50%, #B58866 50%); /* Muted brown */
     background-size: 200% 100%;
     background-position: left bottom;
-    color: var(--color-bg);
-    border: 1px solid #FF7B52;
+    color: white;
+    border: 1px solid #B58866;
     transition: background-position 0.4s ease, color 0.4s ease;
   }
   .blog-button:hover {
     background-position: right bottom;
-    color: white;
+    color: #3B2F2A;
   }
   .blog-button svg {
-    color: var(--color-bg);
+    color: white;
     transition: color 0.4s ease;
   }
   .blog-button:hover svg {
-    color: white;
+    color: #3B2F2A;
+  }
+  .cta-button {
+    background-color: #E07A5F; /* Main CTA button color, terracotta */
+    color: #F0EAD6;
+    border: 1px solid #E07A5F;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .cta-button:hover {
+    background-color: #D36C52;
   }
 
   /* --- Card Type: Service --- */
   .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; overflow: hidden; }
-  .service-icon { width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; }
+  .service-icon { width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; background-color: var(--color-bg); }
   .service-card .card-arrow { bottom: auto; right: 1.25rem; }
+  .service-card strong { color: var(--color-heading); }
 
   /* --- Card Type: Résumé --- */
   .resume-card { padding: 1.5rem; overflow: visible; }
@@ -866,7 +879,7 @@ import Layout from '../layouts/Layout.astro';
     background-color: var(--color-tag-bg); display: flex; flex-direction: column;
     justify-content: center; align-items: center; text-align: center;
   }
-  .resume-card.cta-card:hover { background-color: rgba(88, 166, 255, 0.2); }
+  .resume-card.cta-card:hover { background-color: rgba(61, 135, 166, 0.2); }
   .cta-card .cta-button { margin-top: 1rem; }
 
   /* --- Forms --- */
@@ -879,26 +892,8 @@ import Layout from '../layouts/Layout.astro';
   .form-input:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(61, 135, 166, 0.3);
   }
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background-color: #238636;
-    color: white;
-    border: 1px solid rgba(240, 246, 252, 0.1);
-    border-radius: 6px;
-    padding: 0.75rem 1.25rem;
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-  }
-  .cta-button svg { fill: currentColor; }
-  .cta-button:hover { background-color: #2EA043; }
   .newsletter-form { display: flex; gap: 0.5rem; }
 
   /* --- Footer --- */
@@ -915,7 +910,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .footer-column h4 { color: var(--color-accent); margin-bottom: 1rem; font-size: 1.1rem; }
   .footer-tagline { color: var(--color-text-light); font-size: 0.9rem; max-width: 35ch; }
-  .footer-column .badge { margin-top: 0.5rem; }
+  .footer-column .badge { margin-top: 0.5rem; background-color: #E07A5F; color: white; border: none; }
   .footer-links {
     list-style: none;
     padding: 0;
@@ -926,7 +921,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .footer-links li { margin: 0; }
   .footer-links a { color: var(--color-text-light); text-decoration: none; font-size: 0.9rem; }
-  .footer-links a:hover { color: var(--color-accent); text-decoration: underline; }
+  .footer-links a:hover { color: var(--color-heading); text-decoration: underline; }
   .footer-socials {
     list-style: none;
     padding: 0;
