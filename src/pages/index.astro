@@ -58,27 +58,27 @@ import Layout from '../layouts/Layout.astro';
           <p class="explorer-placeholder" id="explorer-placeholder">Start typing to search files.</p>
           <ul class="file-list" id="file-list" style="display: none;">
             <li data-name="projects">
-              <a href="#">
+              <a href="/creations">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h4zm-5 5v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4z"/></svg>
                 <span>projects/</span>
               </a>
             </li>
             <li data-name="README.md">
-              <a href="#">
+              <a href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
                 <span>README.md</span>
                 <span class="file-size-date">8 KB / 2024-08-08</span>
               </a>
             </li>
             <li data-name="style.css">
-              <a href="#">
+              <a href="/style.css">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
                 <span>style.css</span>
                 <span class="file-size-date">2 KB / 2024-08-08</span>
               </a>
             </li>
             <li data-name="about.md">
-              <a href="#">
+              <a href="/profile">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
                 <span>about.md</span>
                 <span class="file-size-date">1 KB / 2024-08-07</span>
@@ -383,17 +383,27 @@ import Layout from '../layouts/Layout.astro';
         fileList.style.display = 'block';
         placeholder.style.display = 'none';
 
+        let hasResults = false;
         for (let i = 0; i < fileItems.length; i++) {
           const fileName = fileItems[i].getAttribute('data-name').toLowerCase();
           if (fileName.includes(filter)) {
             fileItems[i].style.display = '';
+            hasResults = true;
           } else {
             fileItems[i].style.display = 'none';
           }
         }
+        
+        if (!hasResults) {
+          placeholder.textContent = 'No matching files found.';
+          placeholder.style.display = 'block';
+          fileList.style.display = 'none';
+        }
+
       } else {
         fileList.style.display = 'none';
         placeholder.style.display = 'block';
+        placeholder.textContent = 'Start typing to search files.';
       }
     });
   });
@@ -619,19 +629,6 @@ import Layout from '../layouts/Layout.astro';
     display: none;
   }
 
-  .nav-socials {
-    list-style: none;
-    padding: 0;
-    border-top: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-shrink: 0;
-  }
-  .nav-socials a { color: var(--color-text-light); }
-  .nav-socials a:hover { color: var(--color-accent); }
-  .nav-socials svg { width: 24px; height: 24px; }
-    
   /* --- Branded HR Separator --- */
   .branded-hr {
     display: flex;
@@ -985,17 +982,6 @@ import Layout from '../layouts/Layout.astro';
   .footer-links li { margin: 0; }
   .footer-links a { color: var(--color-text-light); text-decoration: none; font-size: 0.9rem; }
   .footer-links a:hover { color: var(--color-heading); text-decoration: underline; }
-  .footer-socials {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  .footer-socials a { color: var(--color-text-light); transition: color 0.2s ease; }
-  .footer-socials a:hover { color: var(--color-accent); }
-  .footer-socials svg { width: 24px; height: 24px; }
   .footer-bottom-bar {
     display: flex;
     justify-content: space-between;
