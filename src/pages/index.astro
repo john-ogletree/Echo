@@ -140,6 +140,12 @@ import Layout from '../layouts/Layout.astro';
             <span class="card-arrow">→</span>
           </a>
         </div>
+        <div class="view-all-container">
+          <a href="#" class="cta-button services-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+            <span>View All Services</span>
+          </a>
+        </div>
 
         <h2 id="projects">Projects</h2>
         <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
@@ -769,6 +775,25 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-accent);
   }
   .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); }
+  .services-button {
+    background: linear-gradient(to right, var(--color-accent), #88F 50%, var(--color-accent) 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    color: var(--color-bg);
+    border: 1px solid var(--color-accent);
+    transition: background-position 0.4s ease, color 0.4s ease;
+  }
+  .services-button:hover {
+    background-position: right bottom;
+    color: white;
+  }
+  .services-button svg {
+    color: var(--color-bg);
+    transition: color 0.4s ease;
+  }
+  .services-button:hover svg {
+    color: white;
+  }
 
   /* --- Card Type: Service --- */
   .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; overflow: hidden; }
