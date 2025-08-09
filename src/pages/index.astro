@@ -343,30 +343,23 @@ import Layout from '../layouts/Layout.astro';
   
   .content {
     padding: 2rem;
-    max-width: 1200px;
+    max-width: none;
     margin: 0 auto;
-    width: 100%;
   }
-  
-  .services-overview,
-  .projects-overview,
-  .blog-overview {
+
+  .services-overview {
     padding: 4rem 2rem;
     text-align: center;
     max-width: none;
   }
   
-  .services-header,
-  .projects-header,
-  .blog-header {
+  .services-header {
     margin-bottom: 3rem;
     max-width: 1200px;
     margin: 0 auto 3rem auto;
   }
 
-  .services-grid,
-  .projects-grid,
-  .blog-grid {
+  .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -374,17 +367,13 @@ import Layout from '../layouts/Layout.astro';
     margin: 0 auto;
   }
   
-  .services-title,
-  .projects-title,
-  .blog-title {
+  .services-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
   
-  .services-intro,
-  .projects-intro,
-  .blog-intro {
+  .services-intro {
     font-size: 1.15rem;
     max-width: 700px;
     margin: 0 auto;
@@ -414,6 +403,39 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1rem;
     line-height: 1.6;
     color: #555;
+  }
+  
+  .projects-overview {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: none;
+  }
+  
+  .projects-header {
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .projects-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .projects-intro {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
   
   .project-card {
@@ -465,6 +487,39 @@ import Layout from '../layouts/Layout.astro';
   
   .project-cta:hover {
     background-color: #3182ce;
+  }
+  
+  .blog-overview {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: none;
+  }
+  
+  .blog-header {
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .blog-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-intro {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
   
   .blog-post-card {
