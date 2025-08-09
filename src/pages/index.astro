@@ -31,25 +31,35 @@ import Layout from '../layouts/Layout.astro';
   <main class="content">
     <h1>Welcome</h1>
     <p>This is the content area.</p>
-
-    ---
-    ## My Services
-
-    I offer a range of creative and technical services to help you build a strong digital presence. My goal is to work with you to understand your vision and deliver solutions that are both beautiful and functional.
-
-    ### UI/UX Design & Web Development
-
-    I create intuitive and engaging user interfaces for websites and applications. From wireframing and prototyping to final design and implementation, I focus on the user's journey to ensure a seamless and enjoyable experience. My development skills bring these designs to life with clean, efficient code.
-
-    ### Digital Illustration & Graphic Design
-
-    Whether you need custom illustrations for a brand, an eye-catching logo, or a complete visual identity, I can translate complex ideas into clear and compelling visuals. I have experience working across various styles and mediums to create graphics that capture attention and communicate your message effectively.
-
-    ### Sound Design & Music Composition
-
-    Good design isn't just visual; it's also aural. I compose original music and create soundscapes for film, games, and other interactive media. My sound design work adds depth and atmosphere, enhancing the emotional impact of your project and creating a more immersive experience for your audience.
-
-    ---
+    
+    <div class="services-overview">
+      <div class="services-header">
+        <h2 class="services-title">My Services</h2>
+        <p class="services-intro">
+          I offer a range of creative and technical services to help you build a strong digital presence. My goal is to work with you to understand your vision and deliver solutions that are both beautiful and functional.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3 class="service-title">UI/UX Design & Web Development</h3>
+          <p class="service-description">
+            I create intuitive and engaging user interfaces for websites and applications. From wireframing and prototyping to final design and implementation, I focus on the user's journey to ensure a seamless and enjoyable experience. My development skills bring these designs to life with clean, efficient code.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Digital Illustration & Graphic Design</h3>
+          <p class="service-description">
+            Whether you need custom illustrations for a brand, an eye-catching logo, or a complete visual identity, I can translate complex ideas into clear and compelling visuals. I have experience working across various styles and mediums to create graphics that capture attention and communicate your message effectively.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Sound Design & Music Composition</h3>
+          <p class="service-description">
+            Good design isn't just visual; it's also aural. I compose original music and create soundscapes for film, games, and other interactive media. My sound design work adds depth and atmosphere, enhancing the emotional impact of your project and creating a more immersive experience for your audience.
+          </p>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
 
@@ -155,5 +165,58 @@ import Layout from '../layouts/Layout.astro';
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .services-overview {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .services-header {
+    margin-bottom: 3rem;
+  }
+
+  .services-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .services-intro {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
   }
 </style>
