@@ -149,6 +149,15 @@ import Layout from '../layouts/Layout.astro';
         </form>
       </div>
     </div>
+    <div class="resume-overview-section">
+      <div class="resume-content">
+        <h2 class="resume-title">My Resume & Experience</h2>
+        <p class="resume-subtitle">
+          With over nine years of experience in the creative and technical fields, I've had the privilege of working on a wide range of projects. Explore my professional journey and see how my skills can benefit your next endeavor.
+        </p>
+        <a href="/resume" class="resume-cta">View Full Resume</a>
+      </div>
+    </div>
   </main>
 </Layout>
 
@@ -520,5 +529,44 @@ import Layout from '../layouts/Layout.astro';
   
   .newsletter-form button:hover {
     background-color: #3182ce;
+  }
+
+  .resume-overview-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  .resume-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .resume-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .resume-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  .resume-cta {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume-cta:hover {
+    background-color: #555;
   }
 </style>
