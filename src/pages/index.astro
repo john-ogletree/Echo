@@ -21,6 +21,13 @@ import Layout from '../layouts/Layout.astro';
       <a href="/creations" class="hero-cta">See My Work</a>
     </div>
   </div>
+  <div class="profile-card-section">
+    <div class="profile-card">
+      <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
+      <h3>John Ogletree</h3>
+      <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
+    </div>
+  </div>
   <main class="content">
     <h1>Welcome</h1>
     <p>This is the content area.</p>
@@ -94,6 +101,36 @@ import Layout from '../layouts/Layout.astro';
   }
   .hero-cta:hover {
     background-color: #3182ce;
+  }
+  .profile-card-section {
+    background-color: #f0f0f0;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .profile-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  .profile-card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .profile-card blockquote {
+    font-style: italic;
+    color: #555;
+    margin: 0;
   }
   .content {
     padding: 2rem;
