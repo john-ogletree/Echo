@@ -182,6 +182,39 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </main>
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">John Ogletree</a>
+        <p class="footer-tagline">Creative solutions for a digital world.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/creations">Creations</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#" aria-label="Link to Behance profile"><i class="fab fa-behance"></i> Behance</a></li>
+          <li><a href="#" aria-label="Link to LinkedIn profile"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="#" aria-label="Link to GitHub profile"><i class="fab fa-github"></i> GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-info">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:john.ogletree@example.com">john.ogletree@example.com</a></p>
+        <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 John Ogletree. All rights reserved.</p>
+    </div>
+  </footer>
 </Layout>
 
 <style>
@@ -659,5 +692,89 @@ import Layout from '../layouts/Layout.astro';
   
   .contact-form button:hover {
     background-color: #3182ce;
+  }
+
+  .main-footer {
+    background-color: #333;
+    color: white;
+    padding: 4rem 2rem;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: left;
+  }
+  
+  .footer-brand .footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand .footer-tagline {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .footer-links h4,
+  .footer-social h4,
+  .footer-contact-info h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .footer-links ul,
+  .footer-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li,
+  .footer-social li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links a,
+  .footer-social a,
+  .footer-contact-info a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover,
+  .footer-social a:hover,
+  .footer-contact-info a:hover {
+    color: #4299e1;
+  }
+  
+  .footer-social i {
+    margin-right: 0.5rem;
+  }
+  
+  .footer-contact-info p {
+    margin: 0.5rem 0;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #555;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
   }
 </style>
