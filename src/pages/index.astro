@@ -2,7 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout> <div class="readme-container"> <header class="readme-header"> <div class="header-right"> <div class="nav-drawer-container" id="nav-drawer-container"> <nav class="main-nav" id="main-nav"> <div class="nav-header-mobile"> <button class="nav-close" aria-label="Close navigation">
+<Layout>
+  <div class="readme-container">
+    <header class="readme-header">
+      <div class="header-right">
+        <div class="nav-drawer-container" id="nav-drawer-container">
+          <nav class="main-nav" id="main-nav">
+            <div class="nav-header-mobile">
+              <button class="nav-close" aria-label="Close navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
               </button>
               <form class="search-form mobile-search" action="/directory" method="get">
@@ -745,7 +752,7 @@ color: var(--color-heading);
   .explorer-search-form .search-button {
     position: absolute;
     right: 0.5rem;
-    top: 50%;
+top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -1267,10 +1274,10 @@ padding: 1.5rem 1.5rem 1rem 1.5rem;
     .nav-links {
       flex-direction: column;
       gap: 1.5rem;
-      padding: 1rem 1.5rem;
+      padding: 0.5rem 1.5rem;
 }
     .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       border-bottom: 1px solid var(--color-border);
 }
     .dashboard-grid {
