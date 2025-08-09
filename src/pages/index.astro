@@ -2,7 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout> <div class="readme-container"> <header class="readme-header"> <div class="header-right"> <div class="nav-drawer-container" id="nav-drawer-container"> <nav class="main-nav" id="main-nav">
+<Layout>
+  <div class="readme-container">
+    <header class="readme-header">
+      <div class="header-right">
+        <div class="nav-drawer-container" id="nav-drawer-container">
+          <nav class="main-nav" id="main-nav">
             <div class="nav-header-mobile">
               <button class="nav-close" aria-label="Close navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -19,8 +24,8 @@ import Layout from '../layouts/Layout.astro';
               <li><a href="/capabilities"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.5-3.5a.5.5 0 0 0-1 0v3h-2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5v-4z"/></svg><span>Capabilities</span></a></li>
               <li><a href="/creations"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.82 
 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L7.828 7.375a.75.75 0 0 1 0-1.104l3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L3.828 7.375a.75.75 0 0 1 0-1.104l3-2.7z"/></svg><span>Creations</span></a></li>
-              <li><a href="/log"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 
-0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg><span>Log</span></a></li>
+              <li><a href="/log"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 
+0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg><span>Log</span></a></li>
               <li><a href="/credentials"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Credentials</span></a></li>
               <li><a 
 href="/connect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Connect</span></a></li>
@@ -73,8 +78,7 @@ href="/connect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f
             </li>
             <li data-name="README.md">
               <a href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 
-0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
                 <span>README.md</span>
                 <span class="file-size-date">8 KB / 2024-08-08</span>
               
@@ -418,51 +422,12 @@ const yearSpan = document.getElementById('year');
     });
   });
 </script>
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('explorer-search-input');
-    const fileList = document.getElementById('file-list');
-    const placeholder = document.getElementById('explorer-placeholder');
-    const fileItems = fileList.getElementsByTagName('li');
 
-    searchInput.addEventListener('keyup', (event) => {
-      const filter = event.target.value.toLowerCase();
-      
-      if (filter.length > 0) {
-        fileList.style.display = 'block';
-        placeholder.style.display = 'none';
-
-        let hasResults = false;
-   
-      for (let i = 0; i < fileItems.length; i++) {
-          const fileName = fileItems[i].getAttribute('data-name').toLowerCase();
-          if (fileName.includes(filter)) {
-            fileItems[i].style.display = '';
-            hasResults = true;
-          } else {
-            fileItems[i].style.display = 'none';
-       
-    }
-        }
-        
-        if (!hasResults) {
-          placeholder.textContent = 'No matching files found.';
-placeholder.style.display = 'block';
-          fileList.style.display = 'none';
-        }
-
-      } else {
-        fileList.style.display = 'none';
-placeholder.style.display = 'block';
-        placeholder.textContent = 'Start typing to search files.';
-      }
-    });
-  });
-</script>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
-:root {
+
+  :root {
     --color-bg: #F0EAD6; /* Light cream */
     --color-surface: #D4C9A8;
 /* Muted beige */
@@ -1059,9 +1024,9 @@ font-size: 1.2em;
     color: var(--color-text-light);
 }
 
-  .resume-skills-card {
+  /* .resume-skills-card {
     padding: 1.5rem;
-  }
+  } */
   .skill-category {
     margin-bottom: 1rem;
 }
@@ -1278,14 +1243,44 @@ padding: 1.5rem 1.5rem 1rem 1.5rem;
     .dashboard-grid {
       grid-template-columns: 1fr 1fr;
 }
-    .about-container { display: block; }
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+}
+    .about-container blockquote {
+      padding-left: 0;
+      border-left: none;
+}
     .profile-picture {
-      float: left;
-margin-right: 1.5rem;
+      margin-right: 0;
       margin-bottom: 1rem;
-    }
+}
     .footer-grid {
       grid-template-columns: 1fr 1fr;
+}
+
+    /* Profile page mobile adjustments */
+    .profile-header {
+      flex-direction: column;
+text-align: center;
+      gap: 1.5rem;
+    }
+    .profile-info {
+      text-align: left;
+}
+    .profile-bio {
+      text-align: center;
+}
+    .skills-grid {
+      grid-template-columns: 1fr;
+}
+    .experience-item {
+      flex-direction: column;
+      text-align: left;
+      gap: 1rem;
+}
+    .experience-details {
+      width: auto;
 }
   }
 
