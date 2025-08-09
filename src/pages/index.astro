@@ -57,6 +57,46 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
+    <div class="projects-overview">
+      <div class="projects-header">
+        <h2 class="projects-title">Selected Projects</h2>
+        <p class="projects-intro">
+          Here are a few examples of my work that highlight my skills in design, development, and sound. Each project represents a unique challenge and a collaborative effort to bring a creative vision to life.
+        </p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://placehold.co/400x250/E6EDF3/161B22?text=Project+1" alt="Placeholder image for Project 1" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Ethereal Echoes Soundscapes</h3>
+            <p class="project-description">
+              A sound design project for a mobile game, focusing on creating immersive and atmospheric audio that changes dynamically with player actions.
+            </p>
+            <a href="/creations/project-1" class="project-cta">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://placehold.co/400x250/E6EDF3/161B22?text=Project+2" alt="Placeholder image for Project 2" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Nexus UI Redesign</h3>
+            <p class="project-description">
+              A complete UI/UX overhaul for a data analytics dashboard, improving user flow and visual clarity with a modern, responsive design.
+            </p>
+            <a href="/creations/project-2" class="project-cta">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://placehold.co/400x250/E6EDF3/161B22?text=Project+3" alt="Placeholder image for Project 3" class="project-image">
+          <div class="project-info">
+            <h3 class="project-title">Starlight Cafe Branding</h3>
+            <p class="project-description">
+              Full brand identity package, including logo design, custom illustrations, and a style guide for a new local coffee shop.
+            </p>
+            <a href="/creations/project-3" class="project-cta">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
 
@@ -215,5 +255,84 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1rem;
     line-height: 1.6;
     color: #555;
+  }
+
+  .projects-overview {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .projects-header {
+    margin-bottom: 3rem;
+  }
+  
+  .projects-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .projects-intro {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .project-info {
+    padding: 1.5rem;
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  .project-cta {
+    display: inline-block;
+    background-color: #4299e1;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .project-cta:hover {
+    background-color: #3182ce;
   }
 </style>
