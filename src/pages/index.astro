@@ -1,62 +1,103 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
+
 <Layout title="John Ogletree - Home">
-<nav class="main-nav-bar">
-<div class="nav-container">
-<a href=a"/" class="nav-logo">John Ogletree</a>
-<ul class="nav-links">
-<li><a href="/">Home</a></li>
-<li><a href="/about">About</a></li>
-<li><a href="/creations">Creations</a></li>
-<li><a href="/contact">Contact</a></li>
-</ul>
-</div>
-</nav>
-<main class="content">
-<h1>Welcome</h1>
-<p>This is the content area.</p>
-</main>
+  <nav class="main-nav-bar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">John Ogletree</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/creations">Creations</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="hero-container">
+      <h2 class="hero-title">Creative Solutions for a Digital World</h2>
+      <p class="hero-subtitle">I'm a multidisciplinary digital artist and designer with over nine years of experience, ready to help you bring your ideas to life.</p>
+      <a href="/creations" class="hero-cta">See My Work</a>
+    </div>
+  </div>
+  <main class="content">
+    <h1>Welcome</h1>
+    <p>This is the content area.</p>
+  </main>
 </Layout>
 
 <style>
-.main-nav-bar {
-background-color: #333;
-color: white;
-padding: 1rem 0;
-}
-.nav-container {
-max-width: 1200px;
-margin: 0 auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 2rem;
-}
-.nav-logo {
-font-size: 1.5rem;
-font-weight: bold;
-color: white;
-text-decoration: none;
-}
-.nav-links {
-display: flex;
-list-style: none;
-margin: 0;
-padding: 0;
-gap: 1rem;
-}
-.nav-links a {
-color: white;
-text-decoration: none;
-transition: color 0.3s ease;
-}
-.nav-links a:hover {
-color: #ccc;
-}
-.content {
-padding: 2rem;
-max-width: 1200px;
-margin: 0 auto;
-}
+  .main-nav-bar {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+  }
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+  }
+  .nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+  }
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: #ccc;
+  }
+  .hero {
+    background-color: #2d3748;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .hero-cta {
+    display: inline-block;
+    background-color: #4299e1;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  .hero-cta:hover {
+    background-color: #3182ce;
+  }
+  .content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 </style>
