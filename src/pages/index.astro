@@ -97,6 +97,46 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
     </div>
+    <div class="blog-overview">
+      <div class="blog-header">
+        <h2 class="blog-title">Latest Thoughts</h2>
+        <p class="blog-intro">
+          Dive into my latest articles and reviews on design, technology, and the creative process. Here, I share insights, tutorials, and my perspective on the ever-evolving digital world.
+        </p>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-post-card">
+          <img src="https://placehold.co/400x250/161B22/E6EDF3?text=Article+1" alt="Placeholder image for blog post 1" class="blog-post-image">
+          <div class="blog-post-info">
+            <h3 class="blog-post-title">The Art of Minimalist UI Design</h3>
+            <p class="blog-post-description">
+              An exploration of the principles behind minimalist user interfaces and how they can improve user experience without sacrificing functionality.
+            </p>
+            <a href="/blog/post-1" class="blog-post-cta">Read More</a>
+          </div>
+        </div>
+        <div class="blog-post-card">
+          <img src="https://placehold.co/400x250/161B22/E6EDF3?text=Article+2" alt="Placeholder image for blog post 2" class="blog-post-image">
+          <div class="blog-post-info">
+            <h3 class="blog-post-title">Review: The Latest in DAW Software</h3>
+            <p class="blog-post-description">
+              A hands-on review of the newest digital audio workstation software, breaking down its features, pros, and cons for sound designers and musicians.
+            </p>
+            <a href="/blog/post-2" class="blog-post-cta">Read More</a>
+          </div>
+        </div>
+        <div class="blog-post-card">
+          <img src="https://placehold.co/400x250/161B22/E6EDF3?text=Article+3" alt="Placeholder image for blog post 3" class="blog-post-image">
+          <div class="blog-post-info">
+            <h3 class="blog-post-title">Composing for Games: A Beginner's Guide</h3>
+            <p class="blog-post-description">
+              A step-by-step guide for aspiring composers looking to get into the world of video game music, covering everything from theory to implementation.
+            </p>
+            <a href="/blog/post-3" class="blog-post-cta">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
 
@@ -334,5 +374,84 @@ import Layout from '../layouts/Layout.astro';
   
   .project-cta:hover {
     background-color: #3182ce;
+  }
+  
+  .blog-overview {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .blog-header {
+    margin-bottom: 3rem;
+  }
+  
+  .blog-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-intro {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .blog-post-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-post-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .blog-post-info {
+    padding: 1.5rem;
+  }
+  
+  .blog-post-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-post-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-post-cta {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .blog-post-cta:hover {
+    background-color: #555;
   }
 </style>
