@@ -223,37 +223,38 @@ import Layout from '../layouts/Layout.astro';
       </form>
 
       <h2 id="resume">RÃ©sumÃ©</h2>
-      <div class="card-grid">
-        <div class="card resume-card">
-          <h4>Design</h4>
-          <ul>
-            <li>UI/UX & Prototyping</li>
-            <li>Branding & Art Direction</li>
-            <li>Iconography & Illustration</li>
-          </ul>
-        </div>
-        <div class="card resume-card">
-          <h4>Tools & Tech</h4>
-          <ul>
-            <li>Figma & Adobe Creative Suite</li>
-            <li>HTML, CSS & JavaScript</li>
-            <li>Astro, Node.js & Blender</li>
-          </ul>
-        </div>
-        <div class="card resume-card">
+      <p>An overview of my professional history, expertise, and a link to my full rÃ©sumÃ©.</p>
+
+      <div class="resume-grid">
+        <div class="card resume-experience-card">
           <h4>Experience</h4>
-          <p><strong>Freelance Digital Designer</strong></p>
-          <p class="text-light-small">(2015 - Present)</p>
-          <p>Partnered with over 50 clients, from startups to established companies, to deliver high-quality work.</p>
+          <p class="experience-title"><strong>Freelance Digital Designer</strong></p>
+          <p class="experience-date text-light-small">(2015 - Present)</p>
+          <ul>
+            <li>Partnered with over 50 clients to deliver high-quality work.</li>
+            <li>Led projects from concept to completion, managing client communication and expectations.</li>
+            <li>Specialized in brand identity, UI/UX design, and digital art.</li>
+          </ul>
         </div>
-        <div class="card resume-card cta-card">
-          <h4>Download Full RÃ©sumÃ©</h4>
-          <p>Get the complete details on my skills and experience.</p>
-          <a href="/resume.pdf" target="_blank" class="cta-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-            <span>Download PDF</span>
-          </a>
+        
+        <div class="card resume-skills-card">
+          <h4>Skills & Tools</h4>
+          <div class="skill-category">
+            <strong>Design:</strong>
+            <p>UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</p>
+          </div>
+          <div class="skill-category">
+            <strong>Tech:</strong>
+            <p>Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender</p>
+          </div>
         </div>
+      </div>
+      
+      <div class="view-all-container">
+        <a href="/resume.pdf" target="_blank" class="cta-button download-resume-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+          <span>Download Full RÃ©sumÃ© (PDF)</span>
+        </a>
       </div>
 
       <h2 id="contact">Contact</h2>
@@ -940,23 +941,72 @@ import Layout from '../layouts/Layout.astro';
   .service-card strong { color: var(--color-heading); }
 
   /* --- Card Type: RÃ©sumÃ© --- */
-  .resume-card { padding: 1.5rem; overflow: visible; }
-  .resume-card h4 {
-    color: var(--color-accent); margin-bottom: 1rem;
-    border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; font-size: 1.2em;
+  .resume-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
-  .resume-card ul { list-style: '✔  '; color: var(--color-text-light); padding-left: 1.25rem; margin: 0; }
-  .resume-card li { margin-bottom: 0.75rem; padding-left: 0.5rem; }
-  .resume-card p { color: var(--color-text-light); line-height: 1.6; margin: 0 0 0.5rem 0; }
-  .resume-card p:last-child { margin-bottom: 0; }
-  .resume-card p strong { color: var(--color-text); font-weight: 500; }
-  .text-light-small { font-size: 0.9em; color: var(--color-text-light); }
-  .resume-card.cta-card {
-    background-color: var(--color-tag-bg); display: flex; flex-direction: column;
-    justify-content: center; align-items: center; text-align: center;
+  .resume-experience-card {
+    padding: 1.5rem;
   }
-  .resume-card.cta-card:hover { background-color: rgba(61, 135, 166, 0.2); }
-  .cta-card .cta-button { margin-top: 1rem; }
+  .resume-experience-card h4, .resume-skills-card h4 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+    font-size: 1.2em;
+  }
+  .resume-experience-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .resume-experience-card li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  .resume-experience-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-text-light);
+  }
+  .experience-title {
+    font-weight: 500;
+    color: var(--color-text);
+    margin: 0 0 0.25rem 0;
+  }
+  .experience-date {
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+  }
+  .experience-summary {
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--color-text-light);
+  }
+
+  .resume-skills-card {
+    padding: 1.5rem;
+  }
+  .skill-category {
+    margin-bottom: 1rem;
+  }
+  .skill-category strong {
+    color: var(--color-text);
+  }
+  .skill-category p {
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    margin: 0;
+  }
+  .download-resume-button {
+    width: auto;
+    margin: 0 auto;
+  }
 
   /* --- Forms --- */
   .form-group { margin-bottom: 1.5rem; }
@@ -1058,6 +1108,9 @@ import Layout from '../layouts/Layout.astro';
     .nav-links a {
       display: block; /* Make the link a block-level element to fill the li */
       white-space: normal; /* Allow text to wrap if it needs to */
+    }
+    .resume-grid {
+      grid-template-columns: 2fr 1fr;
     }
   }
 
