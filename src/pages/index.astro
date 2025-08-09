@@ -218,11 +218,19 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  /* Base styles for a full-width layout */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
   .main-nav-bar {
     background-color: #333;
     color: white;
     padding: 1rem 0;
+    width: 100%;
   }
+  
   .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -231,12 +239,14 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     padding: 0 2rem;
   }
+  
   .nav-logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
     text-decoration: none;
   }
+  
   .nav-links {
     display: flex;
     list-style: none;
@@ -244,34 +254,42 @@ import Layout from '../layouts/Layout.astro';
     padding: 0;
     gap: 1rem;
   }
+  
   .nav-links a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
   }
+  
   .nav-links a:hover {
     color: #ccc;
   }
+  
   .hero {
     background-color: #2d3748;
     color: white;
     padding: 4rem 2rem;
     text-align: center;
+    width: 100%;
   }
+  
   .hero-container {
     max-width: 800px;
     margin: 0 auto;
   }
+  
   .hero-title {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
+  
   .hero-subtitle {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 2rem;
   }
+  
   .hero-cta {
     display: inline-block;
     background-color: #4299e1;
@@ -282,14 +300,18 @@ import Layout from '../layouts/Layout.astro';
     font-weight: bold;
     transition: background-color 0.3s ease;
   }
+  
   .hero-cta:hover {
     background-color: #3182ce;
   }
+  
   .profile-card-section {
     background-color: #f0f0f0;
     padding: 4rem 2rem;
     text-align: center;
+    width: 100%;
   }
+  
   .profile-card {
     max-width: 800px;
     margin: 0 auto;
@@ -298,6 +320,7 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+  
   .profile-picture {
     width: 120px;
     height: 120px;
@@ -305,50 +328,69 @@ import Layout from '../layouts/Layout.astro';
     object-fit: cover;
     margin-bottom: 1rem;
   }
+  
   .profile-card h3 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
+  
   .profile-card blockquote {
     font-style: italic;
     color: #555;
     margin: 0;
   }
+  
   .content {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
   }
-
-  .services-overview {
-    padding: 4rem 0;
+  
+  .services-overview,
+  .projects-overview,
+  .blog-overview {
+    padding: 4rem 2rem;
     text-align: center;
+    max-width: none;
   }
-
-  .services-header {
+  
+  .services-header,
+  .projects-header,
+  .blog-header {
     margin-bottom: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
   }
 
-  .services-title {
+  .services-grid,
+  .projects-grid,
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .services-title,
+  .projects-title,
+  .blog-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
-
-  .services-intro {
+  
+  .services-intro,
+  .projects-intro,
+  .blog-intro {
     font-size: 1.15rem;
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
   }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
+  
   .service-card {
     background-color: #f9f9f9;
     padding: 2rem;
@@ -356,50 +398,22 @@ import Layout from '../layouts/Layout.astro';
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-
+  
   .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   }
-
+  
   .service-title {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
-
+  
   .service-description {
     font-size: 1rem;
     line-height: 1.6;
     color: #555;
-  }
-
-  .projects-overview {
-    padding: 4rem 0;
-    text-align: center;
-  }
-  
-  .projects-header {
-    margin-bottom: 3rem;
-  }
-  
-  .projects-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .projects-intro {
-    font-size: 1.15rem;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
   }
   
   .project-card {
@@ -451,34 +465,6 @@ import Layout from '../layouts/Layout.astro';
   
   .project-cta:hover {
     background-color: #3182ce;
-  }
-  
-  .blog-overview {
-    padding: 4rem 0;
-    text-align: center;
-  }
-  
-  .blog-header {
-    margin-bottom: 3rem;
-  }
-  
-  .blog-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .blog-intro {
-    font-size: 1.15rem;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-  
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
   }
   
   .blog-post-card {
@@ -537,6 +523,8 @@ import Layout from '../layouts/Layout.astro';
     text-align: center;
     background-color: #2d3748;
     color: white;
+    width: 100%;
+    max-width: none;
   }
   
   .newsletter-content {
@@ -591,6 +579,8 @@ import Layout from '../layouts/Layout.astro';
     padding: 4rem 2rem;
     text-align: center;
     background-color: #f0f0f0;
+    width: 100%;
+    max-width: none;
   }
   
   .resume-content {
@@ -629,6 +619,8 @@ import Layout from '../layouts/Layout.astro';
   .contact-section {
     padding: 4rem 2rem;
     text-align: center;
+    width: 100%;
+    max-width: none;
   }
   
   .contact-content {
@@ -654,6 +646,8 @@ import Layout from '../layouts/Layout.astro';
     flex-direction: column;
     gap: 1.5rem;
     text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
   }
   
   .form-group {
@@ -698,6 +692,7 @@ import Layout from '../layouts/Layout.astro';
     background-color: #333;
     color: white;
     padding: 4rem 2rem;
+    width: 100%;
   }
   
   .footer-container {
