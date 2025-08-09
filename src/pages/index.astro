@@ -3,5 +3,417 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  
+    <div class="bg-surface min-h-screen">
+    <header class="flex justify-between items-center gap-4 py-4 px-8 border-b border-border fixed top-0 w-full z-10 bg-surface">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 text-xl md:text-2xl font-semibold">
+          <svg class="w-4 h-4 fill-text-light" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
+          <a href="/" class="text-text font-bold">john-ogletree/Echo</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center space-x-6">
+          <ul class="flex flex-row space-x-6 list-none p-0 m-0">
+            <li><a href="/" class="flex items-center space-x-2 text-text font-medium py-2 border-b-2 border-transparent hover:text-accent hover:border-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L8.707 1.5Z"/><path d="M2.5 12.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5Z"/></svg>
+              <span>Start</span>
+            </a></li>
+            <li><a href="/profile" class="flex items-center space-x-2 text-text font-medium py-2 border-b-2 border-transparent hover:text-accent hover:border-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
+              <span>Profile</span>
+            </a></li>
+            <li><a href="/capabilities" class="flex items-center space-x-2 text-text font-medium py-2 border-b-2 border-transparent hover:text-accent hover:border-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.5-3.5a.5.5 0 0 0-1 0v3h-2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5v-4z"/></svg>
+              <span>Capabilities</span>
+            </a></li>
+            <li><a href="/creations" class="flex items-center space-x-2 text-text font-medium py-2 border-b-2 border-transparent hover:text-accent hover:border-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L7.828 7.375a.75.75 0 0 1 0-1.104l3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L3.828 7.375a.75.75 0 0 1 0-1.104l3-2.7z"/></svg>
+              <span>Creations</span>
+            </a></li>
+            <li><a href="/log" class="flex items-center space-x-2 text-text font-medium py-2 border-b-2 border-transparent hover:text-accent hover:border-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
+              <span>Log</span>
+            </a></li>
+            <li><a href="/credentials" class="flex items-center space-x-2 text-text font-medium py-2 border-b-2 border-transparent hover:text-accent hover:border-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg>
+              <span>Credentials</span>
+            </a></li>
+            <li><a href="/connect" class="flex items-center space-x-2 text-text font-medium py-2 border-b-2 border-transparent hover:text-accent hover:border-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg>
+              <span>Connect</span>
+            </a></li>
+            <li><a href="/explorer" class="flex items-center space-x-2 text-text font-medium py-2 border-b-2 border-transparent hover:text-accent hover:border-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
+              <span>Explorer</span>
+            </a></li>
+          </ul>
+        </div>
+        <button class="md:hidden p-2 rounded-md hover:bg-bg" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="py-8 px-8">
+      <article id="content">
+
+        <div class="file-explorer-container mb-8">
+          <div class="flex justify-between items-center px-6 py-4 border-b border-border gap-4">
+            <h2 class="text-xl md:text-2xl font-semibold text-heading m-0">File Explorer</h2>
+            <form class="flex items-center flex-grow relative" action="/directory" method="get">
+              <input type="search" name="q" id="explorer-search-input" class="bg-bg border border-border rounded-md px-3 py-2 text-text w-full pr-10" placeholder="Search files...">
+              <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-none border-none text-text-light cursor-pointer p-0" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+              </button>
+            </form>
+          </div>
+          <div class="p-8">
+            <p id="explorer-placeholder" class="text-text-light m-0">Start typing to search files.</p>
+            <ul id="file-list" class="list-none p-0 m-0 hidden">
+              <li data-name="projects" class="border-b border-border last:border-b-0">
+                <a href="/creations" class="flex items-center gap-4 py-3 text-text hover:text-accent hover:bg-accent/5 no-underline transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="flex-shrink-0"><path d="M9.5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h4zm-5 5v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4z"/></svg>
+                  <span>projects/</span>
+                  <button class="ml-auto font-mono text-xs font-semibold text-text-light bg-transparent border border-border rounded-md px-2 py-1 cursor-pointer hover:bg-accent hover:text-bg hover:border-accent transition-colors duration-200">View</button>
+                </a>
+              </li>
+              <li data-name="README.md" class="border-b border-border last:border-b-0">
+                <a href="/" class="flex items-center gap-4 py-3 text-text hover:text-accent hover:bg-accent/5 no-underline transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="flex-shrink-0"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
+                  <span>README.md</span>
+                  <span class="ml-auto text-xs text-text-light">8 KB / 2024-08-08</span>
+                  <button class="ml-4 font-mono text-xs font-semibold text-text-light bg-transparent border border-border rounded-md px-2 py-1 cursor-pointer hover:bg-accent hover:text-bg hover:border-accent transition-colors duration-200">View</button>
+                </a>
+              </li>
+              <li data-name="style.css" class="border-b border-border last:border-b-0">
+                <a href="/style.css" class="flex items-center gap-4 py-3 text-text hover:text-accent hover:bg-accent/5 no-underline transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="flex-shrink-0"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
+                  <span>style.css</span>
+                  <span class="ml-auto text-xs text-text-light">2 KB / 2024-08-08</span>
+                  <button class="ml-4 font-mono text-xs font-semibold text-text-light bg-transparent border border-border rounded-md px-2 py-1 cursor-pointer hover:bg-accent hover:text-bg hover:border-accent transition-colors duration-200">View</button>
+                </a>
+              </li>
+              <li data-name="about.md" class="border-b border-border last:border-b-0">
+                <a href="/profile" class="flex items-center gap-4 py-3 text-text hover:text-accent hover:bg-accent/5 no-underline transition-colors duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="flex-shrink-0"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
+                  <span>about.md</span>
+                  <span class="ml-auto text-xs text-text-light">1 KB / 2024-08-07</span>
+                  <button class="ml-4 font-mono text-xs font-semibold text-text-light bg-transparent border border-border rounded-md px-2 py-1 cursor-pointer hover:bg-accent hover:text-bg hover:border-accent transition-colors duration-200">View</button>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div class="flex items-center bg-bg border border-border rounded-lg p-6">
+            <div class="text-5xl mr-6">📁</div>
+            <div class="flex flex-col justify-center">
+              <div class="text-5xl font-bold text-accent">2</div>
+              <div class="text-xs text-text-light uppercase mt-2">Projects Completed</div>
+            </div>
+          </div>
+          <div class="flex items-center bg-bg border border-border rounded-lg p-6">
+            <div class="text-5xl mr-6">📝</div>
+            <div class="flex flex-col justify-center">
+              <div class="text-5xl font-bold text-accent">2</div>
+              <div class="text-xs text-text-light uppercase mt-2">Latest Articles</div>
+            </div>
+          </div>
+          <div class="flex items-center bg-bg border border-border rounded-lg p-6">
+            <div class="text-5xl mr-6">💼</div>
+            <div class="flex flex-col justify-center">
+              <div class="text-5xl font-bold text-accent">9+</div>
+              <div class="text-xs text-text-light uppercase mt-2">Years of Experience</div>
+            </div>
+          </div>
+        </div>
+        
+        <h2 class="text-2xl font-medium text-heading border-b border-border pb-2 mb-4 mt-10 before:content-['##'] before:text-text-light before:font-normal before:mr-2">About</h2>
+        <div class="flex items-center gap-6 mb-8">
+          <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="w-28 h-28 rounded-full object-cover flex-shrink-0">
+          <blockquote class="m-0 pl-6 border-l-2 border-border text-text-light flex-grow">I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
+        </div>
+
+        <h2 class="text-2xl font-medium text-heading border-b border-border pb-2 mb-4 mt-10 before:content-['##'] before:text-text-light before:font-normal before:mr-2">Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          <a href="#" class="relative flex items-center gap-4 p-5 bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden">
+            <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="w-12 h-12 flex-shrink-0 rounded-md bg-bg">
+            <div>
+              <strong class="text-heading">Brand & Identity:</strong> Logos, visual systems, and strategy.
+            </div>
+            <span class="absolute bottom-3 right-4 text-3xl text-text-light transition-transform duration-200 group-hover:translate-x-1 group-hover:text-accent">→</span>
+          </a>
+          <a href="#" class="relative flex items-center gap-4 p-5 bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden">
+            <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="w-12 h-12 flex-shrink-0 rounded-md bg-bg">
+            <div>
+              <strong class="text-heading">Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
+            </div>
+            <span class="absolute bottom-3 right-4 text-3xl text-text-light transition-transform duration-200 group-hover:translate-x-1 group-hover:text-accent">→</span>
+          </a>
+        </div>
+        <div class="text-center mt-8">
+          <a href="/capabilities" class="inline-flex items-center justify-center gap-2 bg-heading text-bg border border-heading rounded-md px-6 py-3 font-mono font-medium cursor-pointer transition-colors duration-200 hover:bg-red-400 hover:border-red-400">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+            <span>View All Services</span>
+          </a>
+        </div>
+
+        <h2 class="text-2xl font-medium text-heading border-b border-border pb-2 mb-4 mt-10 before:content-['##'] before:text-text-light before:font-normal before:mr-2">Projects</h2>
+        <p class="mb-4">A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          <a href="#" class="relative block bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden">
+            <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="w-full h-auto aspect-[16/9] object-cover block bg-bg">
+            <div class="p-4 md:p-5 pb-10">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="text-lg font-bold text-heading">Chrono Corp</h4>
+                <span class="bg-tag-bg px-2 py-1 rounded-md text-xs text-accent flex-shrink-0 ml-2">UI/UX Design</span>
+              </div>
+              <p class="text-sm text-text-light leading-relaxed m-0">A time-tracking application for creative freelancers.</p>
+              <span class="absolute bottom-3 right-4 text-3xl text-text-light transition-transform duration-200 group-hover:translate-x-1 group-hover:text-accent">→</span>
+            </div>
+          </a>
+          <a href="#" class="relative block bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden">
+            <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="w-full h-auto aspect-[16/9] object-cover block bg-bg">
+            <div class="p-4 md:p-5 pb-10">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="text-lg font-bold text-heading">Aether Systems</h4>
+                <span class="bg-tag-bg px-2 py-1 rounded-md text-xs text-accent flex-shrink-0 ml-2">Brand Identity</span>
+              </div>
+              <p class="text-sm text-text-light leading-relaxed m-0">A complete branding package for a cloud computing company.</p>
+              <span class="absolute bottom-3 right-4 text-3xl text-text-light transition-transform duration-200 group-hover:translate-x-1 group-hover:text-accent">→</span>
+            </div>
+          </a>
+        </div>
+        <div class="text-center mt-8">
+          <a href="/creations" class="inline-flex items-center justify-center gap-2 bg-orange-400 text-bg border border-orange-400 rounded-md px-6 py-3 font-mono font-medium cursor-pointer transition-colors duration-200 hover:bg-orange-300 hover:border-orange-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+            <span>View All Projects</span>
+          </a>
+        </div>
+
+        <h2 class="text-2xl font-medium text-heading border-b border-border pb-2 mb-4 mt-10 before:content-['##'] before:text-text-light before:font-normal before:mr-2">Latest Thoughts</h2>
+        <p class="mb-4">A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          <a href="#" class="relative block bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden">
+            <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="w-full h-auto aspect-[16/9] object-cover block bg-bg">
+            <div class="p-4 md:p-5 pb-10">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="text-lg font-bold text-heading">Reducing Cognitive Load in UI Design</h4>
+                <span class="bg-tag-bg px-2 py-1 rounded-md text-xs text-accent flex-shrink-0 ml-2">Article</span>
+              </div>
+              <p class="text-xs text-text-light mt-3">July 30, 2025</p>
+              <span class="absolute bottom-3 right-4 text-3xl text-text-light transition-transform duration-200 group-hover:translate-x-1 group-hover:text-accent">→</span>
+            </div>
+          </a>
+          <a href="#" class="relative block bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden">
+            <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="w-full h-auto aspect-[16/9] object-cover block bg-bg">
+            <div class="p-4 md:p-5 pb-10">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="text-lg font-bold text-heading">Working with the team at Nova Fintech</h4>
+                <span class="bg-tag-bg px-2 py-1 rounded-md text-xs text-accent flex-shrink-0 ml-2">Review</span>
+              </div>
+              <p class="text-xs text-text-light mt-3">June 22, 2025</p>
+              <span class="absolute bottom-3 right-4 text-3xl text-text-light transition-transform duration-200 group-hover:translate-x-1 group-hover:text-accent">→</span>
+            </div>
+          </a>
+        </div>
+        <div class="text-center mt-8">
+          <a href="/log" class="inline-flex items-center justify-center gap-2 bg-orange-700 text-bg border border-orange-700 rounded-md px-6 py-3 font-mono font-medium cursor-pointer transition-colors duration-200 hover:bg-orange-600 hover:border-orange-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+            <span>View All Posts</span>
+          </a>
+        </div>
+
+        <h2 class="text-2xl font-medium text-heading border-b border-border pb-2 mb-4 mt-10 before:content-['##'] before:text-text-light before:font-normal before:mr-2">Subscribe</h2>
+        <p>Receive occasional updates about new projects and articles. No spam.</p>
+        <form class="flex flex-col md:flex-row gap-2" action="#">
+          <input class="bg-bg border border-border rounded-md px-4 py-3 font-mono text-text w-full" type="email" placeholder="your-email@domain.com" required>
+          <button type="submit" class="inline-flex items-center justify-center gap-2 bg-heading text-bg border border-heading rounded-md px-6 py-3 font-mono font-medium cursor-pointer transition-colors duration-200 hover:bg-red-500 hover:border-red-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+            <span>Subscribe</span>
+          </button>
+        </form>
+
+        <h2 class="text-2xl font-medium text-heading border-b border-border pb-2 mb-4 mt-10 before:content-['##'] before:text-text-light before:font-normal before:mr-2">RÃ©sumÃ©</h2>
+        <p>An overview of my professional history, expertise, and a link to my full rÃ©sumÃ©.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          <div class="relative block bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden p-6">
+            <h4 class="text-lg font-bold text-heading border-b border-border pb-3 mb-4">Design</h4>
+            <ul class="list-none p-0 m-0 text-sm text-text-light">
+              <li class="relative mb-2 pl-4 before:content-['âœ“'] before:absolute before:left-0">UI/UX & Prototyping</li>
+              <li class="relative mb-2 pl-4 before:content-['âœ“'] before:absolute before:left-0">Branding & Art Direction</li>
+              <li class="relative mb-2 pl-4 before:content-['âœ“'] before:absolute before:left-0">Iconography & Illustration</li>
+            </ul>
+          </div>
+          <div class="relative block bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden p-6">
+            <h4 class="text-lg font-bold text-heading border-b border-border pb-3 mb-4">Tools & Tech</h4>
+            <ul class="list-none p-0 m-0 text-sm text-text-light">
+              <li class="relative mb-2 pl-4 before:content-['âœ“'] before:absolute before:left-0">Figma & Adobe Creative Suite</li>
+              <li class="relative mb-2 pl-4 before:content-['âœ“'] before:absolute before:left-0">HTML, CSS & JavaScript</li>
+              <li class="relative mb-2 pl-4 before:content-['âœ“'] before:absolute before:left-0">Astro, Node.js & Blender</li>
+            </ul>
+          </div>
+          <div class="relative block bg-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden p-6 col-span-2">
+            <h4 class="text-lg font-bold text-heading border-b border-border pb-3 mb-4">Experience</h4>
+            <p class="font-medium text-text mb-1"><strong>Freelance Digital Designer</strong></p>
+            <p class="text-xs text-text-light mb-4">(2015 - Present)</p>
+            <p class="text-sm text-text-light leading-relaxed m-0">Partnered with over 50 clients, from startups to established companies, to deliver high-quality work.</p>
+          </div>
+          <div class="relative block bg-tag-bg border border-border rounded-lg text-text no-underline transition-transform duration-200 hover:translate-y-[-5px] hover:shadow-xl hover:border-accent overflow-hidden p-6 text-center flex flex-col justify-center items-center">
+            <h4 class="text-lg font-bold text-accent border-b border-border pb-3 mb-4">Download Full RÃ©sumÃ©</h4>
+            <p class="text-sm text-text-light leading-relaxed m-0">Get the complete details on my skills and experience.</p>
+            <a href="/resume.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-heading text-bg border border-heading rounded-md px-6 py-3 font-mono font-medium cursor-pointer transition-colors duration-200 hover:bg-red-500 hover:border-red-500 mt-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+              <span>Download PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-medium text-heading border-b border-border pb-2 mb-4 mt-10 before:content-['##'] before:text-text-light before:font-normal before:mr-2">Contact</h2>
+        <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
+        <form class="flex flex-col space-y-4" action="#">
+          <div class="flex flex-col">
+            <label for="name" class="font-medium text-sm text-text mb-1">Your Name:</label>
+            <input class="bg-bg border border-border rounded-md px-4 py-3 font-mono text-text w-full" type="text" id="name" name="name" required>
+          </div>
+          <div class="flex flex-col">
+            <label for="email" class="font-medium text-sm text-text mb-1">Your Email:</label>
+            <input class="bg-bg border border-border rounded-md px-4 py-3 font-mono text-text w-full" type="email" id="email" name="email" required>
+          </div>
+          <div class="flex flex-col">
+            <label for="message" class="font-medium text-sm text-text mb-1">Your Message:</label>
+            <textarea class="bg-bg border border-border rounded-md px-4 py-3 font-mono text-text w-full" id="message" name="message" rows="6" required></textarea>
+          </div>
+          <button type="submit" class="inline-flex items-center justify-center gap-2 bg-heading text-bg border border-heading rounded-md px-6 py-3 font-mono font-medium cursor-pointer transition-colors duration-200 hover:bg-red-500 hover:border-red-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+            <span>Send Message</span>
+          </button>
+        </form>
+
+      </article>
+    </main>
+
+    <footer class="py-10 px-8 mt-8 border-t border-border">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-10">
+        <div class="flex flex-col">
+          <h4 class="text-xl font-semibold text-accent mb-2">John Ogletree</h4>
+          <p class="text-sm text-text-light max-w-sm mb-1">Digital Artist & Designer based in Martinez, GA.</p>
+          <span class="inline-block text-xs uppercase font-medium text-bg bg-heading rounded-full px-3 py-1">status: available for hire</span>
+        </div>
+        <div class="flex flex-col">
+          <h4 class="text-lg font-semibold text-accent mb-4">Explore</h4>
+          <ul class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm text-text-light list-none p-0 m-0">
+            <li><a href="/directory" class="hover:text-heading hover:underline">Directory</a></li>
+            <li><a href="#about" class="hover:text-heading hover:underline">About</a></li>
+            <li><a href="#services" class="hover:text-heading hover:underline">Services</a></li>
+            <li><a href="#projects" class="hover:text-heading hover:underline">Projects</a></li>
+            <li><a href="#blog" class="hover:text-heading hover:underline">Blog</a></li>
+            <li><a href="#resume" class="hover:text-heading hover:underline">RÃ©sumÃ©</a></li>
+            <li><a href="#contact" class="hover:text-heading hover:underline">Contact</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col">
+          <h4 class="text-lg font-semibold text-accent mb-4">Connect</h4>
+          <ul class="flex justify-center sm:justify-start gap-4 text-text-light list-none p-0 m-0">
+            <li><a href="#" aria-label="GitHub Profile" class="hover:text-accent transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a></li>
+            <li><a href="#" aria-label="LinkedIn Profile" class="hover:text-accent transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a></li>
+            <li><a href="#" aria-label="Dribbble Profile" class="hover:text-accent transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-border text-sm text-text-light mt-4">
+        <p class="m-0">© <span id="year">2024</span> John Ogletree</p>
+        <a href="#" class="flex items-center gap-2 text-text-light hover:text-accent transition-colors duration-200">Back to top</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navDrawer = document.getElementById('nav-drawer-container');
+    const navClose = document.querySelector('.nav-close');
+    const body = document.body;
+
+    function toggleMobileNav() {
+      const isOpen = navDrawer.classList.contains('is-open');
+      navDrawer.classList.toggle('is-open', !isOpen);
+      navToggle.setAttribute('aria-expanded', !isOpen);
+      body.classList.toggle('no-scroll', !isOpen);
+    }
+
+    if (navToggle && navDrawer) {
+      navToggle.addEventListener('click', toggleMobileNav);
+      navClose.addEventListener('click', toggleMobileNav);
+    }
+
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const currentPath = window.location.pathname.replace(/\/+$/, '');
+
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href').replace(/\/+$/, '');
+      
+      if (currentPath === '/' && linkPath === '/') {
+        link.classList.add('current-page');
+      } else if (currentPath === linkPath && linkPath !== '/') {
+        link.classList.add('current-page');
+      }
+    });
+
+    const searchInput = document.getElementById('explorer-search-input');
+    const fileList = document.getElementById('file-list');
+    const placeholder = document.getElementById('explorer-placeholder');
+    const fileItems = fileList.getElementsByTagName('li');
+
+    searchInput.addEventListener('keyup', (event) => {
+      const filter = event.target.value.toLowerCase();
+      
+      if (filter.length > 0) {
+        fileList.style.display = 'block';
+        placeholder.style.display = 'none';
+
+        let hasResults = false;
+        for (let i = 0; i < fileItems.length; i++) {
+          const fileName = fileItems[i].getAttribute('data-name').toLowerCase();
+          if (fileName.includes(filter)) {
+            fileItems[i].style.display = '';
+            hasResults = true;
+          } else {
+            fileItems[i].style.display = 'none';
+          }
+        }
+        
+        if (!hasResults) {
+          placeholder.textContent = 'No matching files found.';
+          placeholder.style.display = 'block';
+          fileList.style.display = 'none';
+        }
+
+      } else {
+        fileList.style.display = 'none';
+        placeholder.style.display = 'block';
+        placeholder.textContent = 'Start typing to search files.';
+      }
+    });
+  });
+</script>
 </Layout>
