@@ -3,39 +3,39 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="readme-container">
-    <header class="readme-header">
-      <div class="header-right">
-        <div class="nav-drawer-container" id="nav-drawer-container">
-          <nav class="main-nav" id="main-nav">
-            <div class="nav-header-mobile">
-              <button class="nav-close" aria-label="Close navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-              <form class="search-form mobile-search" action="/directory" method="get">
-                <input type="search" name="q" class="search-input" placeholder="Search...">
-              </form>
-            </div>
-            <ul class="nav-links">
-              <li><a href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L8.707 1.5Z"/><path d="M2.5 12.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5Z"/></svg><span>Start</span></a></li>
-    <li><a href="/profile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg><span>Profile</span></a></li>
-    <li><a href="/capabilities"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.5-3.5a.5.5 0 0 0-1 0v3h-2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5v-4z"/></svg><span>Capabilities</span></a></li>
-    <li><a href="/creations"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L7.828 7.375a.75.75 0 0 1 0-1.104l3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L3.828 7.375a.75.75 0 0 1 0-1.104l3-2.7z"/></svg><span>Creations</span></a></li>
-    <li><a href="/log"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg><span>Log</span></a></li>
-    <li><a href="/credentials"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Credentials</span></a></li>
-    <li><a href="/connect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Connect</span></a></li>
-    <li><a href="/explorer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg><span>Explorer</span></a></li>
-  </ul>
+<div class="readme-container">
+<header class="readme-header">
+<div class="header-right">
+<div class="nav-drawer-container" id="nav-drawer-container">
+<nav class="main-nav" id="main-nav">
+<div class="nav-header-mobile">
+  <button class="nav-close" aria-label="Close navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+  <form class="search-form mobile-search" action="/directory" method="get">
+    <input type="search" name="q" class="search-input" placeholder="Search...">
+  </form>
+</div>
+<ul class="nav-links">
+  <li><a href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L8.707 1.5Z"/><path d="M2.5 12.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5Z"/></svg><span>Start</span></a></li>
+<li><a href="/profile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg><span>Profile</span></a></li>
+<li><a href="/capabilities"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.5-3.5a.5.5 0 0 0-1 0v3h-2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5v-4z"/></svg><span>Capabilities</span></a></li>
+<li><a href="/creations"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L7.828 7.375a.75.75 0 0 1 0-1.104l3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L3.828 7.375a.75.75 0 0 1 0-1.104l3-2.7z"/></svg><span>Creations</span></a></li>
+<li><a href="/log"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg><span>Log</span></a></li>
+<li><a href="/credentials"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Credentials</span></a></li>
+<li><a href="/connect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Connect</span></a></li>
+<li><a href="/explorer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg><span>Explorer</span></a></li>
+</ul>
 </nav>
 </div>
 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 </button>
 </div>
@@ -53,46 +53,46 @@ import Layout from '../layouts/Layout.astro';
 <div class="file-explorer-header">
 <h2 class="explorer-title">File Explorer</h2>
 <form class="explorer-search-form" action="/directory" method="get">
-  <input type="search" name="q" id="explorer-search-input" class="search-input" placeholder="Search files...">
-  <button class="search-button" type="submit">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
-  </button>
+<input type="search" name="q" id="explorer-search-input" class="search-input" placeholder="Search files...">
+<button class="search-button" type="submit">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+</button>
 </form>
 </div>
 <div class="file-explorer-content">
 <p class="explorer-placeholder" id="explorer-placeholder">Start typing to search files.</p>
 <ul class="file-list" id="file-list" style="display: none;">
-  <li data-name="projects">
-    <a href="/creations">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h4zm-5 5v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4z"/></svg>
-      <span>projects/</span>
-      <button class="file-view-button">View</button>
-    </a>
-  </li>
-  <li data-name="README.md">
-    <a href="/">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
-      <span>README.md</span>
-      <span class="file-size-date">8 KB / 2024-08-08</span>
-      <button class="file-view-button">View</button>
-    </a>
-  </li>
-  <li data-name="style.css">
-    <a href="/style.css">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
-      <span>style.css</span>
-      <span class="file-size-date">2 KB / 2024-08-08</span>
-      <button class="file-view-button">View</button>
-    </a>
-  </li>
-  <li data-name="about.md">
-    <a href="/profile">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
-      <span>about.md</span>
-      <span class="file-size-date">1 KB / 2024-08-07</span>
-      <button class="file-view-button">View</button>
-    </a>
-  </li>
+<li data-name="projects">
+<a href="/creations">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h4zm-5 5v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4z"/></svg>
+<span>projects/</span>
+<button class="file-view-button">View</button>
+</a>
+</li>
+<li data-name="README.md">
+<a href="/">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
+<span>README.md</span>
+<span class="file-size-date">8 KB / 2024-08-08</span>
+<button class="file-view-button">View</button>
+</a>
+</li>
+<li data-name="style.css">
+<a href="/style.css">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
+<span>style.css</span>
+<span class="file-size-date">2 KB / 2024-08-08</span>
+<button class="file-view-button">View</button>
+</a>
+</li>
+<li data-name="about.md">
+<a href="/profile">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
+<span>about.md</span>
+<span class="file-size-date">1 KB / 2024-08-07</span>
+<button class="file-view-button">View</button>
+</a>
+</li>
 </ul>
 </div>
 </div>
@@ -101,22 +101,22 @@ import Layout from '../layouts/Layout.astro';
 <div class="dashboard-card">
 <div class="card-icon">📁</div>
 <div class="card-content">
-  <div class="card-value">2</div>
-  <div class="card-label">Projects Completed</div>
+<div class="card-value">2</div>
+<div class="card-label">Projects Completed</div>
 </div>
 </div>
 <div class="dashboard-card">
 <div class="card-icon">📝</div>
 <div class="card-content">
-  <div class="card-value">2</div>
-  <div class="card-label">Latest Articles</div>
+<div class="card-value">2</div>
+<div class="card-label">Latest Articles</div>
 </div>
 </div>
 <div class="dashboard-card">
 <div class="card-icon">💼</div>
 <div class="card-content">
-  <div class="card-value">9+</div>
-  <div class="card-label">Years of Experience</div>
+<div class="card-value">9+</div>
+<div class="card-label">Years of Experience</div>
 </div>
 </div>
 </div>
@@ -132,14 +132,14 @@ import Layout from '../layouts/Layout.astro';
 <a href="#" class="card service-card">
 <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="service-icon">
 <div>
-  <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
+<strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
 </div>
 <span class="card-arrow">→</span>
 </a>
 <a href="#" class="card service-card">
 <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
 <div>
-  <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
+<strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
 </div>
 <span class="card-arrow">→</span>
 </a>
@@ -157,23 +157,23 @@ import Layout from '../layouts/Layout.astro';
 <a href="#" class="card">
 <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="card-image">
 <div class="card-info">
-  <div class="card-header">
-    <h4>Chrono Corp</h4>
-    <span class="tag">UI/UX Design</span>
-  </div>
-  <p>A time-tracking application for creative freelancers.</p>
-  <span class="card-arrow">→</span>
+<div class="card-header">
+<h4>Chrono Corp</h4>
+<span class="tag">UI/UX Design</span>
+</div>
+<p>A time-tracking application for creative freelancers.</p>
+<span class="card-arrow">→</span>
 </div>
 </a>
 <a href="#" class="card">
 <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="card-image">
 <div class="card-info">
-  <div class="card-header">
-    <h4>Aether Systems</h4>
-    <span class="tag">Brand Identity</span>
-  </div>
-  <p>A complete branding package for a cloud computing company.</p>
-  <span class="card-arrow">→</span>
+<div class="card-header">
+<h4>Aether Systems</h4>
+<span class="tag">Brand Identity</span>
+</div>
+<p>A complete branding package for a cloud computing company.</p>
+<span class="card-arrow">→</span>
 </div>
 </a>
 </div>
@@ -190,23 +190,23 @@ import Layout from '../layouts/Layout.astro';
 <a href="#" class="card">
 <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
 <div class="card-info">
-  <div class="card-header">
-    <h4>Reducing Cognitive Load in UI Design</h4>
-    <span class="tag">Article</span>
-  </div>
-  <p class="post-date">July 30, 2025</p>
-  <span class="card-arrow">→</span>
+<div class="card-header">
+<h4>Reducing Cognitive Load in UI Design</h4>
+<span class="tag">Article</span>
+</div>
+<p class="post-date">July 30, 2025</p>
+<span class="card-arrow">→</span>
 </div>
 </a>
 <a href="#" class="card">
 <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="card-image">
 <div class="card-info">
-  <div class="card-header">
-    <h4>Working with the team at Nova Fintech</h4>
-    <span class="tag">Review</span>
-  </div>
-  <p class="post-date">June 22, 2025</p>
-  <span class="card-arrow">→</span>
+<div class="card-header">
+<h4>Working with the team at Nova Fintech</h4>
+<span class="tag">Review</span>
+</div>
+<p class="post-date">June 22, 2025</p>
+<span class="card-arrow">→</span>
 </div>
 </a>
 </div>
@@ -236,21 +236,21 @@ import Layout from '../layouts/Layout.astro';
 <p class="experience-title"><strong>Freelance Digital Designer</strong></p>
 <p class="experience-date text-light-small">(2015 - Present)</p>
 <ul>
-  <li>Partnered with over 50 clients to deliver high-quality work.</li>
-  <li>Led projects from concept to completion, managing client communication and expectations.</li>
-  <li>Specialized in brand identity, UI/UX design, and digital art.</li>
+<li>Partnered with over 50 clients to deliver high-quality work.</li>
+<li>Led projects from concept to completion, managing client communication and expectations.</li>
+<li>Specialized in brand identity, UI/UX design, and digital art.</li>
 </ul>
 </div>
 
 <div class="card resume-skills-card">
 <h4>Skills & Tools</h4>
 <div class="skill-category">
-  <strong>Design:</strong>
-  <p>UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</p>
+<strong>Design:</strong>
+<p>UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</p>
 </div>
 <div class="skill-category">
-  <strong>Tech:</strong>
-  <p>Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender</p>
+<strong>Tech:</strong>
+<p>Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender</p>
 </div>
 </div>
 </div>
@@ -286,39 +286,39 @@ import Layout from '../layouts/Layout.astro';
 <footer class="readme-footer">
 <div class="footer-grid">
 <div class="footer-column">
-  <h4>John Ogletree</h4>
-  <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
-  <span class="badge status">status: available for hire</span>
+<h4>John Ogletree</h4>
+<p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
+<span class="badge status">status: available for hire</span>
 </div>
 <div class="footer-column">
-  <h4>Explore</h4>
-  <ul class="footer-links">
-    <li><a href="/directory">Directory</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#resume">RÃ©sumÃ©</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<h4>Explore</h4>
+<ul class="footer-links">
+<li><a href="/directory">Directory</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#resume">RÃ©sumÃ©</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </div>
 <div class="footer-column">
-  <h4>Connect</h4>
-  <ul class="footer-socials">
-    <li><a href="#" aria-label="GitHub Profile">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-    </a></li>
-    <li><a href="#" aria-label="LinkedIn Profile">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-    </a></li>
-    <li><a href="#" aria-label="Dribbble Profile">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
-    </a></li>
-  </ul>
+<h4>Connect</h4>
+<ul class="footer-socials">
+<li><a href="#" aria-label="GitHub Profile">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+</a></li>
+<li><a href="#" aria-label="LinkedIn Profile">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+</a></li>
+<li><a href="#" aria-label="Dribbble Profile">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+</a></li>
+</ul>
 </div>
 <div class="footer-bottom-bar">
-  <p>Â© <span id="year"></span> John Ogletree</p>
-  <a href="#" class="back-to-top">Back to top</a>
+<p>Â© <span id="year"></span> John Ogletree</p>
+<a href="#" class="back-to-top">Back to top</a>
 </div>
 </footer>
 </article>
@@ -397,10 +397,10 @@ let hasResults = false;
 for (let i = 0; i < fileItems.length; i++) {
 const fileName = fileItems[i].getAttribute('data-name').toLowerCase();
 if (fileName.includes(filter)) {
-  fileItems[i].style.display = '';
-  hasResults = true;
+fileItems[i].style.display = '';
+hasResults = true;
 } else {
-  fileItems[i].style.display = 'none';
+fileItems[i].style.display = 'none';
 }
 }
 
