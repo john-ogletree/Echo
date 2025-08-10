@@ -358,7 +358,7 @@ import Layout from '../layouts/Layout.astro';
   });
 </script>
 
-<script>
+<script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const currentPath = window.location.pathname.replace(/\/+$/, '');
