@@ -1,0 +1,292 @@
+---
+ import Layout from '../layouts/Layout.astro';
+ ---
+ 
+ <Layout title="John Ogletree">
+  <div class="readme-container">
+    <header class="readme-header">
+      <div class="readme-header-left">
+        <h1 class="readme-title">john-ogletree/echo</h1>
+        <p class="readme-tagline">Digital Artist & Designer</p>
+      </div>
+      <div class="readme-header-right">
+        <a href="#about" class="readme-link">About</a>
+        <a href="#projects" class="readme-link">Projects</a>
+        <a href="#contact" class="readme-link">Contact</a>
+      </div>
+    </header>
+ 
+    <main class="readme-content">
+      <article>
+        <div class="readme-section-header">
+          <span class="readme-hash">#</span>
+          <h2 id="about">About</h2>
+        </div>
+        <div class="readme-body about-section">
+          <img src="https://via.placeholder.com/150" alt="Profile picture" class="profile-image">
+          <p>
+            I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.
+          </p>
+        </div>
+ 
+        <div class="readme-section-header">
+          <span class="readme-hash">##</span>
+          <h2 id="projects">Projects</h2>
+        </div>
+        <div class="readme-body">
+          <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+          <ul class="project-list">
+            <li>
+              <span class="project-name">Chrono Corp</span> - <span class="project-description">A time-tracking application for creative freelancers.</span>
+            </li>
+            <li>
+              <span class="project-name">Aether Systems</span> - <span class="project-description">A complete branding package for a cloud computing company.</span>
+            </li>
+          </ul>
+        </div>
+ 
+        <div class="readme-section-header">
+          <span class="readme-hash">##</span>
+          <h2 id="skills">Skills & Tools</h2>
+        </div>
+        <div class="readme-body">
+          <ul class="skills-list">
+            <li>
+              <strong>Design:</strong> UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration
+            </li>
+            <li>
+              <strong>Tech:</strong> Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender
+            </li>
+          </ul>
+        </div>
+ 
+        <div class="readme-section-header">
+          <span class="readme-hash">##</span>
+          <h2 id="contact">Contact</h2>
+        </div>
+        <div class="readme-body">
+          <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
+          <p>Email: <a href="mailto:contact@johnogletree.com">contact@johnogletree.com</a></p>
+        </div>
+      </article>
+    </main>
+ 
+    <footer class="readme-footer">
+      <p>&copy; <span id="year"></span> John Ogletree</p>
+    </footer>
+  </div>
+ </Layout>
+ 
+ <script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+ </script>
+ 
+ <style>
+  :root {
+    --bg-color: #24292e;
+    --text-color: #d1d2d3;
+    --link-color: #58a6ff;
+    --heading-color: #c9d1d9;
+    --border-color: #3b4249;
+    --code-bg: #1f2226;
+    --font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+ 
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+ 
+  .readme-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+ 
+  .readme-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+ 
+  .readme-header-left {
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  .readme-title {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin: 0;
+  }
+ 
+  .readme-tagline {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 0.5rem 0 0;
+  }
+ 
+  .readme-header-right {
+    display: flex;
+    gap: 1rem;
+  }
+ 
+  .readme-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+ 
+  .readme-link:hover {
+    text-decoration: underline;
+  }
+ 
+  .readme-content article {
+    background-color: var(--code-bg);
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+  }
+ 
+  .readme-section-header {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+ 
+  .readme-section-header:first-of-type {
+    margin-top: 0;
+  }
+ 
+  .readme-hash {
+    font-family: var(--font-mono);
+    color: var(--comment-color);
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+  }
+ 
+  h2 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin: 0;
+  }
+ 
+  .readme-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+ 
+  .readme-body p {
+    margin: 0 0 1rem 0;
+  }
+ 
+  .readme-body a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+ 
+  .readme-body a:hover {
+    text-decoration: underline;
+  }
+ 
+  .project-list, .skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+ 
+  .project-list li, .skills-list li {
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+ 
+  .project-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--link-color);
+  }
+ 
+  .skills-list li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--link-color);
+  }
+ 
+  .project-name {
+    font-weight: 600;
+  }
+ 
+  .project-description {
+    color: var(--comment-color);
+  }
+ 
+  .readme-footer {
+    text-align: center;
+    padding-top: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    color: var(--comment-color);
+  }
+ 
+  /* New styles for the about section with image */
+  .about-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+ 
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-top: 0.25rem; /* Adjust alignment */
+  }
+ 
+  @media (max-width: 768px) {
+    .readme-container {
+      padding: 1rem;
+    }
+ 
+    .readme-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+ 
+    .readme-header-right {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+ 
+    .about-section {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+ 
+    .profile-image {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+ </style>
