@@ -20,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
               <li><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L8.707 1.5Z"/><path d="M2.5 12.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5Z"/></svg><span>Start</span></a></li>
               <li><a href="/bio/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg><span>Profile</span></a></li>
               <li><a href="/services/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.5-3.5a.5.5 0 0 0-1 0v3h-2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5v-4z"/></svg><span>Capabilities</span></a></li>
-              <li><a href="/projects/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L7.828 7.375a.75.75 0 0 1 0-1.104l3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L3.828 7.375a.75.75 0 0 1 0-1.104l3-2.7z"/></svg><span>Creations</span></a></li>
+              <li><a href="/projects/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L7.828 7.375a.75.75 0 0 1 0-1.104l3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3-2.7z"/></svg><span>Creations</span></a></li>
               <li><a href="/thoughts/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg><span>Log</span></a></li>
               <li><a href="/resume/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Credentials</span></a></li>
               <li><a href="/forms/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Connect</span></a></li>
@@ -54,13 +54,15 @@ import Layout from '../layouts/Layout.astro';
     </header>
 
     <main class="readme-body">
-      <div class="search-box-container">
-        <form class="search-form-filter" action="/directory" method="get">
-          <input type="search" name="q" class="search-input" placeholder="Filter..." />
-          <button type="submit" class="search-button-filter" aria-label="Search">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
-          </button>
-        </form>
+      <div class="hero-section">
+        <h1>Digital Artist & Designer</h1>
+        <p>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</p>
+        <div class="hero-cta">
+          <a href="/forms/index" class="cta-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+            <span>Let's Talk</span>
+          </a>
+        </div>
       </div>
 
       <h2 id="about">About</h2>
@@ -853,33 +855,27 @@ import Layout from '../layouts/Layout.astro';
   }
   .back-to-top:hover { color: var(--color-accent); text-decoration: none; }
 
-  /* --- New CSS for the Search Box and Mobile-First Layout --- */
-  .search-box-container {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--color-border);
+  /* New CSS for Hero Section */
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 0 2rem 0;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .hero-section p {
+    font-size: 1.1rem;
+    max-width: 60ch;
     margin-bottom: 2rem;
   }
-  .search-form-filter {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .search-form-filter .search-input {
-    width: 100%;
-    padding-right: 3rem;
-  }
-  .search-button-filter {
-    position: absolute;
-    right: 0.5rem;
-    background: none;
-    border: none;
-    color: var(--color-text-light);
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: color 0.2s ease;
-  }
-  .search-button-filter:hover {
-    color: var(--color-accent);
+  .hero-cta .cta-button {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
   }
 
   /* --- Responsive --- */
