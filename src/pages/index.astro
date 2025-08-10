@@ -1,4 +1,3 @@
-
 ---
 import Layout from '../layouts/Layout.astro';
 ---
@@ -55,200 +54,218 @@ import Layout from '../layouts/Layout.astro';
     </header>
 
     <main class="readme-body">
+      <h2 id="stats">Stats</h2>
+      <div class="card-grid">
+        <div class="card resume-card">
+          <h4>Project Details</h4>
+          <ul>
+            <li>**Project Name:** Echo</li>
+            <li>**Version:** 0.0.1</li>
+            <li>**Astro Version:** 5.12.8</li>
+            <li>**Dev Server Command:** `npm run dev`</li>
+          </ul>
+        </div>
+        <div class="card resume-card">
+          <h4>Dependencies</h4>
+          <ul>
+            <li>`astro`</li>
+            <li>`@tailwindcss/vite`</li>
+          </ul>
+        </div>
+      </div>
       
-      <article id="content">
-        <h2 id="about">About</h2>
-        <div class="about-container">
-          <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
-          <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
-        </div>
+      <h2 id="about">About</h2>
+      <div class="about-container">
+        <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
+        <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
+      </div>
 
-        <h2 id="services">Services</h2>
-        <div class="card-grid">
-          <a href="#" class="card service-card">
-            <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="service-icon">
-            <div>
-              <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
+      <h2 id="services">Services</h2>
+      <div class="card-grid">
+        <a href="#" class="card service-card">
+          <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="service-icon">
+          <div>
+            <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
+          </div>
+          <span class="card-arrow">→</span>
+        </a>
+        <a href="#" class="card service-card">
+          <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
+          <div>
+            <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
+          </div>
+          <span class="card-arrow">→</span>
+        </a>
+      </div>
+      <div class="view-all-container">
+        <a href="#" class="cta-button services-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+          <span>View All Services</span>
+        </a>
+      </div>
+
+      <h2 id="projects">Projects</h2>
+      <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+      <div class="card-grid">
+        <a href="#" class="card">
+          <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="card-image">
+          <div class="card-info">
+            <div class="card-header">
+              <h4>Chrono Corp</h4>
+              <span class="tag">UI/UX Design</span>
             </div>
+            <p>A time-tracking application for creative freelancers.</p>
             <span class="card-arrow">→</span>
-          </a>
-          <a href="#" class="card service-card">
-            <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
-            <div>
-              <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
+          </div>
+        </a>
+        <a href="#" class="card">
+          <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="card-image">
+          <div class="card-info">
+            <div class="card-header">
+              <h4>Aether Systems</h4>
+              <span class="tag">Brand Identity</span>
             </div>
+            <p>A complete branding package for a cloud computing company.</p>
             <span class="card-arrow">→</span>
-          </a>
-        </div>
-        <div class="view-all-container">
-          <a href="#" class="cta-button services-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-            <span>View All Services</span>
-          </a>
-        </div>
+          </div>
+        </a>
+      </div>
+      <div class="view-all-container">
+        <a href="#" class="cta-button projects-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+          <span>View All Projects</span>
+        </a>
+      </div>
 
-        <h2 id="projects">Projects</h2>
-        <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
-        <div class="card-grid">
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Chrono Corp</h4>
-                <span class="tag">UI/UX Design</span>
-              </div>
-              <p>A time-tracking application for creative freelancers.</p>
-              <span class="card-arrow">→</span>
+      <h2 id="blog">Latest Thoughts</h2>
+      <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+      <div class="card-grid">
+        <a href="#" class="card">
+          <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
+          <div class="card-info">
+            <div class="card-header">
+              <h4>Reducing Cognitive Load in UI Design</h4>
+              <span class="tag">Article</span>
             </div>
-          </a>
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Aether Systems</h4>
-                <span class="tag">Brand Identity</span>
-              </div>
-              <p>A complete branding package for a cloud computing company.</p>
-              <span class="card-arrow">→</span>
+            <p class="post-date">July 30, 2025</p>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+        <a href="#" class="card">
+          <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="card-image">
+          <div class="card-info">
+            <div class="card-header">
+              <h4>Working with the team at Nova Fintech</h4>
+              <span class="tag">Review</span>
             </div>
-          </a>
-        </div>
-        <div class="view-all-container">
-          <a href="#" class="cta-button projects-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-            <span>View All Projects</span>
-          </a>
-        </div>
+            <p class="post-date">June 22, 2025</p>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+      </div>
+      <div class="view-all-container">
+        <a href="#" class="cta-button blog-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
+          <span>View All Posts</span>
+        </a>
+      </div>
 
-        <h2 id="blog">Latest Thoughts</h2>
-        <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
-        <div class="card-grid">
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Reducing Cognitive Load in UI Design</h4>
-                <span class="tag">Article</span>
-              </div>
-              <p class="post-date">July 30, 2025</p>
-              <span class="card-arrow">→</span>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="card-image">
-            <div class="card-info">
-              <div class="card-header">
-                <h4>Working with the team at Nova Fintech</h4>
-                <span class="tag">Review</span>
-              </div>
-              <p class="post-date">June 22, 2025</p>
-              <span class="card-arrow">→</span>
-            </div>
+      <h2 id="newsletter">Subscribe</h2>
+      <p>Receive occasional updates about new projects and articles. No spam.</p>
+      <form class="newsletter-form" action="#">
+        <input class="form-input" type="email" placeholder="your-email@domain.com" required>
+        <button type="submit" class="cta-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+          <span>Subscribe</span>
+        </button>
+      </form>
+
+      <h2 id="resume">Résumé</h2>
+      <div class="card-grid">
+        <div class="card resume-card">
+          <h4>Design</h4>
+          <ul>
+            <li>UI/UX & Prototyping</li>
+            <li>Branding & Art Direction</li>
+            <li>Iconography & Illustration</li>
+          </ul>
+        </div>
+        <div class="card resume-card">
+          <h4>Tools & Tech</h4>
+          <ul>
+            <li>Figma & Adobe Creative Suite</li>
+            <li>HTML, CSS & JavaScript</li>
+            <li>Astro, Node.js & Blender</li>
+          </ul>
+        </div>
+        <div class="card resume-card">
+          <h4>Experience</h4>
+          <p><strong>Freelance Digital Designer</strong></p>
+          <p class="text-light-small">(2015 - Present)</p>
+          <p>Partnered with over 50 clients, from startups to established companies, to deliver high-quality work.</p>
+        </div>
+        <div class="card resume-card cta-card">
+          <h4>Download Full Résumé</h4>
+          <p>Get the complete details on my skills and experience.</p>
+          <a href="/resume.pdf" target="_blank" class="cta-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+            <span>Download PDF</span>
           </a>
         </div>
-        <div class="view-all-container">
-          <a href="#" class="cta-button blog-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-            <span>View All Posts</span>
-          </a>
+      </div>
+
+      <h2 id="contact">Contact</h2>
+      <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
+      <form class="contact-form" action="#">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input class="form-input" type="text" id="name" name="name" required>
         </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input class="form-input" type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
+        </div>
+        <button type="submit" class="cta-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+          <span>Send Message</span>
+        </button>
+      </form>
 
-        <h2 id="newsletter">Subscribe</h2>
-        <p>Receive occasional updates about new projects and articles. No spam.</p>
-        <form class="newsletter-form" action="#">
-          <input class="form-input" type="email" placeholder="your-email@domain.com" required>
-          <button type="submit" class="cta-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-            <span>Subscribe</span>
-          </button>
-        </form>
-
-        <h2 id="resume">Résumé</h2>
-        <div class="card-grid">
-          <div class="card resume-card">
-            <h4>Design</h4>
-            <ul>
-              <li>UI/UX & Prototyping</li>
-              <li>Branding & Art Direction</li>
-              <li>Iconography & Illustration</li>
+      <footer class="readme-footer">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>John Ogletree</h4>
+            <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
+            <span class="badge status">status: available for hire</span>
+          </div>
+          <div class="footer-column">
+            <h4>Explore</h4>
+            <ul class="footer-links">
+              <li><a href="/directory">Directory</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#resume">Résumé</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div class="card resume-card">
-            <h4>Tools & Tech</h4>
-            <ul>
-              <li>Figma & Adobe Creative Suite</li>
-              <li>HTML, CSS & JavaScript</li>
-              <li>Astro, Node.js & Blender</li>
-            </ul>
-          </div>
-          <div class="card resume-card">
-            <h4>Experience</h4>
-            <p><strong>Freelance Digital Designer</strong></p>
-            <p class="text-light-small">(2015 - Present)</p>
-            <p>Partnered with over 50 clients, from startups to established companies, to deliver high-quality work.</p>
-          </div>
-          <div class="card resume-card cta-card">
-            <h4>Download Full Résumé</h4>
-            <p>Get the complete details on my skills and experience.</p>
-            <a href="/resume.pdf" target="_blank" class="cta-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-              <span>Download PDF</span>
-            </a>
-          </div>
-        </div>
-
-        <h2 id="contact">Contact</h2>
-        <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
-        <form class="contact-form" action="#">
-          <div class="form-group">
-            <label for="name">Your Name:</label>
-            <input class="form-input" type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email:</label>
-            <input class="form-input" type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Your Message:</label>
-            <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
-          </div>
-          <button type="submit" class="cta-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-            <span>Send Message</span>
-          </button>
-        </form>
-
-        <footer class="readme-footer">
-          <div class="footer-grid">
-            <div class="footer-column">
-              <h4>John Ogletree</h4>
-              <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
-              <span class="badge status">status: available for hire</span>
-            </div>
-            <div class="footer-column">
-              <h4>Explore</h4>
-              <ul class="footer-links">
-                <li><a href="/directory">Directory</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#resume">Résumé</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-            <div class="footer-column">
-              <h4>Connect</h4>
-              <ul class="footer-socials">
-                <li><a href="#" aria-label="GitHub Profile">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                </a></li>
-                <li><a href="#" aria-label="LinkedIn Profile">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a></li>
-                <li><a href="#" aria-label="Dribbble Profile">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
-                </a></li>
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <ul class="footer-socials">
+              <li><a href="#" aria-label="GitHub Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a></li>
+              <li><a href="#" aria-label="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a></li>
+              <li><a href="#" aria-label="Dribbble Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+              </a></li>
             </ul>
           </div>
           <div class="footer-bottom-bar">
@@ -267,7 +284,6 @@ import Layout from '../layouts/Layout.astro';
     const navDrawer = document.getElementById('nav-drawer-container');
     const navClose = document.querySelector('.nav-close');
     const body = document.body;
-
     function toggleMobileNav() {
       const isOpen = navDrawer.classList.contains('is-open');
       navDrawer.classList.toggle('is-open', !isOpen);
@@ -288,7 +304,6 @@ import Layout from '../layouts/Layout.astro';
         }
       });
     });
-
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear();
@@ -356,7 +371,8 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-heading);
     margin: 0;
   }
-  h2 { font-size: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin: 2.5rem 0 1rem 0; }
+  h2 { font-size: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin: 2.5rem 0 1rem 0;
+  }
   h2::before {
     content: '##';
     color: var(--color-text-light);
@@ -364,10 +380,12 @@ import Layout from '../layouts/Layout.astro';
     margin-right: 0.5rem;
   }
   p { margin: 0 0 1rem 0; max-width: 80ch; }
-  a { color: var(--color-accent); text-decoration: none; }
+  a { color: var(--color-accent); text-decoration: none;
+  }
   a:hover { text-decoration: underline; }
   hr { display: none; }
-  ul { list-style: '- '; padding-left: 1.5rem; margin-bottom: 1rem;}
+  ul { list-style: '- ';
+  padding-left: 1.5rem; margin-bottom: 1rem;}
   blockquote {
     margin-left: 0;
     padding-left: 1rem;
@@ -411,7 +429,8 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* --- Header Search --- */
-  .search-form { position: relative; }
+  .search-form { position: relative;
+  }
   .search-input {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
@@ -438,7 +457,8 @@ import Layout from '../layouts/Layout.astro';
     cursor: pointer;
     padding: 0;
   }
-  .mobile-search { display: block; }
+  .mobile-search { display: block;
+  }
   .desktop-search { display: none; }
 
 
@@ -454,7 +474,8 @@ import Layout from '../layouts/Layout.astro';
     overflow-y: auto;
   }
   .nav-links a {
-    position: relative; /* Needed for positioning the ::before element */
+    position: relative;
+    /* Needed for positioning the ::before element */
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -572,7 +593,8 @@ import Layout from '../layouts/Layout.astro';
     flex-shrink: 0;
   }
   .nav-socials a { color: var(--color-text-light); }
-  .nav-socials a:hover { color: var(--color-accent); }
+  .nav-socials a:hover { color: var(--color-accent);
+  }
   .nav-socials svg { width: 24px; height: 24px; }
     
   /* --- Branded HR Separator --- */
@@ -624,10 +646,13 @@ import Layout from '../layouts/Layout.astro';
     display: block;
     background-color: var(--color-bg);
   }
-  .card-info { padding: 1rem 1.25rem 2.5rem 1.25rem; }
+  .card-info { padding: 1rem 1.25rem 2.5rem 1.25rem;
+  }
   .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-  .card-header h4 { font-size: 1.1em; font-weight: 700; color: var(--color-heading); }
-  .card-info p { font-size: 0.9em; color: var(--color-text-light); line-height: 1.6; margin: 0; }
+  .card-header h4 { font-size: 1.1em;
+  font-weight: 700; color: var(--color-heading); }
+  .card-info p { font-size: 0.9em; color: var(--color-text-light); line-height: 1.6; margin: 0;
+  }
   .post-date { font-size: 0.8em; color: var(--color-text-light); margin-top: 0.75rem; }
   .card-arrow {
     position: absolute;
@@ -639,20 +664,24 @@ import Layout from '../layouts/Layout.astro';
   }
   .card:hover .card-arrow { transform: translateX(5px); color: var(--color-accent); }
   .tag {
-    background-color: var(--color-tag-bg); padding: 0.2em 0.5em;
+    background-color: var(--color-tag-bg);
+    padding: 0.2em 0.5em;
     border-radius: 6px; font-size: 0.85em; color: var(--color-accent);
     flex-shrink: 0; margin-left: 0.5rem;
   }
-  .view-all-container { text-align: center; margin-top: 2rem; }
+  .view-all-container { text-align: center;
+  margin-top: 2rem; }
   .view-all-button {
     display: flex;
     width: 100%;
     background-color: transparent; border: 1px solid var(--color-border);
     color: var(--color-accent);
   }
-  .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent); }
+  .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent);
+  }
   .services-button {
-    background: linear-gradient(to right, #65B5B8, #4D8B8E 50%, #65B5B8 50%); /* Retro Teal */
+    background: linear-gradient(to right, #65B5B8, #4D8B8E 50%, #65B5B8 50%);
+    /* Retro Teal */
     background-size: 200% 100%;
     background-position: left bottom;
     color: white;
@@ -661,7 +690,8 @@ import Layout from '../layouts/Layout.astro';
   }
   .services-button:hover {
     background-position: right bottom;
-    color: #3B2F2A; /* Dark text on hover */
+    color: #3B2F2A;
+    /* Dark text on hover */
   }
   .services-button svg {
     color: white;
@@ -671,7 +701,8 @@ import Layout from '../layouts/Layout.astro';
     color: #3B2F2A;
   }
   .projects-button {
-    background: linear-gradient(to right, #F4A261, #E8A155 50%, #F4A261 50%); /* Faded Orange */
+    background: linear-gradient(to right, #F4A261, #E8A155 50%, #F4A261 50%);
+    /* Faded Orange */
     background-size: 200% 100%;
     background-position: left bottom;
     color: white;
@@ -690,7 +721,8 @@ import Layout from '../layouts/Layout.astro';
     color: #3B2F2A;
   }
   .blog-button {
-    background: linear-gradient(to right, #B58866, #A07F5B 50%, #B58866 50%); /* Muted brown */
+    background: linear-gradient(to right, #B58866, #A07F5B 50%, #B58866 50%);
+    /* Muted brown */
     background-size: 200% 100%;
     background-position: left bottom;
     color: white;
@@ -709,7 +741,8 @@ import Layout from '../layouts/Layout.astro';
     color: #3B2F2A;
   }
   .cta-button {
-    background-color: #E07A5F; /* Main CTA button color, terracotta */
+    background-color: #E07A5F;
+    /* Main CTA button color, terracotta */
     color: #F0EAD6;
     border: 1px solid #E07A5F;
     transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -719,32 +752,42 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* --- Card Type: Service --- */
-  .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; overflow: hidden; }
-  .service-icon { width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; background-color: var(--color-bg); }
+  .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem;
+  overflow: hidden; }
+  .service-icon { width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; background-color: var(--color-bg);
+  }
   .service-card .card-arrow { bottom: auto; right: 1.25rem; }
-  .service-card strong { color: var(--color-heading); }
+  .service-card strong { color: var(--color-heading);
+  }
 
   /* --- Card Type: Résumé --- */
-  .resume-card { padding: 1.5rem; overflow: visible; }
+  .resume-card { padding: 1.5rem; overflow: visible;
+  }
   .resume-card h4 {
     color: var(--color-accent); margin-bottom: 1rem;
     border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; font-size: 1.2em;
   }
-  .resume-card ul { list-style: '✓  '; color: var(--color-text-light); padding-left: 1.25rem; margin: 0; }
+  .resume-card ul { list-style: '✓  '; color: var(--color-text-light); padding-left: 1.25rem; margin: 0;
+  }
   .resume-card li { margin-bottom: 0.75rem; padding-left: 0.5rem; }
-  .resume-card p { color: var(--color-text-light); line-height: 1.6; margin: 0 0 0.5rem 0; }
+  .resume-card p { color: var(--color-text-light); line-height: 1.6;
+  margin: 0 0 0.5rem 0; }
   .resume-card p:last-child { margin-bottom: 0; }
-  .resume-card p strong { color: var(--color-text); font-weight: 500; }
+  .resume-card p strong { color: var(--color-text);
+  font-weight: 500; }
   .text-light-small { font-size: 0.9em; color: var(--color-text-light); }
   .resume-card.cta-card {
-    background-color: var(--color-tag-bg); display: flex; flex-direction: column;
+    background-color: var(--color-tag-bg);
+  display: flex; flex-direction: column;
     justify-content: center; align-items: center; text-align: center;
   }
-  .resume-card.cta-card:hover { background-color: rgba(61, 135, 166, 0.2); }
+  .resume-card.cta-card:hover { background-color: rgba(61, 135, 166, 0.2);
+  }
   .cta-card .cta-button { margin-top: 1rem; }
 
   /* --- Forms --- */
-  .form-group { margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1.5rem;
+  }
   .form-input {
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
@@ -761,12 +804,13 @@ import Layout from '../layouts/Layout.astro';
     border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(61, 135, 166, 0.3);
   }
-  .newsletter-form { display: flex; gap: 0.5rem; }
+  .newsletter-form { display: flex; gap: 0.5rem;
+  }
 
   /* --- Footer --- */
   .readme-footer {
     padding: 2.5rem var(--padding-x) 1.5rem var(--padding-x);
-    margin: 2rem auto 0 auto;
+  margin: 2rem auto 0 auto;
     border-top: 1px solid var(--color-border);
   }
   .footer-grid {
@@ -775,9 +819,11 @@ import Layout from '../layouts/Layout.astro';
     gap: 2rem;
     margin-bottom: 2.5rem;
   }
-  .footer-column h4 { color: var(--color-accent); margin-bottom: 1rem; font-size: 1.1rem; }
+  .footer-column h4 { color: var(--color-accent); margin-bottom: 1rem; font-size: 1.1rem;
+  }
   .footer-tagline { color: var(--color-text-light); font-size: 0.9rem; max-width: 35ch; }
-  .footer-column .badge { margin-top: 0.5rem; background-color: #E07A5F; color: white; border: none; }
+  .footer-column .badge { margin-top: 0.5rem; background-color: #E07A5F;
+  color: white; border: none; }
   .footer-links {
     list-style: none;
     padding: 0;
@@ -787,8 +833,10 @@ import Layout from '../layouts/Layout.astro';
     gap: 0.75rem 1rem;
   }
   .footer-links li { margin: 0; }
-  .footer-links a { color: var(--color-text-light); text-decoration: none; font-size: 0.9rem; }
-  .footer-links a:hover { color: var(--color-heading); text-decoration: underline; }
+  .footer-links a { color: var(--color-text-light);
+  text-decoration: none; font-size: 0.9rem; }
+  .footer-links a:hover { color: var(--color-heading); text-decoration: underline;
+  }
   .footer-socials {
     list-style: none;
     padding: 0;
@@ -797,12 +845,13 @@ import Layout from '../layouts/Layout.astro';
     gap: 1.5rem;
   }
   .footer-socials a { color: var(--color-text-light); transition: color 0.2s ease; }
-  .footer-socials a:hover { color: var(--color-accent); }
+  .footer-socials a:hover { color: var(--color-accent);
+  }
   .footer-socials svg { width: 24px; height: 24px; }
   .footer-bottom-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+  align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
     padding-top: 1.5rem;
@@ -811,49 +860,51 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-text-light);
   }
   .footer-bottom-bar p { margin: 0; }
-  .back-to-top { color: var(--color-text-light); text-decoration: none; transition: color 0.2s ease; }
+  .back-to-top { color: var(--color-text-light); text-decoration: none; transition: color 0.2s ease;
+  }
   .back-to-top:hover { color: var(--color-accent); text-decoration: none; }
 
   /* --- Responsive --- */
   @media (max-width: 920px) {
     :root {
       --padding-x: 1.5rem;
-    }
+  }
     .hero-header {
       flex-direction: column;
       text-align: center;
       gap: 1rem;
       margin-bottom: 1.5rem;
-    }
+  }
     .hero-info h1 {
       font-size: 1.75rem;
-    }
+  }
     .hero-profile-picture {
       display: none;
-    }
+  }
     .branded-hr {
       margin: 3rem 0;
-    }
+  }
     .readme-container {
       position: relative;
-    }
+  }
     .desktop-search { display: none; }
-    .mobile-search { display: block; }
+    .mobile-search { display: block;
+  }
     
     .nav-toggle {
       display: block;
       background: none;
-      border: none;
+  border: none;
       color: var(--color-text);
       padding: 0.5rem;
       cursor: pointer;
       z-index: 100;
-    }
+  }
     
     .nav-close {
       display: none;
       background: none;
-      border: none;
+  border: none;
       color: var(--color-text);
       cursor: pointer;
       padding: 0.5rem;
@@ -862,77 +913,79 @@ import Layout from '../layouts/Layout.astro';
     /* When nav is open, swap the icons */
     .nav-drawer-container.is-open ~ .nav-toggle {
         display: none;
-    }
+  }
     .nav-drawer-container .nav-close {
         display: none;
-    }
+  }
     .nav-drawer-container.is-open .nav-close {
         display: block;
-    }
+  }
 
     .nav-drawer-container {
       position: fixed;
       top: 0;
       left: 0;
       width: 300px;
-      height: 100vh;
+  height: 100vh;
       background-color: var(--color-surface);
       border-right: 1px solid var(--color-border);
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
       z-index: 99;
-      box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
     }
     .nav-drawer-container.is-open {
       transform: translateX(0);
-    }
+  }
     
     .main-nav {
       display: flex;
       flex-direction: column;
-      height: 100%;
+  height: 100%;
       padding: 0;
     }
 
     .nav-header-mobile {
       display: flex;
       align-items: center;
-      gap: 1rem;
+  gap: 1rem;
       padding: 1.5rem 1.5rem 1rem 1.5rem;
       border-bottom: 1px solid var(--color-border);
       flex-shrink: 0;
-    }
+  }
 
     .nav-header-mobile .mobile-search {
       flex-grow: 1;
-    }
+  }
 
     .nav-socials {
       list-style: none;
       padding: 1.5rem;
       border-top: 1px solid var(--color-border);
-      display: flex;
+  display: flex;
       justify-content: center;
       gap: 2rem;
       flex-shrink: 0;
     }
-    .nav-socials a { color: var(--color-text-light); }
+    .nav-socials a { color: var(--color-text-light);
+  }
     .nav-socials a:hover { color: var(--color-accent); }
-    .nav-socials svg { width: 24px; height: 24px; }
+    .nav-socials svg { width: 24px; height: 24px;
+  }
     
     .dashboard-grid {
       grid-template-columns: 1fr 1fr;
-      grid-template-areas:
+  grid-template-areas:
         "about about"
         "services resume"
         "projects projects"
         "blog newsletter"
         "contact contact";
-    }
+  }
     .about-container { display: block; }
     .profile-picture {
       float: left;
-      margin-right: 1.5rem;
+  margin-right: 1.5rem;
       margin-bottom: 1rem;
     }
   }
@@ -940,41 +993,46 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 768px) {
     :root {
       --padding-x: 1rem;
-    }
+  }
     .readme-header {
       padding: 1rem var(--padding-x);
-    }
+  }
     .readme-body {
       padding: 1.5rem var(--padding-x);
-    }
+  }
     .dashboard-grid {
       grid-template-columns: 1fr;
-      grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
+  grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
     }
-    h2 { font-size: 1.25rem; }
+    h2 { font-size: 1.25rem;
+  }
     .hero-header {
       flex-direction: column;
       text-align: center;
       gap: 1rem;
       margin-bottom: 1.5rem;
-    }
+  }
     .hero-info h1 {
       font-size: 1.75rem;
-    }
+  }
     .hero-profile-picture {
       display: none;
-    }
+  }
     .branded-hr {
       margin: 3rem 0;
-    }
+  }
     .about-container .profile-picture { display: none; }
-    .about-container { margin-top: 0; }
+    .about-container { margin-top: 0;
+  }
     .newsletter-form { flex-direction: column; }
-    .card-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr;
+  }
     .footer-grid { text-align: center; }
-    .footer-tagline { margin: 0 auto 1rem auto; }
+    .footer-tagline { margin: 0 auto 1rem auto;
+  }
     .footer-column .badge, .footer-socials { justify-content: center; }
-    .footer-links { grid-template-columns: repeat(2, 1fr); }
+    .footer-links { grid-template-columns: repeat(2, 1fr);
+  }
     .footer-bottom-bar { flex-direction: column; gap: 0.5rem; }
   }
 </style>
