@@ -3,1031 +3,413 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="John Ogletree">
-  <div class="readme-container">
-    <header class="readme-header">
-      <div class="header-right">
-        <div class="nav-drawer-container" id="nav-drawer-container">
-          <nav class="main-nav" id="main-nav">
-            <div class="nav-header-mobile">
-              <button class="nav-close" aria-label="Close navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </button>
-              <form class="search-form mobile-search" action="/directory" method="get">
-                <input type="search" name="q" class="search-input" placeholder="Search...">
-              </form>
+  <div class="ide-container">
+    <div class="sidebar">
+      <div class="file-explorer-header">
+        <h2 class="explorer-title">EXPLORER</h2>
+      </div>
+      <div class="file-explorer-content">
+        <ul class="file-list">
+          <li data-name="john-ogletree/Echo">
+            <div class="file-folder-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8l-4 4V22z"></path>
+              </svg>
             </div>
-            <ul class="nav-links">
-              <li><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L8.707 1.5Z"/><path d="M2.5 12.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5Z"/></svg><span>Start</span></a></li>
-              <li><a href="/profile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg><span>Profile</span></a></li>
-              <li><a href="/capabilities"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.5-3.5a.5.5 0 0 0-1 0v3h-2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5v-4z"/></svg><span>Capabilities</span></a></li>
-              <li><a href="/creations"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L7.828 7.375a.75.75 0 0 1 0-1.104l3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L3.828 7.375a.75.75 0 0 1 0-1.104l3-2.7z"/></svg><span>Creations</span></a></li>
-              <li><a href="/log"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg><span>Log</span></a></li>
-              <li><a href="/credentials"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Credentials</span></a></li>
-              <li><a href="/connect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Connect</span></a></li>
-              <li><a href="/explorer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg><span>Explorer</span></a></li>
-            </ul>
-          </nav>
-        </div>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-      <div class="header-left">
-        <div class="repo-title">
-          <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
-          <a href="/" class="font-bold">john-ogletree/Echo</a>
-        </div>
-      </div>
-    </header>
-
-    <main class="readme-body">
-      
-      <div class="file-explorer-container">
-        <div class="file-explorer-header">
-          <h2 class="explorer-title">File Explorer</h2>
-          <form class="explorer-search-form" action="/directory" method="get">
-            <input type="search" name="q" id="explorer-search-input" class="search-input" placeholder="Search files...">
-            <button class="search-button" type="submit">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
-            </button>
-          </form>
-        </div>
-        <div class="file-explorer-content">
-          <p class="explorer-placeholder" id="explorer-placeholder">Start typing to search files.</p>
-          <ul class="file-list" id="file-list" style="display: none;">
-            <li data-name="projects">
-              <a href="/creations">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h4zm-5 5v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4zm5 0v10a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h4z"/></svg>
-                <span>projects/</span>
-                <button class="file-view-button">View</button>
-              </a>
-            </li>
-            <li data-name="README.md">
-              <a href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
-                <span>README.md</span>
-                <span class="file-size-date">8 KB / 2024-08-08</span>
-                <button class="file-view-button">View</button>
-              </a>
-            </li>
-            <li data-name="style.css">
-              <a href="/style.css">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
-                <span>style.css</span>
-                <span class="file-size-date">2 KB / 2024-08-08</span>
-                <button class="file-view-button">View</button>
-              </a>
-            </li>
-            <li data-name="about.md">
-              <a href="/profile">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg>
-                <span>about.md</span>
-                <span class="file-size-date">1 KB / 2024-08-07</span>
-                <button class="file-view-button">View</button>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="dashboard-grid">
-        <div class="dashboard-card">
-          <div class="card-icon">📁</div>
-          <div class="card-content">
-            <div class="card-value">2</div>
-            <div class="card-label">Projects Completed</div>
-          </div>
-        </div>
-        <div class="dashboard-card">
-          <div class="card-icon">📝</div>
-          <div class="card-content">
-            <div class="card-value">2</div>
-            <div class="card-label">Latest Articles</div>
-          </div>
-        </div>
-        <div class="dashboard-card">
-          <div class="card-icon">💼</div>
-          <div class="card-content">
-            <div class="card-value">9+</div>
-            <div class="card-label">Years of Experience</div>
-          </div>
-        </div>
-      </div>
-      
-      <h2 id="about">About</h2>
-      <div class="about-container">
-        <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
-        <blockquote>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</blockquote>
-      </div>
-
-      <h2 id="services">Services</h2>
-      <div class="card-grid">
-        <a href="#" class="card service-card">
-          <img src="https://placehold.co/60x60/0D1117/58A6FF?text=ID" alt="Brand & Identity Icon" class="service-icon">
-          <div>
-            <strong>Brand & Identity:</strong> Logos, visual systems, and strategy.
-          </div>
-          <span class="card-arrow">→</span>
-        </a>
-        <a href="#" class="card service-card">
-          <img src="https://placehold.co/60x60/0D1117/58A6FF?text=UX" alt="Digital & UI/UX Design Icon" class="service-icon">
-          <div>
-            <strong>Digital & UI/UX Design:</strong> Websites, applications, and interactive prototypes.
-          </div>
-          <span class="card-arrow">→</span>
-        </a>
-      </div>
-      <div class="view-all-container">
-        <a href="/capabilities" class="cta-button services-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-          <span>View All Services</span>
-        </a>
-      </div>
-
-      <h2 id="projects">Projects</h2>
-      <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
-      <div class="card-grid">
-        <a href="#" class="card">
-          <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Chrono+Corp" alt="Chrono Corp project screenshot" class="card-image">
-          <div class="card-info">
-            <div class="card-header">
-              <h4>Chrono Corp</h4>
-              <span class="tag">UI/UX Design</span>
+            <a href="/">
+              <span>john-ogletree/Echo</span>
+            </a>
+          </li>
+          <li class="active" data-name="index.astro">
+            <div class="file-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
             </div>
-            <p>A time-tracking application for creative freelancers.</p>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-        <a href="#" class="card">
-          <img src="https://placehold.co/400x225/161B22/E6EDF3?text=Aether+Systems" alt="Aether Systems branding project" class="card-image">
-          <div class="card-info">
-            <div class="card-header">
-              <h4>Aether Systems</h4>
-              <span class="tag">Brand Identity</span>
+            <a href="/">
+              <span>index.astro</span>
+            </a>
+          </li>
+          <li data-name="package.json">
+            <div class="file-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
             </div>
-            <p>A complete branding package for a cloud computing company.</p>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
+            <a href="#">
+              <span>package.json</span>
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="view-all-container">
-        <a href="/creations" class="cta-button projects-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-          <span>View All Projects</span>
-        </a>
+      <div class="ide-status-bar-mobile">
+        <span>Git: main</span>
       </div>
-
-      <h2 id="blog">Latest Thoughts</h2>
-      <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
-      <div class="card-grid">
-        <a href="#" class="card">
-          <img src="https://placehold.co/400x225/161B22/58A6FF?text=UI+Design" alt="Thumbnail for UI Design article" class="card-image">
-          <div class="card-info">
-            <div class="card-header">
-              <h4>Reducing Cognitive Load in UI Design</h4>
-              <span class="tag">Article</span>
-            </div>
-            <p class="post-date">July 30, 2025</p>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-        <a href="#" class="card">
-          <img src="https://placehold.co/400x225/161B22/58A6FF?text=Fintech" alt="Thumbnail for Nova Fintech review" class="card-image">
-          <div class="card-info">
-            <div class="card-header">
-              <h4>Working with the team at Nova Fintech</h4>
-              <span class="tag">Review</span>
-            </div>
-            <p class="post-date">June 22, 2025</p>
-            <span class="card-arrow">→</span>
-          </div>
-        </a>
-      </div>
-      <div class="view-all-container">
-        <a href="/log" class="cta-button blog-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
-          <span>View All Posts</span>
-        </a>
-      </div>
-
-      <h2 id="newsletter">Subscribe</h2>
-      <p>Receive occasional updates about new projects and articles. No spam.</p>
-      <form class="newsletter-form" action="#">
-        <input class="form-input" type="email" placeholder="your-email@domain.com" required>
-        <button type="submit" class="cta-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-          <span>Subscribe</span>
-        </button>
-      </form>
-
-      <h2 id="resume">Résumé</h2>
-      <p>An overview of my professional history, expertise, and a link to my full résumé.</p>
-
-      <div class="resume-grid">
-        <div class="card resume-experience-card">
-          <h4>Experience</h4>
-          <p class="experience-title"><strong>Freelance Digital Designer</strong></p>
-          <p class="experience-date text-light-small">(2015 - Present)</p>
-          <ul>
-            <li>Partnered with over 50 clients to deliver high-quality work.</li>
-            <li>Led projects from concept to completion, managing client communication and expectations.</li>
-            <li>Specialized in brand identity, UI/UX design, and digital art.</li>
-          </ul>
+    </div>
+    
+    <main class="main-content">
+      <div class="ide-tab-bar">
+        <div class="ide-tab active">
+          <span>index.astro</span>
         </div>
-        
-        <div class="card resume-skills-card">
-          <h4>Skills & Tools</h4>
-          <div class="skill-category">
-            <strong>Design:</strong>
-            <p>UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</p>
-          </div>
-          <div class="skill-category">
-            <strong>Tech:</strong>
-            <p>Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender</p>
-          </div>
+        <div class="ide-tab">
+          <span>README.md</span>
         </div>
       </div>
-      
-      <div class="view-all-container">
-        <a href="/resume.pdf" target="_blank" class="cta-button download-resume-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-          <span>Download Full Résumé (PDF)</span>
-        </a>
+      <div class="ide-code-editor">
+        <div class="line-numbers">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+          <span>10</span>
+          <span>11</span>
+          <span>12</span>
+          <span>13</span>
+          <span>14</span>
+          <span>15</span>
+          <span>16</span>
+          <span>17</span>
+          <span>18</span>
+          <span>19</span>
+          <span>20</span>
+          <span>21</span>
+          <span>22</span>
+          <span>23</span>
+          <span>24</span>
+          <span>25</span>
+          <span>26</span>
+          <span>27</span>
+          <span>28</span>
+          <span>29</span>
+          <span>30</span>
+          <span>31</span>
+          <span>32</span>
+          <span>33</span>
+          <span>34</span>
+          <span>35</span>
+        </div>
+        <div class="code-content">
+          <pre><code><span class="keyword">import</span> Layout <span class="keyword">from</span> <span class="string">'../layouts/Layout.astro'</span>;
+<span class="keyword">import</span> ProfileSection <span class="keyword">from</span> <span class="string">'../components/Profile.astro'</span>;
+<span class="keyword">import</span> ProjectsSection <span class="keyword">from</span> <span class="string">'../components/Projects.astro'</span>;
+<span class="keyword">import</span> SkillsSection <span class="keyword">from</span> <span class="string">'../components/Skills.astro'</span>;
+
+<span class="tag">---</span>
+<span class="comment">// Frontmatter is used for data and logic</span>
+<span class="comment">// You can define variables and fetch data here.</span>
+<span class="keyword">const</span> name = <span class="string">'John Ogletree'</span>;
+<span class="keyword">const</span> occupation = <span class="string">'Digital Artist & Designer'</span>;
+<span class="keyword">const</span> projects = [
+  { name: <span class="string">'Chrono Corp'</span>, tech: <span class="string">'UI/UX Design'</span>, description: <span class="string">'A time-tracking application for creative freelancers.'</span> },
+  { name: <span class="string">'Aether Systems'</span>, tech: <span class="string">'Brand Identity'</span>, description: <span class="string">'A complete branding package for a cloud computing company.'</span> },
+];
+<span class="tag">---</span>
+
+<span class="tag">&lt;</span><span class="tag-name">Layout</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;</span><span class="tag-name">div</span> <span class="attribute">class</span>=<span class="string">"content-wrapper"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;</span><span class="tag-name">ProfileSection</span> <span class="attribute">:name</span>=<span class="string">"name"</span> <span class="attribute">:occupation</span>=<span class="string">"occupation"</span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;</span><span class="tag-name">ProjectsSection</span> <span class="attribute">:projects</span>=<span class="string">"projects"</span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;</span><span class="tag-name">SkillsSection</span> <span class="tag">/&gt;</span>
+  <span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/</span><span class="tag-name">Layout</span><span class="tag">&gt;</span></code></pre>
+        </div>
       </div>
+      <div class="ide-terminal">
+        <div class="terminal-header">
+          <span>TERMINAL</span>
+        </div>
+        <pre class="terminal-output">
+&gt; astro@0.0.1 dev
+&gt; astro dev
 
-      <h2 id="contact">Contact</h2>
-      <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
-      <form class="contact-form" action="#">
-        <div class="form-group">
-          <label for="name">Your Name:</label>
-          <input class="form-input" type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Your Email:</label>
-          <input class="form-input" type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Your Message:</label>
-          <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
-        </div>
-        <button type="submit" class="cta-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
-          <span>Send Message</span>
-        </button>
-      </form>
-
-      <footer class="readme-footer">
-        <div class="footer-grid">
-          <div class="footer-column">
-            <h4>John Ogletree</h4>
-            <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
-            <span class="badge status">status: available for hire</span>
-          </div>
-          <div class="footer-column">
-            <h4>Explore</h4>
-            <ul class="footer-links">
-              <li><a href="/directory">Directory</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#resume">Résumé</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <h4>Connect</h4>
-            <ul class="footer-socials">
-              <li><a href="#" aria-label="GitHub Profile">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-              </a></li>
-              <li><a href="#" aria-label="LinkedIn Profile">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a></li>
-              <li><a href="#" aria-label="Dribbble Profile">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
-              </a></li>
-            </ul>
-          </div>
-          <div class="footer-bottom-bar">
-            <p>© <span id="year"></span> John Ogletree</p>
-            <a href="#" class="back-to-top">Back to top</a>
-          </div>
-        </div>
-      </footer>
+  <span class="info">[ 10:00:00 AM ]</span>  <span class="success">astro  </span><span class="text-light">v5.12.8</span>
+  <span class="info">[ 10:00:00 AM ]</span>  <span class="success">ready  </span><span class="text-light">local </span><span class="link">http://localhost:4321/</span>
+  <span class="info">[ 10:00:01 AM ]</span>  <span class="success">ready  </span><span class="text-light">network</span> <span class="link">http://192.168.1.5:4321/</span>
+        </pre>
+      </div>
     </main>
+    <div class="ide-status-bar">
+      <div class="status-left">
+        <div class="status-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 8v4l3 3"></path>
+          </svg>
+          <span class="status-text">main</span>
+        </div>
+        <div class="status-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          <span class="status-text">JavaScript</span>
+        </div>
+      </div>
+      <div class="status-right">
+        <div class="status-item">
+          <span class="status-text">Ln 22, Col 3</span>
+        </div>
+        <div class="status-item">
+          <span class="status-text">Spaces: 2</span>
+        </div>
+        <div class="status-item">
+          <span class="status-text">UTF-8</span>
+        </div>
+      </div>
+    </div>
   </div>
 </Layout>
 
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.getElementById('nav-toggle');
-    const navDrawer = document.getElementById('main-nav');
-    const navClose = document.querySelector('.nav-close');
-    const body = document.body;
-
-    function toggleMobileNav() {
-      const isOpen = navDrawer.classList.contains('is-open');
-      navDrawer.classList.toggle('is-open', !isOpen);
-      navToggle.setAttribute('aria-expanded', !isOpen);
-      body.classList.toggle('no-scroll', !isOpen);
-    }
-
-    if (navToggle && navDrawer) {
-      navToggle.addEventListener('click', toggleMobileNav);
-      if (navClose) {
-        navClose.addEventListener('click', toggleMobileNav);
-      }
-    }
-
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (navDrawer.classList.contains('is-open')) {
-          toggleMobileNav();
-        }
-      });
-    });
-
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-  });
-</script>
-
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const currentPath = window.location.pathname.replace(/\/+$/, '');
-
-    navLinks.forEach(link => {
-      const linkPath = link.getAttribute('href').replace(/\/+$/, '');
-      
-      // Special case for homepage
-      if (currentPath === '/' && linkPath === '/') {
-        link.classList.add('current-page');
-      } 
-      // Check for exact match for all other pages
-      else if (currentPath === linkPath && linkPath !== '/') {
-        link.classList.add('current-page');
-      }
-    });
-  });
-</script>
-
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('explorer-search-input');
-    const fileList = document.getElementById('file-list');
-    const placeholder = document.getElementById('explorer-placeholder');
-    const fileItems = fileList.getElementsByTagName('li');
-
-    searchInput.addEventListener('keyup', (event) => {
-      const filter = event.target.value.toLowerCase();
-      
-      if (filter.length > 0) {
-        fileList.style.display = 'block';
-        placeholder.style.display = 'none';
-
-        let hasResults = false;
-        for (let i = 0; i < fileItems.length; i++) {
-          const fileName = fileItems[i].getAttribute('data-name').toLowerCase();
-          if (fileName.includes(filter)) {
-            fileItems[i].style.display = '';
-            hasResults = true;
-          } else {
-            fileItems[i].style.display = 'none';
-          }
-        }
-        
-        if (!hasResults) {
-          placeholder.textContent = 'No matching files found.';
-          placeholder.style.display = 'block';
-          fileList.style.display = 'none';
-        }
-      } else {
-        fileList.style.display = 'none';
-        placeholder.style.display = 'block';
-        placeholder.textContent = 'Start typing to search files.';
-      }
-    });
-  });
-</script>
-
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
+  /* IDE Color Palette */
   :root {
-    --color-bg: #18181B; /* Zinc 900 */
-    --color-surface: #27272A; /* Zinc 800 */
-    --color-text: #E4E4E7; /* Zinc 200 */
-    --color-text-light: #A1A1AA; /* Zinc 400 */
-    --color-heading: #22D3EE; /* Cyan 400 */
-    --color-accent: #A1A1AA; /* Gray 400 */
-    --color-border: #3F3F46; /* Zinc 600 */
-    --color-tag-bg: rgba(34, 211, 238, 0.1);
-    --font-sans: 'Inter Variable', sans-serif;
-    --padding-x: 2rem;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-    background-color: var(--color-bg);
-  }
-  body {
-    color: var(--color-text);
-    font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.7;
-    margin: 0;
-    padding: 0;
-    transition: transform 0.3s ease-in-out;
-  }
-  body.no-scroll {
-    overflow: hidden;
-  }
-  h1, h2, h3, h4 {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    color: var(--color-heading);
-    margin: 0;
-  }
-  h2 { font-size: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem; margin: 2.5rem 0 1rem 0; }
-  h2::before {
-    content: none;
-  }
-  h1.text-heading {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-    color: var(--color-heading);
-  }
-  p { margin: 0 0 1rem 0; max-width: 80ch; }
-  p.text-light-small {
-    font-size: 1rem;
-    color: var(--color-text-light);
-    margin-top: 0;
-  }
-  a { color: var(--color-heading); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  hr { display: none; }
-  ul { list-style: none; padding-left: 0; margin-bottom: 1rem; }
-  blockquote {
-    margin-left: 0;
-    padding-left: 1rem;
-    border-left: 3px solid var(--color-border);
-    color: var(--color-text-light);
-    font-style: italic;
+    --ide-bg: #1e1e1e;
+    --ide-fg: #d4d4d4;
+    --ide-border: #3c3c3c;
+    --ide-primary: #569cd6; /* Blue */
+    --ide-secondary: #4ec9b0; /* Teal */
+    --ide-tertiary: #c586c0; /* Purple */
+    --ide-comment: #6a9955; /* Green */
+    --ide-string: #ce9178; /* Orange */
+    --ide-keyword: #569cd6; /* Blue */
+    --ide-tag: #808080; /* Gray */
+    --ide-active-bg: #3c3c3c;
   }
 
-  /* --- Main Layout --- */
-  .website-container {
+  /* Global Styles */
+  .ide-container {
     display: flex;
     min-height: 100vh;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    color: var(--ide-fg);
+    background-color: var(--ide-bg);
   }
+
   .sidebar {
-    position: sticky;
-    top: 0;
-    width: 350px;
-    flex-shrink: 0;
-    background-color: var(--color-surface);
-    border-right: 1px solid var(--color-border);
-    padding: 1.5rem;
-    height: 100vh;
-    overflow-y: auto;
-  }
-  .sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  .main-content {
-    flex-grow: 1;
-    padding: 2.5rem var(--padding-x);
-    background-color: var(--color-bg);
-  }
-  .main-header {
-    margin-bottom: 3rem;
-  }
-  .repo-title {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.25rem;
-  }
-  .icon-repo {
-    fill: var(--color-text-light);
-  }
-
-  /* --- File Explorer Section --- */
-  .file-explorer-container {
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    margin-bottom: 2rem;
-  }
-  .file-explorer-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--color-border);
-    gap: 1rem;
-  }
-  .explorer-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--color-heading);
-    flex-shrink: 0;
-    margin: 0;
-  }
-  .explorer-search-form {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    position: relative;
-  }
-  .explorer-search-form .search-input {
-    width: 100%;
-    padding-right: 2.5rem;
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    padding: 0.4rem 2rem 0.4rem 0.75rem;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    color: var(--color-text);
-  }
-  .explorer-search-form .search-input:focus {
-    outline: none;
-    border-color: var(--color-heading);
-    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.3);
-  }
-  .explorer-search-form .search-button {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: var(--color-text-light);
-    cursor: pointer;
-    padding: 0;
-  }
-  .file-explorer-content {
-    padding: 1rem 1.5rem;
-  }
-  .explorer-placeholder {
-    margin: 0;
-    color: var(--color-text-light);
-  }
-  .file-list {
-    padding: 0;
-    margin: 0;
-  }
-  .file-list li {
-    border-bottom: 1px solid var(--color-border);
-  }
-  .file-list li:last-child {
-    border-bottom: none;
-  }
-  .file-list a {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.75rem 0;
-    color: var(--color-text);
-    transition: color 0.2s ease, background-color 0.2s ease;
-  }
-  .file-list a:hover {
-    color: var(--color-heading);
-    background-color: rgba(34, 211, 238, 0.05);
-    text-decoration: none;
-  }
-  .file-list a.current-page {
-    color: var(--color-heading);
-  }
-  .file-list a svg {
-    flex-shrink: 0;
-    fill: currentColor;
-  }
-  .file-list a span {
-    flex-grow: 1;
-  }
-  .file-size-date {
-    font-size: 0.8rem;
-    color: var(--color-text-light);
-    white-space: nowrap;
-    text-align: right;
-  }
-  .file-view-button {
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--color-text-light);
-    background-color: transparent;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 0.25rem 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    margin-left: 1rem;
-  }
-  .file-view-button:hover {
-    background-color: var(--color-heading);
-    color: var(--color-bg);
-    border-color: var(--color-heading);
-  }
-
-  /* --- Dashboard Section --- */
-  .dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  .dashboard-card {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 1.5rem;
-  }
-  .card-icon {
-    font-size: 2.5rem;
-    line-height: 1;
-    margin-right: 1.5rem;
-  }
-  .card-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1;
-    color: var(--color-heading);
-  }
-  .card-label {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    text-transform: uppercase;
-    margin-top: 0.5rem;
-  }
-  .card-content {
+    width: 250px;
+    background-color: var(--ide-bg);
+    border-right: 1px solid var(--ide-border);
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
   
-  /* --- Unified Card Grid System --- */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+  .file-explorer-header {
+    border-bottom: 1px solid var(--ide-border);
+    padding-bottom: 0.5rem;
   }
-  .card {
-    position: relative;
-    display: block;
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    color: inherit;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    overflow: hidden;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    border-color: var(--color-heading);
-    text-decoration: none;
-  }
-  .card-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-    background-color: var(--color-bg);
-  }
-  .card-info { padding: 1rem 1.25rem 2.5rem 1.25rem; }
-  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-  .card-header h4 { font-size: 1.1em; font-weight: 700; color: var(--color-text); }
-  .card-info p { font-size: 0.9em; color: var(--color-text-light); line-height: 1.6; margin: 0; }
-  .post-date { font-size: 0.8em; color: var(--color-text-light); margin-top: 0.75rem; }
-  .card-arrow {
-    position: absolute;
-    bottom: 0.75rem;
-    right: 1rem;
-    font-size: 1.75rem;
-    color: var(--color-text-light);
-    transition: transform 0.2s ease, color 0.2s ease;
-    line-height: 1;
-  }
-  .card:hover .card-arrow {
-    transform: translateX(5px);
-    color: var(--color-heading);
-  }
-  .tag {
-    background-color: var(--color-tag-bg); padding: 0.2em 0.5em;
-    border-radius: 6px; font-size: 0.85em; color: var(--color-heading);
-    flex-shrink: 0; margin-left: 0.5rem;
-  }
-  .view-all-container { text-align: center; margin-top: 2rem; }
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background-color: var(--color-heading);
-    color: var(--color-bg);
-    border: 1px solid var(--color-heading);
-    border-radius: 6px;
-    padding: 0.75rem 1.5rem;
-    font-family: var(--font-sans);
-    font-size: 1rem;
+
+  .explorer-title {
+    font-size: 0.8rem;
+    color: var(--ide-fg);
     font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
   }
-  .cta-button:hover {
-    background-color: #12C1E7;
-  }
-  .cta-button svg {
-    color: var(--color-bg);
-    transition: color 0.4s ease;
-  }
-  .cta-button:hover svg {
-    color: var(--color-bg);
-  }
-  .services-button {
-    background: linear-gradient(to right, #22D3EE, #12C1E7 50%, #22D3EE 50%);
-    background-size: 200% 100%;
-    background-position: left bottom;
-    color: var(--color-bg);
-    border: 1px solid #22D3EE;
-    transition: background-position 0.4s ease, color 0.4s ease;
-  }
-  .services-button:hover {
-    background-position: right bottom;
-    color: var(--color-bg);
-  }
-  .projects-button {
-    background: linear-gradient(to right, #F97316, #E85B00 50%, #F97316 50%);
-    background-size: 200% 100%;
-    background-position: left bottom;
-    color: white;
-    border: 1px solid #F97316;
-    transition: background-position 0.4s ease, color 0.4s ease;
-  }
-  .projects-button:hover {
-    background-position: right bottom;
-    color: white;
-  }
-  .blog-button {
-    background: linear-gradient(to right, #A1A1AA, #8C8C9A 50%, #A1A1AA 50%);
-    background-size: 200% 100%;
-    background-position: left bottom;
-    color: var(--color-bg);
-    border: 1px solid #A1A1AA;
-    transition: background-position 0.4s ease, color 0.4s ease;
-  }
-  .blog-button:hover {
-    background-position: right bottom;
-    color: var(--color-bg);
-  }
-  
-  /* --- Card Type: Service --- */
-  .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem; overflow: hidden; }
-  .service-icon { width: 50px; height: 50px; flex-shrink: 0; border-radius: 6px; background-color: var(--color-bg); }
-  .service-card .card-arrow { bottom: auto; right: 1.25rem; }
-  .service-card strong { color: var(--color-text); }
 
-  /* --- Card Type: R&eacute;sum&eacute; --- */
-  .resume-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  .resume-experience-card { padding: 1.5rem; }
-  .resume-experience-card h4, .resume-skills-card h4 {
-    color: var(--color-heading);
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 0.75rem;
-    font-size: 1.2em;
-  }
-  .resume-experience-card ul {
-    padding: 0;
-    margin: 1rem 0;
-  }
-  .resume-experience-card li {
-    position: relative;
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-  }
-  .resume-experience-card li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--color-text-light);
-  }
-  .experience-title {
-    font-weight: 500;
-    color: var(--color-text);
-    margin: 0 0 0.25rem 0;
-  }
-  .experience-date {
-    font-size: 0.9em;
-    color: var(--color-text-light);
-    margin-bottom: 1rem;
-  }
-  .skill-category { margin-bottom: 1rem; }
-  .skill-category strong { color: var(--color-text); }
-  .skill-category p { font-size: 0.9em; color: var(--color-text-light); margin: 0; }
-  .download-resume-button { width: auto; margin: 0 auto; }
-
-  /* --- Forms --- */
-  .form-group { margin-bottom: 1.5rem; }
-  .form-input {
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    padding: 0.75rem 1rem;
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    color: var(--color-text);
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .form-input:focus {
-    outline: none;
-    border-color: var(--color-heading);
-    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.3);
-  }
-  .newsletter-form { display: flex; gap: 0.5rem; }
-
-  /* --- Footer --- */
-  .readme-footer {
-    padding: 2.5rem 0 1.5rem 0;
-    margin: 2rem auto 0 auto;
-    border-top: 1px solid var(--color-border);
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-  }
-  .footer-column h4 { color: var(--color-heading); margin-bottom: 1rem; font-size: 1.1rem; }
-  .footer-tagline { color: var(--color-text-light); font-size: 0.9rem; max-width: 35ch; }
-  .footer-links {
+  .file-list {
+    margin-top: 1rem;
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem 1rem;
   }
-  .footer-links li { margin: 0; }
-  .footer-links a { color: var(--color-text-light); text-decoration: none; font-size: 0.9rem; }
-  .footer-links a:hover { color: var(--color-heading); text-decoration: underline; }
-  .footer-bottom-bar {
+
+  .file-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--ide-fg);
+  }
+  
+  .file-list li:hover {
+    background-color: var(--ide-active-bg);
+  }
+  
+  .file-list li.active {
+    background-color: var(--ide-active-bg);
+  }
+
+  .file-list a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .file-folder-icon, .file-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+    color: var(--ide-secondary);
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ide-tab-bar {
+    display: flex;
+    background-color: var(--ide-bg);
+    border-bottom: 1px solid var(--ide-border);
+  }
+  
+  .ide-tab {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--ide-fg);
+    border-right: 1px solid var(--ide-border);
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .ide-tab.active {
+    background-color: var(--ide-active-bg);
+    border-bottom-color: var(--ide-active-bg);
+  }
+  
+  .ide-code-editor {
+    display: flex;
+    flex-grow: 1;
+    overflow: auto;
+  }
+  
+  .line-numbers {
+    padding: 1rem 0.5rem;
+    text-align: right;
+    color: var(--ide-tag);
+    user-select: none;
+    line-height: 1.5;
+  }
+  
+  .code-content {
+    flex-grow: 1;
+    padding: 1rem;
+  }
+  
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.5;
+  }
+
+  /* Code Highlighting */
+  .keyword { color: var(--ide-keyword); }
+  .string { color: var(--ide-string); }
+  .comment { color: var(--ide-comment); }
+  .tag { color: var(--ide-tertiary); }
+  .tag-name { color: var(--ide-primary); }
+  .attribute { color: var(--ide-secondary); }
+
+  .ide-terminal {
+    background-color: var(--ide-bg);
+    border-top: 1px solid var(--ide-border);
+    height: 200px;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+  .terminal-header {
+    border-bottom: 1px solid var(--ide-border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--ide-fg);
+  }
+  
+  .terminal-output {
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    color: var(--ide-fg);
+  }
+  
+  .ide-status-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
-    font-size: 0.9rem;
-    color: var(--color-text-light);
+    background-color: var(--ide-primary);
+    color: var(--ide-fg);
+    padding: 0.25rem 1rem;
+    font-size: 0.8rem;
+    position: sticky;
+    bottom: 0;
   }
-  .footer-bottom-bar p { margin: 0; }
-  .back-to-top {
-    color: var(--color-text-light);
-    text-decoration: none;
-    transition: color 0.2s ease;
+  
+  .status-left, .status-right {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .back-to-top:hover {
-    color: var(--color-heading);
-    text-decoration: none;
-  }
-  .back-to-top::after {
-    content: "↑";
-    font-size: 1.25rem;
-    line-height: 1;
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-  .back-to-top:hover::after {
-    transform: translateY(-3px);
-    color: var(--color-heading);
-  }
-  .badge {
-    background-color: #22D3EE;
-    color: var(--color-bg);
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-weight: 500;
-    font-size: 0.9rem;
+    gap: 1rem;
   }
 
-  /* --- Responsive Styles --- */
-  @media (max-width: 1200px) {
-    .website-container {
+  .status-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .status-item svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .ide-status-bar-mobile {
+    display: none;
+  }
+
+  /* Mobile/Tablet styles */
+  @media (max-width: 920px) {
+    .ide-container {
       flex-direction: column;
     }
     .sidebar {
       width: 100%;
       height: auto;
-      position: static;
       border-right: none;
-      border-bottom: 1px solid var(--color-border);
-      padding: 1.5rem;
+      border-bottom: 1px solid var(--ide-border);
     }
-    .main-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 300px;
-      height: 100vh;
-      background-color: var(--color-surface);
-      border-right: 1px solid var(--color-border);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease-in-out;
-      z-index: 99;
-      box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
+    .main-content {
+      overflow: hidden;
     }
-    .main-nav.is-open {
-      transform: translateX(0);
+    .ide-code-editor {
+      overflow-x: auto;
     }
-    .nav-toggle {
-      display: block;
-      background: none;
-      border: none;
-      color: var(--color-text);
-      padding: 0.5rem;
-      cursor: pointer;
-      z-index: 100;
+    .ide-tab-bar {
+      overflow-x: auto;
+      flex-wrap: nowrap;
     }
-    .nav-close {
-      display: block;
-      background: none;
-      border: none;
-      color: var(--color-text);
-      padding: 0.5rem;
-      cursor: pointer;
-    }
-    .sidebar .repo-title {
-      display: none;
-    }
-    .nav-header-mobile {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.5rem 1.5rem 1rem 1.5rem;
-      border-bottom: 1px solid var(--color-border);
+    .ide-tab {
       flex-shrink: 0;
     }
-    .readme-body {
-      padding: 1.5rem var(--padding-x);
+    .ide-status-bar {
+      display: none;
     }
-    .about-container { display: block; }
-    .profile-picture {
-      float: left;
-      margin-right: 1.5rem;
-      margin-bottom: 1rem;
+    .ide-status-bar-mobile {
+      display: block;
+      background-color: var(--ide-primary);
+      color: var(--ide-fg);
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      text-align: center;
     }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .footer-links { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {
-    :root {
-      --padding-x: 1rem;
+    .ide-terminal {
+      display: none;
     }
-    .main-content {
-      padding: 1.5rem var(--padding-x);
-    }
-    .dashboard-grid {
-      grid-template-columns: 1fr;
-    }
-    h2 { font-size: 1.25rem; }
-    .about-container .profile-picture { display: none; }
-    .about-container { margin-top: 0; }
-    .newsletter-form { flex-direction: column; }
-    .card-grid { grid-template-columns: 1fr; }
-    .footer-grid { text-align: center; }
-    .footer-links { grid-template-columns: 1fr; }
-    .footer-bottom-bar { flex-direction: column; gap: 0.5rem; }
   }
 </style>
