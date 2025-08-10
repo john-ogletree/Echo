@@ -3,171 +3,261 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="John Ogletree">
-  <div class="viewsource-container">
-    <header class="browser-header">
-      <div class="browser-controls">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
+  <div class="readme-container">
+    <header class="readme-header">
+      <div class="readme-header-left">
+        <h1 class="readme-title">john-ogletree/echo</h1>
+        <p class="readme-tagline">Digital Artist & Designer</p>
       </div>
-      <div class="browser-address">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
-        <div class="address-bar">
-          <span class="url-text">http://johnogletree.website/index.astro</span>
-        </div>
+      <div class="readme-header-right">
+        <a href="#about" class="readme-link">About</a>
+        <a href="#projects" class="readme-link">Projects</a>
+        <a href="#contact" class="readme-link">Contact</a>
       </div>
     </header>
 
-    <main class="viewsource-body">
-      <pre><code><span class="comment">&lt;!-- 
-  Welcome to my digital space!
-  It's great to see you here. Take a look around.
-  
-  This portfolio is a single-page app, built with a component-based philosophy.
-  Each section is imported and rendered below.
---&gt;</span>
-<span class="tag">
-  <span class="tag-name">import</span> <span class="tag-func-name">{</span> <span class="tag-var-name">Profile</span> <span class="tag-func-name">}</span> <span class="tag-name">from</span> <span class="tag-string">"astro:components";</span>
-  <span class="tag-name">import</span> <span class="tag-func-name">{</span> <span class="tag-var-name">ProjectsList</span> <span class="tag-func-name">}</span> <span class="tag-name">from</span> <span class="tag-string">"astro:components";</span>
-  <span class="tag-name">import</span> <span class="tag-func-name">{</span> <span class="tag-var-name">ContactForm</span> <span class="tag-func-name">}</span> <span class="tag-name">from</span> <span class="tag-string">"astro:components";</span>
-</span>
+    <main class="readme-content">
+      <article>
+        <div class="readme-section-header">
+          <span class="readme-hash">#</span>
+          <h2 id="about">About</h2>
+        </div>
+        <div class="readme-body">
+          <p>
+            I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.
+          </p>
+        </div>
 
-<span class="tag">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;html <span class="attr-name">lang</span>=<span class="attr-value">"en"</span>&gt;</span>
-  <span class="tag">&lt;head&gt;</span>
-    <span class="tag">&lt;title&gt;</span>John Ogletree - Digital Artist & Designer<span class="tag">&lt;/title&gt;</span>
-  <span class="tag">&lt;/head&gt;</span>
-  <span class="tag">&lt;body&gt;</span>
-    
-    <span class="comment">&lt;!-- Let's render the main profile content --&gt;</span>
-    <span class="tag">&lt;<span class="tag-open-name">Profile</span> 
-      <span class="tag-attr">name</span>=<span class="tag-value">"John Ogletree"</span>
-      <span class="tag-attr">title</span>=<span class="tag-value">"Digital Artist & Designer"</span>
-      <span class="tag-attr">bio</span>=<span class="tag-value">"Hello! I'm John, a multidisciplinary creative with a passion for bringing ideas to life through design and art."</span>
-    /&gt;</span>
+        <div class="readme-section-header">
+          <span class="readme-hash">##</span>
+          <h2 id="projects">Projects</h2>
+        </div>
+        <div class="readme-body">
+          <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+          <ul class="project-list">
+            <li>
+              <span class="project-name">Chrono Corp</span> - <span class="project-description">A time-tracking application for creative freelancers.</span>
+            </li>
+            <li>
+              <span class="project-name">Aether Systems</span> - <span class="project-description">A complete branding package for a cloud computing company.</span>
+            </li>
+          </ul>
+        </div>
 
-    <span class="comment">&lt;!-- Next up, a list of projects --&gt;</span>
-    <span class="tag">&lt;<span class="tag-open-name">ProjectsList</span> 
-      <span class="tag-attr">projects</span>=<span class="tag-list">[</span>
-        <span class="tag-object-prop">{ <span class="tag-attr">name</span>=<span class="tag-value">"Chrono Corp"</span>, <span class="tag-attr">tech</span>=<span class="tag-value">"UI/UX Design"</span> },</span>
-        <span class="tag-object-prop">{ <span class="tag-attr">name</span>=<span class="tag-value">"Aether Systems"</span>, <span class="tag-attr">tech</span>=<span class="tag-value">"Brand Identity"</span> },</span>
-        <span class="tag-object-prop">{ <span class="tag-attr">name</span>=<span class="tag-value">"Echo"</span>, <span class="tag-attr">tech</span>=<span class="tag-value">"Web Development"</span> },</span>
-      <span class="tag-list">]</span>
-    /&gt;</span>
+        <div class="readme-section-header">
+          <span class="readme-hash">##</span>
+          <h2 id="skills">Skills & Tools</h2>
+        </div>
+        <div class="readme-body">
+          <ul class="skills-list">
+            <li>
+              <strong>Design:</strong> UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration
+            </li>
+            <li>
+              <strong>Tech:</strong> Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender
+            </li>
+          </ul>
+        </div>
 
-    <span class="comment">&lt;!-- Let's connect! --&gt;</span>
-    <span class="tag">&lt;<span class="tag-open-name">ContactForm</span> /&gt;</span>
-
-  <span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/html&gt;</span>
-</code></pre>
+        <div class="readme-section-header">
+          <span class="readme-hash">##</span>
+          <h2 id="contact">Contact</h2>
+        </div>
+        <div class="readme-body">
+          <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
+          <p>Email: <a href="mailto:contact@johnogletree.com">contact@johnogletree.com</a></p>
+        </div>
+      </article>
     </main>
+
+    <footer class="readme-footer">
+      <p>&copy; <span id="year"></span> John Ogletree</p>
+    </footer>
   </div>
 </Layout>
 
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>
+
 <style>
   :root {
-    --bg-color: #1e1e1e;
-    --text-color: #f8f8f2;
-    --primary-color: #50fa7b;
-    --secondary-color: #ff79c6;
-    --accent-color: #8be9fd;
-    --comment-color: #6272a4;
-    --tag-color: #ff5555;
-    --attr-name-color: #50fa7b;
-    --attr-value-color: #f1fa8c;
-    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
-    --browser-bar-color: #282a36;
+    --bg-color: #24292e;
+    --text-color: #d1d2d3;
+    --link-color: #58a6ff;
+    --heading-color: #c9d1d9;
+    --border-color: #3b4249;
+    --code-bg: #1f2226;
+    --font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   }
 
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
+    line-height: 1.5;
   }
 
-  .viewsource-container {
-    width: 100%;
+  .readme-container {
     max-width: 900px;
-    margin: 2rem auto;
-    border: 1px solid var(--browser-bar-color);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    padding: 2rem;
   }
-  
-  .browser-header {
+
+  .readme-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .readme-header-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .readme-title {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin: 0;
+  }
+
+  .readme-tagline {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 0.5rem 0 0;
+  }
+
+  .readme-header-right {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .readme-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .readme-link:hover {
+    text-decoration: underline;
+  }
+
+  .readme-content article {
+    background-color: var(--code-bg);
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+  }
+
+  .readme-section-header {
     display: flex;
     align-items: center;
-    padding: 0.5rem 1rem;
-    background-color: var(--browser-bar-color);
-    border-bottom: 1px solid var(--bg-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 
-  .browser-controls {
-    display: flex;
-    gap: 0.5rem;
+  .readme-section-header:first-of-type {
+    margin-top: 0;
   }
 
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-
-  .dot.red { background-color: #ff5f56; }
-  .dot.yellow { background-color: #ffbd2e; }
-  .dot.green { background-color: #27c93f; }
-
-  .browser-address {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    background-color: var(--bg-color);
-    border-radius: 4px;
-    padding: 0.25rem 0.5rem;
-    margin-left: 1rem;
-  }
-
-  .address-bar svg {
-    width: 16px;
-    height: 16px;
+  .readme-hash {
+    font-family: var(--font-mono);
+    color: var(--comment-color);
     margin-right: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin: 0;
+  }
+
+  .readme-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .readme-body p {
+    margin: 0 0 1rem 0;
+  }
+
+  .readme-body a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+
+  .readme-body a:hover {
+    text-decoration: underline;
+  }
+
+  .project-list, .skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .project-list li, .skills-list li {
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--link-color);
+  }
+
+  .skills-list li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--link-color);
+  }
+
+  .project-name {
+    font-weight: 600;
+  }
+
+  .project-description {
     color: var(--comment-color);
   }
-  
-  .url-text {
-    color: var(--text-color);
-    font-size: 0.9rem;
+
+  .readme-footer {
+    text-align: center;
+    padding-top: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    color: var(--comment-color);
   }
 
-  .viewsource-body {
-    background-color: var(--bg-color);
-    padding: 2rem;
-    overflow-x: auto;
-    white-space: pre;
-  }
+  @media (max-width: 768px) {
+    .readme-container {
+      padding: 1rem;
+    }
 
-  pre {
-    margin: 0;
-    color: var(--text-color);
-    font-size: 1rem;
-    line-height: 1.4;
-  }
+    .readme-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
 
-  /* Syntax Highlighting with a friendly tone */
-  .comment { color: var(--comment-color); font-style: italic; }
-  .tag { color: var(--tag-color); }
-  .tag-name { color: var(--tag-color); font-weight: bold; }
-  .tag-open-name { color: var(--primary-color); font-weight: bold; }
-  .tag-close-name { color: var(--primary-color); font-weight: bold; }
-  .tag-attr { color: var(--attr-name-color); }
-  .tag-value { color: var(--attr-value-color); }
-  .tag-list { color: var(--text-color); }
-  .tag-object-prop { color: var(--secondary-color); }
-  .tag-string { color: var(--attr-value-color); }
+    .readme-header-right {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
 </style>
