@@ -9,7 +9,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="nav-drawer-container" id="nav-drawer-container">
           <nav class="main-nav" id="main-nav">
             <div class="nav-header-mobile">
-              
+              <button class="nav-close" aria-label="Close navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
               <form class="search-form mobile-search" action="/directory" method="get">
                 <input type="search" name="q" class="search-input" placeholder="Search...">
               </form>
@@ -37,7 +39,11 @@ import Layout from '../layouts/Layout.astro';
             </ul>
           </nav>
         </div>
-        
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
       <div class="header-left">
         <div class="repo-title">
@@ -51,7 +57,12 @@ import Layout from '../layouts/Layout.astro';
       <div class="hero-section">
         <h1>Digital Artist & Designer</h1>
         <p>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</p>
-        
+        <div class="hero-cta">
+          <a href="/forms/index" class="cta-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
+            <span>Let's Talk</span>
+          </a>
+        </div>
       </div>
 
       <h2 id="about">About</h2>
@@ -78,7 +89,7 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
       <div class="view-all-container">
-        <a href="#" class="view-all-services-link">
+        <a href="#" class="cta-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
           <span>View All Services</span>
         </a>
@@ -111,7 +122,7 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
       <div class="view-all-container">
-        <a href="#" class="view-all-projects-link">
+        <a href="#" class="cta-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
           <span>View All Projects</span>
         </a>
@@ -144,7 +155,7 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
       <div class="view-all-container">
-        <a href="#" class="view-all-posts-link">
+        <a href="#" class="cta-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/></svg>
           <span>View All Posts</span>
         </a>
@@ -154,7 +165,7 @@ import Layout from '../layouts/Layout.astro';
       <p>Receive occasional updates about new projects and articles. No spam.</p>
       <form class="newsletter-form" action="#">
         <input class="form-input" type="email" placeholder="your-email@domain.com" required>
-        <a href="#" class="newsletter-submit-link">
+        <a href="#" class="cta-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
           <span>Subscribe</span>
         </a>
@@ -187,7 +198,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="card resume-card cta-card">
           <h4>Download Full Résumé</h4>
           <p>Get the complete details on my skills and experience.</p>
-          <a href="/resume.pdf" target="_blank" class="download-resume-link">
+          <a href="/resume.pdf" target="_blank" class="cta-button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
             <span>Download PDF</span>
           </a>
@@ -209,7 +220,7 @@ import Layout from '../layouts/Layout.astro';
           <label for="message">Your Message:</label>
           <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
         </div>
-        <a href="#" class="contact-submit-link">
+        <a href="#" class="cta-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
           <span>Send Message</span>
         </a>
@@ -484,6 +495,33 @@ import Layout from '../layouts/Layout.astro';
   .nav-links a svg {
     flex-shrink: 0;
   }
+  
+  .nav-toggle,
+  .nav-close {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .nav-close {
+    display: none;
+  }
+
+  /* When nav is open, swap the icons */
+  .nav-drawer-container.is-open ~ .nav-toggle {
+    display: none;
+  }
+
+  .nav-drawer-container .nav-close {
+    display: none;
+  }
+  
+  .nav-drawer-container.is-open .nav-close {
+    display: block;
+  }
 
   /* The drawer slides from the left */
   .nav-drawer-container {
@@ -619,69 +657,26 @@ import Layout from '../layouts/Layout.astro';
   }
   .view-all-button:hover { background-color: var(--color-tag-bg); border-color: var(--color-accent);
   }
-  .services-button {
-    background: linear-gradient(to right, #65B5B8, #4D8B8E 50%, #65B5B8 50%);
-    /* Retro Teal */
-    background-size: 200% 100%;
-    background-position: left bottom;
-    color: white;
-    border: 1px solid #65B5B8;
-    transition: background-position 0.4s ease, color 0.4s ease;
+  
+  .cta-button {
+    background-color: var(--color-heading);
+    color: var(--color-bg);
+    border: 1px solid var(--color-heading);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
     font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+    font-family: var(--font-mono);
   }
-  .services-button:hover {
-    background-position: right bottom;
-    color: #3B2F2A;
-    /* Dark text on hover */
-  }
-  .services-button svg {
-    color: white;
-    transition: color 0.4s ease;
-  }
-  .services-button:hover svg {
-    color: #3B2F2A;
-  }
-  .projects-button {
-    background: linear-gradient(to right, #F4A261, #E8A155 50%, #F4A261 50%);
-    /* Faded Orange */
-    background-size: 200% 100%;
-    background-position: left bottom;
-    color: white;
-    border: 1px solid #F4A261;
-    transition: background-position 0.4s ease, color 0.4s ease;
-    font-weight: 700;
-  }
-  .projects-button:hover {
-    background-position: right bottom;
-    color: #3B2F2A;
-  }
-  .projects-button svg {
-    color: white;
-    transition: color 0.4s ease;
-  }
-  .projects-button:hover svg {
-    color: #3B2F2A;
-  }
-  .blog-button {
-    background: linear-gradient(to right, #B58866, #A07F5B 50%, #B58866 50%);
-    /* Muted brown */
-    background-size: 200% 100%;
-    background-position: left bottom;
-    color: white;
-    border: 1px solid #B58866;
-    transition: background-position 0.4s ease, color 0.4s ease;
-    font-weight: 700;
-  }
-  .blog-button:hover {
-    background-position: right bottom;
-    color: #3B2F2A;
-  }
-  .blog-button svg {
-    color: white;
-    transition: color 0.4s ease;
-  }
-  .blog-button:hover svg {
-    color: #3B2F2A;
+  .cta-button:hover {
+    background-color: #D36C52;
+    border-color: #D36C52;
   }
 
   /* --- Card Type: Service --- */
@@ -860,99 +855,90 @@ import Layout from '../layouts/Layout.astro';
     
     .nav-toggle {
       display: block;
-      background: none;
-  border: none;
-      color: var(--color-text);
-      padding: 0.5rem;
-      cursor: pointer;
-      z-index: 100;
-  }
+    }
     
     .nav-close {
       display: none;
-      background: none;
-  border: none;
-      color: var(--color-text);
-      cursor: pointer;
-      padding: 0.5rem;
     }
     
     /* When nav is open, swap the icons */
     .nav-drawer-container.is-open ~ .nav-toggle {
         display: none;
-  }
+    }
+
     .nav-drawer-container .nav-close {
         display: none;
-  }
+    }
+    
     .nav-drawer-container.is-open .nav-close {
         display: block;
-  }
+    }
 
     .nav-drawer-container {
       position: fixed;
       top: 0;
       left: 0;
       width: 300px;
-  height: 100vh;
+      height: 100vh;
       background-color: var(--color-surface);
       border-right: 1px solid var(--color-border);
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
       z-index: 99;
-  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
+      box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
     }
     .nav-drawer-container.is-open {
       transform: translateX(0);
-  }
+    }
     
     .main-nav {
       display: flex;
       flex-direction: column;
-  height: 100%;
+      height: 100%;
       padding: 0;
     }
 
     .nav-header-mobile {
       display: flex;
       align-items: center;
-  gap: 1rem;
+      gap: 1rem;
       padding: 1.5rem 1.5rem 1rem 1.5rem;
       border-bottom: 1px solid var(--color-border);
       flex-shrink: 0;
-  }
+    }
 
     .nav-header-mobile .mobile-search {
       flex-grow: 1;
-  }
+    }
 
     .nav-socials {
       list-style: none;
       padding: 1.5rem;
       border-top: 1px solid var(--color-border);
-  display: flex;
+      display: flex;
       justify-content: center;
       gap: 2rem;
       flex-shrink: 0;
     }
     .nav-socials a { color: var(--color-text-light);
-  }
+    }
     .nav-socials a:hover { color: var(--color-accent); }
     .nav-socials svg { width: 24px; height: 24px;
-  }
+    }
     
     .dashboard-grid {
       grid-template-columns: 1fr 1fr;
-  grid-template-areas:
+      grid-template-areas:
         "about about"
         "services resume"
         "projects projects"
         "blog newsletter"
         "contact contact";
-  }
+    }
     .about-container { display: block; }
     .profile-picture {
       float: left;
-  margin-right: 1.5rem;
+      margin-right: 1.5rem;
       margin-bottom: 1rem;
     }
   }
@@ -960,34 +946,34 @@ import Layout from '../layouts/Layout.astro';
   @media (max-width: 768px) {
     :root {
       --padding-x: 1rem;
-  }
+    }
     .readme-header {
       padding: 1rem var(--padding-x);
-  }
+    }
     .readme-body {
       padding: 1.5rem var(--padding-x);
-  }
+    }
     .dashboard-grid {
       grid-template-columns: 1fr;
-  grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
+      grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
     }
     h2 { font-size: 1.25rem;
-  }
+    }
     .hero-header {
       flex-direction: column;
       text-align: center;
       gap: 1rem;
       margin-bottom: 1.5rem;
-  }
+    }
     .hero-info h1 {
       font-size: 1.75rem;
-  }
+    }
     .hero-profile-picture {
       display: none;
-  }
+    }
     .branded-hr {
       margin: 3rem 0;
-  }
+    }
     .about-container {
       flex-direction: column;
       align-items: center;
@@ -1002,13 +988,13 @@ import Layout from '../layouts/Layout.astro';
     }
     .newsletter-form { flex-direction: column; }
     .card-grid { grid-template-columns: 1fr;
-  }
+    }
     .footer-grid { text-align: center; }
     .footer-tagline { margin: 0 auto 1rem auto;
-  }
+    }
     .footer-column .badge, .footer-socials { justify-content: center; }
     .footer-links { grid-template-columns: repeat(2, 1fr);
-  }
+    }
     .footer-bottom-bar { flex-direction: column; gap: 0.5rem; }
   }
 </style>
