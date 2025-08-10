@@ -10,6 +10,7 @@ import Layout from '../layouts/Layout.astro';
         <p class="site-description">A curated list of my creations, skills, and thoughts.</p>
       </div>
       <nav class="main-nav">
+        <a href="#about" class="nav-link">About</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -17,55 +18,56 @@ import Layout from '../layouts/Layout.astro';
     </header>
 
     <main class="content-body">
-
-      <section id="about" class="content-section">
-        <h2 class="section-title">About Me</h2>
-        <div class="profile-card">
-          <img src="https://via.placeholder.com/150" alt="A profile picture of John Ogletree" class="profile-image">
-          <div class="profile-text">
-            <p>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</p>
+      <div class="grid-container">
+        <section id="about" class="content-section">
+          <h2 class="section-title">About Me</h2>
+          <div class="profile-card">
+            <img src="https://via.placeholder.com/150" alt="A profile picture of John Ogletree" class="profile-image">
+            <div class="profile-text">
+              <p>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</p>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section id="projects" class="content-section">
-        <h2 class="section-title">Latest Projects</h2>
-        <ul class="projects-list">
-          <li class="project-item">
-            <h3 class="project-name">Chrono Corp</h3>
-            <p class="project-info">A time-tracking application for creative freelancers.</p>
-            <span class="project-tag">UI/UX Design</span>
-          </li>
-          <li class="project-item">
-            <h3 class="project-name">Aether Systems</h3>
-            <p class="project-info">A complete branding package for a cloud computing company.</p>
-            <span class="project-tag">Brand Identity</span>
-          </li>
-        </ul>
-        <a href="#" class="cta-link">View all projects &rarr;</a>
-      </section>
-
-      <section id="skills" class="content-section">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-list">
-          <div class="skill-category">
-            <h4 class="skill-category-title">Design</h4>
-            <p class="skill-list">UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</p>
+        </section>
+  
+        <section id="projects" class="content-section">
+          <h2 class="section-title">Latest Projects</h2>
+          <ul class="projects-list">
+            <li class="project-item">
+              <h3 class="project-name">Chrono Corp</h3>
+              <p class="project-info">A time-tracking application for creative freelancers.</p>
+              <span class="project-tag">UI/UX Design</span>
+            </li>
+            <li class="project-item">
+              <h3 class="project-name">Aether Systems</h3>
+              <p class="project-info">A complete branding package for a cloud computing company.</p>
+              <span class="project-tag">Brand Identity</span>
+            </li>
+          </ul>
+          <a href="#" class="cta-link">View all projects &rarr;</a>
+        </section>
+  
+        <section id="skills" class="content-section">
+          <h2 class="section-title">Skills & Expertise</h2>
+          <div class="skills-list">
+            <div class="skill-category">
+              <h4 class="skill-category-title">Design</h4>
+              <p class="skill-list">UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</p>
+            </div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Tech</h4>
+              <p class="skill-list">Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender</p>
+            </div>
           </div>
-          <div class="skill-category">
-            <h4 class="skill-category-title">Tech</h4>
-            <p class="skill-list">Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="content-section">
-        <h2 class="section-title">Get in Touch</h2>
-        <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
-        <a href="mailto:contact@johnogletree.com" class="cta-link">Email me &rarr;</a>
-      </section>
-      
+        </section>
+  
+        <section id="contact" class="content-section">
+          <h2 class="section-title">Get in Touch</h2>
+          <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
+          <a href="mailto:contact@johnogletree.com" class="cta-link">Email me &rarr;</a>
+        </section>
+      </div>
     </main>
+    
     <footer class="main-footer">
       <p>&copy; <span id="year"></span> John Ogletree. All rights reserved.</p>
     </footer>
@@ -160,6 +162,13 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     flex-direction: column;
     gap: 3rem;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
   }
 
   .content-section {
@@ -273,6 +282,9 @@ import Layout from '../layouts/Layout.astro';
     .profile-card {
       flex-direction: column;
       text-align: center;
+    }
+    .grid-container {
+      grid-template-columns: 1fr;
     }
   }
 </style>
