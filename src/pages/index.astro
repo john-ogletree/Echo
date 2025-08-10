@@ -1,282 +1,269 @@
 ---
+// Layout component import - assumes a basic HTML shell layout exists
 import Layout from '../layouts/Layout.astro';
+
+// --- COMPONENT SCRIPT (Frontmatter) ---
+// This data is used to dynamically build the content in the "IDE"
+const portfolio = {
+  user: "John Ogletree",
+  bio: `A multidisciplinary digital artist and designer with nearly a decade 
+        of experience. I partner with clients to turn ambitious ideas into 
+        reality through clear communication and a commitment to craft.`,
+  location: "Martinez, Georgia",
+};
+
+const featuredWork = [
+  { name: "Chrono Corp", file: "ChronoCorp.jsx", type: "UI/UX Design" },
+  { name: "Aether Systems", file: "AetherSystems.css", type: "Brand Identity" },
+  { name: "Project Nova", file: "ProjectNova.mp3", type: "Sound Design" },
+  { name: "Cityscape Logistics", file: "CityscapeLogistics.html", type: "Web Design" },
+];
+
+const currentYear = new Date().getFullYear(); // Will be 2025
 ---
 
-<Layout title="John Ogletree">
-  <div class="portfolio-container">
-    <header class="main-header">
-      <div class="header-content">
-        <h1 class="site-title">John Ogletree</h1>
-        <p class="site-description">Digital Artist & Designer</p>
+<Layout title={`${portfolio.user} | Digital Artist & Designer`}>
+  <div class="ide-container">
+    <header class="window-bar">
+      <div class="window-controls">
+        <span class="control close"></span>
+        <span class="control min"></span>
+        <span class="control max"></span>
+      </div>
+      <div class="window-title">
+        john-ogletree-portfolio/src/index.jsx - Visual Studio Code
       </div>
     </header>
 
-    <main class="content-body">
-      <section id="about" class="about-section">
-        <h2 class="section-title">About Me</h2>
-        <div class="profile-info">
-          <img src="https://via.placeholder.com/200x200" alt="Profile picture of John Ogletree" class="profile-image">
-          <p class="about-text">
-            I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.
-          </p>
+    <div class="main-content">
+      <aside class="file-explorer">
+        <h2 class="explorer-title">EXPLORER</h2>
+        <pre class="file-tree"><code><span class="tree-line">▼ SRC</span>
+<span class="tree-line">  └─ 📁 projects</span>
+<span class="tree-line">     ├─ <span class="file-icon">🎨</span> ChronoCorp.jsx</span>
+<span class="tree-line">     ├─ <span class="file-icon">☁️</span> AetherSystems.css</span>
+<span class="tree-line">     ├─ <span class="file-icon">🚀</span> ProjectNova.mp3</span>
+<span class="tree-line">     └─ <span class="file-icon">🚚</span> CityscapeLogistics.html</span>
+<span class="tree-line"><span class="file-icon">👤</span> <span class="active-file">index.jsx</span></span>
+</code></pre>
+      </aside>
+
+      <main class="right-pane">
+        <div class="editor">
+          <pre class="line-numbers"><code>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</code></pre>
+          <pre class="code-display"><code><span class="comment">/**
+ * @author    {portfolio.user}
+ * @location  {portfolio.location}
+ * @bio       Digital Artist & Designer
+ */</span>
+
+<span class="keyword">const</span> <span class="variable">aboutMe</span> <span class="operator">=</span> <span class="string">`{portfolio.bio}`</span>;
+
+<span class="comment">// --- FEATURED WORK ---</span>
+<span class="keyword">const</span> <span class="variable">featuredWork</span> <span class="operator">=</span> [
+  {
+    <span class="property">name</span>: <span class="string">"{featuredWork[0].name}"</span>,
+    <span class="property">description</span>: <span class="string">"A time-tracking app for freelancers."</span>,
+    <span class="property">type</span>: <span class="string">"{featuredWork[0].type}"</span>
+  },
+  {
+    <span class="property">name</span>: <span class="string">"{featuredWork[1].name}"</span>,
+    <span class="property">description</span>: <span class="string">"A complete branding package."</span>,
+    <span class="property">type</span>: <span class="string">"{featuredWork[1].type}"</span>
+  },
+  <span class="comment">// ...and 2 more projects in the directory.</span>
+];
+
+<span class="comment">// To get in touch, see the terminal below.</span>
+</code></pre>
         </div>
-      </section>
 
-      <section id="projects" class="projects-section">
-        <h2 class="section-title">Featured Work</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <img src="https://via.placeholder.com/400x300" alt="Chrono Corp project thumbnail" class="project-image">
-            <div class="project-info">
-              <h3 class="project-name">Chrono Corp</h3>
-              <p class="project-description">A time-tracking application for creative freelancers.</p>
-              <span class="project-tag">UI/UX Design</span>
-            </div>
+        <div class="terminal">
+          <div class="terminal-tabs">
+            <span class="terminal-tab active">TERMINAL</span>
+            <span class="terminal-tab">PROBLEMS</span>
+            <span class="terminal-tab">OUTPUT</span>
           </div>
-          <div class="project-card">
-            <img src="https://via.placeholder.com/400x300" alt="Aether Systems branding project thumbnail" class="project-image">
-            <div class="project-info">
-              <h3 class="project-name">Aether Systems</h3>
-              <p class="project-description">A complete branding package for a cloud computing company.</p>
-              <span class="project-tag">Brand Identity</span>
-            </div>
-          </div>
-           <div class="project-card">
-            <img src="https://via.placeholder.com/400x300" alt="Project Nova thumbnail" class="project-image">
-            <div class="project-info">
-              <h3 class="project-name">Project Nova</h3>
-              <p class="project-description">Soundtrack and SFX for an indie space exploration game.</p>
-              <span class="project-tag">Sound Design</span>
-            </div>
-          </div>
-           <div class="project-card">
-            <img src="https://via.placeholder.com/400x300" alt="Cityscape Logistics thumbnail" class="project-image">
-            <div class="project-info">
-              <h3 class="project-name">Cityscape Logistics</h3>
-              <p class="project-description">Website and mobile app for an urban delivery service.</p>
-              <span class="project-tag">Web Design</span>
-            </div>
+          <div class="terminal-content">
+            <pre><code><span class="prompt">john@portfolio:~$</span> ./contact --initiate
+<span class="output">> Success! Ready for new opportunities and collaborations.</span>
+<span class="output">> Send an email to start the conversation:</span>
+<span class="prompt"><a href="mailto:contact@johnogletree.com" class="email-link">contact@johnogletree.com</a></span>
+<span class="prompt">john@portfolio:~$</span> <span class="cursor"></span></code></pre>
           </div>
         </div>
-      </section>
+      </main>
+    </div>
 
-      <section id="contact" class="contact-section">
-        <h2 class="section-title">Get in Touch</h2>
-        <p>I'm always open to new opportunities and collaborations. Send me an email to start the conversation.</p>
-        <a href="mailto:contact@johnogletree.com" class="contact-link">Email me &rarr;</a>
-      </section>
-    </main>
-
-    <footer class="main-footer">
-      <p>&copy; <span id="year"></span> John Ogletree. All rights reserved.</p>
+    <footer class="status-bar">
+      <div class="status-left">
+        <span>main*</span>
+        <span>&copy; {currentYear} John Ogletree</span>
+      </div>
+      <div class="status-right">
+        <span>Ln 27, Col 1</span>
+        <span>UTF-8</span>
+        <span>LF</span>
+        <span>JavaScriptReact</span>
+      </div>
     </footer>
   </div>
 </Layout>
 
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', function() {
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-  });
-</script>
-
 <style>
+  /* --- CSS STYLES --- */
   :root {
-    --bg-color: #1a1a1a;
-    --text-color: #e0e0e0;
-    --primary-color: #f0f0f0;
-    --secondary-color: #bb86fc;
-    --card-bg: #2d2d2d;
-    --border-color: #444;
-    --link-color: #bb86fc;
-    --link-hover-color: #a056f7;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-  
-  html {
-    box-sizing: border-box;
+    /* Dracula Theme Color Palette */
+    --bg-dark: #21222C;
+    --bg-main: #282A36;
+    --bg-light: #44475A;
+    --fg-main: #F8F8F2;
+    --fg-comment: #6272A4;
+    --cyan: #8BE9FD;
+    --green: #50FA7B;
+    --orange: #FFB86C;
+    --pink: #FF79C6;
+    --purple: #BD93F9;
+    --red: #FF5555;
+    --yellow: #F1FA8C;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   }
 
+  /* Base Reset & Font */
   *, *::before, *::after {
-    box-sizing: inherit;
-  }
-
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-sans);
-    line-height: 1.6;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-
-  .portfolio-container {
-    /* max-width: 1200px; <-- REMOVED */
-    /* margin: 0 auto;     <-- REMOVED */
-    padding: 2rem;
-    width: 100%;
+  
+  body {
+    background-color: var(--bg-main); /* Ensure body matches theme */
   }
 
-  .main-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .site-title {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin: 0;
-    font-weight: 700;
-  }
-
-  .site-description {
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-    margin-top: 0.5rem;
-  }
-
-  .content-body {
+  .ide-container {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-  }
-
-  .about-section, .projects-section, .contact-section {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 2.5rem;
-    border: 1px solid var(--border-color);
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.75rem;
-    margin-top: 0;
-    margin-bottom: 2rem;
-  }
-  
-  .profile-info {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--secondary-color);
-    flex-shrink: 0; /* Prevents image from shrinking in flex container */
-  }
-
-  .about-text {
-    margin: 0;
-  }
-  
-  .project-grid {
-    display: grid;
-    /* Updated to allow for more columns on wider screens */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-  }
-
-  .project-card {
-    background-color: #383838;
+    height: 100vh;
+    max-height: 900px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: var(--bg-main);
+    border: 1px solid var(--bg-light);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-mono);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .window-bar {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-dark);
+    padding: 0.5rem;
+    color: var(--fg-comment);
+    border-bottom: 1px solid var(--bg-light);
   }
+  .window-controls { display: flex; gap: 0.5rem; }
+  .control { height: 12px; width: 12px; border-radius: 50%; }
+  .control.close { background-color: var(--red); }
+  .control.min { background-color: var(--orange); }
+  .control.max { background-color: var(--green); }
+  .window-title { margin: 0 auto; font-size: 0.8rem; }
 
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-  }
-
-  .project-image {
-    width: 100%;
-    height: 220px; /* Gave the image a fixed height */
-    object-fit: cover; /* Ensures the image covers the area nicely */
-    display: block;
-  }
-
-  .project-info {
-    padding: 1.5rem;
+  .main-content {
     display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Allows this container to grow and fill space */
+    flex-grow: 1;
+    overflow: hidden;
   }
 
-  .project-name {
-    font-size: 1.5rem;
-    margin: 0 0 0.5rem;
-    color: var(--secondary-color);
+  .file-explorer {
+    width: 240px;
+    background-color: var(--bg-dark);
+    padding: 1rem;
+    border-right: 1px solid var(--bg-light);
+    color: var(--fg-comment);
+    flex-shrink: 0;
   }
+  .explorer-title { font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 1rem; }
+  .file-tree { white-space: pre; font-size: 0.9rem; }
+  .tree-line { display: block; line-height: 1.6; }
+  .active-file { color: var(--fg-main); background-color: var(--bg-light); padding: 0.1rem 0.3rem; border-radius: 4px; }
+  .file-icon { display: inline-block; width: 20px; }
 
-  .project-description {
-    font-size: 1rem;
-    color: #c0c0c0;
-    margin: 0;
-    flex-grow: 1; /* Pushes the tag to the bottom */
-  }
+  .right-pane { display: flex; flex-direction: column; flex-grow: 1; }
 
-  .project-tag {
+  .editor { display: flex; flex-grow: 1; overflow: auto; }
+  .line-numbers { padding: 1rem 0.5rem 1rem 1rem; color: var(--fg-comment); text-align: right; user-select: none; }
+  .code-display { padding: 1rem; flex-grow: 1; overflow-x: auto; color: var(--fg-main); }
+  .code-display .comment { color: var(--fg-comment); font-style: italic; }
+  .code-display .keyword { color: var(--pink); }
+  .code-display .variable { color: var(--cyan); }
+  .code-display .operator { color: var(--pink); }
+  .code-display .string { color: var(--yellow); }
+  .code-display .property { color: var(--cyan); }
+
+  .terminal { background-color: var(--bg-dark); border-top: 1px solid var(--bg-light); }
+  .terminal-tabs { display: flex; gap: 1rem; padding: 0.5rem 1rem; font-size: 0.8rem; }
+  .terminal-tab { color: var(--fg-comment); cursor: pointer; }
+  .terminal-tab.active { color: var(--fg-main); border-bottom: 1px solid var(--pink); }
+  .terminal-content { padding: 0 1rem 1rem 1rem; }
+  .terminal-content .prompt { color: var(--green); }
+  .terminal-content .output { color: var(--fg-main); }
+  .terminal-content .email-link { color: var(--purple); text-decoration: underline; }
+  .cursor {
     display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--card-bg);
+    width: 8px;
+    height: 1.2em;
+    background-color: var(--fg-main);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 50% { background-color: transparent; } }
+
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-dark);
+    padding: 0.25rem 1rem;
     font-size: 0.8rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    font-weight: bold;
-    align-self: flex-start; /* Aligns tag to the start of the container */
+    border-top: 1px solid var(--bg-light);
+    color: var(--fg-comment);
+    flex-shrink: 0;
   }
+  .status-left, .status-right { display: flex; gap: 1rem; }
 
-  .contact-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .contact-link:hover {
-    text-decoration: underline;
-    color: var(--link-hover-color);
-  }
-
-  .main-footer {
-    text-align: center;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
-    color: #888;
-  }
-
+  /* Responsive stacking for smaller screens */
   @media (max-width: 768px) {
-    .portfolio-container {
-      padding: 1.5rem;
-    }
-    
-    .profile-info {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .site-title {
-      font-size: 2.5rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-    }
+    .ide-container { height: auto; margin: 1rem; }
+    .main-content { flex-direction: column; }
+    .file-explorer { width: 100%; border-right: none; border-bottom: 1px solid var(--bg-light); }
   }
 </style>
