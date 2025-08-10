@@ -9,9 +9,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="nav-drawer-container" id="nav-drawer-container">
           <nav class="main-nav" id="main-nav">
             <div class="nav-header-mobile">
-              <button class="nav-close" aria-label="Close navigation">
+              <a href="#" class="cta-button nav-close" aria-label="Close navigation">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </button>
+              </a>
               <form class="search-form mobile-search" action="/directory" method="get">
                 <input type="search" name="q" class="search-input" placeholder="Search...">
               </form>
@@ -39,11 +39,11 @@ import Layout from '../layouts/Layout.astro';
             </ul>
           </nav>
         </div>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <a href="#" class="cta-button nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </button>
+        </a>
       </div>
       <div class="header-left">
         <div class="repo-title">
@@ -165,10 +165,10 @@ import Layout from '../layouts/Layout.astro';
       <p>Receive occasional updates about new projects and articles. No spam.</p>
       <form class="newsletter-form" action="#">
         <input class="form-input" type="email" placeholder="your-email@domain.com" required>
-        <button type="submit" class="cta-button">
+        <a href="#" class="cta-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
           <span>Subscribe</span>
-        </button>
+        </a>
       </form>
 
       <h2 id="resume">Résumé</h2>
@@ -220,10 +220,10 @@ import Layout from '../layouts/Layout.astro';
           <label for="message">Your Message:</label>
           <textarea class="form-input" id="message" name="message" rows="6" required></textarea>
         </div>
-        <button type="submit" class="cta-button">
+        <a href="#" class="cta-button">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg>
           <span>Send Message</span>
-        </button>
+        </a>
       </form>
 
       <footer class="readme-footer">
@@ -737,25 +737,79 @@ import Layout from '../layouts/Layout.astro';
   .cta-button {
     background-color: #E07A5F;
     /* Main CTA button color, terracotta */
-    color: var(--color-text);
+    color: #F0EAD6;
     border: 1px solid #E07A5F;
     transition: background-color 0.2s ease, border-color 0.2s ease;
     font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
   }
   .cta-button:hover {
     background-color: #D36C52;
   }
-  /* Updated CSS for button text readability */
-  .cta-button span, .cta-button svg {
-      padding: 0 0.25rem;
-  }
   
-  .services-button span, .services-button svg,
-  .projects-button span, .projects-button svg,
-  .blog-button span, .blog-button svg {
-      padding: 0 0.25rem;
+  .services-button {
+    background: linear-gradient(to right, #65B5B8, #4D8B8E 50%, #65B5B8 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    color: white;
+    border: 1px solid #65B5B8;
+  }
+  .services-button:hover {
+    background-position: right bottom;
+    color: #3B2F2A;
+  }
+  .services-button svg {
+    color: white;
+    transition: color 0.4s ease;
+  }
+  .services-button:hover svg {
+    color: #3B2F2A;
   }
 
+  .projects-button {
+    background: linear-gradient(to right, #F4A261, #E8A155 50%, #F4A261 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    color: white;
+    border: 1px solid #F4A261;
+  }
+  .projects-button:hover {
+    background-position: right bottom;
+    color: #3B2F2A;
+  }
+  .projects-button svg {
+    color: white;
+    transition: color 0.4s ease;
+  }
+  .projects-button:hover svg {
+    color: #3B2F2A;
+  }
+
+  .blog-button {
+    background: linear-gradient(to right, #B58866, #A07F5B 50%, #B58866 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+    color: white;
+    border: 1px solid #B58866;
+  }
+  .blog-button:hover {
+    background-position: right bottom;
+    color: #3B2F2A;
+  }
+  .blog-button svg {
+    color: white;
+    transition: color 0.4s ease;
+  }
+  .blog-button:hover svg {
+    color: #3B2F2A;
+  }
 
   /* --- Card Type: Service --- */
   .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem;
@@ -908,9 +962,6 @@ import Layout from '../layouts/Layout.astro';
     flex-grow: 1;
     margin: 0;
   }
-  /*
-  The user is asking to put the about image to the left of the blockquote. The current HTML already has the <img> tag before the <blockquote>. To ensure they appear side-by-side on all screen sizes, a simple flexbox layout is the best approach. The following CSS is added to achieve this.
-  */
   
   /* --- Responsive --- */
   @media (max-width: 920px) {
