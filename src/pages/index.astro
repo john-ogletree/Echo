@@ -24,49 +24,43 @@ import Layout from '../layouts/Layout.astro';
 
     <main class="viewsource-body">
       <pre><code><span class="comment">&lt;!-- 
-  Welcome to my portfolio! This isn't just code; it's an introduction.
-  I'm glad you stopped by. Feel free to explore.
+  Welcome to my digital space!
+  It's great to see you here. Take a look around.
+  
+  This portfolio is a single-page app, built with a component-based philosophy.
+  Each section is imported and rendered below.
 --&gt;</span>
+<span class="tag">
+  <span class="tag-name">import</span> <span class="tag-func-name">{</span> <span class="tag-var-name">Profile</span> <span class="tag-func-name">}</span> <span class="tag-name">from</span> <span class="tag-string">"astro:components";</span>
+  <span class="tag-name">import</span> <span class="tag-func-name">{</span> <span class="tag-var-name">ProjectsList</span> <span class="tag-func-name">}</span> <span class="tag-name">from</span> <span class="tag-string">"astro:components";</span>
+  <span class="tag-name">import</span> <span class="tag-func-name">{</span> <span class="tag-var-name">ContactForm</span> <span class="tag-func-name">}</span> <span class="tag-name">from</span> <span class="tag-string">"astro:components";</span>
+</span>
+
 <span class="tag">&lt;!DOCTYPE html&gt;</span>
 <span class="tag">&lt;html <span class="attr-name">lang</span>=<span class="attr-value">"en"</span>&gt;</span>
   <span class="tag">&lt;head&gt;</span>
-    <span class="tag">&lt;meta <span class="attr-name">charset</span>=<span class="attr-value">"UTF-8"</span>&gt;</span>
     <span class="tag">&lt;title&gt;</span>John Ogletree - Digital Artist & Designer<span class="tag">&lt;/title&gt;</span>
-    <span class="tag">&lt;link <span class="attr-name">rel</span>=<span class="attr-value">"stylesheet"</span> <span class="attr-name">href</span>=<span class="attr-value">"/style.css"</span>&gt;</span>
   <span class="tag">&lt;/head&gt;</span>
   <span class="tag">&lt;body&gt;</span>
-
-    <span class="tag">&lt;header <span class="attr-name">class</span>=<span class="attr-value">"site-header"</span>&gt;</span>
-      <span class="tag">&lt;h1 <span class="attr-name">class</span>=<span class="attr-value">"greeting"</span>&gt;</span><span class="tag-open-name">Hey there!</span><span class="tag-close-name">&lt;/h1&gt;</span>
-      <span class="tag">&lt;p <span class="attr-name">class</span>=<span class="attr-value">"intro"</span>&gt;</span>I'm John Ogletree, a digital artist and designer.<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;p&gt;</span>Let's build something beautiful together.<span class="tag">&lt;/p&gt;</span>
-    <span class="tag">&lt;/header&gt;</span>
-
-    <span class="comment">&lt;!-- About Section --&gt;</span>
-    <span class="tag">&lt;section <span class="attr-name">id</span>=<span class="attr-value">"about"</span> <span class="attr-name">class</span>=<span class="attr-value">"code-block"</span>&gt;</span>
-      <span class="tag-open-name">function</span> <span class="tag-func-name">getAboutMe</span><span class="tag-params">() {</span>
-        <span class="tag-return">return</span> <span class="tag-object">{</span>
-          <span class="tag-prop">name</span>: <span class="tag-value">"John Ogletree"</span>,
-          <span class="tag-prop">location</span>: <span class="tag-value">"Martinez, Georgia"</span>,
-          <span class="tag-prop">expertise</span>: [<span class="tag-value">"UI/UX"</span>, <span class="tag-value">"Branding"</span>, <span class="tag-value">"Digital Art"</span>],
-          <span class="tag-prop">experience</span>: <span class="tag-number">9</span>,
-          <span class="tag-prop">status</span>: <span class="tag-value">"Available for hire"</span>
-        <span class="tag-close-name">};</span>
-      <span class="tag-close-name">}</span>
-    <span class="tag">&lt;/section&gt;</span>
-
-    <span class="comment">&lt;!-- Projects Section --&gt;</span>
-    <span class="tag">&lt;section <span class="attr-name">id</span>=<span class="attr-value">"projects"</span> <span class="attr-name">class</span>=<span class="attr-value">"code-block"</span>&gt;</span>
-      <span class="tag-open-name">const</span> <span class="tag-var-name">projects</span> = <span class="tag-func-name">fetchProjects</span><span class="tag-params">()</span>.<span class="tag-method">then</span><span class="tag-params">(<span class="tag-lambda">response => {</span>
-        <span class="tag-return">return</span> response.json();
-      <span class="tag-close-name">})</span>;</span>
-      <span class="tag-open-name">renderComponent</span><span class="tag-params">(&lt;ProjectCard <span class="attr-name">name</span>=<span class="attr-value">"Chrono Corp"</span>&gt;</span><span class="tag-comment-name">&lt;!-- UI/UX design for a time-tracker --&gt;</span><span class="tag-close-name">&lt;/ProjectCard&gt;)</span>;
-      <span class="tag-open-name">renderComponent</span><span class="tag-params">(&lt;ProjectCard <span class="attr-name">name</span>=<span class="attr-value">"Aether Systems"</span>&gt;</span><span class="tag-comment-name">&lt;!-- Brand identity package --&gt;</span><span class="tag-close-name">&lt;/ProjectCard&gt;)</span>;
-    <span class="tag">&lt;/section&gt;</span>
     
-    <span class="tag">&lt;footer <span class="attr-name">class</span>=<span class="attr-value">"site-footer"</span>&gt;</span>
-      <span class="tag">&lt;p&gt;</span>&copy; <span class="tag">&lt;span <span class="attr-name">id</span>=<span class="attr-value">"year"</span>&gt;&lt;/span&gt;</span> John Ogletree<span class="tag">&lt;/p&gt;</span>
-    <span class="tag">&lt;/footer&gt;</span>
+    <span class="comment">&lt;!-- Let's render the main profile content --&gt;</span>
+    <span class="tag">&lt;<span class="tag-open-name">Profile</span> 
+      <span class="tag-attr">name</span>=<span class="tag-value">"John Ogletree"</span>
+      <span class="tag-attr">title</span>=<span class="tag-value">"Digital Artist & Designer"</span>
+      <span class="tag-attr">bio</span>=<span class="tag-value">"Hello! I'm John, a multidisciplinary creative with a passion for bringing ideas to life through design and art."</span>
+    /&gt;</span>
+
+    <span class="comment">&lt;!-- Next up, a list of projects --&gt;</span>
+    <span class="tag">&lt;<span class="tag-open-name">ProjectsList</span> 
+      <span class="tag-attr">projects</span>=<span class="tag-list">[</span>
+        <span class="tag-object-prop">{ <span class="tag-attr">name</span>=<span class="tag-value">"Chrono Corp"</span>, <span class="tag-attr">tech</span>=<span class="tag-value">"UI/UX Design"</span> },</span>
+        <span class="tag-object-prop">{ <span class="tag-attr">name</span>=<span class="tag-value">"Aether Systems"</span>, <span class="tag-attr">tech</span>=<span class="tag-value">"Brand Identity"</span> },</span>
+        <span class="tag-object-prop">{ <span class="tag-attr">name</span>=<span class="tag-value">"Echo"</span>, <span class="tag-attr">tech</span>=<span class="tag-value">"Web Development"</span> },</span>
+      <span class="tag-list">]</span>
+    /&gt;</span>
+
+    <span class="comment">&lt;!-- Let's connect! --&gt;</span>
+    <span class="tag">&lt;<span class="tag-open-name">ContactForm</span> /&gt;</span>
 
   <span class="tag">&lt;/body&gt;</span>
 <span class="tag">&lt;/html&gt;</span>
@@ -75,35 +69,19 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </Layout>
 
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', function() {
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-  });
-</script>
-
 <style>
-  /*
-  Minimalist, code-inspired theme.
-  Colors chosen for readability and a modern feel.
-  */
   :root {
-    --bg-color: #1e1e1e; /* Dark slate */
-    --text-color: #e8e8e8; /* Soft white */
-    --accent-color: #8be9fd; /* Vibrant aqua */
-    --keyword-color: #ff79c6; /* Pink */
-    --string-color: #f1fa8c; /* Yellow */
-    --comment-color: #6272a4; /* Gray-blue */
-    --tag-color: #ff5555; /* Red */
-    --attr-name-color: #50fa7b; /* Green */
-    --tag-name-color: #bd93f9; /* Purple */
-    --browser-bar-color: #282a36; /* Darker header */
-    --browser-dot-red: #ff5555;
-    --browser-dot-yellow: #f1fa8c;
-    --browser-dot-green: #50fa7b;
+    --bg-color: #1e1e1e;
+    --text-color: #f8f8f2;
+    --primary-color: #50fa7b;
+    --secondary-color: #ff79c6;
+    --accent-color: #8be9fd;
+    --comment-color: #6272a4;
+    --tag-color: #ff5555;
+    --attr-name-color: #50fa7b;
+    --attr-value-color: #f1fa8c;
     --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    --browser-bar-color: #282a36;
   }
 
   body {
@@ -112,7 +90,6 @@ import Layout from '../layouts/Layout.astro';
     font-family: var(--font-mono);
   }
 
-  /* Browser Window */
   .viewsource-container {
     width: 100%;
     max-width: 900px;
@@ -142,9 +119,9 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 50%;
   }
 
-  .dot.red { background-color: var(--browser-dot-red); }
-  .dot.yellow { background-color: var(--browser-dot-yellow); }
-  .dot.green { background-color: var(--browser-dot-green); }
+  .dot.red { background-color: #ff5f56; }
+  .dot.yellow { background-color: #ffbd2e; }
+  .dot.green { background-color: #27c93f; }
 
   .browser-address {
     display: flex;
@@ -172,7 +149,7 @@ import Layout from '../layouts/Layout.astro';
     background-color: var(--bg-color);
     padding: 2rem;
     overflow-x: auto;
-    white-space: pre-wrap;
+    white-space: pre;
   }
 
   pre {
@@ -181,48 +158,16 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1rem;
     line-height: 1.4;
   }
-  
-  .code-block {
-    background-color: var(--browser-bar-color);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-  }
 
-  /* Custom Syntax Highlighting */
+  /* Syntax Highlighting with a friendly tone */
   .comment { color: var(--comment-color); font-style: italic; }
   .tag { color: var(--tag-color); }
-  .tag-open-name { color: var(--tag-name-color); font-weight: bold; }
-  .tag-close-name { color: var(--tag-name-color); font-weight: bold; }
-  .tag-func-name { color: var(--accent-color); font-weight: bold; }
-  .tag-params { color: var(--text-color); }
-  .tag-var-name { color: var(--accent-color); }
-  .tag-return { color: var(--keyword-color); }
-  .tag-object { color: var(--text-color); }
-  .tag-prop { color: var(--attr-name-color); }
-  .tag-value { color: var(--string-color); }
-  .tag-number { color: #f8f8f2; }
-  .tag-method { color: var(--accent-color); }
-  .tag-lambda { color: var(--text-color); }
-  .tag-comment-name { color: var(--comment-color); }
-  .attr-name { color: var(--attr-name-color); }
-  .attr-value { color: var(--string-color); }
-
-  /* Standard HTML elements within the pre tag for a more inviting feel */
-  .greeting {
-    font-size: 2em;
-    font-weight: bold;
-    color: var(--accent-color);
-  }
-
-  .intro {
-    font-size: 1.2em;
-    color: var(--text-color);
-  }
-
-  .site-footer {
-    padding-top: 2rem;
-    border-top: 1px dashed var(--comment-color);
-    margin-top: 2rem;
-  }
+  .tag-name { color: var(--tag-color); font-weight: bold; }
+  .tag-open-name { color: var(--primary-color); font-weight: bold; }
+  .tag-close-name { color: var(--primary-color); font-weight: bold; }
+  .tag-attr { color: var(--attr-name-color); }
+  .tag-value { color: var(--attr-value-color); }
+  .tag-list { color: var(--text-color); }
+  .tag-object-prop { color: var(--secondary-color); }
+  .tag-string { color: var(--attr-value-color); }
 </style>
