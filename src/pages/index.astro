@@ -28,7 +28,6 @@ import Layout from '../layouts/Layout.astro';
             I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.
           </p>
         </div>
-        <hr class="section-divider">
 
         <div class="readme-section-header">
           <span class="readme-hash">##</span>
@@ -45,7 +44,6 @@ import Layout from '../layouts/Layout.astro';
             </li>
           </ul>
         </div>
-        <hr class="section-divider">
 
         <div class="readme-section-header">
           <span class="readme-hash">##</span>
@@ -61,7 +59,6 @@ import Layout from '../layouts/Layout.astro';
             </li>
           </ul>
         </div>
-        <hr class="section-divider">
 
         <div class="readme-section-header">
           <span class="readme-hash">##</span>
@@ -173,6 +170,8 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
   }
 
   .readme-section-header:first-of-type {
@@ -267,16 +266,6 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 8px;
     object-fit: cover;
     margin-top: 0.25rem; /* Adjust alignment */
-  }
-
-  .section-divider {
-    border: 0;
-    border-top: 1px solid var(--border-color);
-    margin: 2.5px 0;
-  }
-  
-  .readme-content article {
-    padding-bottom: 1rem;
   }
 
   @media (max-width: 768px) {
