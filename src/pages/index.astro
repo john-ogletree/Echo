@@ -54,26 +54,15 @@ import Layout from '../layouts/Layout.astro';
     </header>
 
     <main class="readme-body">
-      <h2 id="stats">Stats</h2>
-      <div class="card-grid">
-        <div class="card resume-card">
-          <h4>Project Details</h4>
-          <ul>
-            <li>**Project Name:** Echo</li>
-            <li>**Version:** 0.0.1</li>
-            <li>**Astro Version:** 5.12.8</li>
-            <li>**Dev Server Command:** `npm run dev`</li>
-          </ul>
-        </div>
-        <div class="card resume-card">
-          <h4>Dependencies</h4>
-          <ul>
-            <li>`astro`</li>
-            <li>`@tailwindcss/vite`</li>
-          </ul>
-        </div>
+      <div class="search-box-container">
+        <form class="search-form-filter" action="/directory" method="get">
+          <input type="search" name="q" class="search-input" placeholder="Filter..." />
+          <button type="submit" class="search-button-filter" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+          </button>
+        </form>
       </div>
-      
+
       <h2 id="about">About</h2>
       <div class="about-container">
         <img src="https://placehold.co/120x120/161B22/E6EDF3?text=JO" alt="A portrait of John Ogletree" class="profile-picture">
@@ -863,6 +852,35 @@ import Layout from '../layouts/Layout.astro';
   .back-to-top { color: var(--color-text-light); text-decoration: none; transition: color 0.2s ease;
   }
   .back-to-top:hover { color: var(--color-accent); text-decoration: none; }
+
+  /* --- New CSS for the Search Box and Mobile-First Layout --- */
+  .search-box-container {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+  }
+  .search-form-filter {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-form-filter .search-input {
+    width: 100%;
+    padding-right: 3rem;
+  }
+  .search-button-filter {
+    position: absolute;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+  }
+  .search-button-filter:hover {
+    color: var(--color-accent);
+  }
 
   /* --- Responsive --- */
   @media (max-width: 920px) {
