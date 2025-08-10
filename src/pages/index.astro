@@ -17,69 +17,60 @@ import Layout from '../layouts/Layout.astro';
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
         </svg>
         <div class="address-bar">
-          <span class="url-text">http://johnogletree.website/index.html</span>
+          <span class="url-text">http://johnogletree.website/index.astro</span>
         </div>
       </div>
     </header>
 
     <main class="viewsource-body">
       <pre><code><span class="comment">&lt;!-- 
-  Welcome to my digital space!
-  This is a simplified view of the site's structure.
-  
-  You'll find content organized in a way that feels familiar to developers.
+  Welcome to my portfolio! This isn't just code; it's an introduction.
+  I'm glad you stopped by. Feel free to explore.
 --&gt;</span>
 <span class="tag">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;html&gt;</span>
+<span class="tag">&lt;html <span class="attr-name">lang</span>=<span class="attr-value">"en"</span>&gt;</span>
   <span class="tag">&lt;head&gt;</span>
-    <span class="tag">&lt;title&gt;</span>John Ogletree<span class="tag">&lt;/title&gt;</span>
     <span class="tag">&lt;meta <span class="attr-name">charset</span>=<span class="attr-value">"UTF-8"</span>&gt;</span>
-    <span class="tag">&lt;meta <span class="attr-name">name</span>=<span class="attr-value">"viewport"</span> <span class="attr-name">content</span>=<span class="attr-value">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="tag">&lt;title&gt;</span>John Ogletree - Digital Artist & Designer<span class="tag">&lt;/title&gt;</span>
     <span class="tag">&lt;link <span class="attr-name">rel</span>=<span class="attr-value">"stylesheet"</span> <span class="attr-name">href</span>=<span class="attr-value">"/style.css"</span>&gt;</span>
   <span class="tag">&lt;/head&gt;</span>
   <span class="tag">&lt;body&gt;</span>
 
     <span class="tag">&lt;header <span class="attr-name">class</span>=<span class="attr-value">"site-header"</span>&gt;</span>
-      <span class="tag">&lt;h1 <span class="attr-name">class</span>=<span class="attr-value">"logo"</span>&gt;</span>John Ogletree<span class="tag">&lt;/h1&gt;</span>
-      <span class="tag">&lt;p <span class="attr-name">class</span>=<span class="attr-value">"tagline"</span>&gt;</span>Digital Artist & Designer<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;h1 <span class="attr-name">class</span>=<span class="attr-value">"greeting"</span>&gt;</span><span class="tag-open-name">Hey there!</span><span class="tag-close-name">&lt;/h1&gt;</span>
+      <span class="tag">&lt;p <span class="attr-name">class</span>=<span class="attr-value">"intro"</span>&gt;</span>I'm John Ogletree, a digital artist and designer.<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;p&gt;</span>Let's build something beautiful together.<span class="tag">&lt;/p&gt;</span>
     <span class="tag">&lt;/header&gt;</span>
 
-    <span class="tag">&lt;nav <span class="attr-name">class</span>=<span class="attr-value">"main-nav"</span>&gt;</span>
-      <span class="tag">&lt;ul&gt;</span>
-        <span class="tag">&lt;li&gt;&lt;a <span class="attr-name">href</span>=<span class="attr-value">"#about"</span>&gt;</span>About<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="tag">&lt;li&gt;&lt;a <span class="attr-name">href</span>=<span class="attr-value">"#projects"</span>&gt;</span>Projects<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="tag">&lt;li&gt;&lt;a <span class="attr-name">href</span>=<span class="attr-value">"#contact"</span>&gt;</span>Contact<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
-      <span class="tag">&lt;/ul&gt;</span>
-    <span class="tag">&lt;/nav&gt;</span>
+    <span class="comment">&lt;!-- About Section --&gt;</span>
+    <span class="tag">&lt;section <span class="attr-name">id</span>=<span class="attr-value">"about"</span> <span class="attr-name">class</span>=<span class="attr-value">"code-block"</span>&gt;</span>
+      <span class="tag-open-name">function</span> <span class="tag-func-name">getAboutMe</span><span class="tag-params">() {</span>
+        <span class="tag-return">return</span> <span class="tag-object">{</span>
+          <span class="tag-prop">name</span>: <span class="tag-value">"John Ogletree"</span>,
+          <span class="tag-prop">location</span>: <span class="tag-value">"Martinez, Georgia"</span>,
+          <span class="tag-prop">expertise</span>: [<span class="tag-value">"UI/UX"</span>, <span class="tag-value">"Branding"</span>, <span class="tag-value">"Digital Art"</span>],
+          <span class="tag-prop">experience</span>: <span class="tag-number">9</span>,
+          <span class="tag-prop">status</span>: <span class="tag-value">"Available for hire"</span>
+        <span class="tag-close-name">};</span>
+      <span class="tag-close-name">}</span>
+    <span class="tag">&lt;/section&gt;</span>
 
-    <span class="tag">&lt;main <span class="attr-name">class</span>=<span class="attr-value">"content-sections"</span>&gt;</span>
-      <span class="tag">&lt;section <span class="attr-name">id</span>=<span class="attr-value">"about"</span>&gt;</span>
-        <span class="tag">&lt;h2&gt;</span>About Me<span class="tag">&lt;/h2&gt;</span>
-        <span class="tag">&lt;p&gt;</span>Hello, I'm John, a multidisciplinary digital artist and designer.<span class="tag">&lt;/p&gt;</span>
-        <span class="tag">&lt;p&gt;</span>I have over 9 years of experience turning ideas into reality.<span class="tag">&lt;/p&gt;</span>
-      <span class="tag">&lt;/section&gt;</span>
-
-      <span class="tag">&lt;section <span class="attr-name">id</span>=<span class="attr-value">"projects"</span>&gt;</span>
-        <span class="tag">&lt;h2&gt;</span>My Work<span class="tag">&lt;/h2&gt;</span>
-        <span class="tag">&lt;div <span class="attr-name">class</span>=<span class="attr-value">"project-card"</span>&gt;</span>
-          <span class="tag">&lt;h3&gt;</span>Project 1<span class="tag">&lt;/h3&gt;</span>
-          <span class="tag">&lt;p&gt;</span>A time-tracking application.<span class="tag">&lt;/p&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-        <span class="tag">&lt;div <span class="attr-name">class</span>=<span class="attr-value">"project-card"</span>&gt;</span>
-          <span class="tag">&lt;h3&gt;</span>Project 2<span class="tag">&lt;/h3&gt;</span>
-          <span class="tag">&lt;p&gt;</span>A complete branding package.<span class="tag">&lt;/p&gt;</span>
-        <span class="tag">&lt;/div&gt;</span>
-      <span class="tag">&lt;/section&gt;</span>
-    <span class="tag">&lt;/main&gt;</span>
-
+    <span class="comment">&lt;!-- Projects Section --&gt;</span>
+    <span class="tag">&lt;section <span class="attr-name">id</span>=<span class="attr-value">"projects"</span> <span class="attr-name">class</span>=<span class="attr-value">"code-block"</span>&gt;</span>
+      <span class="tag-open-name">const</span> <span class="tag-var-name">projects</span> = <span class="tag-func-name">fetchProjects</span><span class="tag-params">()</span>.<span class="tag-method">then</span><span class="tag-params">(<span class="tag-lambda">response => {</span>
+        <span class="tag-return">return</span> response.json();
+      <span class="tag-close-name">})</span>;</span>
+      <span class="tag-open-name">renderComponent</span><span class="tag-params">(&lt;ProjectCard <span class="attr-name">name</span>=<span class="attr-value">"Chrono Corp"</span>&gt;</span><span class="tag-comment-name">&lt;!-- UI/UX design for a time-tracker --&gt;</span><span class="tag-close-name">&lt;/ProjectCard&gt;)</span>;
+      <span class="tag-open-name">renderComponent</span><span class="tag-params">(&lt;ProjectCard <span class="attr-name">name</span>=<span class="attr-value">"Aether Systems"</span>&gt;</span><span class="tag-comment-name">&lt;!-- Brand identity package --&gt;</span><span class="tag-close-name">&lt;/ProjectCard&gt;)</span>;
+    <span class="tag">&lt;/section&gt;</span>
+    
     <span class="tag">&lt;footer <span class="attr-name">class</span>=<span class="attr-value">"site-footer"</span>&gt;</span>
-      <span class="tag">&lt;p&gt;</span>© <span class="tag">&lt;span <span class="attr-name">id</span>=<span class="attr-value">"year"</span>&gt;&lt;/span&gt;</span> John Ogletree<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;p&gt;</span>&copy; <span class="tag">&lt;span <span class="attr-name">id</span>=<span class="attr-value">"year"</span>&gt;&lt;/span&gt;</span> John Ogletree<span class="tag">&lt;/p&gt;</span>
     <span class="tag">&lt;/footer&gt;</span>
 
   <span class="tag">&lt;/body&gt;</span>
 <span class="tag">&lt;/html&gt;</span>
 </code></pre>
-      </div>
     </main>
   </div>
 </Layout>
@@ -94,20 +85,25 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
+  /*
+  Minimalist, code-inspired theme.
+  Colors chosen for readability and a modern feel.
+  */
   :root {
-    --bg-color: #2b2b2b;
-    --text-color: #f1f1f1;
-    --accent-color: #5d9bcf;
-    --tag-color: #9cdcfe;
-    --attr-name-color: #b5cea8;
-    --attr-value-color: #ce9178;
-    --comment-color: #6a9955;
-    --line-number-color: #555555;
-    --browser-bar-color: #3e3e3e;
-    --browser-dot-red: #ff5f56;
-    --browser-dot-yellow: #ffbd2e;
-    --browser-dot-green: #27c93f;
-    --font-mono: "Monaco", "Consolas", "Courier New", monospace;
+    --bg-color: #1e1e1e; /* Dark slate */
+    --text-color: #e8e8e8; /* Soft white */
+    --accent-color: #8be9fd; /* Vibrant aqua */
+    --keyword-color: #ff79c6; /* Pink */
+    --string-color: #f1fa8c; /* Yellow */
+    --comment-color: #6272a4; /* Gray-blue */
+    --tag-color: #ff5555; /* Red */
+    --attr-name-color: #50fa7b; /* Green */
+    --tag-name-color: #bd93f9; /* Purple */
+    --browser-bar-color: #282a36; /* Darker header */
+    --browser-dot-red: #ff5555;
+    --browser-dot-yellow: #f1fa8c;
+    --browser-dot-green: #50fa7b;
+    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
   }
 
   body {
@@ -116,13 +112,15 @@ import Layout from '../layouts/Layout.astro';
     font-family: var(--font-mono);
   }
 
+  /* Browser Window */
   .viewsource-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 2rem auto;
     border: 1px solid var(--browser-bar-color);
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
   
   .browser-header {
@@ -162,7 +160,7 @@ import Layout from '../layouts/Layout.astro';
     width: 16px;
     height: 16px;
     margin-right: 0.5rem;
-    color: var(--line-number-color);
+    color: var(--comment-color);
   }
   
   .url-text {
@@ -172,22 +170,59 @@ import Layout from '../layouts/Layout.astro';
 
   .viewsource-body {
     background-color: var(--bg-color);
-    padding: 1rem;
+    padding: 2rem;
     overflow-x: auto;
-    white-space: pre;
+    white-space: pre-wrap;
   }
 
   pre {
     margin: 0;
     color: var(--text-color);
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.4;
   }
+  
+  .code-block {
+    background-color: var(--browser-bar-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
 
-  /* Syntax Highlighting */
-  .comment { color: var(--comment-color); }
+  /* Custom Syntax Highlighting */
+  .comment { color: var(--comment-color); font-style: italic; }
   .tag { color: var(--tag-color); }
+  .tag-open-name { color: var(--tag-name-color); font-weight: bold; }
+  .tag-close-name { color: var(--tag-name-color); font-weight: bold; }
+  .tag-func-name { color: var(--accent-color); font-weight: bold; }
+  .tag-params { color: var(--text-color); }
+  .tag-var-name { color: var(--accent-color); }
+  .tag-return { color: var(--keyword-color); }
+  .tag-object { color: var(--text-color); }
+  .tag-prop { color: var(--attr-name-color); }
+  .tag-value { color: var(--string-color); }
+  .tag-number { color: #f8f8f2; }
+  .tag-method { color: var(--accent-color); }
+  .tag-lambda { color: var(--text-color); }
+  .tag-comment-name { color: var(--comment-color); }
   .attr-name { color: var(--attr-name-color); }
-  .attr-value { color: var(--attr-value-color); }
-  .keyword { color: var(--accent-color); }
+  .attr-value { color: var(--string-color); }
+
+  /* Standard HTML elements within the pre tag for a more inviting feel */
+  .greeting {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+
+  .intro {
+    font-size: 1.2em;
+    color: var(--text-color);
+  }
+
+  .site-footer {
+    padding-top: 2rem;
+    border-top: 1px dashed var(--comment-color);
+    margin-top: 2rem;
+  }
 </style>
