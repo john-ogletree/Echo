@@ -3,75 +3,54 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="John Ogletree">
-  <div class="website-container">
+  <div class="portfolio-container">
     <header class="main-header">
       <div class="header-content">
-        <h1 class="site-title">john-ogletree.dev</h1>
-        <p class="site-description">A curated list of my creations, skills, and thoughts.</p>
+        <h1 class="site-title">John Ogletree</h1>
+        <p class="site-description">Digital Artist & Designer</p>
       </div>
-      <nav class="main-nav">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
     </header>
 
     <main class="content-body">
-      <div class="grid-container">
-        <section id="about" class="content-section">
-          <h2 class="section-title">About Me</h2>
-          <div class="profile-card">
-            <img src="https://via.placeholder.com/150" alt="A profile picture of John Ogletree" class="profile-image">
-            <div class="profile-text">
-              <p>I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.</p>
+      <section id="about" class="about-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="profile-info">
+          <img src="https://via.placeholder.com/200x200" alt="Profile picture of John Ogletree" class="profile-image">
+          <p class="about-text">
+            I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="https://via.placeholder.com/400x300" alt="Chrono Corp project thumbnail" class="project-image">
+            <div class="project-info">
+              <h3 class="project-name">Chrono Corp</h3>
+              <p class="project-description">A time-tracking application for creative freelancers.</p>
+              <span class="project-tag">UI/UX Design</span>
             </div>
           </div>
-        </section>
-  
-        <section id="projects" class="content-section">
-          <h2 class="section-title">Latest Projects</h2>
-          <ul class="projects-list">
-            <li class="project-item">
-              <div class="project-header">
-                <h3 class="project-name">Chrono Corp</h3>
-                <span class="project-tag">UI/UX Design</span>
-              </div>
-              <p class="project-info">A time-tracking application for creative freelancers.</p>
-            </li>
-            <li class="project-item">
-              <div class="project-header">
-                <h3 class="project-name">Aether Systems</h3>
-                <span class="project-tag">Brand Identity</span>
-              </div>
-              <p class="project-info">A complete branding package for a cloud computing company.</p>
-            </li>
-          </ul>
-          <a href="#" class="cta-link">View all projects &rarr;</a>
-        </section>
-  
-        <section id="skills" class="content-section">
-          <h2 class="section-title">Skills & Expertise</h2>
-          <div class="skills-list">
-            <div class="skill-category">
-              <h4 class="skill-category-title">Design</h4>
-              <p class="skill-list">UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</p>
-            </div>
-            <div class="skill-category">
-              <h4 class="skill-category-title">Tech</h4>
-              <p class="skill-list">Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender</p>
+          <div class="project-card">
+            <img src="https://via.placeholder.com/400x300" alt="Aether Systems branding project thumbnail" class="project-image">
+            <div class="project-info">
+              <h3 class="project-name">Aether Systems</h3>
+              <p class="project-description">A complete branding package for a cloud computing company.</p>
+              <span class="project-tag">Brand Identity</span>
             </div>
           </div>
-        </section>
-  
-        <section id="contact" class="content-section">
-          <h2 class="section-title">Get in Touch</h2>
-          <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
-          <a href="mailto:contact@johnogletree.com" class="cta-link">Email me &rarr;</a>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <h2 class="section-title">Get in Touch</h2>
+        <p>I'm always open to new opportunities and collaborations. Send me an email to start the conversation.</p>
+        <a href="mailto:contact@johnogletree.com" class="contact-link">Email me &rarr;</a>
+      </section>
     </main>
-    
+
     <footer class="main-footer">
       <p>&copy; <span id="year"></span> John Ogletree. All rights reserved.</p>
     </footer>
@@ -89,11 +68,12 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   :root {
-    --bg-color: #121212;
-    --text-color: #f5f5f5;
-    --heading-color: #bb86fc;
-    --card-bg: #1e1e1e;
-    --border-color: #333;
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #f0f0f0;
+    --secondary-color: #bb86fc;
+    --card-bg: #2d2d2d;
+    --border-color: #444;
     --link-color: #bb86fc;
     --link-hover-color: #a056f7;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -108,92 +88,57 @@ import Layout from '../layouts/Layout.astro';
     padding: 0;
   }
 
-  .website-container {
-    max-width: 960px;
+  .portfolio-container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2rem;
   }
-  
+
   .main-header {
     text-align: center;
     margin-bottom: 3rem;
   }
-  
+
   .site-title {
-    font-size: 2.5rem;
-    color: var(--heading-color);
+    font-size: 3rem;
+    color: var(--primary-color);
     margin: 0;
     font-weight: 700;
   }
 
   .site-description {
     font-size: 1.2rem;
-    color: #b0b0b0;
+    color: var(--secondary-color);
     margin-top: 0.5rem;
-  }
-
-  .main-nav {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-
-  .nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    position: relative;
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--heading-color);
-    transition: width 0.3s ease-in-out;
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
   }
 
   .content-body {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 4rem;
   }
 
-  .content-section {
+  .about-section, .projects-section, .contact-section {
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
   }
   
   .section-title {
-    font-size: 2rem;
-    color: var(--text-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.75rem;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   
-  .profile-card {
+  .profile-info {
     display: flex;
-    align-items: center;
     gap: 2rem;
+    align-items: center;
   }
 
   .profile-image {
@@ -201,122 +146,90 @@ import Layout from '../layouts/Layout.astro';
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--border-color);
+    border: 3px solid var(--secondary-color);
   }
 
-  .profile-text p {
+  .about-text {
     margin: 0;
   }
   
-  .projects-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
   }
 
-  .project-item {
-    background-color: #2a2a2a;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+  .project-card {
+    background-color: #383838;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .project-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
   }
-  
-  .project-name {
-    font-size: 1.25rem;
-    margin: 0;
-    color: var(--heading-color);
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .project-info {
-    font-size: 0.9rem;
-    color: #b0b0b0;
+    padding: 1.5rem;
+  }
+
+  .project-name {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: var(--secondary-color);
+  }
+
+  .project-description {
+    font-size: 1rem;
+    color: #c0c0c0;
     margin: 0;
   }
 
   .project-tag {
     display: inline-block;
-    background-color: var(--heading-color);
+    background-color: var(--secondary-color);
     color: var(--card-bg);
     font-size: 0.8rem;
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
+    margin-top: 1rem;
+    font-weight: bold;
   }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
-  .skill-category {
-    margin-bottom: 0;
-  }
-
-  .skill-category-title {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
-  }
-
-  .skill-list {
-    margin: 0;
-    color: #b0b0b0;
-  }
-
-  .cta-link {
+  .contact-link {
     display: inline-block;
     margin-top: 1rem;
     color: var(--link-color);
     text-decoration: none;
     font-weight: 500;
   }
-  
-  .cta-link:hover {
+
+  .contact-link:hover {
     text-decoration: underline;
     color: var(--link-hover-color);
   }
 
   .main-footer {
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 1rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
-    color: #b0b0b0;
-  }
-  
-  @media (max-width: 960px) {
-    .website-container {
-      padding: 2rem 1rem;
-    }
+    color: #888;
   }
 
   @media (max-width: 768px) {
-    .profile-card {
+    .profile-info {
       flex-direction: column;
       text-align: center;
-    }
-    .grid-container {
-      grid-template-columns: 1fr;
-    }
-    .projects-list .project-item {
-      margin-bottom: 1rem;
-    }
-    .project-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-    .skills-grid {
-      grid-template-columns: 1fr;
     }
   }
 </style>
