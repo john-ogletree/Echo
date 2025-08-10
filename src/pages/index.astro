@@ -18,56 +18,67 @@ import Layout from '../layouts/Layout.astro';
 
     <main class="readme-content">
       <article>
-        <div class="readme-section-header">
-          <span class="readme-hash">#</span>
-          <h2 id="about">About</h2>
-        </div>
-        <div class="readme-body about-section">
-          <img src="https://via.placeholder.com/150" alt="Profile picture" class="profile-image">
-          <p>
-            I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.
-          </p>
-        </div>
+        <section>
+          <div class="readme-section-header">
+            <span class="readme-hash">#</span>
+            <h2 id="about">About</h2>
+          </div>
+          <div class="readme-body about-section">
+            <img src="https://via.placeholder.com/150" alt="Profile picture" class="profile-image">
+            <p>
+              I'm a multidisciplinary digital artist and designer from Martinez, Georgia. With nearly a decade of experience, I partner with clients to turn ambitious ideas into reality. My process is built on clear communication and a commitment to craft, whether I'm designing an application or composing a soundtrack.
+            </p>
+          </div>
+        </section>
+        <hr class="section-divider">
 
-        <div class="readme-section-header">
-          <span class="readme-hash">##</span>
-          <h2 id="projects">Projects</h2>
-        </div>
-        <div class="readme-body">
-          <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
-          <ul class="project-list">
-            <li>
-              <span class="project-name">Chrono Corp</span> - <span class="project-description">A time-tracking application for creative freelancers.</span>
-            </li>
-            <li>
-              <span class="project-name">Aether Systems</span> - <span class="project-description">A complete branding package for a cloud computing company.</span>
-            </li>
-          </ul>
-        </div>
+        <section>
+          <div class="readme-section-header">
+            <span class="readme-hash">##</span>
+            <h2 id="projects">Projects</h2>
+          </div>
+          <div class="readme-body">
+            <p>A curated list of my work across various disciplines. For a deeper dive, please visit the full projects page.</p>
+            <ul class="project-list">
+              <li>
+                <span class="project-name">Chrono Corp</span> - <span class="project-description">A time-tracking application for creative freelancers.</span>
+              </li>
+              <li>
+                <span class="project-name">Aether Systems</span> - <span class="project-description">A complete branding package for a cloud computing company.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <hr class="section-divider">
 
-        <div class="readme-section-header">
-          <span class="readme-hash">##</span>
-          <h2 id="skills">Skills & Tools</h2>
-        </div>
-        <div class="readme-body">
-          <ul class="skills-list">
-            <li>
-              <strong>Design:</strong> UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration
-            </li>
-            <li>
-              <strong>Tech:</strong> Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender
-            </li>
-          </ul>
-        </div>
+        <section>
+          <div class="readme-section-header">
+            <span class="readme-hash">##</span>
+            <h2 id="skills">Skills & Tools</h2>
+          </div>
+          <div class="readme-body">
+            <ul class="skills-list">
+              <li>
+                <strong>Design:</strong> UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration
+              </li>
+              <li>
+                <strong>Tech:</strong> Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender
+              </li>
+            </ul>
+          </div>
+        </section>
+        <hr class="section-divider">
 
-        <div class="readme-section-header">
-          <span class="readme-hash">##</span>
-          <h2 id="contact">Contact</h2>
-        </div>
-        <div class="readme-body">
-          <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
-          <p>Email: <a href="mailto:contact@johnogletree.com">contact@johnogletree.com</a></p>
-        </div>
+        <section>
+          <div class="readme-section-header">
+            <span class="readme-hash">##</span>
+            <h2 id="contact">Contact</h2>
+          </div>
+          <div class="readme-body">
+            <p>I'm always open to new opportunities and collaborations. Send a message to start the conversation.</p>
+            <p>Email: <a href="mailto:contact@johnogletree.com">contact@johnogletree.com</a></p>
+          </div>
+        </section>
       </article>
     </main>
 
@@ -165,13 +176,15 @@ import Layout from '../layouts/Layout.astro';
     border: 1px solid var(--border-color);
   }
 
+  section {
+    margin-bottom: 1rem;
+  }
+
   .readme-section-header {
     display: flex;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1rem;
   }
 
   .readme-section-header:first-of-type {
@@ -194,7 +207,6 @@ import Layout from '../layouts/Layout.astro';
   .readme-body {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
   }
 
   .readme-body p {
@@ -266,6 +278,12 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 8px;
     object-fit: cover;
     margin-top: 0.25rem; /* Adjust alignment */
+  }
+
+  .section-divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 2.5rem 0;
   }
 
   @media (max-width: 768px) {
