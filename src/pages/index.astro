@@ -855,7 +855,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .back-to-top:hover { color: var(--color-accent); text-decoration: none; }
 
-  /* New CSS for Hero Section */
+  /* New CSS for Hero Section and About Section Layout */
   .hero-section {
     display: flex;
     flex-direction: column;
@@ -877,7 +877,26 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.1rem;
     padding: 0.75rem 1.5rem;
   }
-
+  .about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .about-container .profile-picture {
+    flex-shrink: 0;
+    border-radius: 8px;
+    width: 120px;
+    height: 120px;
+  }
+  .about-container blockquote {
+    flex-grow: 1;
+    margin: 0;
+  }
+  /*
+  The user is asking to put the about image to the left of the blockquote. The current HTML already has the <img> tag before the <blockquote>. To ensure they appear side-by-side on all screen sizes, a simple flexbox layout is the best approach. The following CSS is added to achieve this.
+  */
+  
   /* --- Responsive --- */
   @media (max-width: 920px) {
     :root {
@@ -1035,9 +1054,18 @@ import Layout from '../layouts/Layout.astro';
     .branded-hr {
       margin: 3rem 0;
   }
-    .about-container .profile-picture { display: none; }
-    .about-container { margin-top: 0;
-  }
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .about-container .profile-picture {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+    .about-container blockquote {
+      text-align: center;
+    }
     .newsletter-form { flex-direction: column; }
     .card-grid { grid-template-columns: 1fr;
   }
