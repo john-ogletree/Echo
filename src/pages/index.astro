@@ -3,413 +3,191 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="John Ogletree">
-  <div class="ide-container">
-    <div class="sidebar">
-      <div class="file-explorer-header">
-        <h2 class="explorer-title">EXPLORER</h2>
+  <div class="viewsource-container">
+    <header class="browser-header">
+      <div class="browser-controls">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
       </div>
-      <div class="file-explorer-content">
-        <ul class="file-list">
-          <li data-name="john-ogletree/Echo">
-            <div class="file-folder-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8l-4 4V22z"></path>
-              </svg>
-            </div>
-            <a href="#">
-              <span>john-ogletree/Echo</span>
-            </a>
-          </li>
-          <li class="active" data-name="index.astro">
-            <div class="file-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
-            </div>
-            <a href="/">
-              <span>index.astro</span>
-            </a>
-          </li>
-          <li data-name="package.json">
-            <div class="file-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
-            </div>
-            <a href="#">
-              <span>package.json</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="ide-status-bar-mobile">
-        <span>Git: main</span>
-      </div>
-    </div>
-    
-    <main class="main-content">
-      <div class="ide-tab-bar">
-        <div class="ide-tab active">
-          <span>index.astro</span>
-        </div>
-        <div class="ide-tab">
-          <span>README.md</span>
+      <div class="browser-address">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <div class="address-bar">
+          <span class="url-text">http://johnogletree.website/index.html</span>
         </div>
       </div>
-      <div class="ide-code-editor">
-        <div class="line-numbers">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
-          <span>6</span>
-          <span>7</span>
-          <span>8</span>
-          <span>9</span>
-          <span>10</span>
-          <span>11</span>
-          <span>12</span>
-          <span>13</span>
-          <span>14</span>
-          <span>15</span>
-          <span>16</span>
-          <span>17</span>
-          <span>18</span>
-          <span>19</span>
-          <span>20</span>
-          <span>21</span>
-          <span>22</span>
-          <span>23</span>
-          <span>24</span>
-          <span>25</span>
-          <span>26</span>
-          <span>27</span>
-          <span>28</span>
-          <span>29</span>
-          <span>30</span>
-          <span>31</span>
-          <span>32</span>
-          <span>33</span>
-          <span>34</span>
-          <span>35</span>
-        </div>
-        <div class="code-content">
-          <pre><code><span class="keyword">import</span> Layout <span class="keyword">from</span> <span class="string">'../layouts/Layout.astro'</span>;
-<span class="keyword">import</span> ProfileSection <span class="keyword">from</span> <span class="string">'../components/Profile.astro'</span>;
-<span class="keyword">import</span> ProjectsSection <span class="keyword">from</span> <span class="string">'../components/Projects.astro'</span>;
-<span class="keyword">import</span> SkillsSection <span class="keyword">from</span> <span class="string">'../components/Skills.astro'</span>;
+    </header>
 
-<span class="tag">---</span>
-<span class="comment">// Frontmatter is used for data and logic</span>
-<span class="comment">// You can define variables and fetch data here.</span>
-<span class="keyword">const</span> name = <span class="string">'John Ogletree'</span>;
-<span class="keyword">const</span> occupation = <span class="string">'Digital Artist & Designer'</span>;
-<span class="keyword">const</span> projects = [
-  { name: <span class="string">'Chrono Corp'</span>, tech: <span class="string">'UI/UX Design'</span>, description: <span class="string">'A time-tracking application for creative freelancers.'</span> },
-  { name: <span class="string">'Aether Systems'</span>, tech: <span class="string">'Brand Identity'</span>, description: <span class="string">'A complete branding package for a cloud computing company.'</span> },
-];
-<span class="tag">---</span>
+    <main class="viewsource-body">
+      <pre><code><span class="comment">&lt;!-- 
+  Welcome to my digital space!
+  This is a simplified view of the site's structure.
+  
+  You'll find content organized in a way that feels familiar to developers.
+--&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>John Ogletree<span class="tag">&lt;/title&gt;</span>
+    <span class="tag">&lt;meta <span class="attr-name">charset</span>=<span class="attr-value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;meta <span class="attr-name">name</span>=<span class="attr-value">"viewport"</span> <span class="attr-name">content</span>=<span class="attr-value">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="tag">&lt;link <span class="attr-name">rel</span>=<span class="attr-value">"stylesheet"</span> <span class="attr-name">href</span>=<span class="attr-value">"/style.css"</span>&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
 
-<span class="tag">&lt;</span><span class="tag-name">Layout</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;</span><span class="tag-name">div</span> <span class="attribute">class</span>=<span class="string">"content-wrapper"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;</span><span class="tag-name">ProfileSection</span> <span class="attribute">:name</span>=<span class="string">"name"</span> <span class="attribute">:occupation</span>=<span class="string">"occupation"</span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;</span><span class="tag-name">ProjectsSection</span> <span class="attribute">:projects</span>=<span class="string">"projects"</span> <span class="tag">/&gt;</span>
-    <span class="tag">&lt;</span><span class="tag-name">SkillsSection</span> <span class="tag">/&gt;</span>
-  <span class="tag">&lt;/</span><span class="tag-name">div</span><span class="tag">&gt;</span>
-<span class="tag">&lt;/</span><span class="tag-name">Layout</span><span class="tag">&gt;</span></code></pre>
-        </div>
-      </div>
-      <div class="ide-terminal">
-        <div class="terminal-header">
-          <span>TERMINAL</span>
-        </div>
-        <pre class="terminal-output">
-&gt; astro@0.0.1 dev
-&gt; astro dev
+    <span class="tag">&lt;header <span class="attr-name">class</span>=<span class="attr-value">"site-header"</span>&gt;</span>
+      <span class="tag">&lt;h1 <span class="attr-name">class</span>=<span class="attr-value">"logo"</span>&gt;</span>John Ogletree<span class="tag">&lt;/h1&gt;</span>
+      <span class="tag">&lt;p <span class="attr-name">class</span>=<span class="attr-value">"tagline"</span>&gt;</span>Digital Artist & Designer<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/header&gt;</span>
 
-  <span class="info">[ 10:00:00 AM ]</span>  <span class="success">astro  </span><span class="text-light">v5.12.8</span>
-  <span class="info">[ 10:00:00 AM ]</span>  <span class="success">ready  </span><span class="text-light">local </span><span class="link">http://localhost:4321/</span>
-  <span class="info">[ 10:00:01 AM ]</span>  <span class="success">ready  </span><span class="text-light">network</span> <span class="link">http://192.168.1.5:4321/</span>
-        </pre>
+    <span class="tag">&lt;nav <span class="attr-name">class</span>=<span class="attr-value">"main-nav"</span>&gt;</span>
+      <span class="tag">&lt;ul&gt;</span>
+        <span class="tag">&lt;li&gt;&lt;a <span class="attr-name">href</span>=<span class="attr-value">"#about"</span>&gt;</span>About<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;&lt;a <span class="attr-name">href</span>=<span class="attr-value">"#projects"</span>&gt;</span>Projects<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="tag">&lt;li&gt;&lt;a <span class="attr-name">href</span>=<span class="attr-value">"#contact"</span>&gt;</span>Contact<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="tag">&lt;/ul&gt;</span>
+    <span class="tag">&lt;/nav&gt;</span>
+
+    <span class="tag">&lt;main <span class="attr-name">class</span>=<span class="attr-value">"content-sections"</span>&gt;</span>
+      <span class="tag">&lt;section <span class="attr-name">id</span>=<span class="attr-value">"about"</span>&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>About Me<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Hello, I'm John, a multidisciplinary digital artist and designer.<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;p&gt;</span>I have over 9 years of experience turning ideas into reality.<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;/section&gt;</span>
+
+      <span class="tag">&lt;section <span class="attr-name">id</span>=<span class="attr-value">"projects"</span>&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>My Work<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;div <span class="attr-name">class</span>=<span class="attr-value">"project-card"</span>&gt;</span>
+          <span class="tag">&lt;h3&gt;</span>Project 1<span class="tag">&lt;/h3&gt;</span>
+          <span class="tag">&lt;p&gt;</span>A time-tracking application.<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div <span class="attr-name">class</span>=<span class="attr-value">"project-card"</span>&gt;</span>
+          <span class="tag">&lt;h3&gt;</span>Project 2<span class="tag">&lt;/h3&gt;</span>
+          <span class="tag">&lt;p&gt;</span>A complete branding package.<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/section&gt;</span>
+    <span class="tag">&lt;/main&gt;</span>
+
+    <span class="tag">&lt;footer <span class="attr-name">class</span>=<span class="attr-value">"site-footer"</span>&gt;</span>
+      <span class="tag">&lt;p&gt;</span>© <span class="tag">&lt;span <span class="attr-name">id</span>=<span class="attr-value">"year"</span>&gt;&lt;/span&gt;</span> John Ogletree<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/footer&gt;</span>
+
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+</code></pre>
       </div>
     </main>
-    <div class="ide-status-bar">
-      <div class="status-left">
-        <div class="status-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 8v4l3 3"></path>
-          </svg>
-          <span class="status-text">main</span>
-        </div>
-        <div class="status-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-          </svg>
-          <span class="status-text">JavaScript</span>
-        </div>
-      </div>
-      <div class="status-right">
-        <div class="status-item">
-          <span class="status-text">Ln 22, Col 3</span>
-        </div>
-        <div class="status-item">
-          <span class="status-text">Spaces: 2</span>
-        </div>
-        <div class="status-item">
-          <span class="status-text">UTF-8</span>
-        </div>
-      </div>
-    </div>
   </div>
 </Layout>
 
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>
+
 <style>
-  /* IDE Color Palette */
   :root {
-    --ide-bg: #1e1e1e;
-    --ide-fg: #d4d4d4;
-    --ide-border: #3c3c3c;
-    --ide-primary: #569cd6; /* Blue */
-    --ide-secondary: #4ec9b0; /* Teal */
-    --ide-tertiary: #c586c0; /* Purple */
-    --ide-comment: #6a9955; /* Green */
-    --ide-string: #ce9178; /* Orange */
-    --ide-keyword: #569cd6; /* Blue */
-    --ide-tag: #808080; /* Gray */
-    --ide-active-bg: #3c3c3c;
+    --bg-color: #2b2b2b;
+    --text-color: #f1f1f1;
+    --accent-color: #5d9bcf;
+    --tag-color: #9cdcfe;
+    --attr-name-color: #b5cea8;
+    --attr-value-color: #ce9178;
+    --comment-color: #6a9955;
+    --line-number-color: #555555;
+    --browser-bar-color: #3e3e3e;
+    --browser-dot-red: #ff5f56;
+    --browser-dot-yellow: #ffbd2e;
+    --browser-dot-green: #27c93f;
+    --font-mono: "Monaco", "Consolas", "Courier New", monospace;
   }
 
-  /* Global Styles */
-  .ide-container {
-    display: flex;
-    min-height: 100vh;
-    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-    color: var(--ide-fg);
-    background-color: var(--ide-bg);
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono);
   }
 
-  .sidebar {
-    width: 250px;
-    background-color: var(--ide-bg);
-    border-right: 1px solid var(--ide-border);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
+  .viewsource-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    border: 1px solid var(--browser-bar-color);
+    border-radius: 8px;
+    overflow: hidden;
   }
   
-  .file-explorer-header {
-    border-bottom: 1px solid var(--ide-border);
-    padding-bottom: 0.5rem;
-  }
-
-  .explorer-title {
-    font-size: 0.8rem;
-    color: var(--ide-fg);
-    font-weight: 500;
-  }
-
-  .file-list {
-    margin-top: 1rem;
-    list-style: none;
-    padding: 0;
-  }
-
-  .file-list li {
+  .browser-header {
     display: flex;
     align-items: center;
-    padding: 0.25rem 0;
-    cursor: pointer;
-    font-size: 0.9rem;
-    color: var(--ide-fg);
-  }
-  
-  .file-list li:hover {
-    background-color: var(--ide-active-bg);
-  }
-  
-  .file-list li.active {
-    background-color: var(--ide-active-bg);
+    padding: 0.5rem 1rem;
+    background-color: var(--browser-bar-color);
+    border-bottom: 1px solid var(--bg-color);
   }
 
-  .file-list a {
-    text-decoration: none;
-    color: inherit;
+  .browser-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .dot.red { background-color: var(--browser-dot-red); }
+  .dot.yellow { background-color: var(--browser-dot-yellow); }
+  .dot.green { background-color: var(--browser-dot-green); }
+
+  .browser-address {
     display: flex;
     align-items: center;
     flex-grow: 1;
+    background-color: var(--bg-color);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    margin-left: 1rem;
   }
 
-  .file-folder-icon, .file-icon {
+  .address-bar svg {
     width: 16px;
     height: 16px;
     margin-right: 0.5rem;
-    color: var(--ide-secondary);
+    color: var(--line-number-color);
   }
   
-  .main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .ide-tab-bar {
-    display: flex;
-    background-color: var(--ide-bg);
-    border-bottom: 1px solid var(--ide-border);
-  }
-  
-  .ide-tab {
-    padding: 0.5rem 1.5rem;
+  .url-text {
+    color: var(--text-color);
     font-size: 0.9rem;
-    color: var(--ide-fg);
-    border-right: 1px solid var(--ide-border);
-    border-bottom: 1px solid transparent;
-    cursor: pointer;
   }
-  
-  .ide-tab.active {
-    background-color: var(--ide-active-bg);
-    border-bottom-color: var(--ide-active-bg);
-  }
-  
-  .ide-code-editor {
-    display: flex;
-    flex-grow: 1;
-    overflow: auto;
-  }
-  
-  .line-numbers {
-    padding: 1rem 0.5rem;
-    text-align: right;
-    color: var(--ide-tag);
-    user-select: none;
-    line-height: 1.5;
-  }
-  
-  .code-content {
-    flex-grow: 1;
+
+  .viewsource-body {
+    background-color: var(--bg-color);
     padding: 1rem;
+    overflow-x: auto;
+    white-space: pre;
   }
-  
+
   pre {
     margin: 0;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    line-height: 1.5;
-  }
-
-  /* Code Highlighting */
-  .keyword { color: var(--ide-keyword); }
-  .string { color: var(--ide-string); }
-  .comment { color: var(--ide-comment); }
-  .tag { color: var(--ide-tertiary); }
-  .tag-name { color: var(--ide-primary); }
-  .attribute { color: var(--ide-secondary); }
-
-  .ide-terminal {
-    background-color: var(--ide-bg);
-    border-top: 1px solid var(--ide-border);
-    height: 200px;
-    padding: 1rem;
-    overflow-y: auto;
-  }
-  
-  .terminal-header {
-    border-bottom: 1px solid var(--ide-border);
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--ide-fg);
-  }
-  
-  .terminal-output {
-    white-space: pre-wrap;
+    color: var(--text-color);
     font-size: 0.9rem;
-    color: var(--ide-fg);
-  }
-  
-  .ide-status-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--ide-primary);
-    color: var(--ide-fg);
-    padding: 0.25rem 1rem;
-    font-size: 0.8rem;
-    position: sticky;
-    bottom: 0;
-  }
-  
-  .status-left, .status-right {
-    display: flex;
-    gap: 1rem;
+    line-height: 1.4;
   }
 
-  .status-item {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .status-item svg {
-    width: 14px;
-    height: 14px;
-  }
-  
-  .ide-status-bar-mobile {
-    display: none;
-  }
-
-  /* Mobile/Tablet styles */
-  @media (max-width: 920px) {
-    .ide-container {
-      flex-direction: column;
-    }
-    .sidebar {
-      width: 100%;
-      height: auto;
-      border-right: none;
-      border-bottom: 1px solid var(--ide-border);
-    }
-    .main-content {
-      overflow: hidden;
-    }
-    .ide-code-editor {
-      overflow-x: auto;
-    }
-    .ide-tab-bar {
-      overflow-x: auto;
-      flex-wrap: nowrap;
-    }
-    .ide-tab {
-      flex-shrink: 0;
-    }
-    .ide-status-bar {
-      display: none;
-    }
-    .ide-status-bar-mobile {
-      display: block;
-      background-color: var(--ide-primary);
-      color: var(--ide-fg);
-      padding: 0.5rem 1rem;
-      font-size: 0.8rem;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .ide-terminal {
-      display: none;
-    }
-  }
+  /* Syntax Highlighting */
+  .comment { color: var(--comment-color); }
+  .tag { color: var(--tag-color); }
+  .attr-name { color: var(--attr-name-color); }
+  .attr-value { color: var(--attr-value-color); }
+  .keyword { color: var(--accent-color); }
 </style>
