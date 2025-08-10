@@ -2,451 +2,194 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="john-ogletree/Echo">
-  <div class="github-container">
-    <div class="repo-header">
-      <h1 class="repo-title">
-        <svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-          <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path>
-        </svg>
-        <span>john-ogletree / Echo</span>
-      </h1>
-      <a href="#" class="btn btn-sm">⭐ Star</a>
-    </div>
-
-    <div class="main-content-wrapper">
-      <aside class="sidebar-info">
-        <div class="profile-card">
-          <img src="https://via.placeholder.com/150" alt="John Ogletree" class="profile-avatar">
-          <h2 class="profile-name">John Ogletree</h2>
-          <p class="profile-bio">Multidisciplinary Digital Artist & Designer from Martinez, GA.</p>
-          <a href="#" class="btn btn-block">Edit profile</a>
+<Layout title="john-ogletree/portfolio">
+  <div class="terminal-container">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
         </div>
-        <div class="sidebar-section">
-          <h3>Highlights</h3>
-          <ul>
-            <li>
-              <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="octicon">
-                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3.3 14.7a.8.8 0 0 1-1.2 0L12 13.8l-2.1 2.1a.8.8 0 0 1-1.2 0 .8.8 0 0 1 0-1.2l2.1-2.1-2.1-2.1a.8.8 0 0 1 1.2-1.2l2.1 2.1 2.1-2.1a.8.8 0 0 1 1.2 1.2l-2.1 2.1 2.1 2.1a.8.8 0 0 1 0 1.2z"></path>
-                </svg>
-                <span>Available for hire</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="sidebar-section">
-          <h3>Organizations</h3>
-          <p>None</p>
-        </div>
-      </aside>
-
-      <main class="repo-content">
-        <div class="tab-nav">
-          <a href="#" class="tab-link active">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="octicon">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-            </svg>
-            <span>Code</span>
-          </a>
-          <a href="#" class="tab-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="octicon">
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zM9 10H6.5a2.5 2.5 0 0 0 0 5H9a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2z"></path>
-            </svg>
-            <span>Issues</span>
-          </a>
-          <a href="#" class="tab-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="octicon">
-              <path d="M15 12a3 3 0 1 0-3 3 3 3 0 0 0 3-3zM2 12a10 10 0 1 0 10 10A10 10 0 0 0 2 12z"></path>
-            </svg>
-            <span>Pull requests</span>
-          </a>
-        </div>
-
-        <div class="readme-container">
-          <div class="readme-header-section">
-            <h2 class="readme-file-title">README.md</h2>
-          </div>
-          <article class="readme-content-md">
-            <h1>Astro Starter Kit: Minimal</h1>
-            <p><code>npm create astro@latest -- --template minimal</code></p>
-            <blockquote>🧑‍🚀 <strong>Seasoned astronaut?</strong> Delete this file. Have fun!</blockquote>
-            <h2>🚀 Project Structure</h2>
-            <p>Inside of your Astro project, you'll see the following folders and files:</p>
-            <pre><code>/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json</code></pre>
-            <p>Astro looks for <code>.astro</code> or <code>.md</code> files in the <code>src/pages/</code> directory. Each page is exposed as a route based on its file name.</p>
-            <p>There's nothing special about <code>src/components/</code>, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.</p>
-            <p>Any static assets, like images, can be placed in the <code>public/</code> directory.</p>
-            <h2>🧞 Commands</h2>
-            <p>All commands are run from the root of the project, from a terminal:</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Command</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>npm install</code></td>
-                  <td>Installs dependencies</td>
-                </tr>
-                <tr>
-                  <td><code>npm run dev</code></td>
-                  <td>Starts local dev server at <code>localhost:4321</code></td>
-                </tr>
-                <tr>
-                  <td><code>npm run build</code></td>
-                  <td>Build your production site to <code>./dist/</code></td>
-                </tr>
-                <tr>
-                  <td><code>npm run preview</code></td>
-                  <td>Preview your build locally, before deploying</td>
-                </tr>
-                <tr>
-                  <td><code>npm run astro ...</code></td>
-                  <td>Run CLI commands like <code>astro add</code>, <code>astro check</code></td>
-                </tr>
-                <tr>
-                  <td><code>npm run astro -- --help</code></td>
-                  <td>Get help using the Astro CLI</td>
-                </tr>
-              </tbody>
-            </table>
-            <h2>👀 Want to learn more?</h2>
-            <p>Feel free to check <a href="https://docs.astro.build">our documentation</a> or jump into our <a href="https://astro.build/chat">Discord server</a>.</p>
-          </article>
-        </div>
-      </main>
+        <div class="terminal-title">john-ogletree@portfolio</div>
+      </div>
+      <div class="terminal-body">
+        <pre>
+<span class="prompt">john-ogletree:~ $</span> whoami
+<span class="output-block">
+  <span class="output-line">Name: John Ogletree</span>
+  <span class="output-line">Role: Digital Artist & Designer</span>
+  <span class="output-line">Location: Martinez, GA</span>
+  <span class="output-line">Experience: 9+ years</span>
+  <span class="output-line">Status: <span class="badge available">Available for hire</span></span>
+</span>
+<span class="prompt">john-ogletree:~ $</span> ls -a projects
+<span class="output-block">
+  <span class="output-list">
+  <span class="output-list-item"><span class="project-name">Chrono Corp</span> - <span class="project-description">A time-tracking application for creative freelancers.</span></span>
+  <span class="output-list-item"><span class="project-name">Aether Systems</span> - <span class="project-description">A complete branding package for a cloud computing company.</span></span>
+  </span>
+</span>
+<span class="prompt">john-ogletree:~ $</span> cat skills.txt
+<span class="output-block">
+  <span class="output-list">
+  <span class="output-list-item">Design: UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</span>
+  <span class="output-list-item">Tech: Figma, Adobe Creative Suite, HTML, CSS, JavaScript, Astro, Node.js, Blender</span>
+  </span>
+</span>
+<span class="prompt">john-ogletree:~ $</span> email contact
+<span class="output-block">
+  <span class="output-line">Opening mail client to <a href="mailto:contact@johnogletree.com" class="output-link">contact@johnogletree.com</a>...</span>
+</span>
+<span class="prompt">john-ogletree:~ $</span> 
+        </pre>
+      </div>
     </div>
   </div>
 </Layout>
 
 <style>
-  /* Base GitHub-inspired colors */
   :root {
-    --bg-color: #0d1117;
-    --text-color: #c9d1d9;
-    --link-color: #58a6ff;
-    --border-color: #30363d;
-    --header-bg: #161b22;
-    --box-bg: #161b22;
-    --markdown-bg: #0d1117;
-    --btn-bg: #21262d;
-    --btn-border: #30363d;
-    --btn-hover-bg: #30363d;
-    --btn-star-bg: #f8e8c8; /* Star color */
-    --btn-star-text: #2c2921;
-    --code-bg: rgba(110, 118, 129, 0.4);
-    --code-text: #f0f6fc;
-    --font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", monospace;
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --bg-color: #1a1a1a;
+    --terminal-bg: #222;
+    --terminal-fg: #f0f0f0;
+    --terminal-prompt-color: #92d95c;
+    --terminal-title-color: #aaa;
+    --terminal-output-color: #e0e0e0;
+    --terminal-border: #444;
+    --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+    --dot-red: #ff5f56;
+    --dot-yellow: #ffbd2e;
+    --dot-green: #27c93f;
+    --badge-available-bg: #2d6a47;
+    --badge-available-text: #b7efc5;
+    --project-name-color: #4ec9b0;
+    --project-description-color: #a1a1aa;
+    --link-color: #61afef;
   }
 
   body {
     background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-sans);
+    color: var(--terminal-fg);
+    font-family: var(--font-mono);
     line-height: 1.5;
     padding: 0;
     margin: 0;
-  }
-
-  /* GitHub Layout */
-  .github-container {
-    width: 100%;
-  }
-
-  .repo-header {
-    background-color: var(--header-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .repo-title {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.25rem;
-    color: var(--text-color);
-    margin: 0;
-  }
-
-  .repo-title svg {
-    fill: var(--link-color);
-  }
-
-  .main-content-wrapper {
-    display: flex;
-    padding: 2rem;
-    gap: 2rem;
-  }
-
-  .sidebar-info {
-    width: 250px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .profile-card {
-    background-color: var(--box-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .profile-avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-  }
-
-  .profile-name {
-    font-size: 1.25rem;
-    margin: 0;
-    color: var(--text-color);
-  }
-
-  .profile-bio {
-    font-size: 0.9rem;
-    color: var(--text-color);
-    margin: 0.5rem 0;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
     justify-content: center;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--btn-border);
-    border-radius: 6px;
-    background-color: var(--btn-bg);
-    color: var(--text-color);
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    align-items: center;
+    min-height: 100vh;
   }
 
-  .btn:hover {
-    background-color: var(--btn-hover-bg);
-    text-decoration: none;
-  }
-
-  .btn-sm {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.75rem;
-  }
-
-  .btn-block {
+  .terminal-container {
     width: 100%;
-    margin-top: 1rem;
+    max-width: 900px;
+    padding: 1rem;
   }
 
-  .sidebar-section h3 {
-    font-size: 1rem;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
+  .terminal-window {
+    background-color: var(--terminal-bg);
+    border: 1px solid var(--terminal-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
   }
 
-  .sidebar-section ul {
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    border-bottom: 1px solid var(--terminal-border);
+  }
+
+  .terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .dot.red { background-color: var(--dot-red); }
+  .dot.yellow { background-color: var(--dot-yellow); }
+  .dot.green { background-color: var(--dot-green); }
+
+  .terminal-title {
+    flex-grow: 1;
+    text-align: center;
+    color: var(--terminal-title-color);
+    font-size: 0.9rem;
+  }
+
+  .terminal-body {
+    padding: 1rem;
+  }
+
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .prompt {
+    color: var(--terminal-prompt-color);
+  }
+
+  .output-block {
+    display: block;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .output-line {
+    display: block;
+    color: var(--terminal-output-color);
+  }
+
+  .output-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .output-list-item {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--terminal-output-color);
   }
 
-  .sidebar-section li a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+  .badge {
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .badge.available {
+    background-color: var(--badge-available-bg);
+    color: var(--badge-available-text);
+  }
+
+  .project-name {
+    color: var(--project-name-color);
+  }
+  
+  .project-description {
+    color: var(--project-description-color);
+  }
+  
+  .output-link {
     color: var(--link-color);
-    text-decoration: none;
-  }
-
-  .sidebar-section li a:hover {
     text-decoration: underline;
   }
-  
-  .sidebar-section li .octicon {
-    fill: var(--link-color);
-  }
 
-  .repo-content {
-    flex-grow: 1;
-  }
-
-  .tab-nav {
-    display: flex;
-    gap: 1.5rem;
-    border-bottom: 2px solid var(--border-color);
-  }
-
-  .tab-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-color);
-    text-decoration: none;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid transparent;
-    font-weight: 500;
-  }
-
-  .tab-link.active {
-    color: var(--text-color);
-    border-bottom-color: var(--link-color);
-  }
-
-  .tab-link:hover {
-    color: var(--link-color);
-  }
-
-  .readme-container {
-    padding-top: 1.5rem;
-  }
-  
-  .readme-header-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: var(--header-bg);
-    border: 1px solid var(--border-color);
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-  }
-
-  .readme-file-title {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    margin: 0;
-    color: var(--text-color);
-  }
-
-  .readme-content-md {
-    padding: 2rem;
-    background-color: var(--markdown-bg);
-    border: 1px solid var(--border-color);
-    border-top: none;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-  }
-  
-  .readme-content-md h1 {
-    font-size: 2rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-  }
-  
-  .readme-content-md h2 {
-    font-size: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-  }
-  
-  .readme-content-md code {
-    background-color: var(--code-bg);
-    padding: 0.2em 0.4em;
-    border-radius: 6px;
-    font-family: var(--font-mono);
-    color: var(--code-text);
-  }
-  
-  .readme-content-md pre {
-    background-color: var(--code-bg);
-    padding: 1rem;
-    border-radius: 6px;
-    overflow-x: auto;
-  }
-  
-  .readme-content-md a {
-    color: var(--link-color);
-    text-decoration: none;
-  }
-
-  .readme-content-md a:hover {
-    text-decoration: underline;
-  }
-  
-  .readme-content-md blockquote {
-    border-left: 3px solid var(--link-color);
-    padding-left: 1rem;
-    margin-left: 0;
-    color: var(--comment-color);
-  }
-  
-  .readme-content-md ul {
-    padding-left: 2rem;
-  }
-  
-  .readme-content-md li {
-    margin-bottom: 0.5rem;
-  }
-
-  .readme-content-md table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-  }
-
-  .readme-content-md th,
-  .readme-content-md td {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--border-color);
-  }
-  
-  .readme-content-md th {
-    background-color: var(--btn-bg);
-    text-align: left;
-  }
-
-  /* Responsive styles */
-  @media (max-width: 920px) {
-    .main-content-wrapper {
-      flex-direction: column;
-    }
-    .sidebar-info {
-      width: 100%;
-    }
-    .profile-card {
-      text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .profile-card .profile-avatar {
-      width: 60px;
-      height: 60px;
-    }
-    .profile-card h2 {
-      font-size: 1.2rem;
-    }
-    .profile-card p {
-      font-size: 0.9rem;
-    }
-    .profile-card .btn {
-      display: none;
+  @media (max-width: 768px) {
+    .terminal-container {
+      padding: 0.5rem;
     }
   }
 </style>
