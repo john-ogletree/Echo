@@ -469,7 +469,7 @@ import Layout from '../layouts/Layout.astro';
     /* Needed for positioning the ::before element */
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     font-size: 1.1rem;
     font-weight: 500;
     padding: 0.5rem 0;
@@ -745,6 +745,17 @@ import Layout from '../layouts/Layout.astro';
   .cta-button:hover {
     background-color: #D36C52;
   }
+  /* Updated CSS for button text readability */
+  .cta-button span, .cta-button svg {
+      padding: 0 0.25rem;
+  }
+  
+  .services-button span, .services-button svg,
+  .projects-button span, .projects-button svg,
+  .blog-button span, .blog-button svg {
+      padding: 0 0.25rem;
+  }
+
 
   /* --- Card Type: Service --- */
   .service-card { display: flex; align-items: center; gap: 1rem; padding: 1.25rem;
