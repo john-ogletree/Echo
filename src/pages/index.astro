@@ -105,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .website-container {
-    max-width: 960px;
+    max-width: none;
     margin: 0 auto;
     padding: 2rem 1rem;
   }
@@ -166,8 +166,7 @@ import Layout from '../layouts/Layout.astro';
   
   .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
   }
 
