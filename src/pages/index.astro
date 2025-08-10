@@ -33,18 +33,14 @@ import Layout from '../layouts/Layout.astro';
           <h2 class="section-title">Latest Projects</h2>
           <ul class="projects-list">
             <li class="project-item">
-              <div class="project-header">
-                <h3 class="project-name">Chrono Corp</h3>
-                <span class="project-tag">UI/UX Design</span>
-              </div>
+              <h3 class="project-name">Chrono Corp</h3>
               <p class="project-info">A time-tracking application for creative freelancers.</p>
+              <span class="project-tag">UI/UX Design</span>
             </li>
             <li class="project-item">
-              <div class="project-header">
-                <h3 class="project-name">Aether Systems</h3>
-                <span class="project-tag">Brand Identity</span>
-              </div>
+              <h3 class="project-name">Aether Systems</h3>
               <p class="project-info">A complete branding package for a cloud computing company.</p>
+              <span class="project-tag">Brand Identity</span>
             </li>
           </ul>
           <a href="#" class="cta-link">View all projects &rarr;</a>
@@ -52,7 +48,7 @@ import Layout from '../layouts/Layout.astro';
   
         <section id="skills" class="content-section">
           <h2 class="section-title">Skills & Expertise</h2>
-          <div class="skills-list">
+          <div class="skills-grid">
             <div class="skill-category">
               <h4 class="skill-category-title">Design</h4>
               <p class="skill-list">UI/UX & Prototyping, Brand & Identity, Art Direction, Iconography, Illustration</p>
@@ -208,13 +204,13 @@ import Layout from '../layouts/Layout.astro';
     margin: 0;
   }
   
-  .projects-list, .skills-list {
+  .projects-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-
-  .project-item {
+  
+  .projects-list .project-item {
     background-color: #2a2a2a;
     border: 1px solid var(--border-color);
     border-radius: 6px;
@@ -250,8 +246,14 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 1rem;
   }
 
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
   .skill-category {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
   }
 
   .skill-category-title {
@@ -287,12 +289,6 @@ import Layout from '../layouts/Layout.astro';
     color: #b0b0b0;
   }
   
-  @media (max-width: 960px) {
-    .website-container {
-      padding: 2rem 1rem;
-    }
-  }
-
   @media (max-width: 768px) {
     .profile-card {
       flex-direction: column;
@@ -301,10 +297,16 @@ import Layout from '../layouts/Layout.astro';
     .grid-container {
       grid-template-columns: 1fr;
     }
+    .projects-list .project-item {
+      margin-bottom: 1rem;
+    }
     .project-header {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
+    }
+    .skills-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
