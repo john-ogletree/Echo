@@ -64,16 +64,16 @@ import Layout from '../layouts/Layout.astro';
                         <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
                     </div>
                     <hr class="retro-hr" />
-                    <div class="footer-column-retro">
+                    <div class="footer-column-retro-explore">
                         <h4>Explore</h4>
                         <ul class="footer-links-retro">
-                            <li><a href="/directory">Directory</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#resume">Résumé</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="/directory/index">Directory</a></li>
+                            <li><a href="/bio/index">About</a></li>
+                            <li><a href="/services/index">Services</a></li>
+                            <li><a href="/projects/index">Projects</a></li>
+                            <li><a href="/thoughts/index">Log</a></li>
+                            <li><a href="/resume/index">Résumé</a></li>
+                            <li><a href="/forms/index">Contact</a></li>
                         </ul>
                     </div>
                     <hr class="retro-hr" />
@@ -727,6 +727,12 @@ import Layout from '../layouts/Layout.astro';
         margin: 0.5rem 0;
     }
 
+    .footer-column-retro-explore {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
     .footer-links-retro {
         list-style: none;
         padding: 0;
@@ -778,11 +784,11 @@ import Layout from '../layouts/Layout.astro';
         font-size: 0.9rem;
         color: var(--color-text-light);
     }
-    
+
     .footer-bottom-bar p {
         margin: 0;
     }
-    
+
     .back-to-top {
         color: var(--color-text-light);
         text-decoration: none;
@@ -1026,9 +1032,9 @@ import Layout from '../layouts/Layout.astro';
         .footer-column-retro h4 {
             justify-content: center;
         }
-        .footer-bottom-bar {
+        .footer-column-retro-explore {
             flex-direction: column;
-            gap: 0.5rem;
+            align-items: center;
         }
     }
 </style>
