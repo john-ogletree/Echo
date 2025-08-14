@@ -466,8 +466,11 @@ import Layout from '../layouts/Layout.astro';
         color: var(--color-heading);
         margin: 0;
     }
-    h2 { font-size: 1.5rem; border-bottom: 1px solid var(--color-border);
-        padding-bottom: 0.5rem; margin: 2.5rem 0 1.5rem 0;
+    h2 { 
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.5rem; 
+        margin: 3.5rem 0 1.5rem 0;
     }
     h2::before {
         content: '##';
@@ -522,8 +525,10 @@ import Layout from '../layouts/Layout.astro';
         fill: var(--color-text-light);
     }
     .readme-body {
-        padding: 2rem var(--padding-x);
+        padding: 1rem var(--padding-x) 2rem;
         transition: filter 0.3s ease-in-out;
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
     /* --- Banner --- */
@@ -597,12 +602,12 @@ import Layout from '../layouts/Layout.astro';
     }
     .terminal-output h1 {
         color: #E07A5F;
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 5vw, 2.75rem);
         margin-bottom: 0.5rem;
     }
     .terminal-output p {
         color: var(--color-surface);
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
         margin-bottom: 1.5rem;
     }
     .terminal-output .cta-button {
@@ -768,7 +773,7 @@ import Layout from '../layouts/Layout.astro';
         display: flex;
         align-items: center;
         gap: 1rem;
-        margin: 4rem 0;
+        margin: clamp(2.5rem, 6vw, 4rem) 0;
     }
     .branded-hr.hr-after-banner {
         margin: 2rem 0;
@@ -918,7 +923,7 @@ import Layout from '../layouts/Layout.astro';
         flex-direction: column;
     }
     .profile-header-info h3 {
-        font-size: 1.5rem;
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
         margin: 0;
         line-height: 1.2;
     }
@@ -1061,7 +1066,7 @@ import Layout from '../layouts/Layout.astro';
 
     /* --- Services Overview --- */
     .services-overview {
-        margin-top: 4rem;
+        margin-top: 0; /* h2 handles spacing */
     }
     .services-grid {
         display: grid;
@@ -1126,162 +1131,32 @@ import Layout from '../layouts/Layout.astro';
         :root {
             --padding-x: 1.5rem;
         }
-        .hero-header {
-            flex-direction: column;
-            text-align: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .hero-info h1 {
-            font-size: 1.75rem;
-        }
-        .hero-profile-picture {
-            display: none;
-        }
-        .branded-hr {
-            margin: 3rem 0;
-        }
-        .readme-container {
-            position: relative;
-        }
-        .desktop-search { display: none;
-        }
-        .mobile-search { display: block;
-        }
-        
-        .nav-toggle {
-            display: block;
-        }
-        
-        .nav-close {
-            display: none;
-        }
-        
-        .nav-drawer-container.is-open ~ .nav-toggle {
-            display: none;
-        }
-
-        .nav-drawer-container .nav-close {
-            display: none;
-        }
-        
-        .nav-drawer-container.is-open .nav-close {
-            display: block;
-        }
-
-        .nav-drawer-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 100vh;
-            background-color: var(--color-surface);
-            border-right: 1px solid var(--color-border);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-            z-index: 99;
-            box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
-        }
-        .nav-drawer-container.is-open {
-            transform: translateX(0);
-        }
-        
-        .main-nav {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            padding: 0;
-        }
-
-        .nav-header-mobile {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem 1.5rem 1rem 1.5rem;
-            border-bottom: 1px solid var(--color-border);
-            flex-shrink: 0;
-        }
-
-        .nav-header-mobile .mobile-search {
-            flex-grow: 1;
-        }
-
-        .nav-socials {
-            list-style: none;
-            padding: 1.5rem;
-            border-top: 1px solid var(--color-border);
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-shrink: 0;
-        }
-        .nav-socials a { color: var(--color-text-light);
-        }
-        .nav-socials a:hover { color: var(--color-accent);
-        }
-        .nav-socials svg { width: 24px; height: 24px;
-        }
-        
-        .dashboard-grid {
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas:
-                "about about"
-                "services resume"
-                "projects projects"
-                "blog newsletter"
-                "contact contact";
-        }
         .about-me-section {
             grid-template-columns: 1fr;
         }
-        .terminal-output h1 { font-size: 2rem; }
-        .terminal-output p { font-size: 1.1rem; }
     }
 
     @media (max-width: 768px) {
         :root {
             --padding-x: 1rem;
         }
-        .readme-header {
-            padding: 1rem var(--padding-x);
-        }
         .readme-body {
-            padding: 1.5rem var(--padding-x);
+            padding-left: var(--padding-x);
+            padding-right: var(--padding-x);
         }
-        .dashboard-grid {
+        .skills-card,
+        .skill-item {
             grid-template-columns: 1fr;
-            grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
         }
-        h2 { font-size: 1.25rem;
+        .skill-item {
+            gap: 0.5rem;
         }
-        .hero-header {
-            flex-direction: column;
-            text-align: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        .footer-links { 
+            grid-template-columns: repeat(2, 1fr);
         }
-        .hero-info h1 {
-            font-size: 1.75rem;
-        }
-        .hero-profile-picture {
-            display: none;
-        }
-        .branded-hr {
-            margin: 3rem 0;
-        }
-        .newsletter-form { flex-direction: column;
-        }
-        .card-grid { grid-template-columns: 1fr;
-        }
-        .footer-grid { text-align: center;
-        }
-        .footer-tagline { margin: 0 auto 1rem auto;
-        }
-        .footer-column .badge, .footer-socials { justify-content: center;
-        }
-        .footer-links { grid-template-columns: repeat(2, 1fr);
-        }
-        .footer-bottom-bar { flex-direction: column; gap: 0.5rem;
+        .footer-bottom-bar { 
+            flex-direction: column; 
+            gap: 0.5rem;
         }
         .profile-main-info {
             flex-direction: column;
@@ -1293,9 +1168,21 @@ import Layout from '../layouts/Layout.astro';
         }
         .stat-item {
             align-items: center;
+            flex-direction: column;
+            gap: 0.25rem;
         }
-        .terminal-body { padding: 1rem; }
-        .terminal-output h1 { font-size: 1.75rem; }
-        .terminal-output p { font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+        .footer-grid {
+             text-align: left;
+        }
+        .footer-column .badge, 
+        .footer-socials {
+             justify-content: flex-start;
+        }
+        .repo-title .font-bold {
+            display: none;
+        }
     }
 </style>
