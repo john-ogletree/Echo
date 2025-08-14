@@ -219,6 +219,36 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </section>
 
+            <section class="services-overview">
+                <h2>Services Overview</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <h3>Web Design & Development</h3>
+                        <p>Crafting responsive, high-performance websites from scratch. I focus on clean code and user-centric design to build digital experiences that work beautifully on any device.</p>
+                        <a href="/services/index" class="service-link">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                        </div>
+                        <h3>Interactive Prototyping</h3>
+                        <p>Bringing ideas to life with high-fidelity, clickable prototypes. This crucial step allows for user testing and validation before a single line of code is written.</p>
+                        <a href="/services/index" class="service-link">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.73 18a2.64 2.64 0 0 0-3.72 0L12 24l-6.01-6.01a2.64 2.64 0 0 0-3.72 0L0 20.27l6.01-6.01a2.64 2.64 0 0 0 0-3.72L0 4.52l2.27-2.27a2.64 2.64 0 0 0 3.72 0L12 0l6.01 6.01a2.64 2.64 0 0 0 3.72 0L24 8.28l-6.01 6.01a2.64 2.64 0 0 0 0 3.72l6.01 6.01z"></path></svg>
+                        </div>
+                        <h3>Digital Strategy & Consultation</h3>
+                        <p>Leveraging user research and analytics to help you make informed decisions. I provide insights that align your digital presence with your business goals for measurable success.</p>
+                        <a href="/services/index" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+            </section>
+
             <div class="branded-hr">
                 <div class="line"></div>
                 <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
@@ -436,7 +466,7 @@ import Layout from '../layouts/Layout.astro';
         margin: 0;
     }
     h2 { font-size: 1.5rem; border-bottom: 1px solid var(--color-border);
-        padding-bottom: 0.5rem; margin: 2.5rem 0 1rem 0;
+        padding-bottom: 0.5rem; margin: 2.5rem 0 1.5rem 0;
     }
     h2::before {
         content: '##';
@@ -846,10 +876,12 @@ import Layout from '../layouts/Layout.astro';
     
     /* --- About Me Section --- */
     .about-me-section {
+        margin-top: 2rem; /* Adjusted margin */
+    }
+    .about-me-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
-        margin-top: 4rem;
         align-items: stretch;
     }
 
@@ -1027,6 +1059,52 @@ import Layout from '../layouts/Layout.astro';
         background-color: var(--color-heading);
         color: var(--color-bg);
         text-decoration: none;
+    }
+
+    /* --- Services Overview --- */
+    .services-overview {
+        margin-top: 4rem;
+    }
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    .service-card {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .service-icon {
+        color: var(--color-accent);
+    }
+    .service-card h3 {
+        color: var(--color-accent);
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    .service-card p {
+        flex-grow: 1;
+        color: var(--color-text-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .service-link {
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--color-heading);
+    }
+    .service-link:hover {
+        text-decoration: underline;
     }
     
     /* --- Responsive --- */
