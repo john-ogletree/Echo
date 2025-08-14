@@ -61,6 +61,12 @@ import Layout from '../layouts/Layout.astro';
                 <p class="banner-text">This is a banner! ✨</p>
             </div>
 
+            <div class="branded-hr hr-after-banner">
+                <div class="line"></div>
+                <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
+                <div class="line"></div>
+            </div>
+
             <div class="hero-section">
                 <div class="hero-content">
                     <h1>Welcome to the Hero Section!</h1>
@@ -440,7 +446,7 @@ import Layout from '../layouts/Layout.astro';
         padding: 1rem 2rem;
         text-align: center;
         border-radius: 8px;
-        margin-bottom: 2rem;
+        margin-bottom: 0;
     }
     .banner-text {
         margin: 0;
@@ -454,7 +460,7 @@ import Layout from '../layouts/Layout.astro';
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-bottom: 2rem;
+        padding-top: 2rem;
     }
     .hero-content {
         max-width: 80ch;
@@ -620,6 +626,9 @@ import Layout from '../layouts/Layout.astro';
         gap: 1rem;
         margin: 4rem 0;
     }
+    .branded-hr.hr-after-banner {
+        margin: 2rem 0;
+    }
     .branded-hr .line {
         flex-grow: 1;
         height: 1px;
@@ -660,7 +669,7 @@ import Layout from '../layouts/Layout.astro';
     
     .readme-footer {
         padding: 2.5rem var(--padding-x) 1.5rem var(--padding-x);
-        margin: 2rem auto 0 auto;
+        margin: 0 auto;
     }
     .footer-grid {
         display: grid;
