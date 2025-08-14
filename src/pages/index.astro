@@ -269,6 +269,8 @@ import Layout from '../layouts/Layout.astro';
 
     // New script for dynamic cards
     document.addEventListener('DOMContentLoaded', function() {
+        const GITHUB_USERNAME = 'john-ogletree';
+
         // --- Profile Card Logic ---
         const profileCard = document.getElementById('profile-card');
         if (profileCard) {
@@ -300,15 +302,30 @@ import Layout from '../layouts/Layout.astro';
             
             observer.observe(profileCard);
             
+            // --- Fetch and Render GitHub Contribution Graph ---
             const graph = document.getElementById('contribution-graph');
             if (graph) {
-                const days = 120;
-                let output = '';
-                for (let i = 0; i < days; i++) {
-                    const level = Math.floor(Math.random() * 5);
-                    output += `<div class="graph-day" data-level="${level}" title="${Math.floor(Math.random() * 20)} contributions"></div>`;
-                }
-                graph.innerHTML = output;
+                fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data || !data.contributions) {
+                            graph.innerHTML = 'Could not load contribution data.';
+                            return;
+                        }
+                        const contributions = data.contributions;
+                        const daysToShow = 120;
+                        const latestContributions = contributions.slice(-daysToShow);
+
+                        let output = '';
+                        latestContributions.forEach(day => {
+                            output += `<div class="graph-day" data-level="${day.level}" title="${day.count} contributions on ${day.date}"></div>`;
+                        });
+                        graph.innerHTML = output;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching GitHub contributions:', error);
+                        graph.innerHTML = 'Contribution data unavailable.';
+                    });
             }
         }
 
