@@ -1552,6 +1552,48 @@ import Layout from '../layouts/Layout.astro';
         margin-top: 0.25rem;
         margin-bottom: 0;
     }
+
+    /* --- FAQ Section --- */
+    .faq-section {
+        margin-top: 0;
+    }
+    .faq-container details {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+    }
+    .faq-container summary {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--color-accent);
+        cursor: pointer;
+        list-style: none; /* Remove default marker */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .faq-container summary::-webkit-details-marker {
+        display: none; /* Chrome/Safari */
+    }
+    .faq-container summary:hover {
+        color: var(--color-heading);
+    }
+    .faq-container summary::after {
+        content: '+';
+        font-size: 1.5rem;
+        font-weight: 400;
+        transition: transform 0.2s ease-out;
+    }
+    .faq-container details[open] > summary::after {
+        transform: rotate(45deg);
+    }
+    .faq-answer {
+        color: var(--color-text-light);
+        padding-top: 1rem;
+        line-height: 1.6;
+    }
     
     /* --- Responsive --- */
     @media (max-width: 920px) {
@@ -1559,7 +1601,8 @@ import Layout from '../layouts/Layout.astro';
             --padding-x: 1.5rem;
         }
         .about-me-section,
-        .forms-grid {
+        .forms-grid,
+        .resume-container {
             grid-template-columns: 1fr;
         }
     }
@@ -1573,8 +1616,7 @@ import Layout from '../layouts/Layout.astro';
             padding-right: var(--padding-x);
         }
         .skills-card,
-        .skill-item,
-        .resume-container {
+        .skill-item {
             grid-template-columns: 1fr;
         }
         .skill-item {
