@@ -300,6 +300,43 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </section>
 
+            <section class="forms-section">
+                <h2>Connect</h2>
+                <div class="forms-grid">
+                    <div class="form-container contact-form">
+                        <h3>Contact Me</h3>
+                        <p>Have a question or a project in mind? Let's talk. I'm always open to discussing new ideas and opportunities.</p>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="view-all-button">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="form-container newsletter-form">
+                        <h3>Join My Newsletter</h3>
+                        <p>Subscribe to receive updates on my latest projects, articles, and design resources directly in your inbox. No spam, ever.</p>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="newsletter-email">Email Address</label>
+                                <input type="email" id="newsletter-email" name="email" required>
+                            </div>
+                            <button type="submit" class="view-all-button">Subscribe</button>
+                        </form>
+                        <p class="privacy-notice">Your privacy is important. I'll never share your email.</p>
+                    </div>
+                </div>
+            </section>
+
             <div class="branded-hr">
                 <div class="line"></div>
                 <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
@@ -1244,12 +1281,81 @@ import Layout from '../layouts/Layout.astro';
         border-radius: 1rem;
     }
 
+    /* --- Forms Section --- */
+    .forms-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        align-items: start;
+    }
+    .form-container {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 2rem;
+    }
+    .form-container h3 {
+        color: var(--color-accent);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .form-container p {
+        color: var(--color-text-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--color-text);
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--color-text);
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px rgba(61, 135, 166, 0.3);
+    }
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+    .privacy-notice {
+        font-size: 0.8rem;
+        color: var(--color-text-light);
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .form-container button {
+        width: 100%;
+    }
+
     /* --- Responsive --- */
     @media (max-width: 920px) {
         :root {
             --padding-x: 1.5rem;
         }
-        .about-me-section {
+        .about-me-section,
+        .forms-grid {
             grid-template-columns: 1fr;
         }
     }
