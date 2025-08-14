@@ -561,12 +561,14 @@ import Layout from '../layouts/Layout.astro';
 
         const navLinks = document.querySelectorAll('.nav-links a');
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navDrawer.classList.contains('is-open') && !link.classList.contains('nav-dropdown-toggle')) {
+            link.addEventListener('click', (event) => {
+                if (link.classList.contains('nav-dropdown-toggle')) return;
+                if (navDrawer.classList.contains('is-open')) {
                     toggleMobileNav();
                 }
             });
         });
+
         const yearSpan = document.getElementById('year');
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
@@ -579,7 +581,6 @@ import Layout from '../layouts/Layout.astro';
                 event.preventDefault();
                 const parentLi = toggle.parentElement;
                 
-                // Close other open dropdowns
                 if (!parentLi.classList.contains('is-open')) {
                     document.querySelectorAll('.nav-item-has-dropdown.is-open').forEach(openDropdown => {
                         openDropdown.classList.remove('is-open');
@@ -587,7 +588,6 @@ import Layout from '../layouts/Layout.astro';
                     });
                 }
 
-                // Toggle current dropdown
                 parentLi.classList.toggle('is-open');
                 const isExpanded = parentLi.classList.contains('is-open');
                 toggle.setAttribute('aria-expanded', isExpanded);
@@ -1061,8 +1061,9 @@ import Layout from '../layouts/Layout.astro';
         border-top: 1px solid var(--color-border);
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        gap: 1.5rem;
         flex-shrink: 0;
+        flex-wrap: wrap; /* Allow wrapping */
     }
     .nav-socials a { color: var(--color-text-light);
     }
