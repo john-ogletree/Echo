@@ -260,10 +260,10 @@ import Layout from '../layouts/Layout.astro';
                         <div class="project-content">
                             <h3>Echo - Personal Portfolio</h3>
                             <p>The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
-                            <div class="project-tags">
-                                <span>Astro</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
+                            <div class="card-tags">
+                                <span data-tag="astro">Astro</span>
+                                <span data-tag="css">CSS</span>
+                                <span data-tag="javascript">JavaScript</span>
                             </div>
                         </div>
                     </div>
@@ -274,10 +274,10 @@ import Layout from '../layouts/Layout.astro';
                         <div class="project-content">
                             <h3>QuantumLeap - SaaS Dashboard</h3>
                             <p>A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
-                            <div class="project-tags">
-                                <span>Figma</span>
-                                <span>UI/UX</span>
-                                <span>Prototyping</span>
+                            <div class="card-tags">
+                                <span data-tag="figma">Figma</span>
+                                <span data-tag="ui-ux">UI/UX</span>
+                                <span data-tag="prototyping">Prototyping</span>
                             </div>
                         </div>
                     </div>
@@ -288,9 +288,9 @@ import Layout from '../layouts/Layout.astro';
                         <div class="project-content">
                             <h3>CodeGenius - AI Assistant UI</h3>
                             <p>An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
-                            <div class="project-tags">
-                                <span>UI Design</span>
-                                <span>UX Research</span>
+                            <div class="card-tags">
+                                <span data-tag="ui-design">UI Design</span>
+                                <span data-tag="ux-research">UX Research</span>
                             </div>
                         </div>
                     </div>
@@ -346,10 +346,10 @@ import Layout from '../layouts/Layout.astro';
                                 <p class="log-meta">Film Review · 6 min read</p>
                                 <h3>Dune: A Masterclass in World-Building</h3>
                                 <p class="log-excerpt">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.</p>
-                                <div class="project-tags">
-                                    <span>Film</span>
-                                    <span>Sci-Fi</span>
-                                    <span>Review</span>
+                                <div class="card-tags">
+                                    <span data-tag="film">Film</span>
+                                    <span data-tag="sci-fi">Sci-Fi</span>
+                                    <span data-tag="review">Review</span>
                                 </div>
                             </div>
                         </a>
@@ -360,10 +360,10 @@ import Layout from '../layouts/Layout.astro';
                                 <p class="log-meta">Tech Review · 8 min read</p>
                                 <h3>The M4 AstroBook: A Developer's Dream?</h3>
                                 <p class="log-excerpt">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.</p>
-                                <div class="project-tags">
-                                    <span>Tech</span>
-                                    <span>Apple</span>
-                                    <span>Review</span>
+                                <div class="card-tags">
+                                    <span data-tag="tech">Tech</span>
+                                    <span data-tag="apple">Apple</span>
+                                    <span data-tag="review">Review</span>
                                 </div>
                             </div>
                         </a>
@@ -374,10 +374,10 @@ import Layout from '../layouts/Layout.astro';
                                 <p class="log-meta">Personal Essay · 5 min read</p>
                                 <h3>Finding Creative Flow in Augusta</h3>
                                 <p class="log-excerpt">Moving away from the hustle of a big city was a creative gamble. Here's how the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.</p>
-                                <div class="project-tags">
-                                    <span>Life</span>
-                                    <span>Creativity</span>
-                                    <span>Georgia</span>
+                                <div class="card-tags">
+                                    <span data-tag="life">Life</span>
+                                    <span data-tag="creativity">Creativity</span>
+                                    <span data-tag="georgia">Georgia</span>
                                 </div>
                             </div>
                         </a>
@@ -1318,18 +1318,51 @@ import Layout from '../layouts/Layout.astro';
         flex-grow: 1;
         margin-bottom: 1.5rem;
     }
-    .project-tags {
+    
+    /* --- Tag System --- */
+    .card-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
     }
-    .project-tags span {
-        background-color: var(--color-tag-bg);
-        color: var(--color-accent);
+    .card-tags span {
         font-size: 0.8rem;
         font-weight: 500;
         padding: 0.25rem 0.75rem;
         border-radius: 1rem;
+    }
+    .card-tags span[data-tag="astro"],
+    .card-tags span[data-tag="javascript"],
+    .card-tags span[data-tag="tech"] {
+        background-color: rgba(224, 122, 95, 0.15);
+        color: #B35F48;
+    }
+    .card-tags span[data-tag="css"],
+    .card-tags span[data-tag="ui-ux"],
+    .card-tags span[data-tag="ui-design"] {
+        background-color: rgba(61, 135, 166, 0.15);
+        color: #3D87A6;
+    }
+    .card-tags span[data-tag="figma"],
+    .card-tags span[data-tag="prototyping"] {
+        background-color: rgba(142, 107, 142, 0.2);
+        color: #8E6B8E;
+    }
+    .card-tags span[data-tag="film"],
+    .card-tags span[data-tag="review"] {
+         background-color: rgba(106, 153, 78, 0.2);
+         color: #6A994E;
+    }
+    .card-tags span[data-tag="life"],
+    .card-tags span[data-tag="creativity"],
+    .card-tags span[data-tag="georgia"] {
+        background-color: rgba(181, 137, 0, 0.2);
+        color: #B58900;
+    }
+    .card-tags span[data-tag="sci-fi"],
+    .card-tags span[data-tag="apple"] {
+        background-color: rgba(108, 117, 125, 0.2);
+        color: #6c757d;
     }
 
     /* --- Forms Section --- */
