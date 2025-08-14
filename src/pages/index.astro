@@ -337,6 +337,57 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </section>
 
+            <section class="log-overview">
+                <h2>Log Overview</h2>
+                <div class="log-grid">
+                    <article class="log-card">
+                        <a href="/thoughts/post-slug-1">
+                            <div class="log-card-content">
+                                <p class="log-meta">August 14, 2025 · 5 min read</p>
+                                <h3>Why I Chose Astro for My New Portfolio</h3>
+                                <p class="log-excerpt">A deep dive into the benefits of static-first frameworks, performance gains, and the developer experience that led me to rebuild my site with Astro.</p>
+                                <div class="project-tags">
+                                    <span>Web Dev</span>
+                                    <span>Astro</span>
+                                    <span>Performance</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="log-card">
+                        <a href="/thoughts/post-slug-2">
+                             <div class="log-card-content">
+                                <p class="log-meta">July 28, 2025 · 7 min read</p>
+                                <h3>The Art of Less: Minimalist UI Design Principles</h3>
+                                <p class="log-excerpt">Exploring how whitespace, typography, and a focused color palette can create more intuitive and impactful user interfaces.</p>
+                                <div class="project-tags">
+                                    <span>UI/UX</span>
+                                    <span>Design</span>
+                                    <span>Minimalism</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="log-card">
+                        <a href="/thoughts/post-slug-3">
+                            <div class="log-card-content">
+                                <p class="log-meta">June 15, 2025 · 4 min read</p>
+                                <h3>Terminal Velocity: Boosting Productivity in the Command Line</h3>
+                                <p class="log-excerpt">My favorite aliases, tools, and workflows that have transformed my command line from a simple tool into a powerhouse of productivity.</p>
+                                <div class="project-tags">
+                                    <span>Productivity</span>
+                                    <span>Tools</span>
+                                    <span>CLI</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+                <div class="view-all-container">
+                    <a href="/thoughts/index" class="view-all-button">View All Posts</a>
+                </div>
+            </section>
+
             <div class="branded-hr">
                 <div class="line"></div>
                 <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
@@ -1349,6 +1400,57 @@ import Layout from '../layouts/Layout.astro';
         width: 100%;
     }
 
+    /* --- Log Overview --- */
+    .log-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    .log-card {
+        display: block;
+    }
+    .log-card a {
+        display: flex;
+        height: 100%;
+        text-decoration: none;
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+    .log-card a:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .log-card-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .log-meta {
+        font-size: 0.8rem;
+        color: var(--color-text-light);
+        margin-bottom: 0.5rem;
+    }
+    .log-card h3 {
+        color: var(--color-accent);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        transition: color 0.2s ease;
+    }
+    .log-card a:hover h3 {
+        color: var(--color-heading);
+        text-decoration: underline;
+    }
+    .log-excerpt {
+        color: var(--color-text);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+    }
+    
     /* --- Responsive --- */
     @media (max-width: 920px) {
         :root {
