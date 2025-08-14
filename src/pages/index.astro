@@ -388,6 +388,42 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </section>
 
+            <section class="resume-overview">
+                <h2>Credentials Overview</h2>
+                <div class="resume-container">
+                    <div class="resume-column">
+                        <h3>Experience</h3>
+                        <div class="resume-item">
+                            <h4>Senior Product Designer</h4>
+                            <p class="resume-meta">Innovate Inc. | 2022 - Present</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>UX/UI Designer</h4>
+                            <p class="resume-meta">Creative Solutions | 2019 - 2022</p>
+                        </div>
+                         <div class="resume-item">
+                            <h4>Junior Web Developer</h4>
+                            <p class="resume-meta">Tech Forward LLC | 2018 - 2019</p>
+                        </div>
+                    </div>
+                    <div class="resume-column">
+                        <h3>Education</h3>
+                        <div class="resume-item">
+                            <h4>B.S. in Computer Science</h4>
+                            <p class="resume-meta">Georgia Institute of Technology | 2018</p>
+                        </div>
+                        <h3>Awards</h3>
+                         <div class="resume-item">
+                            <h4>"Best UI" Designathon</h4>
+                            <p class="resume-meta">Awwwards Interactive | 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-container">
+                    <a href="/resume/index" class="view-all-button">View Full Résumé</a>
+                </div>
+            </section>
+
             <div class="branded-hr">
                 <div class="line"></div>
                 <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
@@ -1350,6 +1386,7 @@ import Layout from '../layouts/Layout.astro';
     .card-tags span[data-tag="creativity"] { background-color: rgba(108, 113, 196, 0.2); color: #6C71C4; }
     .card-tags span[data-tag="georgia"] { background-color: rgba(253, 158, 116, 0.2); color: #E4865B; }
 
+
     /* --- Forms Section --- */
     .forms-grid {
         display: grid;
@@ -1468,6 +1505,53 @@ import Layout from '../layouts/Layout.astro';
         flex-grow: 1;
         margin-bottom: 1.5rem;
     }
+
+    /* --- Resume Overview --- */
+    .resume-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2.5rem;
+    }
+    .resume-column h3 {
+        color: var(--color-accent);
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+    }
+    .resume-item {
+        position: relative;
+        padding-left: 1.5rem;
+        padding-bottom: 2rem;
+        border-left: 2px solid var(--color-border);
+    }
+    .resume-item:last-child {
+        padding-bottom: 0.5rem;
+    }
+    .resume-item::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--color-accent);
+        border: 2px solid var(--color-bg);
+    }
+    .resume-item h4 {
+        color: var(--color-text);
+        font-size: 1.1rem;
+        line-height: 1.3;
+        margin: 0;
+    }
+    .resume-item .resume-meta {
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0;
+    }
     
     /* --- Responsive --- */
     @media (max-width: 920px) {
@@ -1489,7 +1573,8 @@ import Layout from '../layouts/Layout.astro';
             padding-right: var(--padding-x);
         }
         .skills-card,
-        .skill-item {
+        .skill-item,
+        .resume-container {
             grid-template-columns: 1fr;
         }
         .skill-item {
