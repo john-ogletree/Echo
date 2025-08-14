@@ -111,7 +111,9 @@
                               <span>75%</span>
                           </div>
                       </div>
-                      <a href="/bio/index" class="cta-button">More About Me</a>
+                      <div class="cta-container">
+                          <a href="/bio/index" class="cta-button">More About Me</a>
+                      </div>
                   </div>
               </section>
 
@@ -792,6 +794,11 @@
           padding-right: 0.5rem;
       }
       
+      .cta-container {
+          margin-top: auto; /* Pushes the button to the bottom */
+          padding-top: 1rem;
+      }
+
       /* --- Responsive --- */
       @media (max-width: 920px) {
           :root {
