@@ -738,7 +738,7 @@ import Layout from '../layouts/Layout.astro';
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
         margin-top: 4rem;
-        align-items: start;
+        align-items: stretch;
     }
 
     /* --- REVAMPED PROFILE CARD --- */
@@ -880,6 +880,7 @@ import Layout from '../layouts/Layout.astro';
         background-color: var(--color-bg);
         border: 1px solid var(--color-border);
         border-radius: 8px;
+        flex-grow: 1;
     }
     .skill-item {
         display: grid;
