@@ -68,25 +68,33 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <section class="about-me-section">
-                <div class="profile-card">
-                    <div class="profile-card-col1">
-                        <img src="https://via.placeholder.com/120" alt="John Ogletree" class="profile-picture" />
-                        <div class="profile-details">
+                <div class="profile-card" id="profile-card">
+                    <div class="profile-card-content">
+                        <div class="profile-header">
+                            <img src="https://avatar.iran.liara.run/public/boy?username=john" alt="John Ogletree" class="profile-picture" />
                             <h3>John Ogletree</h3>
-                            <div class="social-links">
-                                <a href="https://github.com/john-ogletree">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                                    / john-ogletree
-                                </a>
-                                <a href="https://www.linkedin.com/in/john-ogletree-6b8773379/">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                                    / john-ogletree
-                                </a>
-                                <a href="https://dribbble.com/john-ogletree">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
-                                    / john-ogletree
-                                </a>
+                            <p id="profile-status" class="profile-status">Good morning! ☀️</p>
+                        </div>
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                                <span>Martinez, GA</span>
                             </div>
+                            <div class="info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                                <span id="local-time">--:--:-- --</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                             <a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                            <a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -183,6 +191,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script is:inline>
+    // Original script for nav drawer and year
     document.addEventListener('DOMContentLoaded', function() {
         const navToggle = document.getElementById('nav-toggle');
         const navDrawer = document.getElementById('nav-drawer-container');
@@ -212,6 +221,71 @@ import Layout from '../layouts/Layout.astro';
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
         }
+    });
+
+    // New script for the revamped profile card
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- 3D Tilt Effect ---
+        const card = document.getElementById('profile-card');
+        if (card) {
+            const cardContent = card.querySelector('.profile-card-content');
+            
+            card.addEventListener('mousemove', (e) => {
+                const { left, top, width, height } = card.getBoundingClientRect();
+                const x = e.clientX - left;
+                const y = e.clientY - top;
+
+                const midX = width / 2;
+                const midY = height / 2;
+
+                const rotateX = (y - midY) / midY * -10; // Invert for natural feel
+                const rotateY = (x - midX) / midX * 10;
+
+                cardContent.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+                const glowX = (x / width) * 100;
+                const glowY = (y / height) * 100;
+                card.style.setProperty('--glow-x', `${glowX}%`);
+                card.style.setProperty('--glow-y', `${glowY}%`);
+            });
+
+            card.addEventListener('mouseleave', () => {
+                cardContent.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            });
+        }
+
+        // --- Real-time Clock and Status ---
+        const timeEl = document.getElementById('local-time');
+        const statusEl = document.getElementById('profile-status');
+
+        function updateProfileInfo() {
+            const now = new Date();
+            const hour = now.getHours();
+
+            // Set dynamic status
+            if (statusEl) {
+                if (hour < 12) {
+                    statusEl.innerHTML = 'Good morning! ☀️';
+                } else if (hour < 18) {
+                    statusEl.innerHTML = 'Good afternoon! 💻';
+                } else {
+                    statusEl.innerHTML = 'Good evening! 🌙';
+                }
+            }
+
+            // Set local time
+            if (timeEl) {
+                timeEl.textContent = now.toLocaleTimeString('en-US', {
+                    timeZone: 'America/New_York', // EDT
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+            }
+        }
+        
+        updateProfileInfo();
+        setInterval(updateProfileInfo, 1000);
     });
 </script>
 
@@ -722,69 +796,118 @@ import Layout from '../layouts/Layout.astro';
     }
     .back-to-top:hover { color: var(--color-accent); text-decoration: none;
     }
-     /* --- About Me Section --- */
+
+    /* --- About Me Section --- */
     .about-me-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
         margin-top: 4rem;
+        align-items: start;
     }
-    .profile-card, .skills-card {
+
+    /* --- REVAMPED PROFILE CARD --- */
+    .profile-card {
         background-color: var(--color-bg);
         border: 1px solid var(--color-border);
         border-radius: 8px;
-        padding: 1.5rem;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
     }
-    .profile-card {
+    .profile-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 8px;
+        background: radial-gradient(800px circle at var(--glow-x, 0%) var(--glow-y, 0%), rgba(255, 255, 255, 0.2), transparent 40%);
+        z-index: 1;
+        pointer-events: none;
+        transition: opacity 0.2s;
+    }
+    .profile-card-content {
+        background-color: var(--color-bg);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transform-style: preserve-3d;
+        transition: transform 0.1s ease-out;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        z-index: 2;
     }
-    .profile-card-col1 {
+    .profile-header {
         display: flex;
-        gap: 1.5rem;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transform: translateZ(20px);
     }
     .profile-picture {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         object-fit: cover;
         border: 2px solid var(--color-border);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    .profile-details {
+    .profile-header h3 {
+        font-size: 1.5rem;
+        margin: 0.5rem 0 0 0;
+    }
+    .profile-status {
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    .profile-info {
         display: flex;
         flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 1rem 0;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        transform: translateZ(30px);
     }
-    .profile-details h3 {
-        margin: 0 0 0.5rem 0;
-        font-size: 1.5rem;
+    .info-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+    }
+    .info-item svg {
+        color: var(--color-accent);
     }
     .social-links {
         display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
+        justify-content: center;
+        gap: 1.5rem;
+        transform: translateZ(40px);
     }
     .social-links a {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
         color: var(--color-text-light);
-        text-decoration: none;
-        font-size: 0.9rem;
+        transition: color 0.2s, transform 0.2s;
     }
     .social-links a:hover {
         color: var(--color-accent);
+        transform: scale(1.1);
     }
     .social-links svg {
-        width: 16px;
-        height: 16px;
+        width: 24px;
+        height: 24px;
     }
+    
     .skills-column {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
     }
     .skills-card {
+        padding: 1.5rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
