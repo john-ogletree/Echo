@@ -1,4 +1,4 @@
-    ---
+---
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -571,7 +571,6 @@ import Layout from '../layouts/Layout.astro';
         --color-heading: #E07A5F; /* Warm terracotta orange */
         --color-accent: #3D87A6; /* Retro teal */
         --color-border: #A69E8C; /* Faded grey-brown */
-        --color-tag-bg: rgba(61, 135, 166, 0.15); /* Faded teal transparency */
         --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
         --padding-x: 2rem;
     }
@@ -1332,16 +1331,23 @@ import Layout from '../layouts/Layout.astro';
         border-radius: 1rem;
     }
     .card-tags span[data-tag="astro"],
-    .card-tags span[data-tag="javascript"],
     .card-tags span[data-tag="tech"] {
         background-color: rgba(224, 122, 95, 0.15);
         color: #B35F48;
     }
-    .card-tags span[data-tag="css"],
     .card-tags span[data-tag="ui-ux"],
-    .card-tags span[data-tag="ui-design"] {
+    .card-tags span[data-tag="ui-design"],
+    .card-tags span[data-tag="ux-research"] {
         background-color: rgba(61, 135, 166, 0.15);
         color: #3D87A6;
+    }
+    .card-tags span[data-tag="css"] {
+        background-color: rgba(86, 182, 194, 0.15);
+        color: #56B6C2;
+    }
+    .card-tags span[data-tag="javascript"] {
+        background-color: rgba(240, 224, 90, 0.2);
+        color: #b58900;
     }
     .card-tags span[data-tag="figma"],
     .card-tags span[data-tag="prototyping"] {
@@ -1356,8 +1362,8 @@ import Layout from '../layouts/Layout.astro';
     .card-tags span[data-tag="life"],
     .card-tags span[data-tag="creativity"],
     .card-tags span[data-tag="georgia"] {
-        background-color: rgba(181, 137, 0, 0.2);
-        color: #B58900;
+        background-color: rgba(217, 91, 138, 0.15);
+        color: #D95B8A;
     }
     .card-tags span[data-tag="sci-fi"],
     .card-tags span[data-tag="apple"] {
