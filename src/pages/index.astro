@@ -62,9 +62,11 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="hero-section">
-                <h1>Welcome to the Hero Section!</h1>
-                <p>This is a brief and engaging description of what this page is all about. It's designed to capture attention and provide key information at a glance.</p>
-                <a href="/projects/index" class="cta-button">View My Work</a>
+                <div class="hero-content">
+                    <h1>Welcome to the Hero Section!</h1>
+                    <p>This is a brief and engaging description of what this page is all about. It's designed to capture attention and provide key information at a glance.</p>
+                    <a href="/projects/index" class="cta-button">View My Work</a>
+                </div>
             </div>
 
             <section class="about-me-section">
@@ -299,7 +301,6 @@ import Layout from '../layouts/Layout.astro';
             
             observer.observe(profileCard);
             
-            // --- Generate Placeholder Contribution Graph ---
             const graph = document.getElementById('contribution-graph');
             if (graph) {
                 const days = 120;
@@ -383,8 +384,7 @@ import Layout from '../layouts/Layout.astro';
         font-weight: 400;
         margin-right: 0.5rem;
     }
-    p { margin: 0 0 1rem 0;
-        max-width: 80ch; }
+    p { margin: 0 0 1rem 0; }
     a { color: var(--color-accent); text-decoration: none;
     }
     a:hover { text-decoration: underline; }
@@ -448,6 +448,18 @@ import Layout from '../layouts/Layout.astro';
         margin: 0;
         font-weight: 500;
         font-size: 1.1rem;
+    }
+
+    /* --- Hero Section --- */
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .hero-content {
+        max-width: 80ch;
     }
 
     /* --- Header Search --- */
