@@ -229,7 +229,6 @@ import Layout from '../layouts/Layout.astro';
                         </div>
                         <h3>Web Design & Development</h3>
                         <p>Crafting responsive, high-performance websites from scratch. I focus on clean code and user-centric design to build digital experiences that work beautifully on any device.</p>
-                        <a href="/services/index" class="service-link">Learn More →</a>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
@@ -237,7 +236,6 @@ import Layout from '../layouts/Layout.astro';
                         </div>
                         <h3>Interactive Prototyping</h3>
                         <p>Bringing ideas to life with high-fidelity, clickable prototypes. This crucial step allows for user testing and validation before a single line of code is written.</p>
-                        <a href="/services/index" class="service-link">Learn More →</a>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
@@ -245,8 +243,10 @@ import Layout from '../layouts/Layout.astro';
                         </div>
                         <h3>Digital Strategy & Consultation</h3>
                         <p>Leveraging user research and analytics to help you make informed decisions. I provide insights that align your digital presence with your business goals for measurable success.</p>
-                        <a href="/services/index" class="service-link">Learn More →</a>
                     </div>
+                </div>
+                <div class="view-all-container">
+                    <a href="/services/index" class="view-all-button">View All Services</a>
                 </div>
             </section>
 
@@ -1096,13 +1096,29 @@ import Layout from '../layouts/Layout.astro';
         font-size: 0.95rem;
         line-height: 1.6;
     }
-    .service-link {
-        font-weight: 700;
-        text-decoration: none;
-        color: var(--color-heading);
+    .view-all-container {
+        margin-top: 2rem;
+        text-align: center;
     }
-    .service-link:hover {
-        text-decoration: underline;
+    .view-all-button {
+        background-color: var(--color-heading);
+        color: var(--color-bg);
+        border: 1px solid var(--color-heading);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        font-weight: 700;
+        padding: 0.75rem 2rem;
+        text-decoration: none;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-mono);
+    }
+    .view-all-button:hover {
+        background-color: #D36C52;
+        border-color: #D36C52;
+        color: var(--color-bg);
+        text-decoration: none;
     }
     
     /* --- Responsive --- */
