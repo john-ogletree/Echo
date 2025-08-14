@@ -250,6 +250,56 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </section>
 
+            <section class="projects-overview">
+                <h2>Projects Overview</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="Abstract code on a screen">
+                        </div>
+                        <div class="project-content">
+                            <h3>Echo - Personal Portfolio</h3>
+                            <p>The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
+                            <div class="project-tags">
+                                <span>Astro</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Analytics dashboard with charts and graphs">
+                        </div>
+                        <div class="project-content">
+                            <h3>QuantumLeap - SaaS Dashboard</h3>
+                            <p>A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
+                            <div class="project-tags">
+                                <span>Figma</span>
+                                <span>UI/UX</span>
+                                <span>Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1931&auto=format&fit=crop" alt="Laptop with code and abstract shapes">
+                        </div>
+                        <div class="project-content">
+                            <h3>CodeGenius - AI Assistant UI</h3>
+                            <p>An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
+                            <div class="project-tags">
+                                <span>UI Design</span>
+                                <span>UX Research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-container">
+                    <a href="/projects/index" class="view-all-button">View All Projects</a>
+                </div>
+            </section>
+
             <div class="branded-hr">
                 <div class="line"></div>
                 <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
@@ -1126,6 +1176,74 @@ import Layout from '../layouts/Layout.astro';
         text-decoration: none;
     }
     
+    /* --- Projects Overview --- */
+    .projects-overview {
+        margin-top: 0;
+    }
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    .project-card {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .project-image-container {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+    }
+    .project-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-out;
+    }
+    .project-card:hover .project-image-container img {
+        transform: scale(1.05);
+    }
+    .project-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .project-content h3 {
+        color: var(--color-accent);
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .project-content p {
+        color: var(--color-text-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+    }
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .project-tags span {
+        background-color: var(--color-tag-bg);
+        color: var(--color-accent);
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+    }
+
     /* --- Responsive --- */
     @media (max-width: 920px) {
         :root {
