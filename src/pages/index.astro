@@ -1,0 +1,45 @@
+---
+// This page acts as a language-based redirector for the static site.
+const supportedLanguages = ['en', 'es', 'fr']; // Add your supported languages here
+const defaultLang = 'en';
+---
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Redirecting...</title>
+    <script is:inline>
+        (function() {
+            // Get the user's preferred language from the browser
+            const userLang = (navigator.language || navigator.userLanguage || 'en').split('-')[0].toLowerCase();
+            
+            // Define your supported languages and a default language
+            const supportedLanguages = ['en', 'es', 'fr'];
+            const defaultLang = 'en';
+
+            // Determine the redirect path
+            let redirectPath = `/${defaultLang}/`;
+            if (supportedLanguages.includes(userLang)) {
+                redirectPath = `/${userLang}/`;
+            }
+
+            // Perform the redirect
+            window.location.replace(redirectPath);
+        })();
+    </script>
+</head>
+<body>
+    <main style="font-family: sans-serif; text-align: center; padding: 2rem;">
+        <h1>Redirecting...</h1>
+        <p>Please wait while we direct you to the correct version of our site.</p>
+        <p>If you are not redirected automatically, please select your language:</p>
+        <nav>
+            <ul style="list-style: none; padding: 0; display: flex; gap: 1rem; justify-content: center;">
+                {supportedLanguages.map(lang => (
+                    <li><a href={`/${lang}/`}>{lang.toUpperCase()}</a></li>
+                ))}
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>
