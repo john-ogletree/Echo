@@ -1,5 +1,0 @@
-# Redirect rule format:
-# /source-path   https://destination-subdomain.com/path   status_code
-
-/en/profile   https://profile.john-ogletree.site/en/   301!
-/es/profile   https://profile.john-ogletree.site/es/   301!
