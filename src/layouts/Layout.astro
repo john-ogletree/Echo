@@ -1,14 +1,22 @@
 ---
+export interface Props {
+	title: string;
+	lang?: string;
+}
 
+const { title, lang = 'en' } = Astro.props;
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang={lang}>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf--8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
 	</head>
-	<slot />
+	<body>
+		<slot />
+	</body>
 </html>
