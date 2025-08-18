@@ -78,7 +78,6 @@
       const navLinks = document.querySelectorAll('.nav-links a');
       navLinks.forEach(link => {
           link.addEventListener('click', (event) => {
-              // Close nav if a regular link is clicked inside the open drawer
               if (navDrawer.classList.contains('is-open')) {
                   toggleMobileNav();
               }
@@ -258,15 +257,15 @@
     .nav-drawer-container {
         position: fixed;
         top: 0;
-        left: 0;
+        right: 0; /* Changed from left to right */
         width: 300px;
         height: 100vh;
         background-color: var(--color-surface);
-        border-right: 1px solid var(--color-border);
-        transform: translateX(-100%);
+        border-left: 1px solid var(--color-border); /* Changed from border-right */
+        transform: translateX(100%); /* Changed from -100% to 100% */
         transition: transform 0.3s ease-in-out;
         z-index: 99;
-        box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
+        box-shadow: -4px 0 16px rgba(0, 0, 0, 0.5); /* Inverted shadow */
     }
 
     .nav-drawer-container.is-open {
