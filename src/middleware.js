@@ -8,7 +8,7 @@ export const onRequest = defineMiddleware(async ({ request, rewrite }, next) => 
   const subdomain = hostnameParts[0];
 
   // A list of valid subdomains that map to a folder in src/pages/
-  const allowedSubdomains = ['start', 'profile'];
+  const allowedSubdomains = ['start', 'profile', '404'];
   
   if (allowedSubdomains.includes(subdomain)) {
     // Construct the new path to point to the correct folder, preserving the original path
