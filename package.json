@@ -9,8 +9,8 @@
     "preview": "astro preview",
     "astro": "astro"
   },
- "dependencies": {
+  "dependencies": {
     "@astrojs/cloudflare": "^10.4.2",
-    "astro": "^5.13.5"
+    "astro": "^4.16.19"
   }
 }
