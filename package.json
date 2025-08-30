@@ -1,5 +1,16 @@
 {
+  "name": "echo.website.john-ogletree",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "start": "astro start",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
+    "@astrojs/cloudflare": "^10.0.1",
     "astro": "^5.13.5"
   }
 }
