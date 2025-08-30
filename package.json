@@ -1,17 +1,5 @@
 {
-  "name": "echo.website.john-ogletree",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.7",
-    "@astrojs/ts-plugin": "^1.10.4",
-    "@astrojs/vercel": "^8.2.7",
     "astro": "^5.13.5"
   }
 }
