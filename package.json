@@ -1,20 +1,14 @@
 {
-  "name": "echo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "evolved-escape",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/john-ogletree/Echo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/john-ogletree/Echo/issues"
-  },
-  "homepage": "https://github.com/john-ogletree/Echo#readme"
+  "dependencies": {
+    "astro": "^5.13.6"
+  }
 }
