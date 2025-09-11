@@ -1,10 +1,23 @@
+---
+interface Props {
+    name: string;
+    username: string;
+    profilePicture: string;
+    repos: number;
+    contribs: number;
+    followers: number;
+    languages: { name: string; percentage: number; color: string; }[];
+}
+
+const { name, username, profilePicture, repos, contribs, followers, languages } = Astro.props;
+---
 <div class="profile-card" id="profile-card">
     <div class="profile-main-info">
         <div class="profile-header">
-            <img src="https://avatar.iran.liara.run/public/boy?username=john" alt="John Ogletree" class="profile-picture" />
+            <img src={profilePicture} alt={name} class="profile-picture" />
             <div class="profile-header-info">
-                <h3>John Ogletree</h3>
-                <p class="profile-username">@john-ogletree</p>
+                <h3>{name}</h3>
+                <p class="profile-username">@{username}</p>
                 <div class="social-links">
                     <a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -32,15 +45,15 @@
         </div>
         <div class="profile-stats">
             <div class="stat-item">
-                <span class="stat-value" data-value="42">0</span>
+                <span class="stat-value" data-value={repos}>0</span>
                 <span class="stat-label">Repos</span>
             </div>
             <div class="stat-item">
-                <span class="stat-value" data-value="1480">0</span>
+                <span class="stat-value" data-value={contribs}>0</span>
                 <span class="stat-label">Contribs</span>
             </div>
             <div class="stat-item">
-                <span class="stat-value" data-value="215">0</span>
+                <span class="stat-value" data-value={followers}>0</span>
                 <span class="stat-label">Followers</span>
             </div>
         </div>
@@ -49,27 +62,15 @@
         <span class="graph-loading">Loading graph...</span>
     </div>
     <div class="profile-stats languages">
-        <div class="stat-item">
-            <span class="stat-label">
-                <span class="lang-color" style="--lang-color: #f1e05a;"></span>
-                JavaScript
-            </span>
-            <span class="stat-value">45%</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-label">
-                <span class="lang-color" style="--lang-color: #3178c6;"></span>
-                TypeScript
-            </span>
-            <span class="stat-value">30%</span>
-        </div>
-        <div class="stat-item">
+        {languages.map(lang => (
+            <div class="stat-item">
                 <span class="stat-label">
-                <span class="lang-color" style="--lang-color: #b07219;"></span>
-                Java
-            </span>
-            <span class="stat-value">15%</span>
-        </div>
+                    <span class="lang-color" style={`--lang-color: ${lang.color};`}></span>
+                    {lang.name}
+                </span>
+                <span class="stat-value">{lang.percentage}%</span>
+            </div>
+        ))}
     </div>
 </div>
 
