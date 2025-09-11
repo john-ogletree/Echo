@@ -1,5 +1,5 @@
 ---
-const { type, title, description, image, link, contentType, videoSrc, author, audioSrc } = Astro.props;
+const { type, title, description, image, link, contentType, videoSrc, author, audioSrc, date, rating } = Astro.props;
 import Button from './Button.astro';
 
 let cardClass = 'card';
@@ -7,6 +7,10 @@ if (type === 'project') {
   cardClass += ' project-card';
 } else if (type === 'service') {
   cardClass += ' service-card';
+} else if (type === 'blog') {
+  cardClass += ' blog-card';
+} else if (type === 'review') {
+  cardClass += ' review-card';
 }
 
 if (contentType) {
@@ -57,6 +61,25 @@ if (contentType) {
       </div>
     </>
   )}
+
+  {type === 'blog' &&
+    <a href={link} class="blog-post-link">
+      <div class="card-info">
+        <h3>{title}</h3>
+        <p class="blog-post-date">{date}</p>
+        <p>{description}</p>
+      </div>
+    </a>
+  }
+
+  {type === 'review' &&
+    <div class="card-info">
+      <h3>{title}</h3>
+      <p class="review-author">By: {author}</p>
+      <p class="review-rating">Rating: {rating}/5</p>
+      <p>{description}</p>
+    </div>
+  }
 </div>
 
 <style>
@@ -156,5 +179,30 @@ if (contentType) {
     align-items: center;
     padding: 1rem; /* Add padding to the container */
     flex-grow: 1; /* Allow horizontal content to take remaining space */
+  }
+
+  /* Blog and Review specific styles */
+  .blog-card,
+  .review-card {
+    padding: 1.5rem;
+  }
+
+  .blog-post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .blog-post-date {
+    font-size: 0.8rem;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+  }
+
+  .review-author,
+  .review-rating {
+    font-size: 0.85rem;
+    color: #00e676;
+    margin-bottom: 0.5rem;
   }
 </style>
