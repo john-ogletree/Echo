@@ -59,9 +59,8 @@ import Button from '../components/Button.astro';
 
   .profile-skills {
     display: flex;
-    flex-direction: row; /* Changed to row */
-    justify-content: space-between; /* Added to space items */
-    align-items: center; /* Changed to center */
+    flex-direction: column; /* Reverted to column */
+    align-items: flex-end; /* Reverted to flex-end */
     flex-basis: 50%;
   }
 
@@ -69,8 +68,8 @@ import Button from '../components/Button.astro';
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px; /* Changed from 1rem to 10px */
-    margin-bottom: 0; /* Removed margin-bottom */
-    width: auto; /* Changed to auto */
+    margin-bottom: 1.5rem; /* Reverted margin-bottom */
+    width: 100%; /* Reverted width */
   }
 
   .skill-card {
