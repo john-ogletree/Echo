@@ -22,6 +22,14 @@ allContent.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(
 
 const latestContent = allContent[0];
 
+// Determine the image based on content type
+let latestContentImage = '';
+if (latestContent.type === 'blog') {
+  latestContentImage = '/astro.svg'; // Placeholder for blog post image
+} else if (latestContent.type === 'review') {
+  latestContentImage = '/background.svg'; // Placeholder for review image
+}
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -96,6 +104,7 @@ const latestContent = allContent[0];
         link={latestContent.link}
         author={latestContent.author}
         rating={latestContent.rating}
+        image={latestContentImage} /* Pass the determined image */
       />
     </Blog>
   </main>
