@@ -1,0 +1,68 @@
+[
+  {
+    "id": "1",
+    "type": "blog",
+    "title": "My First Blog Post",
+    "date": "September 10, 2025",
+    "excerpt": "This is a short excerpt from my first blog post. Read more to learn about my journey.",
+    "link": "/blog/first-post",
+    "image": "/astro.svg"
+  },
+  {
+    "id": "2",
+    "type": "blog",
+    "title": "Astro vs. Next.js",
+    "date": "September 05, 2025",
+    "excerpt": "A comparison of two popular frameworks for building modern websites.",
+    "link": "/blog/astro-vs-nextjs",
+    "image": "/astro.svg"
+  },
+  {
+    "id": "3",
+    "type": "blog",
+    "title": "Tips for Clean Code",
+    "date": "August 28, 2025",
+    "excerpt": "Learn some essential tips and tricks to write cleaner and more maintainable code.",
+    "link": "/blog/clean-code-tips",
+    "image": "/astro.svg"
+  },
+  {
+    "id": "4",
+    "type": "blog",
+    "title": "The Future of Web Development",
+    "date": "October 01, 2025",
+    "excerpt": "Exploring upcoming trends and technologies that will shape the web.",
+    "link": "/blog/future-web-dev",
+    "image": "/astro.svg"
+  },
+  {
+    "id": "1",
+    "type": "review",
+    "title": "Product X Review",
+    "author": "Tech Enthusiast",
+    "rating": 4.5,
+    "description": "A comprehensive review of the latest gadget, highlighting its pros and cons.",
+    "date": "2025-07-15",
+    "image": "/background.svg"
+  },
+  {
+    "id": "2",
+    "type": "review",
+    "title": "Book Y Review",
+    "author": "Literary Critic",
+    "rating": 5,
+    "description": "An insightful analysis of a timeless classic, exploring its themes and impact.",
+    "date": "2025-07-20",
+    "image": "/background.svg"
+  },
+  {
+    "id": "3",
+    "type": "review",
+    "title": "Service Z Review",
+    "author": "Satisfied Customer",
+    "rating": 4,
+    "description": "My experience with this service was excellent, highly recommended for its efficiency.",
+    "date": "2025-07-25",
+    "image": "/background.svg"
+  }
+]
