@@ -1,0 +1,43 @@
+[
+  {
+    "id": "1",
+    "type": "project",
+    "contentType": "video",
+    "title": "The Future of AI",
+    "description": "A deep dive into the potential and challenges of artificial intelligence.",
+    "videoSrc": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "link": "#",
+    "date": "2025-09-10"
+  },
+  {
+    "id": "2",
+    "type": "project",
+    "contentType": "image",
+    "title": "Abstract Art Gallery",
+    "description": "A collection of mesmerizing abstract digital art pieces.",
+    "image": "/astro.svg",
+    "link": "#",
+    "date": "2025-09-05"
+  },
+  {
+    "id": "3",
+    "type": "project",
+    "contentType": "book",
+    "title": "The Quantum Realm",
+    "description": "An exploration into the mysteries of quantum physics.",
+    "image": "/background.svg",
+    "author": "Dr. Alice Smith",
+    "link": "#",
+    "date": "2025-08-28"
+  },
+  {
+    "id": "4",
+    "type": "project",
+    "contentType": "audio",
+    "title": "Ambient Soundscapes",
+    "description": "Relaxing audio tracks for focus and meditation.",
+    "audioSrc": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    "link": "#",
+    "date": "2025-08-20"
+  }
+]
