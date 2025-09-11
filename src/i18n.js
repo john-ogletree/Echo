@@ -1,16 +1,17 @@
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+let i18nInstance;
 
-// This function will be called with resources from the Astro component
-export const setupI18n = (resources, lang) => {
-  if (!i18n.isInitialized) {
-    const i18nInstance = i18n;
+export const setupI18n = async (resources, lang) => {
+  if (!i18nInstance) {
+    const i18n = (await import('i18next')).default;
+    const LanguageDetector = (await import('i18next-browser-languagedetector')).default;
+
+    i18nInstance = i18n;
 
     if (typeof window !== 'undefined') {
       i18nInstance.use(LanguageDetector);
     }
 
-    i18nInstance.init({
+    await i18nInstance.init({
       resources,
       fallbackLng: 'en',
       lng: lang,
@@ -24,10 +25,8 @@ export const setupI18n = (resources, lang) => {
       },
     });
   } else {
-    i18n.addResourceBundle(lang, 'translation', resources[lang].translation, true, true);
-    i18n.changeLanguage(lang);
+    i18nInstance.addResourceBundle(lang, 'translation', resources[lang].translation, true, true);
+    i18nInstance.changeLanguage(lang);
   }
-  return i18n;
+  return i18nInstance;
 };
-
-export default i18n;
