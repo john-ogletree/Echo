@@ -10,6 +10,9 @@ import Card from '../components/Card.astro';
 import Blog from '../components/Blog.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
 
+import astroSvg from '../assets/astro.svg';
+import backgroundSvg from '../assets/background.svg';
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -76,7 +79,7 @@ import BlogPostCard from '../components/BlogPostCard.astro';
           contentType="image"
           title="Image Project"
           description="A project showcasing beautiful images."
-          image="https://via.placeholder.com/300/00e676/000000?text=Image"
+          image={astroSvg}
           link="#"
         />
         <Card
@@ -84,7 +87,7 @@ import BlogPostCard from '../components/BlogPostCard.astro';
           contentType="book"
           title="Book Project"
           description="A project about a fascinating book."
-          image="https://via.placeholder.com/120x180/00e676/000000?text=Book+Cover"
+          image={backgroundSvg}
           author="Jane Doe"
           link="#"
         />
