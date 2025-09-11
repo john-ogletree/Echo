@@ -1,0 +1,70 @@
+---
+---
+<section class="newsletter-signup">
+  <h2>Subscribe to Our Newsletter</h2>
+  <p>Stay updated with our latest news, projects, and insights.</p>
+  <form class="newsletter-form">
+    <input type="email" placeholder="Enter your email" required />
+    <button type="submit" class="subscribe-button">Subscribe</button>
+  </form>
+</section>
+
+<style>
+  .newsletter-signup {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #1a1a1a; /* Dark background */
+    border: 1px solid #333333; /* Darker border */
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .newsletter-signup h2 {
+    font-size: 1.5rem;
+    color: #00e676; /* Vibrant green */
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-signup p {
+    font-size: 1rem;
+    color: #e0e0e0; /* Light text */
+    margin-bottom: 1.5rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+
+  .newsletter-form input[type="email"] {
+    padding: 0.8rem 1rem;
+    border: 1px solid #555555;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    border-radius: 4px;
+    flex-grow: 1;
+    max-width: 300px;
+  }
+
+  .newsletter-form input[type="email"]::placeholder {
+    color: #888888;
+  }
+
+  .subscribe-button {
+    background-color: #00e676; /* Vibrant green */
+    color: #000000; /* Black text for contrast */
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+
+  .subscribe-button:hover {
+    background-color: #00c853; /* Slightly darker green on hover */
+  }
+</style>
