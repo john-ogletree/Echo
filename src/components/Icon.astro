@@ -1,0 +1,29 @@
+---
+interface Props {
+    path: string;
+    size?: number;
+    fill?: string;
+    stroke?: string;
+    strokeWidth?: number;
+    strokeLinecap?: "butt" | "round" | "square";
+    strokeLinejoin?: "miter" | "round" | "bevel";
+    label?: string;
+}
+
+const { path, size = 24, fill = "none", stroke = "currentColor", strokeWidth = 2, strokeLinecap = "round", strokeLinejoin = "round", label = "icon" } = Astro.props;
+---
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill={fill}
+    stroke={stroke}
+    stroke-width={strokeWidth}
+    stroke-linecap={strokeLinecap}
+    stroke-linejoin={strokeLinejoin}
+    aria-label={label}
+>
+    <path d={path}></path>
+</svg>
