@@ -1,5 +1,5 @@
 ---
-const { name, bio, avatar, buttonLink } = Astro.props;
+const { name, bio, avatar, buttonLink, skillsData } = Astro.props;
 import Button from '../components/Button.astro';
 ---
 <div class="profile">
@@ -13,10 +13,15 @@ import Button from '../components/Button.astro';
   </div>
   <div class="profile-skills">
     <div class="skills-grid">
-      <div class="skill-card">JavaScript</div>
-      <div class="skill-card">React</div>
-      <div class="skill-card">Astro</div>
-      <div class="skill-card">CSS</div>
+      {skillsData && skillsData.map(skill => (
+        <div class="skill-card">
+          <div class="skill-name">{skill.name}</div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style={`width: ${skill.percentage}%;`}></div>
+          </div>
+          <div class="skill-percentage">{skill.percentage}%</div>
+        </div>
+      ))}
     </div>
     <Button text="View More" link={buttonLink} variant="full" />
   </div>
@@ -79,5 +84,34 @@ import Button from '../components/Button.astro';
     padding: 1rem;
     text-align: center;
     color: #e0e0e0; /* Light text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .progress-bar-container {
+    width: 80%;
+    height: 8px;
+    background-color: #333333;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background-color: #00e676; /* Vibrant green */
+    border-radius: 4px;
+  }
+
+  .skill-percentage {
+    font-size: 0.8rem;
+    color: #00e676;
   }
 </style>
