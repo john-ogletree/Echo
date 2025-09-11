@@ -17,9 +17,6 @@ if (type === 'project') {
   <div class="card-info">
     <h3>{title}</h3>
     <p>{description}</p>
-    {type === 'project' && link &&
-      <a href={link} target="_blank" class="card-link">View Project</a>
-    }
   </div>
 </div>
 
@@ -64,17 +61,5 @@ if (type === 'project') {
   .card-info p {
     font-size: 0.9rem;
     color: #e0e0e0; /* Light text */
-  }
-
-  .card-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #00e676;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .card-link:hover {
-    text-decoration: underline;
   }
 </style>
