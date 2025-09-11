@@ -23,7 +23,8 @@ blogData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 const latestContent = blogData[0];
 
-const mainProfile = profileDataArray[0];
+const mainProfile = profileDataArray.find(profile => profile.type === 'person');
+const clients = profileDataArray.filter(profile => profile.type === 'client');
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -43,14 +44,16 @@ const mainProfile = profileDataArray[0];
       <p>Hello from the reusable terminal!</p>
     </Terminal>
 
-    <Profile
-      name={mainProfile.name}
-      bio={mainProfile.bio}
-      avatar={mainProfile.avatar}
-      buttonLink={mainProfile.buttonLink}
-      skillsData={skillsData.slice(0, 2)}
-      socialLinks={mainProfile.socialLinks}
-    />
+    {mainProfile &&
+      <Profile
+        name={mainProfile.name}
+        bio={mainProfile.bio}
+        avatar={mainProfile.avatar}
+        buttonLink={mainProfile.buttonLink}
+        skillsData={skillsData.slice(0, 2)}
+        socialLinks={mainProfile.socialLinks}
+      />
+    }
 
     <Services title="Service Categories">
       {
@@ -90,6 +93,22 @@ const mainProfile = profileDataArray[0];
         image={latestContent.image}
       />
     </Blog>
+
+    <section class="clients-section">
+      <h2>Our Clients</h2>
+      <div class="clients-grid">
+        {
+          clients.map(client => (
+            <Profile
+              name={client.name}
+              bio={client.bio}
+              avatar={client.avatar}
+              buttonLink={client.link}
+            />
+          ))
+        }
+      </div>
+    </section>
   </main>
 </Layout>
 
@@ -117,5 +136,24 @@ const mainProfile = profileDataArray[0];
     flex-direction: column;
     gap: 2rem; /* Same gap as the grid */
     grid-row: span 2; /* Make it span two rows */
+  }
+
+  .clients-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333333;
+  }
+
+  .clients-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #00e676;
+  }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
   }
 </style>
