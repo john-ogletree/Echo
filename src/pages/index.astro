@@ -17,6 +17,21 @@ const latestProject = projectsData[projectsData.length - 1];
 const latestBlogPost = blogPostsData[blogPostsData.length - 1];
 const latestReview = reviewsData[reviewsData.length - 1];
 
+const latestProjectsByType = {};
+
+// Assuming projectsData is ordered by date, latest first.
+// If not, a more robust sorting would be needed.
+projectsData.forEach(project => {
+  if (!latestProjectsByType[project.contentType]) {
+    latestProjectsByType[project.contentType] = project;
+  }
+});
+
+const latestVideoProject = latestProjectsByType.video;
+const latestImageProject = latestProjectsByType.image;
+const latestBookProject = latestProjectsByType.book;
+const latestAudioProject = latestProjectsByType.audio;
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -68,18 +83,59 @@ const latestReview = reviewsData[reviewsData.length - 1];
       />
     </Services>
 
-    <Projects title="Our Latest Project">
-      <Card
-        type={latestProject.type}
-        contentType={latestProject.contentType}
-        title={latestProject.title}
-        description={latestProject.description}
-        image={latestProject.image}
-        videoSrc={latestProject.videoSrc}
-        author={latestProject.author}
-        audioSrc={latestProject.audioSrc}
-        link={latestProject.link}
-      />
+    <Projects title="Our Latest Projects">
+      {latestVideoProject &&
+        <Card
+          type={latestVideoProject.type}
+          contentType={latestVideoProject.contentType}
+          title={latestVideoProject.title}
+          description={latestVideoProject.description}
+          image={latestVideoProject.image}
+          videoSrc={latestVideoProject.videoSrc}
+          author={latestVideoProject.author}
+          audioSrc={latestVideoProject.audioSrc}
+          link={latestVideoProject.link}
+        />
+      }
+      {latestImageProject &&
+        <Card
+          type={latestImageProject.type}
+          contentType={latestImageProject.contentType}
+          title={latestImageProject.title}
+          description={latestImageProject.description}
+          image={latestImageProject.image}
+          videoSrc={latestImageProject.videoSrc}
+          author={latestImageProject.author}
+          audioSrc={latestImageProject.audioSrc}
+          link={latestImageProject.link}
+        />
+      }
+      {latestBookProject &&
+        <Card
+          type={latestBookProject.type}
+          contentType={latestBookProject.contentType}
+          title={latestBookProject.title}
+          description={latestBookProject.description}
+          image={latestBookProject.image}
+          videoSrc={latestBookProject.videoSrc}
+          author={latestBookProject.author}
+          audioSrc={latestBookProject.audioSrc}
+          link={latestBookProject.link}
+        />
+      }
+      {latestAudioProject &&
+        <Card
+          type={latestAudioProject.type}
+          contentType={latestAudioProject.contentType}
+          title={latestAudioProject.title}
+          description={latestAudioProject.description}
+          image={latestAudioProject.image}
+          videoSrc={latestAudioProject.videoSrc}
+          author={latestAudioProject.author}
+          audioSrc={latestAudioProject.audioSrc}
+          link={latestAudioProject.link}
+        />
+      }
     </Projects>
 
     <Blog title="Latest Blog Posts">
