@@ -1,23 +1,32 @@
 ---
+import i18n from '../i18n';
+
 interface Props {
 	title: string;
 	description: string;
 	keywords?: string;
+	lang?: string;
 }
 
-const { title, description, keywords } = Astro.props;
+const { title, description, keywords, lang = 'en' } = Astro.props;
+
+i18n.changeLanguage(lang);
+
+const translatedTitle = i18n.t(title);
+const translatedDescription = i18n.t(description);
+const translatedKeywords = keywords ? i18n.t(keywords) : undefined;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		{keywords && <meta name="keywords" content={keywords} />}
+		<meta name="description" content={translatedDescription} />
+		{translatedKeywords && <meta name="keywords" content={translatedKeywords} />}
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{translatedTitle}</title>
 	</head>
 	<body>
 		<slot />
