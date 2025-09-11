@@ -27,7 +27,7 @@ const { name, bio, avatar } = Astro.props;
     justify-content: space-between;
     align-items: flex-start;
     padding: 2rem 0;
-    border-top: 1px solid #e1e4e8;
+    border-top: 1px solid #333333; /* Darker border */
     margin-top: 2rem;
   }
 
@@ -47,11 +47,12 @@ const { name, bio, avatar } = Astro.props;
   .profile-name {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #00e676; /* Vibrant green for name */
   }
 
   .profile-bio {
     font-size: 1rem;
-    color: #586069;
+    color: #e0e0e0; /* Light gray for text */
     margin-bottom: 1.5rem;
   }
 
@@ -71,22 +72,24 @@ const { name, bio, avatar } = Astro.props;
   }
 
   .skill-card {
-    background-color: #f6f8fa;
-    border: 1px solid #e1e4e8;
+    background-color: #1a1a1a; /* Dark background */
+    border: 1px solid #333333; /* Darker border */
     padding: 1rem;
     text-align: center;
+    color: #e0e0e0; /* Light text */
   }
 
   .view-more-button {
-    background-color: #f6f8fa;
-    color: #24292e;
+    background-color: #00e676; /* Vibrant green for button */
+    color: #000000; /* Black text for contrast */
     padding: 0.5rem 1rem;
-    border: 1px solid #e1e4e8;
+    border: none;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
 
   .view-more-button:hover {
-    background-color: #e1e4e8;
+    background-color: #00c853; /* Slightly darker green on hover */
   }
 </style>
