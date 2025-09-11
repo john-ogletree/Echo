@@ -1,11 +1,167 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="container">
+    <div class="sun"></div>
+    <div class="mercury-outline">
+      <div class="mercury">
+        <a href="https://docs.astro.build" target="_blank">Docs</a>
+      </div>
+    </div>
+    <div class="venus-outline">
+      <div class="venus">
+        <a href="https://astro.build/chat" target="_blank">Discord</a>
+      </div>
+    </div>
+    <div class="earth-outline">
+      <div class="earth">
+        <a href="https://astro.build/blog/astro-5/" target="_blank">Blog</a>
+      </div>
+    </div>
+    <div class="mars-outline">
+      <div class="mars">
+        <a href="https://github.com/withastro/astro" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  body {
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ffdb58;
+    box-shadow: 0 0 50px #ffdb58, 0 0 100px #ffdb58, 0 0 150px #ffdb58;
+    position: absolute;
+  }
+
+  .mercury-outline,
+  .venus-outline,
+  .earth-outline,
+  .mars-outline {
+    border: 1px solid #ddd4;
+    border-radius: 50%;
+    position: absolute;
+    animation: orbit 10s linear infinite;
+  }
+
+  .mercury-outline {
+    width: 150px;
+    height: 150px;
+    animation-duration: 5s;
+  }
+
+  .venus-outline {
+    width: 220px;
+    height: 220px;
+    animation-duration: 8s;
+  }
+
+  .earth-outline {
+    width: 300px;
+    height: 300px;
+    animation-duration: 12s;
+  }
+
+  .mars-outline {
+    width: 380px;
+    height: 380px;
+    animation-duration: 15s;
+  }
+
+  .mercury,
+  .venus,
+  .earth,
+  .mars {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+
+  .mercury {
+    background-color: #d2d2d2;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .venus {
+    background-color: #f5deb3;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .earth {
+    background-color: #4f86f7;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mars {
+    background-color: #c1440e;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mercury-outline:hover,
+  .venus-outline:hover,
+  .earth-outline:hover,
+  .mars-outline:hover {
+    animation-play-state: paused;
+  }
+
+  .mercury:hover,
+  .venus:hover,
+  .earth:hover,
+  .mars:hover {
+    transform: translateX(-50%) scale(1.2);
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .mercury:hover a,
+  .venus:hover a,
+  .earth:hover a,
+  .mars:hover a {
+    opacity: 1;
+  }
+
+  @keyframes orbit {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
