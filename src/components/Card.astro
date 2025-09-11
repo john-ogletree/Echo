@@ -22,17 +22,15 @@ if (contentType) {
         </a>
       }
       <div class="card-info">
-        <div class="card-text-and-button">
-          <div>
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </div>
-          {link &&
-            <Button text="View Details" link={link} variant="secondary" />
-          }
+        <div>
+          <h3>{title}</h3>
+          <p>{description}</p>
         </div>
         {contentType === 'book' && author &&
           <p class="book-author">{author}</p>
+        }
+        {link &&
+          <Button text="View Details" link={link} variant="secondary" />
         }
       </div>
     </div>
@@ -49,15 +47,13 @@ if (contentType) {
         </div>
       }
       <div class="card-info">
-        <div class="card-text-and-button">
-          <div>
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </div>
-          {type === 'project' && link &&
-            <Button text="View Details" link={link} variant="secondary" />
-          }
+        <div>
+          <h3>{title}</h3>
+          <p>{description}</p>
         </div>
+        {type === 'project' && link &&
+          <Button text="View Details" link={link} variant="secondary" />
+        }
       </div>
     </>
   )}
@@ -70,6 +66,8 @@ if (contentType) {
     overflow: hidden;
     color: #e0e0e0; /* Light text */
     transition: transform 0.3s ease;
+    display: flex; /* Make card a flex container */
+    flex-direction: column; /* Stack content vertically */
   }
 
   .card.project-card {
@@ -101,13 +99,9 @@ if (contentType) {
   .card-info {
     padding: 1rem;
     flex-grow: 1; /* Allow info to take remaining space */
-  }
-
-  .card-text-and-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem; /* Space between text and button */
+    display: flex; /* Make card-info a flex container */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Push button to bottom */
   }
 
   .card-info h3 {
@@ -161,5 +155,6 @@ if (contentType) {
     display: flex;
     align-items: center;
     padding: 1rem; /* Add padding to the container */
+    flex-grow: 1; /* Allow horizontal content to take remaining space */
   }
 </style>
