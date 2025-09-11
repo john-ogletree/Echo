@@ -11,6 +11,7 @@ import Blog from '../components/Blog.astro';
 
 import projectsData from '../data/projects.json';
 import blogData from '../data/blog.json';
+import servicesData from '../data/services.json';
 
 const latestProject = projectsData[projectsData.length - 1];
 
@@ -48,26 +49,15 @@ const latestContent = blogData[0];
     </Profile>
 
     <Services title="Our Services">
-      <Card
-        type="service"
-        title="Web Development"
-        description="We build modern, responsive, and performant websites."
-      />
-      <Card
-        type="service"
-        title="Mobile Development"
-        description="We create beautiful and user-friendly mobile applications."
-      />
-      <Card
-        type="service"
-        title="UI/UX Design"
-        description="We design intuitive and engaging user interfaces."
-      />
-      <Card
-        type="service"
-        title="Digital Marketing"
-        description="We help you grow your business and reach new customers."
-      />
+      {
+        servicesData.map(service => (
+          <Card
+            type={service.type}
+            title={service.title}
+            description={service.description}
+          />
+        ))
+      }
     </Services>
 
     <Projects title="Our Latest Project">
@@ -93,7 +83,7 @@ const latestContent = blogData[0];
         link={latestContent.link}
         author={latestContent.author}
         rating={latestContent.rating}
-        image={latestContent.image} /* Image now comes directly from blog.json */
+        image={latestContent.image}
       />
     </Blog>
   </main>
