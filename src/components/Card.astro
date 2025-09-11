@@ -11,6 +11,8 @@ if (type === 'project') {
   cardClass += ' blog-card';
 } else if (type === 'review') {
   cardClass += ' review-card';
+} else if (type === 'newsletter') {
+  cardClass += ' newsletter-card';
 }
 
 if (contentType) {
@@ -81,6 +83,19 @@ if (contentType) {
         <p class="review-author">By: {author}</p>
         <p class="review-rating">Rating: {rating}/5</p>
         <p>{description}</p>
+      </div>
+    </div>
+  }
+
+  {type === 'newsletter' &&
+    <div class="newsletter-card-content">
+      <div class="card-info">
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <Button text="Subscribe" link="#" variant="primary" />
+        </form>
       </div>
     </div>
   }
@@ -223,5 +238,44 @@ if (contentType) {
 
   .review-card-content .card-info {
     padding: 1rem; /* Add padding back to card-info */
+  }
+
+  /* Newsletter Card Specific Styles */
+  .newsletter-card {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .newsletter-card h2 {
+    font-size: 1.5rem;
+    color: #00e676; /* Vibrant green */
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-card p {
+    font-size: 1rem;
+    color: #e0e0e0; /* Light text */
+    margin-bottom: 1.5rem;
+  }
+
+  .newsletter-card .newsletter-form {
+    display: flex;
+    flex-direction: column; /* Stack input and button vertically */
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .newsletter-card .newsletter-form input[type="email"] {
+    padding: 0.8rem 1rem;
+    border: 1px solid #555555;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    border-radius: 4px;
+    width: 100%; /* Full width input */
+    max-width: 300px;
+  }
+
+  .newsletter-card .newsletter-form input[type="email"]::placeholder {
+    color: #888888;
   }
 </style>
