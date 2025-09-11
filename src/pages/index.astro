@@ -82,7 +82,7 @@ const latestReview = reviewsData[reviewsData.length - 1];
       />
     </Projects>
 
-    <Blog title="Latest Blog Posts">
+    <Blog title="Latest Blog Posts & Reviews">
       <Card
         type="blog"
         title={latestBlogPost.title}
@@ -90,9 +90,6 @@ const latestReview = reviewsData[reviewsData.length - 1];
         date={latestBlogPost.date}
         link={latestBlogPost.link}
       />
-    </Blog>
-
-    <Blog title="Latest Review">
       <Card
         type="review"
         title={latestReview.title}
