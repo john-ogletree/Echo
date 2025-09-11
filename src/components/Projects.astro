@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+import Button from '../components/Button.astro';
 ---
 <div class="projects">
   <h2>{title}</h2>
@@ -7,7 +8,7 @@ const { title } = Astro.props;
     <slot />
   </div>
   <div class="view-all-container">
-    <button class="view-all-button">View All Projects</button>
+    <Button text="View All Projects" link="#" variant="primary" />
   </div>
 </div>
 
@@ -34,19 +35,5 @@ const { title } = Astro.props;
 
   .view-all-container {
     text-align: center;
-  }
-
-  .view-all-button {
-    background-color: #00e676; /* Vibrant green for button */
-    color: #000000; /* Black text for contrast */
-    padding: 0.5rem 1rem;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .view-all-button:hover {
-    background-color: #00c853; /* Slightly darker green on hover */
   }
 </style>
