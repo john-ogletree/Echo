@@ -1,9 +1,8 @@
 ---
-const { title, coverImage } = Astro.props;
+const { title } = Astro.props;
 import Button from './Button.astro';
 ---
 <div class="blog">
-  {coverImage && <img src={coverImage} alt="Blog Cover" class="blog-cover-image" />}
   <h2>{title}</h2>
   <div class="blog-posts-grid">
     <slot />
@@ -18,13 +17,6 @@ import Button from './Button.astro';
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid #333333; /* Darker border */
-  }
-
-  .blog-cover-image {
-    width: 100%;
-    height: 200px; /* Fixed height for cover image */
-    object-fit: cover;
-    margin-bottom: 2rem;
   }
 
   .blog h2 {
