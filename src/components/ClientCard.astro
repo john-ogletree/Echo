@@ -1,0 +1,49 @@
+---
+const { name, bio, avatar, link } = Astro.props;
+---
+<div class="client-card">
+  <a href={link} target="_blank" class="client-link">
+    <img src={avatar} alt={name} class="client-avatar" />
+    <h3 class="client-name">{name}</h3>
+    <p class="client-bio">{bio}</p>
+  </a>
+</div>
+
+<style>
+  .client-card {
+    background-color: #1a1a1a; /* Dark background */
+    border: 1px solid #333333; /* Darker border */
+    padding: 1.5rem;
+    text-align: center;
+    color: #e0e0e0; /* Light text */
+    transition: transform 0.3s ease;
+  }
+
+  .client-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .client-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .client-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+  }
+
+  .client-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #00e676; /* Vibrant green */
+  }
+
+  .client-bio {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+  }
+</style>
