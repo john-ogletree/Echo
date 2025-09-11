@@ -1,5 +1,8 @@
 ---
-import i18n from '../i18n';
+import { setupI18n } from '../i18n';
+import en from '../locales/en.json';
+import es from '../locales/es.json';
+import fr from '../locales/fr.json';
 
 interface Props {
 	title: string;
@@ -10,7 +13,13 @@ interface Props {
 
 const { title, description, keywords, lang = 'en' } = Astro.props;
 
-i18n.changeLanguage(lang);
+const resources = {
+  en: { translation: en },
+  es: { translation: es },
+  fr: { translation: fr },
+};
+
+const i18n = setupI18n(resources, lang);
 
 const translatedTitle = i18n.t(title);
 const translatedDescription = i18n.t(description);
