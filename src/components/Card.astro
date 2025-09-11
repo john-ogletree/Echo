@@ -36,11 +36,15 @@ if (contentType) {
     </div>
   }
   <div class="card-info">
-    <h3>{title}</h3>
-    <p>{description}</p>
-    {type === 'project' && link &&
-      <Button text="View Details" link={link} variant="secondary" />
-    }
+    <div class="card-text-and-button">
+      <div>
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+      {type === 'project' && link &&
+        <Button text="View Details" link={link} variant="secondary" />
+      }
+    </div>
   </div>
 </div>
 
@@ -76,6 +80,13 @@ if (contentType) {
     padding: 1rem;
   }
 
+  .card-text-and-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem; /* Space between text and button */
+  }
+
   .card-info h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
@@ -85,7 +96,7 @@ if (contentType) {
   .card-info p {
     font-size: 0.9rem;
     color: #e0e0e0; /* Light text */
-    margin-bottom: 1rem; /* Added margin-bottom to separate from button */
+    margin-bottom: 0; /* Remove margin-bottom as flex handles spacing */
   }
 
   /* Specific styles for content types */
