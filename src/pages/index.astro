@@ -10,25 +10,14 @@ import Card from '../components/Card.astro';
 import Blog from '../components/Blog.astro';
 
 import projectsData from '../data/projects.json';
-import blogPostsData from '../data/blogPosts.json';
-import reviewsData from '../data/reviews.json';
+import blogData from '../data/blog.json';
 
 const latestProject = projectsData[projectsData.length - 1];
 
-const allContent = [...blogPostsData, ...reviewsData];
-
 // Sort by date in descending order (latest first)
-allContent.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+blogData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-const latestContent = allContent[0];
-
-// Determine the image based on content type
-let latestContentImage = '';
-if (latestContent.type === 'blog') {
-  latestContentImage = '/astro.svg'; // Placeholder for blog post image
-} else if (latestContent.type === 'review') {
-  latestContentImage = '/background.svg'; // Placeholder for review image
-}
+const latestContent = blogData[0];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -104,7 +93,7 @@ if (latestContent.type === 'blog') {
         link={latestContent.link}
         author={latestContent.author}
         rating={latestContent.rating}
-        image={latestContentImage} /* Pass the determined image */
+        image={latestContent.image} /* Image now comes directly from blog.json */
       />
     </Blog>
   </main>
