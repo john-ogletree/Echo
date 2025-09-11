@@ -12,6 +12,7 @@ import Blog from '../components/Blog.astro';
 import projectsData from '../data/projects.json';
 import blogData from '../data/blog.json';
 import servicesData from '../data/services.json';
+import skillsData from '../data/skills.json';
 
 const latestProject = projectsData[projectsData.length - 1];
 
@@ -19,15 +20,6 @@ const latestProject = projectsData[projectsData.length - 1];
 blogData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const latestContent = blogData[0];
-
-const skillsData = [
-  { name: 'JavaScript', percentage: 90 },
-  { name: 'React', percentage: 85 },
-  { name: 'Astro', percentage: 80 },
-  { name: 'CSS', percentage: 95 },
-  { name: 'Node.js', percentage: 75 },
-  { name: 'Python', percentage: 70 },
-];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
