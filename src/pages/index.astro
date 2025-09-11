@@ -5,16 +5,12 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
   <div class="readme-container">
     <div class="readme-content">
-      <div class="header-container">
-        <div class="header-text">
-            <h1>Pxltr<span class="blinking-cursor">_</span></h1>
-            <p><em>Freelance Developer & Artist</em></p>
-        </div>
-        <div class="badges">
-          <a href="https://github.com/your-username" target="_blank"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
-          <a href="https://www.linkedin.com/in/your-username" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-          <a href="https://www.artstation.com/your-username" target="_blank"><img src="https://img.shields.io/badge/artstation-%23191919.svg?style=for-the-badge&logo=artstation&logoColor=white" alt="ArtStation"></a>
-        </div>
+      <h1>Pxltr<span class="blinking-cursor">_</span></h1>
+      <p><em>Freelance Developer & Artist</em></p>
+      <div class="badges">
+        <a href="https://github.com/your-username" target="_blank"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/your-username" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+        <a href="https://www.artstation.com/your-username" target="_blank"><img src="https://img.shields.io/badge/artstation-%23191919.svg?style=for-the-badge&logo=artstation&logoColor=white" alt="ArtStation"></a>
       </div>
       <p>I'm a creative soul who loves to build beautiful and functional things. I specialize in web development and digital art.</p>
       
@@ -128,13 +124,22 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 8px;
   }
 
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .badges {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .badges img {
-    margin-right: 8px;
+    margin-bottom: 8px;
+    margin-right: 0;
   }
 
   p {
