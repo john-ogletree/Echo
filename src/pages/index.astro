@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { HomeIcon, ProfileIcon, CapabilitiesIcon, CreationsIcon, LogIcon, CredentialsIcon, ExplorerIcon, GitHubIcon, LinkedInIcon, DribbbleIcon, FacebookIcon, InstagramIcon, YouTubeIcon, TikTokIcon, SnapchatIcon, UIDesignIcon, UXResearchIcon, PrototypingIcon, FrontendDevIcon, CloseNavIcon, ToggleNavIcon, RepoIcon } from '../components/icons/index.astro';
+import NavLinks from '../components/NavLinks.astro';
 ---
 
 <Layout title="Home" description="Welcome to my personal website where I share my projects, thoughts, and more." keywords="personal website, portfolio, projects, blog, John Ogletree, Hero Section, Welcome, description, attention, information, View My Work, profile, skills, UI Design, UX Research, Prototyping, Frontend Dev, Repos, Contribs, Followers, JavaScript, TypeScript, Java, Digital Artist, Designer, Martinez GA, available for hire, Directory, About, Services, Projects, Log, Résumé, Contact, GitHub, LinkedIn, Dribbble">
@@ -17,27 +18,7 @@ import { HomeIcon, ProfileIcon, CapabilitiesIcon, CreationsIcon, LogIcon, Creden
                                 <input type="search" name="q" class="search-input" placeholder="Search...">
                             </form>
                         </div>
-                        <ul class="nav-links">
-                            <li><a href="/"><HomeIcon /><span>Start</span></a></li>
-                            <li><a href="/bio/index"><ProfileIcon /><span>Profile</span></a></li>
-                            <li><a href="/services/index"><CapabilitiesIcon /><span>Capabilities</span></a></li>
-                            <li><a href="/projects/index"><CreationsIcon /><span>Creations</span></a></li>
-                            <li><a href="/thoughts/index"><LogIcon /><span>Log</span></a></li>
-                            <li><a href="/resume/index"><CredentialsIcon /><span>Credentials</span></a></li>
-                            <li><a href="/forms/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Connect</span></a></li>
-                            <li><a href="/directory/index"><ExplorerIcon /><span>Explorer</span></a></li>
-                        </ul>
-                        <ul class="nav-socials">
-                            <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
-                                <GitHubIcon />
-                            </a></li>
-                            <li><a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
-                                <LinkedInIcon />
-                            </a></li>
-                            <li><a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
-                                <DribbbleIcon />
-                            </a></li>
-                        </ul>
+                        <NavLinks />
                     </nav>
                 </div>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
