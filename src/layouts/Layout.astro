@@ -19,7 +19,7 @@ const resources = {
   fr: { translation: fr },
 };
 
-const i18n = setupI18n(resources, lang);
+const i18n = await setupI18n(resources, lang);
 
 const translatedTitle = i18n.t(title);
 const translatedDescription = i18n.t(description);
