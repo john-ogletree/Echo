@@ -1,5 +1,5 @@
 ---
-const { type, title, description, image, link } = Astro.props;
+const { type, title, description, image, link, contentType, videoSrc, author, audioSrc } = Astro.props;
 
 let cardClass = 'card';
 if (type === 'project') {
@@ -7,12 +7,32 @@ if (type === 'project') {
 } else if (type === 'service') {
   cardClass += ' service-card';
 }
+
+if (contentType) {
+  cardClass += ` content-${contentType}`;
+}
 ---
 <div class={cardClass}>
-  {type === 'project' && image &&
+  {type === 'project' && contentType === 'image' && image &&
     <a href={link} target="_blank">
       <img src={image} alt={title} class="card-image" />
     </a>
+  }
+  {type === 'project' && contentType === 'video' && videoSrc &&
+    <div class="video-container">
+      <iframe src={videoSrc} frameborder="0" allowfullscreen></iframe>
+    </div>
+  }
+  {type === 'project' && contentType === 'audio' && audioSrc &&
+    <div class="audio-container">
+      <audio controls src={audioSrc}></audio>
+    </div>
+  }
+  {type === 'project' && contentType === 'book' && image &&
+    <div class="book-container">
+      <img src={image} alt={title} class="book-cover" />
+      <p class="book-author">{author}</p>
+    </div>
   }
   <div class="card-info">
     <h3>{title}</h3>
@@ -61,5 +81,40 @@ if (type === 'project') {
   .card-info p {
     font-size: 0.9rem;
     color: #e0e0e0; /* Light text */
+  }
+
+  /* Specific styles for content types */
+  .video-container,
+  .audio-container {
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-container iframe,
+  .audio-container audio {
+    width: 100%;
+    height: 100%;
+  }
+
+  .book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .book-cover {
+    width: 120px;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .book-author {
+    font-size: 0.8rem;
+    color: #00e676;
   }
 </style>
