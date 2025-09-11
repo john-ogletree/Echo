@@ -897,37 +897,7 @@ import Layout from '../layouts/Layout.astro';
         }
     }
 
-    @media (max-width: 768px) {
-        :root {
-            --padding-x: 1rem;
-        }
-        .readme-header {
-            padding: 1rem var(--padding-x);
-        }
-        .readme-body {
-            padding: 1.5rem var(--padding-x);
-        }
-        .dashboard-grid {
-            grid-template-columns: 1fr;
-            grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
-        }
-        h2 { font-size: 1.25rem;
-        }
-        .hero-header {
-            flex-direction: column;
-            text-align: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .hero-info h1 {
-            font-size: 1.75rem;
-        }
-        .hero-profile-picture {
-            display: none;
-        }
-        .branded-hr {
-            margin: 3rem 0;
-        }
+    
         .newsletter-form { flex-direction: column;
         }
         .card-grid { grid-template-columns: 1fr;
