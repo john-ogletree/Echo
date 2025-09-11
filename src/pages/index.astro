@@ -14,7 +14,7 @@ import blogData from '../data/blog.json';
 import servicesData from '../data/services.json';
 import skillsData from '../data/skills.json';
 import bannerData from '../data/banner.json';
-import profileData from '../data/profile.json';
+import profileDataArray from '../data/profile.json';
 
 const latestProject = projectsData[projectsData.length - 1];
 
@@ -22,6 +22,8 @@ const latestProject = projectsData[projectsData.length - 1];
 blogData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const latestContent = blogData[0];
+
+const mainProfile = profileDataArray[0];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -42,12 +44,12 @@ const latestContent = blogData[0];
     </Terminal>
 
     <Profile
-      name={profileData.name}
-      bio={profileData.bio}
-      avatar={profileData.avatar}
-      buttonLink={profileData.buttonLink}
+      name={mainProfile.name}
+      bio={mainProfile.bio}
+      avatar={mainProfile.avatar}
+      buttonLink={mainProfile.buttonLink}
       skillsData={skillsData.slice(0, 2)}
-      socialLinks={profileData.socialLinks}
+      socialLinks={mainProfile.socialLinks}
     />
 
     <Services title="Service Categories">
