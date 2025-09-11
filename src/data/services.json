@@ -1,26 +1,50 @@
 [
   {
-    "id": "1",
-    "type": "service",
-    "title": "Web Development",
-    "description": "We build modern, responsive, and performant websites."
+    "id": "cat-1",
+    "type": "service-category",
+    "title": "Development",
+    "description": "Building robust and scalable digital solutions.",
+    "services": [
+      {
+        "id": "1",
+        "type": "service",
+        "title": "Web Development",
+        "description": "We build modern, responsive, and performant websites."
+      },
+      {
+        "id": "2",
+        "type": "service",
+        "title": "Mobile Development",
+        "description": "We create beautiful and user-friendly mobile applications."
+      }
+    ]
   },
   {
-    "id": "2",
-    "type": "service",
-    "title": "Mobile Development",
-    "description": "We create beautiful and user-friendly mobile applications."
+    "id": "cat-2",
+    "type": "service-category",
+    "title": "Design",
+    "description": "Crafting intuitive and engaging user experiences.",
+    "services": [
+      {
+        "id": "3",
+        "type": "service",
+        "title": "UI/UX Design",
+        "description": "We design intuitive and engaging user interfaces."
+      }
+    ]
   },
   {
-    "id": "3",
-    "type": "service",
-    "title": "UI/UX Design",
-    "description": "We design intuitive and engaging user interfaces."
-  },
-  {
-    "id": "4",
-    "type": "service",
-    "title": "Digital Marketing",
-    "description": "We help you grow your business and reach new customers."
+    "id": "cat-3",
+    "type": "service-category",
+    "title": "Marketing",
+    "description": "Growing your brand and reaching your target audience.",
+    "services": [
+      {
+        "id": "4",
+        "type": "service",
+        "title": "Digital Marketing",
+        "description": "We help you grow your business and reach new customers."
+      }
+    ]
   }
 ]
