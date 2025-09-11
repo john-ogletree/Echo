@@ -48,13 +48,13 @@ const latestContent = blogData[0];
       <a href="https://twitter.com" target="_blank" class="social-link">Twitter</a>
     </Profile>
 
-    <Services title="Our Services">
+    <Services title="Service Categories">
       {
-        servicesData.map(service => (
+        servicesData.map(category => (
           <Card
-            type={service.type}
-            title={service.title}
-            description={service.description}
+            type="service-category"
+            title={category.title}
+            description={category.description}
           />
         ))
       }
