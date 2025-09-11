@@ -121,6 +121,7 @@ if (contentType) {
     height: auto;
     object-fit: cover;
     margin-right: 1rem;
+    flex-shrink: 0; /* Prevent image from shrinking */
   }
 
   .card-info {
@@ -180,7 +181,7 @@ if (contentType) {
 
   .card-content-horizontal {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start */
     padding: 1rem; /* Add padding to the container */
     flex-grow: 1; /* Allow horizontal content to take remaining space */
   }
@@ -194,7 +195,9 @@ if (contentType) {
   .blog-post-link {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex; /* Make blog post link a flex container */
+    align-items: flex-start; /* Align items to the start */
+    padding: 1rem; /* Add padding to the container */
   }
 
   .blog-post-date {
