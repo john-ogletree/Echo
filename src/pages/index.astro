@@ -7,6 +7,7 @@ import Services from '../components/Services.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import Projects from '../components/Projects.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import Button from '../components/Button.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -18,7 +19,7 @@ import ProjectCard from '../components/ProjectCard.astro';
       title="Welcome to My Site"
       subtitle="This is a simple banner created with Astro."
     >
-      <a href="/about" class="cta-button">Learn More</a>
+      <Button text="Learn More" link="/about" variant="primary" />
     </Banner>
 
     <Terminal title="example.js">
@@ -80,20 +81,6 @@ import ProjectCard from '../components/ProjectCard.astro';
 <style>
   main {
     padding: 2rem;
-  }
-
-  .cta-button {
-    background-color: #00e676; /* Vibrant green for button */
-    color: #000000; /* Black text for contrast */
-    padding: 0.5rem 1rem;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .cta-button:hover {
-    background-color: #00c853; /* Slightly darker green on hover */
   }
 
   .terminal-prompt {
