@@ -63,8 +63,8 @@ if (contentType) {
   )}
 
   {type === 'blog' &&
-    <a href={link} class="blog-post-link card-content-horizontal">
-      {image && <img src={image} alt={title} class="card-image-small" />}
+    <a href={link} class="blog-post-link">
+      {image && <img src={image} alt={title} class="card-image" />}
       <div class="card-info">
         <h3>{title}</h3>
         <p class="blog-post-date">{date}</p>
@@ -74,8 +74,8 @@ if (contentType) {
   }
 
   {type === 'review' &&
-    <div class="review-card-content card-content-horizontal">
-      {image && <img src={image} alt={title} class="card-image-small" />}
+    <div class="review-card-content">
+      {image && <img src={image} alt={title} class="card-image" />}
       <div class="card-info">
         <h3>{title}</h3>
         <p class="review-author">By: {author}</p>
@@ -195,9 +195,11 @@ if (contentType) {
   .blog-post-link {
     text-decoration: none;
     color: inherit;
-    display: flex; /* Make blog post link a flex container */
-    align-items: flex-start; /* Align items to the start */
-    padding: 1rem; /* Add padding to the container */
+    display: block; /* Changed to block */
+  }
+
+  .blog-post-link .card-info {
+    padding: 1rem; /* Add padding back to card-info */
   }
 
   .blog-post-date {
@@ -217,5 +219,9 @@ if (contentType) {
     display: flex;
     flex-direction: column;
     height: 100%; /* Ensure it takes full height */
+  }
+
+  .review-card-content .card-info {
+    padding: 1rem; /* Add padding back to card-info */
   }
 </style>
