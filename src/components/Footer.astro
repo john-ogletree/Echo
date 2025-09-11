@@ -1,46 +1,56 @@
 ---
 ---
-<footer class="readme-footer">
-    <div class="footer-grid">
-        <div class="footer-column">
-            <h4>John Ogletree</h4>
-            <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
-            <span class="badge status">status: available for hire</span>
+<footer class="site-footer">
+    <div class="footer-main">
+        <div class="footer-column about-column">
+            <h4>About Echo</h4>
+            <p>Echo is a digital portfolio and blog showcasing the work of John Ogletree, a freelance developer and artist. Explore projects, read articles, and get in touch.</p>
+            <div class="newsletter-signup">
+                <h5>Subscribe to my newsletter</h5>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" />
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </form>
+            </div>
         </div>
-        <div class="footer-column">
-            <h4>Explore</h4>
+        <div class="footer-column links-column">
+            <h4>Site Map</h4>
             <ul class="footer-links">
-                <li><a href="/directory/index">Directory</a></li>
-                <li><a href="/bio/index">About</a></li>
-                <li><a href="/services/index">Services</a></li>
-                <li><a href="/projects/index">Projects</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/bio/index">Profile</a></li>
+                <li><a href="/services/index">Capabilities</a></li>
+                <li><a href="/projects/index">Creations</a></li>
                 <li><a href="/thoughts/index">Log</a></li>
-                <li><a href="/resume/index">Résumé</a></li>
-                <li><a href="/forms/index">Contact</a></li>
+                <li><a href="/resume/index">Credentials</a></li>
+                <li><a href="/forms/index">Connect</a></li>
+                <li><a href="/directory/index">Explorer</a></li>
             </ul>
         </div>
-        <div class="footer-column">
-            <h4>Connect</h4>
+        <div class="footer-column social-column">
+            <h4>Connect With Me</h4>
             <ul class="footer-socials">
                 <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span>GitHub</span>
                 </a></li>
                 <li><a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <span>LinkedIn</span>
                 </a></li>
                 <li><a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+                    <span>Dribbble</span>
                 </a></li>
             </ul>
         </div>
-        <div class="footer-bottom-bar">
-            <p>© <span id="year"></span> John Ogletree</p>
-            <a href="#" class="back-to-top">Back to top ↑</a>
-        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© <span id="year"></span> John Ogletree. All rights reserved.</p>
+        <a href="#" class="back-to-top">Back to top ↑</a>
     </div>
 </footer>
+
 <script is:inline>
-    // Original script for nav drawer and year
     document.addEventListener('DOMContentLoaded', function() {
         const yearSpan = document.getElementById('year');
         if (yearSpan) {
@@ -48,3 +58,147 @@
         }
     });
 </script>
+
+<style>
+    .site-footer {
+        background-color: var(--color-surface);
+        color: var(--color-text-light);
+        padding: 4rem var(--padding-x) 2rem;
+        border-top: 1px solid var(--color-border);
+    }
+    .footer-main {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+    .footer-column h4 {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        color: var(--color-heading);
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    .about-column p {
+        max-width: 45ch;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    .newsletter-signup h5 {
+        font-weight: 500;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+    }
+    .newsletter-form {
+        display: flex;
+    }
+    .newsletter-input {
+        flex-grow: 1;
+        border: 1px solid var(--color-border);
+        background-color: var(--color-bg);
+        padding: 0.75rem;
+        border-radius: 6px 0 0 6px;
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--color-text);
+    }
+    .newsletter-input:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px rgba(61, 135, 166, 0.3);
+    }
+    .newsletter-button {
+        border: 1px solid var(--color-accent);
+        background-color: var(--color-accent);
+        color: var(--color-bg);
+        padding: 0.75rem 1.5rem;
+        border-radius: 0 6px 6px 0;
+        cursor: pointer;
+        font-family: var(--font-mono);
+        font-weight: 700;
+        transition: background-color 0.2s ease;
+    }
+    .newsletter-button:hover {
+        background-color: #316a83;
+    }
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .footer-links a {
+        color: var(--color-text-light);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.2s ease;
+    }
+    .footer-links a:hover {
+        color: var(--color-heading);
+    }
+    .footer-socials {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .footer-socials a {
+        color: var(--color-text-light);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1rem;
+        transition: color 0.2s ease;
+    }
+    .footer-socials a:hover {
+        color: var(--color-accent);
+    }
+    .footer-socials svg {
+        width: 24px;
+        height: 24px;
+    }
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 2rem;
+        border-top: 1px solid var(--color-border);
+        font-size: 0.9rem;
+    }
+    .back-to-top {
+        color: var(--color-text-light);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .back-to-top:hover {
+        color: var(--color-accent);
+    }
+
+    @media (max-width: 920px) {
+        .footer-main {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-main {
+            text-align: center;
+        }
+        .about-column p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .newsletter-form {
+            justify-content: center;
+        }
+        .footer-bottom {
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+</style>
