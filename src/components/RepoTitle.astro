@@ -1,7 +1,11 @@
 ---
 import { RepoIcon } from '../icons/index.astro';
+interface Props {
+    repoName: string;
+}
+const { repoName } = Astro.props;
 ---
 <div class="repo-title">
     <RepoIcon />
-    <a href="/" class="font-bold">john-ogletree/Echo</a>
+    <a href="/" class="font-bold">{repoName}</a>
 </div>
