@@ -3,21 +3,27 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="readme-container">
-    <div class="readme-content">
-      <div class="main-content">
-        <h1>Pxltr<span class="blinking-cursor">_</span></h1>
-        <p><em>Freelance Developer & Artist</em></p>
-        <p>I'm a creative soul who loves to build beautiful and functional things. I specialize in web development and digital art.</p>
-        
-        
-        
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="header-text">
+          <h1>Pxltr<span class="blinking-cursor">_</span></h1>
+          <p><em>Freelance Developer & Artist</em></p>
+        </div>
+        <div class="badges">
+          <a href="https://github.com/your-username" target="_blank"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+          <a href="https://www.linkedin.com/in/your-username" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+          <a href="https://www.artstation.com/your-username" target="_blank"><img src="https://img.shields.io/badge/artstation-%23191919.svg?style=for-the-badge&logo=artstation&logoColor=white" alt="ArtStation"></a>
+        </div>
+      </div>
+
+      <div class="content">
         <h2 id="about">About Me</h2>
         <p>I'm a passionate developer and artist with a knack for creating engaging experiences. I have a strong background in front-end development and a love for creating beautiful and intuitive user interfaces. When I'm not coding, you can find me sketching, painting, or exploring new creative mediums.</p>
-        
+
         <h2 id="skills">Skills</h2>
         <div class="skills-container">
-          <div class="skills-column">
+          <div class="skill-card">
             <h3>Development</h3>
             <ul>
               <li>HTML, CSS, JavaScript</li>
@@ -27,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
               <li>SQL, MongoDB</li>
             </ul>
           </div>
-          <div class="skills-column">
+          <div class="skill-card">
             <h3>Art & Design</h3>
             <ul>
               <li>UI/UX Design</li>
@@ -39,16 +45,23 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <h2 id="projects">Projects</h2>
-        <p>Here are a few of my recent projects:</p>
-        <ul>
-          <li><strong>Project 1:</strong> A web-based application for managing tasks and projects.</li>
-          <li><strong>Project 2:</strong> A series of digital illustrations for a children's book.</li>
-          <li><strong>Project 3:</strong> A branding and identity design for a local startup.</li>
-        </ul>
+        <div class="projects-container">
+          <div class="project-card">
+            <h3>Project 1</h3>
+            <p>A web-based application for managing tasks and projects.</p>
+          </div>
+          <div class="project-card">
+            <h3>Project 2</h3>
+            <p>A series of digital illustrations for a children's book.</p>
+          </div>
+          <div class="project-card">
+            <h3>Project 3</h3>
+            <p>A branding and identity design for a local startup.</p>
+          </div>
+        </div>
 
         <h2 id="gear">My Gear</h2>
-        <p>The hardware and software I use to get things done.</p>
-        <ul>
+        <ul class="gear-list">
           <li><strong>Computer:</strong> Custom-built PC (Ryzen 9 5900X, RTX 3080)</li>
           <li><strong>Monitor:</strong> Dell UltraSharp U2721DE</li>
           <li><strong>Keyboard:</strong> Keychron K2</li>
@@ -58,17 +71,11 @@ import Layout from '../layouts/Layout.astro';
         </ul>
 
         <h2 id="contact">Contact</h2>
-        <p>I'm always open to new opportunities and collaborations. Feel free to reach out to me via email or social media.</p>
-        <ul>
-          <li><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-username" target="_blank">linkedin.com/in/your-username</a></li>
+        <ul class="contact-list">
+          <li><a href="mailto:youremail@example.com">Email</a></li>
+          <li><a href="https://github.com/your-username" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/your-username" target="_blank">LinkedIn</a></li>
         </ul>
-      </div>
-      <div class="badges">
-        <a href="https://github.com/your-username" target="_blank"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
-        <a href="https://www.linkedin.com/in/your-username" target="_blank"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-        <a href="https://www.artstation.com/your-username" target="_blank"><img src="https://img.shields.io/badge/artstation-%23191919.svg?style=for-the-badge&logo=artstation&logoColor=white" alt="ArtStation"></a>
       </div>
     </div>
   </div>
@@ -76,30 +83,51 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   body {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-image: url('/background.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
   }
 
-  .readme-container {
-    margin: 40px auto;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-  }
-
-  .readme-content {
+  .container {
     display: flex;
-    padding: 45px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
   }
 
-  .main-content {
-    flex-grow: 1;
+  .card {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   }
 
-  h1 {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 0;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .header-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .header-text p {
+    font-size: 18px;
+    font-style: italic;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .blinking-cursor {
@@ -111,76 +139,103 @@ import Layout from '../layouts/Layout.astro';
       color: transparent;
     }
     50% {
-      color: #c9d1d9;
+      color: #fff;
     }
-  }
-
-  h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 24px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid #30363d;
-    padding-bottom: 8px;
-  }
-
-  h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 16px;
-    margin-bottom: 8px;
   }
 
   .badges {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
   }
 
   .badges img {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
   }
 
-  p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    margin-bottom: 8px;
-  }
-
-  a {
-    color: #58a6ff;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  pre {
-    background-color: #161b22;
-    padding: 16px;
-    border-radius: 6px;
-    overflow-x: auto;
-  }
-
-  code {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 14px;
+  .content h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
   }
 
   .skills-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
   }
 
-  .skills-column {
-    width: 48%;
+  .skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .skill-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skill-card li {
+    margin-bottom: 5px;
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .project-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .gear-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .gear-list li {
+    margin-bottom: 10px;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  .contact-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+
+  .contact-list a:hover {
+    color: #58a6ff;
   }
 </style>
