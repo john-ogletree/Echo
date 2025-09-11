@@ -2,11 +2,15 @@
 const { name, bio, avatar } = Astro.props;
 ---
 <div class="profile">
-  <img src={avatar} alt={name} class="profile-avatar" />
-  <div class="profile-info">
-    <h2 class="profile-name">{name}</h2>
-    <p class="profile-bio">{bio}</p>
-    <slot />
+  <div class="profile-main">
+    <img src={avatar} alt={name} class="profile-avatar" />
+    <div class="profile-info">
+      <h2 class="profile-name">{name}</h2>
+      <p class="profile-bio">{bio}</p>
+      <slot />
+    </div>
+  </div>
+  <div class="profile-skills">
     <div class="skills-grid">
       <div class="skill-card">JavaScript</div>
       <div class="skill-card">React</div>
@@ -20,11 +24,17 @@ const { name, bio, avatar } = Astro.props;
 <style>
   .profile {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     background-color: #f9f9f9;
     padding: 2rem;
     border-radius: 8px;
     margin-top: 2rem;
+  }
+
+  .profile-main {
+    display: flex;
+    align-items: center;
   }
 
   .profile-avatar {
@@ -43,6 +53,12 @@ const { name, bio, avatar } = Astro.props;
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 1.5rem;
+  }
+
+  .profile-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .skills-grid {
