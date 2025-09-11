@@ -14,38 +14,53 @@ if (contentType) {
 }
 ---
 <div class={cardClass}>
-  {type === 'project' && contentType === 'image' && image &&
-    <a href={link} target="_blank">
-      <img src={image} alt={title} class="card-image" />
-    </a>
-  }
-  {type === 'project' && contentType === 'video' && videoSrc &&
-    <div class="video-container">
-      <iframe src={videoSrc} frameborder="0" allowfullscreen></iframe>
-    </div>
-  }
-  {type === 'project' && contentType === 'audio' && audioSrc &&
-    <div class="audio-container">
-      <audio controls src={audioSrc}></audio>
-    </div>
-  }
-  {type === 'project' && contentType === 'book' && image &&
-    <div class="book-container">
-      <img src={image} alt={title} class="book-cover" />
-      <p class="book-author">{author}</p>
-    </div>
-  }
-  <div class="card-info">
-    <div class="card-text-and-button">
-      <div>
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-      {type === 'project' && link &&
-        <Button text="View Details" link={link} variant="secondary" />
+  {type === 'project' && (contentType === 'image' || contentType === 'book') ? (
+    <div class="card-content-horizontal">
+      {image &&
+        <a href={link} target="_blank">
+          <img src={image} alt={title} class="card-image-small" />
+        </a>
       }
+      <div class="card-info">
+        <div class="card-text-and-button">
+          <div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </div>
+          {link &&
+            <Button text="View Details" link={link} variant="secondary" />
+          }
+        </div>
+        {contentType === 'book' && author &&
+          <p class="book-author">{author}</p>
+        }
+      </div>
     </div>
-  </div>
+  ) : (
+    <>
+      {type === 'project' && contentType === 'video' && videoSrc &&
+        <div class="video-container">
+          <iframe src={videoSrc} frameborder="0" allowfullscreen></iframe>
+        </div>
+      }
+      {type === 'project' && contentType === 'audio' && audioSrc &&
+        <div class="audio-container">
+          <audio controls src={audioSrc}></audio>
+        </div>
+      }
+      <div class="card-info">
+        <div class="card-text-and-button">
+          <div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </div>
+          {type === 'project' && link &&
+            <Button text="View Details" link={link} variant="secondary" />
+          }
+        </div>
+      </div>
+    </>
+  )}
 </div>
 
 <style>
@@ -76,8 +91,16 @@ if (contentType) {
     object-fit: cover;
   }
 
+  .card-image-small {
+    width: 100px; /* Smaller width for horizontal layout */
+    height: auto;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+
   .card-info {
     padding: 1rem;
+    flex-grow: 1; /* Allow info to take remaining space */
   }
 
   .card-text-and-button {
@@ -132,5 +155,11 @@ if (contentType) {
   .book-author {
     font-size: 0.8rem;
     color: #00e676;
+  }
+
+  .card-content-horizontal {
+    display: flex;
+    align-items: center;
+    padding: 1rem; /* Add padding to the container */
   }
 </style>
