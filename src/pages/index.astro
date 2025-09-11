@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Terminal from '../components/Terminal.astro';
+import Profile from '../components/Profile.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -18,6 +19,15 @@ import Terminal from '../components/Terminal.astro';
       <p><span class="terminal-prompt">$</span> node example.js</p>
       <p>Hello from the reusable terminal!</p>
     </Terminal>
+
+    <Profile
+      name="John Doe"
+      bio="A passionate developer who loves creating amazing things with code."
+      avatar="https://i.pravatar.cc/150"
+    >
+      <a href="https://github.com" target="_blank" class="social-link">GitHub</a>
+      <a href="https://twitter.com" target="_blank" class="social-link">Twitter</a>
+    </Profile>
   </main>
 </Layout>
 
@@ -60,5 +70,15 @@ import Terminal from '../components/Terminal.astro';
 
   .terminal-prompt {
     color: #a0aec0;
+  }
+
+  .social-link {
+    margin-right: 1rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .social-link:hover {
+    text-decoration: underline;
   }
 </style>
