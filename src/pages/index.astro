@@ -8,6 +8,7 @@ import Projects from '../components/Projects.astro';
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
 import Blog from '../components/Blog.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 
 import projectsData from '../data/projects.json';
 import blogData from '../data/blog.json';
@@ -109,6 +110,8 @@ const clients = profileDataArray.filter(profile => profile.type === 'client');
         }
       </div>
     </section>
+
+    <NewsletterSignup />
   </main>
 </Layout>
 
