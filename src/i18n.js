@@ -1,4 +1,5 @@
 import i18n from 'i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
@@ -21,13 +22,19 @@ const loadTranslations = () => {
   return resources;
 };
 
-i18n.init({
-  resources: loadTranslations(),
-  fallbackLng: 'en',
-  debug: true,
-  interpolation: {
-    escapeValue: false,
-  },
-});
+i18n
+  .use(LanguageDetector)
+  .init({
+    resources: loadTranslations(),
+    fallbackLng: 'en',
+    debug: true,
+    detection: {
+      order: ['navigator', 'htmlTag', 'path', 'subdomain'],
+      caches: ['localStorage'],
+    },
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 export default i18n;
