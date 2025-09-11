@@ -13,10 +13,11 @@ const { title, description, image, link } = Astro.props;
 
 <style>
   .project-card {
-    background-color: #f6f8fa;
-    border: 1px solid #e1e4e8;
+    background-color: #1a1a1a; /* Dark background */
+    border: 1px solid #333333; /* Darker border */
     overflow: hidden;
     transition: transform 0.3s ease;
+    color: #e0e0e0; /* Light text */
   }
 
   .project-card:hover {
@@ -41,10 +42,11 @@ const { title, description, image, link } = Astro.props;
   .project-info h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    color: #00e676; /* Vibrant green for heading */
   }
 
   .project-info p {
     font-size: 0.9rem;
-    color: #586069;
+    color: #e0e0e0; /* Light text */
   }
 </style>
