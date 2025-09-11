@@ -2,28 +2,47 @@
 const { title, subtitle } = Astro.props;
 ---
 <div class="banner">
-  <h1>{title}</h1>
-  <p>{subtitle}</p>
-  <slot />
+  <div class="banner-grid">
+    <div class="banner-column">
+      <h1>{title}</h1>
+    </div>
+    <div class="banner-column">
+      <p>{subtitle}</p>
+    </div>
+    <div class="banner-column">
+      <slot />
+    </div>
+  </div>
 </div>
 
 <style>
   .banner {
     padding: 2rem 0;
-    text-align: center;
     border-bottom: 1px solid #333333; /* Darker border for AMOLED */
     margin-bottom: 2rem;
   }
 
+  .banner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner-column {
+    padding: 1rem;
+  }
+
   .banner h1 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     color: #00e676; /* Vibrant green for headings */
   }
 
   .banner p {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     color: #e0e0e0; /* Light gray for text */
   }
 </style>
