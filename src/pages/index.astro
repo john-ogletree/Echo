@@ -10,6 +10,9 @@ import Card from '../components/Card.astro';
 import Blog from '../components/Blog.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
 
+import projectsData from '../data/projects.json';
+
+const latestProject = projectsData[0];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -62,14 +65,17 @@ import BlogPostCard from '../components/BlogPostCard.astro';
       />
     </Services>
 
-    <Projects title="Our Projects">
+    <Projects title="Our Latest Project">
       <Card
-        type="project"
-        contentType="video"
-        title="The Future of AI"
-        description="A deep dive into the potential and challenges of artificial intelligence."
-        videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ" /* Still Rick Astley, but now it's a surprise! */
-        link="#"
+        type={latestProject.type}
+        contentType={latestProject.contentType}
+        title={latestProject.title}
+        description={latestProject.description}
+        image={latestProject.image}
+        videoSrc={latestProject.videoSrc}
+        author={latestProject.author}
+        audioSrc={latestProject.audioSrc}
+        link={latestProject.link}
       />
     </Projects>
 
