@@ -257,17 +257,7 @@ import Layout from '../layouts/Layout.astro';
             
             observer.observe(profileCard);
             
-            // --- Generate Placeholder Contribution Graph ---
-            const graph = document.getElementById('contribution-graph');
-            if (graph) {
-                const days = 120;
-                let output = '';
-                for (let i = 0; i < days; i++) {
-                    const level = Math.floor(Math.random() * 5);
-                    output += `<div class="graph-day" data-level="${level}" title="Mock contribution"></div>`;
-                }
-                graph.innerHTML = output;
-            }
+            
         }
 
         // --- Animated Skills Logic ---
