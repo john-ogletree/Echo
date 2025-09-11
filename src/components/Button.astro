@@ -21,56 +21,36 @@ if (className) {
 <style>
   .button {
     padding: 0.8rem 1.5rem;
-    border: 2px solid transparent; /* Start with transparent border */
-    font-size: 1.1rem;
+    border: 1px solid; /* Solid border */
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-in-out;
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-  }
-
-  .button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(0, 230, 118, 0.2), transparent); /* Subtle shine effect */
-    transition: all 0.7s ease;
-  }
-
-  .button:hover::before {
-    left: 100%;
+    font-weight: normal;
+    letter-spacing: 0;
+    background-color: transparent; /* Transparent background by default */
   }
 
   .button.primary {
-    background-color: rgba(0, 230, 118, 0.1); /* Semi-transparent vibrant green */
-    color: #00e676; /* Vibrant green text */
     border-color: #00e676; /* Vibrant green border */
-    box-shadow: 0 0 10px rgba(0, 230, 118, 0.4); /* Subtle glow */
+    color: #00e676; /* Vibrant green text */
   }
 
   .button.primary:hover {
-    background-color: rgba(0, 230, 118, 0.2); /* More opaque on hover */
-    box-shadow: 0 0 20px rgba(0, 230, 118, 0.6); /* Stronger glow */
+    background-color: #00e676; /* Fill with green on hover */
+    color: #000000; /* Black text on hover */
   }
 
   .button.secondary {
-    background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent light gray */
-    color: #e0e0e0; /* Light gray text */
     border-color: #e0e0e0; /* Light gray border */
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Subtle glow */
+    color: #e0e0e0; /* Light gray text */
   }
 
   .button.secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* More opaque on hover */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Stronger glow */
+    background-color: #e0e0e0; /* Fill with light gray on hover */
+    color: #000000; /* Black text on hover */
   }
 
   .button.full {
