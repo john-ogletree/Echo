@@ -1,8 +1,1114 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HomeContent from '../components/HomeContent.astro';
 ---
 
-<Layout title="Echo" description="A personal portfolio and blog.">
-    <HomeContent />
+<Layout>
+    <div class="readme-container">
+        <header class="readme-header">
+            <div class="header-right">
+                <div class="nav-drawer-container" id="nav-drawer-container">
+                    <nav class="main-nav" id="main-nav">
+                        <div class="nav-header-mobile">
+                            <button class="nav-close" aria-label="Close navigation">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                            <form class="search-form mobile-search" action="/directory" method="get">
+                                <input type="search" name="q" class="search-input" placeholder="Search...">
+                            </form>
+                        </div>
+                        <ul class="nav-links">
+                            <li><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L8.707 1.5Z"/><path d="M2.5 12.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5Z"/></svg><span>Start</span></a></li>
+                            <li><a href="/bio/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg><span>Profile</span></a></li>
+                            <li><a href="/services/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.5-3.5a.5.5 0 0 0-1 0v3h-2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5v-4z"/></svg><span>Capabilities</span></a></li>
+                            <li><a href="/projects/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M10.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3.528 3.176a.75.75 0 0 1-.917-.07L7.828 7.375a.75.75 0 0 1 0-1.104l3-2.7zM6.82 2.525a.75.75 0 0 1 .917.069l3.528 3.176a.75.75 0 0 1 0 1.104l-3-2.7z"/></svg><span>Creations</span></a></li>
+                            <li><a href="/thoughts/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.5 16h-9A1.5 1.5 0 0 1 2 14.5v-13A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v13a1.5 1.5 0 0 1-1.5 1.5zM3 14.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v13z"/><path d="M5.5 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM4 6h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1zm0 3h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1 0-1z"/></svg><span>Log</span></a></li>
+                            <li><a href="/resume/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Credentials</span></a></li>
+                            <li><a href="/forms/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zM14 4H2v8h12V4z"/><path d="M7 6h2v2H7z"/></svg><span>Connect</span></a></li>
+                            <li><a href="/directory/index"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5h-12zM12 1H.5a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V1.5a.5.5 0 0 0-.5-.5H12z"/><path d="M4.5 12.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 10.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 8.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg><span>Explorer</span></a></li>
+                        </ul>
+                        <ul class="nav-socials">
+                            <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a></li>
+                            <li><a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a></li>
+                            <li><a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+                            </a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="header-left">
+                <div class="repo-title">
+                    <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
+                    <a href="/" class="font-bold">john-ogletree/Echo</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="readme-body">
+            <div class="banner-container">
+                <p class="banner-text">This is a banner! ✨</p>
+            </div>
+
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Welcome to the Hero Section!</h1>
+                    <p>This is a brief and engaging description of what this page is all about. It's designed to capture attention and provide key information at a glance.</p>
+                    <a href="/projects/index" class="cta-button">View My Work</a>
+                </div>
+            </div>
+
+            <div class="branded-hr">
+                <div class="line"></div>
+                <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
+                <div class="line"></div>
+            </div>
+
+            <section class="about-me-section">
+                <div class="profile-card" id="profile-card">
+                    <div class="profile-main-info">
+                        <div class="profile-header">
+                            <img src="https://avatar.iran.liara.run/public/boy?username=john" alt="John Ogletree" class="profile-picture" />
+                            <div class="profile-header-info">
+                                <h3>John Ogletree</h3>
+                                <p class="profile-username">@john-ogletree</p>
+                                <div class="social-links">
+                                    <a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                    <a href="#" aria-label="Dribbble Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+                                    </a>
+                                    <a href="#" aria-label="Facebook Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                    </a>
+                                    <a href="#" aria-label="Instagram Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                    </a>
+                                    <a href="#" aria-label="YouTube Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                                    </a>
+                                    <a href="#" aria-label="TikTok Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM6 12a6 6 0 1 1 12 0v8a2 2 0 0 1-2 2h-1a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2H6a2 2 0 0 1-2-2z"></path></svg>
+                                    </a>
+                                    <a href="#" aria-label="Snapchat Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" data-value="42">0</span>
+                                <span class="stat-label">Repos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" data-value="1480">0</span>
+                                <span class="stat-label">Contribs</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" data-value="215">0</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contribution-graph" id="contribution-graph">
+                        <span class="graph-loading">Loading graph...</span>
+                    </div>
+                    <div class="profile-stats languages">
+                        <div class="stat-item">
+                            <span class="stat-label">
+                                <span class="lang-color" style="--lang-color: #f1e05a;"></span>
+                                JavaScript
+                            </span>
+                            <span class="stat-value">45%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">
+                                <span class="lang-color" style="--lang-color: #3178c6;"></span>
+                                TypeScript
+                            </span>
+                            <span class="stat-value">30%</span>
+                        </div>
+                        <div class="stat-item">
+                             <span class="stat-label">
+                                <span class="lang-color" style="--lang-color: #b07219;"></span>
+                                Java
+                            </span>
+                            <span class="stat-value">15%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-column">
+                    <div class="skills-card">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L2 7l10 5l10-5l-10-5zm0 11.67L4.08 9.53L12 14l7.92-4.47L12 13.67zM12 22l-10-5v-2.33l10 5l10-5V17l-10 5z"/></svg>
+                                <span>UI Design</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                                <span>90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/></svg>
+                                <span>UX Research</span>
+                            </div>
+                             <div class="skill-progress">
+                                <div class="progress-bar" data-width="75%"></div>
+                                <span>75%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4zm5.2 0l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4z"/></svg>
+                                <span>Prototyping</span>
+                            </div>
+                             <div class="skill-progress">
+                                <div class="progress-bar" data-width="85%"></div>
+                                <span>85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m20 18l1.41-1.41L15 10.2l-4 4l-4-4L2 15.17L3.42 16.6L7 13l4 4l5.17-5.17L20 18Z"/></svg>
+                                <span>Frontend Dev</span>
+                            </div>
+                             <div class="skill-progress">
+                                <div class="progress-bar" data-width="80%"></div>
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="/bio/index" class="about-button">More About Me</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="readme-footer">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h4>John Ogletree</h4>
+                        <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
+                        <span class="badge status">status: available for hire</span>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul class="footer-links">
+                            <li><a href="/directory/index">Directory</a></li>
+                            <li><a href="/bio/index">About</a></li>
+                            <li><a href="/services/index">Services</a></li>
+                            <li><a href="/projects/index">Projects</a></li>
+                            <li><a href="/thoughts/index">Log</a></li>
+                            <li><a href="/resume/index">Résumé</a></li>
+                            <li><a href="/forms/index">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul class="footer-socials">
+                            <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a></li>
+                            <li><a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a></li>
+                            <li><a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom-bar">
+                        <p>© <span id="year"></span> John Ogletree</p>
+                        <a href="#" class="back-to-top">Back to top ↑</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
 </Layout>
+
+<script is:inline>
+    // Original script for nav drawer and year
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.getElementById('nav-toggle');
+        const navDrawer = document.getElementById('nav-drawer-container');
+        const navClose = document.querySelector('.nav-close');
+        const body = document.body;
+        function toggleMobileNav() {
+            const isOpen = navDrawer.classList.contains('is-open');
+            navDrawer.classList.toggle('is-open', !isOpen);
+            navToggle.setAttribute('aria-expanded', !isOpen);
+            body.classList.toggle('no-scroll', !isOpen);
+        }
+
+        if (navToggle && navDrawer) {
+            navToggle.addEventListener('click', toggleMobileNav);
+            navClose.addEventListener('click', toggleMobileNav);
+        }
+
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navDrawer.classList.contains('is-open')) {
+                    toggleMobileNav();
+                }
+            });
+        });
+        const yearSpan = document.getElementById('year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    });
+
+    // New script for dynamic cards
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Profile Card Logic ---
+        const profileCard = document.getElementById('profile-card');
+        if (profileCard) {
+            const animateStats = () => {
+                const statValues = profileCard.querySelectorAll('.stat-value[data-value]');
+                statValues.forEach(stat => {
+                    const finalValue = parseInt(stat.getAttribute('data-value'), 10);
+                    const duration = 2000;
+                    const startTime = performance.now();
+                    const animate = (currentTime) => {
+                        const elapsedTime = currentTime - startTime;
+                        const progress = Math.min(elapsedTime / duration, 1);
+                        stat.textContent = Math.floor(progress * finalValue).toLocaleString();
+                        if (progress < 1) requestAnimationFrame(animate);
+                    };
+                    requestAnimationFrame(animate);
+                });
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(profileCard);
+            
+            // --- Generate Placeholder Contribution Graph ---
+            const graph = document.getElementById('contribution-graph');
+            if (graph) {
+                const days = 120;
+                let output = '';
+                for (let i = 0; i < days; i++) {
+                    const level = Math.floor(Math.random() * 5);
+                    output += `<div class="graph-day" data-level="${level}" title="Mock contribution"></div>`;
+                }
+                graph.innerHTML = output;
+            }
+        }
+
+        // --- Animated Skills Logic ---
+        const skillItems = document.querySelectorAll('.skill-item');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target.querySelector('.progress-bar');
+                    const targetWidth = progressBar.getAttribute('data-width');
+                    progressBar.style.width = targetWidth;
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillItems.forEach(item => {
+            skillObserver.observe(item);
+        });
+    });
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+    :root {
+        --color-bg: #F0EAD6; /* Light cream */
+        --color-surface: #D4C9A8; /* Muted beige */
+        --color-text: #3B2F2A; /* Deep brown-black */
+        --color-text-light: #5B4F48; /* Dark brown-grey */
+        --color-heading: #E07A5F; /* Warm terracotta orange */
+        --color-accent: #3D87A6; /* Retro teal */
+        --color-border: #A69E8C; /* Faded grey-brown */
+        --color-tag-bg: rgba(61, 135, 166, 0.15); /* Faded teal transparency */
+        --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --padding-x: 2rem;
+    }
+
+    /* --- Base & Typography --- */
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-mono);
+        font-size: 16px;
+        line-height: 1.7;
+        margin: 0;
+        padding: 0;
+        transition: transform 0.3s ease-in-out;
+    }
+    body.no-scroll {
+        overflow: hidden;
+    }
+    body.no-scroll .readme-body {
+        filter: blur(5px);
+        pointer-events: none;
+    }
+    h1, h2, h3, h4 {
+        font-family: var(--font-mono);
+        font-weight: 500;
+        color: var(--color-heading);
+        margin: 0;
+    }
+    h2 { font-size: 1.5rem; border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.5rem; margin: 2.5rem 0 1rem 0;
+    }
+    h2::before {
+        content: '##';
+        color: var(--color-text-light);
+        font-weight: 400;
+        margin-right: 0.5rem;
+    }
+    p { margin: 0 0 1rem 0; }
+    a { color: var(--color-accent); text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    hr { display: none;
+    }
+    ul { list-style: '- ';
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;}
+    blockquote {
+        margin-left: 0;
+        padding-left: 1rem;
+        border-left: 3px solid var(--color-border);
+        color: var(--color-text-light);
+    }
+
+    /* --- Main Layout --- */
+    .readme-container {
+        background-color: var(--color-surface);
+    }
+    .readme-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem var(--padding-x);
+        border-bottom: 1px solid var(--color-border);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: var(--color-surface);
+    }
+    .header-left, .header-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .repo-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.25rem;
+    }
+    .icon-repo {
+        fill: var(--color-text-light);
+    }
+    .readme-body {
+        padding: 2rem var(--padding-x);
+        transition: filter 0.3s ease-in-out;
+    }
+
+    /* --- Banner --- */
+    .banner-container {
+        background-color: var(--color-accent);
+        color: var(--color-bg);
+        padding: 1rem 2rem;
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+    .banner-text {
+        margin: 0;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    /* --- Hero Section --- */
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .hero-content {
+        max-width: 80ch;
+    }
+
+    /* --- Header Search --- */
+    .search-form { position: relative;
+    }
+    .search-input {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+        padding: 0.4rem 2rem 0.4rem 0.75rem;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        color: var(--color-text);
+        width: 180px;
+    }
+    .search-input:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px rgba(61, 135, 166, 0.3);
+    }
+    .mobile-search { display: block;
+    }
+    .desktop-search { display: none;
+    }
+
+    /* --- Header / Nav --- */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+    .nav-links a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--color-border);
+        color: var(--color-text);
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+    
+    .nav-links a:hover {
+        color: var(--color-accent);
+        text-decoration: none;
+        transform: translateX(5px);
+    }
+    .nav-links a.current-page {
+        color: var(--color-heading);
+    }
+    .nav-links a.current-page::before,
+    .nav-links a:hover::before {
+        content: '';
+        position: absolute;
+        left: -1rem;
+        height: 100%;
+        width: 4px;
+        background-color: var(--color-accent);
+        border-radius: 2px;
+    }
+    .nav-links a:active {
+        transform: scale(0.98);
+    }
+    .nav-links a span {
+        flex-grow: 1;
+    }
+    .nav-links a svg {
+        flex-shrink: 0;
+    }
+    
+    .nav-toggle,
+    .nav-close {
+        background: none;
+        border: none;
+        color: var(--color-text);
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 100;
+    }
+    
+    .nav-close {
+        display: none;
+    }
+
+    .nav-drawer-container.is-open ~ .nav-toggle {
+        display: none;
+    }
+
+    .nav-drawer-container .nav-close {
+        display: none;
+    }
+    
+    .nav-drawer-container.is-open .nav-close {
+        display: block;
+    }
+
+    .nav-drawer-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--color-surface);
+        border-right: 1px solid var(--color-border);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 99;
+        box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
+    }
+    .nav-drawer-container.is-open {
+        transform: translateX(0);
+    }
+    
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 0;
+    }
+
+    .nav-header-mobile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+        flex-shrink: 0;
+    }
+
+    .nav-header-mobile .mobile-search {
+        flex-grow: 1;
+    }
+
+    .nav-socials {
+        list-style: none;
+        padding: 1.5rem;
+        border-top: 1px solid var(--color-border);
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-shrink: 0;
+    }
+    .nav-socials a { color: var(--color-text-light);
+    }
+    .nav-socials a:hover { color: var(--color-accent);
+    }
+    .nav-socials svg { width: 24px; height: 24px;
+    }
+    
+    .branded-hr {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 4rem 0;
+    }
+    .branded-hr .line {
+        flex-grow: 1;
+        height: 1px;
+        background-color: var(--color-border);
+    }
+    .branded-hr .icon-repo {
+        fill: var(--color-text-light);
+        flex-shrink: 0;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .cta-button {
+        background-color: var(--color-heading);
+        color: var(--color-bg);
+        border: 1px solid var(--color-heading);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        width: 100%;
+        font-family: var(--font-mono);
+    }
+    .cta-button:hover {
+        background-color: #D36C52;
+        border-color: #D36C52;
+    }
+    
+    .footer {
+        padding: 2.5rem var(--padding-x) 1.5rem var(--padding-x);
+        margin: 2rem auto 0 auto;
+        border-top: 1px solid var(--color-border);
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    .footer-column h4 { color: var(--color-accent);
+        margin-bottom: 1rem; font-size: 1.1rem;
+    }
+    .footer-tagline { color: var(--color-text-light); font-size: 0.9rem; max-width: 35ch;
+    }
+    .footer-column .badge { margin-top: 0.5rem; background-color: #E07A5F;
+    color: white; border: none;
+    }
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem 1rem;
+    }
+    .footer-links li { margin: 0;
+    }
+    .footer-links a { color: var(--color-text-light);
+    text-decoration: none; font-size: 0.9rem;
+    }
+    .footer-links a:hover { color: var(--color-heading); text-decoration: underline;
+    }
+    .footer-socials {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 1.5rem;
+    }
+    .footer-socials a { color: var(--color-text-light);
+    transition: color 0.2s ease; }
+    .footer-socials a:hover { color: var(--color-accent);
+    }
+    .footer-socials svg { width: 24px; height: 24px;
+    }
+    .footer-bottom-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--color-border);
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    .footer-bottom-bar p { margin: 0;
+    }
+    .back-to-top { color: var(--color-text-light); text-decoration: none; transition: color 0.2s ease;
+    }
+    .back-to-top:hover { color: var(--color-accent); text-decoration: none;
+    }
+    
+    /* --- About Me Section --- */
+    .about-me-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 4rem;
+        align-items: stretch;
+    }
+
+    /* --- REVAMPED PROFILE CARD --- */
+    .profile-card {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .profile-main-info {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+    .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+    }
+    .profile-picture {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--color-border);
+    }
+    .profile-header-info {
+        display: flex;
+        flex-direction: column;
+    }
+    .profile-header-info h3 {
+        font-size: 1.5rem;
+        margin: 0;
+        line-height: 1.2;
+    }
+    .profile-username {
+        color: var(--color-text-light);
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+    }
+    .profile-card .social-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .profile-card .social-links a {
+        color: var(--color-text-light);
+        transition: color 0.2s, transform 0.2s;
+    }
+    .profile-card .social-links a:hover {
+        color: var(--color-accent);
+        transform: scale(1.1);
+    }
+    .profile-card .social-links svg {
+        width: 20px;
+        height: 20px;
+    }
+    .profile-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        min-width: 150px;
+    }
+    .stat-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 100%;
+    }
+    .stat-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-heading);
+    }
+    .stat-label {
+        font-size: 0.8rem;
+        color: var(--color-text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .contribution-graph {
+        display: grid;
+        grid-template-columns: repeat(20, 1fr);
+        grid-auto-flow: column;
+        grid-auto-rows: 1fr;
+        gap: 3px;
+    }
+    .graph-day {
+        aspect-ratio: 1 / 1;
+        background-color: var(--color-surface);
+        border-radius: 2px;
+    }
+    .graph-day[data-level="1"] { background-color: #9be9a8; }
+    .graph-day[data-level="2"] { background-color: #40c463; }
+    .graph-day[data-level="3"] { background-color: #30a14e; }
+    .graph-day[data-level="4"] { background-color: #216e39; }
+    .graph-loading {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    .profile-stats.languages {
+        border-top: 1px solid var(--color-border);
+        padding-top: 1.25rem;
+    }
+    .languages .stat-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .languages .stat-value {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .lang-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--lang-color, var(--color-border));
+    }
+    
+    .skills-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .skills-card {
+        padding: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        flex-grow: 1;
+    }
+    .skill-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        align-items: center;
+    }
+    .skill-info {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .skill-icon {
+        color: var(--color-accent);
+    }
+    .skill-progress {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--color-surface);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .progress-bar {
+        height: 10px;
+        background-color: var(--color-accent);
+        border-radius: 4px;
+        width: 0;
+        transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .skill-progress span {
+        font-size: 0.9rem;
+        padding-right: 0.5rem;
+    }
+    .about-button {
+        background-color: transparent;
+        color: var(--color-heading);
+        border: 1px solid var(--color-heading);
+        transition: background-color 0.2s ease, color 0.2s ease;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        width: 100%;
+        font-family: var(--font-mono);
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .about-button:hover {
+        background-color: var(--color-heading);
+        color: var(--color-bg);
+        text-decoration: none;
+    }
+    
+    /* --- Responsive --- */
+    @media (max-width: 920px) {
+        :root {
+            --padding-x: 1.5rem;
+        }
+        .hero-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero-info h1 {
+            font-size: 1.75rem;
+        }
+        .hero-profile-picture {
+            display: none;
+        }
+        .branded-hr {
+            margin: 3rem 0;
+        }
+        .readme-container {
+            position: relative;
+        }
+        .desktop-search { display: none;
+        }
+        .mobile-search { display: block;
+        }
+        
+        .nav-toggle {
+            display: block;
+        }
+        
+        .nav-close {
+            display: none;
+        }
+        
+        .nav-drawer-container.is-open ~ .nav-toggle {
+            display: none;
+        }
+
+        .nav-drawer-container .nav-close {
+            display: none;
+        }
+        
+        .nav-drawer-container.is-open .nav-close {
+            display: block;
+        }
+
+        .nav-drawer-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--color-surface);
+            border-right: 1px solid var(--color-border);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 99;
+            box-shadow: 4px 0 16px rgba(0, 0, 0, 0.5);
+        }
+        .nav-drawer-container.is-open {
+            transform: translateX(0);
+        }
+        
+        .main-nav {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 0;
+        }
+
+        .nav-header-mobile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 1.5rem 1rem 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+            flex-shrink: 0;
+        }
+
+        .nav-header-mobile .mobile-search {
+            flex-grow: 1;
+        }
+
+        .nav-socials {
+            list-style: none;
+            padding: 1.5rem;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-shrink: 0;
+        }
+        .nav-socials a { color: var(--color-text-light);
+        }
+        .nav-socials a:hover { color: var(--color-accent);
+        }
+        .nav-socials svg { width: 24px; height: 24px;
+        }
+        
+        .dashboard-grid {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "about about"
+                "services resume"
+                "projects projects"
+                "blog newsletter"
+                "contact contact";
+        }
+        .about-me-section {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        :root {
+            --padding-x: 1rem;
+        }
+        .readme-header {
+            padding: 1rem var(--padding-x);
+        }
+        .readme-body {
+            padding: 1.5rem var(--padding-x);
+        }
+        .dashboard-grid {
+            grid-template-columns: 1fr;
+            grid-template-areas: "about" "services" "projects" "blog" "resume" "newsletter" "contact";
+        }
+        h2 { font-size: 1.25rem;
+        }
+        .hero-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero-info h1 {
+            font-size: 1.75rem;
+        }
+        .hero-profile-picture {
+            display: none;
+        }
+        .branded-hr {
+            margin: 3rem 0;
+        }
+        .newsletter-form { flex-direction: column;
+        }
+        .card-grid { grid-template-columns: 1fr;
+        }
+        .footer-grid { text-align: center;
+        }
+        .footer-tagline { margin: 0 auto 1rem auto;
+        }
+        .footer-column .badge, .footer-socials { justify-content: center;
+        }
+        .footer-links { grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-bottom-bar { flex-direction: column; gap: 0.5rem;
+        }
+        .profile-main-info {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .profile-stats {
+            flex-direction: row;
+            width: 100%;
+        }
+        .stat-item {
+            align-items: center;
+        }
+    }
+</style>
