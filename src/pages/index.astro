@@ -4,10 +4,9 @@ import Terminal from '../components/Terminal.astro';
 import Profile from '../components/Profile.astro';
 import Banner from '../components/Banner.astro';
 import Services from '../components/Services.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import Projects from '../components/Projects.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -38,38 +37,45 @@ import Button from '../components/Button.astro';
     </Profile>
 
     <Services title="Our Services">
-      <ServiceCard
+      <Card
+        type="service"
         title="Web Development"
         description="We build modern, responsive, and performant websites."
       />
-      <ServiceCard
+      <Card
+        type="service"
         title="Mobile Development"
         description="We create beautiful and user-friendly mobile applications."
       />
-      <ServiceCard
+      <Card
+        type="service"
         title="UI/UX Design"
         description="We design intuitive and engaging user interfaces."
       />
-      <ServiceCard
+      <Card
+        type="service"
         title="Digital Marketing"
         description="We help you grow your business and reach new customers."
       />
     </Services>
 
     <Projects title="Our Projects">
-      <ProjectCard
+      <Card
+        type="project"
         title="Project One"
         description="A brief description of the first project."
         image="https://via.placeholder.com/300"
         link="#"
       />
-      <ProjectCard
+      <Card
+        type="project"
         title="Project Two"
         description="A brief description of the second project."
         image="https://via.placeholder.com/300"
         link="#"
       />
-      <ProjectCard
+      <Card
+        type="project"
         title="Project Three"
         description="A brief description of the third project."
         image="https://via.placeholder.com/300"
