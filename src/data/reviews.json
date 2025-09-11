@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "Product X Review",
+    "author": "Tech Enthusiast",
+    "rating": 4.5,
+    "description": "A comprehensive review of the latest gadget, highlighting its pros and cons."
+  },
+  {
+    "id": "2",
+    "title": "Book Y Review",
+    "author": "Literary Critic",
+    "rating": 5,
+    "description": "An insightful analysis of a timeless classic, exploring its themes and impact."
+  },
+  {
+    "id": "3",
+    "title": "Service Z Review",
+    "author": "Satisfied Customer",
+    "rating": 4,
+    "description": "My experience with this service was excellent, highly recommended for its efficiency."
+  }
+]
