@@ -1,5 +1,6 @@
 ---
 const { name, bio, avatar } = Astro.props;
+import Button from '../components/Button.astro';
 ---
 <div class="profile">
   <div class="profile-main">
@@ -17,7 +18,7 @@ const { name, bio, avatar } = Astro.props;
       <div class="skill-card">Astro</div>
       <div class="skill-card">CSS</div>
     </div>
-    <button class="view-more-button">View More</button>
+    <Button text="View More" link="#" variant="primary" />
   </div>
 </div>
 
@@ -77,19 +78,5 @@ const { name, bio, avatar } = Astro.props;
     padding: 1rem;
     text-align: center;
     color: #e0e0e0; /* Light text */
-  }
-
-  .view-more-button {
-    background-color: #00e676; /* Vibrant green for button */
-    color: #000000; /* Black text for contrast */
-    padding: 0.5rem 1rem;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .view-more-button:hover {
-    background-color: #00c853; /* Slightly darker green on hover */
   }
 </style>
