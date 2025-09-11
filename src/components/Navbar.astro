@@ -1,0 +1,115 @@
+---
+---
+<header>
+  <nav>
+    <a href="/" class="logo">My Site</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <button id="menu-btn" class="menu-btn">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+</header>
+
+<style>
+  header {
+    background-color: #2d3748;
+    color: white;
+    padding: 1rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+
+  .nav-links a:hover {
+    color: #a0aec0;
+  }
+
+  .menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #4a5568;
+  }
+
+  .mobile-menu a:hover {
+    background-color: #4a5568;
+  }
+
+  @media (min-width: 768px) {
+    .nav-links {
+      display: flex;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    if (mobileMenu.style.display === "flex") {
+      mobileMenu.style.display = "none";
+    } else {
+      mobileMenu.style.display = "flex";
+    }
+  });
+</script>
