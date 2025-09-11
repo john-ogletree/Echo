@@ -1,11 +1,15 @@
 ---
-const { text, link, variant = 'primary' } = Astro.props;
+const { text, link, variant = 'primary', class: className } = Astro.props;
 
 let buttonClass = 'button';
 if (variant === 'primary') {
   buttonClass += ' primary';
 } else if (variant === 'secondary') {
   buttonClass += ' secondary';
+}
+
+if (className) {
+  buttonClass += ` ${className}`;
 }
 ---
 <a href={link} class={buttonClass}>
