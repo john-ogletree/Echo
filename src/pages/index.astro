@@ -20,6 +20,15 @@ blogData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 const latestContent = blogData[0];
 
+const skillsData = [
+  { name: 'JavaScript', percentage: 90 },
+  { name: 'React', percentage: 85 },
+  { name: 'Astro', percentage: 80 },
+  { name: 'CSS', percentage: 95 },
+  { name: 'Node.js', percentage: 75 },
+  { name: 'Python', percentage: 70 },
+];
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -43,6 +52,7 @@ const latestContent = blogData[0];
       bio="A passionate developer who loves creating amazing things with code."
       avatar="https://i.pravatar.cc/150"
       buttonLink="/skills"
+      skillsData={skillsData}
     >
       <a href="https://github.com" target="_blank" class="social-link">GitHub</a>
       <a href="https://twitter.com" target="_blank" class="social-link">Twitter</a>
