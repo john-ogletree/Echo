@@ -1,5 +1,5 @@
 ---
-const { name, bio, avatar } = Astro.props;
+const { name, bio, avatar, buttonLink } = Astro.props;
 import Button from '../components/Button.astro';
 ---
 <div class="profile">
@@ -18,7 +18,7 @@ import Button from '../components/Button.astro';
       <div class="skill-card">Astro</div>
       <div class="skill-card">CSS</div>
     </div>
-    <Button text="View More" link="#" variant="primary" />
+    <Button text="View More" link={buttonLink} variant="primary" />
   </div>
 </div>
 
