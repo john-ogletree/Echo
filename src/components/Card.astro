@@ -1,5 +1,6 @@
 ---
 const { type, title, description, image, link, contentType, videoSrc, author, audioSrc } = Astro.props;
+import Button from './Button.astro';
 
 let cardClass = 'card';
 if (type === 'project') {
@@ -37,6 +38,9 @@ if (contentType) {
   <div class="card-info">
     <h3>{title}</h3>
     <p>{description}</p>
+    {type === 'project' && link &&
+      <Button text="View Details" link={link} variant="secondary" />
+    }
   </div>
 </div>
 
@@ -81,6 +85,7 @@ if (contentType) {
   .card-info p {
     font-size: 0.9rem;
     color: #e0e0e0; /* Light text */
+    margin-bottom: 1rem; /* Added margin-bottom to separate from button */
   }
 
   /* Specific styles for content types */
