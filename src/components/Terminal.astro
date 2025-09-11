@@ -17,17 +17,18 @@ const { title = 'bash' } = Astro.props;
 
 <style>
   .terminal {
-    background-color: #f6f8fa;
-    border: 1px solid #e1e4e8;
+    background-color: #1a1a1a; /* Dark background */
+    border: 1px solid #333333; /* Darker border */
     overflow: hidden;
+    color: #e0e0e0; /* Light text */
   }
 
   .terminal-header {
-    background-color: #f6f8fa;
+    background-color: #0a0a0a; /* Even darker header */
     padding: 0.5rem;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #e1e4e8;
+    border-bottom: 1px solid #333333;
   }
 
   .terminal-buttons {
@@ -40,7 +41,7 @@ const { title = 'bash' } = Astro.props;
     height: 12px;
     border-radius: 50%;
     margin-right: 0.5rem;
-    border: 1px solid #d1d5da;
+    border: 1px solid #555555; /* Slightly lighter border for buttons */
   }
 
   .terminal-button.red {
@@ -57,6 +58,7 @@ const { title = 'bash' } = Astro.props;
 
   .terminal-title {
     font-family: monospace;
+    color: #e0e0e0; /* Light text for title */
   }
 
   .terminal-body {
