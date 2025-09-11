@@ -62,6 +62,14 @@ import BlogPostCard from '../components/BlogPostCard.astro';
     </Services>
 
     <Projects title="Our Projects">
+      <Card
+        type="project"
+        contentType="video"
+        title="Video Project"
+        description="A project featuring an embedded video."
+        videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ" /* Rick Astley - Never Gonna Give You Up */
+        link="#"
+      />
       <div class="vertical-project-column">
         <Card
           type="project"
@@ -81,14 +89,6 @@ import BlogPostCard from '../components/BlogPostCard.astro';
           link="#"
         />
       </div>
-      <Card
-        type="project"
-        contentType="video"
-        title="Video Project"
-        description="A project featuring an embedded video."
-        videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ" /* Rick Astley - Never Gonna Give You Up */
-        link="#"
-      />
       <Card
         type="project"
         contentType="audio"
