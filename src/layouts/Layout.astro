@@ -1,76 +1,32 @@
 ---
-import { getI18nInstance } from '../i18n';
-import en from '../locales/en.json';
-import es from '../locales/es.json';
-import fr from '../locales/fr.json';
-
 interface Props {
 	title: string;
 	description: string;
 	keywords?: string;
-	lang?: string;
 }
 
-const { title, description, keywords, lang = 'en' } = Astro.props;
-
-const resources = {
-  en: { translation: en },
-  es: { translation: es },
-  fr: { translation: fr },
-};
-
-// Server-side initialization for rendering
-const i18n = getI18nInstance(resources, lang);
-
-const translatedTitle = i18n.t(title);
-const translatedDescription = i18n.t(description);
-const translatedKeywords = keywords ? i18n.t(keywords) : undefined;
+const { title, description, keywords } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={translatedDescription} />
-		{translatedKeywords && <meta name="keywords" content={translatedKeywords} />}
+		<meta name="description" content={description} />
+		{keywords && <meta name="keywords" content={keywords} />}
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{translatedTitle}</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-
-<script is:inline>
-  import i18n from 'i18next';
-  import LanguageDetector from 'i18next-browser-languagedetector';
-
-  const resources = JSON.parse('${JSON.stringify(resources)}');
-  const initialLang = '${lang}';
-
-  if (!i18n.isInitialized) {
-    i18n
-      .use(LanguageDetector)
-      .init({
-        resources,
-        fallbackLng: 'en',
-        lng: initialLang,
-        debug: true,
-        detection: {
-          order: ['navigator', 'htmlTag', 'path', 'subdomain'],
-          caches: ['localStorage'],
-        },
-        interpolation: {
-          escapeValue: false,
-        },
-      });
-  } else {
-    // If already initialized (e.g., by another component), just add resources
-    Object.keys(resources).forEach(lng => {
-      i18n.addResourceBundle(lng, 'translation', resources[lng].translation, true, true);
-    });
-    i18n.changeLanguage(initialLang);
-  }
-</script>
+<style>
+	html,
+	body {
+		width: 100%;
+		height: 100%;
+	}
+</style>
