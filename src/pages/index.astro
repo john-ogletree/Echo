@@ -8,29 +8,7 @@ import Header from '../components/Header.astro';
 
 <Layout title="Home" description="Welcome to my personal website where I share my projects, thoughts, and more." keywords="personal website, portfolio, projects, blog, John Ogletree, Hero Section, Welcome, description, attention, information, View My Work, profile, skills, UI Design, UX Research, Prototyping, Frontend Dev, Repos, Contribs, Followers, JavaScript, TypeScript, Java, Digital Artist, Designer, Martinez GA, available for hire, Directory, About, Services, Projects, Log, Résumé, Contact, GitHub, LinkedIn, Dribbble">
     <div class="readme-container">
-        <header class="readme-header">
-            <div class="header-right">
-                <div class="nav-drawer-container" id="nav-drawer-container">
-                    <nav class="main-nav" id="main-nav">
-                        <div class="nav-header-mobile">
-                            <button class="nav-close" aria-label="Close navigation">
-                                <CloseNavIcon />
-                            </button>
-                            <form class="search-form mobile-search" action="/directory" method="get">
-                                <input type="search" name="q" class="search-input" placeholder="Search...">
-                            </form>
-                        </div>
-                        <NavLinks />
-                    </nav>
-                </div>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <ToggleNavIcon />
-                </button>
-            </div>
-            <div class="header-left">
-                <RepoTitle repoName="john-ogletree/Echo" />
-            </div>
-        </header>
+        <Header repoName="john-ogletree/Echo" />
 
         <main class="readme-body">
             <div class="banner-container">
