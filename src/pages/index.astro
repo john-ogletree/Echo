@@ -8,6 +8,7 @@ import Projects from '../components/Projects.astro';
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
 import Blog from '../components/Blog.astro';
+import ClientCard from '../components/ClientCard.astro';
 
 import projectsData from '../data/projects.json';
 import blogData from '../data/blog.json';
@@ -99,11 +100,11 @@ const clients = profileDataArray.filter(profile => profile.type === 'client');
       <div class="clients-grid">
         {
           clients.map(client => (
-            <Profile
+            <ClientCard
               name={client.name}
               bio={client.bio}
               avatar={client.avatar}
-              buttonLink={client.link}
+              link={client.link}
             />
           ))
         }
