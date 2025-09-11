@@ -109,7 +109,60 @@ import ProfileCard from '../components/ProfileCard.astro';
                 </div>
             </section>
 
-            <FutureClients />
+            <section class="future-clients-section">
+    <h2>Future Clients</h2>
+    <p>This section is dedicated to potential clients. We offer a range of services including:</p>
+    <ul>
+        <li>Web Development</li>
+        <li>UI/UX Design</li>
+        <li>Consulting</li>
+        <li>Custom Software Solutions</li>
+    </ul>
+    <p>Feel free to <a href="/forms/index">contact us</a> for more information!</p>
+</section>
+
+<style>
+    .future-clients-section {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .future-clients-section h2 {
+        color: var(--color-heading);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .future-clients-section p {
+        color: var(--color-text);
+        margin-bottom: 1rem;
+    }
+
+    .future-clients-section ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .future-clients-section li {
+        color: var(--color-text-light);
+        margin-bottom: 0.5rem;
+    }
+
+    .future-clients-section a {
+        color: var(--color-accent);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .future-clients-section a:hover {
+        text-decoration: underline;
+    }
+</style>
 
             
         </main>
