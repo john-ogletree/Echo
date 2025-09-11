@@ -1,0 +1,45 @@
+---
+const { text, link, variant = 'primary' } = Astro.props;
+
+let buttonClass = 'button';
+if (variant === 'primary') {
+  buttonClass += ' primary';
+} else if (variant === 'secondary') {
+  buttonClass += ' secondary';
+}
+---
+<a href={link} class={buttonClass}>
+  {text}
+</a>
+
+<style>
+  .button {
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .button.primary {
+    background-color: #00e676; /* Vibrant green */
+    color: #000000; /* Black text for contrast */
+  }
+
+  .button.primary:hover {
+    background-color: #00c853; /* Slightly darker green on hover */
+  }
+
+  .button.secondary {
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light gray text */
+    border: 1px solid #333333;
+  }
+
+  .button.secondary:hover {
+    background-color: #333333; /* Darker gray on hover */
+  }
+</style>
