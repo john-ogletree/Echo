@@ -62,23 +62,35 @@ import Card from '../components/Card.astro';
     <Projects title="Our Projects">
       <Card
         type="project"
-        title="Project One"
-        description="A brief description of the first project."
-        image="https://via.placeholder.com/300"
+        contentType="image"
+        title="Image Project"
+        description="A project showcasing beautiful images."
+        image="https://via.placeholder.com/300/00e676/000000?text=Image"
         link="#"
       />
       <Card
         type="project"
-        title="Project Two"
-        description="A brief description of the second project."
-        image="https://via.placeholder.com/300"
+        contentType="video"
+        title="Video Project"
+        description="A project featuring an embedded video."
+        videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ" /* Rick Astley - Never Gonna Give You Up */
         link="#"
       />
       <Card
         type="project"
-        title="Project Three"
-        description="A brief description of the third project."
-        image="https://via.placeholder.com/300"
+        contentType="book"
+        title="Book Project"
+        description="A project about a fascinating book."
+        image="https://via.placeholder.com/120x180/00e676/000000?text=Book+Cover"
+        author="Jane Doe"
+        link="#"
+      />
+      <Card
+        type="project"
+        contentType="audio"
+        title="Audio Project"
+        description="A project with an embedded audio track."
+        audioSrc="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
         link="#"
       />
     </Projects>
