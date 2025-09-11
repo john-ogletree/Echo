@@ -1,0 +1,34 @@
+---
+import CloseNavIcon from './icons/CloseNavIcon.astro';
+import ToggleNavIcon from './icons/ToggleNavIcon.astro';
+import RepoTitle from './RepoTitle.astro';
+import NavLinks from './NavLinks.astro';
+
+interface Props {
+    repoName: string;
+}
+const { repoName } = Astro.props;
+---
+<header class="readme-header">
+    <div class="header-right">
+        <div class="nav-drawer-container" id="nav-drawer-container">
+            <nav class="main-nav" id="main-nav">
+                <div class="nav-header-mobile">
+                    <button class="nav-close" aria-label="Close navigation">
+                        <CloseNavIcon />
+                    </button>
+                    <form class="search-form mobile-search" action="/directory" method="get">
+                        <input type="search" name="q" class="search-input" placeholder="Search...">
+                    </form>
+                </div>
+                <NavLinks />
+            </nav>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <ToggleNavIcon />
+        </button>
+    </div>
+    <div class="header-left">
+        <RepoTitle repoName={repoName} />
+    </div>
+</header>
