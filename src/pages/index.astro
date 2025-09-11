@@ -63,12 +63,12 @@ import Layout from '../layouts/Layout.astro';
 
             
 
-            <section class="about-me-section">
+            <div class="content-container">
                 <div class="profile-card" id="profile-card">
                     <div class="profile-header">
                             <img src="https://avatar.iran.liara.run/public/boy?username=john" alt="John Ogletree" class="profile-picture" />
                             <div class="profile-header-info">
-                                <h3>John Ogletree</h3>
+                                <h3 class="profile-name">John Ogletree</h3>
                                 <p class="profile-username">@john-ogletree</p>
                                 <div class="social-links">
                                     <a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
@@ -141,9 +141,9 @@ import Layout from '../layouts/Layout.astro';
                         <a href="/bio/index" class="about-button">More About Me</a>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            
+
         </main>
     </div>
 </Layout>
@@ -628,12 +628,18 @@ import Layout from '../layouts/Layout.astro';
     .back-to-top:hover { color: var(--color-accent); text-decoration: none;
     }
     
-    /* --- About Me Section --- */
-    .about-me-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    /* --- Main Content Container --- */
+    .content-container {
+        display: flex;
+        flex-direction: column;
         gap: 1.5rem;
         margin-top: 4rem;
+        max-width: 960px; /* Adjust this value as needed */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-me-section {
         align-items: stretch;
     }
 
@@ -671,7 +677,7 @@ import Layout from '../layouts/Layout.astro';
         display: flex;
         flex-direction: column;
     }
-    .profile-header-info h3 {
+    .profile-name {
         font-size: 1.5rem;
         margin: 0;
         line-height: 1.2;
@@ -923,9 +929,6 @@ import Layout from '../layouts/Layout.astro';
                 "projects projects"
                 "blog newsletter"
                 "contact contact";
-        }
-        .about-me-section {
-            grid-template-columns: 1fr;
         }
     }
 
