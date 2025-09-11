@@ -1,0 +1,6 @@
+{
+  "title": "Welcome to My Site",
+  "subtitle": "This is a simple banner created with Astro.",
+  "buttonText": "Learn More",
+  "buttonLink": "/about"
+}
