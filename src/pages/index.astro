@@ -14,7 +14,10 @@ import Terminal from '../components/Terminal.astro';
       <a href="/about" class="cta-button">Learn More</a>
     </div>
 
-    <Terminal />
+    <Terminal title="example.js">
+      <p><span class="terminal-prompt">$</span> node example.js</p>
+      <p>Hello from the reusable terminal!</p>
+    </Terminal>
   </main>
 </Layout>
 
@@ -53,5 +56,9 @@ import Terminal from '../components/Terminal.astro';
 
   .cta-button:hover {
     background-color: #0056b3;
+  }
+
+  .terminal-prompt {
+    color: #a0aec0;
   }
 </style>
