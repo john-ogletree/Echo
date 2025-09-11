@@ -11,8 +11,10 @@ import Blog from '../components/Blog.astro';
 import BlogPostCard from '../components/BlogPostCard.astro';
 
 import projectsData from '../data/projects.json';
+import blogPostsData from '../data/blogPosts.json';
 
 const latestProject = projectsData[projectsData.length - 1];
+const latestBlogPost = blogPostsData[blogPostsData.length - 1];
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -81,22 +83,10 @@ const latestProject = projectsData[projectsData.length - 1];
 
     <Blog title="Latest Blog Posts">
       <BlogPostCard
-        title="My First Blog Post"
-        date="September 10, 2025"
-        excerpt="This is a short excerpt from my first blog post. Read more to learn about my journey."
-        link="/blog/first-post"
-      />
-      <BlogPostCard
-        title="Astro vs. Next.js"
-        date="September 05, 2025"
-        excerpt="A comparison of two popular frameworks for building modern websites."
-        link="/blog/astro-vs-nextjs"
-      />
-      <BlogPostCard
-        title="Tips for Clean Code"
-        date="August 28, 2025"
-        excerpt="Learn some essential tips and tricks to write cleaner and more maintainable code."
-        link="/blog/clean-code-tips"
+        title={latestBlogPost.title}
+        date={latestBlogPost.date}
+        excerpt={latestBlogPost.excerpt}
+        link={latestBlogPost.link}
       />
     </Blog>
   </main>
