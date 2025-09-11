@@ -4,27 +4,31 @@
     "title": "My First Blog Post",
     "date": "September 10, 2025",
     "excerpt": "This is a short excerpt from my first blog post. Read more to learn about my journey.",
-    "link": "/blog/first-post"
+    "link": "/blog/first-post",
+    "image": "/astro.svg"
   },
   {
     "id": "2",
     "title": "Astro vs. Next.js",
     "date": "September 05, 2025",
     "excerpt": "A comparison of two popular frameworks for building modern websites.",
-    "link": "/blog/astro-vs-nextjs"
+    "link": "/blog/astro-vs-nextjs",
+    "image": "/astro.svg"
   },
   {
     "id": "3",
     "title": "Tips for Clean Code",
     "date": "August 28, 2025",
     "excerpt": "Learn some essential tips and tricks to write cleaner and more maintainable code.",
-    "link": "/blog/clean-code-tips"
+    "link": "/blog/clean-code-tips",
+    "image": "/astro.svg"
   },
   {
     "id": "4",
     "title": "The Future of Web Development",
     "date": "October 01, 2025",
     "excerpt": "Exploring upcoming trends and technologies that will shape the web.",
-    "link": "/blog/future-web-dev"
+    "link": "/blog/future-web-dev",
+    "image": "/astro.svg"
   }
 ]
