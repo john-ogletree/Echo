@@ -1,0 +1,59 @@
+---
+---
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to My Awesome Site</h1>
+    <p>Discover amazing things and explore new possibilities.</p>
+    <a href="/learn-more" class="hero-button">Learn More</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #000000; /* True black */
+    color: #e0e0e0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    z-index: 1;
+    padding: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #00e676; /* Vibrant green */
+    text-shadow: 0 0 10px rgba(0, 230, 118, 0.6);
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-button {
+    background-color: #00e676; /* Vibrant green */
+    color: #000000; /* Black text */
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.6);
+  }
+
+  .hero-button:hover {
+    background-color: #00c853;
+    box-shadow: 0 0 25px rgba(0, 230, 118, 0.8);
+    transform: translateY(-2px);
+  }
+</style>
