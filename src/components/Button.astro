@@ -21,40 +21,62 @@ if (className) {
 <style>
   .button {
     padding: 0.8rem 1.5rem;
-    border: 1px solid; /* Solid border */
+    border: 2px solid; /* Solid border */
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    font-weight: normal;
-    letter-spacing: 0;
-    background-color: transparent; /* Transparent background by default */
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+  }
+
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 230, 118, 0.1); /* Subtle background fill */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  .button:hover::before {
+    transform: scaleX(1);
   }
 
   .button.primary {
-    border-color: #00e676; /* Vibrant green border */
+    border-color: #00e676; /* Vibrant green */
     color: #00e676; /* Vibrant green text */
+    text-shadow: 0 0 5px #00e676; /* Subtle glow */
   }
 
   .button.primary:hover {
-    background-color: #00e676; /* Fill with green on hover */
     color: #000000; /* Black text on hover */
+    text-shadow: none;
   }
 
   .button.secondary {
-    border-color: #e0e0e0; /* Light gray border */
-    color: #e0e0e0; /* Light gray text */
+    border-color: #00bcd4; /* Cyan */
+    color: #00bcd4; /* Cyan text */
+    text-shadow: 0 0 5px #00bcd4; /* Subtle glow */
   }
 
   .button.secondary:hover {
-    background-color: #e0e0e0; /* Fill with light gray on hover */
+    background-color: #00bcd4; /* Fill with cyan on hover */
     color: #000000; /* Black text on hover */
+    text-shadow: none;
   }
 
   .button.full {
     width: 100%;
-    display: block; /* Make it a block element to take full width */
+    display: block;
   }
 </style>
