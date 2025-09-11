@@ -37,9 +37,9 @@ if (contentType) {
   ) : (
     <>
       {type === 'project' && contentType === 'video' && videoSrc &&
-        <div class="video-container">
-          <iframe src={videoSrc} frameborder="0" allowfullscreen></iframe>
-        </div>
+        <a href={link} target="_blank">
+          <img src={videoSrc} alt={title} class="card-image" />
+        </a>
       }
       {type === 'project' && contentType === 'audio' && audioSrc &&
         <div class="audio-container">
