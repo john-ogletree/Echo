@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "type": "service",
+    "title": "Web Development",
+    "description": "We build modern, responsive, and performant websites."
+  },
+  {
+    "id": "2",
+    "type": "service",
+    "title": "Mobile Development",
+    "description": "We create beautiful and user-friendly mobile applications."
+  },
+  {
+    "id": "3",
+    "type": "service",
+    "title": "UI/UX Design",
+    "description": "We design intuitive and engaging user interfaces."
+  },
+  {
+    "id": "4",
+    "type": "service",
+    "title": "Digital Marketing",
+    "description": "We help you grow your business and reach new customers."
+  }
+]
