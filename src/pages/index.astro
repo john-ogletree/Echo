@@ -59,7 +59,19 @@ import ProfileCard from '../components/ProfileCard.astro';
 
         <main class="readme-body">
             <section class="about-me-section">
-                <ProfileCard />
+                                <ProfileCard
+                    name="John Ogletree"
+                    username="john-ogletree"
+                    profilePicture="https://avatar.iran.liara.run/public/boy?username=john"
+                    repos={42}
+                    contribs={1480}
+                    followers={215}
+                    languages={[
+                        { name: "JavaScript", percentage: 45, color: "#f1e05a" },
+                        { name: "TypeScript", percentage: 30, color: "#3178c6" },
+                        { name: "Java", percentage: 15, color: "#b07219" },
+                    ]}
+                />
                 <div class="skills-column">
                     <div class="skills-card">
                         <div class="skill-item">
