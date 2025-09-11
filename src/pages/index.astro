@@ -13,6 +13,7 @@ import projectsData from '../data/projects.json';
 import blogData from '../data/blog.json';
 import servicesData from '../data/services.json';
 import skillsData from '../data/skills.json';
+import bannerData from '../data/banner.json';
 
 const latestProject = projectsData[projectsData.length - 1];
 
@@ -28,10 +29,10 @@ const latestContent = blogData[0];
 <Layout>
   <main>
     <Banner
-      title="Welcome to My Site"
-      subtitle="This is a simple banner created with Astro."
+      title={bannerData.title}
+      subtitle={bannerData.subtitle}
     >
-      <Button text="Learn More" link="/about" variant="primary" />
+      <Button text={bannerData.buttonText} link={bannerData.buttonLink} variant="primary" />
     </Banner>
 
     <Terminal title="example.js">
