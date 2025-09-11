@@ -64,6 +64,7 @@ if (contentType) {
 
   {type === 'blog' &&
     <a href={link} class="blog-post-link">
+      {image && <img src={image} alt={title} class="card-image" />}
       <div class="card-info">
         <h3>{title}</h3>
         <p class="blog-post-date">{date}</p>
@@ -73,11 +74,14 @@ if (contentType) {
   }
 
   {type === 'review' &&
-    <div class="card-info">
-      <h3>{title}</h3>
-      <p class="review-author">By: {author}</p>
-      <p class="review-rating">Rating: {rating}/5</p>
-      <p>{description}</p>
+    <div class="review-card-content">
+      {image && <img src={image} alt={title} class="card-image" />}
+      <div class="card-info">
+        <h3>{title}</h3>
+        <p class="review-author">By: {author}</p>
+        <p class="review-rating">Rating: {rating}/5</p>
+        <p>{description}</p>
+      </div>
     </div>
   }
 </div>
@@ -184,7 +188,7 @@ if (contentType) {
   /* Blog and Review specific styles */
   .blog-card,
   .review-card {
-    padding: 1.5rem;
+    padding: 0; /* Remove padding from card itself */
   }
 
   .blog-post-link {
@@ -204,5 +208,11 @@ if (contentType) {
     font-size: 0.85rem;
     color: #00e676;
     margin-bottom: 0.5rem;
+  }
+
+  .review-card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure it takes full height */
   }
 </style>
