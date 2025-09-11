@@ -63,8 +63,8 @@ if (contentType) {
   )}
 
   {type === 'blog' &&
-    <a href={link} class="blog-post-link">
-      {image && <img src={image} alt={title} class="card-image" />}
+    <a href={link} class="blog-post-link card-content-horizontal">
+      {image && <img src={image} alt={title} class="card-image-small" />}
       <div class="card-info">
         <h3>{title}</h3>
         <p class="blog-post-date">{date}</p>
@@ -74,8 +74,8 @@ if (contentType) {
   }
 
   {type === 'review' &&
-    <div class="review-card-content">
-      {image && <img src={image} alt={title} class="card-image" />}
+    <div class="review-card-content card-content-horizontal">
+      {image && <img src={image} alt={title} class="card-image-small" />}
       <div class="card-info">
         <h3>{title}</h3>
         <p class="review-author">By: {author}</p>
