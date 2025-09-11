@@ -1,16 +1,15 @@
 ---
-const { title, subtitle } = Astro.props;
 ---
 <div class="banner">
   <div class="banner-grid">
     <div class="banner-column">
-      <h1>{title}</h1>
+      <h1>Welcome to My Site</h1>
     </div>
     <div class="banner-column">
-      <p>{subtitle}</p>
+      <p>This is a simple banner created with Astro.</p>
     </div>
     <div class="banner-column">
-      <slot />
+      <a href="/about" class="static-button">Learn More</a>
     </div>
   </div>
 </div>
@@ -44,5 +43,23 @@ const { title, subtitle } = Astro.props;
     font-size: 1rem;
     margin-bottom: 0;
     color: #e0e0e0; /* Light gray for text */
+  }
+
+  .static-button {
+    background-color: #00e676; /* Vibrant green */
+    color: #000000; /* Black text for contrast */
+    padding: 0.8rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .static-button:hover {
+    background-color: #00c853; /* Slightly darker green on hover */
   }
 </style>
