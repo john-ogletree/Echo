@@ -62,29 +62,31 @@ import BlogPostCard from '../components/BlogPostCard.astro';
     </Services>
 
     <Projects title="Our Projects">
-      <Card
-        type="project"
-        contentType="image"
-        title="Image Project"
-        description="A project showcasing beautiful images."
-        image="https://via.placeholder.com/300/00e676/000000?text=Image"
-        link="#"
-      />
+      <div class="vertical-project-column">
+        <Card
+          type="project"
+          contentType="image"
+          title="Image Project"
+          description="A project showcasing beautiful images."
+          image="https://via.placeholder.com/300/00e676/000000?text=Image"
+          link="#"
+        />
+        <Card
+          type="project"
+          contentType="book"
+          title="Book Project"
+          description="A project about a fascinating book."
+          image="https://via.placeholder.com/120x180/00e676/000000?text=Book+Cover"
+          author="Jane Doe"
+          link="#"
+        />
+      </div>
       <Card
         type="project"
         contentType="video"
         title="Video Project"
         description="A project featuring an embedded video."
         videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ" /* Rick Astley - Never Gonna Give You Up */
-        link="#"
-      />
-      <Card
-        type="project"
-        contentType="book"
-        title="Book Project"
-        description="A project about a fascinating book."
-        image="https://via.placeholder.com/120x180/00e676/000000?text=Book+Cover"
-        author="Jane Doe"
         link="#"
       />
       <Card
@@ -137,5 +139,11 @@ import BlogPostCard from '../components/BlogPostCard.astro';
 
   .social-link:hover {
     text-decoration: underline;
+  }
+
+  .vertical-project-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Same gap as the grid */
   }
 </style>
