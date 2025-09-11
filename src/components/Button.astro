@@ -6,6 +6,8 @@ if (variant === 'primary') {
   buttonClass += ' primary';
 } else if (variant === 'secondary') {
   buttonClass += ' secondary';
+} else if (variant === 'full') {
+  buttonClass += ' full';
 }
 
 if (className) {
@@ -45,5 +47,10 @@ if (className) {
 
   .button.secondary:hover {
     background-color: #333333; /* Darker gray on hover */
+  }
+
+  .button.full {
+    width: 100%;
+    display: block; /* Make it a block element to take full width */
   }
 </style>
