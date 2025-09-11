@@ -7,6 +7,13 @@ const { name, bio, avatar } = Astro.props;
     <h2 class="profile-name">{name}</h2>
     <p class="profile-bio">{bio}</p>
     <slot />
+    <div class="skills-grid">
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">React</div>
+      <div class="skill-card">Astro</div>
+      <div class="skill-card">CSS</div>
+    </div>
+    <button class="view-more-button">View More</button>
   </div>
 </div>
 
@@ -35,5 +42,36 @@ const { name, bio, avatar } = Astro.props;
   .profile-bio {
     font-size: 1.1rem;
     color: #555;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-card {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .view-more-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .view-more-button:hover {
+    background-color: #0056b3;
   }
 </style>
