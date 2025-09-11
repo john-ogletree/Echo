@@ -146,68 +146,7 @@ import Layout from '../layouts/Layout.astro';
         }
     });
 
-    // New script for dynamic cards
-    document.addEventListener('DOMContentLoaded', function() {
-        // --- Profile Card Logic ---
-        const profileCard = document.getElementById('profile-card');
-        if (profileCard) {
-            const animateStats = () => {
-                const statValues = profileCard.querySelectorAll('.stat-value[data-value]');
-                statValues.forEach(stat => {
-                    const finalValue = parseInt(stat.getAttribute('data-value'), 10);
-                    const duration = 2000;
-                    const startTime = performance.now();
-                    const animate = (currentTime) => {
-                        const elapsedTime = currentTime - startTime;
-                        const progress = Math.min(elapsedTime / duration, 1);
-                        stat.textContent = Math.floor(progress * finalValue).toLocaleString();
-                        if (progress < 1) requestAnimationFrame(animate);
-                    };
-                    requestAnimationFrame(animate);
-                });
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateStats();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            observer.observe(profileCard);
-            
-            // --- Generate Placeholder Contribution Graph ---
-            const graph = document.getElementById('contribution-graph');
-            if (graph) {
-                const days = 120;
-                let output = '';
-                for (let i = 0; i < days; i++) {
-                    const level = Math.floor(Math.random() * 5);
-                    output += `<div class="graph-day" data-level="${level}" title="Mock contribution"></div>`;
-                }
-                graph.innerHTML = output;
-            }
-        }
-
-        // --- Animated Skills Logic ---
-        const skillItems = document.querySelectorAll('.skill-item');
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBar = entry.target.querySelector('.progress-bar');
-                    const targetWidth = progressBar.getAttribute('data-width');
-                    progressBar.style.width = targetWidth;
-                    skillObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        skillItems.forEach(item => {
-            skillObserver.observe(item);
-        });
-    });
+    
 </script>
 
 <style>
