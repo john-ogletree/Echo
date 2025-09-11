@@ -3,39 +3,53 @@ const { name, bio, avatar } = Astro.props;
 import Button from '../components/Button.astro';
 ---
 <div class="profile">
-  <div class="profile-main">
-    <img src={avatar} alt={name} class="profile-avatar" />
-    <div class="profile-info">
-      <h2 class="profile-name">{name}</h2>
-      <p class="profile-bio">{bio}</p>
-      <slot />
+  <div class="profile-grid">
+    <div class="profile-column">
+      <div class="profile-main">
+        <img src={avatar} alt={name} class="profile-avatar" />
+        <div class="profile-info">
+          <h2 class="profile-name">{name}</h2>
+          <p class="profile-bio">{bio}</p>
+          <slot />
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="profile-skills">
-    <div class="skills-grid">
-      <div class="skill-card">JavaScript</div>
-      <div class="skill-card">React</div>
-      <div class="skill-card">Astro</div>
-      <div class="skill-card">CSS</div>
+    <div class="profile-column"></div>
+    <div class="profile-column">
+      <div class="profile-skills">
+        <div class="skills-grid">
+          <div class="skill-card">JavaScript</div>
+          <div class="skill-card">React</div>
+          <div class="skill-card">Astro</div>
+          <div class="skill-card">CSS</div>
+        </div>
+        <Button text="View More" link="#" variant="primary" />
+      </div>
     </div>
-    <Button text="View More" link="#" variant="primary" />
   </div>
 </div>
 
 <style>
   .profile {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     padding: 2rem 0;
     border-top: 1px solid #333333; /* Darker border */
     margin-top: 2rem;
   }
 
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .profile-column {
+    padding: 1rem;
+  }
+
   .profile-main {
     display: flex;
     align-items: center;
-    flex-basis: 50%;
   }
 
   .profile-avatar {
@@ -61,7 +75,6 @@ import Button from '../components/Button.astro';
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    flex-basis: 50%;
   }
 
   .skills-grid {
