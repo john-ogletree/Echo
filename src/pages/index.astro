@@ -1,31 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Terminal from '../components/Terminal.astro';
-import Profile from '../components/Profile.astro';
 import Banner from '../components/Banner.astro';
-import Services from '../components/Services.astro';
-import Projects from '../components/Projects.astro';
 import Button from '../components/Button.astro';
-import Card from '../components/Card.astro';
-import Blog from '../components/Blog.astro';
-import ClientCard from '../components/ClientCard.astro';
 
-import projectsData from '../data/projects.json';
-import blogData from '../data/blog.json';
-import servicesData from '../data/services.json';
-import skillsData from '../data/skills.json';
 import bannerData from '../data/banner.json';
-import profileDataArray from '../data/profile.json';
-
-const latestProject = projectsData[projectsData.length - 1];
-
-// Sort by date in descending order (latest first)
-blogData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-const latestContent = blogData[0];
-
-const mainProfile = profileDataArray.find(profile => profile.type === 'person');
-const clients = profileDataArray.filter(profile => profile.type === 'client');
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -39,128 +17,11 @@ const clients = profileDataArray.filter(profile => profile.type === 'client');
     >
       <Button text={bannerData.buttonText} link={bannerData.buttonLink} variant="primary" />
     </Banner>
-
-    <Terminal title="example.js">
-      <p><span class="terminal-prompt">$</span> node example.js</p>
-      <p>Hello from the reusable terminal!</p>
-    </Terminal>
-
-    {mainProfile &&
-      <Profile
-        name={mainProfile.name}
-        bio={mainProfile.bio}
-        avatar={mainProfile.avatar}
-        buttonLink={mainProfile.buttonLink}
-        skillsData={skillsData.slice(0, 2)}
-        socialLinks={mainProfile.socialLinks}
-      />
-    }
-
-    <Services title="Service Categories">
-      {
-        servicesData.map(category => (
-          <Card
-            type="service-category"
-            title={category.title}
-            description={category.description}
-          />
-        ))
-      }
-    </Services>
-
-    <Projects title="Our Latest Project">
-      <Card
-        type={latestProject.type}
-        contentType={latestProject.contentType}
-        title={latestProject.title}
-        description={latestProject.description}
-        image={latestProject.image}
-        videoSrc={latestProject.videoSrc}
-        author={latestProject.author}
-        audioSrc={latestProject.audioSrc}
-        link={latestProject.link}
-      />
-    </Projects>
-
-    <Blog title="Latest Updates">
-      <Card
-        type={latestContent.type}
-        title={latestContent.title}
-        description={latestContent.excerpt || latestContent.description}
-        date={latestContent.date}
-        link={latestContent.link}
-        author={latestContent.author}
-        rating={latestContent.rating}
-        image={latestContent.image}
-      />
-    </Blog>
-
-    <section class="clients-section">
-      <h2>Our Clients</h2>
-      <div class="clients-grid">
-        {
-          clients.map(client => (
-            <ClientCard
-              name={client.name}
-              bio={client.bio}
-              avatar={client.avatar}
-              buttonLink={client.link}
-            />
-          ))
-        }
-      </div>
-    </section>
-
-    <Card
-      type="newsletter"
-      title="Subscribe to Our Newsletter"
-      description="Stay updated with our latest news, projects, and insights."
-    />
   </main>
 </Layout>
 
 <style>
   main {
     padding: 2rem;
-  }
-
-  .terminal-prompt {
-    color: #e0e0e0; /* Light gray for prompt */
-  }
-
-  .social-link {
-    margin-right: 1rem;
-    color: #00e676; /* Vibrant green for links */
-    text-decoration: none;
-  }
-
-  .social-link:hover {
-    text-decoration: underline;
-  }
-
-  .vertical-project-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem; /* Same gap as the grid */
-    grid-row: span 2; /* Make it span two rows */
-  }
-
-  .clients-section {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid #333333;
-  }
-
-  .clients-section h2 {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #00e676;
-  }
-
-  .clients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
   }
 </style>
