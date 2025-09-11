@@ -5,7 +5,8 @@
     "author": "Tech Enthusiast",
     "rating": 4.5,
     "description": "A comprehensive review of the latest gadget, highlighting its pros and cons.",
-    "date": "2025-07-15"
+    "date": "2025-07-15",
+    "image": "/background.svg"
   },
   {
     "id": "2",
@@ -13,7 +14,8 @@
     "author": "Literary Critic",
     "rating": 5,
     "description": "An insightful analysis of a timeless classic, exploring its themes and impact.",
-    "date": "2025-07-20"
+    "date": "2025-07-20",
+    "image": "/background.svg"
   },
   {
     "id": "3",
@@ -21,6 +23,7 @@
     "author": "Satisfied Customer",
     "rating": 4,
     "description": "My experience with this service was excellent, highly recommended for its efficiency.",
-    "date": "2025-07-25"
+    "date": "2025-07-25",
+    "image": "/background.svg"
   }
 ]
