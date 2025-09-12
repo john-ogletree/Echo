@@ -3,12 +3,13 @@ interface Props {
     label: string;
     icon: string;
     className?: string;
+    [key: string]: any;
 }
 
-const { label, icon, className } = Astro.props;
+const { label, icon, className, ...rest } = Astro.props;
 ---
 
-<button class:list={["button", className]} aria-label={label}>
+<button class:list={["button", className]} aria-label={label} {...rest}>
     <Fragment set:html={icon} />
 </button>
 
