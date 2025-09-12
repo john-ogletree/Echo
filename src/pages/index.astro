@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { closeIcon, menuIcon, repoIcon } from '../components/icons';
+import { closeIcon, menuIcon } from '../components/icons';
 import NavLinks from '../components/NavLinks.astro';
 import Button from '../components/Button.astro';
 import { socialLinks } from '../components/socials';
+import RepoTitle from '../components/RepoTitle.astro';
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
@@ -33,10 +34,7 @@ import { socialLinks } from '../components/socials';
                                 <Button label="Toggle navigation" icon={menuIcon} className="nav-toggle" id="nav-toggle" aria-expanded="false" />
             </div>
             <div class="header-left">
-                <div class="repo-title">
-                    <Fragment set:html={repoIcon} />
-                    <a href="/" class="font-bold">john-ogletree/Echo</a>
-                </div>
+                <RepoTitle repoName="john-ogletree/Echo" />
             </div>
         </header>
 
