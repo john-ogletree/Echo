@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { closeIcon, githubIcon, linkedinIcon, dribbbleIcon, menuIcon, repoIcon } from '../components/icons';
 import NavLinks from '../components/NavLinks.astro';
+import Button from '../components/Button.astro';
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
@@ -11,9 +12,7 @@ import NavLinks from '../components/NavLinks.astro';
                 <div class="nav-drawer-container" id="nav-drawer-container">
                     <nav class="main-nav" id="main-nav">
                         <div class="nav-header-mobile">
-                            <button class="nav-close" aria-label="Close navigation">
-                                <Fragment set:html={closeIcon} />
-                            </button>
+                            <Button label="Close navigation" icon={closeIcon} className="nav-close" />
                             <form class="search-form mobile-search" action="/directory" method="get">
                                 <input type="search" name="q" class="search-input" placeholder="Search...">
                             </form>
