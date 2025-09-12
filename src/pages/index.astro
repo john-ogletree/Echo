@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { closeIcon, githubIcon, linkedinIcon, dribbbleIcon, menuIcon, repoIcon } from '../components/icons';
+import { closeIcon, menuIcon, repoIcon } from '../components/icons';
 import NavLinks from '../components/NavLinks.astro';
 import Button from '../components/Button.astro';
+import { socialLinks } from '../components/socials';
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
@@ -19,15 +20,13 @@ import Button from '../components/Button.astro';
                         </div>
                         <NavLinks />
                         <ul class="nav-socials">
-                            <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
-                                <Fragment set:html={githubIcon} />
-                            </a></li>
-                            <li><a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
-                                <Fragment set:html={linkedinIcon} />
-                            </a></li>
-                            <li><a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
-                                <Fragment set:html={dribbbleIcon} />
-                            </a></li>
+                            {socialLinks.map(link => (
+                                <li>
+                                    <a href={link.href} aria-label={link.label}>
+                                        <Fragment set:html={link.icon} />
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </nav>
                 </div>
