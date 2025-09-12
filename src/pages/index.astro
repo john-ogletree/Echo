@@ -174,7 +174,7 @@ import Layout from '../layouts/Layout.astro';
     });
 </script>
 
-<style>
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
     :root {
         --color-bg: #F0EAD6; /* Light cream */
@@ -578,7 +578,22 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .about-me-section {
-        align-items: stretch;
+        margin-bottom: 2rem;
+    }
+    .about-me-content {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+    .about-me-text {
+        flex: 2;
+    }
+    .about-me-picture {
+        flex: 1;
+    }
+    .about-me-picture img {
+        width: 100%;
+        border-radius: 8px;
     }
 
     /* --- REVAMPED PROFILE CARD --- */
@@ -925,6 +940,9 @@ import Layout from '../layouts/Layout.astro';
         }
         .stat-item {
             align-items: center;
+        }
+        .about-me-content {
+            flex-direction: column;
         }
     }
 </style>
