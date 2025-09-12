@@ -31,9 +31,7 @@ import Button from '../components/Button.astro';
                         </ul>
                     </nav>
                 </div>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <Fragment set:html={menuIcon} />
-                </button>
+                                <Button label="Toggle navigation" icon={menuIcon} className="nav-toggle" id="nav-toggle" aria-expanded="false" />
             </div>
             <div class="header-left">
                 <div class="repo-title">
