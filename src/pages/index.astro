@@ -1,17 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { closeIcon, homeIcon, profileIcon, capabilitiesIcon, creationsIcon, logIcon, credentialsIcon, connectIcon,
-    explorerIcon,
-    githubIcon,
-    linkedinIcon,
-    dribbbleIcon,
-    menuIcon,
-    repoIcon,
-    uiDesignIcon,
-    uxResearchIcon,
-    prototypingIcon,
-    frontendDevIcon
-} from '../components/icons';
+import { closeIcon, githubIcon, linkedinIcon, dribbbleIcon, menuIcon, repoIcon } from '../components/icons';
+import NavLinks from '../components/NavLinks.astro';
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
@@ -28,16 +18,7 @@ import { closeIcon, homeIcon, profileIcon, capabilitiesIcon, creationsIcon, logI
                                 <input type="search" name="q" class="search-input" placeholder="Search...">
                             </form>
                         </div>
-                        <ul class="nav-links">
-                            <li><a href="/"><Fragment set:html={homeIcon} /><span>Start</span></a></li>
-                            <li><a href="/bio/index"><Fragment set:html={profileIcon} /><span>Profile</span></a></li>
-                            <li><a href="/services/index"><Fragment set:html={capabilitiesIcon} /><span>Capabilities</span></a></li>
-                            <li><a href="/projects/index"><Fragment set:html={creationsIcon} /><span>Creations</span></a></li>
-                            <li><a href="/thoughts/index"><Fragment set:html={logIcon} /><span>Log</span></a></li>
-                            <li><a href="/resume/index"><Fragment set:html={credentialsIcon} /><span>Credentials</span></a></li>
-                            <li><a href="/forms/index"><Fragment set:html={connectIcon} /><span>Connect</span></a></li>
-                            <li><a href="/directory/index"><Fragment set:html={explorerIcon} /><span>Explorer</span></a></li>
-                        </ul>
+                        <NavLinks />
                         <ul class="nav-socials">
                             <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
                                 <Fragment set:html={githubIcon} />
