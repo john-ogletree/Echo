@@ -919,6 +919,20 @@ import Button from '../components/Button.astro';
         text-align: center;
     }
 
+    .forms-container {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        justify-content: center; /* Center forms when wrapped */
+    }
+
+    .forms-container .newsletter-section,
+    .forms-container .contact-section {
+        flex: 1; /* Allow sections to grow and shrink */
+        min-width: 300px; /* Minimum width before wrapping */
+    }
+
     .newsletter-section, .contact-section {
         margin-top: 2rem;
         margin-bottom: 2rem;
