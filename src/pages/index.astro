@@ -948,6 +948,12 @@ import Button from '../components/Button.astro';
         grid-template-columns: 1fr 1fr; /* Two columns for newsletter/feedback and contact */
         gap: 2rem;
         margin-top: 2rem;
+        align-items: stretch; /* Ensure children stretch to same height */
+    }
+
+    .forms-container > div,
+    .forms-container > section {
+        height: 100%; /* Make direct children take full height */
     }
 
     .newsletter-feedback-group {
