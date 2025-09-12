@@ -944,17 +944,16 @@ import Button from '../components/Button.astro';
     }
 
     .forms-container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for newsletter/feedback and contact */
         gap: 2rem;
         margin-top: 2rem;
-        flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        justify-content: center; /* Center forms when wrapped */
     }
 
-        .forms-container .newsletter-section,
-    .forms-container .contact-section {
-        flex: 1; /* Allow sections to grow and shrink */
-        min-width: 300px; /* Minimum width before wrapping */
+    .newsletter-feedback-group {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem; /* Space between newsletter and feedback forms */
     }
 
     .newsletter-section, .contact-section {
