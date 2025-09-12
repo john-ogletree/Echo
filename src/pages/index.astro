@@ -375,9 +375,26 @@ import Button from '../components/Button.astro';
     a:hover { text-decoration: underline; }
     hr { display: none;
     }
-    ul { list-style: '- ';
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;}
+    .skills-grid ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 3 columns, responsive */
+        gap: 1rem;
+    }
+
+    .skills-grid li {
+        margin-bottom: 0;
+    }
+
+    .skills-grid li::before {
+        content: '\2022'; /* Unicode for a bullet point */
+        color: var(--color-accent);
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
     blockquote {
         margin-left: 0;
         padding-left: 1rem;
