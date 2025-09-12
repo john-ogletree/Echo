@@ -925,15 +925,14 @@ import Button from '../components/Button.astro';
 
     .forms-container {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Two columns for newsletter/feedback and contact */
+        grid-template-columns: 1fr; /* Single column for newsletter and contact */
         gap: 2rem;
         margin-top: 2rem;
-        align-items: stretch; /* Ensure children stretch to same height */
     }
 
     .forms-container > div,
     .forms-container > section {
-        height: 100%; /* Make direct children take full height */
+        /* height: 100%; No longer needed for equal height */
     }
 
     .newsletter-feedback-group {
