@@ -1,0 +1,44 @@
+---
+interface Props {
+    variant?: 'primary' | 'secondary' | 'ghost';
+    size?: 'small' | 'medium' | 'large';
+    href?: string;
+    target?: string;
+    rel?: string;
+    onClick?: () => void;
+}
+
+const { variant = 'primary', size = 'medium', href, target, rel, onClick } = Astro.props;
+
+const baseClasses = "inline-flex items-center justify-center font-semibold rounded-md transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2";
+
+const variantClasses = {
+    primary: "bg-color-accent text-white hover:bg-blue-700 focus:ring-blue-500",
+    secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-500",
+    ghost: "bg-transparent text-color-accent hover:bg-color-accent hover:text-white focus:ring-color-accent",
+};
+
+const sizeClasses = {
+    small: "px-3 py-1.5 text-sm",
+    medium: "px-4 py-2 text-base",
+    large: "px-6 py-3 text-lg",
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]}`;
+---
+
+{
+    href ? (
+        <a href={href} target={target} rel={rel} class={classes}>
+            <slot />
+        </a>
+    ) : (
+        <button class={classes} onClick={onClick}>
+            <slot />
+        </button>
+    )
+}
+
+<style>
+    /* You can add additional styles here if needed, or rely on a global CSS framework */
+</style>
