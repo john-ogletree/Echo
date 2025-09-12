@@ -189,6 +189,26 @@ import Button from '../components/Button.astro';
                         </form>
                     </section>
 
+                    <section class="feedback-section">
+                        <h2>Share Your Feedback</h2>
+                        <p>Your thoughts are valuable! Help me improve by sharing your experience.</p>
+                        <form class="feedback-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="feedback-name">Name (Optional):</label>
+                                <input type="text" id="feedback-name" name="feedback-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback-email">Email (Optional):</label>
+                                <input type="email" id="feedback-email" name="feedback-email">
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback-message">Feedback:</label>
+                                <textarea id="feedback-message" name="feedback-message" rows="5" required></textarea>
+                            </div>
+                            <Button type="submit" variant="secondary">Submit Feedback</Button>
+                        </form>
+                    </section>
+
                     <section class="contact-section">
                         <h2>Get in Touch</h2>
                         <p>Have a project in mind or just want to say hello? Fill out the form below or reach out directly.</p>
