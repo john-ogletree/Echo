@@ -841,6 +841,54 @@ import Button from '../components/Button.astro';
         text-align: center;
     }
 
+    .projects-overview-section {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .project-card {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    .project-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+        color: var(--color-heading);
+        margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+        font-size: 0.95rem;
+        color: var(--color-text-light);
+        flex-grow: 1; /* Allows description to take up available space */
+        margin-bottom: 1rem;
+    }
+
+    .projects-actions {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
     /* --- REVAMPED PROFILE CARD --- */
     .profile-card {
         background-color: var(--color-bg);
