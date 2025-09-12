@@ -251,6 +251,29 @@ import Layout from '../layouts/Layout.astro';
 
     <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+    body.pixel-effect-active {
+        overflow: hidden;
+    }
+    body.pixel-effect-active > *:not(#pixelCanvas) { /* Hide all direct children of body except canvas */
+        opacity: 0;
+        visibility: hidden;
+    }
+    #pixelCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 9999;
+        pointer-events: none;
+        opacity: 1; /* Canvas is visible when active */
+        transition: opacity 0.5s ease-out; /* Fade out canvas */
+    }
+    body:not(.pixel-effect-active) > *:not(#pixelCanvas) {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s ease-in-out; /* Fade in content */
+    }
     :root {
         --color-bg: #F0EAD6; /* Light cream */
         --color-surface: #D4C9A8; /* Muted beige */
