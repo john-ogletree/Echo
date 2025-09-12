@@ -1,0 +1,24 @@
+---
+interface Props {
+    label: string;
+    icon: string;
+    className?: string;
+}
+
+const { label, icon, className } = Astro.props;
+---
+
+<button class:list={["button", className]} aria-label={label}>
+    <Fragment set:html={icon} />
+</button>
+
+<style>
+    .button {
+        background: none;
+        border: none;
+        color: var(--color-text);
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 100;
+    }
+</style>
