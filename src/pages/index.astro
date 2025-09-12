@@ -739,6 +739,74 @@ import Button from '../components/Button.astro';
         text-align: center;
     }
 
+    .pricing-overview-section {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .pricing-card {
+        background-color: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .pricing-card.featured {
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px var(--color-accent);
+    }
+
+    .pricing-card h3 {
+        font-size: 1.5rem;
+        color: var(--color-heading);
+        margin-bottom: 0.5rem;
+    }
+
+    .pricing-card .price {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--color-accent);
+        margin-bottom: 1rem;
+    }
+
+    .pricing-card ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    .pricing-card li {
+        margin-bottom: 0.5rem;
+        color: var(--color-text-light);
+    }
+
+    .pricing-card li::before {
+        content: '✓';
+        color: var(--color-accent);
+        margin-right: 0.5rem;
+    }
+
+    .pricing-contact {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--color-text-light);
+    }
+
     /* --- REVAMPED PROFILE CARD --- */
     .profile-card {
         background-color: var(--color-bg);
