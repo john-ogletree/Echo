@@ -8,10 +8,41 @@ interface Props {
 const { text, href, variant = 'primary' } = Astro.props;
 
 
-const buttonClasses =
-  variant === 'primary'
-    ? 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-orange-500 text-white border-orange-500 shadow hover:bg-orange-600 hover:border-orange-600'
-    : 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border-2 border-orange-500 text-orange-500 bg-white shadow hover:bg-orange-50 hover:text-orange-600 hover:border-orange-600';
+let buttonClasses = '';
+switch (variant) {
+  case 'primary':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-orange-500 text-white border-orange-500 shadow hover:bg-orange-600 hover:border-orange-600';
+    break;
+  case 'secondary':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border-2 border-orange-500 text-orange-500 bg-white shadow hover:bg-orange-50 hover:text-orange-600 hover:border-orange-600';
+    break;
+  case 'success':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-green-500 text-white border-green-500 shadow hover:bg-green-600 hover:border-green-600';
+    break;
+  case 'danger':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-red-500 text-white border-red-500 shadow hover:bg-red-600 hover:border-red-600';
+    break;
+  case 'warning':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-yellow-400 text-black border-yellow-400 shadow hover:bg-yellow-500 hover:border-yellow-500';
+    break;
+  case 'info':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-blue-500 text-white border-blue-500 shadow hover:bg-blue-600 hover:border-blue-600';
+    break;
+  case 'ghost':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border border-transparent bg-transparent text-gray-500 hover:bg-gray-100 hover:text-gray-700';
+    break;
+  case 'link':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border-none bg-transparent text-blue-600 underline hover:text-blue-800';
+    break;
+  case 'dark':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-black text-white border-black shadow hover:bg-gray-900 hover:border-gray-900';
+    break;
+  case 'light':
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-white text-gray-700 border-gray-300 shadow hover:bg-gray-100 hover:border-gray-400';
+    break;
+  default:
+    buttonClasses = 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-orange-500 text-white border-orange-500 shadow hover:bg-orange-600 hover:border-orange-600';
+}
 
 ---
 <a href={href} class={buttonClasses}>
