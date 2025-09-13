@@ -1,0 +1,27 @@
+[
+  {
+    "id": "default",
+    "text": "This is a banner! ✨",
+    "class": "bg-blue-500 text-white"
+  },
+  {
+    "id": "holiday",
+    "text": "Happy Holidays! 🎄 Enjoy the festive season.",
+    "class": "bg-green-600 text-white"
+  },
+  {
+    "id": "sale",
+    "text": "Big Sale! Save up to 50% today only! 🛍️",
+    "class": "bg-red-600 text-white"
+  },
+  {
+    "id": "summer",
+    "text": "Summer Vibes ☀️ Check out our new collection!",
+    "class": "bg-yellow-400 text-gray-900"
+  },
+  {
+    "id": "newyear",
+    "text": "Happy New Year! 🎆 Wishing you a great 2026!",
+    "class": "bg-purple-700 text-white"
+  }
+]

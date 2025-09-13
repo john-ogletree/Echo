@@ -1,14 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import banners from '../data/banners.json';
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
-    <div class="readme-container">
-        <main class="readme-body">
-            <div class="banner-container">
-                <p class="banner-text m-0 font-medium text-[1.1rem]">This is a banner! ✨</p>
-            </div>
-        </main>
-    </div>
+        <div class="readme-container">
+                <main class="readme-body">
+                        {(() => {
+                            const banner = banners.find(b => b.id === 'default') || banners[0];
+                            return (
+                                <div class={`rounded-lg mb-8 px-8 py-4 text-center ${banner.class}`}>
+                                    <p class="m-0 font-mono font-medium text-[1.1rem]">{banner.text}</p>
+                                </div>
+                            );
+                        })()}
+                </main>
+        </div>
 </Layout>
