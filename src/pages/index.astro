@@ -4,40 +4,18 @@ import Button from '../components/Button.astro';
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
-    <div class="readme-container">
-        <main class="readme-body">
-            <div class="banner-container">
-                <p class="banner-text m-0 font-medium text-[1.1rem]">This is a banner! ✨</p>
-            </div>
-        </main>
-    </div>
+        <div class="w-full flex flex-col items-center px-4 py-8">
+            <main class="w-full max-w-2xl">
+                <div class="w-full bg-orange-100 rounded-md p-4 flex items-center justify-center">
+                    <p class="m-0 font-mono font-medium text-lg">This is a banner! ✨</p>
+                </div>
+            </main>
+        </div>
 </Layout>
 
 
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
-    :root {
-        --color-bg: #F0EAD6; /* Light cream */
-        --color-surface: #D4C9A8; /* Muted beige */
-        --color-text: #3B2F2A; /* Deep brown-black */
-        --color-text-light: #5B4F48; /* Dark brown-grey */
-        --color-heading: #E07A5F; /* Warm terracotta orange */
-        --color-accent: #3D87A6; /* Retro teal */
-        --color-border: #A69E8C; /* Faded grey-brown */
-        --color-tag-bg: rgba(61, 135, 166, 0.15); /* Faded teal transparency */
-        --font-mono: 'IBM Plex Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        --padding-x: 2rem;
-    }
-
-    /* --- Base & Typography --- */
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-    }
-    body {
-        background-color: var(--color-bg);
-        color: var(--color-text);
+// ...existing code...
         font-family: var(--font-mono);
         font-size: 16px;
         line-height: 1.7;
