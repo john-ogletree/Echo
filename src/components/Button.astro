@@ -1,8 +1,19 @@
 ---
+
 interface Props {
   text: string;
   href: string;
-  variant?: 'primary' | 'secondary';
+  variant?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'ghost'
+    | 'link'
+    | 'dark'
+    | 'light';
 }
 
 const { text, href, variant = 'primary' } = Astro.props;
