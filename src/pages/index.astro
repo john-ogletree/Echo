@@ -23,5 +23,78 @@ import { orange, blue, green, red, yellow, gray, black, white } from '../data/co
 					</div>
 				</div>
 			</section>
-	<hr style={`border: none; border-top: 2px solid ${gray[200]}; width: 80%; margin: 2rem auto;`} />
+		<hr style={`border: none; border-top: 2px solid ${gray[200]}; width: 80%; margin: 2rem auto;`} />
+
+		{/* WebsiteSaviour & What I Love to Craft */}
+		<section class="w-full max-w-5xl mx-auto py-16 px-4 flex flex-col md:flex-row gap-12 md:gap-20 items-start">
+			<div class="flex-1 flex flex-col gap-6">
+				<h2 class="text-3xl font-extrabold font-mono mb-2" style={`color: ${orange[600]}`}>WebsiteSaviour</h2>
+				<p class="text-lg text-gray-700 font-mono mb-4">Every website deserves a unique solution, whether it's advanced custom functionalities, a need for adequately set design systems for the simple creation of landing pages, or special custom animated projects.</p>
+				<div class="flex flex-col gap-2">
+					<a href="#projects" class="text-blue-600 hover:underline font-bold">Go to Projects</a>
+					<a href="#contact" class="text-blue-600 hover:underline font-bold">Get in Touch</a>
+				</div>
+			</div>
+			<div class="flex-1 flex flex-col gap-8">
+				<h2 class="text-2xl font-bold font-mono mb-2" style={`color: ${blue[700]}`}>What I Love to Craft</h2>
+				<ul class="space-y-4">
+					<li class="bg-white/80 rounded-lg shadow p-6 border-l-4" style={`border-color: ${orange[400]}`}> <span class="font-bold text-orange-700">Craft your designs to Webflow:</span> As a former designer, I can take your designs and turn them into a functional, interactive, pixel-perfect website.</li>
+					<li class="bg-white/80 rounded-lg shadow p-6 border-l-4" style={`border-color: ${blue[400]}`}> <span class="font-bold text-blue-700">Components library systems:</span> By building your website on reusable components, creating and deploying new landing pages is as easy as clicking a button.</li>
+					<li class="bg-white/80 rounded-lg shadow p-6 border-l-4" style={`border-color: ${green[400]}`}> <span class="font-bold text-green-700">Complex interaction websites:</span> Got creative designers? I specialize in advanced animation, hidden windows, and scrolling interactions galore.</li>
+				</ul>
+			</div>
+		</section>
+
+		{/* Testimonials Section */}
+		<section class="w-full bg-white/90 py-20 px-4">
+			<div class="max-w-6xl mx-auto">
+				<h2 class="text-3xl font-extrabold font-mono text-center mb-12" style={`color: ${gray[900]}`}>What's the Gossip?</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{/* Testimonial 1 */}
+					<div class="rounded-xl shadow-lg bg-white p-8 flex flex-col gap-4 border-t-4" style={`border-color: ${blue[400]}`}> 
+						<p class="text-lg font-mono text-gray-700">“Webflow made super easy for our marketing team. He's not only a quick problem solver, but understands how to offer solutions that have longer shelf life rather than quick fixes.”</p>
+						<div class="mt-2">
+							<span class="block font-bold text-blue-700">Hannah Chens</span>
+							<span class="block text-xs text-gray-500">Brand Marketing, SalvoHealth</span>
+						</div>
+					</div>
+					{/* Testimonial 2 */}
+					<div class="rounded-xl shadow-lg bg-white p-8 flex flex-col gap-4 border-t-4" style={`border-color: ${orange[400]}`}> 
+						<p class="text-lg font-mono text-gray-700">“Our go-to for anything Webflow. Tomas has helped us with various website projects for over a year now. He was extremely helpful throughout the project, happy to help train the team and made some really good recommendations.”</p>
+						<div class="mt-2">
+							<span class="block font-bold text-orange-700">Ann-Marie Rossiter</span>
+							<span class="block text-xs text-gray-500">Senior Marketing Manager, Forward Partners</span>
+						</div>
+					</div>
+					{/* Testimonial 3 */}
+					<div class="rounded-xl shadow-lg bg-white p-8 flex flex-col gap-4 border-t-4" style={`border-color: ${green[400]}`}> 
+						<p class="text-lg font-mono text-gray-700">“I keep saying that. Pure talent! Tomas is one of the most thoughtful, talented, and easy to work with partners I've ever met. He's always there when we need and improves everything we do on our Webflow site.”</p>
+						<div class="mt-2">
+							<span class="block font-bold text-green-700">Joe Albanese</span>
+							<span class="block text-xs text-gray-500">CEO & Co-Founder, Stir</span>
+						</div>
+					</div>
+					{/* Add more testimonials as needed */}
+				</div>
+			</div>
+		</section>
+
+		{/* Footer */}
+		<footer class="w-full py-10 bg-gray-50 border-t border-gray-200 mt-12">
+			<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4">
+				<div class="flex flex-col items-center md:items-start">
+					<span class="font-mono text-gray-700">This spot is reserved for you. Let’s chat!</span>
+					<div class="flex gap-4 mt-2">
+						<a href="#projects" class="text-blue-600 hover:underline font-bold">Projects</a>
+						<a href="#about" class="text-blue-600 hover:underline font-bold">About</a>
+						<a href="#contact" class="text-blue-600 hover:underline font-bold">Contact</a>
+					</div>
+				</div>
+				<div class="flex gap-4 items-center">
+					<a href="https://www.linkedin.com/in/tomas-mrazek/" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-600"><svg width="24" height="24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.29h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg></a>
+					<a href="https://twitter.com/tomasmrazek92" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-600"><svg width="24" height="24" fill="currentColor"><path d="M24 4.56c-.89.39-1.84.65-2.84.77 1.02-.61 1.8-1.57 2.17-2.72-.95.56-2.01.97-3.13 1.19-.9-.96-2.18-1.56-3.6-1.56-2.72 0-4.93 2.21-4.93 4.93 0 .39.04.77.12 1.13-4.1-.21-7.73-2.17-10.16-5.15-.43.74-.68 1.6-.68 2.52 0 1.74.89 3.28 2.25 4.18-.83-.03-1.61-.25-2.29-.63v.06c0 2.43 1.73 4.46 4.03 4.92-.42.12-.87.18-1.33.18-.32 0-.63-.03-.93-.09.63 1.97 2.45 3.4 4.6 3.44-1.69 1.33-3.82 2.12-6.13 2.12-.4 0-.79-.02-1.18-.07 2.19 1.41 4.8 2.24 7.6 2.24 9.12 0 14.12-7.56 14.12-14.12 0-.22 0-.43-.02-.65.97-.7 1.8-1.56 2.46-2.54z"/></svg></a>
+				</div>
+			</div>
+			<div class="text-center text-xs text-gray-400 mt-6">© {new Date().getFullYear()} John Ogletree. Inspired by Tomas Mrazek. Built with Astro & TailwindCSS.</div>
+		</footer>
 </Layout>
