@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { title, description, keywords } = Astro.props;
-
+import Navigation from '../components/Navigation.astro';
 
 ---
 
@@ -23,15 +23,13 @@ const { title, description, keywords } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="w-full h-full bg-bg text-text font-mono text-base leading-relaxed transition-transform duration-300 ease-in-out m-0 p-0">
-        ---
-import Navigation from '../components/Navigation.astro';
----
+
         <Navigation />
 		<slot />
 	</body>
 </html>
 
-<script>
+<script is:inline>
     const navToggle = document.getElementById('nav-toggle');
     const navDrawer = document.getElementById('nav-drawer-container');
     const closeButton = navDrawer.querySelector('button');
