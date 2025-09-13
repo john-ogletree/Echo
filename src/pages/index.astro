@@ -1,54 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
-import banners from '../data/banners.json';
+
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
         <div class="readme-container">
                 <main class="readme-body">
-                                                {(() => {
-                                                    // Change this to select the banner you want to show
-                                                    const banner = banners.find(b => b.id === 'blackfriday') || banners[0];
-                                                    if (banner.type === 'blackfriday') {
-                                                        // Countdown calculation (client-side only)
-                                                        return (
-                                                            <div class={`rounded-lg mb-8 px-8 py-4 text-center border ${banner.class}`}>
-                                                                <h2 class="text-2xl font-extrabold mb-2 font-mono">{banner.header}</h2>
-                                                                <p class="mb-4 font-mono">{banner.text}</p>
-                                                                <div id="countdown" class="font-mono text-lg font-bold mb-4"></div>
-                                                                                                {banner.button && (
-                                                                                                    <a href={banner.button.href} class={banner.button.class}>{banner.button.text}</a>
-                                                                                                )}
-                                                                <script is:inline>
-                                                                    const countdownEl = document.getElementById('countdown');
-                                                                    function updateCountdown() {
-                                                                        const end = new Date('{banner.countdown.end}').getTime();
-                                                                        const now = new Date().getTime();
-                                                                        const diff = end - now;
-                                                                        if (diff <= 0) {
-                                                                            countdownEl.textContent = 'Sale ended!';
-                                                                            return;
-                                                                        }
-                                                                        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                                                                        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                                                                        const mins = Math.floor((diff / (1000 * 60)) % 60);
-                                                                        const secs = Math.floor((diff / 1000) % 60);
-                                                                        countdownEl.textContent = `Ends in ${days}d ${hours}h ${mins}m ${secs}s`;
-                                                                    }
-                                                                    updateCountdown();
-                                                                    setInterval(updateCountdown, 1000);
-                                                                </script>
-                                                            </div>
-                                                        );
-                                                    }
-                                                    // Fallback for simple banners
-                                                    return (
-                                                        <div class={`rounded-lg mb-8 px-8 py-4 text-center ${banner.class}`}>
-                                                            <p class="m-0 font-mono font-medium text-[1.1rem]">{banner.text}</p>
-                                                        </div>
-                                                    );
-                                                })()}
+                                                                        <div class="rounded-lg mb-8 px-8 py-4 text-center bg-blue-500 text-white">
+                                                                            <p class="m-0 font-mono font-medium text-[1.1rem]">This is a banner! ✨</p>
+                                                                        </div>
                 </main>
         </div>
 </Layout>
