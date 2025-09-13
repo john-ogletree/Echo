@@ -26,3 +26,38 @@ pnpm-debug.log*
 # vscode setting folder
 .vscode/
 .history/
+
+# tailwind css
+tailwind.config.js
+tailwind.config.cjs
+tailwind.config.ts
+postcss.config.js
+postcss.config.cjs
+postcss.config.ts
+
+# vite
+vite.config.js
+vite.config.cjs
+vite.config.ts
+.vitepress/config.js
+.vitepress/config.cjs
+.vitepress/config.ts
+.vitepress/config.mjs
+.vitepress/config.json 
+.vitepress/theme/index.js
+.vitepress/theme/index.cjs
+.vitepress/theme/index.ts
+.vitepress/theme/index.mjs
+.vitepress/theme/config.js
+.vitepress/theme/config.cjs
+.vitepress/theme/config.ts
+.vitepress/theme/config.mjs
+.vitepress/theme/config.json
+.vitepress/theme/components/VPNavBarSearch.vue
+.vitepress/theme/components/VPNavBarSearchBox.vue
+.vitepress/theme/components/VPNavBarSearchIcon.vue
+.vitepress/theme/components/VPDocSearch.vue
+.vitepress/theme/components/VPDocSearchBox.vue
+.vitepress/theme/components/VPDocSearchIcon.vue
+.vitepress/theme/components/DocSearch.vue
+.vitepress/theme/components/DocSearchBox.vue
