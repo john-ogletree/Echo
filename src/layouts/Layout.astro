@@ -21,6 +21,9 @@ import Navigation from '../components/Navigation.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<style is:global>
+			@import '../styles/tailwind-base.css';
+		</style>
 	</head>
 	<body class="w-full h-full bg-bg text-text font-mono text-base leading-relaxed transition-transform duration-300 ease-in-out m-0 p-0">
 
