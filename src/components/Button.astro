@@ -1,0 +1,21 @@
+---
+interface Props {
+  text: string;
+  href: string;
+  variant?: 'primary' | 'secondary';
+}
+
+const { text, href, variant = 'primary' } = Astro.props;
+
+let buttonClasses = "font-mono font-medium text-heading m-0"; // Default classes
+
+if (variant === 'primary') {
+  buttonClasses = "cta-button"; // Existing primary button style
+} else if (variant === 'secondary') {
+  buttonClasses = "about-button"; // Existing secondary button style
+}
+---
+
+<a href={href} class={buttonClasses}>
+  {text}
+</a>
