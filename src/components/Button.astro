@@ -7,68 +7,12 @@ interface Props {
 
 const { text, href, variant = 'primary' } = Astro.props;
 
-let buttonClasses = ""; // Start with empty classes, define styles below
----
+const buttonClasses =
+  variant === 'primary'
+    ? 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-heading text-bg border-heading hover:bg-orange-500 hover:border-orange-500'
+    : 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-transparent text-heading border-heading hover:bg-heading hover:text-bg';
 
-<a href={href} class:list={[buttonClasses, `button-${variant}`]}>
+<a href={href} class={buttonClasses}>
   {text}
 </a>
 
-<style define:vars={{
-  primaryBg: 'var(--color-heading)',
-  primaryText: 'var(--color-bg)',
-  primaryBorder: 'var(--color-heading)',
-  primaryHoverBg: '#D36C52',
-  primaryHoverBorder: '#D36C52',
-
-  secondaryBg: 'transparent',
-  secondaryText: 'var(--color-heading)',
-  secondaryBorder: 'var(--color-heading)',
-  secondaryHoverBg: 'var(--color-heading)',
-  secondaryHoverText: 'var(--color-bg)',
-}}>
-  .button-primary {
-    background-color: var(--primaryBg);
-    color: var(--primaryText);
-    border: 1px solid var(--primaryBorder);
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-    font-weight: 700;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 6px;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
-    width: 100%;
-    font-family: var(--font-mono);
-  }
-  .button-primary:hover {
-    background-color: var(--primaryHoverBg);
-    border-color: var(--primaryHoverBorder);
-  }
-
-  .button-secondary {
-    background-color: var(--secondaryBg);
-    color: var(--secondaryText);
-    border: 1px solid var(--secondaryBorder);
-    transition: background-color 0.2s ease, color 0.2s ease;
-    font-weight: 700;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
-    width: 100%;
-    font-family: var(--font-mono);
-    text-align: center;
-    box-sizing: border-box;
-  }
-  .button-secondary:hover {
-    background-color: var(--secondaryHoverBg);
-    color: var(--secondaryHoverText);
-    text-decoration: none;
-  }
-</style>
