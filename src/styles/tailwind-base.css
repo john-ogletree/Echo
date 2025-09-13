@@ -3,34 +3,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-}
-
-h2::before {
-    content: '##';
-    color: var(--color-text-light);
-    font-weight: 400;
-    margin-right: 0.5rem;
-}
-
-ul {
-    list-style: '- ';
-}
-
-blockquote {
-    margin-left: 0;
-    padding-left: 1rem;
-    border-left: 3px solid var(--color-border);
-    color: var(--color-text-light);
-}
-
-body.no-scroll {
-    overflow: hidden;
-}
-body.no-scroll .readme-body {
-    filter: blur(5px);
-    pointer-events: none;
-}
