@@ -1,3 +1,4 @@
+import { orange, blue, green, red, yellow, gray, black, white } from '../data/colors.js';
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
@@ -11,33 +12,33 @@ import Button from '../components/Button.astro';
                         <p class="m-0 font-mono font-medium text-[1.1rem]">This is a banner! ✨</p>
                     </div>
                                                                                                 <section class="prose prose-neutral max-w-3xl mx-auto bg-white/80 rounded-lg shadow p-8 mb-16 font-mono">
-                                                                                                        <h1 class="text-4xl font-extrabold mb-2">John Ogletree</h1>
-                                                                                                        <p class="text-lg text-gray-700 mb-6">Digital Artist & Designer &bull; Martinez, GA</p>
-                                                                                                        <blockquote class="border-l-4 border-blue-400 pl-4 italic text-blue-700 mb-8">Crafting beautiful and functional digital experiences.</blockquote>
-                                                                                                        <h2 class="text-2xl font-bold mt-10 mb-2">🚀 About Me</h2>
-                                                                                                        <ul class="list-disc pl-6 mb-6">
-                                                                                                                <li>🎨 UI/UX Design & Prototyping</li>
-                                                                                                                <li>🧑‍💻 Frontend Development</li>
-                                                                                                                <li>🔬 UX Research</li>
-                                                                                                                <li>🌐 Web Animation & Interactivity</li>
-                                                                                                        </ul>
-                                                                                                        <h2 class="text-2xl font-bold mt-10 mb-2">🛠️ Tech Stack</h2>
-                                                                                                        <ul class="list-disc pl-6 mb-6">
-                                                                                                                <li>Astro, React, TailwindCSS</li>
-                                                                                                                <li>TypeScript, JavaScript, HTML, CSS</li>
-                                                                                                                <li>Figma, Framer, Adobe CC</li>
-                                                                                                        </ul>
-                                                                                                        <h2 class="text-2xl font-bold mt-10 mb-2">📂 Projects</h2>
-                                                                                                        <ul class="list-disc pl-6 mb-6">
-                                                                                                                <li><a href="#portfolio" class="text-blue-600 hover:underline">Portfolio</a> – My latest design and dev work</li>
-                                                                                                                <li><a href="#open-source" class="text-blue-600 hover:underline">Open Source</a> – Community-driven UI kits</li>
-                                                                                                        </ul>
-                                                                                                        <h2 class="text-2xl font-bold mt-10 mb-2">🤝 Contact</h2>
-                                                                                                        <p class="mb-6">Let’s collaborate or just say hi!</p>
-                                                                                                        <div class="flex flex-col sm:flex-row gap-4">
-                                                                                                                <Button text="View Portfolio" href="#portfolio" variant="primary" />
-                                                                                                                <Button text="Contact Me" href="#contact" variant="secondary" />
-                                                                                                        </div>
+                                                                                                                <h1 class="text-4xl font-extrabold mb-2" style={`color: ${orange[600]}`}>John Ogletree</h1>
+                                                                                                                <p class="text-lg mb-6" style={`color: ${gray[700]}`}>Digital Artist & Designer &bull; Martinez, GA</p>
+                                                                                                                <blockquote class="border-l-4 pl-4 italic mb-8" style={`border-color: ${blue[400]}; color: ${blue[700]}`}>Crafting beautiful and functional digital experiences.</blockquote>
+                                                                                                                <h2 class="text-2xl font-bold mt-10 mb-2" style={`color: ${green[600]}`}>🚀 About Me</h2>
+                                                                                                                <ul class="list-disc pl-6 mb-6">
+                                                                                                                        <li><span style={`color: ${orange[500]}`}>🎨 UI/UX Design & Prototyping</span></li>
+                                                                                                                        <li><span style={`color: ${blue[600]}`}>🧑‍💻 Frontend Development</span></li>
+                                                                                                                        <li><span style={`color: ${red[500]}`}>🔬 UX Research</span></li>
+                                                                                                                        <li><span style={`color: ${yellow[600]}`}>🌐 Web Animation & Interactivity</span></li>
+                                                                                                                </ul>
+                                                                                                                <h2 class="text-2xl font-bold mt-10 mb-2" style={`color: ${blue[700]}`}>🛠️ Tech Stack</h2>
+                                                                                                                <ul class="list-disc pl-6 mb-6">
+                                                                                                                        <li><span style={`color: ${blue[500]}`}>Astro, React, TailwindCSS</span></li>
+                                                                                                                        <li><span style={`color: ${green[700]}`}>TypeScript, JavaScript, HTML, CSS</span></li>
+                                                                                                                        <li><span style={`color: ${orange[400]}`}>Figma, Framer, Adobe CC</span></li>
+                                                                                                                </ul>
+                                                                                                                <h2 class="text-2xl font-bold mt-10 mb-2" style={`color: ${orange[700]}`}>📂 Projects</h2>
+                                                                                                                <ul class="list-disc pl-6 mb-6">
+                                                                                                                        <li><a href="#portfolio" style={`color: ${blue[600]}`}>Portfolio</a> – My latest design and dev work</li>
+                                                                                                                        <li><a href="#open-source" style={`color: ${blue[600]}`}>Open Source</a> – Community-driven UI kits</li>
+                                                                                                                </ul>
+                                                                                                                <h2 class="text-2xl font-bold mt-10 mb-2" style={`color: ${red[600]}`}>🤝 Contact</h2>
+                                                                                                                <p class="mb-6">Let’s collaborate or just say hi!</p>
+                                                                                                                <div class="flex flex-col sm:flex-row gap-4">
+                                                                                                                        <Button text="View Portfolio" href="#portfolio" variant="primary" />
+                                                                                                                        <Button text="Contact Me" href="#contact" variant="secondary" />
+                                                                                                                </div>
                                                                                                 </section>
                 </main>
         </div>
