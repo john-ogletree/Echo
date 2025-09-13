@@ -5,6 +5,8 @@ interface Props {
 	keywords?: string;
 }
 
+
+import Footer from '../components/Footer.astro';
 const { title, description, keywords } = Astro.props;
 
 ---
@@ -27,6 +29,7 @@ const { title, description, keywords } = Astro.props;
 	<body class="w-full h-full bg-bg text-text font-mono text-base leading-relaxed transition-transform duration-300 ease-in-out m-0 p-0">
 
 		<slot />
+		<Footer />
 	</body>
 </html>
 
