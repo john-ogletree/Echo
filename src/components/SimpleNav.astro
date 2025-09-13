@@ -1,21 +1,53 @@
-<header class="bg-gray-800 text-white p-4 flex justify-between items-center">
-  <div class="text-lg font-bold">My Website</div>
-  <button id="simple-nav-toggle" class="block focus:outline-none">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-  </button>
-  <nav id="simple-nav-menu" class="flex items-center space-x-4">
-    <a href="#" class="hover:text-gray-300">Home</a>
-    <a href="#" class="hover:text-gray-300">About</a>
-    <a href="#" class="hover:text-gray-300">Services</a>
-    <a href="#" class="hover:text-gray-300">Contact</a>
+<header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-4 shadow-lg">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="/" class="text-2xl font-extrabold tracking-wide hover:text-gray-100 transition duration-300 ease-in-out">Echo</a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="text-lg hover:text-blue-200 transition duration-300 ease-in-out relative group">
+        Home
+        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+      </a>
+      <a href="#" class="text-lg hover:text-blue-200 transition duration-300 ease-in-out relative group">
+        About
+        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+      </a>
+      <a href="#" class="text-lg hover:text-blue-200 transition duration-300 ease-in-out relative group">
+        Services
+        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+      </a>
+      <a href="#" class="text-lg hover:text-blue-200 transition duration-300 ease-in-out relative group">
+        Contact
+        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></span>
+      </a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="md:hidden hidden flex-col items-center space-y-4 mt-4">
+    <a href="#" class="text-lg hover:text-blue-200 transition duration-300 ease-in-out">Home</a>
+    <a href="#" class="text-lg hover:text-blue-200 transition duration-300 ease-in-out">About</a>
+    <a href="#" class="text-lg hover:text-blue-200 transition duration-300 ease-in-out">Services</a>
+    <a href="#" class="text-lg hover:text-blue-200 transition duration-300 ease-in-out">Contact</a>
   </nav>
 </header>
 
 <script is:inline>
-  const navToggleButton = document.getElementById('simple-nav-toggle');
-  const navMenu = document.getElementById('simple-nav-menu');
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  navToggleButton.addEventListener('click', () => {
-    // navMenu.classList.toggle('hidden'); // Removed for testing
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
   });
 </script>
