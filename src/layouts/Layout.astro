@@ -40,13 +40,13 @@ import Navigation from '../components/Navigation.astro';
     navToggle.addEventListener('click', () => {
         const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
         navToggle.setAttribute('aria-expanded', String(!isExpanded));
-        navDrawer.classList.toggle('-translate-x-full');
+        navDrawer.classList.toggle('hidden');
         closeButton.classList.toggle('hidden');
     });
 
     closeButton.addEventListener('click', () => {
         navToggle.setAttribute('aria-expanded', 'false');
-        navDrawer.classList.add('-translate-x-full');
+        navDrawer.classList.add('hidden');
         closeButton.classList.add('hidden');
     });
 </script>
