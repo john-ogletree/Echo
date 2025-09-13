@@ -7,11 +7,13 @@ interface Props {
 
 const { text, href, variant = 'primary' } = Astro.props;
 
+
 const buttonClasses =
   variant === 'primary'
     ? 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-heading text-bg border-heading hover:bg-orange-500 hover:border-orange-500'
     : 'inline-flex items-center justify-center w-full font-mono font-bold px-6 py-3 rounded-md border transition-colors duration-200 bg-transparent text-heading border-heading hover:bg-heading hover:text-bg';
 
+---
 <a href={href} class={buttonClasses}>
   {text}
 </a>
