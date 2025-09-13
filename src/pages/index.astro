@@ -2,78 +2,94 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import { orange, blue, green, red, yellow, gray, black, white } from '../data/colors.js';
+const greetings = [
+        '👋 Hello, world!',
+        '🚀 Welcome, explorer!',
+        '🎨 Design. Code. Repeat.',
+        '🌈 Colorful ideas ahead!',
+        '✨ Let’s build something amazing!'
+];
 const funFacts = [
         'I once designed a UI for a coffee machine ☕',
         'My favorite color palette is sunset gradients 🌅',
         'I can prototype a landing page in under 30 minutes ⏱️',
         'I love open source and community-driven design 🤝',
         'I sketch ideas on paper before touching Figma ✏️',
+        'I animate SVGs for fun 🌀',
+        'I believe every pixel counts 🖼️',
 ];
+const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
 const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
 ---
 ---
 <Layout title="John Ogletree – Digital Artist & Designer" description="A unique, interactive README-inspired portfolio for John Ogletree." keywords="John Ogletree, Digital Artist, Designer, UI, UX, Portfolio, Astro, TailwindCSS">
-        <div class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-orange-100 py-12">
-                <div class="absolute top-0 left-0 w-full flex justify-between px-8 pt-8 pointer-events-none select-none">
-                        <svg class="w-24 h-24 text-blue-200 opacity-60 animate-spin-slow" fill="none" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="20" /></svg>
-                        <svg class="w-20 h-20 text-orange-200 opacity-50 animate-pulse" fill="none" viewBox="0 0 200 200"><rect x="30" y="30" width="140" height="140" rx="40" stroke="currentColor" stroke-width="20" /></svg>
+                <div class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-white to-orange-100 py-12">
+                        <div class="absolute top-0 left-0 w-full flex justify-between px-8 pt-8 pointer-events-none select-none">
+                                <svg class="w-24 h-24 text-blue-200 opacity-60 animate-spin-slow" fill="none" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="20" /></svg>
+                                <svg class="w-20 h-20 text-orange-200 opacity-50 animate-pulse" fill="none" viewBox="0 0 200 200"><rect x="30" y="30" width="140" height="140" rx="40" stroke="currentColor" stroke-width="20" /></svg>
+                        </div>
+                        <main class="w-full max-w-2xl mx-auto bg-white/90 rounded-xl shadow-xl p-8 md:p-12 flex flex-col gap-8 font-mono border border-orange-100">
+                                <header class="flex flex-col items-center gap-2">
+                                        <div class="w-full flex flex-col items-center mb-2">
+                                                <span class="text-base md:text-lg font-bold tracking-widest text-orange-600 mb-1">{randomGreeting}</span>
+                                                <div class="w-full flex flex-row items-center justify-center gap-2">
+                                                        <span class="inline-block px-3 py-1 rounded bg-gray-900 text-white text-xs font-mono tracking-widest shadow">$</span>
+                                                        <span class="inline-block px-3 py-1 rounded bg-orange-100 text-orange-700 text-xs tracking-widest uppercase shadow">cat README.md</span>
+                                                </div>
+                                        </div>
+                                        <h1 class="text-5xl font-extrabold tracking-tight" style={`color: ${orange[600]}`}>John Ogletree</h1>
+                                        <p class="text-lg font-medium" style={`color: ${gray[700]}`}>Digital Artist & Designer <span class="text-xs align-super">Martinez, GA</span></p>
+                                </header>
+                                <blockquote class="border-l-4 pl-4 italic text-lg" style={`border-color: ${blue[400]}; color: ${blue[700]}`}>Building beautiful, functional digital experiences with code & creativity.</blockquote>
+                                <section>
+                                        <h2 class="text-2xl font-bold mb-2 flex items-center gap-2" style={`color: ${green[600]}`}>
+                                                <span>🚀 About Me</span>
+                                                <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">fun fact</span>
+                                        </h2>
+                                        <p class="mb-4 text-base">{randomFact}</p>
+                                        <ul class="list-disc pl-6 space-y-1">
+                                                <li><span style={`color: ${orange[500]}`}>🎨 UI/UX Design & Prototyping</span></li>
+                                                <li><span style={`color: ${blue[600]}`}>🧑‍💻 Frontend Development</span></li>
+                                                <li><span style={`color: ${red[500]}`}>🔬 UX Research</span></li>
+                                                <li><span style={`color: ${yellow[600]}`}>🌐 Web Animation & Interactivity</span></li>
+                                        </ul>
+                                </section>
+                                <section>
+                                        <h2 class="text-2xl font-bold mb-2" style={`color: ${blue[700]}`}>🛠️ Tech Stack</h2>
+                                        <div class="flex flex-wrap gap-2 mb-2">
+                                                <span class="px-3 py-1 rounded bg-blue-100 text-blue-700 text-xs font-bold">Astro</span>
+                                                <span class="px-3 py-1 rounded bg-orange-100 text-orange-700 text-xs font-bold">React</span>
+                                                <span class="px-3 py-1 rounded bg-green-100 text-green-700 text-xs font-bold">TailwindCSS</span>
+                                                <span class="px-3 py-1 rounded bg-gray-100 text-gray-700 text-xs font-bold">TypeScript</span>
+                                                <span class="px-3 py-1 rounded bg-yellow-100 text-yellow-700 text-xs font-bold">Figma</span>
+                                        </div>
+                                        <ul class="list-disc pl-6">
+                                                <li>TypeScript, JavaScript, HTML, CSS</li>
+                                                <li>Figma, Framer, Adobe CC</li>
+                                        </ul>
+                                </section>
+                                <section>
+                                        <h2 class="text-2xl font-bold mb-2" style={`color: ${orange[700]}`}>📂 Projects</h2>
+                                        <ul class="list-disc pl-6 mb-2">
+                                                <li><a href="#portfolio" style={`color: ${blue[600]}`}>Portfolio</a> – My latest design and dev work</li>
+                                                <li><a href="#open-source" style={`color: ${blue[600]}`}>Open Source</a> – Community-driven UI kits</li>
+                                        </ul>
+                                        <div class="flex gap-2 mt-2">
+                                                <Button text="View Portfolio" href="#portfolio" variant="primary" />
+                                                <Button text="Contact Me" href="#contact" variant="secondary" />
+                                        </div>
+                                </section>
+                                <section>
+                                        <h2 class="text-2xl font-bold mb-2" style={`color: ${red[600]}`}>🤝 Contact</h2>
+                                        <p class="mb-4">Let’s collaborate or just say hi!</p>
+                                        <div class="flex gap-2">
+                                                <a href="mailto:hello@johnogletree.com" class="underline text-blue-600 hover:text-blue-800">hello@johnogletree.com</a>
+                                                <a href="https://github.com/john-ogletree" class="underline text-gray-700 hover:text-black">GitHub</a>
+                                        </div>
+                                </section>
+                                <footer class="mt-8 pt-4 border-t border-gray-200 text-xs text-gray-500 text-center">
+                                        <span>© {new Date().getFullYear()} John Ogletree. Built with Astro & TailwindCSS.</span>
+                                </footer>
+                        </main>
                 </div>
-                <main class="w-full max-w-2xl mx-auto bg-white/90 rounded-xl shadow-xl p-8 md:p-12 flex flex-col gap-8 font-mono border border-orange-100">
-                        <header class="flex flex-col items-center gap-2">
-                                <h1 class="text-5xl font-extrabold tracking-tight" style={`color: ${orange[600]}`}>John Ogletree</h1>
-                                <p class="text-lg font-medium" style={`color: ${gray[700]}`}>Digital Artist & Designer <span class="text-xs align-super">Martinez, GA</span></p>
-                                <span class="inline-block mt-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs tracking-widest uppercase shadow">README.md</span>
-                        </header>
-                        <blockquote class="border-l-4 pl-4 italic text-lg" style={`border-color: ${blue[400]}; color: ${blue[700]}`}>Building beautiful, functional digital experiences with code & creativity.</blockquote>
-                        <section>
-                                <h2 class="text-2xl font-bold mb-2 flex items-center gap-2" style={`color: ${green[600]}`}>
-                                        <span>🚀 About Me</span>
-                                        <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">fun fact</span>
-                                </h2>
-                                <p class="mb-4 text-base">{randomFact}</p>
-                                <ul class="list-disc pl-6 space-y-1">
-                                        <li><span style={`color: ${orange[500]}`}>🎨 UI/UX Design & Prototyping</span></li>
-                                        <li><span style={`color: ${blue[600]}`}>🧑‍💻 Frontend Development</span></li>
-                                        <li><span style={`color: ${red[500]}`}>🔬 UX Research</span></li>
-                                        <li><span style={`color: ${yellow[600]}`}>🌐 Web Animation & Interactivity</span></li>
-                                </ul>
-                        </section>
-                        <section>
-                                <h2 class="text-2xl font-bold mb-2" style={`color: ${blue[700]}`}>🛠️ Tech Stack</h2>
-                                <div class="flex flex-wrap gap-2 mb-2">
-                                        <span class="px-3 py-1 rounded bg-blue-100 text-blue-700 text-xs font-bold">Astro</span>
-                                        <span class="px-3 py-1 rounded bg-orange-100 text-orange-700 text-xs font-bold">React</span>
-                                        <span class="px-3 py-1 rounded bg-green-100 text-green-700 text-xs font-bold">TailwindCSS</span>
-                                        <span class="px-3 py-1 rounded bg-gray-100 text-gray-700 text-xs font-bold">TypeScript</span>
-                                        <span class="px-3 py-1 rounded bg-yellow-100 text-yellow-700 text-xs font-bold">Figma</span>
-                                </div>
-                                <ul class="list-disc pl-6">
-                                        <li>TypeScript, JavaScript, HTML, CSS</li>
-                                        <li>Figma, Framer, Adobe CC</li>
-                                </ul>
-                        </section>
-                        <section>
-                                <h2 class="text-2xl font-bold mb-2" style={`color: ${orange[700]}`}>📂 Projects</h2>
-                                <ul class="list-disc pl-6 mb-2">
-                                        <li><a href="#portfolio" style={`color: ${blue[600]}`}>Portfolio</a> – My latest design and dev work</li>
-                                        <li><a href="#open-source" style={`color: ${blue[600]}`}>Open Source</a> – Community-driven UI kits</li>
-                                </ul>
-                                <div class="flex gap-2 mt-2">
-                                        <Button text="View Portfolio" href="#portfolio" variant="primary" />
-                                        <Button text="Contact Me" href="#contact" variant="secondary" />
-                                </div>
-                        </section>
-                        <section>
-                                <h2 class="text-2xl font-bold mb-2" style={`color: ${red[600]}`}>🤝 Contact</h2>
-                                <p class="mb-4">Let’s collaborate or just say hi!</p>
-                                <div class="flex gap-2">
-                                        <a href="mailto:hello@johnogletree.com" class="underline text-blue-600 hover:text-blue-800">hello@johnogletree.com</a>
-                                        <a href="https://github.com/john-ogletree" class="underline text-gray-700 hover:text-black">GitHub</a>
-                                </div>
-                        </section>
-                        <footer class="mt-8 pt-4 border-t border-gray-200 text-xs text-gray-500 text-center">
-                                <span>© {new Date().getFullYear()} John Ogletree. Built with Astro & TailwindCSS.</span>
-                        </footer>
-                </main>
-        </div>
 </Layout>
