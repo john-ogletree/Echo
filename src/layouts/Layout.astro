@@ -23,8 +23,28 @@ const { title, description, keywords } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<style is:global>
-		@import '../styles/tailwind-base.css';
-	</style>
+    @import '../styles/tailwind-base.css';
+
+    h2::before {
+        content: '##';
+        color: var(--color-text-light);
+        font-weight: 400;
+        margin-right: 0.5rem;
+    }
+
+    ul {
+        list-style: '- ';
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    blockquote {
+        margin-left: 0;
+        padding-left: 1rem;
+        border-left: 3px solid var(--color-border);
+        color: var(--color-text-light);
+    }
+</style>
 	<body class="w-full h-full bg-bg text-text font-mono text-base leading-relaxed transition-transform duration-300 ease-in-out">
         <header class="readme-header">
             <div class="header-right">
