@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
@@ -124,45 +125,7 @@ import Button from '../components/Button.astro';
                 </div>
             </section>
 
-            <footer class="readme-footer">
-                <div class="footer-grid">
-                    <div class="footer-column">
-                        <h4 class="font-mono font-medium text-heading m-0">John Ogletree</h4>
-                        <p class="footer-tagline mb-4 text-text-light text-sm max-w-[35ch]">Digital Artist & Designer based in Martinez, GA.</p>
-                        <span class="badge status">status: available for hire</span>
-                    </div>
-                    <div class="footer-column">
-                        <h4 class="font-mono font-medium text-heading m-0">Explore</h4>
-                        <ul class="footer-links">
-                            <li><a href="/directory/index">Directory</a></li>
-                            <li><a href="/bio/index">About</a></li>
-                            <li><a href="/services/index">Services</a></li>
-                            <li><a href="/projects/index">Projects</a></li>
-                            <li><a href="/thoughts/index">Log</a></li>
-                            <li><a href="/resume/index">Résumé</a></li>
-                            <li><a href="/forms/index">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4 class="font-mono font-medium text-heading m-0">Connect</h4>
-                        <ul class="footer-socials">
-                            <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            </a></li>
-                            <li><a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                            </a></li>
-                            <li><a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
-                            </a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-bottom-bar">
-                        <p class="m-0">© <span id="year"></span> John Ogletree</p>
-                        <a href="#" class="back-to-top">Back to top ↑</a>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </main>
     </div>
 </Layout>
