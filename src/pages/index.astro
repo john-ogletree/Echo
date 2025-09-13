@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.astro';
 ---
 
 <Layout title="John Ogletree - Digital Artist & Designer" description="Portfolio and personal website of John Ogletree, a digital artist and designer based in Martinez, GA. Showcasing UI design, UX research, prototyping, and frontend development." keywords="John Ogletree, Digital Artist, Designer, UI Design, UX Research, Prototyping, Frontend Development, Martinez GA, Portfolio">
@@ -11,7 +10,10 @@ import Button from '../components/Button.astro';
                     <nav class="main-nav" id="main-nav">
                         <div class="nav-header-mobile">
                             <button class="nav-close" aria-label="Close navigation">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
                             </button>
                             <form class="search-form mobile-search" action="/directory" method="get">
                                 <input type="search" name="q" class="search-input" placeholder="Search...">
@@ -41,7 +43,9 @@ import Button from '../components/Button.astro';
                     </nav>
                 </div>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="line-1" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </button>
             </div>
             <div class="header-left">
@@ -52,258 +56,189 @@ import Button from '../components/Button.astro';
             </div>
         </header>
 
-                <main class="readme-body">
-            <div class="content-container">
-                <section class="hero-section">
-                    <div class="hero-content">
-                        <h1>John Ogletree</h1>
-                        <p class="tagline">Digital Artist & Designer</p>
-                        <p>Crafting intuitive user experiences and visually stunning digital art. Specializing in UI/UX design, prototyping, and frontend development.</p>
-                        <div class="hero-actions">
-                            <Button href="/projects/index" variant="primary">View My Work</Button>
-                            <Button href="/bio/index" variant="ghost">About Me</Button>
-                        </div>
-                    </div>
-                </section>
-                <section class="about-me-section">
-                    <h2>About Me</h2>
-                    <div class="about-me-content">
-                        <div class="about-me-text">
-                            <p>Hello! I'm John Ogletree, a passionate digital artist and designer with a knack for creating engaging user experiences and visually appealing digital products. My journey in design and development has equipped me with a unique blend of creative and technical skills.</p>
-                            <p>I specialize in UI/UX design, focusing on user research, wireframing, prototyping, and usability testing to ensure that every product is not only beautiful but also intuitive and user-friendly. On the development side, I enjoy bringing designs to life with clean, efficient frontend code.</p>
-                            <p>When I'm not designing or coding, you can find me exploring new digital art techniques, experimenting with generative art, or enjoying the outdoors in Martinez, GA.</p>
-                        </div>
-                        <div class="about-me-picture">
-                            <div class="image-card-wrapper">
-                                <div class="name-card">
-                                    <h3>John Ogletree</h3>
-                                    <p>Digital Artist & Designer</p>
-                                </div>
-                                <img src="/assets/john-ogletree.jpg" alt="John Ogletree">
-                            </div>
-                            <Button href="/bio/index" variant="primary" size="small">Learn More</Button>
-                        </div>
-                    </div>
-                </section>
-                <section class="services-overview-section">
-                    <h2>Services Overview</h2>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <h3>UI/UX Design</h3>
-                            <p>Crafting intuitive and engaging user interfaces with a focus on user experience research and usability.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Frontend Development</h3>
-                            <p>Bringing designs to life with clean, efficient, and responsive code using modern web technologies.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Prototyping & Wireframing</h3>
-                            <p>Creating interactive prototypes and detailed wireframes to visualize and test user flows.</p>
-                        </div>
-                        <div class="service-card">
-                            <h3>Digital Art & Illustration</h3>
-                            <p>Producing unique digital artwork and illustrations for various platforms and purposes.</p>
-                        </div>
-                    </div>
-                    <div class="services-actions">
-                        <Button href="/services/index" variant="primary">View All Services</Button>
-                    </div>
-                </section>
-                <section class="pricing-overview-section">
-                    <h2>Pricing Overview</h2>
-                    <div class="pricing-grid">
-                        <div class="pricing-card">
-                            <h3>Basic Package</h3>
-                            <p class="price">$500</p>
-                            <ul>
-                                <li>5 hours of consultation</li>
-                                <li>Basic UI audit</li>
-                                <li>1 revision cycle</li>
-                            </ul>
-                            <Button href="/forms/contact" variant="secondary">Get Started</Button>
-                        </div>
-                        <div class="pricing-card featured">
-                            <h3>Standard Package</h3>
-                            <p class="price">$1200</p>
-                            <ul>
-                                <li>15 hours of consultation</li>
-                                <li>Comprehensive UI/UX audit</li>
-                                <li>3 revision cycles</li>
-                                <li>Basic prototype</li>
-                            </ul>
-                            <Button href="/forms/contact" variant="primary">Choose Plan</Button>
-                        </div>
-                        <div class="pricing-card">
-                            <h3>Premium Package</h3>
-                            <p class="price">$2500</p>
-                            <ul>
-                                <li>30 hours of consultation</li>
-                                <li>In-depth UX research & strategy</li>
-                                <li>Unlimited revision cycles</li>
-                                <li>Advanced interactive prototype</li>
-                                <li>Frontend development support</li>
-                            </ul>
-                            <Button href="/forms/contact" variant="secondary">Contact for Custom</Button>
-                        </div>
-                    </div>
-                    <div class="pricing-contact">
-                        <p>Need something custom? <a href="/forms/contact">Contact me</a> for a personalized quote.</p>
-                    </div>
-                    <div class="pricing-actions">
-                        <Button href="/pricing/index" variant="primary">View All Plans</Button>
-                    </div>
-                </section>
-                <section class="projects-overview-section">
-                    <h2>Recent Projects</h2>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <img src="/assets/project-thumbnail-1.jpg" alt="Project 1 Thumbnail">
-                            <h3>Project Alpha</h3>
-                            <p>A comprehensive UI/UX redesign for a SaaS platform, focusing on user engagement and conversion rates.</p>
-                            <Button href="/projects/project-alpha" variant="ghost" size="small">View Project</Button>
-                        </div>
-                        <div class="project-card">
-                            <img src="/assets/project-thumbnail-2.jpg" alt="Project 2 Thumbnail">
-                            <h3>Project Beta</h3>
-                            <p>Development of a responsive frontend for an e-commerce website, optimizing for mobile performance.</p>
-                            <Button href="/projects/project-beta" variant="ghost" size="small">View Project</Button>
-                        </div>
-                        <div class="project-card">
-                            <img src="/assets/project-thumbnail-3.jpg" alt="Project 3 Thumbnail">
-                            <h3>Project Gamma</h3>
-                            <p>Creation of custom digital illustrations and branding assets for a startup's marketing campaign.</p>
-                            <Button href="/projects/project-gamma" variant="ghost" size="small">View Project</Button>
-                        </div>
-                    </div>
-                    <div class="projects-actions">
-                        <Button href="/projects/index" variant="primary">View All Projects</Button>
-                    </div>
-                </section>
-                <div class="forms-container">
-                    <div class="newsletter-feedback-group">
-                        <section class="newsletter-section">
-                            <h2>Stay Updated</h2>
-                            <p>Subscribe to my newsletter for the latest updates on my projects, insights, and exclusive content.</p>
-                            <form class="newsletter-form" action="#" method="POST">
-                                <input type="email" placeholder="Your email address" required>
-                                <Button type="submit" variant="primary">Subscribe</Button>
-                            </form>
-                        </section>
-                    </div>
+        <main class="readme-body">
+            <div class="banner-container">
+                <p class="banner-text">This is a banner! ✨</p>
+            </div>
 
-                    <section class="resume-overview-section">
-                        <h2>Resume Overview</h2>
-                        <p>A brief summary of my professional experience, skills, and education. I specialize in UI/UX design, frontend development, and design systems. Download my full resume for more details on my projects and achievements.</p>
-                        <div class="skills-grid">
-                            <ul>
-                                <li><strong>Key Skills:</strong> UI/UX Design, Frontend Development, Prototyping, User Research, Design Systems, HTML, CSS, JavaScript, React, Astro</li>
-                                <li><strong>Experience:</strong> 5+ years in digital product design and development.</li>
-                                <li><strong>Education:</strong> Bachelor's Degree in Graphic Design.</li>
-                            </ul>
-                        </div>
-                        <Button href="/resume/index" variant="primary">View Resume</Button>
-                    </section>
-
-                    <section class="contact-section">
-                        <h2>Get in Touch</h2>
-                        <p>Have a project in mind or just want to say hello? Fill out the form below or reach out directly.</p>
-                        <form class="contact-form" action="#" method="POST">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message:</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <Button type="submit" variant="primary">Send Message</Button>
-                        </form>
-                    </section>
-
-                    <section class="faq-section">
-                        <h2>Frequently Asked Questions</h2>
-                        <div class="faq-item">
-                            <details>
-                                <summary>What services do you offer?</summary>
-                                <div>
-                                    <p>I offer UI/UX design, frontend development, prototyping, wireframing, and digital art & illustration services.</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="faq-item">
-                            <details>
-                                <summary>What is your design process?</summary>
-                                <div>
-                                    <p>My design process typically involves user research, wireframing, prototyping, user testing, and iterative design based on feedback.</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="faq-item">
-                            <details>
-                                <summary>Can I see your portfolio?</summary>
-                                <div>
-                                    <p>Yes, you can view my projects in the "Creations" section of this website.</p>
-                                </div>
-                            </details>
-                        </div>
-                        <div class="faq-item">
-                            <details>
-                                <summary>How can I get a quote for a project?</summary>
-                                <div>
-                                    <p>You can fill out the contact form on this page or reach out to me directly via email to discuss your project and get a personalized quote.</p>
-                                </div>
-                            </details>
-                        </div>
-                    </section>
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Welcome to the Hero Section!</h1>
+                    <p>This is a brief and engaging description of what this page is all about. It's designed to capture attention and provide key information at a glance.</p>
+                    <a href="/projects/index" class="cta-button">View My Work</a>
                 </div>
+            </div>
+
+            <div class="branded-hr">
+                <div class="line"></div>
+                <svg class="icon-repo" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Z"></path></svg>
+                <div class="line"></div>
+            </div>
+
+            <section class="about-me-section">
+                <div class="profile-card" id="profile-card">
+                    <div class="profile-main-info">
+                        <div class="profile-header">
+                            <img src="https://avatar.iran.liara.run/public/boy?username=john" alt="John Ogletree" class="profile-picture" />
+                            <div class="profile-header-info">
+                                <h3>John Ogletree</h3>
+                                <p class="profile-username">@john-ogletree</p>
+                                <div class="social-links">
+                                    <a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    </a>
+                                    <a href="#" aria-label="Dribbble Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+                                    </a>
+                                    <a href="#" aria-label="Facebook Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                    </a>
+                                    <a href="#" aria-label="Instagram Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                    </a>
+                                    <a href="#" aria-label="YouTube Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                                    </a>
+                                    <a href="#" aria-label="TikTok Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM6 12a6 6 0 1 1 12 0v8a2 2 0 0 1-2 2h-1a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2H6a2 2 0 0 1-2-2z"></path></svg>
+                                    </a>
+                                    <a href="#" aria-label="Snapchat Profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" data-value="42">0</span>
+                                <span class="stat-label">Repos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" data-value="1480">0</span>
+                                <span class="stat-label">Contribs</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" data-value="215">0</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contribution-graph" id="contribution-graph">
+                        <span class="graph-loading">Loading graph...</span>
+                    </div>
+                    <div class="profile-stats languages">
+                        <div class="stat-item">
+                            <span class="stat-label">
+                                <span class="lang-color" style="--lang-color: #f1e05a;"></span>
+                                JavaScript
+                            </span>
+                            <span class="stat-value">45%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">
+                                <span class="lang-color" style="--lang-color: #3178c6;"></span>
+                                TypeScript
+                            </span>
+                            <span class="stat-value">30%</span>
+                        </div>
+                        <div class="stat-item">
+                             <span class="stat-label">
+                                <span class="lang-color" style="--lang-color: #b07219;"></span>
+                                Java
+                            </span>
+                            <span class="stat-value">15%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-column">
+                    <div class="skills-card">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2L2 7l10 5l10-5l-10-5zm0 11.67L4.08 9.53L12 14l7.92-4.47L12 13.67zM12 22l-10-5v-2.33l10 5l10-5V17l-10 5z"/></svg>
+                                <span>UI Design</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="progress-bar" data-width="90%"></div>
+                                <span>90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/></svg>
+                                <span>UX Research</span>
+                            </div>
+                             <div class="skill-progress">
+                                <div class="progress-bar" data-width="75%"></div>
+                                <span>75%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6l6 6l1.4-1.4zm5.2 0l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6l-1.4-1.4z"/></svg>
+                                <span>Prototyping</span>
+                            </div>
+                             <div class="skill-progress">
+                                <div class="progress-bar" data-width="85%"></div>
+                                <span>85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <svg class="skill-icon" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m20 18l1.41-1.41L15 10.2l-4 4l-4-4L2 15.17L3.42 16.6L7 13l4 4l5.17-5.17L20 18Z"/></svg>
+                                <span>Frontend Dev</span>
+                            </div>
+                             <div class="skill-progress">
+                                <div class="progress-bar" data-width="80%"></div>
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="/bio/index" class="about-button">More About Me</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="readme-footer">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h4>John Ogletree</h4>
+                        <p class="footer-tagline">Digital Artist & Designer based in Martinez, GA.</p>
+                        <span class="badge status">status: available for hire</span>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul class="footer-links">
+                            <li><a href="/directory/index">Directory</a></li>
+                            <li><a href="/bio/index">About</a></li>
+                            <li><a href="/services/index">Services</a></li>
+                            <li><a href="/projects/index">Projects</a></li>
+                            <li><a href="/thoughts/index">Log</a></li>
+                            <li><a href="/resume/index">Résumé</a></li>
+                            <li><a href="/forms/index">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul class="footer-socials">
+                            <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a></li>
+                            <li><a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a></li>
+                            <li><a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom-bar">
+                        <p>© <span id="year"></span> John Ogletree</p>
+                        <a href="#" class="back-to-top">Back to top ↑</a>
+                    </div>
+                </div>
+            </footer>
         </main>
-
-        <footer class="footer">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>John Ogletree</h4>
-                    <p class="footer-tagline">Digital Artist & Designer</p>
-                    <Button href="/forms/contact" variant="secondary" size="small" class="badge">Hire Me</Button>
-                </div>
-                <div class="footer-column">
-                    <h4>Navigation</h4>
-                    <ul class="footer-links">
-                        <li><a href="/">Start</a></li>
-                        <li><a href="/bio/index">Profile</a></li>
-                        <li><a href="/services/index">Capabilities</a></li>
-                        <li><a href="/projects/index">Creations</a></li>
-                        <li><a href="/thoughts/index">Log</a></li>
-                        <li><a href="/resume/index">Credentials</a></li>
-                        <li><a href="/forms/index">Connect</a></li>
-                        <li><a href="/directory/index">Explorer</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Connect</h4>
-                    <ul class="footer-socials">
-                        <li><a href="https://github.com/john-ogletree" aria-label="GitHub Profile">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        </a></li>
-                        <li><a href="https://www.linkedin.com/in/john-ogletree-6b8773379/" aria-label="LinkedIn Profile">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </a></li>
-                        <li><a href="https://dribbble.com/john-ogletree" aria-label="Dribbble Profile">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 4.66-16.88 7.02"></path><path d="M2.75 8.56c3.12-1.64 8.7-2.73 17.72-2.26"></path></svg>
-                        </a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom-bar">
-                <p>&copy; <span id="year"></span> John Ogletree. All rights reserved.</p>
-                <a href="#top" class="back-to-top">Back to Top</a>
-            </div>
-        </footer>
     </div>
 </Layout>
 
@@ -372,7 +307,17 @@ import Button from '../components/Button.astro';
             
             observer.observe(profileCard);
             
-            
+            // --- Generate Placeholder Contribution Graph ---
+            const graph = document.getElementById('contribution-graph');
+            if (graph) {
+                const days = 120;
+                let output = '';
+                for (let i = 0; i < days; i++) {
+                    const level = Math.floor(Math.random() * 5);
+                    output += `<div class="graph-day" data-level="${level}" title="Mock contribution"></div>`;
+                }
+                graph.innerHTML = output;
+            }
         }
 
         // --- Animated Skills Logic ---
@@ -394,7 +339,7 @@ import Button from '../components/Button.astro';
     });
 </script>
 
-    <style>
+<style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
     :root {
         --color-bg: #F0EAD6; /* Light cream */
@@ -452,26 +397,9 @@ import Button from '../components/Button.astro';
     a:hover { text-decoration: underline; }
     hr { display: none;
     }
-    .skills-grid ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 3 columns, responsive */
-        gap: 1rem;
-    }
-
-    .skills-grid li {
-        margin-bottom: 0;
-    }
-
-    .skills-grid li::before {
-        content: '\2022'; /* Unicode for a bullet point */
-        color: var(--color-accent);
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-    }
+    ul { list-style: '- ';
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;}
     blockquote {
         margin-left: 0;
         padding-left: 1rem;
@@ -539,32 +467,6 @@ import Button from '../components/Button.astro';
     }
     .hero-content {
         max-width: 80ch;
-    }
-
-    .hero-actions {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .tagline {
-        font-size: 1.25rem;
-        color: var(--color-text-light);
-        margin-bottom: 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.1;
-    }
-
-    .hero-content p {
-        font-size: 1.1rem;
-        color: var(--color-text-light);
-        margin-bottom: 1.5rem;
     }
 
     /* --- Header Search --- */
@@ -744,7 +646,26 @@ import Button from '../components/Button.astro';
         margin-top: 1.5rem;
     }
     
-    
+    .cta-button {
+        background-color: var(--color-heading);
+        color: var(--color-bg);
+        border: 1px solid var(--color-heading);
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        width: 100%;
+        font-family: var(--font-mono);
+    }
+    .cta-button:hover {
+        background-color: #D36C52;
+        border-color: #D36C52;
+    }
     
     .footer {
         padding: 2.5rem var(--padding-x) 1.5rem var(--padding-x);
@@ -811,369 +732,14 @@ import Button from '../components/Button.astro';
     .back-to-top:hover { color: var(--color-accent); text-decoration: none;
     }
     
-    /* --- Main Content Container --- */
-    .content-container {
-        display: flex;
-        flex-direction: column;
+    /* --- About Me Section --- */
+    .about-me-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
         margin-top: 4rem;
-        margin-left: auto;
-        margin-right: auto;
+        align-items: stretch;
     }
-
-    .about-me-section {
-        margin-bottom: 2rem;
-    }
-    .about-me-content {
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-    }
-    .about-me-text {
-        flex: 2;
-    }
-    .about-me-picture {
-        flex: 1;
-        display: flex;
-        flex-direction: column; /* Changed to column to stack wrapper and button */
-        align-items: center; /* Center items horizontally */
-        gap: 1rem; /* Gap between wrapper and button */
-    }
-    .about-me-picture img {
-        width: 100%;
-        border-radius: 8px;
-    }
-
-    .image-card-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem; /* Gap between name-card and image */
-    }
-
-    .name-card {
-        background-color: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        padding: 1rem;
-        text-align: center;
-        margin-right: 1rem; /* Space between card and image */
-    }
-    .name-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-        color: var(--color-heading);
-    }
-    .name-card p {
-        font-size: 0.9rem;
-        color: var(--color-text-light);
-        margin-bottom: 0;
-    }
-
-    .services-overview-section {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-    }
-
-    .service-card {
-        background-color: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .service-card h3 {
-        font-size: 1.2rem;
-        color: var(--color-accent);
-        margin-bottom: 0.5rem;
-    }
-
-    .service-card p {
-        font-size: 0.95rem;
-        color: var(--color-text-light);
-        margin-bottom: 0;
-    }
-
-    .services-actions {
-        margin-top: 2rem;
-        text-align: center;
-    }
-
-    .pricing-overview-section {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-    }
-
-    .pricing-card {
-        background-color: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .pricing-card.featured {
-        border-color: var(--color-accent);
-        box-shadow: 0 0 0 3px var(--color-accent);
-    }
-
-    .pricing-card h3 {
-        font-size: 1.5rem;
-        color: var(--color-heading);
-        margin-bottom: 0.5rem;
-    }
-
-    .pricing-card .price {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--color-accent);
-        margin-bottom: 1rem;
-    }
-
-    .pricing-card ul {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 1.5rem;
-        text-align: left;
-        width: 100%;
-    }
-
-    .pricing-card li {
-        margin-bottom: 0.5rem;
-        color: var(--color-text-light);
-    }
-
-    .pricing-card li::before {
-        content: '✓';
-        color: var(--color-accent);
-        margin-right: 0.5rem;
-    }
-
-    .pricing-contact {
-        margin-top: 2rem;
-        text-align: center;
-        font-size: 1.1rem;
-        color: var(--color-text-light);
-    }
-
-    .pricing-actions {
-        margin-top: 2rem;
-        text-align: center;
-    }
-
-    .projects-overview-section {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-    }
-
-    .project-card {
-        background-color: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        text-align: center;
-    }
-
-    .project-card img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-        margin-bottom: 0.5rem;
-    }
-
-    .project-card h3 {
-        font-size: 1.3rem;
-        color: var(--color-heading);
-        margin-bottom: 0.5rem;
-    }
-
-    .project-card p {
-        font-size: 0.95rem;
-        color: var(--color-text-light);
-        flex-grow: 1; /* Allows description to take up available space */
-        margin-bottom: 1rem;
-    }
-
-    .projects-actions {
-        margin-top: 2rem;
-        text-align: center;
-    }
-
-    .forms-container {
-        display: grid;
-        grid-template-columns: 1fr; /* Single column for newsletter and contact */
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    .forms-container > div,
-    .forms-container > section {
-        /* height: 100%; No longer needed for equal height */
-    }
-
-    .newsletter-feedback-group {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem; /* Space between newsletter and feedback forms */
-    }
-
-    .newsletter-section, .contact-section, .resume-overview-section, .faq-section {
-        background-color: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        padding: 1.5rem;
-    }
-
-    .faq-item details {
-        background-color: var(--color-bg);
-        border: 1px solid var(--color-border);
-        border-radius: 8px;
-        margin-bottom: 1rem;
-        padding: 1rem;
-    }
-
-    .faq-item summary {
-        font-weight: bold;
-        cursor: pointer;
-        list-style: none; /* Remove default marker */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: var(--color-heading);
-    }
-
-    .faq-item summary::-webkit-details-marker {
-        display: none; /* Hide default marker for Webkit browsers */
-    }
-
-    .faq-item summary::after {
-        content: '+'; /* Custom plus icon */
-        font-size: 1.5rem;
-        color: var(--color-accent);
-        transition: transform 0.2s ease;
-    }
-
-    .faq-item details[open] summary::after {
-        content: '-'; /* Custom minus icon when open */
-        transform: rotate(180deg);
-    }
-
-    .faq-item details div {
-        padding-top: 1rem;
-        border-top: 1px solid var(--color-border);
-        margin-top: 1rem;
-    }
-
-    .faq-item details p {
-        margin-bottom: 0;
-        color: var(--color-text-light);
-    }
-
-    .newsletter-form {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        flex-wrap: wrap;
-    }
-
-    .newsletter-form input[type="email"] {
-        flex-grow: 1;
-        padding: 0.75rem;
-        border: 1px solid var(--color-border);
-        border-radius: 6px;
-        font-family: var(--font-mono);
-        font-size: 1rem;
-        background-color: var(--color-bg);
-        color: var(--color-text);
-    }
-
-    .newsletter-form input[type="email"]:focus {
-        outline: none;
-        border-color: var(--color-accent);
-        box-shadow: 0 0 0 3px rgba(61, 135, 166, 0.3);
-    }
-
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1.5rem;
-    }
-
-    .contact-form .form-row {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .contact-form .form-row .form-group {
-        flex: 1;
-        min-width: 200px; /* Adjust as needed */
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .form-group label {
-        font-size: 0.9rem;
-        color: var(--color-text-light);
-        margin-bottom: 0.25rem;
-    }
-
-    .form-group input, .form-group textarea {
-        padding: 0.75rem;
-        border: 1px solid var(--color-border);
-        border-radius: 6px;
-        font-family: var(--font-mono);
-        font-size: 1rem;
-        background-color: var(--color-bg);
-        color: var(--color-text);
-    }
-
-    .form-group input:focus, .form-group textarea:focus {
-        outline: none;
-        border-color: var(--color-accent);
-        box-shadow: 0 0 0 3px rgba(61, 135, 166, 0.3);
-    }
-
-    .contact-form Button {
-        align-self: flex-start; /* Align button to the start */
-    }
-
-    
 
     /* --- REVAMPED PROFILE CARD --- */
     .profile-card {
@@ -1209,7 +775,7 @@ import Button from '../components/Button.astro';
         display: flex;
         flex-direction: column;
     }
-    .profile-name {
+    .profile-header-info h3 {
         font-size: 1.5rem;
         margin: 0;
         line-height: 1.2;
@@ -1259,7 +825,28 @@ import Button from '../components/Button.astro';
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
-    
+    .contribution-graph {
+        display: grid;
+        grid-template-columns: repeat(20, 1fr);
+        grid-auto-flow: column;
+        grid-auto-rows: 1fr;
+        gap: 3px;
+    }
+    .graph-day {
+        aspect-ratio: 1 / 1;
+        background-color: var(--color-surface);
+        border-radius: 2px;
+    }
+    .graph-day[data-level="1"] { background-color: #9be9a8; }
+    .graph-day[data-level="2"] { background-color: #40c463; }
+    .graph-day[data-level="3"] { background-color: #30a14e; }
+    .graph-day[data-level="4"] { background-color: #216e39; }
+    .graph-loading {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
     .profile-stats.languages {
         border-top: 1px solid var(--color-border);
         padding-top: 1.25rem;
@@ -1288,7 +875,7 @@ import Button from '../components/Button.astro';
     .skills-card {
         padding: 1.5rem;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         background-color: var(--color-bg);
         border: 1px solid var(--color-border);
@@ -1328,7 +915,29 @@ import Button from '../components/Button.astro';
         font-size: 0.9rem;
         padding-right: 0.5rem;
     }
-    
+    .about-button {
+        background-color: transparent;
+        color: var(--color-heading);
+        border: 1px solid var(--color-heading);
+        transition: background-color 0.2s ease, color 0.2s ease;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        width: 100%;
+        font-family: var(--font-mono);
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .about-button:hover {
+        background-color: var(--color-heading);
+        color: var(--color-bg);
+        text-decoration: none;
+    }
     
     /* --- Responsive --- */
     @media (max-width: 920px) {
@@ -1440,6 +1049,9 @@ import Button from '../components/Button.astro';
                 "blog newsletter"
                 "contact contact";
         }
+        .about-me-section {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 768px) {
@@ -1463,6 +1075,9 @@ import Button from '../components/Button.astro';
             text-align: center;
             gap: 1rem;
             margin-bottom: 1.5rem;
+        }
+        .hero-info h1 {
+            font-size: 1.75rem;
         }
         .hero-profile-picture {
             display: none;
@@ -1495,76 +1110,5 @@ import Button from '../components/Button.astro';
         .stat-item {
             align-items: center;
         }
-        .about-me-content {
-            flex-direction: column;
-        }
-
-        .about-me-picture {
-            flex-direction: column; /* Stack card, image, button vertically */
-        }
-
-        .image-card-wrapper {
-            flex-direction: column; /* Stack name-card and image vertically */
-        }
-
-        .hero-actions {
-            flex-direction: column;
-        }
-
-        .forms-container {
-            grid-template-columns: 1fr;
-        }
-
-        .forms-container .newsletter-section,
-        .forms-container .contact-section {
-            min-width: auto;
-        }
     }
-
-    /* --- Button.astro CSS --- */
-    :root {
-        --color-accent: #3D87A6; /* Retro teal */
-    }
-
-    .inline-flex { display: inline-flex; text-decoration: none; }
-    .items-center { align-items: center; }
-    .justify-center { justify-content: center; }
-    .font-semibold { font-weight: 600; }
-    .rounded-md { border-radius: 0.375rem; /* 6px */ }
-    .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; }
-    .duration-200 { transition-duration: 200ms; }
-    .ease-in-out { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-    .focus\:outline-none { outline: 2px solid transparent; outline-offset: 2px; }
-    .focus\:ring-2 { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
-    .focus\:ring-offset-2 { --tw-ring-offset-width: 2px; }
-
-    /* Variants */
-    .bg-color-accent { background-color: var(--color-accent); }
-    .text-white { color: #fff; }
-    .hover\:bg-blue-700:hover { background-color: #1d4ed8; /* A darker blue for hover */ }
-    .focus\:ring-blue-500:focus { --tw-ring-color: #3b82f6; /* A blue for focus ring */ }
-
-    .bg-gray-200 { background-color: #e5e7eb; }
-    .text-gray-800 { color: #1f2937; }
-    .hover\:bg-gray-300:hover { background-color: #d1d5db; }
-    .focus\:ring-gray-500:focus { --tw-ring-color: #6b7280; }
-
-    .bg-transparent { background-color: transparent; }
-    .text-color-accent { color: var(--color-accent); }
-    .hover\:bg-color-accent:hover { background-color: var(--color-accent); }
-    .hover\:text-white:hover { color: #fff; }
-    .focus\:ring-color-accent:focus { --tw-ring-color: var(--color-accent); }
-
-    /* Sizes */
-    .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
-    .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
-    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-
-    .px-4 { padding-left: 1rem; padding-right: 1rem; }
-    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-    .text-base { font-size: 1rem; line-height: 1.5rem; }
-
-    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
 </style>
