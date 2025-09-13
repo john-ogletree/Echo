@@ -31,3 +31,22 @@ import Navigation from '../components/Navigation.astro';
 	</body>
 </html>
 
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navDrawer = document.getElementById('nav-drawer-container');
+    const closeButton = navDrawer.querySelector('button');
+
+    navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isExpanded));
+        navDrawer.classList.toggle('-translate-x-full');
+        closeButton.classList.toggle('hidden');
+    });
+
+    closeButton.addEventListener('click', () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navDrawer.classList.add('-translate-x-full');
+        closeButton.classList.add('hidden');
+    });
+</script>
+
