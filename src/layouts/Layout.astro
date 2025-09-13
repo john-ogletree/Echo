@@ -6,7 +6,6 @@ interface Props {
 }
 
 const { title, description, keywords } = Astro.props;
-import SimpleNav from '../components/SimpleNav.astro';
 
 ---
 
@@ -27,7 +26,6 @@ import SimpleNav from '../components/SimpleNav.astro';
 	</head>
 	<body class="w-full h-full bg-bg text-text font-mono text-base leading-relaxed transition-transform duration-300 ease-in-out m-0 p-0">
 
-        <SimpleNav />
 		<slot />
 	</body>
 </html>
