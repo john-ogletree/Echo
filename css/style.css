@@ -108,6 +108,7 @@ body.dark {
   border-radius: 50%;
   color: var(--sidebar-color);
   font-size: 18px;
+  z-index: 999; /* Ensure it's above other content */
 }
 
 
