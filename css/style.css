@@ -254,6 +254,15 @@ body.dark .search-bar input {
   transition: var(--trans-03);
 }
 
-.btn:hover {
-  opacity: 0.8;
+/* Home Section */
+.home {
+  position: relative;
+  left: 250px; /* Initial position when sidebar is open */
+  width: calc(100% - 250px); /* Adjust width */
+  transition: var(--trans-02);
+}
+
+.sidebar.close ~ .home {
+  left: 78px; /* Position when sidebar is closed */
+  width: calc(100% - 78px); /* Adjust width */
 }
