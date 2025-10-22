@@ -1,4 +1,4 @@
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Poppins:wght@300;400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@300;400;800&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 * {
   font-family: "Poppins", "sans-sarif";
@@ -8,13 +8,13 @@
 }
 
 :root {
-  --body-color: #e4e9f7;
-  --sidebar-color: #fff;
-  --primary-color: #f4f2f2;
-  --primary-color-light: #f4f2f2;
-  --toggle-color: #ddd;
-  --text-color: #fff;
-  --dark-color: #000;
+  --body-color: #1a0033; /* Dark purple */
+  --sidebar-color: #0d001a; /* Even darker purple */
+  --primary-color: #330066; /* Medium purple */
+  --primary-color-light: #4d0099; /* Lighter purple */
+  --toggle-color: #00ffff; /* Cyan neon */
+  --text-color: #cc00ff; /* Magenta neon */
+  --dark-color: #00ff00; /* Green neon */
 
   --trans-02: all 0.2s ease;
   --trans-03: all 0.3s ease;
@@ -26,16 +26,20 @@ body {
   height: 100vh;
   background-color: var(--body-color);
   transition: var(--trans-02);
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 body.dark {
-  --body-color: #181914;
-  --sidebar-color: #242526;
-  --primary-color: #34383c;
-  --primary-color-light: #383a3c;
-  --toggle-color: #fff;
-  --text-color: #ccc;
-  --dark-color: #fff;
+  --body-color: #1a0033;
+  --sidebar-color: #0d001a;
+  --primary-color: #330066;
+  --primary-color-light: #4d0099;
+  --toggle-color: #00ffff;
+  --text-color: #cc00ff;
+  --dark-color: #00ff00;
 }
 /* Reusable CSS */
 
@@ -65,6 +69,7 @@ body.dark {
   background-color: var(--sidebar-color);
   padding: 10px 14px;
   transition: var(--trans-02);
+  border-right: 2px solid var(--toggle-color); /* Neon border */
 }
 
 .sidebar header {
@@ -109,6 +114,7 @@ body.dark {
   color: var(--sidebar-color);
   font-size: 18px;
   z-index: 999; /* Ensure it's above other content */
+  box-shadow: 0 0 10px var(--toggle-color); /* Neon glow */
 }
 
 
@@ -127,6 +133,7 @@ body.dark {
   justify-content: center;
   min-width: 60px;
   font-size: 20px;
+  color: var(--toggle-color); /* Neon icons */
 }
 .sidebar li .icons,
 .sidebar li .text {
@@ -159,11 +166,11 @@ body.dark {
 }
 
 .sidebar li a:hover {
-  background: var(--primary-color);
+  background: var(--primary-color-light);
 }
 .sidebar li a:hover .icons,
 .sidebar li a:hover .text {
-  color: var(--dark-color);
+  color: var(--dark-color); /* Green neon on hover */
 }
 
 .sidebar .menu-bar {
@@ -241,7 +248,7 @@ body.dark .search-bar input {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #007bff, #0056b3, #007bff); /* Animated gradient */
+  background: linear-gradient(45deg, #00ffff, #cc00ff, #00ff00); /* Retro-future gradient */
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   filter: brightness(0.7); /* Darken the background */
@@ -269,63 +276,70 @@ body.dark .search-bar input {
 }
 
 .hero-content h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 4.5em; /* Slightly larger */
-  font-weight: 800;
-  margin-bottom: 20px; /* Increased margin */
+  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
+  font-size: 3.5em; /* Adjusted for pixel font */
+  font-weight: 400;
+  margin-bottom: 20px;
   line-height: 1.1;
-  color: #fff; /* Ensure white text on dark background */
+  color: var(--toggle-color); /* Cyan neon */
+  text-shadow: 0 0 10px var(--toggle-color), 0 0 20px var(--toggle-color); /* Neon glow */
 }
 
 .hero-content p {
-  font-size: 1.6em; /* Slightly larger */
+  font-family: 'Poppins', sans-serif; /* Modern sans-serif */
+  font-size: 1.4em; /* Adjusted */
   font-weight: 300;
-  margin-bottom: 40px; /* Increased margin */
-  color: #e0e0e0; /* Slightly off-white for contrast */
+  margin-bottom: 40px;
+  color: var(--text-color); /* Magenta neon */
 }
 
 .hero-actions .btn {
-  margin: 0 15px; /* Increased margin between buttons */
-  padding: 15px 30px; /* Larger buttons */
-  font-size: 1.2em; /* Larger font */
-  border-radius: 50px;
+  margin: 0 15px;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 5px; /* Sharper edges for retro feel */
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease; /* Smooth transitions */
+  transition: all 0.3s ease;
+  text-transform: uppercase; /* Uppercase for retro */
+  letter-spacing: 2px;
 }
 
 .btn-primary {
-  background-color: #28a745; /* Green primary button */
-  color: #fff;
-  border: 2px solid #28a745;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--dark-color); /* Green neon */
+  color: var(--body-color); /* Dark purple text */
+  border: 2px solid var(--dark-color);
+  box-shadow: 0 0 15px var(--dark-color); /* Neon glow */
 }
 
 .btn-primary:hover {
-  background-color: #218838;
-  border-color: #218838;
-  transform: translateY(-2px); /* Lift effect on hover */
+  background-color: transparent;
+  color: var(--dark-color);
+  box-shadow: 0 0 20px var(--dark-color);
+  transform: translateY(-3px); /* More pronounced lift */
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--toggle-color); /* Cyan neon */
+  border: 2px solid var(--toggle-color);
+  box-shadow: 0 0 15px var(--toggle-color); /* Neon glow */
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px); /* Lift effect on hover */
+  background-color: var(--toggle-color);
+  color: var(--body-color);
+  box-shadow: 0 0 20px var(--toggle-color);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   .hero-content p {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   .hero-actions .btn {
