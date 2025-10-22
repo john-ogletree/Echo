@@ -243,9 +243,11 @@ body.dark .search-bar input {
 
 .profile-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 40px; /* Increase gap for horizontal layout */
 }
 
 .profile-picture {
