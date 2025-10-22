@@ -343,6 +343,92 @@ body.dark .search-bar input {
   }
 }
 
+/* Terminal Styles */
+.terminal-window {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 800px;
+  height: 400px; /* Fixed height for terminal */
+  background-color: #1e1e1e; /* Dark background for terminal */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(204, 0, 255, 0.3); /* Neon glow */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Press Start 2P', cursive; /* Retro pixel font */
+  font-size: 1em;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.terminal-header {
+  background-color: #333;
+  padding: 8px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: 1px solid #555;
+}
+
+.terminal-title {
+  color: #eee;
+  font-size: 0.8em;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ff5f56; /* Red */
+}
+
+.terminal-button.minimize {
+  background-color: #ffbd2e; /* Yellow */
+}
+
+.terminal-button.maximize {
+  background-color: #27c93f; /* Green */
+}
+
+.terminal-body {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  color: #00ff00; /* Green neon text */
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  text-align: left;
+}
+
+.terminal-output .prompt {
+  color: #00ffff; /* Cyan neon for prompt */
+}
+
+.terminal-output .command {
+  color: #cc00ff; /* Magenta neon for command */
+}
+
+.terminal-output .output {
+  color: #00ff00; /* Green neon for output */
+}
+
+.terminal-output .cursor {
+  animation: blink-caret 1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00ff00; } /* Green neon cursor */
+}
+
 /* Home Section */
 .home {
   position: relative;
