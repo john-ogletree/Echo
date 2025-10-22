@@ -1,6 +1,6 @@
 # John Ogletree - Digital Canvas
 
-Welcome to my digital space! I'm John Ogletree, a passionate software engineer and creative problem-solver. This README serves as my personal website, a canvas where I showcase my journey, skills, and projects.
+Welcome to my digital space! I'm John Ogletree, a passionate software engineer and creative problem-solver. This README serves as my personal website, and serves as the overview of my website, a canvas where I showcase my journey, skills, and projects.
 
 ---
 
