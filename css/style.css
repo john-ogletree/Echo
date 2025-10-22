@@ -229,8 +229,6 @@ body.dark .search-bar input {
   padding: 40px;
   color: var(--text-color);
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .profile-title {
