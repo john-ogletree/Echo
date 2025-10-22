@@ -235,15 +235,23 @@ body.dark .search-bar input {
   overflow: hidden; /* Hide overflowing background */
 }
 
-.hero-background {
+.hero-animated-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover; /* Placeholder image */
-  filter: brightness(0.5); /* Darken the background */
+  background: linear-gradient(45deg, #007bff, #0056b3, #007bff); /* Animated gradient */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  filter: brightness(0.7); /* Darken the background */
   z-index: -1;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero-content {
@@ -251,64 +259,79 @@ body.dark .search-bar input {
   z-index: 1;
   padding: 20px;
   max-width: 800px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
 .hero-content h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 4em;
+  font-size: 4.5em; /* Slightly larger */
   font-weight: 800;
-  margin-bottom: 15px;
-  line-height: 1.2;
+  margin-bottom: 20px; /* Increased margin */
+  line-height: 1.1;
+  color: #fff; /* Ensure white text on dark background */
 }
 
 .hero-content p {
-  font-size: 1.5em;
+  font-size: 1.6em; /* Slightly larger */
   font-weight: 300;
-  margin-bottom: 30px;
+  margin-bottom: 40px; /* Increased margin */
+  color: #e0e0e0; /* Slightly off-white for contrast */
 }
 
 .hero-actions .btn {
-  margin: 0 10px;
-  padding: 12px 25px;
-  font-size: 1.1em;
+  margin: 0 15px; /* Increased margin between buttons */
+  padding: 15px 30px; /* Larger buttons */
+  font-size: 1.2em; /* Larger font */
   border-radius: 50px;
   text-decoration: none;
   display: inline-block;
+  transition: all 0.3s ease; /* Smooth transitions */
 }
 
 .btn-primary {
-  background-color: #007bff; /* Example primary color */
+  background-color: #28a745; /* Green primary button */
   color: #fff;
-  border: 2px solid #007bff;
+  border: 2px solid #28a745;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #218838;
+  border-color: #218838;
+  transform: translateY(-2px); /* Lift effect on hover */
 }
 
 .btn-secondary {
   background-color: transparent;
   color: #fff;
   border: 2px solid #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px); /* Lift effect on hover */
 }
 
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2.5em;
+    font-size: 3em;
   }
 
   .hero-content p {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 
   .hero-actions .btn {
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    margin: 0 10px;
   }
 }
 
