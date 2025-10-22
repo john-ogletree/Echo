@@ -165,13 +165,7 @@ body.dark {
   text-align: left;
 }
 
-.sidebar li a:hover {
-  background: var(--primary-color-light);
-}
-.sidebar li a:hover .icons,
-.sidebar li a:hover .text {
-  color: var(--dark-color); /* Green neon on hover */
-}
+
 
 .sidebar .menu-bar {
   height: 100%;
