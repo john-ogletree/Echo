@@ -224,6 +224,64 @@ body.dark .search-bar input {
 }
 
 
+/* Profile Section */
+.profile-section {
+  padding: 40px;
+  color: var(--text-color);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--toggle-color);
+  text-shadow: 0 0 10px var(--toggle-color);
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--dark-color);
+  box-shadow: 0 0 15px var(--dark-color);
+  object-fit: cover;
+}
+
+.profile-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.profile-details {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  max-width: 300px;
+}
+
+.profile-details li {
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+}
+
+.profile-details strong {
+  color: var(--dark-color);
+}
+
 /* Home Section */
 .home {
   position: relative;
