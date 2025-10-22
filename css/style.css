@@ -239,6 +239,7 @@ body.dark .search-bar input {
   margin-bottom: 30px;
   color: var(--toggle-color);
   text-shadow: 0 0 10px var(--toggle-color);
+  text-align: left; /* Left-align the heading */
 }
 
 .profile-content {
