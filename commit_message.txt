@@ -1,0 +1,1 @@
+style: Make profile section full width in style.css
