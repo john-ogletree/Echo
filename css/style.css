@@ -224,35 +224,91 @@ body.dark .search-bar input {
 
 /* Hero Section */
 .hero {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 60px); /* Adjust based on your header/nav height */
-  background-color: var(--primary-color); /* Example background */
+  height: 100vh; /* Full viewport height */
   color: var(--text-color);
   text-align: center;
+  overflow: hidden; /* Hide overflowing background */
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover; /* Placeholder image */
+  filter: brightness(0.5); /* Darken the background */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
   padding: 20px;
+  max-width: 800px;
 }
 
 .hero-content h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.2;
 }
 
 .hero-content p {
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-weight: 300;
   margin-bottom: 30px;
 }
 
-.btn {
-  background-color: var(--dark-color); /* Example button color */
-  color: var(--sidebar-color);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: var(--trans-03);
+.hero-actions .btn {
+  margin: 0 10px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: #007bff; /* Example primary color */
+  color: #fff;
+  border: 2px solid #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-content p {
+    font-size: 1.2em;
+  }
+
+  .hero-actions .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
 }
 
 /* Home Section */
