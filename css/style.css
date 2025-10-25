@@ -132,7 +132,7 @@ body.dark {
   align-items: center;
   justify-content: center;
   min-width: 60px;
-  font-size: 20px;
+  font-size: 16px;
   color: var(--toggle-color); /* Neon icons */
 }
 .sidebar li .icons,
