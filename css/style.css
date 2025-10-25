@@ -304,3 +304,42 @@ body.dark .search-bar input {
   box-shadow: 0 0 15px var(--toggle-color);
   margin: 20px;
 }
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-name-tagline h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2em;
+  color: var(--dark-color);
+  text-shadow: 0 0 10px var(--dark-color);
+  margin: 0;
+}
+
+.profile-name-tagline p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.social-media-icons {
+  margin-top: 20px;
+}
+
+.social-media-icons a {
+  color: var(--toggle-color);
+  font-size: 2em;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: var(--trans-03);
+}
+
+.social-media-icons a:hover {
+  color: var(--dark-color);
+  text-shadow: 0 0 10px var(--dark-color);
+}
