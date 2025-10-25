@@ -266,7 +266,7 @@ body.dark .search-bar input {
 
 .profile-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 20px;
 }
