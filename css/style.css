@@ -44,8 +44,8 @@ body.dark {
 /* Reusable CSS */
 
 .sidebar .text {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 0.9em;
+  font-weight: 400;
   color: var(--text-color);
   /* transition: var(--trans-04); */
   white-space: unset;
@@ -65,11 +65,11 @@ body.dark {
   top: 0;
   left: 0px;
   height: 100%;
-  width: 250px;
+  width: 240px;
   background-color: var(--sidebar-color);
-  padding: 10px 14px;
+  padding: 10px 0;
   transition: var(--trans-02);
-  border-right: 2px solid var(--toggle-color); /* Neon border */
+  /* border-right: 2px solid var(--toggle-color); */
 }
 
 .sidebar header {
@@ -130,8 +130,8 @@ body.dark {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 60px;
-  font-size: 16px;
+  min-width: 50px;
+  font-size: 1.2em;
   color: var(--toggle-color); /* Neon icons */
 }
 .sidebar li .icons,
@@ -159,9 +159,12 @@ body.dark {
   border-radius: 6px;
   transition: var(--trans-04);
   text-align: left;
-  padding: 2.5px;
+  padding: 10px 14px;
 }
 
+.sidebar li a:hover {
+  background-color: var(--primary-color-light);
+}
 
 
 .sidebar .menu-bar {
@@ -194,7 +197,7 @@ body.dark .sidebar .image img {
 }
 
 .sidebar.close {
-  width: 78px;
+  width: 70px;
 }
 
 .sidebar.close .text {
@@ -380,12 +383,17 @@ body.dark .search-bar input {
 /* Home Section */
 .home {
   position: relative;
-  left: 250px; /* Initial position when sidebar is open */
-  width: calc(100% - 250px); /* Adjust width */
+  left: 240px; /* Initial position when sidebar is open */
+  width: calc(100% - 240px); /* Adjust width */
   transition: var(--trans-02);
 }
 
 .sidebar.close ~ .home {
-  left: 78px; /* Position when sidebar is closed */
-  width: calc(100% - 78px); /* Adjust width */
+  left: 70px; /* Position when sidebar is closed */
+  width: calc(100% - 70px); /* Adjust width */
+}
+
+.sidebar .divider {
+  border-top: 1px solid var(--primary-color-light);
+  margin: 10px 0;
 }
