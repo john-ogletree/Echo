@@ -307,9 +307,10 @@ body.dark .search-bar input {
 
 .profile-info {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .profile-name-tagline h1 {
@@ -328,12 +329,11 @@ body.dark .search-bar input {
 }
 
 .social-media-icons {
-  margin-top: 20px;
 }
 
 .social-media-icons a {
   color: var(--toggle-color);
-  font-size: 2em;
+  font-size: 1.5em;
   margin-right: 15px;
   text-decoration: none;
   transition: var(--trans-03);
