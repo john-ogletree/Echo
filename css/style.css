@@ -119,7 +119,6 @@ body.dark {
 
 
 .sidebar li {
-  height: 50px;
   /* background-color: red; */
   margin-top: 10px;
   list-style: none;
@@ -154,15 +153,13 @@ body.dark {
 }
 
 .sidebar li a {
-  height: 100%;
-  width: 100%;
   text-decoration: none;
   display: flex;
   align-items: center;
-  padding-right: 50px;
   border-radius: 6px;
   transition: var(--trans-04);
   text-align: left;
+  padding: 2.5px;
 }
 
 
