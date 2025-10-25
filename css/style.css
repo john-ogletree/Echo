@@ -1,4 +1,4 @@
-      @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@300;400;800&family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Montserrat:wght@300;400;800&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 * {
   font-family: "Poppins", "sans-sarif";
@@ -294,4 +294,13 @@ body.dark .search-bar input {
 .sidebar.close ~ .home {
   left: 78px; /* Position when sidebar is closed */
   width: calc(100% - 78px); /* Adjust width */
+}
+
+/* Card */
+.card {
+  background-color: var(--sidebar-color);
+  border-radius: 10px;
+  border: 2px solid var(--toggle-color);
+  box-shadow: 0 0 15px var(--toggle-color);
+  margin: 20px;
 }
