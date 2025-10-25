@@ -380,19 +380,6 @@ body.dark .search-bar input {
   box-shadow: 0 0 15px var(--toggle-color);
 }
 
-/* Home Section */
-.home {
-  position: relative;
-  left: 240px; /* Initial position when sidebar is open */
-  width: calc(100% - 240px); /* Adjust width */
-  transition: var(--trans-02);
-}
-
-.sidebar.close ~ .home {
-  left: 70px; /* Position when sidebar is closed */
-  width: calc(100% - 70px); /* Adjust width */
-}
-
 .sidebar .divider {
   border-top: 1px solid var(--primary-color-light);
   margin: 10px 0;
