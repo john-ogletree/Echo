@@ -1,0 +1,1 @@
+Commit and push after every file change. For future changes, ensure commit messages are descriptive and follow project conventions.
