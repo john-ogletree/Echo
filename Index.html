@@ -70,12 +70,74 @@
         </header>
 
         <main class="w-full px-4 py-4 pb-8 transition-filter duration-300 ease-in-out md:px-6 lg:px-8">
-            <!-- Main content removed -->
+            <!-- Hero Terminal Section -->
+            <div class="py-8">
+                <div class="overflow-hidden rounded-lg border border-border bg-[#2E282A] text-text shadow-lg">
+                    <div class="flex items-center gap-2 bg-text-light p-2 px-4 text-xs text-bg">
+                        <div class="mr-auto flex gap-2">
+                            <span class="h-3 w-3 rounded-full" style="background:#ff5f56;"></span>
+                            <span class="h-3 w-3 rounded-full" style="background:#ffbd2e;"></span>
+                            <span class="h-3 w-3 rounded-full" style="background:#27c93f;"></span>
+                        </div>
+                        <span>bash</span>
+                    </div>
+                    <div class="min-h-[200px] p-6">
+                        <p class="m-0 break-all">
+                            <span class="text-[#81a2be]">user@echo</span><span class="text-[#b48ead]">:</span><span class="text-[#a3be8c]">~</span><span class="text-[#b48ead]">$</span>
+                            <span id="typed-text"></span>
+                            <span class="ml-0.5 inline-block w-[0.6em] animate-blink bg-bg">&nbsp;</span>
+                        </p>
+                        <div class="mt-4 border-l-2 border-accent pl-4" id="terminal-output">
+                            <h1 class="m-0 mb-2 font-mono font-medium text-heading text-3xl md:text-4xl lg:text-5xl">John Ogletree</h1>
+                            <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
+                                <p class="m-0 text-text-light text-base md:text-lg">Digital Creator. Problem Solver. Lifelong Learner.</p>
+                                <a href="/projects/index" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-md border border-heading bg-heading py-3 px-6 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52]">Explore Creations</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
 <script is:inline>
-    // Script content removed
+    // --- Terminal Hero Typing Effect ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const typedTextSpan = document.getElementById("typed-text");
+        const terminalOutput = document.getElementById("terminal-output");
+        const textToType = "./initialize-portfolio.sh";
+        const typeSpeed = 100;
+
+        function type() {
+            let i = 0;
+            terminalOutput.style.display = 'none'; // Hide output initially
+            const typeInterval = setInterval(() => {
+                typedTextSpan.textContent += textToType.charAt(i);
+                i++;
+                if (i > textToType.length -1) {
+                    clearInterval(typeInterval);
+                    // After typing, show the output
+                    setTimeout(() => {
+                        terminalOutput.style.display = 'block';
+                    }, 300);
+                }
+            }, typeSpeed);
+        }
+        
+        // Start typing when the element is in view
+        const terminalObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    setTimeout(() => type(), 500); // Small delay before starting
+                    terminalObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if(typedTextSpan) {
+            terminalObserver.observe(typedTextSpan);
+        }
+    });
 </script>
 
 </body>
