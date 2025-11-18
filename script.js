@@ -1,58 +1,65 @@
-// Sidebar toggle functionality
+// Main script file - Echo OS functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    const sidebar = document.getElementById('top-bar-sidebar');
-    const sidebarOverlay = document.getElementById('sidebar-overlay');
-    const breadcrumbNav = document.getElementById('breadcrumb-nav');
-    
-    // Check if current page is index/home page
-    function isIndexPage() {
-        // You can modify this logic based on your routing
-        // For now, we'll assume index page is when pathname is '/' or '/index.html'
-        const path = window.location.pathname;
-        return path === '/' || path === '/index.html' || path.endsWith('/');
-    }
-    
-    // Show breadcrumb only if not on index page
-    if (breadcrumbNav && !isIndexPage()) {
-        breadcrumbNav.classList.remove('hidden');
-    }
-    
-    // Toggle sidebar on mobile
-    if (sidebarToggle && sidebar && sidebarOverlay) {
-        sidebarToggle.addEventListener('click', function() {
-            const isOpen = !sidebar.classList.contains('-translate-x-full');
-            
-            if (isOpen) {
-                // Close sidebar
-                sidebar.classList.add('-translate-x-full');
-                sidebarOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            } else {
-                // Open sidebar
-                sidebar.classList.remove('-translate-x-full');
-                sidebarOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+    // Update system time
+    function updateSystemTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('en-US', { 
+            hour12: false,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
         });
-        
-        // Close sidebar when clicking overlay
-        sidebarOverlay.addEventListener('click', function() {
-            sidebar.classList.add('-translate-x-full');
-            sidebarOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
+        const systemTimeElement = document.getElementById('system-time');
+        if (systemTimeElement) {
+            systemTimeElement.textContent = timeString;
+        }
     }
-    
-    // Close sidebar when clicking on a link (mobile)
-    const sidebarLinks = sidebar.querySelectorAll('a');
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth < 640) { // sm breakpoint
-                sidebar.classList.add('-translate-x-full');
-                sidebarOverlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    });
+
+    // Initialize system time
+    updateSystemTime();
+    setInterval(updateSystemTime, 1000);
+
+    // Terminal command simulation
+    const commands = [
+        'system_info --status',
+        'projects_list --active',
+        'skills_db --query',
+        'welcome_to_echo_os --boot',
+        'recent_activity --monitor',
+        'network_status --check',
+        'storage_analytics --report',
+        'performance_log --tail',
+        'terminal_ready --prompt',
+        'api_endpoints --list',
+        'security_log --audit',
+        'backup_status --verify',
+        'system_update --check'
+    ];
+
+    let currentCommand = 0;
+    const commandInput = document.getElementById('command-input');
+
+    function simulateTerminal() {
+        if (commandInput) {
+            setInterval(() => {
+                commandInput.innerHTML = commands[currentCommand] + '<span class="animate-pulse">_</span>';
+                currentCommand = (currentCommand + 1) % commands.length;
+            }, 3000);
+        }
+    }
+
+    simulateTerminal();
+
+    // System notification
+    console.log(`
+    ╔═══════════════════════════════════════╗
+    ║            Echo OS v2.1.4             ║
+    ║    Creative Operating System          ║
+    ║        by John Ogletree               ║
+    ║                                       ║
+    ║  System initialized successfully      ║
+    ║  All services running normally        ║
+    ║  Ready for creative execution         ║
+    ╚═══════════════════════════════════════╝
+    `);
 });
