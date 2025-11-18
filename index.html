@@ -2,11 +2,11 @@
 <html lang="en" class="scroll-smooth scroll-pt-20">
 	<head>
 		<!-- Primary Meta Tags -->
-		<title>Echo | John Ogletree - Digital Creator & Designer</title>
+		<title>Echo OS | John Ogletree - Digital Creator & Designer</title>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Welcome to Echo, the personal portfolio of John Ogletree. Explore my creations in web design, development, and digital strategy." />
-		<meta name="keywords" content="John Ogletree, Portfolio, Web Developer, UI/UX Designer, Digital Creator, Astro, JavaScript, Georgia" />
+		<meta name="description" content="Echo OS - The creative operating system by John Ogletree. Explore my digital ecosystem of web design, development, and creative solutions." />
+		<meta name="keywords" content="Echo OS, John Ogletree, Portfolio, Web Developer, UI/UX Designer, Digital Creator, Operating System, Creative OS" />
 		<meta name="author" content="John Ogletree" />
 
 		<!-- Favicon -->
@@ -15,17 +15,17 @@
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://example.com/" />
-		<meta property="og:title" content="Echo | John Ogletree - Digital Creator & Designer" />
-		<meta property="og:description" content="Welcome to Echo, the personal portfolio of John Ogletree. Explore my creations in web design, development, and digital strategy." />
-		<meta property="og:image" content="https://example.com/social-preview.png" />
+		<meta property="og:url" content="https://echo-os.dev/" />
+		<meta property="og:title" content="Echo OS | John Ogletree - Digital Creator & Designer" />
+		<meta property="og:description" content="Echo OS - The creative operating system by John Ogletree. Explore my digital ecosystem of web design, development, and creative solutions." />
+		<meta property="og:image" content="https://echo-os.dev/social-preview.png" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://example.com/" />
-		<meta property="twitter:title" content="Echo | John Ogletree - Digital Creator & Designer" />
-		<meta property="twitter:description" content="Welcome to Echo, the personal portfolio of John Ogletree. Explore my creations in web design, development, and digital strategy." />
-		<meta property="twitter:image" content="https://example.com/social-preview.png" />
+		<meta property="twitter:url" content="https://echo-os.dev/" />
+		<meta property="twitter:title" content="Echo OS | John Ogletree - Digital Creator & Designer" />
+		<meta property="twitter:description" content="Echo OS - The creative operating system by John Ogletree. Explore my digital ecosystem of web design, development, and creative solutions." />
+		<meta property="twitter:image" content="https://echo-os.dev/social-preview.png" />
 	<!-- Tailwind CSS CDN -->
 		<script src="https://cdn.tailwindcss.com"></script>
 		<script>
@@ -33,43 +33,59 @@
 				theme: {
 					extend: {
 						colors: {
-							'bg': '#3B2F2A',
-							'surface': '#4A3E38',
-							'text': '#F0EAD6',
-							'text-light': '#D4C9A8',
-							'heading': '#E07A5F',
-							'accent': '#3D87A6',
-							'border': '#5B4F48',
-							'tag-bg': 'rgba(61, 135, 166, 0.15)',
-							// Add the missing color classes for the sidebar
-							'neutral-primary-soft': '#4A3E38',
-							'neutral-primary-medium': '#3B2F2A',
-							'neutral-secondary-soft': '#5B4F48',
-							'neutral-secondary-medium': '#4A3E38', 
-							'neutral-tertiary': '#5B4F48',
-							'neutral-tertiary-medium': '#4A3E38',
-							'default': '#5B4F48',
-							'default-medium': '#5B4F48',
-							'body': '#D4C9A8',
-							'fg-brand': '#3D87A6',
-							'fg-danger-strong': '#E07A5F',
-							'danger-soft': 'rgba(224, 122, 95, 0.15)',
-							'danger-subtle': 'rgba(224, 122, 95, 0.3)',
-							'fg-disabled': '#8A7F6A',
+							'bg': '#1a1a1a',
+							'surface': '#2d2d2d',
+							'text': '#f0f0f0',
+							'text-light': '#b0b0b0',
+							'heading': '#00d4ff',
+							'accent': '#00d4ff',
+							'border': '#404040',
+							'tag-bg': 'rgba(0, 212, 255, 0.15)',
+							// OS-themed colors
+							'neutral-primary-soft': '#2d2d2d',
+							'neutral-primary-medium': '#1a1a1a',
+							'neutral-secondary-soft': '#404040',
+							'neutral-secondary-medium': '#2d2d2d', 
+							'neutral-tertiary': '#404040',
+							'neutral-tertiary-medium': '#2d2d2d',
+							'default': '#404040',
+							'default-medium': '#404040',
+							'body': '#b0b0b0',
+							'fg-brand': '#00d4ff',
+							'fg-danger-strong': '#ff6b6b',
+							'danger-soft': 'rgba(255, 107, 107, 0.15)',
+							'danger-subtle': 'rgba(255, 107, 107, 0.3)',
+							'fg-disabled': '#666666',
+							// Terminal colors
+							'terminal-bg': '#1a1a1a',
+							'terminal-text': '#00ff00',
+							'terminal-accent': '#00d4ff',
 						},
 						fontFamily: {
 							mono: ['IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+							'system': ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
 						},
 						keyframes: {
 							blink: {
 								'50%': { backgroundColor: 'transparent' }
+							},
+							'terminal-glow': {
+								'0%, 100%': { opacity: '1' },
+								'50%': { opacity: '0.7' }
+							},
+							'scan-line': {
+								'0%': { transform: 'translateY(-100%)' },
+								'100%': { transform: 'translateY(100vh)' }
 							}
 						},
 						animation: {
-							blink: 'blink 1s steps(1) infinite'
+							blink: 'blink 1s steps(1) infinite',
+							'terminal-glow': 'terminal-glow 2s ease-in-out infinite',
+							'scan-line': 'scan-line 8s linear infinite'
 						},
 						borderRadius: {
 							'base': '0.375rem',
+							'terminal': '0.25rem'
 						}
 					}
 				}
@@ -84,7 +100,7 @@
 				left: 0;
 				right: 0;
 				bottom: 0;
-				background-color: rgba(0, 0, 0, 0.5);
+				background-color: rgba(0, 0, 0, 0.8);
 				z-index: 39;
 			}
 			
@@ -94,13 +110,52 @@
 			
 			/* Ensure sidebar has proper background */
 			#top-bar-sidebar {
-				background-color: #4A3E38;
+				background-color: #2d2d2d;
 				z-index: 40;
+			}
+
+			/* Terminal-like scan line effect */
+			.scan-line {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 2px;
+				background: linear-gradient(to bottom, transparent, #00ff00, transparent);
+				animation: scan-line 8s linear infinite;
+				pointer-events: none;
+				z-index: 100;
+				opacity: 0.1;
+			}
+
+			/* OS-style window controls */
+			.window-control {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				margin-right: 8px;
+			}
+
+			.window-close { background-color: #ff5f57; }
+			.window-minimize { background-color: #ffbd2e; }
+			.window-maximize { background-color: #28ca42; }
+
+			/* Command line input style */
+			.command-line {
+				font-family: 'IBM Plex Mono', monospace;
+			}
+
+			.command-line::before {
+				content: '> ';
+				color: #00ff00;
 			}
 		</style>
 	</head>
-	<body class="bg-bg text-text font-mono text-base leading-relaxed m-0 p-0 transition-transform duration-300 ease-in-out">
+	<body class="bg-terminal-bg text-text font-mono text-base leading-relaxed m-0 p-0 transition-transform duration-300 ease-in-out">
     
+	<!-- Terminal Scan Line Effect -->
+	<div class="scan-line"></div>
+
 	<!-- Overlay for mobile sidebar -->
 	<div id="sidebar-overlay" class="sidebar-overlay sm:hidden"></div>
 
@@ -109,76 +164,75 @@
 
 	<!-- Main Content -->
 	<div class="p-4 sm:ml-64 mt-14">
-		<div class="p-4 border border-default border-dashed rounded-base">
-			<div class="grid grid-cols-3 gap-4 mb-4">
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+		<div class="p-4 border border-default border-dashed rounded-terminal">
+			<!-- System Status Bar -->
+			<div class="flex items-center justify-between mb-6 p-3 bg-surface rounded-terminal border border-default">
+				<div class="flex items-center space-x-4">
+					<div class="flex items-center space-x-2">
+						<div class="window-control window-close"></div>
+						<div class="window-control window-minimize"></div>
+						<div class="window-control window-maximize"></div>
+					</div>
+					<div class="text-terminal-text text-sm">echo@os:~$ system status</div>
 				</div>
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
-				</div>
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="text-body text-sm">
+					<span class="text-terminal-text">v2.1.4</span> | <span id="system-time">--:--:--</span>
 				</div>
 			</div>
-			<div class="flex items-center justify-center h-48 rounded-base bg-neutral-secondary-soft mb-4">
-				<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-				</p>
+
+			<div class="grid grid-cols-3 gap-4 mb-4">
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">system_info</p>
+				</div>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">projects_list</p>
+				</div>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">skills_db</p>
+				</div>
+			</div>
+			<div class="flex items-center justify-center h-48 rounded-terminal bg-neutral-secondary-soft border border-default mb-4">
+				<p class="text-fg-disabled command-line">welcome_to_echo_os</p>
 			</div>
 			<div class="grid grid-cols-2 gap-4 mb-4">
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">recent_activity</p>
 				</div>
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">network_status</p>
 				</div>
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">storage_analytics</p>
 				</div>
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">performance_log</p>
 				</div>
 			</div>
-			<div class="flex items-center justify-center h-48 rounded-base bg-neutral-secondary-soft mb-4">
-				<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-				</p>
+			<div class="flex items-center justify-center h-48 rounded-terminal bg-neutral-secondary-soft border border-default mb-4">
+				<p class="text-fg-disabled command-line">terminal_ready</p>
 			</div>
 			<div class="grid grid-cols-2 gap-4">
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">api_endpoints</p>
 				</div>
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">security_log</p>
 				</div>
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">backup_status</p>
 				</div>
-				<div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-					<p class="text-fg-disabled">
-						<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-					</p>
+				<div class="flex items-center justify-center h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+					<p class="text-fg-disabled command-line">system_update</p>
+				</div>
+			</div>
+
+			<!-- Command Input -->
+			<div class="mt-6 p-4 bg-surface rounded-terminal border border-default">
+				<div class="flex items-center">
+					<span class="text-terminal-text mr-2">echo@os:~$</span>
+					<div class="flex-1 bg-transparent text-text outline-none command-line" id="command-input">
+						<span class="animate-pulse">_</span>
+					</div>
 				</div>
 			</div>
 		</div>
