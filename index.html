@@ -151,23 +151,6 @@
 				min-width: 44px;
 			}
 
-			/* Add overlay for mobile when sidebar is open */
-			.sidebar-overlay {
-				display: none;
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background-color: rgba(0, 0, 0, 0.8);
-				z-index: 39;
-				backdrop-filter: blur(4px);
-			}
-			
-			.sidebar-overlay.active {
-				display: block;
-			}
-			
 			/* Ensure sidebar has proper background */
 			#top-bar-sidebar {
 				background-color: #2d2d2d;
@@ -295,7 +278,6 @@
 
 			/* Print styles */
 			@media print {
-				.sidebar-overlay,
 				#sidebar-toggle,
 				.scan-line {
 					display: none !important;
@@ -312,9 +294,6 @@
     
 	<!-- Terminal Scan Line Effect -->
 	<div class="scan-line"></div>
-
-	<!-- Overlay for mobile sidebar -->
-	<div id="sidebar-overlay" class="sidebar-overlay xs:block sm:block md:hidden"></div>
 
 	<!-- Navigation Component -->
 	<div id="nav-component"></div>
