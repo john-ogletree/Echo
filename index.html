@@ -121,36 +121,35 @@
       </div>
       <div class="flex items-center">
           <div class="flex items-center ms-3">
-            <div>
-              <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300" aria-expanded="false" id="user-menu-button">
-                <span class="sr-only">Open user menu</span>
-                <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
-              </button>
-            </div>
-            <div class="z-50 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44" id="user-menu">
-              <div class="px-4 py-3 border-b border-default-medium" role="none">
-                <p class="text-sm font-medium text-heading" role="none">
-                  Neil Sims
-                </p>
-                <p class="text-sm text-body truncate" role="none">
-                  neil.sims@flowbite.com
-                </p>
-              </div>
-              <ul class="p-2 text-sm text-body font-medium" role="none">
-                <li>
-                  <a href="#" class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded" role="menuitem">Dashboard</a>
+            <!-- Breadcrumb Navigation -->
+            <nav class="flex" aria-label="Breadcrumb">
+              <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <li class="inline-flex items-center">
+                  <a href="#" class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+                    <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13h3.439a.991.991 0 0 1 .908.6 3.978 3.978 0 0 0 7.306 0 .99.99 0 0 1 .908-.6H20M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6M4 13l2-9h12l2 9M9 7h6m-7 3h8"/>
+                    </svg>
+                    Home
+                  </a>
                 </li>
                 <li>
-                  <a href="#" class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded" role="menuitem">Settings</a>
+                  <div class="flex items-center">
+                    <svg class="rtl:rotate-180 w-4 h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                    </svg>
+                    <a href="#" class="ms-1 text-sm font-medium text-body hover:text-fg-brand md:ms-2">Projects</a>
+                  </div>
                 </li>
-                <li>
-                  <a href="#" class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded" role="menuitem">Earnings</a>
+                <li aria-current="page">
+                  <div class="flex items-center">
+                    <svg class="rtl:rotate-180 w-4 h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                    </svg>
+                    <span class="ms-1 text-sm font-medium text-heading md:ms-2">Echo Portfolio</span>
+                  </div>
                 </li>
-                <li>
-                  <a href="#" class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded" role="menuitem">Sign out</a>
-                </li>
-              </ul>
-            </div>
+              </ol>
+            </nav>
           </div>
         </div>
     </div>
@@ -288,8 +287,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebar = document.getElementById('top-bar-sidebar');
     const sidebarOverlay = document.getElementById('sidebar-overlay');
-    const userMenuButton = document.getElementById('user-menu-button');
-    const userMenu = document.getElementById('user-menu');
     
     // Toggle sidebar on mobile
     if (sidebarToggle && sidebar && sidebarOverlay) {
@@ -317,20 +314,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Toggle user menu dropdown
-    if (userMenuButton && userMenu) {
-        userMenuButton.addEventListener('click', function() {
-            userMenu.classList.toggle('hidden');
-        });
-        
-        // Close user menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!userMenuButton.contains(event.target) && !userMenu.contains(event.target)) {
-                userMenu.classList.add('hidden');
-            }
-        });
-    }
-    
     // Close sidebar when clicking on a link (mobile)
     const sidebarLinks = sidebar.querySelectorAll('a');
     sidebarLinks.forEach(link => {
@@ -346,4 +329,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 </body>
-																																																																																																																																			 </html>
+			 </html>
