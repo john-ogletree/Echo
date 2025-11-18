@@ -19,7 +19,6 @@ function initializeNavigation() {
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const sidebar = document.getElementById('top-bar-sidebar');
-    const sidebarOverlay = document.getElementById('sidebar-overlay');
     const breadcrumbNav = document.getElementById('breadcrumb-nav');
     
     // Check if current page is index/home page
@@ -91,37 +90,22 @@ function initializeNavigation() {
         if (isOpen) {
             // Close sidebar
             sidebar.classList.add('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.remove('active');
-            }
             document.body.style.overflow = 'auto';
         } else {
             // Open sidebar
             sidebar.classList.remove('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.add('active');
-            }
             document.body.style.overflow = 'hidden';
         }
     }
     
     // Toggle sidebar on mobile
-    if (sidebarToggle && sidebar && sidebarOverlay) {
+    if (sidebarToggle && sidebar) {
         sidebarToggle.addEventListener('click', toggleSidebar);
     }
     
     // Mobile menu button (alternative)
-    if (mobileMenuButton && sidebar && sidebarOverlay) {
+    if (mobileMenuButton && sidebar) {
         mobileMenuButton.addEventListener('click', toggleSidebar);
-    }
-    
-    // Close sidebar when clicking overlay
-    if (sidebarOverlay) {
-        sidebarOverlay.addEventListener('click', function() {
-            sidebar.classList.add('-translate-x-full');
-            sidebarOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
     }
     
     // Close sidebar when clicking on a link (mobile)
@@ -132,9 +116,6 @@ function initializeNavigation() {
                 // Close sidebar on mobile devices
                 if (window.innerWidth < 768) {
                     sidebar.classList.add('-translate-x-full');
-                    if (sidebarOverlay) {
-                        sidebarOverlay.classList.remove('active');
-                    }
                     document.body.style.overflow = 'auto';
                 }
             });
@@ -162,9 +143,6 @@ function initializeNavigation() {
         if (window.innerWidth >= 768) {
             // On larger screens, ensure sidebar is visible
             sidebar.classList.remove('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.remove('active');
-            }
             document.body.style.overflow = 'auto';
         }
     }
@@ -193,18 +171,12 @@ function initializeNavigation() {
         // Swipe right to open sidebar (only on mobile)
         if (swipeDistance > swipeThreshold && window.innerWidth < 768) {
             sidebar.classList.remove('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.add('active');
-            }
             document.body.style.overflow = 'hidden';
         }
         
         // Swipe left to close sidebar
         if (swipeDistance < -swipeThreshold && window.innerWidth < 768) {
             sidebar.classList.add('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.remove('active');
-            }
             document.body.style.overflow = 'auto';
         }
     }
