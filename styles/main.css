@@ -1,0 +1,169 @@
+/* Base mobile optimizations */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Touch-friendly button sizes */
+.btn-touch {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Ensure sidebar has proper background */
+#top-bar-sidebar {
+    background-color: #2d2d2d;
+    z-index: 40;
+}
+
+/* Terminal-like scan line effect */
+.scan-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to bottom, transparent, #00ff00, transparent);
+    animation: scan-line 8s linear infinite;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.1;
+}
+
+/* OS-style window controls */
+.window-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.window-close { background-color: #ff5f57; }
+.window-minimize { background-color: #ffbd2e; }
+.window-maximize { background-color: #28ca42; }
+
+/* Command line input style */
+.command-line {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.command-line::before {
+    content: '> ';
+    color: #00ff00;
+}
+
+/* Section styling */
+.page-section {
+    min-height: 100vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Active section highlighting */
+.active-section {
+    background: rgba(0, 212, 255, 0.05);
+    border-left: 2px solid #00d4ff;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 319px) {
+    .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .mobile-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .mobile-text-sm {
+        font-size: 0.75rem;
+    }
+    
+    .mobile-p-2 {
+        padding: 0.5rem;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .tablet-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Safe area insets for notched devices */
+.safe-top {
+    padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-left {
+    padding-left: env(safe-area-inset-left);
+}
+
+.safe-right {
+    padding-right: env(safe-area-inset-right);
+}
+
+/* Prevent zoom on focus for iOS */
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* High DPI optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .retina-border {
+        border-width: 0.5px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .scan-line {
+        display: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .auto-dark {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+    }
+}
+
+/* Print styles */
+@media print {
+    #sidebar-toggle,
+    .scan-line {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}

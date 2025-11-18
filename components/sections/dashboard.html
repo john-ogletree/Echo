@@ -1,0 +1,86 @@
+<section id="dashboard" class="page-section">
+    <div class="p-2 xs:p-3 sm:p-4 border border-default border-dashed rounded-terminal md:rounded-large">
+        <!-- System Status Bar -->
+        <div class="flex items-center justify-between mb-4 xs:mb-6 p-2 xs:p-3 bg-surface rounded-terminal border border-default">
+            <div class="flex items-center space-x-2 xs:space-x-4">
+                <div class="flex items-center space-x-1 xs:space-x-2">
+                    <div class="window-control window-close hidden xs:block"></div>
+                    <div class="window-control window-minimize hidden xs:block"></div>
+                    <div class="window-control window-maximize hidden xs:block"></div>
+                </div>
+                <div class="text-terminal-text text-xs xs:text-sm">echo@os:~$ system status</div>
+            </div>
+            <div class="text-body text-xs xs:text-sm">
+                <span class="text-terminal-text" id="version-number">2024.12.29</span> | <span id="system-time">--:--:--</span>
+            </div>
+        </div>
+
+        <!-- Responsive Grid System -->
+        <div class="grid mobile-grid xs:grid-cols-2 sm:grid-cols-3 gap-2 xs:gap-3 sm:gap-4 mb-4">
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">system_info</p>
+            </div>
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">projects_list</p>
+            </div>
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">skills_db</p>
+            </div>
+        </div>
+        
+        <div class="flex items-center justify-center h-32 xs:h-36 sm:h-48 rounded-terminal bg-neutral-secondary-soft border border-default mb-4">
+            <p class="text-fg-disabled command-line text-sm xs:text-base">welcome_to_echo_os</p>
+        </div>
+        
+        <div class="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3 sm:gap-4 mb-4">
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">recent_activity</p>
+            </div>
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">network_status</p>
+            </div>
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">storage_analytics</p>
+            </div>
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">performance_log</p>
+            </div>
+        </div>
+        
+        <div class="flex items-center justify-center h-32 xs:h-36 sm:h-48 rounded-terminal bg-neutral-secondary-soft border border-default mb-4">
+            <p class="text-fg-disabled command-line text-sm xs:text-base">terminal_ready</p>
+        </div>
+        
+        <div class="grid grid-cols-1 xs:grid-cols-2 gap-2 xs:gap-3 sm:gap-4">
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">api_endpoints</p>
+            </div>
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">security_log</p>
+            </div>
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">backup_status</p>
+            </div>
+            <div class="flex items-center justify-center h-20 xs:h-24 rounded-terminal bg-neutral-secondary-soft border border-default">
+                <p class="text-fg-disabled command-line text-xs xs:text-sm">system_update</p>
+            </div>
+        </div>
+
+        <!-- Command Input -->
+        <div class="mt-4 xs:mt-6 p-2 xs:p-3 sm:p-4 bg-surface rounded-terminal border border-default">
+            <div class="flex items-center">
+                <span class="text-terminal-text mr-2 text-xs xs:text-sm">echo@os:~$</span>
+                <div class="flex-1 bg-transparent text-text outline-none command-line text-xs xs:text-sm" id="command-input">
+                    <span class="animate-pulse">_</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Bottom Navigation -->
+        <div class="flex xs:hidden justify-between items-center mt-4 p-2 bg-surface rounded-terminal border border-default">
+            <button class="text-terminal-text text-xs p-2">← Back</button>
+            <button class="text-terminal-text text-xs p-2">Home</button>
+            <button class="text-terminal-text text-xs p-2">Menu →</button>
+        </div>
+    </div>
+</section>
