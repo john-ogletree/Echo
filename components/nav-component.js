@@ -16,10 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize navigation functionality
 function initializeNavigation() {
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const sidebar = document.getElementById('top-bar-sidebar');
-    const sidebarOverlay = document.getElementById('sidebar-overlay');
     const breadcrumbNav = document.getElementById('breadcrumb-nav');
     
     // Check if current page is index/home page
@@ -42,8 +38,8 @@ function initializeNavigation() {
         const homeLi = document.createElement('li');
         homeLi.className = 'inline-flex items-center';
         homeLi.innerHTML = `
-            <a href="/" class="inline-flex items-center text-xs xs:text-sm font-medium text-body hover:text-fg-brand">
-                <svg class="w-3 h-3 xs:w-4 xs:h-4 me-1 xs:me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+                <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
                 </svg>
                 root@
@@ -63,12 +59,12 @@ function initializeNavigation() {
             const separator = document.createElement('li');
             separator.innerHTML = `
                 <div class="flex items-center">
-                    <svg class="rtl:rotate-180 w-3 h-3 xs:w-4 xs:h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <svg class="rtl:rotate-180 w-4 h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                     </svg>
                     ${isLast ? 
-                        `<span class="ms-1 text-xs xs:text-sm font-medium text-heading md:ms-2">${segmentName}</span>` :
-                        `<a href="${segmentPath}" class="ms-1 text-xs xs:text-sm font-medium text-body hover:text-fg-brand md:ms-2">${segmentName}</a>`
+                        `<span class="ms-1 text-sm font-medium text-heading md:ms-2">${segmentName}</span>` :
+                        `<a href="${segmentPath}" class="ms-1 text-sm font-medium text-body hover:text-fg-brand md:ms-2">${segmentName}</a>`
                     }
                 </div>
             `;
@@ -83,66 +79,10 @@ function initializeNavigation() {
     
     // Generate breadcrumb
     generateBreadcrumb();
-    
-    // Toggle sidebar function
-    function toggleSidebar() {
-        const isOpen = !sidebar.classList.contains('-translate-x-full');
-        
-        if (isOpen) {
-            // Close sidebar
-            sidebar.classList.add('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.remove('active');
-            }
-            document.body.style.overflow = 'auto';
-        } else {
-            // Open sidebar
-            sidebar.classList.remove('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.add('active');
-            }
-            document.body.style.overflow = 'hidden';
-        }
-    }
-    
-    // Toggle sidebar on mobile
-    if (sidebarToggle && sidebar && sidebarOverlay) {
-        sidebarToggle.addEventListener('click', toggleSidebar);
-    }
-    
-    // Mobile menu button (alternative)
-    if (mobileMenuButton && sidebar && sidebarOverlay) {
-        mobileMenuButton.addEventListener('click', toggleSidebar);
-    }
-    
-    // Close sidebar when clicking overlay
-    if (sidebarOverlay) {
-        sidebarOverlay.addEventListener('click', function() {
-            sidebar.classList.add('-translate-x-full');
-            sidebarOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    }
-    
-    // Close sidebar when clicking on a link (mobile)
-    if (sidebar) {
-        const sidebarLinks = sidebar.querySelectorAll('a');
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                // Close sidebar on mobile devices
-                if (window.innerWidth < 768) {
-                    sidebar.classList.add('-translate-x-full');
-                    if (sidebarOverlay) {
-                        sidebarOverlay.classList.remove('active');
-                    }
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-    }
-    
+
     // Highlight current page in sidebar
     function highlightCurrentPage() {
+        const sidebar = document.getElementById('top-bar-sidebar');
         const currentPath = window.location.pathname;
         const sidebarLinks = sidebar.querySelectorAll('a');
         
@@ -156,70 +96,4 @@ function initializeNavigation() {
     }
     
     highlightCurrentPage();
-
-    // Handle orientation changes
-    function handleOrientationChange() {
-        if (window.innerWidth >= 768) {
-            // On larger screens, ensure sidebar is visible
-            sidebar.classList.remove('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.remove('active');
-            }
-            document.body.style.overflow = 'auto';
-        }
-    }
-
-    // Listen for orientation changes
-    window.addEventListener('orientationchange', handleOrientationChange);
-    window.addEventListener('resize', handleOrientationChange);
-
-    // Touch gesture support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    function handleTouchStart(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    }
-
-    function handleTouchEnd(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }
-
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const swipeDistance = touchEndX - touchStartX;
-
-        // Swipe right to open sidebar (only on mobile)
-        if (swipeDistance > swipeThreshold && window.innerWidth < 768) {
-            sidebar.classList.remove('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.add('active');
-            }
-            document.body.style.overflow = 'hidden';
-        }
-        
-        // Swipe left to close sidebar
-        if (swipeDistance < -swipeThreshold && window.innerWidth < 768) {
-            sidebar.classList.add('-translate-x-full');
-            if (sidebarOverlay) {
-                sidebarOverlay.classList.remove('active');
-            }
-            document.body.style.overflow = 'auto';
-        }
-    }
-
-    // Add touch event listeners
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchend', handleTouchEnd, false);
-
-    // Prevent zoom on double tap (iOS)
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', function (event) {
-        const now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
-        }
-        lastTouchEnd = now;
-    }, false);
 }
