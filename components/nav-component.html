@@ -3,15 +3,19 @@
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
     <div class="flex items-center justify-between">
       <div class="flex items-center justify-start rtl:justify-end">
-        <button id="sidebar-toggle" type="button" class="sm:hidden text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm p-2 focus:outline-none">
-            <span class="sr-only">Open sidebar</span>
+        <button id="sidebar-toggle" type="button" class="sm:hidden text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-terminal text-sm p-2 focus:outline-none">
+            <span class="sr-only">Open system menu</span>
             <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10"/>
    </svg>
          </button>
         <a href="/" class="flex ms-2 md:me-24">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3" alt="Echo Logo" />
-          <span class="self-center text-lg font-semibold whitespace-nowrap text-white">Echo</span>
+          <!-- Echo OS Logo -->
+          <div class="w-6 h-6 bg-terminal-text rounded-terminal flex items-center justify-center mr-3">
+            <div class="w-2 h-2 bg-terminal-bg rounded-full animate-terminal-glow"></div>
+          </div>
+          <span class="self-center text-lg font-semibold whitespace-nowrap text-terminal-text">Echo OS</span>
+          <span class="self-center text-xs text-body ml-2">v2.1.4</span>
         </a>
       </div>
       <div class="flex items-center">
@@ -22,9 +26,9 @@
                 <li class="inline-flex items-center">
                   <a href="/" class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
                     <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13h3.439a.991.991 0 0 1 .908.6 3.978 3.978 0 0 0 7.306 0 .99.99 0 0 1 .908-.6H20M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6M4 13l2-9h12l2 9M9 7h6m-7 3h8"/>
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
                     </svg>
-                    Home
+                    root@
                   </a>
                 </li>
                 <li>
@@ -32,7 +36,7 @@
                     <svg class="rtl:rotate-180 w-4 h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                     </svg>
-                    <a href="#" class="ms-1 text-sm font-medium text-body hover:text-fg-brand md:ms-2">Projects</a>
+                    <a href="#" class="ms-1 text-sm font-medium text-body hover:text-fg-brand md:ms-2">system</a>
                   </div>
                 </li>
                 <li aria-current="page">
@@ -40,7 +44,7 @@
                     <svg class="rtl:rotate-180 w-4 h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
                     </svg>
-                    <span class="ms-1 text-sm font-medium text-heading md:ms-2">Echo Portfolio</span>
+                    <span class="ms-1 text-sm font-medium text-heading md:ms-2">dashboard</span>
                   </div>
                 </li>
               </ol>
@@ -55,12 +59,24 @@
 <aside id="top-bar-sidebar" class="fixed top-0 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0 bg-neutral-primary-soft border-e border-default" aria-label="Sidebar">
    <div class="h-full px-3 py-4 overflow-y-auto bg-neutral-primary-soft">
       <a href="/" class="flex items-center ps-2.5 mb-5">
-         <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3" alt="Echo Logo" />
-         <span class="self-center text-lg text-heading font-semibold whitespace-nowrap">Echo</span>
+         <div class="w-6 h-6 bg-terminal-text rounded-terminal flex items-center justify-center mr-3">
+            <div class="w-2 h-2 bg-terminal-bg rounded-full animate-terminal-glow"></div>
+         </div>
+         <span class="self-center text-lg text-heading font-semibold whitespace-nowrap">Echo OS</span>
       </a>
+      
+      <!-- System Status -->
+      <div class="mb-6 p-3 bg-surface rounded-terminal border border-default">
+        <div class="text-xs text-body mb-1">System Status</div>
+        <div class="flex items-center justify-between">
+          <div class="text-terminal-text text-sm">Online</div>
+          <div class="w-2 h-2 bg-terminal-text rounded-full animate-pulse"></div>
+        </div>
+      </div>
+
       <ul class="space-y-2 font-medium">
          <li>
-            <a href="/" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <a href="/" class="flex items-center px-2 py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group">
                <svg class="w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
                </svg>
@@ -68,15 +84,15 @@
             </a>
          </li>
          <li>
-            <a href="/about" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <a href="/about" class="flex items-center px-2 py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group">
                <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 21h4a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Zm-4-9h14a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Zm3-5h8v2H9V7Zm11 5v-1a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1h8Z"/>
                </svg>
-               <span class="flex-1 ms-3 whitespace-nowrap">About</span>
+               <span class="flex-1 ms-3 whitespace-nowrap">System Info</span>
             </a>
          </li>
          <li>
-            <a href="/services" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <a href="/services" class="flex items-center px-2 py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group">
                <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
                </svg>
@@ -84,25 +100,25 @@
             </a>
          </li>
          <li>
-            <a href="/projects" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <a href="/projects" class="flex items-center px-2 py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group">
                <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v14M9 5v14M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
                </svg>
                <span class="flex-1 ms-3 whitespace-nowrap">Projects</span>
-               <span class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded-sm">6</span>
+               <span class="bg-neutral-secondary-medium border border-default-medium text-heading text-xs font-medium px-1.5 py-0.5 rounded-terminal">6</span>
             </a>
          </li>
          <li>
-            <a href="/blog" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <a href="/blog" class="flex items-center px-2 py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group">
                <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.037c2.5 0 4.5.5 4.5 4.5 0 3-.5 4.5-4.5 5.463m0-9.963c-2.5 0-4.5.5-4.5 4.5 0 3 .5 4.5 4.5 5.463M12 6.037V5.5m0 10v.5m0 0v.5m0-11v.5m9.5-2.5v13a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1h17a1 1 0 0 1 1 1Z"/>
                </svg>
                <span class="flex-1 ms-3 whitespace-nowrap">Blog</span>
-               <span class="inline-flex items-center justify-center w-4.5 h-4.5 ms-2 text-xs font-medium text-fg-danger-strong bg-danger-soft border border-danger-subtle rounded-full">12</span>
+               <span class="inline-flex items-center justify-center w-4.5 h-4.5 ms-2 text-xs font-medium text-fg-danger-strong bg-danger-soft border border-danger-subtle rounded-terminal">12</span>
             </a>
          </li>
          <li>
-            <a href="/resume" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <a href="/resume" class="flex items-center px-2 py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group">
                <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.037c2.5 0 4.5.5 4.5 4.5 0 3-.5 4.5-4.5 5.463m0-9.963c-2.5 0-4.5.5-4.5 4.5 0 3 .5 4.5 4.5 5.463M12 6.037V5.5m0 10v.5m0 0v.5m0-11v.5m9.5-2.5v13a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1h17a1 1 0 0 1 1 1Z"/>
                </svg>
@@ -110,7 +126,7 @@
             </a>
          </li>
          <li>
-            <a href="/pricing" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <a href="/pricing" class="flex items-center px-2 py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group">
                <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M8 7H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M8 7v10a1 1 0 0 0 1 1h1M15 12h.01M12 12h.01M9 12h.01"/>
                </svg>
@@ -118,7 +134,7 @@
             </a>
          </li>
          <li class="pt-4 mt-4 border-t border-default-medium">
-            <a href="/contact" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <a href="/contact" class="flex items-center px-2 py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group">
                <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16v-5.5A3.5 3.5 0 1 0 7.5 7.5m3.5 6-6 3v-6l6-3m2 9v-1m0 0a3 3 0 1 0-6 0m6 0a3 3 0 1 1-6 0m0 0H7m4 0h4m-4 4h4m-4 4h4"/>
                </svg>
@@ -126,5 +142,12 @@
             </a>
          </li>
       </ul>
+
+      <!-- System Footer -->
+      <div class="mt-6 p-3 bg-surface rounded-terminal border border-default">
+        <div class="text-xs text-body mb-1">Active Session</div>
+        <div class="text-terminal-text text-sm">john@echo-os:~$</div>
+        <div class="text-xs text-fg-disabled mt-1">Last login: Today 14:32</div>
+      </div>
    </div>
-</aside>
+  </aside>
