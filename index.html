@@ -1,1267 +1,1150 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>
-			John Ogletree
-		</title>
-		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-		<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-		body {
-			font-family: 'Orbitron', sans-serif;
-			background: linear-gradient(135deg, #141e30, #243b55);
-			color: #fff;
-			overflow-x: hidden;
-		}
-		a:link {
-			color: #FF00FF;
-			text-decoration: none;
-		}
-		a:visited {
-			color: #FF00FF;
-			text-decoration: none;
-		}
-		a:hover {
-			color: #fff;
-			text-decoration: underline;
-		}
-		a:active {
-			color: #00FFFF;
-			text-shadow: 0 0 5px #00FFFF;
-		}
-		a:focus {
-			outline: 2px dashed #00FFFF;
-			outline-offset: 4px;
-		}
-		a:target {
-			background-color: rgba(255, 0, 255, 0.1);
-		}
-		a:focus-visible {
-			outline: 2px solid #00FFFF;
-		}
-		a:focus-within {
-			outline: 2px solid #00FFFF;
-		}
-		a.active, a.current {
-			font-weight: bold;
-			color: #00FFFF;
-		}
-		.hamburger {
-			position: fixed;
-			top: 1rem;
-			left: 1rem;
-			width: 40px;
-			height: 35px;
-			cursor: pointer;
-			z-index: 1100;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			transition: margin-bottom 0.3s ease;
-			position: fixed;
-		}
-		.hamburger.active {
-			margin-bottom: 10px;
-		}
-		.hamburger .line {
-			display: block;
-			height: 5px;
-			width: 100%;
-			background: #FF00FF;
-			border-radius: 2px;
-			transition: all 0.3s ease;
-			box-shadow: 0 0 8px #FF00FF;
-		}
-		.hamburger.active .line:nth-child(1) {
-			transform: rotate(45deg) translate(6px, 7px);
-		}
-		.hamburger.active .line:nth-child(2) {
-			opacity: 0;
-		}
-		.hamburger.active .line:nth-child(3) {
-			transform: rotate(-45deg) translate(6px, -7px);
-		}
-		.hamburger.active .line {
-			background: #00FFFF;
-			box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
-		}
-		.hamburger::before {
-			content: "";
-			position: absolute;
-			top: -5px;
-			left: -5px;
-			width: calc(100% + 10px);
-			height: calc(100% + 10px);
-			background: rgba(0, 0, 0, 0.5);
-			backdrop-filter: blur(4px);
-			border-radius: 8px;
-			z-index: -1;
-		}
-		.sidebar {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 80%;
-			max-width: 300px;
-			height: 100vh;
-			background: linear-gradient(145deg, #141e30, #243b55, #141e30);
-			box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-			transform: translateX(-100%);
-			transition: transform 0.3s ease;
-			z-index: 1000;
-			padding: 2rem 1rem;
-			border-right: 3px solid #FF00FF;
-		}
-		.sidebar.active {
-			transform: translateX(0);
-		}
-		.brand-search {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding-bottom: 1.5rem;
-			border-bottom: 2px solid #FF00FF;
-			margin-bottom: 1rem;
-		}
-		.brand {
-			flex: 1;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-top: 15px;
-		}
-		.brand-logo {
-			max-width: 60px;
-			height: auto;
-			animation: spin 10s linear infinite;
-		}
-		.search {
-			flex: 2;
-			display: flex;
-			justify-content: center;
-		}
-		.search-input {
-			width: 100%;
-			max-width: 160px;
-			padding: 0.5rem 1rem;
-			border: none;
-			border-radius: 20px;
-      font-size: 0.8rem;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      outline: none;
-transition: background 0.3s ease;
-}
-.search-input::placeholder {
-color: #FF00FF;
-font-family: 'Press Start 2P', cursive;
-}
-.search-input:focus {
-background: rgba(255, 255, 255, 0.2);
-}
-.sidebar ul {
-max-height: calc(100vh - 180px);
-overflow-y: auto;
-scrollbar-width: thin;
-scrollbar-color: #FF00FF #24243e;
-padding-top: 1rem;
-}
-.sidebar ul li {
-margin-bottom: 1.2rem;
-}
-.sidebar ul li a {
-color: #FF00FF;
-text-decoration: none;
-font-size: 1rem;
-display: block;
-padding: 0.5rem 0;
-transition: color 0.3s;
-position: relative;
-}
-.sidebar ul li a::after {
-content: '';
-position: absolute;
-width: 0%;
-height: 2px;
-bottom: 0;
-left: 0;
-background-color: #FF00FF;
-transition: width 0.3s;
-}
-.sidebar ul li a:hover {
-color: #fff;
-}
-.sidebar ul li a:hover::after {
-width: 100%;
-}
-.sidebar ul::-webkit-scrollbar {
-width: 8px;
-}
-.sidebar ul::-webkit-scrollbar-thumb {
-background: #FF00FF;
-border-radius: 4px;
-}
-.sidebar ul::-webkit-scrollbar-thumb:hover {
-background: #00FFFF;
-}
-.sidebar ul::-webkit-scrollbar-track {
-background: #24243e;
-border-radius: 4px;
-}
-</style>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>John Ogletree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: #fff;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        a:link {
+            color: #FF00FF;
+            text-decoration: none;
+        }
+        a:visited {
+            color: #FF00FF;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        a:active {
+            color: #00FFFF;
+            text-shadow: 0 0 5px #00FFFF;
+        }
+        a:focus {
+            outline: 2px dashed #00FFFF;
+            outline-offset: 4px;
+        }
+        a:target {
+            background-color: rgba(255, 0, 255, 0.1);
+        }
+        a:focus-visible {
+            outline: 2px solid #00FFFF;
+        }
+        a:focus-within {
+            outline: 2px solid #00FFFF;
+        }
+        a.active, a.current {
+            font-weight: bold;
+            color: #00FFFF;
+        }
+        .hamburger {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            width: 40px;
+            height: 35px;
+            cursor: pointer;
+            z-index: 1100;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: margin-bottom 0.3s ease;
+        }
+        .hamburger.active {
+            margin-bottom: 10px;
+        }
+        .hamburger .line {
+            display: block;
+            height: 5px;
+            width: 100%;
+            background: #FF00FF;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px #FF00FF;
+        }
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 7px);
+        }
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -7px);
+        }
+        .hamburger.active .line {
+            background: #00FFFF;
+            box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+        }
+        .hamburger::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 8px;
+            z-index: -1;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: linear-gradient(145deg, #141e30, #243b55, #141e30);
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            padding: 2rem 1rem;
+            border-right: 3px solid #FF00FF;
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .brand-search {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #FF00FF;
+            margin-bottom: 1rem;
+        }
+        .brand {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .brand-logo {
+            max-width: 60px;
+            height: auto;
+            animation: spin 10s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .search {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+        }
+        .search-input {
+            width: 100%;
+            max-width: 160px;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+        .search-input::placeholder {
+            color: #FF00FF;
+            font-family: 'Press Start 2P', cursive;
+        }
+        .search-input:focus {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .sidebar ul {
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #FF00FF #24243e;
+            padding-top: 1rem;
+        }
+        .sidebar ul li {
+            margin-bottom: 1.2rem;
+        }
+        .sidebar ul li a {
+            color: #FF00FF;
+            text-decoration: none;
+            font-size: 1rem;
+            display: block;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .sidebar ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #FF00FF;
+            transition: width 0.3s;
+        }
+        .sidebar ul li a:hover {
+            color: #fff;
+        }
+        .sidebar ul li a:hover::after {
+            width: 100%;
+        }
+        .sidebar ul::-webkit-scrollbar {
+            width: 8px;
+        }
+        .sidebar ul::-webkit-scrollbar-thumb {
+            background: #FF00FF;
+            border-radius: 4px;
+        }
+        .sidebar ul::-webkit-scrollbar-thumb:hover {
+            background: #00FFFF;
+        }
+        .sidebar ul::-webkit-scrollbar-track {
+            background: #24243e;
+            border-radius: 4px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+        }
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Full-width sections */
+        section {
+            width: 100%;
+            padding: 4rem 0;
+        }
+        
+        .about-me {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+        .about-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        .profile-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #FF00FF;
+        }
+        .profile-row {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .profile-image img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .profile-name {
+            font-size: 1.2rem;
+            font-family: 'Press Start 2P', cursive;
+            color: #FF00FF;
+        }
+        .profile-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .profile-socials img {
+            width: 25px !important;
+            height: 25px !important;
+        }
+        .profile-description {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #fff;
+        }
+        .about-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9rem;
+            border: 2px solid #FF00FF;
+            border-radius: 25px;
+            background: transparent;
+            color: #FF00FF;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+        .about-button:hover {
+            background: #FF00FF;
+            color: #24243e;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .skill-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 10px #FF00FF;
+        }
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-name {
+            font-size: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: flex-start;
+        }
+        .progress-percentage {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #FF00FF;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: #FF00FF;
+        }
+        
+        .service-catagory-overview,
+        .projects-overview,
+        .newsletter-contact,
+        .resume-overview {
+            width: 100%;
+            padding: 4rem 0;
+        }
+        .overview-container,
+        .nc-container,
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .overview-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        .overview-left {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .instructions-card,
+        .filter-tags {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #FF00FF;
+        }
+        .instructions-card h2,
+        .filter-tags h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: #FF00FF;
+            margin-bottom: 1rem;
+        }
+        .instructions-card p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tag {
+            background: #FF00FF;
+            color: #24243e;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .tag:hover,
+        .tag.active {
+            background: #00FFFF;
+        }
+        .overview-right {
+            flex: 2;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .service-grid,
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .service-card,
+        .project-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 10px #FF00FF;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover,
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+        .service-image img,
+        .project-image img {
+            width: 100%;
+            display: block;
+        }
+        .service-info,
+        .project-info {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .service-tags,
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .pull-tab {
+            background: #FF00FF;
+            color: #24243e;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.75rem;
+        }
+        .service-info h3,
+        .project-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+        .view-service,
+        .view-project {
+            align-self: flex-start;
+            padding: 0.5rem 1rem;
+            border: 2px solid #FF00FF;
+            border-radius: 25px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: #FF00FF;
+            transition: background 0.3s, color 0.3s;
+        }
+        .view-service:hover,
+        .view-project:hover {
+            background: #FF00FF;
+            color: #24243e;
+        }
+        .view-all-container {
+            text-align: center;
+        }
+        .view-all-button {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #FF00FF;
+            border-radius: 25px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #FF00FF;
+            transition: background 0.3s, color 0.3s;
+        }
+        .view-all-button:hover {
+            background: #FF00FF;
+            color: #24243e;
+        }
+        
+        .nc-container {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .newsletter,
+        .contact {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #FF00FF;
+            flex: 1;
+            min-width: 300px;
+        }
+        .newsletter h2,
+        .contact h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: #FF00FF;
+            margin-bottom: 1rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+        }
+        button {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #FF00FF;
+            border-radius: 25px;
+            background: transparent;
+            font-family: 'Press Start 2P', cursive;
+            color: #FF00FF;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        button:hover {
+            background: #FF00FF;
+            color: #24243e;
+        }
+        
+        .resume-overview {
+            text-align: center;
+        }
+        .resume-overview h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2rem;
+            color: #FF00FF;
+            margin-bottom: 1.5rem;
+        }
+        .resume-overview p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .resume-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #FF00FF;
+            border-radius: 25px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #FF00FF;
+            transition: background 0.3s, color 0.3s;
+        }
+        .resume-button:hover {
+            background: #FF00FF;
+            color: #24243e;
+        }
+        
+        .site-footer {
+            background: linear-gradient(135deg, #243b55, #141e30);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        .footer-brand {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        .footer-logo {
+            max-width: 80px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        .footer-tagline {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            color: #FF00FF;
+        }
+        .footer-nav {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-nav ul li {
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+        .footer-nav ul li a {
+            color: #FF00FF;
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+        .footer-nav ul li a:hover {
+            color: #00FFFF;
+        }
+        .footer-social {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-social a {
+            color: #FF00FF;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-social a:hover {
+            color: #00FFFF;
+        }
+        .footer-copy {
+            width: 100%;
+            margin-top: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            color: #FF00FF;
+        }
+        
+        @media (max-width: 1024px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .overview-container {
+                flex-direction: column;
+            }
+            .service-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .profile-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile-socials img {
+                width: 80px;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-container {
+                flex-direction: column;
+            }
+            .footer-brand,
+            .footer-nav,
+            .footer-social {
+                text-align: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .about-me {
+                padding: 2rem 0;
+            }
+            .profile-image img {
+                width: 60px;
+                height: 60px;
+            }
+            .profile-name {
+                font-size: 1rem;
+            }
+            .skill-name {
+                font-size: 0.9rem;
+            }
+            .about-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+            .service-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <!-- Hamburger Button -->
 <div class="hamburger" id="hamburger" title="Sidebar Menu Toggle">
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
 </div>
+
 <!-- Sidebar Navigation -->
 <nav class="sidebar" id="sidebar">
-<div class="brand-search">
-<div class="brand">
-<img src="/assets/images/John Ogletree_02 01 2025_logo.svg" alt="Brand Logo" class="brand-logo" width="60" height="60">
-</div>
-<div class="search">
-<input type="text" placeholder="Search..." class="search-input">
-</div>
-</div>
-<ul>
-<li><a href="/" title="Home">Home</a></li>
-<li><a href="/about.html" title="About Me">About Me</a></li>
-<li><a href="/services.html" title="Services">Services</a></li>
-<li><a href="/pricing.html" title="Pricing">Pricing</a></li>
-<li><a href="/projects.html" title="Projects">Projects</a></li>
-<li><a href="/resume.html" title="Resume">Resume</a></li>
-<li><a href="/contact.html" title="Contact Me">Contact Me</a></li>
-<li><a href="/blog.html" title="Blog">Blog</a></li>
-<li><a href="/fag.html" title="Frequently Asked Questions">Frequently Asked Questions</a></li>
-<li><a href="/vault.html" title="Vault">Vault</a></li>
-</ul>
+    <div class="brand-search">
+        <div class="brand">
+            <img src="/assets/images/John Ogletree_02 01 2025_logo.svg" alt="Brand Logo" class="brand-logo" width="60" height="60">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search..." class="search-input">
+        </div>
+    </div>
+    <ul>
+        <li><a href="/" title="Home">Home</a></li>
+        <li><a href="/about.html" title="About Me">About Me</a></li>
+        <li><a href="/services.html" title="Services">Services</a></li>
+        <li><a href="/pricing.html" title="Pricing">Pricing</a></li>
+        <li><a href="/projects.html" title="Projects">Projects</a></li>
+        <li><a href="/resume.html" title="Resume">Resume</a></li>
+        <li><a href="/contact.html" title="Contact Me">Contact Me</a></li>
+        <li><a href="/blog.html" title="Blog">Blog</a></li>
+        <li><a href="/fag.html" title="Frequently Asked Questions">Frequently Asked Questions</a></li>
+        <li><a href="/vault.html" title="Vault">Vault</a></li>
+    </ul>
 </nav>
+
 <div class="overlay" id="overlay"></div>
+
 <section class="about-me">
-<div class="about-container">
-<div class="about-column">
-<div class="profile-card">
-<div class="profile-row">
-<div class="profile-image">
-<img src="/assets/images/John Ogletree_02 01 2025_logo.svg" alt="Profile Picture" width="80" height="80" title="J]">
-</div>
-<div class="profile-details">
-<div class="profile-name" data-i18n="">John Ogletree</div>
-<div class="profile-socials">
-<a href="https://www.facebook.com/therealjohnogletree" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/facebook.svg" alt="Facebook Logo" title="Facebook" width="25" height="25">
-</a>
-<a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/instagram.svg" alt="Instagram Logo" title="Instagram" width="25" height="25">
-</a>
-<a href="https://www.youtube.com/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/youtube.svg" alt="Youtube Logo" title="YouTube" width="25" height="25">
-</a>
-<a href="https://dribbble.com/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/dribble.svg" alt="Dribble Portfolio Logo" title="Dribble" width="25" height="25">
-</a>
-<a href="https://developers.google.com/profile/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/google-developer-program.svg" alt="Google Developer Program Logo" title="Google Developers" width="25" height="25">
-</a>
-<a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/github.svg" alt="Github Logo" title="Github" width="25" height="25">
-</a>
-<a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/twitter.svg" alt="Twitter Logo" title="Twitter" width="25" height="25">
-</a>
-<a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/linkedin.svg" alt="LinkedIn Logo" title="LinkedIn" width="25" height="25">
-</a>
-<a href="https://www.pinterest.com/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/pinterest.svg" alt="Pinterest Logo" title="Pinterest" width="25" height="25">
-</a>
-<a href="https://www.reddit.com/user/yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/reddit.svg" alt="Reddit Logo" title="Reddit" width="25" height="25">
-</a>
-<a href="https://www.tiktok.com/@yourusername" target="_blank" rel="noopener noreferrer">
-<img src="/assets/icons/socials/tiktok.svg" alt="TikTok Logo" title="TikTok" width="25" height="25">
-</a>
-</div>
-</div>
-</div>
-</div>
-<p class="profile-description" data-i18n="">
-Passionate about blending technology with creativity. Building Y2K-inspired experiences one pixel at a time.
-</p>
-<a href="/projects.html" class="about-button" data-i18n="">View Portfolio</a>
-</div>
-<div class="about-column">
-<div class="skills-grid">
-<div class="skill-card">
-<div class="skill-icon" data-i18n="">🖥️</div>
-<div class="skill-name" data-i18n="">Web Development</div>
-<div class="progress-container">
-<span class="progress-percentage" data-i18n="">90%</span>
-<div class="progress-bar">
-<div class="progress" style="width: 90%;"></div>
-</div>
-</div>
-</div>
-<div class="skill-card">
-<div class="skill-icon" data-i18n="">🎨</div>
-<div class="skill-name" data-i18n="">Graphic Design</div>
-<div class="progress-container">
-<span class="progress-percentage" data-i18n="">80%</span>
-<div class="progress-bar">
-<div class="progress" style="width: 80%;"></div>
-</div>
-</div>
-</div>
-<div class="skill-card">
-<div class="skill-icon" data-i18n="">📱</div>
-<div class="skill-name" data-i18n="">App Development</div>
-<div class="progress-container">
-<span class="progress-percentage" data-i18n="">75%</span>
-<div class="progress-bar">
-<div class="progress" style="width: 75%;"></div>
-</div>
-</div>
-</div>
-<div class="skill-card">
-<div class="skill-icon" data-i18n="">🎮</div>
-<div class="skill-name" data-i18n="">Game Design</div>
-<div class="progress-container">
-<span class="progress-percentage" data-i18n="">85%</span>
-<div class="progress-bar">
-<div class="progress" style="width: 85%;"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<style>
-.about-me {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-padding: 4rem 2rem;
-text-align: center;
-background: linear-gradient(135deg, #141e30, #243b55);
-}
-.about-container {
-display: flex;
-flex-wrap: wrap;
-gap: 3rem;
-max-width: 1000px;
-width: 100%;
-}
-.about-column {
-flex: 1;
-min-width: 300px;
-}
-.profile-card {
-background: rgba(0, 0, 0, 0.2);
-padding: 1.5rem;
-border-radius: 12px;
-box-shadow: 0 0 10px #FF00FF;
-}
-.profile-row {
-display: flex;
-align-items: center;
-gap: 1.2rem;
-}
-.profile-image img {
-width: 80px;
-height: 80px;
-border-radius: 50%;
-}
-.profile-details {
-display: flex;
-flex-direction: column;
-gap: 0.5rem;
-}
-.profile-name {
-font-size: 1.2rem;
-font-family: 'Press Start 2P', cursive;
-color: #FF00FF;
-}
-.profile-socials img {
-width: 25px !important;
-height: 25px !important;
-}
-.profile-description {
-margin-top: 1rem;
-font-size: 1rem;
-color: #fff;
-}
-.about-button {
-display: inline-block;
-margin-top: 2rem;
-padding: 0.8rem 1.5rem;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.9rem;
-border: 2px solid #FF00FF;
-border-radius: 25px;
-background: transparent;
-color: #FF00FF;
-text-decoration: none;
-transition: background 0.3s, color 0.3s;
-}
-.about-button:hover {
-background: #FF00FF;
-color: #24243e;
-}
-.skills-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 1.5rem;
-margin-top: 2rem;
-}
-.skill-card {
-background: rgba(0, 0, 0, 0.2);
-padding: 1rem;
-border-radius: 12px;
-text-align: center;
-box-shadow: 0 0 10px #FF00FF;
-}
-.skill-icon {
-font-size: 2rem;
-margin-bottom: 0.5rem;
-}
-.skill-name {
-font-size: 1rem;
-font-family: 'Orbitron', sans-serif;
-color: #fff;
-margin-bottom: 0.5rem;
-}
-.progress-container {
-display: flex;
-align-items: center;
-gap: 5px;
-justify-content: flex-start;
-}
-.progress-percentage {
-font-size: 0.8rem;
-font-weight: bold;
-color: #FF00FF;
-}
-.progress-bar {
-width: 100%;
-height: 10px;
-background: #333;
-border-radius: 5px;
-overflow: hidden;
-}
-.progress {
-height: 100%;
-background: #FF00FF;
-}
-@media (max-width: 1024px) {
-.about-container {
-flex-direction: column;
-align-items: center;
-}
-.skills-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-@media (max-width: 768px) {
-.skills-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-.profile-row {
-flex-direction: column;
-align-items: center;
-}
-.profile-socials img {
-width: 80px;
-}
-}
-@media (max-width: 480px) {
-.about-me {
-padding: 2rem 1rem;
-}
-.profile-image img {
-width: 60px;
-height: 60px;
-}
-.profile-name {
-font-size: 1rem;
-}
-.skill-name {
-font-size: 0.9rem;
-}
-.about-button {
-padding: 0.6rem 1.2rem;
-font-size: 0.8rem;
-}
-}
-</style>
+    <div class="about-container">
+        <div class="about-column">
+            <div class="profile-card">
+                <div class="profile-row">
+                    <div class="profile-image">
+                        <img src="/assets/images/John Ogletree_02 01 2025_logo.svg" alt="Profile Picture" width="80" height="80" title="J]">
+                    </div>
+                    <div class="profile-details">
+                        <div class="profile-name" data-i18n="">John Ogletree</div>
+                        <div class="profile-socials">
+                            <a href="https://www.facebook.com/therealjohnogletree" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/facebook.svg" alt="Facebook Logo" title="Facebook" width="25" height="25">
+                            </a>
+                            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/instagram.svg" alt="Instagram Logo" title="Instagram" width="25" height="25">
+                            </a>
+                            <a href="https://www.youtube.com/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/youtube.svg" alt="Youtube Logo" title="YouTube" width="25" height="25">
+                            </a>
+                            <a href="https://dribbble.com/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/dribble.svg" alt="Dribble Portfolio Logo" title="Dribble" width="25" height="25">
+                            </a>
+                            <a href="https://developers.google.com/profile/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/google-developer-program.svg" alt="Google Developer Program Logo" title="Google Developers" width="25" height="25">
+                            </a>
+                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/github.svg" alt="Github Logo" title="Github" width="25" height="25">
+                            </a>
+                            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/twitter.svg" alt="Twitter Logo" title="Twitter" width="25" height="25">
+                            </a>
+                            <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/linkedin.svg" alt="LinkedIn Logo" title="LinkedIn" width="25" height="25">
+                            </a>
+                            <a href="https://www.pinterest.com/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/pinterest.svg" alt="Pinterest Logo" title="Pinterest" width="25" height="25">
+                            </a>
+                            <a href="https://www.reddit.com/user/yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/reddit.svg" alt="Reddit Logo" title="Reddit" width="25" height="25">
+                            </a>
+                            <a href="https://www.tiktok.com/@yourusername" target="_blank" rel="noopener noreferrer">
+                                <img src="/assets/icons/socials/tiktok.svg" alt="TikTok Logo" title="TikTok" width="25" height="25">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="profile-description" data-i18n="">
+                Passionate about blending technology with creativity. Building Y2K-inspired experiences one pixel at a time.
+            </p>
+            <a href="/projects.html" class="about-button" data-i18n="">View Portfolio</a>
+        </div>
+        <div class="about-column">
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon" data-i18n="">🖥️</div>
+                    <div class="skill-name" data-i18n="">Web Development</div>
+                    <div class="progress-container">
+                        <span class="progress-percentage" data-i18n="">90%</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon" data-i18n="">🎨</div>
+                    <div class="skill-name" data-i18n="">Graphic Design</div>
+                    <div class="progress-container">
+                        <span class="progress-percentage" data-i18n="">80%</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon" data-i18n="">📱</div>
+                    <div class="skill-name" data-i18n="">App Development</div>
+                    <div class="progress-container">
+                        <span class="progress-percentage" data-i18n="">75%</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon" data-i18n="">🎮</div>
+                    <div class="skill-name" data-i18n="">Game Design</div>
+                    <div class="progress-container">
+                        <span class="progress-percentage" data-i18n="">85%</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- Service Category Overview Section -->
 <section class="service-catagory-overview">
-<div class="overview-container">
-<div class="overview-left">
-<div class="instructions-card">
-<h2 data-i18n="">How It Works</h2>
-<p data-i18n="">
-Follow the steps below to find the perfect service for your needs.
-Browse through our service categories, and filter by tags to narrow down your options.
-</p>
-</div>
-<div class="filter-tags">
-<h3 data-i18n="">Filter by Tags</h3>
-<div class="tags">
-<span class="tag filter-tag active" data-filter="all" data-i18n="">All</span>
-<span class="tag filter-tag" data-filter="Design" data-i18n="">Design</span>
-<span class="tag filter-tag" data-filter="Development" data-i18n="">Development</span>
-<span class="tag filter-tag" data-filter="Marketing" data-i18n="">Marketing</span>
-<span class="tag filter-tag" data-filter="SEO" data-i18n="">SEO</span>
-</div>
-</div>
-</div>
-<div class="overview-right">
-<div class="service-grid">
-<div class="service-card" data-category="Design">
-<div class="service-image">
-<img src="/assets/images/service1.svg" alt="Service 1" width="300" height="200" />
-</div>
-<div class="service-info">
-<div class="service-tags">
-<span class="pull-tab" data-tag="Design" data-i18n="">Design</span>
-</div>
-<h3 data-i18n="">Creative Design</h3>
-<a href="/services/design.html" class="view-service" data-i18n="">View Service</a>
-</div>
-</div>
-<div class="service-card" data-category="Development">
-<div class="service-image">
-<img src="/assets/images/service2.svg" alt="Service 2" width="300" height="200" />
-</div>
-<div class="service-info">
-<div class="service-tags">
-<span class="pull-tab" data-tag="Development" data-i18n="">Development</span>
-</div>
-<h3 data-i18n="">Web Development</h3>
-<a href="/services/development.html" class="view-service" data-i18n="">View Service</a>
-</div>
-</div>
-<div class="service-card" data-category="Marketing">
-<div class="service-image">
-<img src="/assets/images/service3.svg" alt="Service 3" width="300" height="200" />
-</div>
-<div class="service-info">
-<div class="service-tags">
-<span class="pull-tab" data-tag="Marketing" data-i18n="">Marketing</span>
-</div>
-<h3 data-i18n="">Digital Marketing</h3>
-<a href="/services/marketing.html" class="view-service" data-i18n="">View Service</a>
-</div>
-</div>
-<div class="service-card" data-category="SEO">
-<div class="service-image">
-<img src="/assets/images/service4.svg" alt="Service 4" width="300" height="200" />
-</div>
-<div class="service-info">
-<div class="service-tags">
-<span class="pull-tab" data-tag="SEO" data-i18n="">SEO</span>
-</div>
-<h3 data-i18n="">SEO Optimization</h3>
-<a href="/services/seo.html" class="view-service" data-i18n="">View Service</a>
-</div>
-</div>
-</div>
-<div class="view-all-container">
-<a href="/services.html" class="view-all-button" data-i18n="">View All Services</a>
-</div>
-</div>
-</div>
-<style>
-.service-catagory-overview {
-padding: 4rem 2rem;
-background: linear-gradient(135deg, #141e30, #243b55);
-color: #fff;
-text-align: left;
-}
-.overview-container {
-display: flex;
-flex-wrap: wrap;
-gap: 3rem;
-max-width: 1200px;
-margin: 0 auto;
-}
-.overview-left {
-flex: 1;
-min-width: 300px;
-display: flex;
-flex-direction: column;
-gap: 2rem;
-}
-.instructions-card,
-.filter-tags {
-background: rgba(0, 0, 0, 0.2);
-padding: 1.5rem;
-border-radius: 12px;
-box-shadow: 0 0 10px #FF00FF;
-}
-.instructions-card h2,
-.filter-tags h3 {
-font-family: 'Press Start 2P', cursive;
-color: #FF00FF;
-margin-bottom: 1rem;
-}
-.instructions-card p {
-font-family: 'Orbitron', sans-serif;
-font-size: 1rem;
-line-height: 1.5;
-}
-.tags {
-display: flex;
-flex-wrap: wrap;
-gap: 0.5rem;
-}
-.tag {
-background: #FF00FF;
-color: #24243e;
-padding: 0.5rem 1rem;
-border-radius: 20px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.8rem;
-cursor: pointer;
-transition: background 0.3s ease;
-}
-.tag:hover,
-.tag.active {
-background: #00FFFF;
-}
-.overview-right {
-flex: 2;
-min-width: 300px;
-display: flex;
-flex-direction: column;
-gap: 2rem;
-}
-.service-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 1.5rem;
-}
-.service-card {
-background: rgba(0, 0, 0, 0.2);
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 0 10px #FF00FF;
-display: flex;
-flex-direction: column;
-transition: transform 0.3s ease;
-}
-.service-card:hover {
-transform: scale(1.02);
-}
-.service-image img {
-width: 100%;
-display: block;
-}
-.service-info {
-padding: 1rem;
-display: flex;
-flex-direction: column;
-gap: 0.8rem;
-}
-.service-tags {
-display: flex;
-gap: 0.5rem;
-}
-.pull-tab {
-background: #FF00FF;
-color: #24243e;
-padding: 0.3rem 0.8rem;
-border-radius: 20px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.75rem;
-}
-.service-info h3 {
-font-family: 'Orbitron', sans-serif;
-font-size: 1.1rem;
-margin: 0.5rem 0;
-}
-.view-service {
-align-self: flex-start;
-padding: 0.5rem 1rem;
-border: 2px solid #FF00FF;
-border-radius: 25px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.8rem;
-text-decoration: none;
-color: #FF00FF;
-transition: background 0.3s, color 0.3s;
-}
-.view-service:hover {
-background: #FF00FF;
-color: #24243e;
-}
-.view-all-container {
-text-align: center;
-}
-.view-all-button {
-padding: 0.8rem 1.5rem;
-border: 2px solid #FF00FF;
-border-radius: 25px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.9rem;
-text-decoration: none;
-color: #FF00FF;
-transition: background 0.3s, color 0.3s;
-}
-.view-all-button:hover {
-background: #FF00FF;
-color: #24243e;
-}
-@media (max-width: 768px) {
-.overview-container {
-flex-direction: column;
-}
-.service-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-</style>
-<script>
-const filterTags = document.querySelectorAll('.filter-tag');
-const serviceCards = document.querySelectorAll('.service-card');
-filterTags.forEach(tag => {
-tag.addEventListener('click', function() {
-filterTags.forEach(t => t.classList.remove('active'));
-this.classList.add('active');
-const filter = this.getAttribute('data-filter');
-serviceCards.forEach(card => {
-if (filter === 'all' || card.getAttribute('data-category') === filter) {
-card.style.display = 'flex';
-} else {
-card.style.display = 'none';
-}
-});
-});
-});
-</script>
+    <div class="overview-container">
+        <div class="overview-left">
+            <div class="instructions-card">
+                <h2 data-i18n="">How It Works</h2>
+                <p data-i18n="">
+                    Follow the steps below to find the perfect service for your needs.
+                    Browse through our service categories, and filter by tags to narrow down your options.
+                </p>
+            </div>
+            <div class="filter-tags">
+                <h3 data-i18n="">Filter by Tags</h3>
+                <div class="tags">
+                    <span class="tag filter-tag active" data-filter="all" data-i18n="">All</span>
+                    <span class="tag filter-tag" data-filter="Design" data-i18n="">Design</span>
+                    <span class="tag filter-tag" data-filter="Development" data-i18n="">Development</span>
+                    <span class="tag filter-tag" data-filter="Marketing" data-i18n="">Marketing</span>
+                    <span class="tag filter-tag" data-filter="SEO" data-i18n="">SEO</span>
+                </div>
+            </div>
+        </div>
+        <div class="overview-right">
+            <div class="service-grid">
+                <div class="service-card" data-category="Design">
+                    <div class="service-image">
+                        <img src="/assets/images/service1.svg" alt="Service 1" width="300" height="200" />
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tags">
+                            <span class="pull-tab" data-tag="Design" data-i18n="">Design</span>
+                        </div>
+                        <h3 data-i18n="">Creative Design</h3>
+                        <a href="/services/design.html" class="view-service" data-i18n="">View Service</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="Development">
+                    <div class="service-image">
+                        <img src="/assets/images/service2.svg" alt="Service 2" width="300" height="200" />
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tags">
+                            <span class="pull-tab" data-tag="Development" data-i18n="">Development</span>
+                        </div>
+                        <h3 data-i18n="">Web Development</h3>
+                        <a href="/services/development.html" class="view-service" data-i18n="">View Service</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="Marketing">
+                    <div class="service-image">
+                        <img src="/assets/images/service3.svg" alt="Service 3" width="300" height="200" />
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tags">
+                            <span class="pull-tab" data-tag="Marketing" data-i18n="">Marketing</span>
+                        </div>
+                        <h3 data-i18n="">Digital Marketing</h3>
+                        <a href="/services/marketing.html" class="view-service" data-i18n="">View Service</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="SEO">
+                    <div class="service-image">
+                        <img src="/assets/images/service4.svg" alt="Service 4" width="300" height="200" />
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tags">
+                            <span class="pull-tab" data-tag="SEO" data-i18n="">SEO</span>
+                        </div>
+                        <h3 data-i18n="">SEO Optimization</h3>
+                        <a href="/services/seo.html" class="view-service" data-i18n="">View Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-container">
+                <a href="/services.html" class="view-all-button" data-i18n="">View All Services</a>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- Projects Overview Section -->
 <section class="projects-overview">
-<div class="overview-container">
-<div class="overview-left">
-<div class="instructions-card">
-<h2 data-i18n="">How It Works</h2>
-<p data-i18n="">
-Explore our diverse range of projects. Use the filter tags to narrow down projects by category and discover the ones that match your interests.
-</p>
-</div>
-<div class="filter-tags">
-<h3 data-i18n="">Filter by Category</h3>
-<div class="tags">
-<span class="tag filter-tag active" data-filter="all" data-i18n="">All</span>
-<span class="tag filter-tag" data-filter="Web" data-i18n="">Web</span>
-<span class="tag filter-tag" data-filter="Mobile" data-i18n="">Mobile</span>
-<span class="tag filter-tag" data-filter="Design" data-i18n="">Design</span>
-<span class="tag filter-tag" data-filter="Marketing" data-i18n="">Marketing</span>
-</div>
-</div>
-</div>
-<div class="overview-right">
-<div class="projects-grid">
-<div class="project-card" data-category="Web">
-<div class="project-image">
-<img src="/assets/images/project1.svg" alt="Project 1" width="300" height="200" />
-</div>
-<div class="project-info">
-<div class="project-tags">
-<span class="pull-tab" data-tag="Web" data-i18n="">Web</span>
-</div>
-<h3 data-i18n="">Website Redesign</h3>
-<a href="/projects/web-redesign.html" class="view-project" data-i18n="">View Project</a>
-</div>
-</div>
-<div class="project-card" data-category="Mobile">
-<div class="project-image">
-<img src="/assets/images/project2.svg" alt="Project 2" width="300" height="200" />
-</div>
-<div class="project-info">
-<div class="project-tags">
-<span class="pull-tab" data-tag="Mobile" data-i18n="">Mobile</span>
-</div>
-<h3 data-i18n="">Mobile App Launch</h3>
-<a href="/projects/mobile-app.html" class="view-project" data-i18n="">View Project</a>
-</div>
-</div>
-<div class="project-card" data-category="Design">
-<div class="project-image">
-<img src="/assets/images/project3.svg" alt="Project 3" width="300" height="200" />
-</div>
-<div class="project-info">
-<div class="project-tags">
-<span class="pull-tab" data-tag="Design" data-i18n="">Design</span>
-</div>
-<h3 data-i18n="">Brand Identity</h3>
-<a href="/projects/brand-identity.html" class="view-project" data-i18n="">View Project</a>
-</div>
-</div>
-<div class="project-card" data-category="Marketing">
-<div class="project-image">
-<img src="/assets/images/project4.svg" alt="Project 4" width="300" height="200" />
-</div>
-<div class="project-info">
-<div class="project-tags">
-<span class="pull-tab" data-tag="Marketing" data-i18n="">Marketing</span>
-</div>
-<h3 data-i18n="">Social Media Campaign</h3>
-<a href="/projects/social-media.html" class="view-project" data-i18n="">View Project</a>
-</div>
-</div>
-</div>
-<div class="view-all-container">
-<a href="/projects.html" class="view-all-button" data-i18n="">View All Projects</a>
-</div>
-</div>
-</div>
-<style>
-.projects-overview {
-padding: 4rem 2rem;
-background: linear-gradient(135deg, #141e30, #243b55);
-color: #fff;
-text-align: left;
-}
-.overview-container {
-display: flex;
-flex-wrap: wrap;
-gap: 3rem;
-max-width: 1200px;
-margin: 0 auto;
-}
-.overview-left {
-flex: 1;
-min-width: 300px;
-display: flex;
-flex-direction: column;
-gap: 2rem;
-}
-.instructions-card,
-.filter-tags {
-background: rgba(0, 0, 0, 0.2);
-padding: 1.5rem;
-border-radius: 12px;
-box-shadow: 0 0 10px #FF00FF;
-}
-.instructions-card h2,
-.filter-tags h3 {
-font-family: 'Press Start 2P', cursive;
-color: #FF00FF;
-margin-bottom: 1rem;
-}
-.instructions-card p {
-font-family: 'Orbitron', sans-serif;
-font-size: 1rem;
-line-height: 1.5;
-}
-.tags {
-display: flex;
-flex-wrap: wrap;
-gap: 0.5rem;
-}
-.tag {
-background: #FF00FF;
-color: #24243e;
-padding: 0.5rem 1rem;
-border-radius: 20px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.8rem;
-cursor: pointer;
-transition: background 0.3s ease;
-}
-.tag:hover,
-.tag.active {
-background: #00FFFF;
-}
-.overview-right {
-flex: 2;
-min-width: 300px;
-display: flex;
-flex-direction: column;
-gap: 2rem;
-}
-.projects-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 1.5rem;
-}
-.project-card {
-background: rgba(0, 0, 0, 0.2);
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 0 10px #FF00FF;
-display: flex;
-flex-direction: column;
-transition: transform 0.3s ease;
-}
-.project-card:hover {
-transform: scale(1.02);
-}
-.project-image img {
-width: 100%;
-display: block;
-}
-.project-info {
-padding: 1rem;
-display: flex;
-flex-direction: column;
-gap: 0.8rem;
-}
-.project-tags {
-display: flex;
-gap: 0.5rem;
-}
-.pull-tab {
-background: #FF00FF;
-color: #24243e;
-padding: 0.3rem 0.8rem;
-border-radius: 20px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.75rem;
-}
-.project-info h3 {
-font-family: 'Orbitron', sans-serif;
-font-size: 1.1rem;
-margin: 0.5rem 0;
-}
-.view-project {
-align-self: flex-start;
-padding: 0.5rem 1rem;
-border: 2px solid #FF00FF;
-border-radius: 25px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.8rem;
-text-decoration: none;
-color: #FF00FF;
-transition: background 0.3s, color 0.3s;
-}
-.view-project:hover {
-background: #FF00FF;
-color: #24243e;
-}
-.view-all-container {
-text-align: center;
-}
-.view-all-button {
-padding: 0.8rem 1.5rem;
-border: 2px solid #FF00FF;
-border-radius: 25px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.9rem;
-text-decoration: none;
-color: #FF00FF;
-transition: background 0.3s, color 0.3s;
-}
-.view-all-button:hover {
-background: #FF00FF;
-color: #24243e;
-}
-@media (max-width: 768px) {
-.overview-container {
-flex-direction: column;
-}
-.projects-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-</style>
-<script>
-const projectFilterTags = document.querySelectorAll('.projects-overview .filter-tag');
-const projectCards = document.querySelectorAll('.project-card');
-projectFilterTags.forEach(tag => {
-tag.addEventListener('click', function() {
-projectFilterTags.forEach(t => t.classList.remove('active'));
-this.classList.add('active');
-const filter = this.getAttribute('data-filter');
-projectCards.forEach(card => {
-if (filter === 'all' || card.getAttribute('data-category') === filter) {
-card.style.display = 'flex';
-} else {
-card.style.display = 'none';
-}
-});
-});
-});
-</script>
+    <div class="overview-container">
+        <div class="overview-left">
+            <div class="instructions-card">
+                <h2 data-i18n="">How It Works</h2>
+                <p data-i18n="">
+                    Explore our diverse range of projects. Use the filter tags to narrow down projects by category and discover the ones that match your interests.
+                </p>
+            </div>
+            <div class="filter-tags">
+                <h3 data-i18n="">Filter by Category</h3>
+                <div class="tags">
+                    <span class="tag filter-tag active" data-filter="all" data-i18n="">All</span>
+                    <span class="tag filter-tag" data-filter="Web" data-i18n="">Web</span>
+                    <span class="tag filter-tag" data-filter="Mobile" data-i18n="">Mobile</span>
+                    <span class="tag filter-tag" data-filter="Design" data-i18n="">Design</span>
+                    <span class="tag filter-tag" data-filter="Marketing" data-i18n="">Marketing</span>
+                </div>
+            </div>
+        </div>
+        <div class="overview-right">
+            <div class="projects-grid">
+                <div class="project-card" data-category="Web">
+                    <div class="project-image">
+                        <img src="/assets/images/project1.svg" alt="Project 1" width="300" height="200" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="pull-tab" data-tag="Web" data-i18n="">Web</span>
+                        </div>
+                        <h3 data-i18n="">Website Redesign</h3>
+                        <a href="/projects/web-redesign.html" class="view-project" data-i18n="">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="Mobile">
+                    <div class="project-image">
+                        <img src="/assets/images/project2.svg" alt="Project 2" width="300" height="200" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="pull-tab" data-tag="Mobile" data-i18n="">Mobile</span>
+                        </div>
+                        <h3 data-i18n="">Mobile App Launch</h3>
+                        <a href="/projects/mobile-app.html" class="view-project" data-i18n="">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="Design">
+                    <div class="project-image">
+                        <img src="/assets/images/project3.svg" alt="Project 3" width="300" height="200" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="pull-tab" data-tag="Design" data-i18n="">Design</span>
+                        </div>
+                        <h3 data-i18n="">Brand Identity</h3>
+                        <a href="/projects/brand-identity.html" class="view-project" data-i18n="">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="Marketing">
+                    <div class="project-image">
+                        <img src="/assets/images/project4.svg" alt="Project 4" width="300" height="200" />
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="pull-tab" data-tag="Marketing" data-i18n="">Marketing</span>
+                        </div>
+                        <h3 data-i18n="">Social Media Campaign</h3>
+                        <a href="/projects/social-media.html" class="view-project" data-i18n="">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-container">
+                <a href="/projects.html" class="view-all-button" data-i18n="">View All Projects</a>
+            </div>
+        </div>
+    </div>
 </section>
+
 <!-- Newsletter Signup and Contact Form Section -->
 <section class="newsletter-contact">
-<div class="nc-container">
-<div class="newsletter">
-<h2 data-i18n="">Subscribe to Our Newsletter</h2>
-<form method="post" action="process_form.php">
-<input type="hidden" name="form_type" value="newsletter">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<button type="submit" data-i18n="">Subscribe</button>
-</form>
-</div>
-<div class="contact">
-<h2 data-i18n="">Contact Us</h2>
-<form method="post" action="process_form.php">
-<input type="hidden" name="form_type" value="contact">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="text" name="subject" placeholder="Subject" required>
-<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-<button type="submit" data-i18n="">Send Message</button>
-</form>
-</div>
-</div>
-<style>
-.newsletter-contact {
-padding: 4rem 2rem;
-background: linear-gradient(135deg, #141e30, #243b55);
-color: #fff;
-display: flex;
-justify-content: center;
-align-items: flex-start;
-}
-.nc-container {
-max-width: 1200px;
-width: 100%;
-display: flex;
-gap: 3rem;
-flex-wrap: wrap;
-justify-content: space-between;
-}
-.newsletter,
-.contact {
-background: rgba(0, 0, 0, 0.2);
-padding: 2rem;
-border-radius: 12px;
-box-shadow: 0 0 10px #FF00FF;
-flex: 1;
-min-width: 300px;
-}
-.newsletter h2,
-.contact h2 {
-font-family: 'Press Start 2P', cursive;
-color: #FF00FF;
-margin-bottom: 1rem;
-}
-form {
-display: flex;
-flex-direction: column;
-gap: 1rem;
-}
-input[type="text"],
-input[type="email"],
-textarea {
-padding: 0.8rem;
-border: none;
-border-radius: 4px;
-font-family: 'Orbitron', sans-serif;
-font-size: 1rem;
-}
-button {
-padding: 0.8rem 1.5rem;
-border: 2px solid #FF00FF;
-border-radius: 25px;
-background: transparent;
-font-family: 'Press Start 2P', cursive;
-color: #FF00FF;
-cursor: pointer;
-transition: background 0.3s, color 0.3s;
-}
-button:hover {
-background: #FF00FF;
-color: #24243e;
-}
-</style>
+    <div class="nc-container">
+        <div class="newsletter">
+            <h2 data-i18n="">Subscribe to Our Newsletter</h2>
+            <form method="post" action="process_form.php">
+                <input type="hidden" name="form_type" value="newsletter">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <button type="submit" data-i18n="">Subscribe</button>
+            </form>
+        </div>
+        <div class="contact">
+            <h2 data-i18n="">Contact Us</h2>
+            <form method="post" action="process_form.php">
+                <input type="hidden" name="form_type" value="contact">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" data-i18n="">Send Message</button>
+            </form>
+        </div>
+    </div>
 </section>
+
 <!-- Resume Overview Section -->
 <section class="resume-overview">
-<div class="resume-container">
-<h2 data-i18n="">My Resume</h2>
-<p data-i18n="">
-With a passion for blending technology and creativity, I have built a dynamic career that spans web development, design, and digital innovation. Discover my professional journey, key accomplishments, and the skills that drive my work.
-</p>
-<a href="/resume.html" class="resume-button" data-i18n="">View Full Resume</a>
-</div>
-<style>
-.resume-overview {
-padding: 4rem 2rem;
-background: linear-gradient(135deg, #141e30, #243b55);
-color: #fff;
-text-align: center;
-}
-.resume-container {
-max-width: 800px;
-margin: 0 auto;
-}
-.resume-overview h2 {
-font-family: 'Press Start 2P', cursive;
-font-size: 2rem;
-color: #FF00FF;
-margin-bottom: 1.5rem;
-}
-.resume-overview p {
-font-family: 'Orbitron', sans-serif;
-font-size: 1rem;
-line-height: 1.6;
-margin-bottom: 2rem;
-}
-.resume-button {
-display: inline-block;
-padding: 0.8rem 1.5rem;
-border: 2px solid #FF00FF;
-border-radius: 25px;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.9rem;
-text-decoration: none;
-color: #FF00FF;
-transition: background 0.3s, color 0.3s;
-}
-.resume-button:hover {
-background: #FF00FF;
-color: #24243e;
-}
-</style>
+    <div class="resume-container">
+        <h2 data-i18n="">My Resume</h2>
+        <p data-i18n="">
+            With a passion for blending technology and creativity, I have built a dynamic career that spans web development, design, and digital innovation. Discover my professional journey, key accomplishments, and the skills that drive my work.
+        </p>
+        <a href="/resume.html" class="resume-button" data-i18n="">View Full Resume</a>
+    </div>
 </section>
+
 <!-- Footer Section -->
 <footer class="site-footer">
-<div class="footer-container">
-<div class="footer-brand">
-<img src="/assets/images/John Ogletree_02 01 2025_logo.svg" alt="Brand Logo" class="footer-logo" width="80" height="80">
-<p class="footer-tagline" data-i18n="">Blending Technology with Creativity.</p>
-</div>
-<nav class="footer-nav">
-<ul>
-<li><a href="/" data-i18n="">Home</a></li>
-<li><a href="/about.html" data-i18n="">About Me</a></li>
-<li><a href="/services.html" data-i18n="">Services</a></li>
-<li><a href="/projects.html" data-i18n="">Projects</a></li>
-<li><a href="/resume.html" data-i18n="">Resume</a></li>
-<li><a href="/contact.html" data-i18n="">Contact Me</a></li>
-</ul>
-</nav>
-<div class="footer-social">
-<a href="https://twitter.com/yourprofile" target="_blank" data-i18n="">Twitter</a>
-<a href="https://linkedin.com/in/yourprofile" target="_blank" data-i18n="">LinkedIn</a>
-<a href="https://github.com/yourprofile" target="_blank" data-i18n="">GitHub</a>
-</div>
-<div class="footer-copy">
-<p data-i18n="">&copy; 2025 John Ogletree. All rights reserved.</p>
-</div>
-</div>
-<style>
-.site-footer {
-background: linear-gradient(135deg, #243b55, #141e30);
-color: #fff;
-padding: 2rem;
-text-align: center;
-}
-.footer-container {
-max-width: 1200px;
-margin: 0 auto;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items: center;
-gap: 2rem;
-}
-.footer-brand {
-flex: 1;
-min-width: 250px;
-text-align: left;
-}
-.footer-logo {
-max-width: 80px;
-height: auto;
-filter: brightness(0) invert(1);
-}
-.footer-tagline {
-font-family: 'Orbitron', sans-serif;
-font-size: 0.9rem;
-margin-top: 0.5rem;
-color: #FF00FF;
-}
-.footer-nav {
-flex: 1;
-min-width: 200px;
-}
-.footer-nav ul {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-.footer-nav ul li {
-display: inline-block;
-margin: 0 0.5rem;
-}
-.footer-nav ul li a {
-color: #FF00FF;
-text-decoration: none;
-font-family: 'Press Start 2P', cursive;
-font-size: 0.8rem;
-transition: color 0.3s ease;
-}
-.footer-nav ul li a:hover {
-color: #00FFFF;
-}
-.footer-social {
-flex: 1;
-min-width: 200px;
-}
-.footer-social a {
-color: #FF00FF;
-margin: 0 0.5rem;
-text-decoration: none;
-font-family: 'Orbitron', sans-serif;
-font-size: 0.9rem;
-transition: color 0.3s ease;
-}
-.footer-social a:hover {
-color: #00FFFF;
-}
-.footer-copy {
-width: 100%;
-margin-top: 1rem;
-font-family: 'Orbitron', sans-serif;
-font-size: 0.8rem;
-color: #FF00FF;
-}
-@media (max-width: 768px) {
-.footer-container {
-flex-direction: column;
-}
-.footer-brand,
-.footer-nav,
-.footer-social {
-text-align: center;
-}
-}
-</style>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="/assets/images/John Ogletree_02 01 2025_logo.svg" alt="Brand Logo" class="footer-logo" width="80" height="80">
+            <p class="footer-tagline" data-i18n="">Blending Technology with Creativity.</p>
+        </div>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="/" data-i18n="">Home</a></li>
+                <li><a href="/about.html" data-i18n="">About Me</a></li>
+                <li><a href="/services.html" data-i18n="">Services</a></li>
+                <li><a href="/projects.html" data-i18n="">Projects</a></li>
+                <li><a href="/resume.html" data-i18n="">Resume</a></li>
+                <li><a href="/contact.html" data-i18n="">Contact Me</a></li>
+            </ul>
+        </nav>
+        <div class="footer-social">
+            <a href="https://twitter.com/yourprofile" target="_blank" data-i18n="">Twitter</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" data-i18n="">LinkedIn</a>
+            <a href="https://github.com/yourprofile" target="_blank" data-i18n="">GitHub</a>
+        </div>
+        <div class="footer-copy">
+            <p data-i18n="">&copy; 2025 John Ogletree. All rights reserved.</p>
+        </div>
+    </div>
 </footer>
+
 <!-- JavaScript for Sidebar Toggle -->
 <script>
-const hamburger = document.getElementById('hamburger');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('overlay');
-function toggleSidebar() {
-sidebar.classList.toggle('active');
-overlay.classList.toggle('active');
-hamburger.classList.toggle('active');
-}
-hamburger.addEventListener('click', toggleSidebar);
-overlay.addEventListener('click', toggleSidebar);
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function toggleSidebar() {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    }
+
+    hamburger.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
+    // Filter functionality for services
+    const filterTags = document.querySelectorAll('.service-catagory-overview .filter-tag');
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    filterTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            filterTags.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.getAttribute('data-filter');
+            serviceCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Filter functionality for projects
+    const projectFilterTags = document.querySelectorAll('.projects-overview .filter-tag');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectFilterTags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            projectFilterTags.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.getAttribute('data-filter');
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
 </script>
 </body>
 </html>
-
