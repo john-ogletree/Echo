@@ -50,6 +50,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     simulateTerminal();
 
+    // Mobile-specific optimizations
+    function handleMobileResize() {
+        // Adjust layout for mobile
+        if (window.innerWidth < 768) {
+            // Mobile-specific adjustments
+            document.body.style.minHeight = window.innerHeight + 'px';
+        }
+    }
+
+    // Initial call and event listener
+    handleMobileResize();
+    window.addEventListener('resize', handleMobileResize);
+
     // System notification
     console.log(`
     ╔═══════════════════════════════════════╗
