@@ -121,11 +121,11 @@
       </div>
       <div class="flex items-center">
           <div class="flex items-center ms-3">
-            <!-- Breadcrumb Navigation -->
-            <nav class="flex" aria-label="Breadcrumb">
+            <!-- Breadcrumb Navigation - Hidden on index page -->
+            <nav class="hidden" id="breadcrumb-nav" aria-label="Breadcrumb">
               <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
-                  <a href="#" class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
+                  <a href="/" class="inline-flex items-center text-sm font-medium text-body hover:text-fg-brand">
                     <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13h3.439a.991.991 0 0 1 .908.6 3.978 3.978 0 0 0 7.306 0 .99.99 0 0 1 .908-.6H20M4 13v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6M4 13l2-9h12l2 9M9 7h6m-7 3h8"/>
                     </svg>
@@ -287,6 +287,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebar = document.getElementById('top-bar-sidebar');
     const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const breadcrumbNav = document.getElementById('breadcrumb-nav');
+    
+    // Check if current page is index/home page
+    function isIndexPage() {
+        // You can modify this logic based on your routing
+        // For now, we'll assume index page is when pathname is '/' or '/index.html'
+        const path = window.location.pathname;
+        return path === '/' || path === '/index.html' || path.endsWith('/');
+    }
+    
+    // Show breadcrumb only if not on index page
+    if (breadcrumbNav && !isIndexPage()) {
+        breadcrumbNav.classList.remove('hidden');
+    }
     
     // Toggle sidebar on mobile
     if (sidebarToggle && sidebar && sidebarOverlay) {
@@ -329,4 +343,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 </body>
-			 </html>
+	</html>
