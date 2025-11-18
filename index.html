@@ -320,35 +320,6 @@
                 </div>
                 <div class="flex items-center">
                     <div class="flex items-center ms-2 xs:ms-3">
-                        <nav class="hidden md:block" id="breadcrumb-nav" aria-label="Breadcrumb">
-                            <ol class="inline-flex items-center space-x-1 xs:space-x-2 md:space-x-2 rtl:space-x-reverse">
-                                <li class="inline-flex items-center">
-                                    <a href="#dashboard" class="inline-flex items-center text-xs xs:text-sm font-medium text-body hover:text-fg-brand">
-                                        <svg class="w-3 h-3 xs:w-4 xs:h-4 me-1 xs:me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
-                                        </svg>
-                                        root@
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="flex items-center">
-                                        <svg class="rtl:rotate-180 w-3 h-3 xs:w-4 xs:h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                                        </svg>
-                                        <a href="#dashboard" class="ms-1 text-xs xs:text-sm font-medium text-body hover:text-fg-brand md:ms-2">system</a>
-                                    </div>
-                                </li>
-                                <li aria-current="page">
-                                    <div class="flex items-center">
-                                        <svg class="rtl:rotate-180 w-3 h-3 xs:w-4 xs:h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                                        </svg>
-                                        <span class="ms-1 text-xs xs:text-sm font-medium text-heading md:ms-2">dashboard</span>
-                                    </div>
-                                </li>
-                            </ol>
-                        </nav>
-
                         <button id="mobile-menu-button" class="md:hidden text-heading bg-transparent p-2 rounded-terminal btn-touch">
                             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h6"/>
@@ -434,7 +405,7 @@
                 <li>
                     <a href="#pricing" class="flex items-center px-2 py-2 xs:py-1.5 text-body rounded-terminal hover:bg-neutral-tertiary hover:text-fg-brand group btn-touch">
                         <svg class="shrink-0 w-4 h-4 xs:w-5 xs:h-5 transition duration-75 group-hover:text-fg-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M8 7H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M8 7v10a1 1 0 0 0 1 1h1M15 12h.01M12 12h.01M9 12h.01"/>
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M8 7H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1 1v-1M8 7v10a1 1 0 0 0 1 1h1M15 12h.01M12 12h.01M9 12h.01"/>
                         </svg>
                         <span class="flex-1 ms-2 xs:ms-3 text-sm xs:text-base whitespace-nowrap">Pricing</span>
                     </a>
@@ -767,7 +738,6 @@
         function initializeSectionTracking() {
             const sections = document.querySelectorAll('.page-section');
             const navLinks = document.querySelectorAll('nav a, aside a');
-            const breadcrumbNav = document.getElementById('breadcrumb-nav');
             
             function updateActiveSection() {
                 let currentSection = 'dashboard';
@@ -793,45 +763,6 @@
                         link.classList.remove('text-body');
                     }
                 });
-                
-                // Update breadcrumb
-                updateBreadcrumb(currentSection);
-            }
-            
-            function updateBreadcrumb(sectionId) {
-                if (!breadcrumbNav) return;
-                
-                const sectionName = sectionId.replace('-', ' ');
-                const breadcrumbOl = breadcrumbNav.querySelector('ol');
-                
-                breadcrumbOl.innerHTML = `
-                    <li class="inline-flex items-center">
-                        <a href="#dashboard" class="inline-flex items-center text-xs xs:text-sm font-medium text-body hover:text-fg-brand">
-                            <svg class="w-3 h-3 xs:w-4 xs:h-4 me-1 xs:me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
-                            </svg>
-                            root@
-                        </a>
-                    </li>
-                    <li>
-                        <div class="flex items-center">
-                            <svg class="rtl:rotate-180 w-3 h-3 xs:w-4 xs:h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                            </svg>
-                            <a href="#${sectionId}" class="ms-1 text-xs xs:text-sm font-medium text-body hover:text-fg-brand md:ms-2">system</a>
-                        </div>
-                    </li>
-                    <li aria-current="page">
-                        <div class="flex items-center">
-                            <svg class="rtl:rotate-180 w-3 h-3 xs:w-4 xs:h-4 text-fg-disabled mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                            </svg>
-                            <span class="ms-1 text-xs xs:text-sm font-medium text-heading md:ms-2">${sectionName}</span>
-                        </div>
-                    </li>
-                `;
-                
-                breadcrumbNav.classList.remove('hidden');
             }
             
             // Initialize
