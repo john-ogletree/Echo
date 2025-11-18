@@ -1,5 +1,37 @@
 // Main script file - Echo OS functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Generate current date version (YYYY.MM.DD format)
+    function getCurrentDateVersion() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        return `${year}.${month}.${day}`;
+    }
+
+    // Update version numbers throughout the site
+    function updateVersionNumbers() {
+        const currentVersion = getCurrentDateVersion();
+        
+        // Update version in status bar
+        const versionElement = document.getElementById('version-number');
+        if (versionElement) {
+            versionElement.textContent = currentVersion;
+        }
+        
+        // Update version in navigation
+        const navVersion = document.getElementById('nav-version');
+        if (navVersion) {
+            navVersion.textContent = currentVersion;
+        }
+        
+        // Update version in sidebar
+        const sidebarVersion = document.getElementById('sidebar-version');
+        if (sidebarVersion) {
+            sidebarVersion.textContent = currentVersion;
+        }
+    }
+
     // Update system time
     function updateSystemTime() {
         const now = new Date();
@@ -15,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initialize system time
+    // Initialize version numbers and system time
+    updateVersionNumbers();
     updateSystemTime();
     setInterval(updateSystemTime, 1000);
 
@@ -63,10 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
     handleMobileResize();
     window.addEventListener('resize', handleMobileResize);
 
-    // System notification
+    // System notification with current date version
+    const currentVersion = getCurrentDateVersion();
     console.log(`
     ╔═══════════════════════════════════════╗
-    ║            Echo OS v2.1.4             ║
+    ║            Echo OS ${currentVersion}           ║
     ║    Creative Operating System          ║
     ║        by John Ogletree               ║
     ║                                       ║
