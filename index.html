@@ -63,6 +63,7 @@
         }
     </script>
     <style>
+        /* Custom styles for sidebar scrollbar and hamburger animation */
         .sidebar ul::-webkit-scrollbar {
             width: 8px;
         }
@@ -77,12 +78,72 @@
             background: #24243e;
             border-radius: 4px;
         }
+
+        /* Hamburger animation styles */
+        .hamburger.active {
+            margin-bottom: 10px;
+        }
+        
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 7px);
+        }
+        
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -7px);
+        }
+        
+        .hamburger.active .line {
+            background: #00FFFF;
+            box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+        }
+
+        .hamburger::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        /* Sidebar active state */
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        /* Overlay active state */
+        .overlay.active {
+            display: block;
+        }
+
+        /* Shadow glow utility */
+        .shadow-glow {
+            box-shadow: 0 0 10px #FF00FF;
+        }
+
+        /* Scale 102 utility */
+        .hover\:scale-102:hover {
+            transform: scale(1.02);
+        }
+
+        /* Text glow utility */
+        .text-glow {
+            text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+        }
     </style>
 </head>
 <body class="font-orbitron bg-gradient-to-br from-dark-1 to-dark-2 text-white overflow-x-hidden w-full">
 
 <!-- Hamburger Button -->
-<div class="hamburger fixed top-4 left-4 w-10 h-9 cursor-pointer z-[1100] flex flex-col justify-between transition-mb duration-300 ease-in-out" id="hamburger" title="Sidebar Menu Toggle">
+<div class="hamburger fixed top-4 left-4 w-10 h-9 cursor-pointer z-[1100] flex flex-col justify-between transition-all duration-300 ease-in-out" id="hamburger" title="Sidebar Menu Toggle">
     <span class="line block h-1 w-full bg-primary rounded shadow-glow transition-all duration-300 ease-in-out"></span>
     <span class="line block h-1 w-full bg-primary rounded shadow-glow transition-all duration-300 ease-in-out"></span>
     <span class="line block h-1 w-full bg-primary rounded shadow-glow transition-all duration-300 ease-in-out"></span>
@@ -95,26 +156,26 @@
             <img src="" alt="Brand Logo" class="brand-logo max-w-[60px] h-auto animate-spin-slow" width="60" height="60">
         </div>
         <div class="search flex-2 flex justify-center">
-            <input type="text" placeholder="Search..." class="search-input w-full max-w-[160px] py-2 px-4 border-0 rounded-full text-sm bg-white/10 text-white outline-none transition-bg duration-300 ease-in-out placeholder-primary font-press-start">
+            <input type="text" placeholder="Search..." class="search-input w-full max-w-[160px] py-2 px-4 border-0 rounded-full text-sm bg-white/10 text-white outline-none transition-all duration-300 ease-in-out placeholder-primary font-press-start">
         </div>
     </div>
     <ul class="max-h-[calc(100vh-180px)] overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-dark-5 pt-4">
-        <li class="mb-5"><a href="/" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Home">Home</a></li>
-        <li class="mb-5"><a href="/about.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="About Me">About Me</a></li>
-        <li class="mb-5"><a href="/services.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Services">Services</a></li>
-        <li class="mb-5"><a href="/pricing.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Pricing">Pricing</a></li>
-        <li class="mb-5"><a href="/projects.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Projects">Projects</a></li>
-        <li class="mb-5"><a href="/resume.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Resume">Resume</a></li>
-        <li class="mb-5"><a href="/contact.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Contact Me">Contact Me</a></li>
-        <li class="mb-5"><a href="/blog.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Blog">Blog</a></li>
-        <li class="mb-5"><a href="/fag.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Frequently Asked Questions">Frequently Asked Questions</a></li>
-        <li class="mb-5"><a href="/vault.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-w after:duration-300 hover:after:w-full" title="Vault">Vault</a></li>
+        <li class="mb-5"><a href="/" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Home">Home</a></li>
+        <li class="mb-5"><a href="/about.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="About Me">About Me</a></li>
+        <li class="mb-5"><a href="/services.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Services">Services</a></li>
+        <li class="mb-5"><a href="/pricing.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Pricing">Pricing</a></li>
+        <li class="mb-5"><a href="/projects.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Projects">Projects</a></li>
+        <li class="mb-5"><a href="/resume.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Resume">Resume</a></li>
+        <li class="mb-5"><a href="/contact.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Contact Me">Contact Me</a></li>
+        <li class="mb-5"><a href="/blog.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Blog">Blog</a></li>
+        <li class="mb-5"><a href="/fag.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Frequently Asked Questions">Frequently Asked Questions</a></li>
+        <li class="mb-5"><a href="/vault.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Vault">Vault</a></li>
     </ul>
 </nav>
 
 <div class="overlay fixed top-0 left-0 w-full h-full bg-black/70 z-[999] hidden" id="overlay"></div>
 
-<!-- Hero Section -->
+<!-- Rest of the HTML remains the same as before -->
 <section class="hero relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-3 to-dark-4">
     <div class="hero-background absolute top-0 left-0 w-full h-full z-10">
         <div class="hero-grid absolute top-0 left-0 w-full h-full bg-grid-pattern bg-grid animate-grid-move"></div>
@@ -123,14 +184,14 @@
     
     <div class="hero-content relative z-20 text-center max-w-4xl px-8">
         <h1 class="hero-title font-press-start text-5xl mb-6 text-white text-glow animate-glow">JOHN OGLETREE</h1>
-        <h2 class="hero-subtitle font-orbitron text-2xl mb-8 text-secondary text-shadow-lg">Digital Creator & Web Developer</h2>
+        <h2 class="hero-subtitle font-orbitron text-2xl mb-8 text-secondary" style="text-shadow: 0 0 5px #00FFFF;">Digital Creator & Web Developer</h2>
         <p class="hero-description font-orbitron text-lg mb-12 leading-relaxed text-white max-w-2xl mx-auto">
             Crafting immersive digital experiences at the intersection of technology and creativity. 
             Specializing in Y2K-inspired designs that blend nostalgia with modern functionality.
         </p>
         <div class="hero-buttons flex gap-6 justify-center flex-wrap">
-            <a href="#about" class="hero-button py-4 px-8 font-press-start text-sm border-2 border-primary rounded-full bg-transparent text-primary no-underline transition-all duration-300 ease-in-out relative overflow-hidden z-10 hover:text-dark-1 before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-primary before:transition-left before:duration-300 before:ease-in-out before:z-[-1] hover:before:left-0">Explore My Work</a>
-            <a href="/contact.html" class="hero-button secondary py-4 px-8 font-press-start text-sm border-2 border-secondary rounded-full bg-transparent text-secondary no-underline transition-all duration-300 ease-in-out relative overflow-hidden z-10 hover:text-dark-1 before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-secondary before:transition-left before:duration-300 before:ease-in-out before:z-[-1] hover:before:left-0">Get In Touch</a>
+            <a href="#about" class="hero-button py-4 px-8 font-press-start text-sm border-2 border-primary rounded-full bg-transparent text-primary no-underline transition-all duration-300 ease-in-out relative overflow-hidden z-10 hover:text-dark-1 before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-primary before:transition-all before:duration-300 before:ease-in-out before:z-[-1] hover:before:left-0">Explore My Work</a>
+            <a href="/contact.html" class="hero-button secondary py-4 px-8 font-press-start text-sm border-2 border-secondary rounded-full bg-transparent text-secondary no-underline transition-all duration-300 ease-in-out relative overflow-hidden z-10 hover:text-dark-1 before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-secondary before:transition-all before:duration-300 before:ease-in-out before:z-[-1] hover:before:left-0">Get In Touch</a>
         </div>
     </div>
     
@@ -139,6 +200,7 @@
     </div>
 </section>
 
+<!-- The rest of your sections (about, services, projects, etc.) remain unchanged -->
 <section class="about-me py-16 flex justify-center items-center flex-col text-center" id="about">
     <div class="about-container flex flex-wrap gap-12 w-full max-w-6xl px-8">
         <div class="about-column flex-1 min-w-[300px]">
