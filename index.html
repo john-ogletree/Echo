@@ -230,6 +230,184 @@
             display: block;
         }
         
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0c1424, #1a2a42);
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FF00FF;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF; }
+            to { text-shadow: 0 0 15px #FF00FF, 0 0 30px #FF00FF, 0 0 40px #FF00FF; }
+        }
+        
+        .hero-subtitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #00FFFF;
+            text-shadow: 0 0 5px #00FFFF;
+        }
+        
+        .hero-description {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            color: #fff;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-button {
+            padding: 1rem 2rem;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9rem;
+            border: 2px solid #FF00FF;
+            border-radius: 30px;
+            background: transparent;
+            color: #FF00FF;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #FF00FF;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .hero-button:hover {
+            color: #141e30;
+        }
+        
+        .hero-button:hover::before {
+            left: 0;
+        }
+        
+        .hero-button.secondary {
+            border-color: #00FFFF;
+            color: #00FFFF;
+        }
+        
+        .hero-button.secondary::before {
+            background: #00FFFF;
+        }
+        
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        .scroll-arrow {
+            width: 30px;
+            height: 30px;
+            border-right: 3px solid #FF00FF;
+            border-bottom: 3px solid #FF00FF;
+            transform: rotate(45deg);
+            box-shadow: 0 0 10px #FF00FF;
+        }
+        
         /* Full-width sections */
         section {
             width: 100%;
@@ -680,6 +858,9 @@
                 flex-direction: column;
                 align-items: center;
             }
+            .hero-title {
+                font-size: 2.5rem;
+            }
         }
         @media (max-width: 768px) {
             .overview-container {
@@ -704,6 +885,21 @@
             .footer-social {
                 text-align: center;
             }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-button {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
         }
         @media (max-width: 480px) {
             .about-me {
@@ -726,6 +922,15 @@
             .service-grid,
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .hero-description {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -765,7 +970,32 @@
 
 <div class="overlay" id="overlay"></div>
 
-<section class="about-me">
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-background">
+        <div class="hero-grid"></div>
+        <div class="hero-particles" id="particles"></div>
+    </div>
+    
+    <div class="hero-content">
+        <h1 class="hero-title">JOHN OGLETREE</h1>
+        <h2 class="hero-subtitle">Digital Creator & Web Developer</h2>
+        <p class="hero-description">
+            Crafting immersive digital experiences at the intersection of technology and creativity. 
+            Specializing in Y2K-inspired designs that blend nostalgia with modern functionality.
+        </p>
+        <div class="hero-buttons">
+            <a href="#about" class="hero-button">Explore My Work</a>
+            <a href="/contact.html" class="hero-button secondary">Get In Touch</a>
+        </div>
+    </div>
+    
+    <div class="hero-scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<section class="about-me" id="about">
     <div class="about-container">
         <div class="about-column">
             <div class="profile-card">
@@ -1111,6 +1341,33 @@
             });
         });
     });
+
+    // Create floating particles for hero section
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 50;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Random position
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            
+            // Random animation delay
+            const delay = Math.random() * 5;
+            
+            particle.style.left = `${left}%`;
+            particle.style.top = `${top}%`;
+            particle.style.animationDelay = `${delay}s`;
+            
+            particlesContainer.appendChild(particle);
+        }
+    }
+    
+    // Initialize particles when page loads
+    window.addEventListener('load', createParticles);
 </script>
 </body>
 </html>
