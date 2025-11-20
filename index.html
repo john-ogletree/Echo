@@ -3,577 +3,395 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>John Ogletree</title>
+    <title>NEO-VERSE | John Ogletree</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#FF00FF',
-                        secondary: '#00FFFF',
-                        dark: {
-                            1: '#141e30',
-                            2: '#243b55',
-                            3: '#0c1424',
-                            4: '#1a2a42',
-                            5: '#24243e'
+                        neon: {
+                            pink: '#FF00FF',
+                            cyan: '#00FFFF',
+                            purple: '#9D00FF',
+                            blue: '#0066FF',
+                            green: '#00FF88'
+                        },
+                        cyber: {
+                            black: '#0A0A0F',
+                            dark: '#1A1A2E',
+                            gray: '#2D2D44',
+                            silver: '#E0E0E8'
                         }
                     },
                     fontFamily: {
-                        'press-start': ['Press Start 2P', 'cursive'],
-                        'orbitron': ['Orbitron', 'sans-serif']
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'rajdhani': ['Rajdhani', 'sans-serif']
                     },
                     animation: {
-                        'spin-slow': 'spin 10s linear infinite',
-                        'grid-move': 'gridMove 20s linear infinite',
-                        'float': 'float 6s infinite ease-in-out',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'bounce-soft': 'bounce 2s infinite'
+                        'glitch': 'glitch 2s infinite linear',
+                        'hologram': 'hologram 3s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'scan': 'scan 4s linear infinite',
+                        'matrix': 'matrix 20s linear infinite'
                     },
                     keyframes: {
-                        gridMove: {
-                            '0%': { transform: 'translate(0, 0)' },
-                            '100%': { transform: 'translate(50px, 50px)' }
+                        glitch: {
+                            '0%, 100%': { transform: 'translate(0)' },
+                            '20%': { transform: 'translate(-2px, 2px)' },
+                            '40%': { transform: 'translate(-2px, -2px)' },
+                            '60%': { transform: 'translate(2px, 2px)' },
+                            '80%': { transform: 'translate(2px, -2px)' }
+                        },
+                        hologram: {
+                            '0%, 100%': { opacity: '0.8', filter: 'hue-rotate(0deg)' },
+                            '50%': { opacity: '1', filter: 'hue-rotate(90deg)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(255, 0, 255, 0.5)' },
+                            '50%': { boxShadow: '0 0 40px rgba(255, 0, 255, 0.8), 0 0 60px rgba(255, 0, 255, 0.6)' }
                         },
                         float: {
-                            '0%, 100%': { transform: 'translateY(0) scale(1)', opacity: '0.7' },
-                            '50%': { transform: 'translateY(-20px) scale(1.2)', opacity: '1' }
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
                         },
-                        glow: {
-                            'from': { textShadow: '0 0 10px #FF00FF, 0 0 20px #FF00FF' },
-                            'to': { textShadow: '0 0 15px #FF00FF, 0 0 30px #FF00FF, 0 0 40px #FF00FF' }
+                        scan: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100%)' }
                         },
-                        bounce: {
-                            '0%, 20%, 50%, 80%, 100%': { transform: 'translateX(-50%) translateY(0)' },
-                            '40%': { transform: 'translateX(-50%) translateY(-10px)' },
-                            '60%': { transform: 'translateX(-50%) translateY(-5px)' }
+                        matrix: {
+                            '0%': { backgroundPosition: '0% 0%' },
+                            '100%': { backgroundPosition: '100% 100%' }
                         }
                     },
                     backgroundImage: {
-                        'grid-pattern': `linear-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px),
-                                       linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px)`
-                    },
-                    backgroundSize: {
-                        'grid': '50px 50px'
+                        'circuit': `radial-gradient(circle at 20% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+                                   radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                                   radial-gradient(circle at 40% 40%, rgba(157, 0, 255, 0.1) 0%, transparent 50%)`,
+                        'grid': `linear-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px),
+                                linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px)`
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom styles for sidebar scrollbar and hamburger animation */
-        .sidebar ul::-webkit-scrollbar {
-            width: 8px;
-        }
-        .sidebar ul::-webkit-scrollbar-thumb {
-            background: #FF00FF;
-            border-radius: 4px;
-        }
-        .sidebar ul::-webkit-scrollbar-thumb:hover {
-            background: #00FFFF;
-        }
-        .sidebar ul::-webkit-scrollbar-track {
-            background: #24243e;
-            border-radius: 4px;
-        }
-
-        /* Hamburger animation styles */
-        .hamburger.active {
-            margin-bottom: 10px;
+        .cyber-border {
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #FF00FF, #00FFFF, #9D00FF, #0066FF);
+            background-clip: padding-box;
+            position: relative;
         }
         
-        .hamburger.active .line:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 7px);
-        }
-        
-        .hamburger.active .line:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active .line:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -7px);
-        }
-        
-        .hamburger.active .line {
-            background: #00FFFF;
-            box-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
-        }
-
-        .hamburger::before {
-            content: "";
+        .cyber-border::before {
+            content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            width: calc(100% + 10px);
-            height: calc(100% + 10px);
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-            border-radius: 8px;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(45deg, #FF00FF, #00FFFF, #9D00FF, #0066FF);
+            border-radius: inherit;
             z-index: -1;
+            animation: rotate 3s linear infinite;
         }
-
-        /* Sidebar active state */
-        .sidebar.active {
-            transform: translateX(0);
+        
+        @keyframes rotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
         }
-
-        /* Overlay active state */
-        .overlay.active {
-            display: block;
+        
+        .hologram-effect {
+            background: linear-gradient(125deg, 
+                rgba(255, 0, 255, 0.1) 0%,
+                rgba(0, 255, 255, 0.1) 25%,
+                rgba(157, 0, 255, 0.1) 50%,
+                rgba(0, 102, 255, 0.1) 75%,
+                rgba(0, 255, 136, 0.1) 100%);
+            backdrop-filter: blur(10px);
         }
-
-        /* Shadow glow utility */
-        .shadow-glow {
-            box-shadow: 0 0 10px #FF00FF;
+        
+        .matrix-bg {
+            background: 
+                linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
-
-        /* Scale 102 utility */
-        .hover\:scale-102:hover {
-            transform: scale(1.02);
+        
+        .neon-text {
+            text-shadow: 
+                0 0 10px currentColor,
+                0 0 20px currentColor,
+                0 0 40px currentColor;
         }
-
-        /* Text glow utility */
-        .text-glow {
-            text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+        
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00FF88, transparent);
+            animation: scan 4s linear infinite;
         }
     </style>
 </head>
-<body class="font-orbitron bg-gradient-to-br from-dark-1 to-dark-2 text-white overflow-x-hidden w-full">
+<body class="font-rajdhani bg-cyber-black text-cyber-silver overflow-x-hidden">
 
-<!-- Hamburger Button -->
-<div class="hamburger fixed top-4 left-4 w-10 h-9 cursor-pointer z-[1100] flex flex-col justify-between transition-all duration-300 ease-in-out" id="hamburger" title="Sidebar Menu Toggle">
-    <span class="line block h-1 w-full bg-primary rounded shadow-glow transition-all duration-300 ease-in-out"></span>
-    <span class="line block h-1 w-full bg-primary rounded shadow-glow transition-all duration-300 ease-in-out"></span>
-    <span class="line block h-1 w-full bg-primary rounded shadow-glow transition-all duration-300 ease-in-out"></span>
-</div>
+<!-- Animated Background -->
+<div class="fixed inset-0 bg-circuit bg-cover bg-center opacity-40"></div>
+<div class="fixed inset-0 matrix-bg animate-matrix opacity-20"></div>
 
-<!-- Sidebar Navigation -->
-<nav class="sidebar fixed top-0 left-0 w-4/5 max-w-[300px] h-screen bg-gradient-to-br from-dark-1 via-dark-2 to-dark-1 shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-[1000] py-8 px-4 border-r-2 border-primary" id="sidebar">
-    <div class="brand-search flex items-center justify-between pb-6 border-b-2 border-primary mb-4">
-        <div class="brand flex-1 flex justify-center items-center mt-4">
-            <img src="" alt="Brand Logo" class="brand-logo max-w-[60px] h-auto animate-spin-slow" width="60" height="60">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 p-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="cyber-border rounded-lg px-6 py-3 bg-cyber-black/80 backdrop-blur-lg">
+            <h1 class="font-orbitron text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-cyan neon-text">
+                NEO-VERSE
+            </h1>
         </div>
-        <div class="search flex-2 flex justify-center">
-            <input type="text" placeholder="Search..." class="search-input w-full max-w-[160px] py-2 px-4 border-0 rounded-full text-sm bg-white/10 text-white outline-none transition-all duration-300 ease-in-out placeholder-primary font-press-start">
+        
+        <div class="flex gap-8">
+            <button class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
+                <div class="w-6 h-6 border-2 border-neon-cyan rounded group-hover:border-neon-pink transition-colors"></div>
+            </button>
+            
+            <button class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300" id="menuToggle">
+                <div class="flex flex-col gap-1">
+                    <div class="w-6 h-0.5 bg-neon-cyan transition-all duration-300" id="line1"></div>
+                    <div class="w-6 h-0.5 bg-neon-pink transition-all duration-300" id="line2"></div>
+                    <div class="w-6 h-0.5 bg-neon-purple transition-all duration-300" id="line3"></div>
+                </div>
+            </button>
         </div>
     </div>
-    <ul class="max-h-[calc(100vh-180px)] overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-dark-5 pt-4">
-        <li class="mb-5"><a href="/" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Home">Home</a></li>
-        <li class="mb-5"><a href="/about.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="About Me">About Me</a></li>
-        <li class="mb-5"><a href="/services.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Services">Services</a></li>
-        <li class="mb-5"><a href="/pricing.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Pricing">Pricing</a></li>
-        <li class="mb-5"><a href="/projects.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Projects">Projects</a></li>
-        <li class="mb-5"><a href="/resume.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Resume">Resume</a></li>
-        <li class="mb-5"><a href="/contact.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Contact Me">Contact Me</a></li>
-        <li class="mb-5"><a href="/blog.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Blog">Blog</a></li>
-        <li class="mb-5"><a href="/fag.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Frequently Asked Questions">Frequently Asked Questions</a></li>
-        <li class="mb-5"><a href="/vault.html" class="text-primary no-underline text-base block py-2 transition-colors duration-300 relative hover:text-white after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full" title="Vault">Vault</a></li>
-    </ul>
 </nav>
 
-<div class="overlay fixed top-0 left-0 w-full h-full bg-black/70 z-[999] hidden" id="overlay"></div>
-
-<!-- Rest of the HTML remains the same as before -->
-<section class="hero relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-3 to-dark-4">
-    <div class="hero-background absolute top-0 left-0 w-full h-full z-10">
-        <div class="hero-grid absolute top-0 left-0 w-full h-full bg-grid-pattern bg-grid animate-grid-move"></div>
-        <div class="hero-particles absolute top-0 left-0 w-full h-full" id="particles"></div>
-    </div>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="scan-line"></div>
     
-    <div class="hero-content relative z-20 text-center max-w-4xl px-8">
-        <h1 class="hero-title font-press-start text-5xl mb-6 text-white text-glow animate-glow">JOHN OGLETREE</h1>
-        <h2 class="hero-subtitle font-orbitron text-2xl mb-8 text-secondary" style="text-shadow: 0 0 5px #00FFFF;">Digital Creator & Web Developer</h2>
-        <p class="hero-description font-orbitron text-lg mb-12 leading-relaxed text-white max-w-2xl mx-auto">
-            Crafting immersive digital experiences at the intersection of technology and creativity. 
-            Specializing in Y2K-inspired designs that blend nostalgia with modern functionality.
-        </p>
-        <div class="hero-buttons flex gap-6 justify-center flex-wrap">
-            <a href="#about" class="hero-button py-4 px-8 font-press-start text-sm border-2 border-primary rounded-full bg-transparent text-primary no-underline transition-all duration-300 ease-in-out relative overflow-hidden z-10 hover:text-dark-1 before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-primary before:transition-all before:duration-300 before:ease-in-out before:z-[-1] hover:before:left-0">Explore My Work</a>
-            <a href="/contact.html" class="hero-button secondary py-4 px-8 font-press-start text-sm border-2 border-secondary rounded-full bg-transparent text-secondary no-underline transition-all duration-300 ease-in-out relative overflow-hidden z-10 hover:text-dark-1 before:content-[''] before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-secondary before:transition-all before:duration-300 before:ease-in-out before:z-[-1] hover:before:left-0">Get In Touch</a>
+    <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+        <!-- Animated Logo -->
+        <div class="mb-12 animate-float">
+            <div class="cyber-border rounded-full w-48 h-48 mx-auto bg-cyber-black/60 backdrop-blur-lg flex items-center justify-center relative">
+                <div class="cyber-border rounded-full w-32 h-32 bg-cyber-black/80 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="font-orbitron text-neon-cyan text-lg font-black">JOHN</div>
+                        <div class="font-orbitron text-neon-pink text-lg font-black">OGLETREE</div>
+                    </div>
+                </div>
+                
+                <!-- Orbiting elements -->
+                <div class="absolute inset-0 animate-spin-slow">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-neon-green rounded-full neon-text"></div>
+                    <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-neon-blue rounded-full neon-text"></div>
+                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-neon-purple rounded-full neon-text"></div>
+                    <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-neon-cyan rounded-full neon-text"></div>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <div class="hero-scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce-soft">
-        <div class="scroll-arrow w-7 h-7 border-r-2 border-b-2 border-primary rotate-45 shadow-glow"></div>
+
+        <h2 class="font-orbitron text-5xl md:text-7xl font-black mb-6">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-purple neon-text animate-glitch">
+                DIGITAL
+            </span>
+            <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-green to-neon-blue neon-text animate-glitch" style="animation-delay: 0.1s">
+                ARCHITECT
+            </span>
+        </h2>
+        
+        <p class="text-xl md:text-2xl mb-12 font-light max-w-2xl mx-auto leading-relaxed">
+            Crafting <span class="text-neon-pink font-semibold">immersive digital realities</span> at the intersection of 
+            <span class="text-neon-cyan font-semibold">code</span> and 
+            <span class="text-neon-green font-semibold">creativity</span>
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button class="cyber-border rounded-full px-8 py-4 bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
+                <span class="font-orbitron text-neon-cyan group-hover:text-neon-pink transition-colors text-lg">
+                    INITIATE PROJECT
+                </span>
+            </button>
+            
+            <button class="cyber-border rounded-full px-8 py-4 bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
+                <span class="font-orbitron text-neon-pink group-hover:text-neon-cyan transition-colors text-lg">
+                    ACCESS PORTFOLIO
+                </span>
+            </button>
+        </div>
     </div>
 </section>
 
-<!-- The rest of your sections (about, services, projects, etc.) remain unchanged -->
-<section class="about-me py-16 flex justify-center items-center flex-col text-center" id="about">
-    <div class="about-container flex flex-wrap gap-12 w-full max-w-6xl px-8">
-        <div class="about-column flex-1 min-w-[300px]">
-            <div class="profile-card bg-black/20 p-6 rounded-xl shadow-glow">
-                <div class="profile-row flex items-center gap-5">
-                    <div class="profile-image">
-                        <img src="" alt="Profile Picture" class="w-20 h-20 rounded-full" width="80" height="80" title="J]">
-                    </div>
-                    <div class="profile-details flex flex-col gap-2">
-                        <div class="profile-name text-xl font-press-start text-primary" data-i18n="">John Ogletree</div>
-                        <div class="profile-socials flex flex-wrap gap-2">
-                            <a href="https://www.facebook.com/therealjohnogletree" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Facebook Logo" title="Facebook" class="w-6 h-6">
-                            </a>
-                            <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Instagram Logo" title="Instagram" class="w-6 h-6">
-                            </a>
-                            <a href="https://www.youtube.com/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Youtube Logo" title="YouTube" class="w-6 h-6">
-                            </a>
-                            <a href="https://dribbble.com/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Dribble Portfolio Logo" title="Dribble" class="w-6 h-6">
-                            </a>
-                            <a href="https://developers.google.com/profile/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Google Developer Program Logo" title="Google Developers" class="w-6 h-6">
-                            </a>
-                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Github Logo" title="Github" class="w-6 h-6">
-                            </a>
-                            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Twitter Logo" title="Twitter" class="w-6 h-6">
-                            </a>
-                            <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="LinkedIn Logo" title="LinkedIn" class="w-6 h-6">
-                            </a>
-                            <a href="https://www.pinterest.com/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Pinterest Logo" title="Pinterest" class="w-6 h-6">
-                            </a>
-                            <a href="https://www.reddit.com/user/yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="Reddit Logo" title="Reddit" class="w-6 h-6">
-                            </a>
-                            <a href="https://www.tiktok.com/@yourusername" target="_blank" rel="noopener noreferrer">
-                                <img src="" alt="TikTok Logo" title="TikTok" class="w-6 h-6">
-                            </a>
-                        </div>
-                    </div>
+<!-- Services Grid -->
+<section class="relative py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h3 class="font-orbitron text-4xl text-neon-cyan mb-4 neon-text">DIGITAL SERVICES</h3>
+            <p class="text-xl text-cyber-silver/80">Advanced solutions for the next digital frontier</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Service Card 1 -->
+            <div class="cyber-border rounded-xl p-6 bg-cyber-black/60 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
+                <div class="text-neon-pink text-3xl mb-4 group-hover:animate-float">⎔</div>
+                <h4 class="font-orbitron text-neon-cyan text-xl mb-3">Quantum Web Dev</h4>
+                <p class="text-cyber-silver/80 mb-4">Next-generation web experiences with cutting-edge technology stacks</p>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm font-orbitron">React</span>
+                    <span class="px-3 py-1 bg-neon-cyan/20 text-neon-cyan rounded-full text-sm font-orbitron">Node.js</span>
                 </div>
             </div>
-            <p class="profile-description mt-4 text-base text-white" data-i18n="">
-                Passionate about blending technology with creativity. Building Y2K-inspired experiences one pixel at a time.
+            
+            <!-- Service Card 2 -->
+            <div class="cyber-border rounded-xl p-6 bg-cyber-black/60 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
+                <div class="text-neon-cyan text-3xl mb-4 group-hover:animate-float">⟁</div>
+                <h4 class="font-orbitron text-neon-green text-xl mb-3">Neural UI/UX</h4>
+                <p class="text-cyber-silver/80 mb-4">Intuitive interfaces that adapt and learn from user behavior</p>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm font-orbitron">AI/ML</span>
+                    <span class="px-3 py-1 bg-neon-purple/20 text-neon-purple rounded-full text-sm font-orbitron">Figma</span>
+                </div>
+            </div>
+            
+            <!-- Service Card 3 -->
+            <div class="cyber-border rounded-xl p-6 bg-cyber-black/60 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
+                <div class="text-neon-green text-3xl mb-4 group-hover:animate-float">⌬</div>
+                <h4 class="font-orbitron text-neon-purple text-xl mb-3">Blockchain Core</h4>
+                <p class="text-cyber-silver/80 mb-4">Secure decentralized applications and smart contract development</p>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-neon-blue/20 text-neon-blue rounded-full text-sm font-orbitron">Web3</span>
+                    <span class="px-3 py-1 bg-neon-purple/20 text-neon-purple rounded-full text-sm font-orbitron">Solidity</span>
+                </div>
+            </div>
+            
+            <!-- Service Card 4 -->
+            <div class="cyber-border rounded-xl p-6 bg-cyber-black/60 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
+                <div class="text-neon-purple text-3xl mb-4 group-hover:animate-float">⏣</div>
+                <h4 class="font-orbitron text-neon-blue text-xl mb-3">Cyber Security</h4>
+                <p class="text-cyber-silver/80 mb-4">Advanced protection systems for digital assets and infrastructure</p>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm font-orbitron">SSL</span>
+                    <span class="px-3 py-1 bg-neon-cyan/20 text-neon-cyan rounded-full text-sm font-orbitron">Auth</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="relative py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="cyber-border rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-cyber-black/60">
+                    <span class="font-orbitron text-3xl text-neon-pink">137+</span>
+                </div>
+                <p class="font-orbitron text-neon-cyan">PROJECTS COMPLETED</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="cyber-border rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-cyber-black/60">
+                    <span class="font-orbitron text-3xl text-neon-cyan">5.2M+</span>
+                </div>
+                <p class="font-orbitron text-neon-green">LINES OF CODE</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="cyber-border rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-cyber-black/60">
+                    <span class="font-orbitron text-3xl text-neon-green">89%</span>
+                </div>
+                <p class="font-orbitron text-neon-purple">CLIENT RETENTION</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="cyber-border rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-cyber-black/60">
+                    <span class="font-orbitron text-3xl text-neon-purple">24/7</span>
+                </div>
+                <p class="font-orbitron text-neon-blue">DIGITAL PRESENCE</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="relative py-32 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="cyber-border rounded-2xl p-12 bg-cyber-black/60 backdrop-blur-lg">
+            <h3 class="font-orbitron text-4xl md:text-5xl text-neon-cyan mb-6 neon-text">
+                READY TO ELEVATE YOUR DIGITAL PRESENCE?
+            </h3>
+            <p class="text-xl text-cyber-silver/80 mb-8">
+                Join the revolution and let's build something extraordinary together
             </p>
-            <a href="/projects.html" class="about-button inline-block mt-8 py-3 px-6 font-press-start text-sm border-2 border-primary rounded-full bg-transparent text-primary no-underline transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Portfolio</a>
-        </div>
-        <div class="about-column flex-1 min-w-[300px]">
-            <div class="skills-grid flex justify-center gap-6 mt-8">
-                <div class="skill-card bg-black/20 p-4 rounded-xl text-center shadow-glow max-w-[300px] w-full">
-                    <div class="skill-icon text-3xl mb-2" data-i18n="">🖥️</div>
-                    <div class="skill-name text-base font-orbitron text-white mb-2" data-i18n="">Web Development</div>
-                    <div class="progress-container flex items-center gap-1 justify-start">
-                        <span class="progress-percentage text-sm font-bold text-primary" data-i18n="">90%</span>
-                        <div class="progress-bar w-full h-2 bg-gray-700 rounded overflow-hidden">
-                            <div class="progress h-full bg-primary" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button class="cyber-border rounded-full px-12 py-6 bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
+                <span class="font-orbitron text-2xl text-neon-pink group-hover:text-neon-cyan transition-colors">
+                    INITIATE CONNECTION
+                </span>
+            </button>
         </div>
     </div>
 </section>
 
-<!-- Service Category Overview Section -->
-<section class="service-catagory-overview py-16 w-full">
-    <div class="overview-container max-w-6xl mx-auto px-8 flex flex-wrap gap-12">
-        <div class="overview-left flex-1 min-w-[300px] flex flex-col gap-8">
-            <div class="instructions-card bg-black/20 p-6 rounded-xl shadow-glow">
-                <h2 class="font-press-start text-primary mb-4" data-i18n="">How It Works</h2>
-                <p class="font-orbitron text-base leading-relaxed" data-i18n="">
-                    Follow the steps below to find the perfect service for your needs.
-                    Browse through our service categories, and filter by tags to narrow down your options.
-                </p>
+<!-- Footer -->
+<footer class="relative border-t border-cyber-gray/30 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="cyber-border rounded-lg px-6 py-3 bg-cyber-black/60">
+                <h4 class="font-orbitron text-xl text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-cyan">
+                    NEO-VERSE DIGITAL
+                </h4>
             </div>
-            <div class="filter-tags bg-black/20 p-6 rounded-xl shadow-glow">
-                <h3 class="font-press-start text-primary mb-4" data-i18n="">Filter by Tags</h3>
-                <div class="tags flex flex-wrap gap-2">
-                    <span class="tag filter-tag active bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary active:bg-secondary" data-filter="all" data-i18n="">All</span>
-                    <span class="tag filter-tag bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary" data-filter="Design" data-i18n="">Design</span>
-                    <span class="tag filter-tag bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary" data-filter="Development" data-i18n="">Development</span>
-                    <span class="tag filter-tag bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary" data-filter="Marketing" data-i18n="">Marketing</span>
-                    <span class="tag filter-tag bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary" data-filter="SEO" data-i18n="">SEO</span>
+            
+            <div class="flex gap-6">
+                <div class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/60 hover:animate-pulse-glow cursor-pointer">
+                    <span class="text-neon-cyan">ⓣ</span>
                 </div>
-            </div>
-        </div>
-        <div class="overview-right flex-2 min-w-[300px] flex flex-col gap-8">
-            <div class="service-grid grid grid-cols-2 gap-6">
-                <div class="service-card bg-black/20 rounded-xl overflow-hidden shadow-glow flex flex-col transition-transform duration-300 ease-in-out hover:scale-102" data-category="Design">
-                    <div class="service-image">
-                        <img src="" alt="Service 1" class="w-full block" width="300" height="200" />
-                    </div>
-                    <div class="service-info p-4 flex flex-col gap-3">
-                        <div class="service-tags flex gap-2">
-                            <span class="pull-tab bg-primary text-dark-5 py-1 px-3 rounded-full font-press-start text-xs" data-tag="Design" data-i18n="">Design</span>
-                        </div>
-                        <h3 class="font-orbitron text-lg my-2" data-i18n="">Creative Design</h3>
-                        <a href="/services/design.html" class="view-service self-start py-2 px-4 border-2 border-primary rounded-full font-press-start text-xs no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Service</a>
-                    </div>
+                <div class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/60 hover:animate-pulse-glow cursor-pointer">
+                    <span class="text-neon-pink">ⓘ</span>
                 </div>
-                <div class="service-card bg-black/20 rounded-xl overflow-hidden shadow-glow flex flex-col transition-transform duration-300 ease-in-out hover:scale-102" data-category="Development">
-                    <div class="service-image">
-                        <img src="" alt="Service 2" class="w-full block" width="300" height="200" />
-                    </div>
-                    <div class="service-info p-4 flex flex-col gap-3">
-                        <div class="service-tags flex gap-2">
-                            <span class="pull-tab bg-primary text-dark-5 py-1 px-3 rounded-full font-press-start text-xs" data-tag="Development" data-i18n="">Development</span>
-                        </div>
-                        <h3 class="font-orbitron text-lg my-2" data-i18n="">Web Development</h3>
-                        <a href="/services/development.html" class="view-service self-start py-2 px-4 border-2 border-primary rounded-full font-press-start text-xs no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Service</a>
-                    </div>
+                <div class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/60 hover:animate-pulse-glow cursor-pointer">
+                    <span class="text-neon-green">ⓖ</span>
                 </div>
-                <div class="service-card bg-black/20 rounded-xl overflow-hidden shadow-glow flex flex-col transition-transform duration-300 ease-in-out hover:scale-102" data-category="Marketing">
-                    <div class="service-image">
-                        <img src="" alt="Service 3" class="w-full block" width="300" height="200" />
-                    </div>
-                    <div class="service-info p-4 flex flex-col gap-3">
-                        <div class="service-tags flex gap-2">
-                            <span class="pull-tab bg-primary text-dark-5 py-1 px-3 rounded-full font-press-start text-xs" data-tag="Marketing" data-i18n="">Marketing</span>
-                        </div>
-                        <h3 class="font-orbitron text-lg my-2" data-i18n="">Digital Marketing</h3>
-                        <a href="/services/marketing.html" class="view-service self-start py-2 px-4 border-2 border-primary rounded-full font-press-start text-xs no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Service</a>
-                    </div>
-                </div>
-                <div class="service-card bg-black/20 rounded-xl overflow-hidden shadow-glow flex flex-col transition-transform duration-300 ease-in-out hover:scale-102" data-category="SEO">
-                    <div class="service-image">
-                        <img src="" alt="Service 4" class="w-full block" width="300" height="200" />
-                    </div>
-                    <div class="service-info p-4 flex flex-col gap-3">
-                        <div class="service-tags flex gap-2">
-                            <span class="pull-tab bg-primary text-dark-5 py-1 px-3 rounded-full font-press-start text-xs" data-tag="SEO" data-i18n="">SEO</span>
-                        </div>
-                        <h3 class="font-orbitron text-lg my-2" data-i18n="">SEO Optimization</h3>
-                        <a href="/services/seo.html" class="view-service self-start py-2 px-4 border-2 border-primary rounded-full font-press-start text-xs no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Service</a>
-                    </div>
-                </div>
-            </div>
-            <div class="view-all-container text-center">
-                <a href="/services.html" class="view-all-button py-3 px-6 border-2 border-primary rounded-full font-press-start text-sm no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View All Services</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Projects Overview Section -->
-<section class="projects-overview py-16 w-full">
-    <div class="overview-container max-w-6xl mx-auto px-8 flex flex-wrap gap-12">
-        <div class="overview-left flex-1 min-w-[300px] flex flex-col gap-8">
-            <div class="instructions-card bg-black/20 p-6 rounded-xl shadow-glow">
-                <h2 class="font-press-start text-primary mb-4" data-i18n="">How It Works</h2>
-                <p class="font-orbitron text-base leading-relaxed" data-i18n="">
-                    Explore our diverse range of projects. Use the filter tags to narrow down projects by category and discover the ones that match your interests.
-                </p>
-            </div>
-            <div class="filter-tags bg-black/20 p-6 rounded-xl shadow-glow">
-                <h3 class="font-press-start text-primary mb-4" data-i18n="">Filter by Category</h3>
-                <div class="tags flex flex-wrap gap-2">
-                    <span class="tag filter-tag active bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary active:bg-secondary" data-filter="all" data-i18n="">All</span>
-                    <span class="tag filter-tag bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary" data-filter="Web" data-i18n="">Web</span>
-                    <span class="tag filter-tag bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary" data-filter="Mobile" data-i18n="">Mobile</span>
-                    <span class="tag filter-tag bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary" data-filter="Design" data-i18n="">Design</span>
-                    <span class="tag filter-tag bg-primary text-dark-5 py-2 px-4 rounded-full font-press-start text-xs cursor-pointer transition-colors duration-300 ease-in-out hover:bg-secondary" data-filter="Marketing" data-i18n="">Marketing</span>
+                <div class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/60 hover:animate-pulse-glow cursor-pointer">
+                    <span class="text-neon-blue">ⓛ</span>
                 </div>
             </div>
         </div>
-        <div class="overview-right flex-2 min-w-[300px] flex flex-col gap-8">
-            <div class="projects-grid grid grid-cols-2 gap-6">
-                <div class="project-card bg-black/20 rounded-xl overflow-hidden shadow-glow flex flex-col transition-transform duration-300 ease-in-out hover:scale-102" data-category="Web">
-                    <div class="project-image">
-                        <img src="" alt="Project 1" class="w-full block" width="300" height="200" />
-                    </div>
-                    <div class="project-info p-4 flex flex-col gap-3">
-                        <div class="project-tags flex gap-2">
-                            <span class="pull-tab bg-primary text-dark-5 py-1 px-3 rounded-full font-press-start text-xs" data-tag="Web" data-i18n="">Web</span>
-                        </div>
-                        <h3 class="font-orbitron text-lg my-2" data-i18n="">Website Redesign</h3>
-                        <a href="/projects/web-redesign.html" class="view-project self-start py-2 px-4 border-2 border-primary rounded-full font-press-start text-xs no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card bg-black/20 rounded-xl overflow-hidden shadow-glow flex flex-col transition-transform duration-300 ease-in-out hover:scale-102" data-category="Mobile">
-                    <div class="project-image">
-                        <img src="" alt="Project 2" class="w-full block" width="300" height="200" />
-                    </div>
-                    <div class="project-info p-4 flex flex-col gap-3">
-                        <div class="project-tags flex gap-2">
-                            <span class="pull-tab bg-primary text-dark-5 py-1 px-3 rounded-full font-press-start text-xs" data-tag="Mobile" data-i18n="">Mobile</span>
-                        </div>
-                        <h3 class="font-orbitron text-lg my-2" data-i18n="">Mobile App Launch</h3>
-                        <a href="/projects/mobile-app.html" class="view-project self-start py-2 px-4 border-2 border-primary rounded-full font-press-start text-xs no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card bg-black/20 rounded-xl overflow-hidden shadow-glow flex flex-col transition-transform duration-300 ease-in-out hover:scale-102" data-category="Design">
-                    <div class="project-image">
-                        <img src="" alt="Project 3" class="w-full block" width="300" height="200" />
-                    </div>
-                    <div class="project-info p-4 flex flex-col gap-3">
-                        <div class="project-tags flex gap-2">
-                            <span class="pull-tab bg-primary text-dark-5 py-1 px-3 rounded-full font-press-start text-xs" data-tag="Design" data-i18n="">Design</span>
-                        </div>
-                        <h3 class="font-orbitron text-lg my-2" data-i18n="">Brand Identity</h3>
-                        <a href="/projects/brand-identity.html" class="view-project self-start py-2 px-4 border-2 border-primary rounded-full font-press-start text-xs no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card bg-black/20 rounded-xl overflow-hidden shadow-glow flex flex-col transition-transform duration-300 ease-in-out hover:scale-102" data-category="Marketing">
-                    <div class="project-image">
-                        <img src="" alt="Project 4" class="w-full block" width="300" height="200" />
-                    </div>
-                    <div class="project-info p-4 flex flex-col gap-3">
-                        <div class="project-tags flex gap-2">
-                            <span class="pull-tab bg-primary text-dark-5 py-1 px-3 rounded-full font-press-start text-xs" data-tag="Marketing" data-i18n="">Marketing</span>
-                        </div>
-                        <h3 class="font-orbitron text-lg my-2" data-i18n="">Social Media Campaign</h3>
-                        <a href="/projects/social-media.html" class="view-project self-start py-2 px-4 border-2 border-primary rounded-full font-press-start text-xs no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Project</a>
-                    </div>
-                </div>
-            </div>
-            <div class="view-all-container text-center">
-                <a href="/projects.html" class="view-all-button py-3 px-6 border-2 border-primary rounded-full font-press-start text-sm no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View All Projects</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Newsletter Signup and Contact Form Section -->
-<section class="newsletter-contact py-16 w-full">
-    <div class="nc-container max-w-6xl mx-auto px-8 flex gap-12 flex-wrap justify-between">
-        <div class="newsletter bg-black/20 p-8 rounded-xl shadow-glow flex-1 min-w-[300px]">
-            <h2 class="font-press-start text-primary mb-4" data-i18n="">Subscribe to Our Newsletter</h2>
-            <form method="post" action="process_form.php" class="flex flex-col gap-4">
-                <input type="hidden" name="form_type" value="newsletter">
-                <input type="text" name="name" placeholder="Your Name" class="py-3 px-4 border-0 rounded font-orbitron text-base" required>
-                <input type="email" name="email" placeholder="Your Email" class="py-3 px-4 border-0 rounded font-orbitron text-base" required>
-                <button type="submit" class="py-3 px-6 border-2 border-primary rounded-full bg-transparent font-press-start text-primary cursor-pointer transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">Subscribe</button>
-            </form>
-        </div>
-        <div class="contact bg-black/20 p-8 rounded-xl shadow-glow flex-1 min-w-[300px]">
-            <h2 class="font-press-start text-primary mb-4" data-i18n="">Contact Us</h2>
-            <form method="post" action="process_form.php" class="flex flex-col gap-4">
-                <input type="hidden" name="form_type" value="contact">
-                <input type="text" name="name" placeholder="Your Name" class="py-3 px-4 border-0 rounded font-orbitron text-base" required>
-                <input type="email" name="email" placeholder="Your Email" class="py-3 px-4 border-0 rounded font-orbitron text-base" required>
-                <input type="text" name="subject" placeholder="Subject" class="py-3 px-4 border-0 rounded font-orbitron text-base" required>
-                <textarea name="message" placeholder="Your Message" rows="5" class="py-3 px-4 border-0 rounded font-orbitron text-base" required></textarea>
-                <button type="submit" class="py-3 px-6 border-2 border-primary rounded-full bg-transparent font-press-start text-primary cursor-pointer transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">Send Message</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- Resume Overview Section -->
-<section class="resume-overview py-16 w-full text-center">
-    <div class="resume-container max-w-6xl mx-auto px-8">
-        <h2 class="font-press-start text-3xl text-primary mb-6" data-i18n="">My Resume</h2>
-        <p class="font-orbitron text-base leading-relaxed mb-8" data-i18n="">
-            With a passion for blending technology and creativity, I have built a dynamic career that spans web development, design, and digital innovation. Discover my professional journey, key accomplishments, and the skills that drive my work.
-        </p>
-        <a href="/resume.html" class="resume-button inline-block py-3 px-6 border-2 border-primary rounded-full font-press-start text-sm no-underline text-primary transition-all duration-300 hover:bg-primary hover:text-dark-5" data-i18n="">View Full Resume</a>
-    </div>
-</section>
-
-<!-- Footer Section -->
-<footer class="site-footer bg-gradient-to-br from-dark-2 to-dark-1 text-white py-8 text-center">
-    <div class="footer-container max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-8 px-8">
-        <div class="footer-brand flex-1 min-w-[250px] text-left">
-            <img src="" alt="Brand Logo" class="footer-logo max-w-20 h-auto filter brightness-0 invert" width="80" height="80">
-            <p class="footer-tagline font-orbitron text-sm mt-2 text-primary" data-i18n="">Blending Technology with Creativity.</p>
-        </div>
-        <nav class="footer-nav flex-1 min-w-[200px]">
-            <ul class="list-none p-0 m-0">
-                <li class="inline-block mx-2"><a href="/" class="text-primary no-underline font-press-start text-xs transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">Home</a></li>
-                <li class="inline-block mx-2"><a href="/about.html" class="text-primary no-underline font-press-start text-xs transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">About Me</a></li>
-                <li class="inline-block mx-2"><a href="/services.html" class="text-primary no-underline font-press-start text-xs transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">Services</a></li>
-                <li class="inline-block mx-2"><a href="/projects.html" class="text-primary no-underline font-press-start text-xs transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">Projects</a></li>
-                <li class="inline-block mx-2"><a href="/resume.html" class="text-primary no-underline font-press-start text-xs transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">Resume</a></li>
-                <li class="inline-block mx-2"><a href="/contact.html" class="text-primary no-underline font-press-start text-xs transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">Contact Me</a></li>
-            </ul>
-        </nav>
-        <div class="footer-social flex-1 min-w-[200px]">
-            <a href="https://twitter.com/yourprofile" target="_blank" class="text-primary mx-2 no-underline font-orbitron text-sm transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">Twitter</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-primary mx-2 no-underline font-orbitron text-sm transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">LinkedIn</a>
-            <a href="https://github.com/yourprofile" target="_blank" class="text-primary mx-2 no-underline font-orbitron text-sm transition-colors duration-300 ease-in-out hover:text-secondary" data-i18n="">GitHub</a>
-        </div>
-        <div class="footer-copy w-full mt-4">
-            <p class="font-orbitron text-xs text-primary" data-i18n="">&copy; 2025 John Ogletree. All rights reserved.</p>
+        
+        <div class="text-center mt-8">
+            <p class="font-orbitron text-cyber-silver/60">
+                © 2024 NEO-VERSE DIGITAL | JOHN OGLETREE | ALL SYSTEMS OPERATIONAL
+            </p>
         </div>
     </div>
 </footer>
 
-<!-- JavaScript for Sidebar Toggle -->
 <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-
-    function toggleSidebar() {
-        sidebar.classList.toggle('active');
-        overlay.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    }
-
-    hamburger.addEventListener('click', toggleSidebar);
-    overlay.addEventListener('click', toggleSidebar);
-
-    // Filter functionality for services
-    const filterTags = document.querySelectorAll('.service-catagory-overview .filter-tag');
-    const serviceCards = document.querySelectorAll('.service-card');
+    // Menu toggle animation
+    const menuToggle = document.getElementById('menuToggle');
+    const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
     
-    filterTags.forEach(tag => {
-        tag.addEventListener('click', function() {
-            filterTags.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            const filter = this.getAttribute('data-filter');
-            serviceCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
+    menuToggle.addEventListener('click', () => {
+        lines[0].classList.toggle('rotate-45');
+        lines[0].classList.toggle('translate-y-1.5');
+        lines[1].classList.toggle('opacity-0');
+        lines[2].classList.toggle('-rotate-45');
+        lines[2].classList.toggle('-translate-y-1.5');
     });
 
-    // Filter functionality for projects
-    const projectFilterTags = document.querySelectorAll('.projects-overview .filter-tag');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectFilterTags.forEach(tag => {
-        tag.addEventListener('click', function() {
-            projectFilterTags.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            const filter = this.getAttribute('data-filter');
-            projectCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // Create floating particles for hero section
+    // Add floating particles
     function createParticles() {
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 50;
-        
-        for (let i = 0; i < particleCount; i++) {
+        const container = document.body;
+        for (let i = 0; i < 20; i++) {
             const particle = document.createElement('div');
-            particle.classList.add('particle', 'absolute', 'w-1', 'h-1', 'bg-primary', 'rounded-full', 'shadow-glow', 'animate-float');
-            
-            // Random position
-            const left = Math.random() * 100;
-            const top = Math.random() * 100;
-            
-            // Random animation delay
-            const delay = Math.random() * 5;
-            
-            particle.style.left = `${left}%`;
-            particle.style.top = `${top}%`;
-            particle.style.animationDelay = `${delay}s`;
-            
-            particlesContainer.appendChild(particle);
+            particle.className = 'fixed w-1 h-1 bg-neon-cyan rounded-full pointer-events-none animate-float';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particle.style.opacity = Math.random() * 0.5 + 0.2;
+            container.appendChild(particle);
         }
     }
     
-    // Initialize particles when page loads
-    window.addEventListener('load', createParticles);
+    createParticles();
 </script>
 </body>
 </html>
