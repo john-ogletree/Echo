@@ -12,22 +12,6 @@ async function loadNavigation() {
             `).join('');
         }
         
-        // Populate footer navigation
-        const footerNav = document.getElementById('footer-nav');
-        if (footerNav) {
-            footerNav.innerHTML = navigationData.footer.map(page => `
-                <li><a href="${page.url}" data-i18n="">${page.title}</a></li>
-            `).join('');
-        }
-        
-        // Populate footer social links
-        const footerSocial = document.getElementById('footer-social');
-        if (footerSocial) {
-            footerSocial.innerHTML = navigationData.social.map(social => `
-                <a href="${social.url}" target="_blank" data-i18n="">${social.title}</a>
-            `).join('');
-        }
-        
     } catch (error) {
         console.error('Error loading navigation data:', error);
         // Fallback to hardcoded navigation if JSON fails to load
@@ -50,27 +34,6 @@ function loadFallbackNavigation() {
             <li><a href="/blog.html" title="Blog">Blog</a></li>
             <li><a href="/fag.html" title="Frequently Asked Questions">Frequently Asked Questions</a></li>
             <li><a href="/vault.html" title="Vault">Vault</a></li>
-        `;
-    }
-    
-    const footerNav = document.getElementById('footer-nav');
-    if (footerNav) {
-        footerNav.innerHTML = `
-            <li><a href="/" data-i18n="">Home</a></li>
-            <li><a href="/about.html" data-i18n="">About Me</a></li>
-            <li><a href="/services.html" data-i18n="">Services</a></li>
-            <li><a href="/projects.html" data-i18n="">Projects</a></li>
-            <li><a href="/resume.html" data-i18n="">Resume</a></li>
-            <li><a href="/contact.html" data-i18n="">Contact Me</a></li>
-        `;
-    }
-    
-    const footerSocial = document.getElementById('footer-social');
-    if (footerSocial) {
-        footerSocial.innerHTML = `
-            <a href="https://twitter.com/yourprofile" target="_blank" data-i18n="">Twitter</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" data-i18n="">LinkedIn</a>
-            <a href="https://github.com/yourprofile" target="_blank" data-i18n="">GitHub</a>
         `;
     }
 }
@@ -157,7 +120,7 @@ function createParticles() {
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {

@@ -767,84 +767,6 @@ button:hover {
     color: #24243e;
 }
 
-.site-footer {
-    background: linear-gradient(135deg, #243b55, #141e30);
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
-}
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 2rem;
-}
-.footer-brand {
-    flex: 1;
-    min-width: 250px;
-    text-align: left;
-}
-.footer-logo {
-    max-width: 80px;
-    height: auto;
-    filter: brightness(0) invert(1);
-}
-.footer-tagline {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    color: #FF00FF;
-}
-.footer-nav {
-    flex: 1;
-    min-width: 200px;
-}
-.footer-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.footer-nav ul li {
-    display: inline-block;
-    margin: 0 0.5rem;
-}
-.footer-nav ul li a {
-    color: #FF00FF;
-    text-decoration: none;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.8rem;
-    transition: color 0.3s ease;
-}
-.footer-nav ul li a:hover {
-    color: #00FFFF;
-}
-.footer-social {
-    flex: 1;
-    min-width: 200px;
-}
-.footer-social a {
-    color: #FF00FF;
-    margin: 0 0.5rem;
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-.footer-social a:hover {
-    color: #00FFFF;
-}
-.footer-copy {
-    width: 100%;
-    margin-top: 1rem;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.8rem;
-    color: #FF00FF;
-}
-
 @media (max-width: 1024px) {
     .about-container {
         flex-direction: column;
@@ -868,14 +790,6 @@ button:hover {
     }
     .profile-socials img {
         width: 80px;
-    }
-    .footer-container {
-        flex-direction: column;
-    }
-    .footer-brand,
-    .footer-nav,
-    .footer-social {
-        text-align: center;
     }
     .hero-title {
         font-size: 2rem;
