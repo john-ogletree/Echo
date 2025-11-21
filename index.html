@@ -28,7 +28,8 @@
                         'terminal-blink': 'blink 1s infinite',
                         'boot-sequence': 'boot 3s ease-in-out',
                         'system-scan': 'scan 2s linear infinite',
-                        'data-stream': 'dataStream 4s linear infinite'
+                        'data-stream': 'dataStream 4s linear infinite',
+                        'slide-in': 'slideIn 0.3s ease-out'
                     },
                     keyframes: {
                         blink: {
@@ -46,6 +47,10 @@
                         dataStream: {
                             '0%': { backgroundPosition: '0% 0%' },
                             '100%': { backgroundPosition: '100% 100%' }
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' }
                         }
                     }
                 }
@@ -96,6 +101,12 @@
             animation: glitch 3s infinite;
         }
         
+        .sidebar {
+            background: linear-gradient(145deg, #0A0A0F, #1A1A2E);
+            border-right: 1px solid #00FF88;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+        }
+        
         @keyframes glitch {
             0%, 100% { transform: translate(0); }
             20% { transform: translate(-2px, 2px); }
@@ -112,8 +123,136 @@
     <!-- Data Flow Animation -->
     <div class="fixed inset-0 data-flow animate-data-stream"></div>
 
+    <!-- Terminal Sidebar -->
+    <nav class="sidebar fixed top-0 left-0 w-80 h-screen z-50 transform -translate-x-full transition-transform duration-300 ease-in-out" id="sidebar">
+        <div class="p-6 h-full flex flex-col">
+            <!-- Sidebar Header -->
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 rounded-full bg-system-accent"></div>
+                    <div class="w-3 h-3 rounded-full bg-system-secondary"></div>
+                    <div class="w-3 h-3 rounded-full bg-system-primary"></div>
+                </div>
+                <h2 class="terminal-header font-orbitron text-xl font-black">NAVIGATION</h2>
+                <button class="text-system-primary hover:text-system-accent transition-colors" id="closeSidebar">
+                    <span class="text-lg">×</span>
+                </button>
+            </div>
+
+            <!-- Search Box -->
+            <div class="mb-6">
+                <div class="command-line p-3 rounded">
+                    <div class="flex items-center">
+                        <span class="text-system-primary mr-2">$</span>
+                        <input type="text" 
+                               class="flex-1 bg-transparent outline-none text-system-text text-sm"
+                               placeholder="search_system..."
+                               id="sidebarSearch">
+                        <span class="animate-terminal-blink text-system-primary">▊</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto">
+                <div class="space-y-2">
+                    <a href="/" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-primary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-primary transition-colors">home</span>
+                        <span class="text-system-primary/60 text-sm ml-auto">~/</span>
+                    </a>
+                    
+                    <a href="/about.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-secondary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-secondary transition-colors">about_me</span>
+                        <span class="text-system-secondary/60 text-sm ml-auto">/usr/about</span>
+                    </a>
+                    
+                    <a href="/services.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-accent group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-accent transition-colors">services</span>
+                        <span class="text-system-accent/60 text-sm ml-auto">/sys/services</span>
+                    </a>
+                    
+                    <a href="/pricing.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-primary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-primary transition-colors">pricing</span>
+                        <span class="text-system-primary/60 text-sm ml-auto">/var/pricing</span>
+                    </a>
+                    
+                    <a href="/projects.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-secondary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-secondary transition-colors">projects</span>
+                        <span class="text-system-secondary/60 text-sm ml-auto">/opt/projects</span>
+                    </a>
+                    
+                    <a href="/resume.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-accent group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-accent transition-colors">resume</span>
+                        <span class="text-system-accent/60 text-sm ml-auto">/doc/resume</span>
+                    </a>
+                    
+                    <a href="/contact.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-primary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-primary transition-colors">contact_me</span>
+                        <span class="text-system-primary/60 text-sm ml-auto">/net/contact</span>
+                    </a>
+                    
+                    <a href="/blog.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-secondary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-secondary transition-colors">blog</span>
+                        <span class="text-system-secondary/60 text-sm ml-auto">/var/log/blog</span>
+                    </a>
+                    
+                    <a href="/faq.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-accent group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-accent transition-colors">faq</span>
+                        <span class="text-system-accent/60 text-sm ml-auto">/help/faq</span>
+                    </a>
+                    
+                    <a href="/vault.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-primary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-primary transition-colors">vault</span>
+                        <span class="text-system-primary/60 text-sm ml-auto">/secure/vault</span>
+                    </a>
+                </div>
+
+                <!-- System Status in Sidebar -->
+                <div class="mt-8 pt-6 border-t border-system-primary/30">
+                    <h3 class="font-orbitron text-system-secondary text-sm mb-3">SYSTEM STATUS</h3>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-system-text/60">Uptime:</span>
+                            <span class="text-system-primary">247d 15h</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-system-text/60">Security:</span>
+                            <span class="text-system-accent">LEVEL 9</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-system-text/60">Connection:</span>
+                            <span class="text-system-secondary">SECURE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="fixed inset-0 bg-black/50 z-40 hidden" id="overlay"></div>
+
     <!-- Main Terminal Interface -->
     <div class="relative min-h-screen flex items-center justify-center p-4">
+        <!-- Menu Toggle Button -->
+        <button class="fixed top-6 left-6 z-50 terminal-window rounded-lg p-3 hover:bg-system-primary/10 transition-colors group" id="menuToggle">
+            <div class="flex flex-col space-y-1">
+                <div class="w-6 h-0.5 bg-system-primary transition-all duration-300 group-hover:bg-system-accent" id="line1"></div>
+                <div class="w-6 h-0.5 bg-system-secondary transition-all duration-300 group-hover:bg-system-primary" id="line2"></div>
+                <div class="w-6 h-0.5 bg-system-accent transition-all duration-300 group-hover:bg-system-secondary" id="line3"></div>
+            </div>
+        </button>
+
         <div class="terminal-window rounded-lg w-full max-w-6xl min-h-[600px] p-6 animate-boot-sequence">
             <!-- Terminal Header -->
             <div class="flex items-center justify-between mb-6 p-4 border-b border-system-primary/30">
@@ -205,19 +344,19 @@
                     <div class="terminal-window rounded-lg p-6">
                         <h3 class="font-orbitron text-system-secondary mb-4">QUICK COMMANDS</h3>
                         <div class="grid grid-cols-2 gap-3">
-                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors">
+                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors" onclick="window.location.href='/projects.html'">
                                 <div class="text-system-primary text-sm">$ open_portfolio</div>
                                 <div class="text-system-text/60 text-xs">View Projects</div>
                             </button>
-                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors">
+                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors" id="openTerminal">
                                 <div class="text-system-primary text-sm">$ launch_terminal</div>
                                 <div class="text-system-text/60 text-xs">System Tools</div>
                             </button>
-                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors">
+                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors" onclick="window.location.href='/contact.html'">
                                 <div class="text-system-primary text-sm">$ connect_network</div>
                                 <div class="text-system-text/60 text-xs">Social Links</div>
                             </button>
-                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors">
+                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors" onclick="window.location.href='/resume.html'">
                                 <div class="text-system-primary text-sm">$ system_diagnostics</div>
                                 <div class="text-system-text/60 text-xs">Resume/CV</div>
                             </button>
@@ -323,6 +462,30 @@
     </div>
 
     <script>
+        // Sidebar functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('translate-x-0');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+            
+            // Hamburger animation
+            lines[0].classList.toggle('rotate-45');
+            lines[0].classList.toggle('translate-y-1.5');
+            lines[1].classList.toggle('opacity-0');
+            lines[2].classList.toggle('-rotate-45');
+            lines[2].classList.toggle('-translate-y-1.5');
+        }
+
+        menuToggle.addEventListener('click', toggleSidebar);
+        closeSidebar.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
         // Simple command system
         const commandInput = document.getElementById('commandInput');
         
@@ -331,10 +494,12 @@
                 const command = this.value.trim().toLowerCase();
                 this.value = '';
                 
-                // Add your command logic here
                 switch(command) {
                     case 'help':
-                        alert('Available commands:\n- portfolio\n- about\n- contact\n- projects\n- resume\n- clear');
+                        alert('Available commands:\n- portfolio\n- about\n- contact\n- projects\n- resume\n- clear\n- menu');
+                        break;
+                    case 'menu':
+                        toggleSidebar();
                         break;
                     case 'portfolio':
                         window.location.href = '/projects.html';
@@ -358,6 +523,17 @@
 
         // Focus command input on load
         commandInput.focus();
+
+        // Search functionality
+        const sidebarSearch = document.getElementById('sidebarSearch');
+        sidebarSearch.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim().toLowerCase();
+                if (searchTerm) {
+                    alert(`Searching for: ${searchTerm}\nThis would filter the navigation menu in a full implementation.`);
+                }
+            }
+        });
     </script>
 </body>
 </html>
