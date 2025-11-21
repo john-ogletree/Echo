@@ -3,395 +3,361 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>NEO-VERSE | John Ogletree</title>
+    <title>Echo OS | John Ogletree</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        neon: {
-                            pink: '#FF00FF',
-                            cyan: '#00FFFF',
-                            purple: '#9D00FF',
-                            blue: '#0066FF',
-                            green: '#00FF88'
-                        },
-                        cyber: {
-                            black: '#0A0A0F',
-                            dark: '#1A1A2E',
-                            gray: '#2D2D44',
-                            silver: '#E0E0E8'
+                        system: {
+                            primary: '#00FF88',
+                            secondary: '#00D4FF',
+                            accent: '#FF0088',
+                            background: '#0A0A0F',
+                            surface: '#1A1A2E',
+                            text: '#E0E0E8'
                         }
                     },
                     fontFamily: {
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                        'rajdhani': ['Rajdhani', 'sans-serif']
+                        'tech': ['Share Tech Mono', 'monospace'],
+                        'orbitron': ['Orbitron', 'sans-serif']
                     },
                     animation: {
-                        'glitch': 'glitch 2s infinite linear',
-                        'hologram': 'hologram 3s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'scan': 'scan 4s linear infinite',
-                        'matrix': 'matrix 20s linear infinite'
+                        'terminal-blink': 'blink 1s infinite',
+                        'boot-sequence': 'boot 3s ease-in-out',
+                        'system-scan': 'scan 2s linear infinite',
+                        'data-stream': 'dataStream 4s linear infinite'
                     },
                     keyframes: {
-                        glitch: {
-                            '0%, 100%': { transform: 'translate(0)' },
-                            '20%': { transform: 'translate(-2px, 2px)' },
-                            '40%': { transform: 'translate(-2px, -2px)' },
-                            '60%': { transform: 'translate(2px, 2px)' },
-                            '80%': { transform: 'translate(2px, -2px)' }
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' }
                         },
-                        hologram: {
-                            '0%, 100%': { opacity: '0.8', filter: 'hue-rotate(0deg)' },
-                            '50%': { opacity: '1', filter: 'hue-rotate(90deg)' }
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 20px rgba(255, 0, 255, 0.5)' },
-                            '50%': { boxShadow: '0 0 40px rgba(255, 0, 255, 0.8), 0 0 60px rgba(255, 0, 255, 0.6)' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' }
+                        boot: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
                         },
                         scan: {
                             '0%': { transform: 'translateY(-100%)' },
                             '100%': { transform: 'translateY(100%)' }
                         },
-                        matrix: {
+                        dataStream: {
                             '0%': { backgroundPosition: '0% 0%' },
                             '100%': { backgroundPosition: '100% 100%' }
                         }
-                    },
-                    backgroundImage: {
-                        'circuit': `radial-gradient(circle at 20% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-                                   radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                                   radial-gradient(circle at 40% 40%, rgba(157, 0, 255, 0.1) 0%, transparent 50%)`,
-                        'grid': `linear-gradient(rgba(255, 0, 255, 0.1) 1px, transparent 1px),
-                                linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px)`
                     }
                 }
             }
         }
     </script>
     <style>
-        .cyber-border {
-            border: 2px solid transparent;
-            background: linear-gradient(45deg, #FF00FF, #00FFFF, #9D00FF, #0066FF);
-            background-clip: padding-box;
-            position: relative;
+        .terminal-window {
+            background: linear-gradient(145deg, #1A1A2E, #16213E);
+            border: 1px solid #00FF88;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3),
+                        inset 0 0 30px rgba(0, 255, 136, 0.1);
         }
         
-        .cyber-border::before {
-            content: '';
-            position: absolute;
-            top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(45deg, #FF00FF, #00FFFF, #9D00FF, #0066FF);
-            border-radius: inherit;
-            z-index: -1;
-            animation: rotate 3s linear infinite;
+        .terminal-header {
+            background: linear-gradient(90deg, #00FF88, #00D4FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
-        @keyframes rotate {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
+        .command-line {
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 3px solid #00FF88;
         }
         
-        .hologram-effect {
-            background: linear-gradient(125deg, 
-                rgba(255, 0, 255, 0.1) 0%,
-                rgba(0, 255, 255, 0.1) 25%,
-                rgba(157, 0, 255, 0.1) 50%,
-                rgba(0, 102, 255, 0.1) 75%,
-                rgba(0, 255, 136, 0.1) 100%);
-            backdrop-filter: blur(10px);
-        }
-        
-        .matrix-bg {
-            background: 
+        .system-grid {
+            background-image: 
                 linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-size: 30px 30px;
         }
         
-        .neon-text {
+        .data-flow {
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(0, 255, 136, 0.2),
+                rgba(0, 212, 255, 0.2),
+                rgba(255, 0, 136, 0.2),
+                transparent
+            );
+        }
+        
+        .glitch-text {
             text-shadow: 
-                0 0 10px currentColor,
-                0 0 20px currentColor,
-                0 0 40px currentColor;
+                2px 0 #00FF88,
+                -2px 0 #FF0088;
+            animation: glitch 3s infinite;
         }
         
-        .scan-line {
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00FF88, transparent);
-            animation: scan 4s linear infinite;
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
         }
     </style>
 </head>
-<body class="font-rajdhani bg-cyber-black text-cyber-silver overflow-x-hidden">
-
-<!-- Animated Background -->
-<div class="fixed inset-0 bg-circuit bg-cover bg-center opacity-40"></div>
-<div class="fixed inset-0 matrix-bg animate-matrix opacity-20"></div>
-
-<!-- Navigation -->
-<nav class="fixed top-0 w-full z-50 p-6">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="cyber-border rounded-lg px-6 py-3 bg-cyber-black/80 backdrop-blur-lg">
-            <h1 class="font-orbitron text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-cyan neon-text">
-                NEO-VERSE
-            </h1>
-        </div>
-        
-        <div class="flex gap-8">
-            <button class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
-                <div class="w-6 h-6 border-2 border-neon-cyan rounded group-hover:border-neon-pink transition-colors"></div>
-            </button>
-            
-            <button class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300" id="menuToggle">
-                <div class="flex flex-col gap-1">
-                    <div class="w-6 h-0.5 bg-neon-cyan transition-all duration-300" id="line1"></div>
-                    <div class="w-6 h-0.5 bg-neon-pink transition-all duration-300" id="line2"></div>
-                    <div class="w-6 h-0.5 bg-neon-purple transition-all duration-300" id="line3"></div>
-                </div>
-            </button>
-        </div>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="scan-line"></div>
+<body class="font-tech bg-system-background text-system-text overflow-hidden">
+    <!-- System Grid Background -->
+    <div class="fixed inset-0 system-grid opacity-20"></div>
     
-    <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <!-- Animated Logo -->
-        <div class="mb-12 animate-float">
-            <div class="cyber-border rounded-full w-48 h-48 mx-auto bg-cyber-black/60 backdrop-blur-lg flex items-center justify-center relative">
-                <div class="cyber-border rounded-full w-32 h-32 bg-cyber-black/80 flex items-center justify-center">
-                    <div class="text-center">
-                        <div class="font-orbitron text-neon-cyan text-lg font-black">JOHN</div>
-                        <div class="font-orbitron text-neon-pink text-lg font-black">OGLETREE</div>
+    <!-- Data Flow Animation -->
+    <div class="fixed inset-0 data-flow animate-data-stream"></div>
+
+    <!-- Main Terminal Interface -->
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div class="terminal-window rounded-lg w-full max-w-6xl min-h-[600px] p-6 animate-boot-sequence">
+            <!-- Terminal Header -->
+            <div class="flex items-center justify-between mb-6 p-4 border-b border-system-primary/30">
+                <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 rounded-full bg-system-accent"></div>
+                    <div class="w-3 h-3 rounded-full bg-system-secondary"></div>
+                    <div class="w-3 h-3 rounded-full bg-system-primary"></div>
+                </div>
+                <h1 class="terminal-header font-orbitron text-2xl font-black">ECHO OS v2.4.1</h1>
+                <div class="text-system-primary font-tech text-sm">
+                    SYSTEM: ONLINE
+                </div>
+            </div>
+
+            <!-- Boot Sequence -->
+            <div class="space-y-2 mb-8">
+                <div class="command-line p-3 rounded">
+                    <span class="text-system-primary">$</span>
+                    <span class="ml-2 text-system-secondary">boot_sequence.init</span>
+                    <span class="animate-terminal-blink">▊</span>
+                </div>
+                <div class="text-system-primary/80 pl-4">
+                    <div>> Loading kernel modules...</div>
+                    <div>> Mounting filesystems...</div>
+                    <div>> Initializing network interfaces...</div>
+                    <div>> Starting system services...</div>
+                    <div class="text-system-primary">> Echo OS ready. Welcome, John.</div>
+                </div>
+            </div>
+
+            <!-- System Status -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <div class="terminal-window rounded p-4">
+                    <div class="text-system-secondary font-orbitron mb-2">CPU LOAD</div>
+                    <div class="flex items-center space-x-2">
+                        <div class="flex-1 bg-system-surface rounded-full h-2">
+                            <div class="bg-system-primary rounded-full h-2" style="width: 65%"></div>
+                        </div>
+                        <span class="text-system-primary text-sm">65%</span>
                     </div>
                 </div>
+                <div class="terminal-window rounded p-4">
+                    <div class="text-system-secondary font-orbitron mb-2">MEMORY USAGE</div>
+                    <div class="flex items-center space-x-2">
+                        <div class="flex-1 bg-system-surface rounded-full h-2">
+                            <div class="bg-system-accent rounded-full h-2" style="width: 42%"></div>
+                        </div>
+                        <span class="text-system-accent text-sm">42%</span>
+                    </div>
+                </div>
+                <div class="terminal-window rounded p-4">
+                    <div class="text-system-secondary font-orbitron mb-2">NETWORK STATUS</div>
+                    <div class="text-system-primary text-sm">CONNECTED • 1.2 Gbps</div>
+                </div>
+            </div>
+
+            <!-- Main Interface Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Left Panel - System Info -->
+                <div class="space-y-6">
+                    <!-- User Profile -->
+                    <div class="terminal-window rounded-lg p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-16 h-16 rounded-full border-2 border-system-primary flex items-center justify-center">
+                                <span class="text-system-primary font-orbitron text-xl">JO</span>
+                            </div>
+                            <div>
+                                <h2 class="font-orbitron text-xl text-system-primary glitch-text">JOHN OGLETREE</h2>
+                                <p class="text-system-text/80 text-sm">Digital Systems Architect</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-system-secondary">Security Clearance:</span>
+                                <span class="text-system-primary">LEVEL 9</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-system-secondary">System Uptime:</span>
+                                <span class="text-system-primary">247d 15h 32m</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-system-secondary">Last Access:</span>
+                                <span class="text-system-primary">Now</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Commands -->
+                    <div class="terminal-window rounded-lg p-6">
+                        <h3 class="font-orbitron text-system-secondary mb-4">QUICK COMMANDS</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors">
+                                <div class="text-system-primary text-sm">$ open_portfolio</div>
+                                <div class="text-system-text/60 text-xs">View Projects</div>
+                            </button>
+                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors">
+                                <div class="text-system-primary text-sm">$ launch_terminal</div>
+                                <div class="text-system-text/60 text-xs">System Tools</div>
+                            </button>
+                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors">
+                                <div class="text-system-primary text-sm">$ connect_network</div>
+                                <div class="text-system-text/60 text-xs">Social Links</div>
+                            </button>
+                            <button class="command-line p-3 rounded text-left hover:bg-system-primary/10 transition-colors">
+                                <div class="text-system-primary text-sm">$ system_diagnostics</div>
+                                <div class="text-system-text/60 text-xs">Resume/CV</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel - Applications -->
+                <div class="space-y-6">
+                    <!-- Active Processes -->
+                    <div class="terminal-window rounded-lg p-6">
+                        <h3 class="font-orbitron text-system-secondary mb-4">ACTIVE PROCESSES</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 rounded bg-system-surface/50">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 rounded-full bg-system-primary animate-pulse"></div>
+                                    <span class="text-sm">Web_Development.exe</span>
+                                </div>
+                                <span class="text-system-primary text-xs">RUNNING</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded bg-system-surface/50">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 rounded-full bg-system-accent animate-pulse"></div>
+                                    <span class="text-sm">Creative_Design.dmg</span>
+                                </div>
+                                <span class="text-system-accent text-xs">ACTIVE</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded bg-system-surface/50">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-2 h-2 rounded-full bg-system-secondary animate-pulse"></div>
+                                    <span class="text-sm">System_Architecture.app</span>
+                                </div>
+                                <span class="text-system-secondary text-xs">BACKGROUND</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Monitor -->
+                    <div class="terminal-window rounded-lg p-6">
+                        <h3 class="font-orbitron text-system-secondary mb-4">SYSTEM MONITOR</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Full-Stack Development</span>
+                                    <span class="text-system-primary">94%</span>
+                                </div>
+                                <div class="w-full bg-system-surface rounded-full h-2">
+                                    <div class="bg-system-primary rounded-full h-2" style="width: 94%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>UI/UX Design</span>
+                                    <span class="text-system-accent">88%</span>
+                                </div>
+                                <div class="w-full bg-system-surface rounded-full h-2">
+                                    <div class="bg-system-accent rounded-full h-2" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>System Architecture</span>
+                                    <span class="text-system-secondary">91%</span>
+                                </div>
+                                <div class="w-full bg-system-surface rounded-full h-2">
+                                    <div class="bg-system-secondary rounded-full h-2" style="width: 91%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Command Input -->
+                    <div class="command-line p-4 rounded">
+                        <div class="flex items-center">
+                            <span class="text-system-primary mr-2">user@echo-os:~$</span>
+                            <input type="text" 
+                                   class="flex-1 bg-transparent outline-none text-system-text"
+                                   placeholder="Type 'help' for available commands..."
+                                   id="commandInput">
+                            <span class="animate-terminal-blink text-system-primary">▊</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Status -->
+            <div class="mt-8 pt-4 border-t border-system-primary/30">
+                <div class="flex justify-between items-center text-sm text-system-text/60">
+                    <div>Echo OS v2.4.1 • Secure Connection Established</div>
+                    <div class="flex items-center space-x-4">
+                        <span>Last Update: 2025.01.02</span>
+                        <span class="text-system-primary">●</span>
+                        <span>All Systems Operational</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scan Line Effect -->
+    <div class="fixed inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-system-primary/5 to-transparent animate-system-scan"></div>
+    </div>
+
+    <script>
+        // Simple command system
+        const commandInput = document.getElementById('commandInput');
+        
+        commandInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const command = this.value.trim().toLowerCase();
+                this.value = '';
                 
-                <!-- Orbiting elements -->
-                <div class="absolute inset-0 animate-spin-slow">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-neon-green rounded-full neon-text"></div>
-                    <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-neon-blue rounded-full neon-text"></div>
-                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-neon-purple rounded-full neon-text"></div>
-                    <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-neon-cyan rounded-full neon-text"></div>
-                </div>
-            </div>
-        </div>
+                // Add your command logic here
+                switch(command) {
+                    case 'help':
+                        alert('Available commands:\n- portfolio\n- about\n- contact\n- projects\n- resume\n- clear');
+                        break;
+                    case 'portfolio':
+                        window.location.href = '/projects.html';
+                        break;
+                    case 'about':
+                        window.location.href = '/about.html';
+                        break;
+                    case 'contact':
+                        window.location.href = '/contact.html';
+                        break;
+                    case 'clear':
+                        // Clear terminal (you could implement this)
+                        break;
+                    default:
+                        if(command) {
+                            alert(`Command not found: ${command}\nType 'help' for available commands.`);
+                        }
+                }
+            }
+        });
 
-        <h2 class="font-orbitron text-5xl md:text-7xl font-black mb-6">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-cyan to-neon-purple neon-text animate-glitch">
-                DIGITAL
-            </span>
-            <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-neon-green to-neon-blue neon-text animate-glitch" style="animation-delay: 0.1s">
-                ARCHITECT
-            </span>
-        </h2>
-        
-        <p class="text-xl md:text-2xl mb-12 font-light max-w-2xl mx-auto leading-relaxed">
-            Crafting <span class="text-neon-pink font-semibold">immersive digital realities</span> at the intersection of 
-            <span class="text-neon-cyan font-semibold">code</span> and 
-            <span class="text-neon-green font-semibold">creativity</span>
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button class="cyber-border rounded-full px-8 py-4 bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
-                <span class="font-orbitron text-neon-cyan group-hover:text-neon-pink transition-colors text-lg">
-                    INITIATE PROJECT
-                </span>
-            </button>
-            
-            <button class="cyber-border rounded-full px-8 py-4 bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
-                <span class="font-orbitron text-neon-pink group-hover:text-neon-cyan transition-colors text-lg">
-                    ACCESS PORTFOLIO
-                </span>
-            </button>
-        </div>
-    </div>
-</section>
-
-<!-- Services Grid -->
-<section class="relative py-20 px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h3 class="font-orbitron text-4xl text-neon-cyan mb-4 neon-text">DIGITAL SERVICES</h3>
-            <p class="text-xl text-cyber-silver/80">Advanced solutions for the next digital frontier</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Service Card 1 -->
-            <div class="cyber-border rounded-xl p-6 bg-cyber-black/60 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
-                <div class="text-neon-pink text-3xl mb-4 group-hover:animate-float">⎔</div>
-                <h4 class="font-orbitron text-neon-cyan text-xl mb-3">Quantum Web Dev</h4>
-                <p class="text-cyber-silver/80 mb-4">Next-generation web experiences with cutting-edge technology stacks</p>
-                <div class="flex gap-2">
-                    <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm font-orbitron">React</span>
-                    <span class="px-3 py-1 bg-neon-cyan/20 text-neon-cyan rounded-full text-sm font-orbitron">Node.js</span>
-                </div>
-            </div>
-            
-            <!-- Service Card 2 -->
-            <div class="cyber-border rounded-xl p-6 bg-cyber-black/60 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
-                <div class="text-neon-cyan text-3xl mb-4 group-hover:animate-float">⟁</div>
-                <h4 class="font-orbitron text-neon-green text-xl mb-3">Neural UI/UX</h4>
-                <p class="text-cyber-silver/80 mb-4">Intuitive interfaces that adapt and learn from user behavior</p>
-                <div class="flex gap-2">
-                    <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm font-orbitron">AI/ML</span>
-                    <span class="px-3 py-1 bg-neon-purple/20 text-neon-purple rounded-full text-sm font-orbitron">Figma</span>
-                </div>
-            </div>
-            
-            <!-- Service Card 3 -->
-            <div class="cyber-border rounded-xl p-6 bg-cyber-black/60 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
-                <div class="text-neon-green text-3xl mb-4 group-hover:animate-float">⌬</div>
-                <h4 class="font-orbitron text-neon-purple text-xl mb-3">Blockchain Core</h4>
-                <p class="text-cyber-silver/80 mb-4">Secure decentralized applications and smart contract development</p>
-                <div class="flex gap-2">
-                    <span class="px-3 py-1 bg-neon-blue/20 text-neon-blue rounded-full text-sm font-orbitron">Web3</span>
-                    <span class="px-3 py-1 bg-neon-purple/20 text-neon-purple rounded-full text-sm font-orbitron">Solidity</span>
-                </div>
-            </div>
-            
-            <!-- Service Card 4 -->
-            <div class="cyber-border rounded-xl p-6 bg-cyber-black/60 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
-                <div class="text-neon-purple text-3xl mb-4 group-hover:animate-float">⏣</div>
-                <h4 class="font-orbitron text-neon-blue text-xl mb-3">Cyber Security</h4>
-                <p class="text-cyber-silver/80 mb-4">Advanced protection systems for digital assets and infrastructure</p>
-                <div class="flex gap-2">
-                    <span class="px-3 py-1 bg-neon-pink/20 text-neon-pink rounded-full text-sm font-orbitron">SSL</span>
-                    <span class="px-3 py-1 bg-neon-cyan/20 text-neon-cyan rounded-full text-sm font-orbitron">Auth</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Section -->
-<section class="relative py-20 px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center">
-                <div class="cyber-border rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-cyber-black/60">
-                    <span class="font-orbitron text-3xl text-neon-pink">137+</span>
-                </div>
-                <p class="font-orbitron text-neon-cyan">PROJECTS COMPLETED</p>
-            </div>
-            
-            <div class="text-center">
-                <div class="cyber-border rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-cyber-black/60">
-                    <span class="font-orbitron text-3xl text-neon-cyan">5.2M+</span>
-                </div>
-                <p class="font-orbitron text-neon-green">LINES OF CODE</p>
-            </div>
-            
-            <div class="text-center">
-                <div class="cyber-border rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-cyber-black/60">
-                    <span class="font-orbitron text-3xl text-neon-green">89%</span>
-                </div>
-                <p class="font-orbitron text-neon-purple">CLIENT RETENTION</p>
-            </div>
-            
-            <div class="text-center">
-                <div class="cyber-border rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-cyber-black/60">
-                    <span class="font-orbitron text-3xl text-neon-purple">24/7</span>
-                </div>
-                <p class="font-orbitron text-neon-blue">DIGITAL PRESENCE</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="relative py-32 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-        <div class="cyber-border rounded-2xl p-12 bg-cyber-black/60 backdrop-blur-lg">
-            <h3 class="font-orbitron text-4xl md:text-5xl text-neon-cyan mb-6 neon-text">
-                READY TO ELEVATE YOUR DIGITAL PRESENCE?
-            </h3>
-            <p class="text-xl text-cyber-silver/80 mb-8">
-                Join the revolution and let's build something extraordinary together
-            </p>
-            <button class="cyber-border rounded-full px-12 py-6 bg-cyber-black/80 backdrop-blur-lg hover:animate-pulse-glow transition-all duration-300 group">
-                <span class="font-orbitron text-2xl text-neon-pink group-hover:text-neon-cyan transition-colors">
-                    INITIATE CONNECTION
-                </span>
-            </button>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="relative border-t border-cyber-gray/30 py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="cyber-border rounded-lg px-6 py-3 bg-cyber-black/60">
-                <h4 class="font-orbitron text-xl text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-cyan">
-                    NEO-VERSE DIGITAL
-                </h4>
-            </div>
-            
-            <div class="flex gap-6">
-                <div class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/60 hover:animate-pulse-glow cursor-pointer">
-                    <span class="text-neon-cyan">ⓣ</span>
-                </div>
-                <div class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/60 hover:animate-pulse-glow cursor-pointer">
-                    <span class="text-neon-pink">ⓘ</span>
-                </div>
-                <div class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/60 hover:animate-pulse-glow cursor-pointer">
-                    <span class="text-neon-green">ⓖ</span>
-                </div>
-                <div class="cyber-border rounded-full w-12 h-12 flex items-center justify-center bg-cyber-black/60 hover:animate-pulse-glow cursor-pointer">
-                    <span class="text-neon-blue">ⓛ</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-8">
-            <p class="font-orbitron text-cyber-silver/60">
-                © 2024 NEO-VERSE DIGITAL | JOHN OGLETREE | ALL SYSTEMS OPERATIONAL
-            </p>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Menu toggle animation
-    const menuToggle = document.getElementById('menuToggle');
-    const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
-    
-    menuToggle.addEventListener('click', () => {
-        lines[0].classList.toggle('rotate-45');
-        lines[0].classList.toggle('translate-y-1.5');
-        lines[1].classList.toggle('opacity-0');
-        lines[2].classList.toggle('-rotate-45');
-        lines[2].classList.toggle('-translate-y-1.5');
-    });
-
-    // Add floating particles
-    function createParticles() {
-        const container = document.body;
-        for (let i = 0; i < 20; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'fixed w-1 h-1 bg-neon-cyan rounded-full pointer-events-none animate-float';
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            particle.style.opacity = Math.random() * 0.5 + 0.2;
-            container.appendChild(particle);
-        }
-    }
-    
-    createParticles();
-</script>
+        // Focus command input on load
+        commandInput.focus();
+    </script>
 </body>
 </html>
