@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Echo OS | John Ogletree</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -45,7 +44,6 @@
         }
     </script>
 </head>
-
 <body class="font-tech bg-system-background text-system-text overflow-x-hidden">
     <!-- Terminal Sidebar -->
     <nav class="sidebar fixed top-0 left-0 w-80 h-screen z-50 transform translate-x-0 transition-transform duration-300 ease-in-out" id="sidebar">
@@ -62,18 +60,7 @@
                     <span class="text-lg">×</span>
                 </button>
             </div>
-            
-            <!-- Search Box -->
-            <div class="mb-6">
-                <div class="command-line p-3 rounded">
-                    <div class="flex items-center">
-                        <span class="text-system-primary mr-2">$</span>
-                        <input type="text" class="flex-1 bg-transparent outline-none text-system-text text-sm" placeholder="search_system..." id="sidebarSearch">
-                        <span class="animate-terminal-blink text-system-primary">▊</span>
-                    </div>
-                </div>
-            </div>
-            
+
             <!-- Navigation Menu -->
             <div class="flex-1 overflow-y-auto">
                 <div class="space-y-2">
@@ -137,7 +124,7 @@
                         <span class="text-system-primary/60 text-sm ml-auto">/secure/vault</span>
                     </a>
                 </div>
-                
+
                 <!-- System Status in Sidebar -->
                 <div class="mt-8 pt-6 border-t border-system-primary/30">
                     <h3 class="font-orbitron text-system-secondary text-sm mb-3">SYSTEM STATUS</h3>
@@ -159,8 +146,7 @@
             </div>
         </div>
     </nav>
-    
+
     <script src="script.js"></script>
 </body>
-
 </html>

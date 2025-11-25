@@ -1,14 +1,3 @@
-// Search functionality
-const sidebarSearch = document.getElementById('sidebarSearch');
-sidebarSearch.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        const searchTerm = this.value.trim().toLowerCase();
-        if (searchTerm) {
-            alert(`Searching for: ${searchTerm}\nThis would filter the navigation menu in a full implementation.`);
-        }
-    }
-});
-
 // Sidebar toggle functionality (if needed in the future)
 const menuToggle = document.getElementById('menuToggle');
 const sidebar = document.getElementById('sidebar');
@@ -45,7 +34,7 @@ if (commandInput) {
             const command = this.value.trim().toLowerCase();
             this.value = '';
             
-            switch(command) {
+            switch (command) {
                 case 'help':
                     alert('Available commands:\n- portfolio\n- about\n- contact\n- projects\n- resume\n- clear\n- menu');
                     break;
@@ -65,13 +54,13 @@ if (commandInput) {
                     // Clear terminal (you could implement this)
                     break;
                 default:
-                    if(command) {
+                    if (command) {
                         alert(`Command not found: ${command}\nType 'help' for available commands.`);
                     }
             }
         }
     });
-
+    
     // Focus command input on load
     commandInput.focus();
 }
