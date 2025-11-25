@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/styles.css" />
     <script>
         tailwind.config = {
             theme: {
@@ -45,9 +46,6 @@
             }
         }
     </script>
-    <style>
-        /* (Styling remains unchanged from previous, omitted for brevity) */
-    </style>
 </head>
 <body class="font-tech bg-system-background text-system-text overflow-x-hidden">
     <nav class="sidebar fixed top-0 left-0 w-80 h-screen z-50 transform translate-x-0 transition-transform duration-300 ease-in-out" id="sidebar">
@@ -128,7 +126,6 @@
     </nav>
     <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
     <script>
-        // Sidebar and interactivity code unchanged
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
@@ -143,7 +140,48 @@
         if (menuToggle) { menuToggle.addEventListener('click', toggleSidebar); }
         if (closeSidebar) { closeSidebar.addEventListener('click', toggleSidebar); }
         if (overlay) { overlay.addEventListener('click', toggleSidebar); }
-        // Command system functionality unchanged
+        const commandInput = document.getElementById('commandInput');
+        if (commandInput) {
+            commandInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const command = this.value.trim().toLowerCase();
+                    this.value = '';
+                    switch (command) {
+                        case 'help':
+                            alert('Available commands:
+- portfolio
+- about
+- contact
+- projects
+- resume
+- clear
+- menu');
+                            break;
+                        case 'menu':
+                            toggleSidebar();
+                            break;
+                        case 'portfolio':
+                            window.location.href = '/projects.html';
+                            break;
+                        case 'about':
+                            window.location.href = '/about.html';
+                            break;
+                        case 'contact':
+                            window.location.href = '/contact.html';
+                            break;
+                        case 'clear':
+                            // Clear terminal (could be implemented)
+                            break;
+                        default:
+                            if (command) {
+                                alert(`Command not found: ${command}
+Type 'help' for available commands.`);
+                            }
+                    }
+                }
+            });
+            commandInput.focus();
+        }
     </script>
 </body>
 </html>
