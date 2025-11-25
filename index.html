@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Echo OS | John Ogletree</title>
+    <title data-i18n="title">Echo OS | John Ogletree</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -50,22 +50,17 @@
         .sidebar ul::-webkit-scrollbar {
             width: 8px;
         }
-
         .sidebar ul::-webkit-scrollbar-thumb {
             background: #FF00FF;
             border-radius: 4px;
         }
-
         .sidebar ul::-webkit-scrollbar-thumb:hover {
             background: #00FFFF;
         }
-
         .sidebar ul::-webkit-scrollbar-track {
             background: #24243e;
             border-radius: 4px;
         }
-
-        /* Hamburger animation styles */
         .hamburger.active {
             margin-bottom: 10px;
         }
@@ -94,7 +89,6 @@
             border-radius: 8px;
             z-index: -1;
         }
-        /* Sidebar active state */
         .sidebar.active {
             transform: translateX(0);
         }
@@ -186,6 +180,13 @@
     </style>
 </head>
 <body class="font-tech bg-system-background text-system-text overflow-x-hidden">
+    <!-- Language Selector -->
+    <div class="fixed top-2 right-2 z-50">
+        <select id="languageSelect" class="p-2 border rounded">
+            <option value="en" data-i18n="en_option">English</option>
+            <option value="es" data-i18n="es_option">Español</option>
+        </select>
+    </div>
     <!-- Terminal Sidebar -->
     <nav class="sidebar fixed top-0 left-0 w-80 h-screen z-50 transform translate-x-0 transition-transform duration-300 ease-in-out" id="sidebar">
         <div class="p-6 h-full flex flex-col">
@@ -196,17 +197,162 @@
                     <div class="w-3 h-3 rounded-full bg-system-secondary"></div>
                     <div class="w-3 h-3 rounded-full bg-system-primary"></div>
                 </div>
-                <h2 class="terminal-header font-orbitron text-xl font-black">NAVIGATION</h2>
+                <h2 class="terminal-header font-orbitron text-xl font-black" data-i18n="navigation">NAVIGATION</h2>
                 <button class="text-system-primary hover:text-system-accent transition-colors" id="closeSidebar">
-                    <span class="text-lg">×</span>
+                    <span class="text-lg">&times;</span>
                 </button>
             </div>
-            <!-- Navigation Menu ... -->
-            <!-- [Sidebar navigation links, status indicators, etc. from above HTML] -->
-            <!-- System Status in Sidebar ... -->
+            <!-- Navigation Menu -->
+            <div class="flex-1 overflow-y-auto">
+                <div class="space-y-2">
+                    <a href="/" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-primary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-primary transition-colors" data-i18n="home">home</span>
+                        <span class="text-system-primary/60 text-sm ml-auto">~/</span>
+                    </a>
+                    <a href="/about.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-secondary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-secondary transition-colors" data-i18n="about_me">about_me</span>
+                        <span class="text-system-secondary/60 text-sm ml-auto">/usr/about</span>
+                    </a>
+                    <a href="/services.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-accent group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-accent transition-colors" data-i18n="services">services</span>
+                        <span class="text-system-accent/60 text-sm ml-auto">/sys/services</span>
+                    </a>
+                    <a href="/pricing.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-primary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-primary transition-colors" data-i18n="pricing">pricing</span>
+                        <span class="text-system-primary/60 text-sm ml-auto">/var/pricing</span>
+                    </a>
+                    <a href="/projects.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-secondary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-secondary transition-colors" data-i18n="projects">projects</span>
+                        <span class="text-system-secondary/60 text-sm ml-auto">/opt/projects</span>
+                    </a>
+                    <a href="/resume.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-accent group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-accent transition-colors" data-i18n="resume">resume</span>
+                        <span class="text-system-accent/60 text-sm ml-auto">/doc/resume</span>
+                    </a>
+                    <a href="/contact.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-primary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-primary transition-colors" data-i18n="contact_me">contact_me</span>
+                        <span class="text-system-primary/60 text-sm ml-auto">/net/contact</span>
+                    </a>
+                    <a href="/blog.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-secondary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-secondary transition-colors" data-i18n="blog">blog</span>
+                        <span class="text-system-secondary/60 text-sm ml-auto">/var/log/blog</span>
+                    </a>
+                    <a href="/faq.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-accent group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-accent transition-colors" data-i18n="faq">faq</span>
+                        <span class="text-system-accent/60 text-sm ml-auto">/help/faq</span>
+                    </a>
+                    <a href="/vault.html" class="flex items-center space-x-3 p-3 rounded hover:bg-system-primary/10 transition-colors group">
+                        <div class="w-2 h-2 rounded-full bg-system-primary group-hover:animate-pulse"></div>
+                        <span class="text-system-text group-hover:text-system-primary transition-colors" data-i18n="vault">vault</span>
+                        <span class="text-system-primary/60 text-sm ml-auto">/secure/vault</span>
+                    </a>
+                </div>
+                <!-- System Status in Sidebar -->
+                <div class="mt-8 pt-6 border-t border-system-primary/30">
+                    <h3 class="font-orbitron text-system-secondary text-sm mb-3" data-i18n="system_status">SYSTEM STATUS</h3>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-system-text/60" data-i18n="uptime_label">Uptime:</span>
+                            <span class="text-system-primary" data-i18n="uptime_value">247d 15h</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-system-text/60" data-i18n="security_label">Security:</span>
+                            <span class="text-system-accent" data-i18n="security_level">LEVEL 9</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-system-text/60" data-i18n="connection_label">Connection:</span>
+                            <span class="text-system-secondary" data-i18n="connection_status">SECURE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
+    <!-- Overlay for sidebar (if used) -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+    <!-- JS for both i18n and page interactivity -->
     <script>
+        // i18n translation dictionary
+        const translations = {
+            en: {
+                title: "Echo OS | John Ogletree",
+                navigation: "NAVIGATION",
+                home: "home",
+                about_me: "about_me",
+                services: "services",
+                pricing: "pricing",
+                projects: "projects",
+                resume: "resume",
+                contact_me: "contact_me",
+                blog: "blog",
+                faq: "faq",
+                vault: "vault",
+                system_status: "SYSTEM STATUS",
+                uptime_label: "Uptime:",
+                uptime_value: "247d 15h",
+                security_label: "Security:",
+                security_level: "LEVEL 9",
+                connection_label: "Connection:",
+                connection_status: "SECURE",
+                en_option: "English",
+                es_option: "Español"
+            },
+            es: {
+                title: "Echo SO | John Ogletree",
+                navigation: "NAVEGACIÓN",
+                home: "inicio",
+                about_me: "sobre_mi",
+                services: "servicios",
+                pricing: "precios",
+                projects: "proyectos",
+                resume: "currículum",
+                contact_me: "contacto",
+                blog: "blog",
+                faq: "preguntas",
+                vault: "bóveda",
+                system_status: "ESTADO DEL SISTEMA",
+                uptime_label: "Tiempo activo:",
+                uptime_value: "247d 15h",
+                security_label: "Seguridad:",
+                security_level: "NIVEL 9",
+                connection_label: "Conexión:",
+                connection_status: "SEGURA",
+                en_option: "Inglés",
+                es_option: "Español"
+            }
+        };
+        // Apply translations to all elements with [data-i18n]
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll("[data-i18n]").forEach(function(el) {
+                const key = el.getAttribute("data-i18n");
+                if (translations[lang][key] !== undefined) {
+                    if (el.tagName === "TITLE") {
+                        document.title = translations[lang][key];
+                    } else if (el.tagName === "OPTION") {
+                        el.textContent = translations[lang][key];
+                    } else {
+                        el.innerText = translations[lang][key];
+                    }
+                }
+            });
+        }
+        document.getElementById("languageSelect").addEventListener("change", function() {
+            setLanguage(this.value);
+        });
+        window.addEventListener("DOMContentLoaded", function() {
+            setLanguage(document.getElementById('languageSelect').value);
+        });
+
         // Sidebar toggle functionality
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
@@ -219,16 +365,9 @@
                 overlay.classList.toggle('hidden');
             }
         }
-        // Initialize event listeners
-        if (menuToggle) {
-            menuToggle.addEventListener('click', toggleSidebar);
-        }
-        if (closeSidebar) {
-            closeSidebar.addEventListener('click', toggleSidebar);
-        }
-        if (overlay) {
-            overlay.addEventListener('click', toggleSidebar);
-        }
+        if (menuToggle) { menuToggle.addEventListener('click', toggleSidebar); }
+        if (closeSidebar) { closeSidebar.addEventListener('click', toggleSidebar); }
+        if (overlay) { overlay.addEventListener('click', toggleSidebar); }
         // Command system functionality
         const commandInput = document.getElementById('commandInput');
         if (commandInput) {
@@ -278,11 +417,8 @@ Type 'help' for available commands.`);
             heroButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const text = this.textContent.trim();
-                    if (text.includes('initiate_project')) {
-                        window.location.href = '/contact.html';
-                    } else if (text.includes('access_console')) {
-                        toggleSidebar();
-                    }
+                    if (text.includes('initiate_project')) { window.location.href = '/contact.html'; }
+                    else if (text.includes('access_console')) { toggleSidebar(); }
                 });
             });
         }
@@ -294,10 +430,8 @@ Type 'help' for available commands.`);
                 for (let i = 0; i < particleCount; i++) {
                     const particle = document.createElement('div');
                     particle.classList.add('particle', 'absolute', 'w-1', 'h-1', 'bg-primary', 'rounded-full', 'shadow-glow', 'animate-float');
-                    // Random position
                     const left = Math.random() * 100;
                     const top = Math.random() * 100;
-                    // Random animation delay
                     const delay = Math.random() * 5;
                     particle.style.left = `${left}%`;
                     particle.style.top = `${top}%`;
