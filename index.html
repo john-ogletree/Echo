@@ -75,13 +75,6 @@
     </style>
 </head>
 <body class="font-tech bg-system-background text-system-text overflow-x-hidden">
-    <!-- Language Selector -->
-    <div class="fixed top-2 right-2 z-50">
-        <select id="languageSelect" class="p-2 border rounded">
-            <option value="en" data-i18n="en_option">English</option>
-            <option value="es" data-i18n="es_option">Español</option>
-        </select>
-    </div>
     <!-- Terminal Sidebar -->
     <nav class="sidebar fixed top-0 left-0 w-80 h-screen z-50 transform translate-x-0 transition-transform duration-300 ease-in-out" id="sidebar">
         <div class="p-6 h-full flex flex-col">
@@ -171,74 +164,9 @@
     </nav>
     <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
     <script>
-        const translations = {
-            en: {
-                title: "Echo OS | John Ogletree",
-                navigation: "NAVIGATION",
-                home: "home",
-                about_me: "about_me",
-                services: "services",
-                pricing: "pricing",
-                projects: "projects",
-                resume: "resume",
-                contact_me: "contact_me",
-                blog: "blog",
-                faq: "faq",
-                vault: "vault",
-                system_status: "SYSTEM STATUS",
-                uptime_label: "Uptime:",
-                uptime_value: "247d 15h",
-                security_label: "Security:",
-                security_level: "LEVEL 9",
-                connection_label: "Connection:",
-                connection_status: "SECURE",
-                en_option: "English",
-                es_option: "Español"
-            },
-            es: {
-                title: "Echo SO | John Ogletree",
-                navigation: "NAVEGACIÓN",
-                home: "inicio",
-                about_me: "sobre_mi",
-                services: "servicios",
-                pricing: "precios",
-                projects: "proyectos",
-                resume: "currículum",
-                contact_me: "contacto",
-                blog: "blog",
-                faq: "preguntas frecuentes",
-                vault: "bóveda",
-                system_status: "ESTADO DEL SISTEMA",
-                uptime_label: "Tiempo activo:",
-                uptime_value: "247d 15h",
-                security_label: "Seguridad:",
-                security_level: "NIVEL 9",
-                connection_label: "Conexión:",
-                connection_status: "SEGURA",
-                en_option: "Inglés",
-                es_option: "Español"
-            }
-        };
-        function setLanguage(lang) {
-            document.documentElement.lang = lang;
-            document.querySelectorAll("[data-i18n]").forEach(function(el) {
-                const key = el.getAttribute("data-i18n");
-                if (translations[lang][key] !== undefined) {
-                    if (el.tagName === "TITLE") {
-                        document.title = translations[lang][key];
-                    } else {
-                        el.textContent = translations[lang][key];
-                    }
-                }
-            });
-        }
-        document.getElementById("languageSelect").addEventListener("change", function() {
-            setLanguage(this.value);
-        });
-        window.addEventListener("DOMContentLoaded", function() {
-            setLanguage(document.getElementById('languageSelect').value);
-        });
-        // --- Sidebar and interactivity code below is unchanged but included for completeness ---
+        // Removed language switcher related script for language selection
+
+        // --- Sidebar and interactivity code ---
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
@@ -253,6 +181,7 @@
         if (menuToggle) { menuToggle.addEventListener('click', toggleSidebar); }
         if (closeSidebar) { closeSidebar.addEventListener('click', toggleSidebar); }
         if (overlay) { overlay.addEventListener('click', toggleSidebar); }
+
         // Command system functionality
         const commandInput = document.getElementById('commandInput');
         if (commandInput) {
@@ -296,7 +225,6 @@ Type 'help' for available commands.`);
             });
             commandInput.focus();
         }
-        // Hero button functionality, particle system, and filter code...
     </script>
 </body>
 </html>
