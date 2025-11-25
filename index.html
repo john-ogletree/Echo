@@ -406,7 +406,7 @@
 
                 <!-- Right Panel - Applications -->
                 <div class="space-y-6">
-                    <!-- HERO SECTION - NOW ABOVE ACTIVE PROCESSES -->
+                    <!-- HERO SECTION - Clean Version -->
                     <div class="hero-terminal rounded-lg p-6 animate-pulse-glow">
                         <div class="text-center">
                             <!-- Animated Logo -->
@@ -420,29 +420,10 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <h2 class="font-orbitron text-2xl md:text-3xl text-system-primary mb-3 glitch-text">
-                                DIGITAL SYSTEMS ARCHITECT
-                            </h2>
-                            
-                            <p class="text-system-text/80 text-sm md:text-base mb-6 leading-relaxed">
-                                Building the future of digital experiences through 
-                                <span class="text-system-primary">innovative code</span> and 
-                                <span class="text-system-secondary">cutting-edge design</span>
-                            </p>
-
-                            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                                <button class="command-line px-6 py-3 rounded text-system-primary hover:bg-system-primary/10 transition-colors font-tech text-sm">
-                                    $ initiate_project
-                                </button>
-                                <button class="command-line px-6 py-3 rounded text-system-secondary hover:bg-system-secondary/10 transition-colors font-tech text-sm">
-                                    $ access_console
-                                </button>
-                            </div>
                         </div>
                     </div>
 
-                    <!-- ACTIVE PROCESSES (Now below hero) -->
+                    <!-- ACTIVE PROCESSES -->
                     <div class="terminal-window rounded-lg p-6">
                         <h3 class="font-orbitron text-system-secondary mb-4">ACTIVE PROCESSES</h3>
                         <div class="space-y-3">
@@ -609,18 +590,6 @@
                     alert(`Searching for: ${searchTerm}\nThis would filter the navigation menu in a full implementation.`);
                 }
             }
-        });
-
-        // Hero button functionality
-        document.querySelectorAll('.hero-terminal button').forEach(button => {
-            button.addEventListener('click', function() {
-                const text = this.textContent.trim();
-                if (text.includes('initiate_project')) {
-                    window.location.href = '/contact.html';
-                } else if (text.includes('access_console')) {
-                    toggleSidebar();
-                }
-            });
         });
     </script>
 </body>
